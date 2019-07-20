@@ -1,5 +1,8 @@
 # Website
 
+[![Build Status](https://travis-ci.com/nox-studios/Website.svg?token=8xPnyZAhxFTwCpTJsxsG&branch=master)](https://travis-ci.com/nox-studios/Website)
+
+
 ## Setting up your environement
 
 ### Prerequirement
