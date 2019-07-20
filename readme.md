@@ -30,7 +30,7 @@
 
 - NoxGamingQC
 
-### Usefull Link
+### Useful Link
 
 [GitHub](https://github.com/nox-studios/Website)
 
