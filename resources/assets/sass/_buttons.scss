@@ -1,0 +1,689 @@
+.btn-default {
+    color: #FFFFFF !important;
+    background-color: #222222;
+    border-color: #000000;
+}
+
+.btn-default:hover,
+.btn-default:focus,
+.btn-default:active,
+.btn-default.active,
+.open .dropdown-toggle.btn-default {
+    color: #FFFFFF !important;
+    background-color: #333333;
+    border-color: #000000;
+}
+
+.btn-default:active,
+.btn-default.active,
+.open .dropdown-toggle.btn-default {
+    background-image: none;
+}
+
+.btn-default.disabled,
+.btn-default[disabled],
+fieldset[disabled] .btn-default,
+.btn-default.disabled:hover,
+.btn-default[disabled]:hover,
+fieldset[disabled] .btn-default:hover,
+.btn-default.disabled:focus,
+.btn-default[disabled]:focus,
+fieldset[disabled] .btn-default:focus,
+.btn-default.disabled:active,
+.btn-default[disabled]:active,
+fieldset[disabled] .btn-default:active,
+.btn-default.disabled.active,
+.btn-default[disabled].active,
+fieldset[disabled] .btn-default.active {
+    background-color: #222222;
+    border-color: #000000;
+}
+
+.btn-default .badge {
+    color: #222222 !important;
+    background-color: #FFFFFF;
+}
+
+.btn-primary {
+    color: #FFFFFF !important;
+    background-color: #222222;
+    border-color: #000000;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open .dropdown-toggle.btn-primary {
+    color: #FFFFFF !important;
+    background-color: #C22222;
+    border-color: #000000;
+}
+
+.btn-primary:active,
+.btn-primary.active,
+.open .dropdown-toggle.btn-primary {
+    background-image: none;
+}
+
+.btn-primary.disabled,
+.btn-primary[disabled],
+fieldset[disabled] .btn-primary,
+.btn-primary.disabled:hover,
+.btn-primary[disabled]:hover,
+fieldset[disabled] .btn-primary:hover,
+.btn-primary.disabled:focus,
+.btn-primary[disabled]:focus,
+fieldset[disabled] .btn-primary:focus,
+.btn-primary.disabled:active,
+.btn-primary[disabled]:active,
+fieldset[disabled] .btn-primary:active,
+.btn-primary.disabled.active,
+.btn-primary[disabled].active,
+fieldset[disabled] .btn-primary.active {
+    background-color: #222222;
+    border-color: #000000;
+}
+
+.btn-primary .badge {
+    color: #222222 !important;
+    background-color: #FFFFFF;
+}
+
+.btn-twitch {
+    color: #ffffff !important;
+    background-color: #222222;
+    border-color: #000000;
+}
+
+.btn-twitch:hover,
+.btn-twitch:focus,
+.btn-twitch:active,
+.btn-twitch.active,
+.open .dropdown-toggle.btn-twitch {
+    color: #ffffff !important;
+    background-color: #6441A4;
+    border-color: #51338A;
+}
+
+.btn-twitch:active,
+.btn-twitch.active,
+.open .dropdown-toggle.btn-twitch {
+    background-image: none;
+}
+
+.btn-twitch.disabled,
+.btn-twitch[disabled],
+fieldset[disabled] .btn-twitch,
+.btn-twitch.disabled:hover,
+.btn-twitch[disabled]:hover,
+fieldset[disabled] .btn-twitch:hover,
+.btn-twitch.disabled:focus,
+.btn-twitch[disabled]:focus,
+fieldset[disabled] .btn-twitch:focus,
+.btn-twitch.disabled:active,
+.btn-twitch[disabled]:active,
+fieldset[disabled] .btn-twitch:active,
+.btn-twitch.disabled.active,
+.btn-twitch[disabled].active,
+fieldset[disabled] .btn-twitch.active {
+    background-color: #222222;
+    border-color: #000000;
+}
+
+.btn-twitch .badge {
+    color: #222222 !important;
+    background-color: #ffffff;
+}
+
+.btn-youtube {
+    color: #FFFFFF !important;
+    background-color: #222222;
+    border-color: #000000;
+}
+
+.btn-youtube:hover,
+.btn-youtube:focus,
+.btn-youtube:active,
+.btn-youtube.active,
+.open .dropdown-toggle.btn-youtube {
+    color: #FFFFFF !important;
+    background-color: #FF0000;
+    border-color: #C80000;
+}
+
+.btn-youtube:active,
+.btn-youtube.active,
+.open .dropdown-toggle.btn-youtube {
+    background-image: none;
+}
+
+.btn-youtube.disabled,
+.btn-youtube[disabled],
+fieldset[disabled] .btn-youtube,
+.btn-youtube.disabled:hover,
+.btn-youtube[disabled]:hover,
+fieldset[disabled] .btn-youtube:hover,
+.btn-youtube.disabled:focus,
+.btn-youtube[disabled]:focus,
+fieldset[disabled] .btn-youtube:focus,
+.btn-youtube.disabled:active,
+.btn-youtube[disabled]:active,
+fieldset[disabled] .btn-youtube:active,
+.btn-youtube.disabled.active,
+.btn-youtube[disabled].active,
+fieldset[disabled] .btn-youtube.active {
+    background-color: #222222;
+    border-color: #000000;
+}
+
+.btn-youtube .badge {
+    color: #222222 !important;
+    background-color: #FFFFFF;
+}
+
+.btn-twitter {
+    color: #ffffff !important;
+    background-color: #222222;
+    border-color: #000000;
+}
+
+.btn-twitter:hover,
+.btn-twitter:focus,
+.btn-twitter:active,
+.btn-twitter.active,
+.open .dropdown-toggle.btn-twitter {
+    color: #ffffff !important;
+    background-color: #1da1f2;
+    border-color: #178DD6;
+}
+
+.btn-twitter:active,
+.btn-twitter.active,
+.open .dropdown-toggle.btn-twitter {
+    background-image: none;
+}
+
+.btn-twitter.disabled,
+.btn-twitter[disabled],
+fieldset[disabled] .btn-twitter,
+.btn-twitter.disabled:hover,
+.btn-twitter[disabled]:hover,
+fieldset[disabled] .btn-twitter:hover,
+.btn-twitter.disabled:focus,
+.btn-twitter[disabled]:focus,
+fieldset[disabled] .btn-twitter:focus,
+.btn-twitter.disabled:active,
+.btn-twitter[disabled]:active,
+fieldset[disabled] .btn-twitter:active,
+.btn-twitter.disabled.active,
+.btn-twitter[disabled].active,
+fieldset[disabled] .btn-twitter.active {
+    background-color: #222222;
+    border-color: #000000;
+}
+
+.btn-twitter .badge {
+    color: #222222 !important;
+    background-color: #ffffff;
+}
+
+.btn-facebook {
+    color: #ffffff !important;
+    background-color: #222222;
+    border-color: #000000;
+}
+
+.btn-facebook:hover,
+.btn-facebook:focus,
+.btn-facebook:active,
+.btn-facebook.active,
+.open .dropdown-toggle.btn-facebook {
+    color: #3B5998 !important;
+    background-color: #FFFFFF;
+    border-color: #CCCCCC;
+}
+
+.btn-facebook:active,
+.btn-facebook.active,
+.open .dropdown-toggle.btn-facebook {
+    background-image: none;
+}
+
+.btn-facebook.disabled,
+.btn-facebook[disabled],
+fieldset[disabled] .btn-facebook,
+.btn-facebook.disabled:hover,
+.btn-facebook[disabled]:hover,
+fieldset[disabled] .btn-facebook:hover,
+.btn-facebook.disabled:focus,
+.btn-facebook[disabled]:focus,
+fieldset[disabled] .btn-facebook:focus,
+.btn-facebook.disabled:active,
+.btn-facebook[disabled]:active,
+fieldset[disabled] .btn-facebook:active,
+.btn-facebook.disabled.active,
+.btn-facebook[disabled].active,
+fieldset[disabled] .btn-facebook.active {
+    background-color: #222222;
+    border-color: #000000;
+}
+
+.btn-facebook .badge {
+    color: #222222 !important;
+    background-color: #ffffff;
+}
+
+.btn-instagram {
+    color: #FFFFFF !important;
+    background-color: #222222;
+    border-color: #000000;
+}
+
+.btn-instagram:hover,
+.btn-instagram:focus,
+.btn-instagram:active,
+.btn-instagram.active,
+.open .dropdown-toggle.btn-instagram {
+    color: #FFFFFF !important;
+    background-color: #DE2A7A;
+    border-color: #C21F68;
+}
+
+.btn-instagram:active,
+.btn-instagram.active,
+.open .dropdown-toggle.btn-instagram {
+    background-image: none;
+}
+
+.btn-instagram.disabled,
+.btn-instagram[disabled],
+fieldset[disabled] .btn-instagram,
+.btn-instagram.disabled:hover,
+.btn-instagram[disabled]:hover,
+fieldset[disabled] .btn-instagram:hover,
+.btn-instagram.disabled:focus,
+.btn-instagram[disabled]:focus,
+fieldset[disabled] .btn-instagram:focus,
+.btn-instagram.disabled:active,
+.btn-instagram[disabled]:active,
+fieldset[disabled] .btn-instagram:active,
+.btn-instagram.disabled.active,
+.btn-instagram[disabled].active,
+fieldset[disabled] .btn-instagram.active {
+    background-color: #222222;
+    border-color: #000000;
+}
+
+.btn-instagram .badge {
+    color: #222222 !important;
+    background-color: #FFFFFF;
+}
+
+.btn-steam {
+    color: #ffffff !important;
+    background-color: #222222;
+    border-color: #000000;
+}
+
+.btn-steam:hover,
+.btn-steam:focus,
+.btn-steam:active,
+.btn-steam.active,
+.open .dropdown-toggle.btn-steam {
+    color: #ffffff !important;
+    background-color: #133B6E;
+    border-color: #0E2F59;
+}
+
+.btn-steam:active,
+.btn-steam.active,
+.open .dropdown-toggle.btn-steam {
+    background-image: none;
+}
+
+.btn-steam.disabled,
+.btn-steam[disabled],
+fieldset[disabled] .btn-steam,
+.btn-steam.disabled:hover,
+.btn-steam[disabled]:hover,
+fieldset[disabled] .btn-steam:hover,
+.btn-steam.disabled:focus,
+.btn-steam[disabled]:focus,
+fieldset[disabled] .btn-steam:focus,
+.btn-steam.disabled:active,
+.btn-steam[disabled]:active,
+fieldset[disabled] .btn-steam:active,
+.btn-steam.disabled.active,
+.btn-steam[disabled].active,
+fieldset[disabled] .btn-steam.active {
+    background-color: #222222;
+    border-color: #000000;
+}
+
+.btn-steam .badge {
+    color: #222222 !important;
+    background-color: #ffffff;
+}
+
+.btn-google-plus {
+    color: #ffffff !important;
+    background-color: #222222;
+    border-color: #000000;
+}
+
+.btn-google-plus:hover,
+.btn-google-plus:focus,
+.btn-google-plus:active,
+.btn-google-plus.active,
+.open .dropdown-toggle.btn-google-plus {
+    color: #ffffff !important;
+    background-color: #DD4B39;
+    border-color: #C74534;
+}
+
+.btn-google-plus:active,
+.btn-google-plus.active,
+.open .dropdown-toggle.btn-google-plus {
+    background-image: none;
+}
+
+.btn-google-plus.disabled,
+.btn-google-plus[disabled],
+fieldset[disabled] .btn-google-plus,
+.btn-google-plus.disabled:hover,
+.btn-google-plus[disabled]:hover,
+fieldset[disabled] .btn-google-plus:hover,
+.btn-google-plus.disabled:focus,
+.btn-google-plus[disabled]:focus,
+fieldset[disabled] .btn-google-plus:focus,
+.btn-google-plus.disabled:active,
+.btn-google-plus[disabled]:active,
+fieldset[disabled] .btn-google-plus:active,
+.btn-google-plus.disabled.active,
+.btn-google-plus[disabled].active,
+fieldset[disabled] .btn-google-plus.active {
+    background-color: #222222;
+    border-color: #000000;
+}
+
+.btn-google-plus .badge {
+    color: #222222 !important;
+    background-color: #ffffff;
+}
+
+.btn-github {
+    color: #ffffff !important;
+    background-color: #222222;
+    border-color: #000000;
+}
+
+.btn-github:hover,
+.btn-github:focus,
+.btn-github:active,
+.btn-github.active,
+.open .dropdown-toggle.btn-github {
+    color: #171515 !important;
+    background-color: #FFFFFF;
+    border-color: #CCCCCC;
+}
+
+.btn-github:active,
+.btn-github.active,
+.open .dropdown-toggle.btn-github {
+    background-image: none;
+}
+
+.btn-github.disabled,
+.btn-github[disabled],
+fieldset[disabled] .btn-github,
+.btn-github.disabled:hover,
+.btn-github[disabled]:hover,
+fieldset[disabled] .btn-github:hover,
+.btn-github.disabled:focus,
+.btn-github[disabled]:focus,
+fieldset[disabled] .btn-github:focus,
+.btn-github.disabled:active,
+.btn-github[disabled]:active,
+fieldset[disabled] .btn-github:active,
+.btn-github.disabled.active,
+.btn-github[disabled].active,
+fieldset[disabled] .btn-github.active {
+    background-color: #222222;
+    border-color: #000000;
+}
+
+.btn-github .badge {
+    color: #222222 !important;
+    background-color: #ffffff;
+}
+
+.btn-snapchat {
+    color: #ffffff !important;
+    background-color: #222222;
+    border-color: #000000;
+}
+
+.btn-snapchat:hover,
+.btn-snapchat:focus,
+.btn-snapchat:active,
+.btn-snapchat.active,
+.open .dropdown-toggle.btn-snapchat {
+    color: #FFFFFF !important;
+    background-color: #FFFC00;
+    border-color: #BBB900;
+}
+
+.btn-snapchat:active,
+.btn-snapchat.active,
+.open .dropdown-toggle.btn-snapchat {
+    background-image: none;
+}
+
+.btn-snapchat.disabled,
+.btn-snapchat[disabled],
+fieldset[disabled] .btn-snapchat,
+.btn-snapchat.disabled:hover,
+.btn-snapchat[disabled]:hover,
+fieldset[disabled] .btn-snapchat:hover,
+.btn-snapchat.disabled:focus,
+.btn-snapchat[disabled]:focus,
+fieldset[disabled] .btn-snapchat:focus,
+.btn-snapchat.disabled:active,
+.btn-snapchat[disabled]:active,
+fieldset[disabled] .btn-snapchat:active,
+.btn-snapchat.disabled.active,
+.btn-snapchat[disabled].active,
+fieldset[disabled] .btn-snapchat.active {
+    background-color: #222222;
+    border-color: #000000;
+}
+
+.btn-snapchat .badge {
+    color: #222222 !important;
+    background-color: #ffffff;
+}
+
+.btn-spotify {
+    color: #ffffff !important;
+    background-color: #222222;
+    border-color: #000000;
+}
+
+.btn-spotify:hover,
+.btn-spotify:focus,
+.btn-spotify:active,
+.btn-spotify.active,
+.open .dropdown-toggle.btn-spotify {
+    color: #ffffff !important;
+    background-color: #1DB954;
+    border-color: #199946;
+}
+
+.btn-spotify:active,
+.btn-spotify.active,
+.open .dropdown-toggle.btn-spotify {
+    background-image: none;
+}
+
+.btn-spotify.disabled,
+.btn-spotify[disabled],
+fieldset[disabled] .btn-spotify,
+.btn-spotify.disabled:hover,
+.btn-spotify[disabled]:hover,
+fieldset[disabled] .btn-spotify:hover,
+.btn-spotify.disabled:focus,
+.btn-spotify[disabled]:focus,
+fieldset[disabled] .btn-spotify:focus,
+.btn-spotify.disabled:active,
+.btn-spotify[disabled]:active,
+fieldset[disabled] .btn-spotify:active,
+.btn-spotify.disabled.active,
+.btn-spotify[disabled].active,
+fieldset[disabled] .btn-spotify.active {
+    background-color: #191414;
+    border-color: #000000;
+}
+
+.btn-spotify .badge {
+    color: #191414 !important;
+    background-color: #ffffff;
+}
+
+.btn-reddit {
+    color: #ffffff !important;
+    background-color: #222222;
+    border-color: #000000;
+}
+
+.btn-reddit:hover,
+.btn-reddit:focus,
+.btn-reddit:active,
+.btn-reddit.active,
+.open .dropdown-toggle.btn-reddit {
+    color: #ffffff !important;
+    background-color: #FF4500;
+    border-color: #F74200;
+}
+
+.btn-reddit:active,
+.btn-reddit.active,
+.open .dropdown-toggle.btn-reddit {
+    background-image: none;
+}
+
+.btn-reddit.disabled,
+.btn-reddit[disabled],
+fieldset[disabled] .btn-reddit,
+.btn-reddit.disabled:hover,
+.btn-reddit[disabled]:hover,
+fieldset[disabled] .btn-reddit:hover,
+.btn-reddit.disabled:focus,
+.btn-reddit[disabled]:focus,
+fieldset[disabled] .btn-reddit:focus,
+.btn-reddit.disabled:active,
+.btn-reddit[disabled]:active,
+fieldset[disabled] .btn-reddit:active,
+.btn-reddit.disabled.active,
+.btn-reddit[disabled].active,
+fieldset[disabled] .btn-reddit.active {
+    background-color: #222222;
+    border-color: #000000;
+}
+
+.btn-reddit .badge {
+    color: #222222 !important;
+    background-color: #ffffff;
+}
+
+.btn-pinterest {
+    color: #FFFFFF !important;
+    background-color: #222222;
+    border-color: #000000;
+}
+
+.btn-pinterest:hover,
+.btn-pinterest:focus,
+.btn-pinterest:active,
+.btn-pinterest.active,
+.open .dropdown-toggle.btn-pinterest {
+    color: #BD081C !important;
+    background-color: #FFFFFF;
+    border-color: #CCCCCC;
+}
+
+.btn-pinterest:active,
+.btn-pinterest.active,
+.open .dropdown-toggle.btn-pinterest {
+    background-image: none;
+}
+
+.btn-pinterest.disabled,
+.btn-pinterest[disabled],
+fieldset[disabled] .btn-pinterest,
+.btn-pinterest.disabled:hover,
+.btn-pinterest[disabled]:hover,
+fieldset[disabled] .btn-pinterest:hover,
+.btn-pinterest.disabled:focus,
+.btn-pinterest[disabled]:focus,
+fieldset[disabled] .btn-pinterest:focus,
+.btn-pinterest.disabled:active,
+.btn-pinterest[disabled]:active,
+fieldset[disabled] .btn-pinterest:active,
+.btn-pinterest.disabled.active,
+.btn-pinterest[disabled].active,
+fieldset[disabled] .btn-pinterest.active {
+    background-color: #222222;
+    border-color: #000000;
+}
+
+.btn-pinterest .badge {
+    color: #BD081C !important;
+    background-color: #ffffff;
+}
+
+.btn-skype {
+    color: #ffffff !important;
+    background-color: #222222;
+    border-color: #000000;
+}
+
+.btn-skype:hover,
+.btn-skype:focus,
+.btn-skype:active,
+.btn-skype.active,
+.open .dropdown-toggle.btn-skype {
+    color: #ffffff !important;
+    background-color: #0078D7;
+    border-color: #0062B3;
+}
+
+.btn-skype:active,
+.btn-skype.active,
+.open .dropdown-toggle.btn-skype {
+    background-image: none;
+}
+
+.btn-skype.disabled,
+.btn-skype[disabled],
+fieldset[disabled] .btn-skype,
+.btn-skype.disabled:hover,
+.btn-skype[disabled]:hover,
+fieldset[disabled] .btn-skype:hover,
+.btn-skype.disabled:focus,
+.btn-skype[disabled]:focus,
+fieldset[disabled] .btn-skype:focus,
+.btn-skype.disabled:active,
+.btn-skype[disabled]:active,
+fieldset[disabled] .btn-skype:active,
+.btn-skype.disabled.active,
+.btn-skype[disabled].active,
+fieldset[disabled] .btn-skype.active {
+    background-color: #222222;
+    border-color: #000000;
+}
+
+.btn-skype .badge {
+    color: #222222 !important;
+    background-color: #ffffff;
+}

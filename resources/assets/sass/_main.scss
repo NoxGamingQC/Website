@@ -1,0 +1,19 @@
+html, body {
+    background-color: #222222;
+    color: #FFFFFF;
+    @media (min-width: 768px) {
+        padding: 2%;
+    }
+}
+
+.btn {
+    margin-left: 15px;
+}
+
+a:link, a:visited {
+    color: #C22222;
+}
+
+a:hover, a:active {
+    color: #F22222;
+}

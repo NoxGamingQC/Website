@@ -1,0 +1,10 @@
+version: '3'
+services:
+    php:
+        build:
+            context: ./docker
+        container_name: noxracing_php
+        ports:
+            - "8000:8000"
+        volumes:
+            - ./:/app
