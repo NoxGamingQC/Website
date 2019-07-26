@@ -46,6 +46,9 @@ Route::get('/noxbot/dashboard', function () {
 
 Route::get('/noxbot/dashboard', 'NoxBotDashboardController@index');
 
+
+Route::get('/profile/{id}', 'UserProfileController@index');
+
 Route::get('/profile/edit', 'UserProfileController@edit');
 
 Route::get('/contact', function () {

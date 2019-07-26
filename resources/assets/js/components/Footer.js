@@ -8,7 +8,7 @@ export default class Footer extends Component {
                 <div className="row">
                     <div className="col-md-12 text-center">
                         <hr />
-                        <p>© Copyright NoxGamingQC. All right reserved.</p>
+                        <p>© Copyright Nox's Studios. All right reserved.</p>
                     </div>
                 </div>
             </div>
