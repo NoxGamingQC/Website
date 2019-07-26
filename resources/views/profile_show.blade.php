@@ -55,7 +55,7 @@
                     <h1>{{$username}} <small>{{$firstname}} {{$lastname}}</small></h1>
                     <h3>{{$grade}}</h3>
                     @foreach ($discordBadges as $badge)
-                    <img src="/img/discord/{{$badge}}.png" alt="{{$badge}}" width="75px" style="padding: 7px 14px" />
+                    <img src="/img/{{$badge}}.png" alt="{{$badge}}" width="75px" style="padding: 7px 14px" />
                     @endforeach
                     <hr />
                 </div>
