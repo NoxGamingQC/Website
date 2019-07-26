@@ -167,11 +167,11 @@ export default class NoxBotDashboard extends Component {
                 var html = '<div class="col-md-12">';
                 var serverLists = document.getElementById("root").getAttribute('variables').split(',');
                 guilds.forEach(function(guild) {
-                    var redirectLink = 'https://discordapp.com/oauth2/authorize?client_id=395657323135238157&scope=bot&permissions=1073048825';
+                    var redirectLink = 'https://discordapp.com/oauth2/authorize?client_id=395657323135238157&scope=identify%20guilds%20email&permissions=1073048825';
                     guild.guildID = guild.id
                     serverLists.forEach(function(serverID) {
                         if(serverID == guild.id) {
-                            redirectLink = ('http://noxgamingqc.herokuapp.com/noxbot/dashboard/' + guild.id + '?' + querystring.stringify(guild) + '&' + querystring.stringify(thisObject.state.user))
+                            redirectLink = (window.location.origin + '/noxbot/dashboard/' + guild.id + '?' + querystring.stringify(guild) + '&' + querystring.stringify(thisObject.state.user))
                         }
                     })
 
@@ -209,7 +209,7 @@ export default class NoxBotDashboard extends Component {
                     client_secret: 'QMQDtjOWmYKtNTStrmzHSXIGhPILKXKL',
                     grant_type: 'authorization_code',
                     code: window.location.search.split('?code=')[1],
-                    redirect_uri: 'http://noxgamingqc.herokuapp.com/noxbot/dashboard',
+                    redirect_uri: window.location.origin + '/noxbot/dashboard',
                     scope: 'identify guilds email'
                 },
                 success: function (token) {

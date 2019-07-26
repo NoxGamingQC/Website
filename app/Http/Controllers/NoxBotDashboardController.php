@@ -25,7 +25,7 @@ class NoxBotDashboardController extends Controller
     public function linkDiscord(Request $request) {
         $user = User::findOrFail(Auth::user()->id);
 
-        if(!!$user->DiscordID) {
+        if(!!$user) {
             $user->DiscordID = $request->discordID;
             $user->DiscordName = $request->discordName;
             $user->isVerified = $request->discordIsUserVerified;
