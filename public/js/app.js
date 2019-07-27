@@ -54940,160 +54940,196 @@ var Welcome = function (_Component) {
         value: function render() {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
-                { className: 'container' },
+                { className: 'row' },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
-                    { className: 'row' },
+                    { className: 'col-md-12 text-center', id: 'title' },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'div',
-                        { className: 'col-md-12 text-center', id: 'title' },
+                        { className: 'panel panel-primary-red' },
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            'h3',
-                            null,
-                            'NoxGamingQC'
-                        ),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('hr', null),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            'p',
-                            null,
-                            '\uD83D\uDC68\u200D\uD83D\uDCBB Full Stack Dev \u2022 \uD83D\uDCF9 Twitch affiliate \u2022 \uD83C\uDFAE Variety streamer \u2022 \uD83D\uDC96 Positivity Stream Team Lead'
-                        )
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'div',
-                        { className: 'col-md-12', id: 'aboutme' },
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            'h3',
-                            null,
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fa fa-user', 'aria-hidden': 'true' }),
-                            ' About me'
-                        ),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('hr', null),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            'p',
-                            null,
-                            'My name is Jimmy. I\'m from Qu\xE9bec, Canada. I like music, programming, video games and movies. I like to meet new people if you see me online don\'t hesitate to dm me \uD83D\uDE09. Best way to contact me is trought discord ',
+                            'div',
+                            { className: 'panel-body' },
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                'a',
-                                { href: 'https://discord.gg/KPd4cC4' },
-                                '(You can join my discord server by clicking here)'
+                                'h1',
+                                null,
+                                'NoxGamingQC'
                             ),
-                            '.'
-                        )
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'div',
-                        { className: 'col-md-12', id: 'donations' },
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            'h3',
-                            null,
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fa fa-money', 'aria-hidden': 'true' }),
-                            ' Donations'
-                        ),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('hr', null),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            'p',
-                            null,
-                            'You do not need to make a donation. All donation are really appreciated and will support the stream itself. To make a donation ',
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                'a',
-                                { href: 'https://streamlabs.com/noxgamingqc' },
-                                'click here'
+                                'h5',
+                                null,
+                                'A Qu\xE9becois that do some videos, and coding as an hobby. Father of 2 lil\u2019 boys. Speak French & English. Creator of NoxBOT.'
                             ),
-                            '.'
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null)
                         )
-                    ),
+                    )
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'col-md-6', id: 'aboutme' },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'div',
-                        { className: 'col-md-12', id: 'communityRules' },
+                        { className: 'panel panel-primary' },
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            'h3',
-                            null,
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fa fa-users', 'aria-hidden': 'true' }),
-                            ' Community Rules'
-                        ),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('hr', null),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            'p',
-                            null,
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fa fa-window-close', 'aria-hidden': 'true', style: { color: '#F04947' } }),
-                            ' No offensive messages or nicknames - Anything that a reasonable person might find offensive.'
-                        ),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            'p',
-                            null,
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fa fa-window-close', 'aria-hidden': 'true', style: { color: '#F04947' } }),
-                            ' No spam - This includes but is not limited too, loud/obnoxious noises in voice chat, @mention spam, character spam, image spam, and message spam.'
-                        ),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            'p',
-                            null,
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fa fa-window-close', 'aria-hidden': 'true', style: { color: '#F04947' } }),
-                            ' No gorey, sexual, or scary content - Screamer links, porn, nudity, death.'
-                        ),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            'p',
-                            null,
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fa fa-window-close', 'aria-hidden': 'true', style: { color: '#F04947' } }),
-                            ' No harassment - Including sexual harassment or encouraging of harassment.'
-                        ),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            'p',
-                            null,
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fa fa-window-close', 'aria-hidden': 'true', style: { color: '#F04947' } }),
-                            ' No advertisements - This includes but is not limited too, Twitch, YouTube, Mixer and Discord servers.'
-                        ),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            'p',
-                            null,
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fa fa-check-square', 'aria-hidden': 'true', style: { color: '#43B581' } }),
-                            ' Swearing is allowed so long as it isn\'t directed at another member.'
-                        ),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            'p',
-                            null,
-                            'There may be situations not covered by the rules or times where the rule may not fit the situation. If this happens the moderators are trusted to handle the situation appropriately. If you have a complaint about a staff member you may submit the complaint to NoxGamingQC'
+                            'div',
+                            { className: 'panel-body' },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'h3',
+                                null,
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fa fa-user', 'aria-hidden': 'true' }),
+                                ' About me'
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('hr', null),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'p',
+                                null,
+                                'My name is Jimmy. I\'m from Qu\xE9bec, Canada. I like music, programming, video games and movies. I like to meet new people if you see me online don\'t hesitate to dm me \uD83D\uDE09. Best way to contact me is trought discord ',
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'a',
+                                    { href: 'https://discord.gg/KPd4cC4' },
+                                    '(You can join my discord server by clicking here)'
+                                ),
+                                '.'
+                            )
                         )
-                    ),
+                    )
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'col-md-6', id: 'donations' },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'div',
-                        { className: 'col-md-12 text-center', id: 'twitch' },
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('hr', null),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'col-md-3', id: 'empty0' }),
+                        { className: 'panel panel-primary' },
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             'div',
-                            { className: 'col-md-2', id: 'twitch' },
+                            { className: 'panel-body' },
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                'a',
-                                { className: 'btn btn-twitch btn-lg', href: 'https://www.twitch.tv/noxgamingqc' },
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fa fa-twitch fa-5x', 'aria-hidden': 'true' })
+                                'h3',
+                                null,
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fa fa-money', 'aria-hidden': 'true' }),
+                                ' Donations'
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('hr', null),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'p',
+                                null,
+                                'You do not need to make a donation. All donation are really appreciated and will support the stream itself. To make a donation ',
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'a',
+                                    { href: 'https://streamlabs.com/noxgamingqc' },
+                                    'click here'
+                                ),
+                                '.'
                             )
-                        ),
+                        )
+                    )
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'col-md-12', id: 'communityRules' },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'div',
+                        { className: 'panel panel-primary' },
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             'div',
-                            { className: 'col-md-2', id: 'youtube' },
+                            { className: 'panel-body' },
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                'a',
-                                { className: 'btn btn-youtube btn-lg', href: 'https://www.youtube.com/channel/UCytKDUapog2tnJD4XenehiQ' },
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fa fa-youtube-play fa-5x', 'aria-hidden': 'true' })
+                                'h3',
+                                null,
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fa fa-users', 'aria-hidden': 'true' }),
+                                ' Community Rules'
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('hr', null),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'p',
+                                null,
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fa fa-window-close', 'aria-hidden': 'true', style: { color: '#F04947' } }),
+                                ' No offensive messages or nicknames - Anything that a reasonable person might find offensive.'
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'p',
+                                null,
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fa fa-window-close', 'aria-hidden': 'true', style: { color: '#F04947' } }),
+                                ' No spam - This includes but is not limited too, loud/obnoxious noises in voice chat, @mention spam, character spam, image spam, and message spam.'
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'p',
+                                null,
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fa fa-window-close', 'aria-hidden': 'true', style: { color: '#F04947' } }),
+                                ' No gorey, sexual, or scary content - Screamer links, porn, nudity, death.'
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'p',
+                                null,
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fa fa-window-close', 'aria-hidden': 'true', style: { color: '#F04947' } }),
+                                ' No harassment - Including sexual harassment or encouraging of harassment.'
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'p',
+                                null,
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fa fa-window-close', 'aria-hidden': 'true', style: { color: '#F04947' } }),
+                                ' No advertisements - This includes but is not limited too, Twitch, YouTube, Mixer and Discord servers.'
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'p',
+                                null,
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fa fa-check-square', 'aria-hidden': 'true', style: { color: '#43B581' } }),
+                                ' Swearing is allowed so long as it isn\'t directed at another member.'
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'p',
+                                null,
+                                'There may be situations not covered by the rules or times where the rule may not fit the situation. If this happens the moderators are trusted to handle the situation appropriately. If you have a complaint about a staff member you may submit the complaint to NoxGamingQC'
                             )
-                        ),
+                        )
+                    )
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'col-md-12 text-center', id: 'social' },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'div',
+                        { className: 'panel panel-primary' },
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             'div',
-                            { className: 'col-md-2', id: 'twitter' },
+                            { className: 'panel-body' },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'col-md-3', id: 'empty0' }),
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                'a',
-                                { className: 'btn btn-twitter btn-lg', href: 'https://www.twitter.com/@noxgamingqc' },
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fa fa-twitter fa-5x', 'aria-hidden': 'true' })
-                            )
-                        ),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'col-md-3', id: 'empty1' })
+                                'div',
+                                { className: 'col-md-2', id: 'twitch' },
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'a',
+                                    { className: 'btn btn-twitch btn-lg', href: 'https://www.twitch.tv/noxgamingqc' },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fa fa-twitch fa-5x', 'aria-hidden': 'true' })
+                                )
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'div',
+                                { className: 'col-md-2', id: 'youtube' },
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'a',
+                                    { className: 'btn btn-youtube btn-lg', href: 'https://www.youtube.com/channel/UCytKDUapog2tnJD4XenehiQ' },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fa fa-youtube-play fa-5x', 'aria-hidden': 'true' })
+                                )
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'div',
+                                { className: 'col-md-2', id: 'twitter' },
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'a',
+                                    { className: 'btn btn-twitter btn-lg', href: 'https://www.twitter.com/@noxgamingqc' },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fa fa-twitter fa-5x', 'aria-hidden': 'true' })
+                                )
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'col-md-3', id: 'empty1' })
+                        )
                     )
                 )
             );
