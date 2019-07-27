@@ -58,8 +58,7 @@ export default class NavBar extends Component {
                         <ul className="nav navbar-nav">
                             <li className="nav-home"><a href="/home"><i className="fa fa-home" aria-hidden="true"></i> Welcome <span className="sr-only">current</span></a></li>
                             <li className="nav-stream"><a href="/stream"><i className="fa fa-video-camera" aria-hidden="true"></i> Stream</a></li>
-                            <li className="nav-partnership"><a href="/partnership"><i className="fa fa-handshake-o" aria-hidden="true"></i> Affiliates|Partners</a></li>
-                            <li className="nav-positivity_stream_team"><a href="/positivity_stream_team"><i className="fa fa-heart" aria-hidden="true"></i> Positivity Stream Team</a></li>
+                            <li className="nav-projects"><a href="/projects"><i className="fa fa-heart" aria-hidden="true"></i> Projects</a></li>
                             <li className="nav-noxbot"><a href="/noxbot"><i className="fa fa-user" aria-hidden="true"></i> NoxBOT</a></li>
                             <li className="nav-contact"><a href="/contact"><i className="fa fa-address-book " aria-hidden="true"></i> Contact me</a></li>
                         </ul>

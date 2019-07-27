@@ -19,12 +19,8 @@ Route::get('/home', function () {
     return view('welcome');
 });
 
-Route::get('/partnership', function () {
-    return view('partnership');
-});
-
-Route::get('/positivity_stream_team', function () {
-    return view('positivity_stream_team');
+Route::get('/projects', function () {
+    return view('projects');
 });
 
 Route::get('/stream', function () {

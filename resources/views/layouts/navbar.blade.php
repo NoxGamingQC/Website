@@ -15,8 +15,7 @@
             <ul class="nav navbar-nav">
                 <li class="nav-home"><a href="/home"><i class="fa fa-home" aria-hidden="true"></i> Welcome <span class="sr-only">current</span></a></li>
                 <li class="nav-stream"><a href="/stream"><i class="fa fa-video-camera" aria-hidden="true"></i> Stream</a></li>
-                <li class="nav-partnership"><a href="/partnership"><i class="fa fa-handshake-o" aria-hidden="true"></i> Affiliates|Partners</a></li>
-                <li class="nav-positivity_stream_team"><a href="/positivity_stream_team"><i class="fa fa-heart" aria-hidden="true"></i> Positivity Stream Team</a></li>
+                <li class="nav-projects"><a href="/projects"><i class="fa fa-heart" aria-hidden="true"></i> Projects</a></li>
                 <li class="nav-noxbot"><a href="/noxbot"><i class="fa fa-user" aria-hidden="true"></i> NoxBOT</a></li>
                 <li class="nav-contact"><a href="/contact"><i class="fa fa-address-book " aria-hidden="true"></i> Contact me</a></li>
             </ul>

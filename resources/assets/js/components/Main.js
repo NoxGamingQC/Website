@@ -3,8 +3,7 @@ import ReactDOM from 'react-dom';
 import Welcome from './Welcome';
 import NavBar from './NavBar';
 import Footer from './Footer';
-import Partnership from './Partnership';
-import PositivityStreamTeam from './PositivityStreamTeam';
+import Projects from './projects';
 import Stream from './Stream';
 import NoxBot from './NoxBot';
 import NoxBotDashboard from './NoxBotDashboard';
@@ -19,8 +18,7 @@ class Main extends Component {
             location: '',
             route: {
                 'home': <Welcome />,
-                'partnership': <Partnership />,
-                'positivity_stream_team': <PositivityStreamTeam />,
+                'projects': <Projects />,
                 'stream': <Stream />,
                 'noxbot': <NoxBot />,
                 'noxbot/dashboard': <NoxBotDashboard />,
