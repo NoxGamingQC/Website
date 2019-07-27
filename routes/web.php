@@ -11,6 +11,9 @@
 |
 */
 
+Route::get('en', ['as' => 'locale.english', 'uses' => 'LocaleController@english']);
+Route::get('fr', ['as' => 'locale.french', 'uses' => 'LocaleController@french']);
+
 Route::get('/', function () {
      return redirect('home');
 });
