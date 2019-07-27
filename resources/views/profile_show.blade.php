@@ -68,6 +68,7 @@
                         @if($gender)<li><b>Gender:</b> {{$gender}}</li>@endif
                         @if($birthdate)<li><b>Birthdate:</b> {{$birthdate}}</li>@endif
                         @if($age)<li><b>Age:</b> {{$age}}</li>@endif
+                        <li><b>Country:</b> {{$country}}</li>
                     </ul>
                 </div>
                 <div class="col-md-6">

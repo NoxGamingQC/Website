@@ -42,6 +42,7 @@ class CreateUsersTable extends Migration
             $table->string('AvatarURL')->nullable(true);
             $table->string('Discriminator')->nullable(true);
             $table->string('DiscordEmail')->nullable(true);
+            $table->string('Canada')->nullable(true);
             $table->timestamps();
         });
     }
