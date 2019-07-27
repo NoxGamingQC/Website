@@ -9,7 +9,6 @@ import NoxBot from './NoxBot';
 import NoxBotDashboard from './NoxBotDashboard';
 import Commands from './Commands';
 import Contact from './Contact';
-import UserSetting from './UserSetting';
 
 class Main extends Component {
     constructor() {
@@ -24,7 +23,6 @@ class Main extends Component {
                 'noxbot/dashboard': <NoxBotDashboard />,
                 'stream/commands': <Commands />,
                 'contact': <Contact />,
-                'profile/edit': <UserSetting />
             }
         };
     }
