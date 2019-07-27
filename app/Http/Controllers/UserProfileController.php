@@ -65,6 +65,7 @@ class UserProfileController extends Controller
             "age" => $age,
             "gender" => $gender,
             "birthdate" => $birthdate,
+            "country" => $user->Country,
         ]);
     }
 
