@@ -8,11 +8,13 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\User;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Config;
 
 class UserProfileController extends Controller
 {
     public function index($id)
     {
+        dd(Config::get('app.locale'));
         $user = User::findOrFail($id);
         $firstname = $user->isFirstnameShowned ? $user->Firstname : null;
         $lastname = $user->isLastnameShowned ? $user->Lastname : null;
