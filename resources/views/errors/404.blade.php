@@ -1,16 +1,17 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
+@section('title', 'PAGE NOT FOUND')
+@section('content')
 
-        <title>NoxGamingQC - Error 404</title>
-        <link rel="icon" href="/img/Avatar.png" type="image/png">
-        <link href="{{mix('css/app.css')}}" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="/css/font-awesome.min.css">
-    </head>
-    <body>
-        <h3>ERROR 404 - PAGE NOT FOUND<h3>
-    </body>
-</html>
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-primary-red">
+            <div class="panel-body">
+                <h3>ERROR 404 - PAGE NOT FOUND</h3>
+                <hr />
+                <p>Sorry, are you lost? The page you are trying to reach doesn't exist.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+@stop
