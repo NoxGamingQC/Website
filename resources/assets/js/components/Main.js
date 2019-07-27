@@ -11,7 +11,6 @@ import NoxBotDashboard from './NoxBotDashboard';
 import Commands from './Commands';
 import Contact from './Contact';
 import UserSetting from './UserSetting';
-import Profile from './Profile';
 
 class Main extends Component {
     constructor() {
