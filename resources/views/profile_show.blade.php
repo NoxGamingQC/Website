@@ -3,11 +3,11 @@
 @section('content')
 <div class="row">
     <div class="col-md-12">
-        <div class="panel panel-primary">
+        <div class="panel panel-primary-red">
             <div class="panel-body">
                 <div class="text-center">
                     <img class="img-circle" src="{{$avatarURL}}" alt="{{$discordName}}" width="120px" style="padding: 7px 14px" />
-                    <h1>{{$username}} <small>{{$firstname}} {{$lastname}}</small></h1>
+                    <h1>{{$username}} <small style="color: #BBBBBB;">{{$firstname}} {{$lastname}}</small></h1>
                     <h3>{{$grade}}</h3>
                     @foreach ($discordBadges as $badge)
                     <img src="/img/{{$badge}}.png" alt="{{$badge}}" width="75px" style="padding: 7px 14px" />

@@ -15,3 +15,14 @@
 .panel-primary {
     border-color: #000000;
 }
+
+.panel-primary-red > .panel-body {
+    background-image: none;
+    background-color: rgb(128, 25, 25);
+    color: #FFFFFF;
+    border-color: #000000;
+}
+
+.panel-primary-red {
+    border-color: #000000;
+}

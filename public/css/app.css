@@ -9085,6 +9085,17 @@ fieldset[disabled] .btn-skype.active {
   border-color: #000000;
 }
 
+.panel-primary-red > .panel-body {
+  background-image: none;
+  background-color: #801919;
+  color: #FFFFFF;
+  border-color: #000000;
+}
+
+.panel-primary-red {
+  border-color: #000000;
+}
+
 .navbar-default {
   background-color: #222222;
   border-color: #000000;
