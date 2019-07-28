@@ -8,13 +8,11 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\User;
 use Carbon\Carbon;
-use Illuminate\Support\Facades\Config;
 
 class UserProfileController extends Controller
 {
-    public function index($id)
+    public function index($locale, $id)
     {
-        dd(Config::get('app.locale'));
         $user = User::findOrFail($id);
         $firstname = $user->isFirstnameShowned ? $user->Firstname : null;
         $lastname = $user->isLastnameShowned ? $user->Lastname : null;
@@ -23,11 +21,11 @@ class UserProfileController extends Controller
         $grade = "Member";
 
         if ($user->isAdmin) {
-            $grade = "Administrator";
+            $grade = "administrator";
         } else if($user->isModerator) {
-            $grade = "Moderator";
+            $grade = "moderator";
         } else if ($user->isDev) {
-            $grade = "Developper";
+            $grade = "developper";
         }
 
         $discordBadges = $user->Badges ? explode(';', $user->Badges) : [];
