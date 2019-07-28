@@ -7,14 +7,12 @@ export default class NavBar extends Component {
         super(props);
         this.state = {
             location: props.location,
-            authentificationHTML: ''
+            authentificationHTML: '',
+            navElements: ''
         };
     }
 
     componentDidMount() {
-        var elements = document.getElementsByClassName('nav-' + this.state.location.split('/')[0])[0];
-        elements.classList.add("active");
-
         var authentificationHTML = '';
 
         if (document.getElementById('isUserLogged').value === 'true') {
@@ -34,8 +32,37 @@ export default class NavBar extends Component {
             authentificationHTML += '<li class="nav-register"><a href="' + document.getElementById('registerRoute').value + '">Register</a></li>';
         }
 
+
+        var navElements = '';
+        if (this.state.location.split('/')[0] === 'home') {
+            navElements += ('<li className="nav-home active"> <a href="/' + document.documentElement.lang + '/home"><i className="fa fa-home" aria-hidden="true"></i> Welcome <span className="sr-only">current</span></a></li>')
+        } else {
+            navElements += ('<li className="nav-home"> <a href="/' + document.documentElement.lang + '/home"><i className="fa fa-home" aria-hidden="true"></i> Welcome <span className="sr-only">current</span></a></li>')
+        }
+        if (this.state.location.split('/')[0] === 'stream') {
+            navElements += ('<li className="nav-stream active"><a href="/' + document.documentElement.lang + '/stream"><i className="fa fa-video-camera" aria-hidden="true"></i> Stream</a></li>')
+        } else {
+            navElements += ('<li className="nav-stream"><a href="/' + document.documentElement.lang + '/stream"><i className="fa fa-video-camera" aria-hidden="true"></i> Stream</a></li>')
+        }
+        if (this.state.location.split('/')[0] === 'projects') {
+            navElements += ('<li className="nav-projects active"><a href="/' + document.documentElement.lang + '/projects"><i className="fa fa-heart" aria-hidden="true"></i> Projects</a></li>')
+        } else {
+            navElements += ('<li className="nav-projects"><a href="/' + document.documentElement.lang + '/projects"><i className="fa fa-heart" aria-hidden="true"></i> Projects</a></li>')
+        }
+        if (this.state.location.split('/')[0] === 'noxbot') {
+            navElements += ('<li className="nav-noxbot active"><a href="/' + document.documentElement.lang + '/noxbot"><i className="fa fa-user" aria-hidden="true"></i> NoxBOT</a></li>')
+        } else {
+            navElements += ('<li className="nav-noxbot"><a href="/' + document.documentElement.lang + '/noxbot"><i className="fa fa-user" aria-hidden="true"></i> NoxBOT</a></li>')
+        }
+        if (this.state.location.split('/')[0] === 'contact') {
+            navElements += ('<li className="nav-contact active"><a href="/' + document.documentElement.lang + '/contact"><i className="fa fa-address-book " aria-hidden="true"></i> Contact me</a></li>')
+        } else {
+            navElements += ('<li className="nav-contact"><a href="/' + document.documentElement.lang + '/contact"><i className="fa fa-address-book " aria-hidden="true"></i> Contact me</a></li>')
+        }
+
         this.setState({
-            authentificationHTML: authentificationHTML
+            authentificationHTML: authentificationHTML,
+            navElements: navElements
         });
     }
 
@@ -51,16 +78,11 @@ export default class NavBar extends Component {
                             <span className="icon-bar"></span>
                         </button>
                         <a className="navbar-brand" href="/home" style={{display: 'flex', alignItems: 'center'}}>
-                            <img src="/img/Avatar.png" alt="NoxRacing" width="70px" height="60px" style={{padding: '7px 14px'}} />NoxGamingQC
+                            <img src="/img/Avatar.png" alt="NoxGamingQC" width="70px" height="60px" style={{padding: '7px 14px'}} />NoxGamingQC
                         </a>
                     </div>
                     <div className="collapse navbar-collapse" id="bs-navbar-collapse">
-                        <ul className="nav navbar-nav">
-                            <li className="nav-home"><a href="/home"><i className="fa fa-home" aria-hidden="true"></i> Welcome <span className="sr-only">current</span></a></li>
-                            <li className="nav-stream"><a href="/stream"><i className="fa fa-video-camera" aria-hidden="true"></i> Stream</a></li>
-                            <li className="nav-projects"><a href="/projects"><i className="fa fa-heart" aria-hidden="true"></i> Projects</a></li>
-                            <li className="nav-noxbot"><a href="/noxbot"><i className="fa fa-user" aria-hidden="true"></i> NoxBOT</a></li>
-                            <li className="nav-contact"><a href="/contact"><i className="fa fa-address-book " aria-hidden="true"></i> Contact me</a></li>
+                        <ul className="nav navbar-nav" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(this.state.navElements) }}>
                         </ul>
                         <ul className="nav navbar-nav navbar-right" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(this.state.authentificationHTML) }}>
 

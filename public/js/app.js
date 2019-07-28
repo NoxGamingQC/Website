@@ -42398,7 +42398,7 @@ var Main = function (_Component) {
         value: function componentDidMount() {
             var locationArray = window.location.pathname.split('/');
             var actualLocation = '';
-            for (var i = 0; i < locationArray.length - 1; i++) {
+            for (var i = 1; i < locationArray.length - 1; i++) {
                 actualLocation += locationArray[i + 1] + '/';
             }
             actualLocation = actualLocation.slice(0, -1);
@@ -42406,6 +42406,9 @@ var Main = function (_Component) {
                 location: actualLocation
             });
         }
+
+        /*<NavBar location={this.state.location} />*/
+
     }, {
         key: 'render',
         value: function render() {
@@ -42413,7 +42416,6 @@ var Main = function (_Component) {
                 return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
                     { className: 'app' },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__NavBar__["a" /* default */], { location: this.state.location }),
                     this.state.route[this.state.location],
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__Footer__["a" /* default */], null)
                 );
@@ -55168,7 +55170,8 @@ var NavBar = function (_Component) {
 
         _this.state = {
             location: props.location,
-            authentificationHTML: ''
+            authentificationHTML: '',
+            navElements: ''
         };
         return _this;
     }
@@ -55176,9 +55179,6 @@ var NavBar = function (_Component) {
     _createClass(NavBar, [{
         key: 'componentDidMount',
         value: function componentDidMount() {
-            var elements = document.getElementsByClassName('nav-' + this.state.location.split('/')[0])[0];
-            elements.classList.add("active");
-
             var authentificationHTML = '';
 
             if (document.getElementById('isUserLogged').value === 'true') {
@@ -55198,8 +55198,36 @@ var NavBar = function (_Component) {
                 authentificationHTML += '<li class="nav-register"><a href="' + document.getElementById('registerRoute').value + '">Register</a></li>';
             }
 
+            var navElements = '';
+            if (this.state.location.split('/')[0] === 'home') {
+                navElements += '<li className="nav-home active"> <a href="/' + document.documentElement.lang + '/home"><i className="fa fa-home" aria-hidden="true"></i> Welcome <span className="sr-only">current</span></a></li>';
+            } else {
+                navElements += '<li className="nav-home"> <a href="/' + document.documentElement.lang + '/home"><i className="fa fa-home" aria-hidden="true"></i> Welcome <span className="sr-only">current</span></a></li>';
+            }
+            if (this.state.location.split('/')[0] === 'stream') {
+                navElements += '<li className="nav-stream active"><a href="/' + document.documentElement.lang + '/stream"><i className="fa fa-video-camera" aria-hidden="true"></i> Stream</a></li>';
+            } else {
+                navElements += '<li className="nav-stream"><a href="/' + document.documentElement.lang + '/stream"><i className="fa fa-video-camera" aria-hidden="true"></i> Stream</a></li>';
+            }
+            if (this.state.location.split('/')[0] === 'projects') {
+                navElements += '<li className="nav-projects active"><a href="/' + document.documentElement.lang + '/projects"><i className="fa fa-heart" aria-hidden="true"></i> Projects</a></li>';
+            } else {
+                navElements += '<li className="nav-projects"><a href="/' + document.documentElement.lang + '/projects"><i className="fa fa-heart" aria-hidden="true"></i> Projects</a></li>';
+            }
+            if (this.state.location.split('/')[0] === 'noxbot') {
+                navElements += '<li className="nav-noxbot active"><a href="/' + document.documentElement.lang + '/noxbot"><i className="fa fa-user" aria-hidden="true"></i> NoxBOT</a></li>';
+            } else {
+                navElements += '<li className="nav-noxbot"><a href="/' + document.documentElement.lang + '/noxbot"><i className="fa fa-user" aria-hidden="true"></i> NoxBOT</a></li>';
+            }
+            if (this.state.location.split('/')[0] === 'contact') {
+                navElements += '<li className="nav-contact active"><a href="/' + document.documentElement.lang + '/contact"><i className="fa fa-address-book " aria-hidden="true"></i> Contact me</a></li>';
+            } else {
+                navElements += '<li className="nav-contact"><a href="/' + document.documentElement.lang + '/contact"><i className="fa fa-address-book " aria-hidden="true"></i> Contact me</a></li>';
+            }
+
             this.setState({
-                authentificationHTML: authentificationHTML
+                authentificationHTML: authentificationHTML,
+                navElements: navElements
             });
         }
     }, {
@@ -55229,72 +55257,14 @@ var NavBar = function (_Component) {
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             'a',
                             { className: 'navbar-brand', href: '/home', style: { display: 'flex', alignItems: 'center' } },
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: '/img/Avatar.png', alt: 'NoxRacing', width: '70px', height: '60px', style: { padding: '7px 14px' } }),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: '/img/Avatar.png', alt: 'NoxGamingQC', width: '70px', height: '60px', style: { padding: '7px 14px' } }),
                             'NoxGamingQC'
                         )
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'div',
                         { className: 'collapse navbar-collapse', id: 'bs-navbar-collapse' },
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            'ul',
-                            { className: 'nav navbar-nav' },
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                'li',
-                                { className: 'nav-home' },
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    'a',
-                                    { href: '/home' },
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fa fa-home', 'aria-hidden': 'true' }),
-                                    ' Welcome ',
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        'span',
-                                        { className: 'sr-only' },
-                                        'current'
-                                    )
-                                )
-                            ),
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                'li',
-                                { className: 'nav-stream' },
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    'a',
-                                    { href: '/stream' },
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fa fa-video-camera', 'aria-hidden': 'true' }),
-                                    ' Stream'
-                                )
-                            ),
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                'li',
-                                { className: 'nav-projects' },
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    'a',
-                                    { href: '/projects' },
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fa fa-heart', 'aria-hidden': 'true' }),
-                                    ' Projects'
-                                )
-                            ),
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                'li',
-                                { className: 'nav-noxbot' },
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    'a',
-                                    { href: '/noxbot' },
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fa fa-user', 'aria-hidden': 'true' }),
-                                    ' NoxBOT'
-                                )
-                            ),
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                'li',
-                                { className: 'nav-contact' },
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    'a',
-                                    { href: '/contact' },
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fa fa-address-book ', 'aria-hidden': 'true' }),
-                                    ' Contact me'
-                                )
-                            )
-                        ),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('ul', { className: 'nav navbar-nav', dangerouslySetInnerHTML: { __html: __WEBPACK_IMPORTED_MODULE_2_dompurify___default.a.sanitize(this.state.navElements) } }),
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('ul', { className: 'nav navbar-nav navbar-right', dangerouslySetInnerHTML: { __html: __WEBPACK_IMPORTED_MODULE_2_dompurify___default.a.sanitize(this.state.authentificationHTML) } })
                     )
                 )
@@ -55305,7 +55275,7 @@ var NavBar = function (_Component) {
     return NavBar;
 }(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
 
-/* harmony default export */ __webpack_exports__["a"] = (NavBar);
+/* unused harmony default export */ var _unused_webpack_default_export = (NavBar);
 
 /***/ }),
 /* 221 */

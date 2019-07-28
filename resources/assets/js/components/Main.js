@@ -30,7 +30,7 @@ class Main extends Component {
     componentDidMount() {
         var locationArray = window.location.pathname.split('/');
         var actualLocation = '';
-        for (var i = 0; i < locationArray.length - 1; i++) {
+        for (var i = 1; i < locationArray.length - 1; i++) {
             actualLocation += locationArray[i + 1] + '/';
         }
         actualLocation = actualLocation.slice(0, -1);
@@ -39,11 +39,11 @@ class Main extends Component {
         });
     }
 
+    /*<NavBar location={this.state.location} />*/
     render() {
         if (document.getElementById('root') && this.state.location) {
             return (
                 <div className="app">
-                    <NavBar location={this.state.location} />
                     {this.state.route[this.state.location]}
                     <Footer />
                 </div>
