@@ -14,7 +14,7 @@ class NoxBotDashboardController extends Controller
     {
         $datas = DB::table('servers_config')->get();
         $serverLists = [];
-        foreach($datas as $key => $data) {
+        foreach ($datas as $key => $data) {
             array_push($serverLists, $data->ServerID);
         }
         return view('noxbot_dashboard', [
@@ -22,10 +22,11 @@ class NoxBotDashboardController extends Controller
         ]);
     }
 
-    public function linkDiscord(Request $request) {
+    public function linkDiscord(Request $request)
+    {
         $user = User::findOrFail(Auth::user()->id);
 
-        if(!!$user) {
+        if (!!$user) {
             $user->DiscordID = $request->discordID;
             $user->DiscordName = $request->discordName;
             $user->isVerified = $request->discordIsUserVerified;
@@ -43,7 +44,8 @@ class NoxBotDashboardController extends Controller
         }
     }
 
-    public function saveServersLists(Request $request) {
+    public function saveServersLists(Request $request)
+    {
 
     }
 }
