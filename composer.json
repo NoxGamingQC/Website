@@ -1,8 +1,8 @@
 {
-    "name": "laravel/laravel",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
-    "license": "MIT",
+    "name": "NoxGamingQC's Website",
+    "description": "Nox's website.",
+    "keywords": ["NoxGamingQC", "Website"],
+    "license": "Apache License 2.0",
     "type": "project",
     "require": {
         "php": ">=7.0.0",
