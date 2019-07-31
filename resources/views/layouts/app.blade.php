@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     @if(env('APP_ENV', 'developement'))
-    <title>Dev - {{env('APP_NAME')}} - @yield('title')</title>
+    <title>{{env('APP_ENV') == 'developement' ? 'Dev - ' : ''}}{{env('APP_NAME')}} - @yield('title')</title>
     @else
     <title>{{env('APP_NAME')}} - @yield('title')</title>
     @endif
