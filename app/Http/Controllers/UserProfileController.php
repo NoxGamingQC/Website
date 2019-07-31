@@ -22,21 +22,21 @@ class UserProfileController extends Controller
 
         if ($user->isAdmin) {
             $grade = "administrator";
-        } else if($user->isModerator) {
+        } elseif ($user->isModerator) {
             $grade = "moderator";
-        } else if ($user->isDev) {
+        } elseif ($user->isDev) {
             $grade = "developper";
         }
 
         $discordBadges = $user->Badges ? explode(';', $user->Badges) : [];
 
-        if(!!$user->PremiumType) {
+        if (!!$user->PremiumType) {
             array_push($discordBadges, 'Discord Nitro');
         }
 
-        if(!!$user->PremiumType && $user->PremiumType == 1) {
+        if (!!$user->PremiumType && $user->PremiumType == 1) {
             $premiumType = 'Discord Nitro Classic';
-        } else if(!!$user->PremiumType && $user->PremiumType == 2) {
+        } elseif (!!$user->PremiumType && $user->PremiumType == 2) {
             $premiumType = 'Discord Nitro';
         } else {
             $premiumType = 'N/A';
