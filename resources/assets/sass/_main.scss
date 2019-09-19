@@ -1,6 +1,6 @@
 html, body {
-    background-color: #222222;
-    color: #FFFFFF;
+    background-color: $background-color;
+    color: $text-color;
     @media (min-width: 768px) {
         padding: 2%;
     }
@@ -11,9 +11,9 @@ html, body {
 }
 
 a:link, a:visited {
-    color: #C22222;
+    color: $brand-primary;
 }
 
 a:hover, a:active {
-    color: #F22222;
+    color: $brand-primary;
 }

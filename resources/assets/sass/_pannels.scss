@@ -1,28 +1,28 @@
 .panel-primary > .panel-heading {
     background-image: none;
-    background-color: #C22222;
-    color: #FFFFFF;
-    border-color: #000000;
+    background-color: $brand-primary;
+    color: $text-color;
+    border-color: $laravel-border-color;
 }
 
 .panel-primary > .panel-body {
     background-image: none;
-    background-color: #222222;
-    color: #FFFFFF;
-    border-color: #000000;
+    background-color: $background-color;
+    color: $text-color;
+    border-color: $laravel-border-color;
 }
 
 .panel-primary {
-    border-color: #000000;
+    border-color: $laravel-border-color;
 }
 
 .panel-primary-red > .panel-body {
     background-image: none;
-    background-color: rgb(128, 25, 25);
-    color: #FFFFFF;
-    border-color: #000000;
+    background-color: $brand-primary;
+    color: $text-color;
+    border-color: $laravel-border-color;
 }
 
 .panel-primary-red {
-    border-color: #000000;
+    border-color: $laravel-border-color;
 }

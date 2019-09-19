@@ -54,6 +54,11 @@ Route::group(
             return view('noxbot_dashboard');
         });
 
+
+        Route::get('/games', function () {
+            return view('games');
+        });
+
         Route::get('/noxbot/dashboard', 'NoxBotDashboardController@index');
 
 
