@@ -1,47 +1,47 @@
-$bgDefault      : #222222;
-$bgHighlight    : #c22222;
-$borderDefault  : #000000;
-$colDefault     : #ffffff;
-$colHighlight   : #ffffff;
-$dropDown       : true;
+$dropdown: true;
 
 .navbar-default {
-    background-color: $bgDefault;
-    border-color: $borderDefault;
+    background-color: $background-color;
+    border-color: $laravel-border-color;
     @media (min-width: 768px) {
+        border-top-color: transparent !important;
         border-right-color: transparent !important;
         border-left-color: transparent !important;
     }
     .navbar-brand {
-        color: $colDefault;
+        color: $text-color;
+        font-size: 150%;
         &:hover, &:focus {
-            color: $colHighlight;
+            color: $text-highlight;
         }
     }
     .navbar-text {
-        color: $colDefault;
+        color: $text-color;
     }
     .navbar-nav {
         > li {
+            margin-right: 5px;
             > a {
-                color: $colDefault;
+                color: $text-color;
+                font-size: 115%;
                 &:hover,  &:focus {
-                    color: $colHighlight;
+                    color: $text-color;
+                    background-color: $brand-primary;
                 }
             }
-            @if $dropDown {
+            @if $dropdown {
                 > .dropdown-menu {
-                    background-color: $bgDefault;
+                    background-color: $background-color;
                     > li {
                         > a {
-                            color: $colDefault;
+                            color: $text-color;
                             &:hover,  &:focus {
-                                color: $colHighlight;
-                                background-color: $bgHighlight;
+                                color: $text-color;
+                                border-color: $brand-primary;
                             }
                         }
                         &.divider {
-                        background-color: $bgHighlight;
+                        background-color: $brand-primary;
                     }
                 }
             }
@@ -49,46 +49,46 @@ $dropDown       : true;
     }
     > .active {
         > a, > a:hover, > a:focus {
-            color: $colHighlight;
-            background-color: $bgHighlight;
+            color: $text-highlight;
+            background-color: $brand-primary;
         }
     }
     > .open {
       > a, > a:hover, > a:focus {
-        color: $colHighlight;
-        background-color: $bgHighlight; }
+        color: $text-highlight;
+        background-color: $brand-primary; }
     }
 }
 .navbar-toggle {
-    border-color: $borderDefault;
+    border-color: $laravel-border-color;
     &:hover, &:focus {
-        background-color: $bgHighlight;
+        background-color: $brand-primary;
     }
     .icon-bar {
-        background-color: $colDefault; }
+        background-color: $text-color; }
     }
     .navbar-collapse, .navbar-form {
-        border-color: $borderDefault;
+        border-color: $laravel-border-color;
     }
   .navbar-link {
-    color: $colDefault;
+    color: $text-color;
     &:hover {
-      color: $colHighlight; }
+      color: $text-highlight; }
     }
 }
 
 @media (max-width: 767px) {
     .navbar-default .navbar-nav .open .dropdown-menu {
         > li > a {
-            color: $colDefault;
+            color: $text-color;
             &:hover, &:focus {
-                color: $colHighlight;
+                color: $text-highlight;
             }
         }
         > .active {
             > a, > a:hover, > a:focus {
-                color: $colHighlight;
-                background-color: $bgHighlight;
+                color: $text-highlight;
+                background-color: $brand-primary;
             }
         }
     }

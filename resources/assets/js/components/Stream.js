@@ -81,10 +81,11 @@ export default class Stream extends Component {
                             <div className="col-md-6" id="console">
                                 <h3><i className="fa fa-gamepad" aria-hidden="true"></i> Video games console</h3>
                                 <hr />
+                                <p>🕹 Nintendo Entertainement System (NES)</p>
+                                <p>🕹 Nintendo Wii</p>
                                 <p>🕹 Playstation 1</p>
                                 <p>🕹 Playstation 4</p>
-                                <p>🕹 Xbox</p>
-                                <p>🕹 Wii</p>
+                                <p>🕹 Xbox (1<em>st</em> Generation)</p>
                             </div>
                             <div className="col-md-12" id="accessory">
                                 <h3><i className="fa fa-headphones" aria-hidden="true"></i> Accessories</h3>
