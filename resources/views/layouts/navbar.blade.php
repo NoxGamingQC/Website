@@ -18,6 +18,22 @@
                 <li class="nav-projects"><a href="/{{app()->getLocale()}}/projects"><i class="fa fa-heart" aria-hidden="true"></i> {{ trans('generic.projects') }}</a></li>
                 <li class="nav-noxbot"><a href="/{{app()->getLocale()}}/noxbot"><i class="fa fa-user" aria-hidden="true"></i> NoxBOT</a></li>
                 <li class="nav-contact"><a href="/{{app()->getLocale()}}/contact"><i class="fa fa-address-book " aria-hidden="true"></i> {{trans('generic.contact_us')}}</a></li>
+                @auth
+                    @if(Auth::user()->isDev || Auth::user()->isAdmin || Auth::user()->isModerator)
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+                                Management <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="/{{app()->getLocale()}}/management/modules">Modules</a>
+                                    <a href="/{{app()->getLocale()}}/management/users">Users</a>
+                                    <a href="/{{app()->getLocale()}}/management/activities">Bot Activities</a>
+                                </li>
+                            </ul>
+                        </li>
+                    @endif
+                @endauth
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 @auth

@@ -28,4 +28,19 @@ class User extends Authenticatable
     ];
 
     protected $table = 'users';
+
+    public function isDev()
+    {
+        $this->isDev;
+    }
+
+    public function isModerator()
+    {
+        $this->isModerator;
+    }
+
+    public function isAdmin()
+    {
+        $this->isAdmin;
+    }
 }
