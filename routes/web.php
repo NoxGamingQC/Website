@@ -73,6 +73,7 @@ Route::group(
         Route::get('/noxbot/dashboard/{serverID}', 'NoxBotDashboardController@serverDashboard');
 
         Auth::routes();
+        Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
         Route::post('/noxbot/data/user/store', 'NoxBotDashboardController@linkDiscord');
     }

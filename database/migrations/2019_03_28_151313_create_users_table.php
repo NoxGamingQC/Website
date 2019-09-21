@@ -31,6 +31,7 @@ class CreateUsersTable extends Migration
             $table->boolean('isModerator')->nullable(false)->default(false);
             $table->boolean('isDev')->nullable(false)->default(false);
             $table->boolean('isPremium')->nullable(false)->default(false);
+            $table->boolean('isBOT')->nullable(false)->default(false);
             $table->string('remember_token')->nullable(true);
             $table->string('DiscordID')->nullable(true);
             $table->string('DiscordName')->nullable(true);
