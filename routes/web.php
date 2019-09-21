@@ -24,7 +24,6 @@ Route::group(
     'where' => ['locale' => '[a-zA-Z]{2}'],
     'middleware' => 'setlocale'],
     function () {
-
         Route::get('/', function () {
             return redirect('home');
         });
@@ -76,5 +75,9 @@ Route::group(
         Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
         Route::post('/noxbot/data/user/store', 'NoxBotDashboardController@linkDiscord');
+
+        Route::get('/management/modules', 'ManagementController@getModules');
+        Route::get('/management/users', 'ManagementController@getUsers');
+        Route::get('/management/bot_activities', 'ManagementController@getBotActivities');
     }
 );
