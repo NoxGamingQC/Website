@@ -78,6 +78,6 @@ Route::group(
 
         Route::get('/management/modules', 'ManagementController@getModules');
         Route::get('/management/users', 'ManagementController@getUsers');
-        Route::get('/management/bot_activities', 'ManagementController@getBotActivities');
+        Route::get('/management/activities', 'ManagementController@getBotActivities');
     }
 );

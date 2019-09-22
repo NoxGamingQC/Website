@@ -18,6 +18,7 @@ class CreateModulesListsTable extends Migration
             $table->string('Slug')->nullable(false);
             $table->boolean('Maintenance')->nullable(false)->default(false);
             $table->boolean('isActiveDefault')->nullable(false)->default(true);
+            $table->boolean('ModuleIcon')->nullable(true);
             $table->timestamps();
         });
     }
