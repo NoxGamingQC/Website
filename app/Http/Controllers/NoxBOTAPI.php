@@ -17,9 +17,7 @@ class NoxBOTAPI extends Controller
 
         $activities = [];
         foreach (BotActivities::orderBy('ID')->get() as $key => $activity) {
-            array_push($activities, [
-                'name' => str_replace('help |', ' ', $activity->Activity),
-            ]);
+            array_push($activities, $activity->Activity);
         }
         return response()->json($activities);
     }
