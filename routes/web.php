@@ -18,6 +18,8 @@ Route::get('/home', function () {
     return redirect(app()->getLocale() . '/home');
 });
 
+Route::get('/noxbot/get_data/bot_activities', 'NoxBOTAPI@getBotActivities');
+
 Route::group(
     [
     'prefix' => '{locale}',

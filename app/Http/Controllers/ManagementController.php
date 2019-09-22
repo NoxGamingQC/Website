@@ -41,6 +41,7 @@ class ManagementController extends Controller
                     if ($user->isDev) {
                         $grade = 'developper';
                     }
+
                     if ($user->isModerator) {
                         $grade = 'moderator';
                     }
@@ -48,6 +49,7 @@ class ManagementController extends Controller
                     if ($user->isAdmin) {
                         $grade = 'administrator';
                     }
+                    
                     array_push($users, [
                         'username' => $user->name,
                         'avatarURL' => $user->avatarURL,
