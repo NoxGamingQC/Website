@@ -1,18 +1,16 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\NoxBOT;
 
 use Auth;
 use DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\User;
-use App\Modules;
 use App\BotActivities;
 
-class NoxBOTAPI extends Controller
+class BotActivitiesController extends Controller
 {
-    public function getBotActivities()
+    public function getActivities()
     {
 
         $activities = [];

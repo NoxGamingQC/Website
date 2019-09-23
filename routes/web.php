@@ -18,7 +18,10 @@ Route::get('/home', function () {
     return redirect(app()->getLocale() . '/home');
 });
 
-Route::get('/noxbot/get_data/bot_activities', 'NoxBOTAPI@getBotActivities');
+Route::get('/noxbot/data/json/activities', 'NoxBOT\BotActivitiesController@getActivities');
+Route::get('/noxbot/data/json/modules', 'NoxBOT\BotModulesController@getModules');
+Route::get('/noxbot/data/json/roles_reactions', 'NoxBOT\BotRolesReactionsController@getRolesReactions');
+Route::get('/noxbot/data/json/twitch_lives', 'NoxBOT\BotTwitchLivesController@getTwitchLives');
 
 Route::group(
     [
