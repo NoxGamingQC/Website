@@ -13,89 +13,77 @@ class ModulesListsTableSeeder extends Seeder
     {
         DB::table('modules_lists')->insert([
             [
-                'Slug' => 'music',
-                'isActiveDefault' => true
+                'Slug' => 'Music',
+                'isActiveDefault' => true,
+                'Maintenance' => false,
+                'Name' => 'Music',
             ],
             [
-                'Slug' => 'help',
-                'isActiveDefault' => true
+                'Slug' => 'Bot',
+                'isActiveDefault' => true,
+                'Maintenance' => false,
+                'Name' => 'Bot Commands',
             ],
             [
-                'Slug' => 'user_info',
-                'isActiveDefault' => true
+                'Slug' => 'Info',
+                'isActiveDefault' => true,
+                'Maintenance' => false,
+                'Name' => 'Info',
             ],
             [
-                'Slug' => 'server_info',
-                'isActiveDefault' => true
+                'Slug' => 'Pokemon',
+                'isActiveDefault' => true,
+                'Maintenance' => false,
+                'Name' => 'Pokémon',
             ],
             [
-                'Slug' => 'ping',
-                'isActiveDefault' => true
+                'Slug' => 'Warframe',
+                'isActiveDefault' => true,
+                'Maintenance' => false,
+                'Name' => 'Warframe',
             ],
             [
-                'Slug' => 'info',
-                'isActiveDefault' => true
+                'Slug' => 'Twitch',
+                'isActiveDefault' => false,
+                'Maintenance' => false,
+                'Name' => 'Twitch',
             ],
             [
-                'Slug' => 'pokemon',
-                'isActiveDefault' => true
+                'Slug' => 'Roles',
+                'isActiveDefault' => false,
+                'Maintenance' => false,
+                'Name' => 'Roles',
             ],
             [
-                'Slug' => 'warframe',
-                'isActiveDefault' => true
+                'Slug' => 'Miscs',
+                'isActiveDefault' => false,
+                'Maintenance' => false,
+                'Name' => 'Miscs',
             ],
             [
-                'Slug' => 'warning',
-                'isActiveDefault' => false
+                'Slug' => 'Giveaways',
+                'isActiveDefault' => true,
+                'Maintenance' => false,
+                'Name' => 'Giveaways',
             ],
             [
-                'Slug' => 'lmgtfy',
-                'isActiveDefault' => true
+                'Slug' => 'Links',
+                'isActiveDefault' => false,
+                'Maintenance' => false,
+                'Name' => 'Links',
             ],
             [
-                'Slug' => 'timeout',
-                'isActiveDefault' => false
+                'Slug' => 'Management',
+                'isActiveDefault' => true,
+                'Maintenance' => false,
+                'Name' => 'Management',
             ],
             [
-                'Slug' => 'twitch_commands',
-                'isActiveDefault' => false
+                'Slug' => 'Ranking',
+                'isActiveDefault' => true,
+                'Maintenance' => false,
+                'Name' => 'Ranking',
             ],
-            [
-                'Slug' => 'roles',
-                'isActiveDefault' => false
-            ],
-            [
-                'Slug' => 'miscs',
-                'isActiveDefault' => false
-            ],
-            [
-                'Slug' => 'giveaway',
-                'isActiveDefault' => true
-            ],
-            [
-                'Slug' => 'invite',
-                'isActiveDefault' => true
-            ],
-            [
-                'Slug' => 'links',
-                'isActiveDefault' => false
-            ],
-            [
-                'Slug' => 'avatar',
-                'isActiveDefault' => true
-            ],
-            [
-                'Slug' => 'commands',
-                'isActiveDefault' => true
-            ],
-            [
-                'Slug' => 'subs_perks',
-                'isActiveDefault' => true
-            ],
-            [
-                'Slug' => 'reaction_roles',
-                'isActiveDefault' => true
-            ]
         ]);
     }
 }
