@@ -35,7 +35,8 @@ class BotModulesController extends Controller
             array_push($subModuleList, [
                 'slug' => $subModule->Slug,
                 'name' => $subModule->Name,
-                'module'=> $module->Name
+                'module'=> $module->Name,
+                'isInMaintenance' => $module->Maintenance,
             ]);
         }
         return response()->json($subModuleList);
