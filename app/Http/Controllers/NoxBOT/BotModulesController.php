@@ -36,6 +36,7 @@ class BotModulesController extends Controller
                 'slug' => $subModule->Slug,
                 'name' => $subModule->Name,
                 'module'=> $module->Name,
+                'module_slug'=> $module->Slug,
                 'isInMaintenance' => $module->Maintenance,
             ]);
         }
