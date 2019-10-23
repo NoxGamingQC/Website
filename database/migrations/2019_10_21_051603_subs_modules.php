@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDiscordUsersTable extends Migration
+class SubsModules extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class CreateDiscordUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('discord_users', function (Blueprint $table) {
+        Schema::create('subs_modules', function (Blueprint $table) {
             $table->increments('ID');
-            $table->string('ServerID')->nullable(false);
-            $table->string('DiscordID')->nullable(false);
-            $table->integer('Experiences')->nullable(false)->default(false);
-            $table->boolean('isActive')->nullable(false)->default(true);
             $table->timestamps();
+            $table->string('Name')->nullable(false);
+            $table->string('Slug')->nullable(false);
+            $table->integer('ModuleID')->nullable(false);
         });
     }
 
@@ -30,6 +29,6 @@ class CreateDiscordUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('discord_users');
+        Schema::dropIfExists('subs_modules');
     }
 }

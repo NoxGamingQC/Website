@@ -7,6 +7,7 @@ use DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Modules;
+use App\SubsModules;
 
 class BotModulesController extends Controller
 {
@@ -24,5 +25,19 @@ class BotModulesController extends Controller
             ]);
         }
         return response()->json($modules);
+    }
+
+    public function getSubsModules()
+    {
+        $subModuleList = [];
+        foreach (SubsModules::orderBy('Slug')->get() as $key => $subModule) {
+            $module = Modules::where('ID', $subModule->ModuleID)->first();
+            array_push($subModuleList, [
+                'slug' => $subModule->Slug,
+                'name' => $subModule->Name,
+                'module'=> $module->Name
+            ]);
+        }
+        return response()->json($subModuleList);
     }
 }
