@@ -59,6 +59,7 @@ class Kernel extends HttpKernel
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'setlocale' => \App\Http\Middleware\SetLocale::class,
+        'Development' => \App\Http\Middleware\Development::class,
         'cors' => \Barryvdh\Cors\HandleCors::class,
     ];
 }
