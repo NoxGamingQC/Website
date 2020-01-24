@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'copyright' => "© Copyright Nox's Studios. Tous droits réservés.",
+    'copyright' => "© Copyright Jimmy Béland-Bédard. Tous droits réservés.",
     'welcome' => "Accueil",
     'streams' => "Diffusions",
     'projects' => "Projets",
