@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>NoxRacing - NoxBOT Dashboard</title>
+        <title>NoxGamingQC - NoxBOT Dashboard</title>
         <link rel="icon" href="/img/Avatar.png" type="image/png">
         <link href="{{mix('css/app.css')}}" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="/css/font-awesome.min.css">

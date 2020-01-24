@@ -43,6 +43,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li>
+                                <a href="/{{app()->getLocale()}}/profile/edit">Edit Profile</a>
                                 <a href="{{ route('logout', app()->getLocale()) }}">Logout</a>
                             </li>
                         </ul>

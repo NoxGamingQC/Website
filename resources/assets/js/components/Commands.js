@@ -12,8 +12,8 @@ export default class Commands extends Component {
                     </div>
                     <div className="col-md-12" id="content">
                         <div className="invite-buttons">
-                            <a className="btn btn-primary" href="https://discord.gg/KPd4cC4">Join Discord server</a>
-                            <a className="btn btn-primary" href="https://www.twitch.tv/noxracing">Join Twitch channel</a>
+                            <a className="btn btn-primary" href="https://discord.gg/6DGc24x">Join Discord server</a>
+                            <a className="btn btn-primary" href="https://www.twitch.tv/noxgamingqc">Join Twitch channel</a>
                         </div>
                         <div className="commands">
                             <h3>Commands Lists</h3>
