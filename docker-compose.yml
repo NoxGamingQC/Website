@@ -3,7 +3,7 @@ services:
     php:
         build:
             context: ./docker
-        container_name: noxracing_php
+        container_name: noxgamingqc_php
         ports:
             - "8000:8000"
         volumes:

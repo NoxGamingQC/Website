@@ -56,7 +56,7 @@ fieldset[disabled] .btn-default.active {
 .btn-primary.active,
 .open .dropdown-toggle.btn-primary {
     color: #FFFFFF !important;
-    background-color: #C22222;
+    background-color: $brand-primary;
     border-color: #000000;
 }
 

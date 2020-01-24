@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'copyright' => "© Copyright Nox's Studios. All right reserved.",
+    'copyright' => "© Copyright Jimmy Béland-Bédard. All right reserved.",
     'welcome' => "Welcome",
     'streams' => "Streams",
     'projects' => "Projects",
