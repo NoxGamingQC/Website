@@ -1,13 +1,13 @@
-@extends('layouts.reactLayout')
-@section('title', 'PositivityST+')
+@extends('layouts.app')
+@section('title', 'Projects')
 @section('content')
-@guest
-<input type="hidden" id="isUserLogged" value="false">
-<input type="hidden" id="loginRoute" value="{{ route('login', app()->getLocale()) }}">
-<input type="hidden" id="registerRoute" value="{{ route('register', app()->getLocale()) }}">
-@else
-<input type="hidden" id="isUserLogged" value="true">
-<input type="hidden" id="username" value="{{ Auth::user()->name }}">
-<input type="hidden" id="logoutRoute" value="{{ route('logout', app()->getLocale()) }}">
-@endguest
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12" id="title">
+            <h1>Projects</h1>
+            <hr />
+        </div>
+    </div>
+</div>
 @stop

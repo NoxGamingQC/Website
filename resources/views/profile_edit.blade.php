@@ -22,7 +22,7 @@
                         <img class="img-circle" src="{{$avatarURL}}" alt="{{$discordName}}" width="120px" style="padding: 7px 14px" />
                         <p>To change your profile picture you must change it on Discord too</p>
                     </div>
-                    <a class="btn btn-primary disabled" href="https://discordapp.com/api/oauth2/authorize?client_id=395657323135238157&redirect_uri=' + window.location.href + '/dashboard&response_type=code&scope=identify&guilds&email" disabled>Relink Discord</a>
+                    <a class="btn btn-primary" href="https://discordapp.com/api/oauth2/authorize?client_id=395657323135238157&redirect_uri={{Request::url()}}&response_type=code&scope=identify&guilds&email">Update Discord information</a>
                 </div>
             </div>
         </div>

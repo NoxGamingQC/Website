@@ -247,7 +247,7 @@ export default class NoxBotDashboard extends Component {
                     </div>
                     <div className="col-md-12" id="content">
                         <div className="invite-buttons">
-                            <a className="btn btn-primary" href="https://discord.gg/KPd4cC4">Join Discord server</a>
+                            <a className="btn btn-primary" href="https://discord.gg/6DGc24x">Join Discord server</a>
                             <a className="btn btn-primary" href="https://discordapp.com/oauth2/authorize?client_id=395657323135238157&scope=bot&permissions=1073048825">Invite NoxBOT</a>
                             <hr />
                         </div>
