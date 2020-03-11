@@ -8,7 +8,7 @@
             <div class="panel-body">
                 <h1>NoxGamingQC</h1>
                 <br />
-                <h5>A Québecois that do some videos, and coding as an hobby. Father of 2 lil’ boys. Speak French & English. Creator of NoxBOT.</h5>
+                <h5>A Québecois that do videos on Twitch & YT. Speak French & English. Creator of NoxBOT. Part of @iraeGaming & @PositivityST.</h5>
                 <br />
             </div>
         </div>
