@@ -13,13 +13,13 @@ class GamesListController extends Controller
 {
     public function index()
     {
-        $ps1 = GamesList::where('Console', 'PS1')->get();
-        $ps4 = GamesList::where('Console', 'PS4')->get();
-        $xbox = GamesList::where('Console', 'Xbox')->get();
-        $wii = GamesList::where('Console', 'Wii')->get();
-        $xbox360 = GamesList::where('Console', 'Xbox360')->get();
-        $nes = GamesList::where('Console', 'NES')->get();
-        $pc = GamesList::where('Console', 'PC')->get();
+        $ps1 = GamesList::where('Console', 'PS1')->orderBy('Game')->get();
+        $ps4 = GamesList::where('Console', 'PS4')->orderBy('Game')->get();
+        $xbox = GamesList::where('Console', 'Xbox')->orderBy('Game')->get();
+        $wii = GamesList::where('Console', 'Wii')->orderBy('Game')->get();
+        $xbox360 = GamesList::where('Console', 'Xbox360')->orderBy('Game')->get();
+        $nes = GamesList::where('Console', 'NES')->orderBy('Game')->get();
+        $pc = GamesList::where('Console', 'PC')->orderBy('Game')->get();
 
         return view('games', [
             'nes' => $nes,
