@@ -73,9 +73,7 @@ Route::group(
                 });
 
 
-                Route::get('/games', function () {
-                    return view('games');
-                });
+                Route::get('/games', 'GamesListController@index');
 
                 Route::get('/noxbot/dashboard', 'NoxBotDashboardController@index');
 
