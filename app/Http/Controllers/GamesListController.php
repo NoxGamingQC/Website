@@ -20,7 +20,7 @@ class GamesListController extends Controller
         $xbox360 = GamesList::where('Console', 'Xbox360')->orderBy('Game')->get();
         $nes = GamesList::where('Console', 'NES')->orderBy('Game')->get();
         $pc = GamesList::where('Console', 'PC')->orderBy('Game')->get();
-
+        $totalGameCount = (count($nes) + count($ps1) + count($xbox) + count($xbox360) + count($wii) + count($ps4) + count($pc));
         return view('games', [
             'nes' => $nes,
             'ps1' => $ps1,
@@ -28,7 +28,8 @@ class GamesListController extends Controller
             'xbox360' => $xbox360,
             'wii' => $wii,
             'ps4' => $ps4,
-            'pc' => $pc
+            'pc' => $pc,
+            'totalGameCount' => $totalGameCount
         ]);
     }
 }
