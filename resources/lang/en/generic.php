@@ -5,5 +5,17 @@ return [
     'welcome' => "Welcome",
     'streams' => "Streams",
     'projects' => "Projects",
-    'contact_us' => "Contact us"
+    'games_list' => "Game lists",
+    'contact_us' => "Contact us",
+    'games' => "Games",
+    'format' => "Format",
+    'release_date' => "Release date",
+    'both' => "Both",
+    'nes_games' => "NES Games",
+    'ps1_games' => "PS1 Games",
+    'xbox_games' => "Xbox Games",
+    'xbox360_games' => "Xbox 360 Games",
+    'wii_games' => "Wii Games",
+    'ps4_games' => "PS4 Games",
+    'pc_games' => "PC Games"
 ];

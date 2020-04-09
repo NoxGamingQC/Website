@@ -3,123 +3,206 @@
 @section('content')
 <div class="row">
     <div class="col-md-12">
-        <h1>Games ({{$totalGameCount}})</h1>
+        <h1>{{trans('generic.games')}} ({{$totalGameCount}})</h1>
         <hr />
         <div class="panel panel-primary">
             <div class="panel-body">
-                <h3>NES Games ({{count($nes)}})</h3>
+                <h3>{{trans('generic.nes_games')}} ({{count($nes)}})</h3>
                     <hr />
                     <div class="row">
-                        @foreach($nes as $key => $console)
-                        <div class="col-md-3">
-                            <div class="panel panel-primary">
-                                <div class="panel-body">
-                                    <p><b>{{$console->Game}}</b></p>
-                                    <hr />
-                                    <p>Format: {{$console->format}}</p>
-                                    <p>Release Date: {{$console->Date}}</p>
+                        <div class="col-md-12">
+                            @php ($currentCount = 0)
+                            @foreach($nes as $key => $console)
+                            <div class="col-md-3">
+                                <div class="panel panel-primary">
+                                    <div class="panel-body">
+                                        <p><b>{{$console->Game}}</b></p>
+                                        <hr />
+                                        <p>{{trans('generic.format')}}: {{$console->format}}</p>
+                                        @if ($console->Date)
+                                        <p>{{trans('generic.release_date')}}: {{$console->Date}}</p>
+                                        @endif
+                                    </div>
                                 </div>
                             </div>
+                            @if($currentCount == 3)
+                                </div>
+                                <div class="col-md-12">
+                                @php ($currentCount = 0)
+                            @else
+                                @php ($currentCount += 1)
+                            @endif
+                            @endforeach
                         </div>
-                        @endforeach
                     </div>
-                    <h3>PS1 Games ({{count($ps1)}})</h3>
+                    <h3>{{trans('generic.ps1_games')}} ({{count($ps1)}})</h3>
                     <hr />
                     <div class="row">
-                        @foreach($ps1 as $key => $console)
-                        <div class="col-md-3">
-                            <div class="panel panel-primary">
-                                <div class="panel-body">
-                                    <p><b>{{$console->Game}}</b></p>
-                                    <hr />
-                                    <p>Format: {{$console->format}}</p>
-                                    <p>Release Date: {{$console->Date}}</p>
+                        <div class="col-md-12">
+                            @php ($currentCount = 0)
+                            @foreach($ps1 as $key => $console)
+                                <div class="col-md-3">
+                                    <div class="panel panel-primary">
+                                        <div class="panel-body">
+                                            <p><b>{{$console->Game}}</b></p>
+                                            <hr />
+                                            <p>{{trans('generic.format')}}: {{$console->format}}</p>
+                                            @if ($console->Date)
+                                            <p>{{trans('generic.release_date')}}: {{$console->Date}}</p>
+                                            @endif
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
+                            @if($currentCount == 3)
+                                </div>
+                                <div class="col-md-12">
+                                @php ($currentCount = 0)
+                            @else
+                                @php ($currentCount += 1)
+                            @endif
+                            @endforeach
                         </div>
-                        @endforeach
                     </div>
-                    <h3>Xbox Games ({{count($xbox)}})</h3>
+                    <h3>{{trans('generic.xbox_games')}} ({{count($xbox)}})</h3>
                     <hr />
                     <div class="row">
-                        @foreach($xbox as $key => $console)
-                        <div class="col-md-3">
-                            <div class="panel panel-primary">
-                                <div class="panel-body">
-                                    <p><b>{{$console->Game}}</b></p>
-                                    <hr />
-                                    <p>Format: {{$console->format}}</p>
-                                    <p>Release Date: {{$console->Date}}</p>
+                        <div class="col-md-12">
+                            @php ($currentCount = 0)
+                            @foreach($xbox as $key => $console)
+                            <div class="col-md-3">
+                                <div class="panel panel-primary">
+                                    <div class="panel-body">
+                                        <p><b>{{$console->Game}}</b></p>
+                                        <hr />
+                                        <p>{{trans('generic.format')}}: {{$console->format}}</p>
+                                        @if ($console->Date)
+                                        <p>{{trans('generic.release_date')}}: {{$console->Date}}</p>
+                                        @endif
+                                    </div>
                                 </div>
                             </div>
+                            @if($currentCount == 3)
+                                </div>
+                                <div class="col-md-12">
+                                @php ($currentCount = 0)
+                            @else
+                                @php ($currentCount += 1)
+                            @endif
+                            @endforeach
                         </div>
-                        @endforeach
                     </div>
-                    <h3>Xbox 360 Games ({{count($xbox360)}})</h3>
+                    <h3>{{trans('generic.xbox360_games')}} ({{count($xbox360)}})</h3>
                     <hr />
                     <div class="row">
-                        @foreach($xbox360 as $key => $console)
-                        <div class="col-md-3">
-                            <div class="panel panel-primary">
-                                <div class="panel-body">
-                                    <p><b>{{$console->Game}}</b></p>
-                                    <hr />
-                                    <p>Format: {{$console->format}}</p>
-                                    <p>Release Date: {{$console->Date}}</p>
+                        <div class="col-md-12">
+                            @php ($currentCount = 0)
+                            @foreach($xbox360 as $key => $console)
+                            <div class="col-md-3">
+                                <div class="panel panel-primary">
+                                    <div class="panel-body">
+                                        <p><b>{{$console->Game}}</b></p>
+                                        <hr />
+                                        <p>{{trans('generic.format')}}: {{$console->format}}</p>
+                                        @if ($console->Date)
+                                        <p>{{trans('generic.release_date')}}: {{$console->Date}}</p>
+                                        @endif
+                                    </div>
                                 </div>
                             </div>
+                            @if($currentCount == 3)
+                                </div>
+                                <div class="col-md-12">
+                                @php ($currentCount = 0)
+                            @else
+                                @php ($currentCount += 1)
+                            @endif
+                            @endforeach
                         </div>
-                        @endforeach
                     </div>
-                    <h3>Wii Games ({{count($wii)}})</h3>
+                    <h3>{{trans('generic.wii_games')}} ({{count($wii)}})</h3>
                     <hr />
                     <div class="row">
-                        @foreach($wii as $key => $console)
-                        <div class="col-md-3">
-                            <div class="panel panel-primary">
-                                <div class="panel-body">
-                                    <p><b>{{$console->Game}}</b></p>
-                                    <hr />
-                                    <p>Format: {{$console->format}}</p>
-                                    <p>Release Date: {{$console->Date}}</p>
+                        <div class="col-md-12">
+                            @php ($currentCount = 0)
+                            @foreach($wii as $key => $console)
+                            <div class="col-md-3">
+                                <div class="panel panel-primary">
+                                    <div class="panel-body">
+                                        <p><b>{{$console->Game}}</b></p>
+                                        <hr />
+                                        <p>{{trans('generic.format')}}: {{$console->format}}</p>
+                                        @if ($console->Date)
+                                        <p>{{trans('generic.release_date')}}: {{$console->Date}}</p>
+                                        @endif
+                                    </div>
                                 </div>
                             </div>
+                            @if($currentCount == 3)
+                                </div>
+                                <div class="col-md-12">
+                                @php ($currentCount = 0)
+                            @else
+                                @php ($currentCount += 1)
+                            @endif
+                            @endforeach
                         </div>
-                        @endforeach
                     </div>
-                    <h3>PS4 Games ({{count($ps4)}})</h3>
+                    <h3>{{trans('generic.ps4_games')}} ({{count($ps4)}})</h3>
                     <hr />
                     <div class="row">
-                        @foreach($ps4 as $key => $console)
-                        <div class="col-md-3">
-                            <div class="panel panel-primary">
-                                <div class="panel-body">
-                                    <p><b>{{$console->Game}}</b></p>
-                                    <hr />
-                                    <p>Format: {{$console->format}}</p>
-                                    <p>Release Date: {{$console->Date}}</p>
+                        <div class="col-md-12">
+                            @php ($currentCount = 0)
+                            @foreach($ps4 as $key => $console)
+                            <div class="col-md-3">
+                                <div class="panel panel-primary">
+                                    <div class="panel-body">
+                                        <p><b>{{$console->Game}}</b></p>
+                                        <hr />
+                                        <p>{{trans('generic.format')}}: {{$console->format}}</p>
+                                        @if ($console->Date)
+                                        <p>{{trans('generic.release_date')}}: {{$console->Date}}</p>
+                                        @endif
+                                    </div>
                                 </div>
                             </div>
+                            @if($currentCount == 3)
+                                </div>
+                                <div class="col-md-12">
+                                @php ($currentCount = 0)
+                            @else
+                                @php ($currentCount += 1)
+                            @endif
+                            @endforeach
                         </div>
-                        @endforeach
                     </div>
-                    <h3>PC Games ({{count($pc)}})</h3>
+                    <h3>{{trans('generic.pc_games')}} ({{count($pc)}})</h3>
                     <hr />
                     <div class="row">
-                        @foreach($pc as $key => $console)
-                        <div class="col-md-3">
-                            <div class="panel panel-primary">
-                                <div class="panel-body">
-                                    <p><b>{{$console->Game}}</b></p>
-                                    <hr />
-                                    <p>Format: {{$console->format}}</p>
-                                    <p>Release Date: {{$console->Date}}</p>
+                        <div class="col-md-12">
+                            @php ($currentCount = 0)
+                            @foreach($pc as $key => $console)
+                            <div class="col-md-3">
+                                <div class="panel panel-primary">
+                                    <div class="panel-body">
+                                        <p><b>{{$console->Game}}</b></p>
+                                        <hr />
+                                        <p>{{trans('generic.format')}}: {{$console->format}}</p>
+                                        @if ($console->Date)
+                                        <p>{{trans('generic.release_date')}}: {{$console->Date}}</p>
+                                        @endif
+                                    </div>
                                 </div>
                             </div>
+                            @if($currentCount == 3)
+                                </div>
+                                <div class="col-md-12">
+                                @php ($currentCount = 0)
+                            @else
+                                @php ($currentCount += 1)
+                            @endif
+                            @endforeach
                         </div>
-                        @endforeach
                     </div>
-
                 </div>
             </div>
         </div>
