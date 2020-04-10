@@ -16,11 +16,11 @@
                             <div class="col-md-3">
                                 <div class="panel panel-primary">
                                     <div class="panel-body" style="background-image: url('{{$console->backgroundURL}}'); background-size: cover; !important">
-                                        <p><b>{{$console->Game}}</b></p>
+                                        <h4 class="stroke"><b>{{$console->Game}}</b></h4>
                                         <hr />
-                                        <p>{{trans('generic.format')}}: {{$console->format}}</p>
+                                        <p class="stroke">{{trans('generic.format')}}: {{$console->format}}</p>
                                         @if ($console->Date)
-                                        <p>{{trans('generic.release_date')}}: {{$console->Date}}</p>
+                                        <p class="stroke">{{trans('generic.release_date')}}: {{$console->Date}}</p>
                                         @endif
                                     </div>
                                 </div>
@@ -44,11 +44,11 @@
                                 <div class="col-md-3">
                                     <div class="panel panel-primary">
                                     <div class="panel-body" style="background-image: url('{{$console->backgroundURL}}'); background-size: cover; !important">
-                                            <p><b>{{$console->Game}}</b></p>
+                                            <h4 class="stroke"><b>{{$console->Game}}</b></h4>
                                             <hr />
-                                            <p>{{trans('generic.format')}}: {{$console->format}}</p>
+                                            <p class="stroke">{{trans('generic.format')}}: {{$console->format}}</p>
                                             @if ($console->Date)
-                                            <p>{{trans('generic.release_date')}}: {{$console->Date}}</p>
+                                            <p class="stroke">{{trans('generic.release_date')}}: {{$console->Date}}</p>
                                             @endif
                                         </div>
                                     </div>
@@ -72,11 +72,11 @@
                             <div class="col-md-3">
                                 <div class="panel panel-primary">
                                     <div class="panel-body" style="background-image: url('{{$console->backgroundURL}}'); background-size: cover; !important">
-                                        <p><b>{{$console->Game}}</b></p>
+                                        <h4 class="stroke"><b>{{$console->Game}}</b></h4>
                                         <hr />
-                                        <p>{{trans('generic.format')}}: {{$console->format}}</p>
+                                        <p class="stroke">{{trans('generic.format')}}: {{$console->format}}</p>
                                         @if ($console->Date)
-                                        <p>{{trans('generic.release_date')}}: {{$console->Date}}</p>
+                                        <p class="stroke">{{trans('generic.release_date')}}: {{$console->Date}}</p>
                                         @endif
                                     </div>
                                 </div>
@@ -100,11 +100,11 @@
                             <div class="col-md-3">
                                 <div class="panel panel-primary">
                                     <div class="panel-body" style="background-image: url('{{$console->backgroundURL}}'); background-size: cover; !important">
-                                        <p><b>{{$console->Game}}</b></p>
+                                        <h4 class="stroke"><b>{{$console->Game}}</b></h4>
                                         <hr />
-                                        <p>{{trans('generic.format')}}: {{$console->format}}</p>
+                                        <p class="stroke">{{trans('generic.format')}}: {{$console->format}}</p>
                                         @if ($console->Date)
-                                        <p>{{trans('generic.release_date')}}: {{$console->Date}}</p>
+                                        <p class="stroke">{{trans('generic.release_date')}}: {{$console->Date}}</p>
                                         @endif
                                     </div>
                                 </div>
@@ -128,11 +128,11 @@
                             <div class="col-md-3">
                                 <div class="panel panel-primary">
                                     <div class="panel-body" style="background-image: url('{{$console->backgroundURL}}'); background-size: cover; !important">
-                                        <p><b>{{$console->Game}}</b></p>
+                                        <h4 class="stroke"><b>{{$console->Game}}</b></h4>
                                         <hr />
-                                        <p>{{trans('generic.format')}}: {{$console->format}}</p>
+                                        <p class="stroke">{{trans('generic.format')}}: {{$console->format}}</p>
                                         @if ($console->Date)
-                                        <p>{{trans('generic.release_date')}}: {{$console->Date}}</p>
+                                        <p class="stroke">{{trans('generic.release_date')}}: {{$console->Date}}</p>
                                         @endif
                                     </div>
                                 </div>
@@ -156,11 +156,11 @@
                             <div class="col-md-3">
                                 <div class="panel panel-primary">
                                     <div class="panel-body" style="background-image: url('{{$console->backgroundURL}}'); background-size: cover; !important">
-                                        <p><b>{{$console->Game}}</b></p>
+                                        <h4 class="stroke"><b>{{$console->Game}}</b></h4>
                                         <hr />
-                                        <p>{{trans('generic.format')}}: {{$console->format}}</p>
+                                        <p class="stroke">{{trans('generic.format')}}: {{$console->format}}</p>
                                         @if ($console->Date)
-                                        <p>{{trans('generic.release_date')}}: {{$console->Date}}</p>
+                                        <p class="stroke">{{trans('generic.release_date')}}: {{$console->Date}}</p>
                                         @endif
                                     </div>
                                 </div>
@@ -184,11 +184,11 @@
                             <div class="col-md-3">
                                 <div class="panel panel-primary">
                                     <div class="panel-body" style="background-image: url('{{$console->backgroundURL}}'); background-size: cover; !important">
-                                        <p><b>{{$console->Game}}</b></p>
+                                        <h4 class="stroke"><b>{{$console->Game}}</b></h4>
                                         <hr />
-                                        <p>{{trans('generic.format')}}: {{$console->format}}</p>
+                                        <p class="stroke">{{trans('generic.format')}}: {{$console->format}}</p>
                                         @if ($console->Date)
-                                        <p>{{trans('generic.release_date')}}: {{$console->Date}}</p>
+                                        <p class="stroke">{{trans('generic.release_date')}}: {{$console->Date}}</p>
                                         @endif
                                     </div>
                                 </div>
