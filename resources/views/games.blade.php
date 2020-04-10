@@ -15,7 +15,7 @@
                             @foreach($nes as $key => $console)
                             <div class="col-md-3">
                                 <div class="panel panel-primary">
-                                    <div class="panel-body">
+                                    <div class="panel-body" style="background-image: url('{{$console->backgroundURL}}'); background-size: cover; !important">
                                         <p><b>{{$console->Game}}</b></p>
                                         <hr />
                                         <p>{{trans('generic.format')}}: {{$console->format}}</p>
@@ -43,7 +43,7 @@
                             @foreach($ps1 as $key => $console)
                                 <div class="col-md-3">
                                     <div class="panel panel-primary">
-                                        <div class="panel-body">
+                                    <div class="panel-body" style="background-image: url('{{$console->backgroundURL}}'); background-size: cover; !important">
                                             <p><b>{{$console->Game}}</b></p>
                                             <hr />
                                             <p>{{trans('generic.format')}}: {{$console->format}}</p>
@@ -71,7 +71,7 @@
                             @foreach($xbox as $key => $console)
                             <div class="col-md-3">
                                 <div class="panel panel-primary">
-                                    <div class="panel-body">
+                                    <div class="panel-body" style="background-image: url('{{$console->backgroundURL}}'); background-size: cover; !important">
                                         <p><b>{{$console->Game}}</b></p>
                                         <hr />
                                         <p>{{trans('generic.format')}}: {{$console->format}}</p>
@@ -99,7 +99,7 @@
                             @foreach($xbox360 as $key => $console)
                             <div class="col-md-3">
                                 <div class="panel panel-primary">
-                                    <div class="panel-body">
+                                    <div class="panel-body" style="background-image: url('{{$console->backgroundURL}}'); background-size: cover; !important">
                                         <p><b>{{$console->Game}}</b></p>
                                         <hr />
                                         <p>{{trans('generic.format')}}: {{$console->format}}</p>
@@ -127,7 +127,7 @@
                             @foreach($wii as $key => $console)
                             <div class="col-md-3">
                                 <div class="panel panel-primary">
-                                    <div class="panel-body">
+                                    <div class="panel-body" style="background-image: url('{{$console->backgroundURL}}'); background-size: cover; !important">
                                         <p><b>{{$console->Game}}</b></p>
                                         <hr />
                                         <p>{{trans('generic.format')}}: {{$console->format}}</p>
@@ -155,7 +155,7 @@
                             @foreach($ps4 as $key => $console)
                             <div class="col-md-3">
                                 <div class="panel panel-primary">
-                                    <div class="panel-body">
+                                    <div class="panel-body" style="background-image: url('{{$console->backgroundURL}}'); background-size: cover; !important">
                                         <p><b>{{$console->Game}}</b></p>
                                         <hr />
                                         <p>{{trans('generic.format')}}: {{$console->format}}</p>
@@ -183,7 +183,7 @@
                             @foreach($pc as $key => $console)
                             <div class="col-md-3">
                                 <div class="panel panel-primary">
-                                    <div class="panel-body">
+                                    <div class="panel-body" style="background-image: url('{{$console->backgroundURL}}'); background-size: cover; !important">
                                         <p><b>{{$console->Game}}</b></p>
                                         <hr />
                                         <p>{{trans('generic.format')}}: {{$console->format}}</p>
