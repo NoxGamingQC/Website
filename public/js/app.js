@@ -11117,7 +11117,7 @@ module.exports = Cancel;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(9);
-module.exports = __webpack_require__(35);
+module.exports = __webpack_require__(36);
 
 
 /***/ }),
@@ -11129,6 +11129,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_jquery__);
 __webpack_require__(10);
+__webpack_require__(35);
 
 
 window.$ = window.jQuery = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a;
@@ -31828,6 +31829,16 @@ module.exports = function spread(callback) {
 
 /***/ }),
 /* 35 */
+/***/ (function(module, exports) {
+
+console.log('%c Hold Up!', 'color: #ff0000; font-weight: bold; font-size: 50px; text-transform: uppercase;');
+console.log('%c If someone told you to copy/paste something here you have an 11/10 chance you\'re being scammed.', 'font-size: 20px;');
+console.log('%c Pasting anything in here could give attackers access to your account.', 'color: #ff0000; font-weight: bold; font-size: 20px;');
+console.log('%c Unless you understand exactly what you are doing, close this window and stay safe. 🤗', 'font-size: 20px;');
+console.log('%c If you do understand exactly what you are doing, you should be helping us ❤️', 'font-size: 20px;');
+
+/***/ }),
+/* 36 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
