@@ -22,7 +22,7 @@
                         <a class="btn btn-primary disabled" href="#" disabled>Login</a>
                         <a class="btn btn-primary disabled" href="#" disabled>Register</a>
                         <hr />
-                        P.S. Buttons are disabled, because we are detecting that your are already logged in. ¯\_(ツ)_/¯
+                        P.S. Buttons are disabled, because we are detecting that your are already logged in. ¯\_(ツ)_/¯ <a href="/{{app()->getLocale()}}/home">(Travel to home page)</a>
                     @endauth
                 </div>
             </div>

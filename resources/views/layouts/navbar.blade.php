@@ -16,9 +16,7 @@
                 <li class="nav-home"><a href="/{{app()->getLocale()}}/home"><i class="fa fa-home" aria-hidden="true"></i> {{ trans('generic.welcome') }} <span class="sr-only">current</span></a></li>
                 <li class="nav-stream"><a href="/{{app()->getLocale()}}/stream"><i class="fa fa-video-camera" aria-hidden="true"></i> {{ trans('generic.streams') }}</a></li>
                 <li class="nav-projects"><a href="/{{app()->getLocale()}}/projects"><i class="fa fa-heart" aria-hidden="true"></i> {{ trans('generic.projects') }}</a></li> <li class="nav-projects">
-                <a href="/{{app()->getLocale()}}/games"><i class="fa fa-gamepad" aria-hidden="true"></i> {{ trans('generic.games_list') }}</a></li>
-                <li class="nav-noxbot"><a href="/{{app()->getLocale()}}/noxbot"><i class="fa fa-user" aria-hidden="true"></i> NoxBOT</a></li>
-                <li class="nav-contact"><a href="/{{app()->getLocale()}}/contact"><i class="fa fa-address-book " aria-hidden="true"></i> {{trans('generic.contact_us')}}</a></li>
+                <a href="/{{app()->getLocale()}}/games"><i class="fa fa-gamepad" aria-hidden="true"></i> {{ trans('generic.games_list') }}</a></li>                <li class="nav-contact"><a href="/{{app()->getLocale()}}/contact"><i class="fa fa-address-book " aria-hidden="true"></i> {{trans('generic.contact_us')}}</a></li>
                 @auth
                     @if(Auth::user()->isDev || Auth::user()->isAdmin || Auth::user()->isModerator)
                         <li class="dropdown">
