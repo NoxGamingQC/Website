@@ -18,7 +18,7 @@
                 <div class="col-md-5 text-center" id="twitchDefinition">
                     <h3><i class="fa fa-video-camera" aria-hidden="true"></i> NoxGamingQC's Twitch Stream</h3>
                     <hr />
-                    <p>Hey! I'm NoxGamingQC. But call me Nox it's shorter. I stream a variety of games on Twitch. You can join the stream at <a href="https://www.twitch.tv/noxgamingqc">twitch.tv/noxgamingqc</a>.</p>
+                    <p>Hey! I'm NoxGamingQC. But call me Nox it's shorter. Me an my community streams a variety of games on Twitch. You can join us on stream at <a href="https://www.twitch.tv/noxgamingqc">twitch.tv/noxgamingqc</a>.</p>
                     <a class="btn btn-primary" href="/stream/commands">Bot commands</a>
                     <a class="btn btn-primary" href="https://discord.gg/6DGc24x">Join Discord server</a>
                 </div>
@@ -56,24 +56,16 @@
                 <div class="col-md-12">
                     <hr />
                 </div>
-                <div class="col-md-5 text-center" id="extralifeText">
-                    <h3><i class="fa fa-hospital-o" aria-hidden="true"></i> Extra Life</h3>
-                    <hr />
-                    <p>Extra Life is a 24-hour fundraising and gaming marathon to support Children's Miracle Network Hospitals. All the donations made on my fundraising page will go to my local hospital. Help me and support kids from my local hospitals! <a href="https://www.extra-life.org/participant/noxracinggaming">My Extra Life fundraising page</a></p>
-                </div>
-                <div class="col-md-7" id="extraLifeLogo">
-                    <img src="/img/ExtraLife.png" width="100%" />
-                </div>
                 <div class="col-md-12">
                     <hr />
                 </div>
                 <div class="col-md-6" id="equipement">
                     <h3><i class="fa fa-laptop" aria-hidden="true"></i> Equipement</h3>
                     <hr />
-                    <p>💻 Intel® Desktop Board DH67BL</p>
+                    <p>💻 Intel® Z390 AORUS MASTER by Gigabyte</p>
                     <p>💻 Microsoft Windows 10 (64 bits)</p>
-                    <p>💻 Intel® Core(TM) i5-2400 CPU @ 3.10 GHz 3.10 GHz</p>
-                    <p>💻 8 GB RAM</p>
+                    <p>💻 Intel® Core™ i5-9400F CPU</p>
+                    <p>💻 32 GB HyperX Predator DDR4 RAM @ 3200MHz</p>
                     <p>💻 NVIDIA GeForce GTX 1070</p>
                 </div>
                 <div class="col-md-6" id="console">
@@ -97,7 +89,7 @@
                     <hr />
                     <p>🎮 MICROSOFT XBOX ONE wireless controller Gear of War 4 edition</p>
                     <p>🎮 MICROSOFT XBOX ONE wireless controller Ocean Shadow edition</p>
-                    <p>🎮 DualShock® 4 wireless controller</p>
+                    <p>🎮 2 DualShock® 4 wireless controller</p>
                     <p>🎮 White Super Smash Bros. classic Nintendo Gamecube controller</p>
                     <p>🎮 Black Super Smash Bros. classic Nintendo Gamecube controller</p>
                 </div>
