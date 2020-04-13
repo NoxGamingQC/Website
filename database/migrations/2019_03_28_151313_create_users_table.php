@@ -44,6 +44,7 @@ class CreateUsersTable extends Migration
             $table->string('Discriminator')->nullable(true);
             $table->string('DiscordEmail')->nullable(true);
             $table->string('Country')->nullable(true);
+            $table->string('theme')->nullable(true);
             $table->timestamps();
         });
     }

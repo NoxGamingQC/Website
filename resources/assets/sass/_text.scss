@@ -7,3 +7,23 @@ h4.stroke {
     color: white;
     text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
+
+.error-text {
+    color: $brand-danger !important
+}
+
+.warning-text {
+    color: $brand-warning !important
+}
+
+.info-text {
+    color: $brand-info !important
+}
+
+.success-text {
+    color: $brand-success !important
+}
+
+.primary-text {
+    color: $brand-primary !important
+}

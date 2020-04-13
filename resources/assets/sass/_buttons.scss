@@ -1,7 +1,7 @@
 .btn-default {
-    color: #FFFFFF !important;
-    background-color: #222222;
-    border-color: #000000;
+    color: $text-color !important;
+    background-color: $background-color;
+    border-color: $laravel-border-color;
 }
 
 .btn-default:hover,
@@ -9,9 +9,9 @@
 .btn-default:active,
 .btn-default.active,
 .open .dropdown-toggle.btn-default {
-    color: #FFFFFF !important;
-    background-color: #333333;
-    border-color: #000000;
+    color: $text-color !important;
+    background-color: $background-color;
+    border-color: $laravel-border-color;
 }
 
 .btn-default:active,
@@ -35,19 +35,19 @@ fieldset[disabled] .btn-default:active,
 .btn-default.disabled.active,
 .btn-default[disabled].active,
 fieldset[disabled] .btn-default.active {
-    background-color: #222222;
-    border-color: #000000;
+    background-color: $laravel-border-color;
+    border-color: $laravel-border-color;
 }
 
 .btn-default .badge {
-    color: #222222 !important;
-    background-color: #FFFFFF;
+    color: $background-color !important;
+    background-color: $text-color;
 }
 
 .btn-primary {
-    color: #FFFFFF !important;
-    background-color: #222222;
-    border-color: #000000;
+    color: $text-color !important;
+    background-color: $background-color;
+    border-color: $laravel-border-color;
 }
 
 .btn-primary:hover,
@@ -55,9 +55,9 @@ fieldset[disabled] .btn-default.active {
 .btn-primary:active,
 .btn-primary.active,
 .open .dropdown-toggle.btn-primary {
-    color: #FFFFFF !important;
+    color: $text-color !important;
     background-color: $brand-primary;
-    border-color: #000000;
+    border-color: $laravel-border-color;
 }
 
 .btn-primary:active,
@@ -81,19 +81,19 @@ fieldset[disabled] .btn-primary:active,
 .btn-primary.disabled.active,
 .btn-primary[disabled].active,
 fieldset[disabled] .btn-primary.active {
-    background-color: #222222;
-    border-color: #000000;
+    background-color: $background-color;
+    border-color: $laravel-border-color;
 }
 
 .btn-primary .badge {
-    color: #222222 !important;
-    background-color: #FFFFFF;
+    color: $background-color !important;
+    background-color: $text-color;
 }
 
 .btn-twitch {
-    color: #ffffff !important;
-    background-color: #222222;
-    border-color: #000000;
+    color: $text-color !important;
+    background-color: $background-color;
+    border-color: $laravel-border-color;
 }
 
 .btn-twitch:hover,
@@ -101,7 +101,7 @@ fieldset[disabled] .btn-primary.active {
 .btn-twitch:active,
 .btn-twitch.active,
 .open .dropdown-toggle.btn-twitch {
-    color: #ffffff !important;
+    color: $text-color !important;
     background-color: #6441A4;
     border-color: #51338A;
 }
@@ -127,19 +127,19 @@ fieldset[disabled] .btn-twitch:active,
 .btn-twitch.disabled.active,
 .btn-twitch[disabled].active,
 fieldset[disabled] .btn-twitch.active {
-    background-color: #222222;
-    border-color: #000000;
+    background-color: $background-color;
+    border-color: $laravel-border-color;
 }
 
 .btn-twitch .badge {
-    color: #222222 !important;
-    background-color: #ffffff;
+    color: $background-color !important;
+    background-color: $text-color;
 }
 
 .btn-youtube {
-    color: #FFFFFF !important;
-    background-color: #222222;
-    border-color: #000000;
+    color: $text-color !important;
+    background-color: $background-color;
+    border-color: $laravel-border-color;
 }
 
 .btn-youtube:hover,
@@ -147,7 +147,7 @@ fieldset[disabled] .btn-twitch.active {
 .btn-youtube:active,
 .btn-youtube.active,
 .open .dropdown-toggle.btn-youtube {
-    color: #FFFFFF !important;
+    color: $text-color !important;
     background-color: #FF0000;
     border-color: #C80000;
 }
@@ -173,19 +173,19 @@ fieldset[disabled] .btn-youtube:active,
 .btn-youtube.disabled.active,
 .btn-youtube[disabled].active,
 fieldset[disabled] .btn-youtube.active {
-    background-color: #222222;
-    border-color: #000000;
+    background-color: $background-color;
+    border-color: $laravel-border-color;
 }
 
 .btn-youtube .badge {
-    color: #222222 !important;
-    background-color: #FFFFFF;
+    color: $background-color !important;
+    background-color: $text-color;
 }
 
 .btn-twitter {
-    color: #ffffff !important;
-    background-color: #222222;
-    border-color: #000000;
+    color: $text-color !important;
+    background-color: $background-color;
+    border-color: $laravel-border-color;
 }
 
 .btn-twitter:hover,
@@ -193,7 +193,7 @@ fieldset[disabled] .btn-youtube.active {
 .btn-twitter:active,
 .btn-twitter.active,
 .open .dropdown-toggle.btn-twitter {
-    color: #ffffff !important;
+    color: $text-color !important;
     background-color: #1da1f2;
     border-color: #178DD6;
 }
@@ -219,19 +219,19 @@ fieldset[disabled] .btn-twitter:active,
 .btn-twitter.disabled.active,
 .btn-twitter[disabled].active,
 fieldset[disabled] .btn-twitter.active {
-    background-color: #222222;
-    border-color: #000000;
+    background-color: $background-color;
+    border-color: $laravel-border-color;
 }
 
 .btn-twitter .badge {
-    color: #222222 !important;
-    background-color: #ffffff;
+    color: $background-color !important;
+    background-color: $text-color;
 }
 
 .btn-facebook {
-    color: #ffffff !important;
-    background-color: #222222;
-    border-color: #000000;
+    color: $text-color !important;
+    background-color: $background-color;
+    border-color: $laravel-border-color;
 }
 
 .btn-facebook:hover,
@@ -240,7 +240,7 @@ fieldset[disabled] .btn-twitter.active {
 .btn-facebook.active,
 .open .dropdown-toggle.btn-facebook {
     color: #3B5998 !important;
-    background-color: #FFFFFF;
+    background-color: $text-color;
     border-color: #CCCCCC;
 }
 
@@ -265,19 +265,19 @@ fieldset[disabled] .btn-facebook:active,
 .btn-facebook.disabled.active,
 .btn-facebook[disabled].active,
 fieldset[disabled] .btn-facebook.active {
-    background-color: #222222;
-    border-color: #000000;
+    background-color: $background-color;
+    border-color: $laravel-border-color;
 }
 
 .btn-facebook .badge {
-    color: #222222 !important;
-    background-color: #ffffff;
+    color: $background-color !important;
+    background-color: $text-color;
 }
 
 .btn-instagram {
-    color: #FFFFFF !important;
-    background-color: #222222;
-    border-color: #000000;
+    color: $text-color !important;
+    background-color: $background-color;
+    border-color: $laravel-border-color;
 }
 
 .btn-instagram:hover,
@@ -285,7 +285,7 @@ fieldset[disabled] .btn-facebook.active {
 .btn-instagram:active,
 .btn-instagram.active,
 .open .dropdown-toggle.btn-instagram {
-    color: #FFFFFF !important;
+    color: $text-color !important;
     background-color: #DE2A7A;
     border-color: #C21F68;
 }
@@ -311,19 +311,19 @@ fieldset[disabled] .btn-instagram:active,
 .btn-instagram.disabled.active,
 .btn-instagram[disabled].active,
 fieldset[disabled] .btn-instagram.active {
-    background-color: #222222;
-    border-color: #000000;
+    background-color: $background-color;
+    border-color: $laravel-border-color;
 }
 
 .btn-instagram .badge {
-    color: #222222 !important;
-    background-color: #FFFFFF;
+    color: $background-color !important;
+    background-color: $text-color;
 }
 
 .btn-steam {
-    color: #ffffff !important;
-    background-color: #222222;
-    border-color: #000000;
+    color: $text-color !important;
+    background-color: $background-color;
+    border-color: $laravel-border-color;
 }
 
 .btn-steam:hover,
@@ -331,7 +331,7 @@ fieldset[disabled] .btn-instagram.active {
 .btn-steam:active,
 .btn-steam.active,
 .open .dropdown-toggle.btn-steam {
-    color: #ffffff !important;
+    color: $text-color !important;
     background-color: #133B6E;
     border-color: #0E2F59;
 }
@@ -357,19 +357,19 @@ fieldset[disabled] .btn-steam:active,
 .btn-steam.disabled.active,
 .btn-steam[disabled].active,
 fieldset[disabled] .btn-steam.active {
-    background-color: #222222;
-    border-color: #000000;
+    background-color: $background-color;
+    border-color: $laravel-border-color;
 }
 
 .btn-steam .badge {
-    color: #222222 !important;
-    background-color: #ffffff;
+    color: $background-color !important;
+    background-color: $text-color;
 }
 
 .btn-google-plus {
-    color: #ffffff !important;
-    background-color: #222222;
-    border-color: #000000;
+    color: $text-color !important;
+    background-color: $background-color;
+    border-color: $laravel-border-color;
 }
 
 .btn-google-plus:hover,
@@ -377,7 +377,7 @@ fieldset[disabled] .btn-steam.active {
 .btn-google-plus:active,
 .btn-google-plus.active,
 .open .dropdown-toggle.btn-google-plus {
-    color: #ffffff !important;
+    color: $text-color !important;
     background-color: #DD4B39;
     border-color: #C74534;
 }
@@ -403,19 +403,19 @@ fieldset[disabled] .btn-google-plus:active,
 .btn-google-plus.disabled.active,
 .btn-google-plus[disabled].active,
 fieldset[disabled] .btn-google-plus.active {
-    background-color: #222222;
-    border-color: #000000;
+    background-color: $background-color;
+    border-color: $laravel-border-color;
 }
 
 .btn-google-plus .badge {
-    color: #222222 !important;
-    background-color: #ffffff;
+    color: $background-color !important;
+    background-color: $text-color;
 }
 
 .btn-github {
-    color: #ffffff !important;
-    background-color: #222222;
-    border-color: #000000;
+    color: $text-color !important;
+    background-color: $background-color;
+    border-color: $laravel-border-color;
 }
 
 .btn-github:hover,
@@ -424,7 +424,7 @@ fieldset[disabled] .btn-google-plus.active {
 .btn-github.active,
 .open .dropdown-toggle.btn-github {
     color: #171515 !important;
-    background-color: #FFFFFF;
+    background-color: $text-color;
     border-color: #CCCCCC;
 }
 
@@ -449,19 +449,19 @@ fieldset[disabled] .btn-github:active,
 .btn-github.disabled.active,
 .btn-github[disabled].active,
 fieldset[disabled] .btn-github.active {
-    background-color: #222222;
-    border-color: #000000;
+    background-color: $background-color;
+    border-color: $laravel-border-color;
 }
 
 .btn-github .badge {
-    color: #222222 !important;
-    background-color: #ffffff;
+    color: $background-color !important;
+    background-color: $text-color;
 }
 
 .btn-snapchat {
-    color: #ffffff !important;
-    background-color: #222222;
-    border-color: #000000;
+    color: $text-color !important;
+    background-color: $background-color;
+    border-color: $laravel-border-color;
 }
 
 .btn-snapchat:hover,
@@ -469,7 +469,7 @@ fieldset[disabled] .btn-github.active {
 .btn-snapchat:active,
 .btn-snapchat.active,
 .open .dropdown-toggle.btn-snapchat {
-    color: #FFFFFF !important;
+    color: $text-color !important;
     background-color: #FFFC00;
     border-color: #BBB900;
 }
@@ -495,19 +495,19 @@ fieldset[disabled] .btn-snapchat:active,
 .btn-snapchat.disabled.active,
 .btn-snapchat[disabled].active,
 fieldset[disabled] .btn-snapchat.active {
-    background-color: #222222;
-    border-color: #000000;
+    background-color: $background-color;
+    border-color: $laravel-border-color;
 }
 
 .btn-snapchat .badge {
-    color: #222222 !important;
-    background-color: #ffffff;
+    color: $background-color !important;
+    background-color: $text-color;
 }
 
 .btn-spotify {
-    color: #ffffff !important;
-    background-color: #222222;
-    border-color: #000000;
+    color: $text-color !important;
+    background-color: $background-color;
+    border-color: $laravel-border-color;
 }
 
 .btn-spotify:hover,
@@ -515,7 +515,7 @@ fieldset[disabled] .btn-snapchat.active {
 .btn-spotify:active,
 .btn-spotify.active,
 .open .dropdown-toggle.btn-spotify {
-    color: #ffffff !important;
+    color: $text-color !important;
     background-color: #1DB954;
     border-color: #199946;
 }
@@ -542,18 +542,18 @@ fieldset[disabled] .btn-spotify:active,
 .btn-spotify[disabled].active,
 fieldset[disabled] .btn-spotify.active {
     background-color: #191414;
-    border-color: #000000;
+    border-color: $laravel-border-color;
 }
 
 .btn-spotify .badge {
     color: #191414 !important;
-    background-color: #ffffff;
+    background-color: $text-color;
 }
 
 .btn-reddit {
-    color: #ffffff !important;
-    background-color: #222222;
-    border-color: #000000;
+    color: $text-color !important;
+    background-color: $background-color;
+    border-color: $laravel-border-color;
 }
 
 .btn-reddit:hover,
@@ -561,7 +561,7 @@ fieldset[disabled] .btn-spotify.active {
 .btn-reddit:active,
 .btn-reddit.active,
 .open .dropdown-toggle.btn-reddit {
-    color: #ffffff !important;
+    color: $text-color !important;
     background-color: #FF4500;
     border-color: #F74200;
 }
@@ -587,19 +587,19 @@ fieldset[disabled] .btn-reddit:active,
 .btn-reddit.disabled.active,
 .btn-reddit[disabled].active,
 fieldset[disabled] .btn-reddit.active {
-    background-color: #222222;
-    border-color: #000000;
+    background-color: $background-color;
+    border-color: $laravel-border-color;
 }
 
 .btn-reddit .badge {
-    color: #222222 !important;
-    background-color: #ffffff;
+    color: $background-color !important;
+    background-color: $text-color;
 }
 
 .btn-pinterest {
-    color: #FFFFFF !important;
-    background-color: #222222;
-    border-color: #000000;
+    color: $text-color !important;
+    background-color: $background-color;
+    border-color: $laravel-border-color;
 }
 
 .btn-pinterest:hover,
@@ -608,7 +608,7 @@ fieldset[disabled] .btn-reddit.active {
 .btn-pinterest.active,
 .open .dropdown-toggle.btn-pinterest {
     color: #BD081C !important;
-    background-color: #FFFFFF;
+    background-color: $text-color;
     border-color: #CCCCCC;
 }
 
@@ -633,19 +633,19 @@ fieldset[disabled] .btn-pinterest:active,
 .btn-pinterest.disabled.active,
 .btn-pinterest[disabled].active,
 fieldset[disabled] .btn-pinterest.active {
-    background-color: #222222;
-    border-color: #000000;
+    background-color: $background-color;
+    border-color: $laravel-border-color;
 }
 
 .btn-pinterest .badge {
     color: #BD081C !important;
-    background-color: #ffffff;
+    background-color: $text-color;
 }
 
 .btn-skype {
-    color: #ffffff !important;
-    background-color: #222222;
-    border-color: #000000;
+    color: $text-color !important;
+    background-color: $background-color;
+    border-color: $laravel-border-color;
 }
 
 .btn-skype:hover,
@@ -653,7 +653,7 @@ fieldset[disabled] .btn-pinterest.active {
 .btn-skype:active,
 .btn-skype.active,
 .open .dropdown-toggle.btn-skype {
-    color: #ffffff !important;
+    color: $text-color !important;
     background-color: #0078D7;
     border-color: #0062B3;
 }
@@ -679,11 +679,11 @@ fieldset[disabled] .btn-skype:active,
 .btn-skype.disabled.active,
 .btn-skype[disabled].active,
 fieldset[disabled] .btn-skype.active {
-    background-color: #222222;
-    border-color: #000000;
+    background-color: $background-color;
+    border-color: $laravel-border-color;
 }
 
 .btn-skype .badge {
-    color: #222222 !important;
-    background-color: #ffffff;
+    color: $background-color !important;
+    background-color: $text-color;
 }

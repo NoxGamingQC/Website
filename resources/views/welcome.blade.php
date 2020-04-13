@@ -36,17 +36,17 @@
             <div class="panel-body">
                 <h3><i class="fa fa-users" aria-hidden="true"></i> Community Rules</h3>
                 <hr />
-                <p><i class="fa fa-window-close" aria-hidden="true" style="color: #F04947"></i> No offensive messages or nicknames - Anything that a reasonable person might find offensive.</p>
+                <p><i class="fa fa-window-close error-text" aria-hidden="true"></i> No offensive messages or nicknames - Anything that a reasonable person might find offensive.</p>
                 <br />
-                <p><i class="fa fa-window-close" aria-hidden="true" style="color: #F04947"></i> No spam - This includes but is not limited too, loud/obnoxious noises in voice chat, @mention spam, character spam, image spam, and message spam.</p>
+                <p><i class="fa fa-window-close error-text" aria-hidden="true"></i> No spam - This includes but is not limited too, loud/obnoxious noises in voice chat, @mention spam, character spam, image spam, and message spam.</p>
                 <br />
-                <p><i class="fa fa-window-close" aria-hidden="true" style="color: #F04947"></i> No gorey, sexual, or scary content - Screamer links, porn, nudity, death.</p>
+                <p><i class="fa fa-window-close error-text" aria-hidden="true"></i> No gorey, sexual, or scary content - Screamer links, porn, nudity, death.</p>
                 <br />
-                <p><i class="fa fa-window-close" aria-hidden="true" style="color: #F04947"></i> No harassment - Including sexual harassment or encouraging of harassment.</p>
+                <p><i class="fa fa-window-close error-text" aria-hidden="true"></i> No harassment - Including sexual harassment or encouraging of harassment.</p>
                 <br />
-                <p><i class="fa fa-window-close" aria-hidden="true" style="color: #F04947"></i> No advertisements - This includes but is not limited too, Twitch, YouTube, Mixer and Discord servers.</p>
+                <p><i class="fa fa-window-close error-text" aria-hidden="true"></i> No advertisements - This includes but is not limited too, Twitch, YouTube, Mixer and Discord servers.</p>
                 <br />
-                <p><i class="fa fa-check-square" aria-hidden="true" style="color: #43B581"></i> Swearing is allowed so long as it isn't directed at another member.</p>
+                <p><i class="fa fa-check-square success-text" aria-hidden="true"></i> Swearing is allowed so long as it isn't directed at another member.</p>
                 <br />
                 <p>There may be situations not covered by the rules or times where the rule may not fit the situation. If this happens the moderators are trusted to handle the situation appropriately. If you have a complaint about a staff member you may submit the complaint to NoxGamingQC</p>
             </div>
