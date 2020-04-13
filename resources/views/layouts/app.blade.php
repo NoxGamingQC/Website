@@ -17,6 +17,8 @@
     @auth
         @if(Auth::user()->theme === 'dracula')
             <link href="{{mix('css/appDracula.css')}}" rel="stylesheet" type="text/css">
+        @elseif(Auth::user()->theme === 'light')
+            <link href="{{mix('css/appLight.css')}}" rel="stylesheet" type="text/css">
         @else 
             <link href="{{mix('css/app.css')}}" rel="stylesheet" type="text/css">
         @endif
