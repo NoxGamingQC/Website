@@ -9142,6 +9142,10 @@ fieldset[disabled] .btn-skype.active {
   background-color: #222222;
 }
 
+.navbar-default .navbar-nav > li > .dropdown-menu > li:hover {
+  background-color: #222222;
+}
+
 .navbar-default .navbar-nav > li > .dropdown-menu > li > a {
   color: #ffffff;
 }
@@ -9150,6 +9154,7 @@ fieldset[disabled] .btn-skype.active {
 .navbar-default .navbar-nav > li > .dropdown-menu > li > a:focus {
   color: #ffffff;
   border-color: #E56F1F;
+  background-color: #E56F1F;
 }
 
 .navbar-default .navbar-nav > li > .dropdown-menu > li.divider {
@@ -9166,7 +9171,7 @@ fieldset[disabled] .btn-skype.active {
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
-  color: #CCCCCC;
+  color: #ffffff;
   background-color: #E56F1F;
 }
 
