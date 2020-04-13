@@ -6,23 +6,19 @@
     <div class="col-md-12">
         <h1>Users</h1>
         <hr />
-        <div class="panel panel-primary">
-            <div class="panel-body">
-                @foreach($users as $user)
-                    <div class="col-md-3">
-                        <div class="panel panel-primary">
-                            <div class="panel-body">
-                                <div class="text-center">
-                                    <h4>{{$user['username']}}{{ $user['isBOT'] ? ' [BOT]' : ''}}</h4>
-                                    <hr />
-                                    <p>{{$user['grade']}}</p>
-                                </div>
-                            </div>
+        @foreach($users as $user)
+            <div class="col-md-3">
+                <div class="panel panel-primary">
+                    <div class="panel-body">
+                        <div class="text-center">
+                            <h4>{{$user['username']}}{{ $user['isBOT'] ? ' [BOT]' : ''}}</h4>
+                            <hr />
+                            <p>{{$user['grade']}}</p>
                         </div>
                     </div>
-                @endforeach
+                </div>
             </div>
-        </div>
+        @endforeach
     </div>
 </div>
 @stop
