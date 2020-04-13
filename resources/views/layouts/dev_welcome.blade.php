@@ -11,7 +11,16 @@
     <title>{{env('APP_NAME')}} - @yield('title')</title>
     @endif
     <link rel="icon" href="/img/Avatar.png" type="image/png">
+    @guest
     <link href="{{mix('css/app.css')}}" rel="stylesheet" type="text/css">
+    @endguest
+    @auth
+        @if(Auth::user()->theme === 'dracula')
+            <link href="{{mix('css/appDracula.css')}}" rel="stylesheet" type="text/css">
+        @else 
+            <link href="{{mix('css/app.css')}}" rel="stylesheet" type="text/css">
+        @endif
+    @endauth
     <link rel="stylesheet" href="/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
 </head>
