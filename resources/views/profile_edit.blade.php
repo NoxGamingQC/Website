@@ -89,6 +89,12 @@
                     <form>
                         <div class="col-md-6">
                             <div class="form-group">
+                                <label for="theme">Theme</label>
+                                <input type="text" class="form-control" id="theme" placeholder="Default" value="{{$theme}}" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
                                 <label for="isFirstnameShowned">Show Firstname</label>
                                 <input type="text" class="form-control" id="isFirstnameShowned" placeholder="Show Firstname" value="{{$isFirstnameShowned}}" />
                             </div>

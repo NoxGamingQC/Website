@@ -90,6 +90,7 @@ class UserProfileController extends Controller
                 "lastname"=>$user->Lastname,
                 "birthdate"=>$user->Birthdate,
                 "gender"=>$user->Gender,
+                "theme"=>$user->theme,
                 "isFirstnameShowned"=>$user->isFirstnameShowned,
                 "isLastnameShowned"=>$user->isLastnameShowned,
                 "isGenderShowned"=>$user->isGenderShowned,
