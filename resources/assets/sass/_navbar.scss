@@ -33,39 +33,45 @@ $dropdown: true;
                 > .dropdown-menu {
                     background-color: $background-color;
                     > li {
+                        &:hover {
+                            background-color: $background-color;
+                        }
                         > a {
                             color: $text-color;
                             &:hover,  &:focus {
                                 color: $text-color;
                                 border-color: $brand-primary;
+                                background-color: $brand-primary;
                             }
                         }
                         &.divider {
                         background-color: $brand-primary;
+                        }
                     }
                 }
             }
         }
-    }
-    > .active {
-        > a, > a:hover, > a:focus {
-            color: $text-highlight;
-            background-color: $brand-primary;
+        > .active {
+            > a, > a:hover, > a:focus {
+                color: $text-highlight;
+                background-color: $brand-primary;
+            }
+        }
+        > .open {
+            > a, > a:hover, > a:focus {
+                color: $text-color;
+                background-color: $brand-primary;
+            }
         }
     }
-    > .open {
-      > a, > a:hover, > a:focus {
-        color: $text-highlight;
-        background-color: $brand-primary; }
-    }
-}
-.navbar-toggle {
-    border-color: $laravel-border-color;
-    &:hover, &:focus {
-        background-color: $brand-primary;
-    }
-    .icon-bar {
-        background-color: $text-color; }
+    .navbar-toggle {
+        border-color: $laravel-border-color;
+        &:hover, &:focus {
+            background-color: $brand-primary;
+        }
+        .icon-bar {
+            background-color: $text-color; 
+        }
     }
     .navbar-collapse, .navbar-form {
         border-color: $laravel-border-color;
