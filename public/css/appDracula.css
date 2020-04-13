@@ -9241,6 +9241,10 @@ h4.stroke {
   text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
 
+hr {
+  border-top: 1px solid #ffffff;
+}
+
 .error-text {
   color: #CA62B8 !important;
 }
