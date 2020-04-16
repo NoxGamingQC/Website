@@ -4283,29 +4283,29 @@ fieldset[disabled] .btn-info.focus {
 
 .btn-warning {
   color: #fff;
-  background-color: #cbb956;
-  border-color: #c5b143;
+  background-color: #fcf977;
+  border-color: #fbf85e;
 }
 
 .btn-warning:focus,
 .btn-warning.focus {
   color: #fff;
-  background-color: #b6a338;
-  border-color: #685d20;
+  background-color: #fbf745;
+  border-color: #d5d105;
 }
 
 .btn-warning:hover {
   color: #fff;
-  background-color: #b6a338;
-  border-color: #9b8a30;
+  background-color: #fbf745;
+  border-color: #faf522;
 }
 
 .btn-warning:active,
 .btn-warning.active,
 .open > .btn-warning.dropdown-toggle {
   color: #fff;
-  background-color: #b6a338;
-  border-color: #9b8a30;
+  background-color: #fbf745;
+  border-color: #faf522;
 }
 
 .btn-warning:active:hover,
@@ -4318,8 +4318,8 @@ fieldset[disabled] .btn-info.focus {
 .open > .btn-warning.dropdown-toggle:focus,
 .open > .btn-warning.dropdown-toggle.focus {
   color: #fff;
-  background-color: #9b8a30;
-  border-color: #685d20;
+  background-color: #faf522;
+  border-color: #d5d105;
 }
 
 .btn-warning:active,
@@ -4337,12 +4337,12 @@ fieldset[disabled] .btn-info.focus {
 fieldset[disabled] .btn-warning:hover,
 fieldset[disabled] .btn-warning:focus,
 fieldset[disabled] .btn-warning.focus {
-  background-color: #cbb956;
-  border-color: #c5b143;
+  background-color: #fcf977;
+  border-color: #fbf85e;
 }
 
 .btn-warning .badge {
-  color: #cbb956;
+  color: #fcf977;
   background-color: #fff;
 }
 
@@ -6184,12 +6184,12 @@ a.label:focus {
 }
 
 .label-warning {
-  background-color: #cbb956;
+  background-color: #fcf977;
 }
 
 .label-warning[href]:hover,
 .label-warning[href]:focus {
-  background-color: #b6a338;
+  background-color: #fbf745;
 }
 
 .label-danger {
@@ -6509,7 +6509,7 @@ a.thumbnail.active {
 }
 
 .progress-bar-warning {
-  background-color: #cbb956;
+  background-color: #fcf977;
 }
 
 .progress-striped .progress-bar-warning {
@@ -9250,7 +9250,7 @@ hr {
 }
 
 .warning-text {
-  color: #cbb956 !important;
+  color: #fcf977 !important;
 }
 
 .info-text {
