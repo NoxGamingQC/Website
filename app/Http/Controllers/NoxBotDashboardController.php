@@ -12,14 +12,12 @@ class NoxBotDashboardController extends Controller
 {
     public function index(Request $request)
     {
-        $datas = DB::table('servers_config')->get();
-        $serverLists = [];
-        foreach ($datas as $key => $data) {
-            array_push($serverLists, $data->ServerID);
+        if(Auth::user()->isAdmin || Auth::user()->isDev || Auth::user()->isModerator) {
+            
+        } else {
+            abort(403);
         }
-        return view('noxbot_dashboard', [
-            "serverLists" => $serverLists
-        ]);
+        
     }
 
     public function linkDiscord(Request $request)
@@ -42,6 +40,18 @@ class NoxBotDashboardController extends Controller
         } else {
             abort(401);
         }
+    }
+
+    public function getDashboard(Request $request)
+    {
+        $datas = DB::table('servers_config')->get();
+        $serverLists = [];
+        foreach ($datas as $key => $data) {
+            array_push($serverLists, $data->ServerID);
+        }
+        return view('noxbot_dashboard', [
+            "serverLists" => $serverLists
+        ]);
     }
 
     public function saveServersLists(Request $request)
