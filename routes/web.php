@@ -64,9 +64,7 @@ Route::group(
                 });
 
 
-                Route::get('/noxbot', function () {
-                    return view('noxbot');
-                });
+                Route::get('/noxbot', 'NoxBotDashboardController@index');
 
                 Route::get('/noxbot/dashboard', function () {
                     return view('noxbot_dashboard');
@@ -75,7 +73,7 @@ Route::group(
 
                 Route::get('/games', 'GamesListController@index');
 
-                Route::get('/noxbot/dashboard', 'NoxBotDashboardController@index');
+                Route::get('/noxbot/dashboard', 'NoxBotDashboardController@getDashboard');
 
 
                 Route::get('/profile/show/{id}', 'UserProfileController@index');
