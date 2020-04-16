@@ -37,7 +37,7 @@
 
 ### Useful Link
 
-[GitHub](https://github.com/nox-studios/Website)
+[GitHub](https://github.com/NoxGamingQC/Website)
 
 [Website](http://rebrand.ly/noxgamingqc)
 
