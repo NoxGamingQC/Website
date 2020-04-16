@@ -1,14 +1,46 @@
 @extends('layouts.reactLayout')
 @section('title', 'NoxBOT')
 @section('content')
-@guest
-<input type="hidden" id="isUserLogged" value="false">
-<input type="hidden" id="loginRoute" value="{{ route('login', app()->getLocale()) }}">
-<input type="hidden" id="registerRoute" value="{{ route('register', app()->getLocale()) }}">
-@else
-<input type="hidden" id="isUserLogged" value="true">
-<input type="hidden" id="discordUserID" value="{{Auth::user()->DiscordID}}">
-<input type="hidden" id="username" value="{{ Auth::user()->name }}">
-<input type="hidden" id="logoutRoute" value="{{ route('logout', app()->getLocale()) }}">
-@endguest
+
+<h1>NoxBOT</h1>
+<hr />
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-primary">
+                <div class="panel-body">
+                    <h3>{{$serverConfig->name}}</h3>
+                    <hr/>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4>Server aknowledgement</h4>
+                            <br/>
+                            <ul>
+                                <li>ID: {{$serverConfig->ServerID}}</li>
+                                <li>Current prefix: {{$serverConfig->Prefix}}</li>
+                                <li>Timeout role ID: {{$serverConfig->TimeoutRoleID}}</li>
+                            </ul>
+                            <hr />
+                        </div>
+                        <div class="col-md-12">
+                            <h4>Bot Modules</h4>
+                            <br />
+                            @foreach($serverSetting as $key => $value)
+                                <div class="col-md-3">
+                                    <div class="panel panel-primary">
+                                        <div class="panel-body">
+                                            {{$value['icon']}} {{$key}}
+                                            <hr />
+                                            <label>Is Active: </label> <input type="checkbox" id="{{$key}}" value="{{$value['isActive']}}" {{ $value['isActive'] ? 'checked' : '' }} />
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 @stop

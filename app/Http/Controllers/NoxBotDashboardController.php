@@ -7,6 +7,8 @@ use DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\User;
+use App\ServersConfig;
+use App\Modules;
 
 class NoxBotDashboardController extends Controller
 {
@@ -14,7 +16,60 @@ class NoxBotDashboardController extends Controller
     {
         if(Auth::user()) {
             if(Auth::user()->isAdmin || Auth::user()->isDev || Auth::user()->isModerator) {
-                
+                $serverConfig = ServersConfig::where('ServerID', '605028700182020101')->first();
+
+                $serverSetting = [
+                    'Bot' => [
+                        'isActive' => $serverConfig->Bot,
+                        'icon' => Modules::where('Slug', 'Bot')->first()->ModuleIcon
+                    ],
+                    'Info' => [
+                        'isActive' => $serverConfig->Info,
+                        'icon' => Modules::where('Slug', 'Info')->first()->ModuleIcon
+                    ],
+                    'Roles' => [
+                        'isActive' => $serverConfig->Roles,
+                        'icon' => Modules::where('Slug', 'Roles')->first()->ModuleIcon
+                    ],
+                    'Giveaway' => [
+                        'isActive' => $serverConfig->Giveaway,
+                        'icon' => Modules::where('Slug', 'Giveaway')->first()->ModuleIcon
+                    ],
+                    'Management' => [
+                        'isActive' => $serverConfig->Management,
+                        'icon' => Modules::where('Slug', 'Management')->first()->ModuleIcon
+                    ],
+                    'Ranking' => [
+                        'isActive' => $serverConfig->Ranking,
+                        'icon' => Modules::where('Slug', 'Ranking')->first()->ModuleIcon
+                    ],
+                    'Music' => [
+                        'isActive' => $serverConfig->Music,
+                        'icon' => Modules::where('Slug', 'Music')->first()->ModuleIcon
+                    ],
+                    'Miscs' => [
+                        'isActive' => $serverConfig->Miscs,
+                        'icon' => Modules::where('Slug', 'Miscs')->first()->ModuleIcon
+                    ],
+                    'Links' => [
+                        'isActive' => $serverConfig->Links,
+                        'icon' => Modules::where('Slug', 'Links')->first()->ModuleIcon
+                    ],
+                    'Twitch' => [
+                        'isActive' => $serverConfig->Twitch,
+                        'icon' => Modules::where('Slug', 'Twitch')->first()->ModuleIcon
+                    ],
+                    'Games' => [
+                        'isActive' => $serverConfig->Games,
+                        'icon' => Modules::where('Slug', 'Games')->first()->ModuleIcon
+                    ],
+                ];
+
+                return view('noxbot', [
+                    "serverConfig" => $serverConfig,
+                    'serverSetting' => $serverSetting
+                ]);
+
             } else {
                 abort(403);
             }
@@ -48,14 +103,15 @@ class NoxBotDashboardController extends Controller
 
     public function getDashboard(Request $request)
     {
-        $datas = DB::table('servers_config')->get();
+        abort(403);
+        /*$datas = ServersConfig::where('ServerID', '605028700182020101')->first();
         $serverLists = [];
         foreach ($datas as $key => $data) {
             array_push($serverLists, $data->ServerID);
         }
         return view('noxbot_dashboard', [
             "serverLists" => $serverLists
-        ]);
+        ]);*/
     }
 
     public function saveServersLists(Request $request)
