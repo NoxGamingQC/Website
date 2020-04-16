@@ -12,8 +12,12 @@ class NoxBotDashboardController extends Controller
 {
     public function index(Request $request)
     {
-        if(Auth::user()->isAdmin || Auth::user()->isDev || Auth::user()->isModerator) {
-            
+        if(Auth::user()) {
+            if(Auth::user()->isAdmin || Auth::user()->isDev || Auth::user()->isModerator) {
+                
+            } else {
+                abort(403);
+            }
         } else {
             abort(403);
         }
