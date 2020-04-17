@@ -43,7 +43,13 @@ class UserProfileController extends Controller
         }
 
         if ($user->isGenderShowned && $user->Gender !== null) {
-            $gender = ($user->Gender ? 'Woman' : 'Men');
+            if($user->Gender == 0) {
+                $gender = 'Other';
+            } elseif($user->Gender == 1) {
+                $gender = 'Male';
+            } else if($user->Gender == 2) {
+                $gender = 'Female';
+            }
         } else {
             $gender = null;
         }
@@ -69,7 +75,7 @@ class UserProfileController extends Controller
         ]);
     }
 
-    public function edit()
+    public function getEditPage()
     {
         if (Auth::user()) {
             $user = User::findOrFail(Auth::user()->id);
@@ -97,8 +103,29 @@ class UserProfileController extends Controller
                 "isBirthdateShowned"=>$user->isBirthdateShowned,
                 "isAgeShowned"=>$user->isAgeShowned,
                 "country"=>$user->Country
-
             ]);
+        } else {
+            abort(403);
+        }
+    }
+
+    public function edit(Request $request) {
+        if (Auth::user()) {
+            $user = User::findOrFail(Auth::user()->id);
+            $user->name = $request->username;
+            $user->email = $request->email;
+            $user->Firstname = $request->firstname;
+            $user->Lastname = $request->lastname;
+            $user->Birthdate = $request->birthdate;
+            $user->Gender = $request->gender;
+            $user->Country = $request->country;
+            $user->theme = $request->theme;
+            $user->isFirstnameShowned = $request->showFirstname;
+            $user->isLastnameShowned = $request->showLastname;
+            $user->isGenderShowned = $request->showGender;
+            $user->isBirthdateShowned = $request->showBirthdate;
+            $user->isAgeShowned = $request->showAge;
+            $user->save();
         } else {
             abort(403);
         }
