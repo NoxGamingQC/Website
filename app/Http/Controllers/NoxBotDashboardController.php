@@ -76,7 +76,30 @@ class NoxBotDashboardController extends Controller
         } else {
             abort(403);
         }
-        
+    }
+
+    public function post(Request $request) {
+        if(Auth::user()) {
+            if(Auth::user()->isAdmin || Auth::user()->isDev || Auth::user()->isModerator) {
+                $serverConfig = ServersConfig::findOrFail($request->id);
+                $serverConfig->Bot = $request->bot;
+                $serverConfig->Info = $request->info;
+                $serverConfig->Roles = $request->roles;
+                $serverConfig->Giveaway = $request->giveaway;
+                $serverConfig->Management = $request->management;
+                $serverConfig->Ranking = $request->ranking;
+                $serverConfig->Music = $request->music;
+                $serverConfig->Miscs = $request->miscs;
+                $serverConfig->Links = $request->links;
+                $serverConfig->Twitch = $request->twitch;
+                $serverConfig->Games = $request->games;
+                $serverConfig->save();
+            } else {
+                abort(403);
+            }
+        } else {
+            abort(403);
+        }
     }
 
     public function linkDiscord(Request $request)
