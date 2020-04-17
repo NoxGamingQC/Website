@@ -6,9 +6,9 @@
     <div class="col-md-12 text-center" id="title">
         <div class="panel panel-primary-red">
             <div class="panel-body">
-                <h1>NoxGamingQC</h1>
+                <h1 class="lightmode-text">NoxGamingQC</h1>
                 <br />
-                <h5>A Québecois that do videos on Twitch & YT. Speak French & English. Creator of NoxBOT. Part of @iraeGaming & @PositivityST.</h5>
+                <h5 class="lightmode-text">A Québecois that do videos on Twitch & YT. Speak French & English. Creator of NoxBOT. Part of @iraeGaming & @PositivityST.</h5>
                 <br />
             </div>
         </div>
