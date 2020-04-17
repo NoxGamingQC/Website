@@ -13,7 +13,12 @@
                         <div class="text-center">
                             <h4>{{$user['username']}}{{ $user['isBOT'] ? ' [BOT]' : ''}}</h4>
                             <hr />
-                            <p>{{$user['grade']}}</p>
+                            <select class="selectpicker" id="gender" title="Gender">
+                                <option value="0" {{$user['grade'] == 'member' ? 'selected' : ''}}>Member</option>
+                                <option value="1" {{$user['grade'] == 'developper' ? 'selected' : ''}}>Developper</option>
+                                <option value="2" {{$user['grade'] == 'moderator' ? 'selected' : ''}}>Moderator</option>
+                                <option value="3" {{$user['grade'] == 'administrator' ? 'selected' : ''}}>Administrator</option>
+                            </select>
                         </div>
                     </div>
                 </div>
