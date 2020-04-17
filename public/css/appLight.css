@@ -8434,7 +8434,7 @@ fieldset[disabled] .btn-default.active {
 .btn-primary:active,
 .btn-primary.active,
 .open .dropdown-toggle.btn-primary {
-  color: #000 !important;
+  color: #fff !important;
   background-color: #337ab7;
   border-color: #000;
 }
@@ -8480,7 +8480,7 @@ fieldset[disabled] .btn-primary.active {
 .btn-twitch:active,
 .btn-twitch.active,
 .open .dropdown-toggle.btn-twitch {
-  color: #000 !important;
+  color: #fff !important;
   background-color: #6441A4;
   border-color: #51338A;
 }
@@ -8526,7 +8526,7 @@ fieldset[disabled] .btn-twitch.active {
 .btn-youtube:active,
 .btn-youtube.active,
 .open .dropdown-toggle.btn-youtube {
-  color: #000 !important;
+  color: #fff !important;
   background-color: #FF0000;
   border-color: #C80000;
 }
@@ -8572,7 +8572,7 @@ fieldset[disabled] .btn-youtube.active {
 .btn-twitter:active,
 .btn-twitter.active,
 .open .dropdown-toggle.btn-twitter {
-  color: #000 !important;
+  color: #fff !important;
   background-color: #1da1f2;
   border-color: #178DD6;
 }
@@ -8619,7 +8619,7 @@ fieldset[disabled] .btn-twitter.active {
 .btn-facebook.active,
 .open .dropdown-toggle.btn-facebook {
   color: #3B5998 !important;
-  background-color: #000;
+  background-color: #fff;
   border-color: #CCCCCC;
 }
 
@@ -8664,7 +8664,7 @@ fieldset[disabled] .btn-facebook.active {
 .btn-instagram:active,
 .btn-instagram.active,
 .open .dropdown-toggle.btn-instagram {
-  color: #000 !important;
+  color: #fff !important;
   background-color: #DE2A7A;
   border-color: #C21F68;
 }
@@ -8710,7 +8710,7 @@ fieldset[disabled] .btn-instagram.active {
 .btn-steam:active,
 .btn-steam.active,
 .open .dropdown-toggle.btn-steam {
-  color: #000 !important;
+  color: #fff !important;
   background-color: #133B6E;
   border-color: #0E2F59;
 }
@@ -8756,7 +8756,7 @@ fieldset[disabled] .btn-steam.active {
 .btn-google-plus:active,
 .btn-google-plus.active,
 .open .dropdown-toggle.btn-google-plus {
-  color: #000 !important;
+  color: #fff !important;
   background-color: #DD4B39;
   border-color: #C74534;
 }
@@ -8803,7 +8803,7 @@ fieldset[disabled] .btn-google-plus.active {
 .btn-github.active,
 .open .dropdown-toggle.btn-github {
   color: #171515 !important;
-  background-color: #000;
+  background-color: #fff;
   border-color: #CCCCCC;
 }
 
@@ -8848,7 +8848,7 @@ fieldset[disabled] .btn-github.active {
 .btn-snapchat:active,
 .btn-snapchat.active,
 .open .dropdown-toggle.btn-snapchat {
-  color: #000 !important;
+  color: #fff !important;
   background-color: #FFFC00;
   border-color: #BBB900;
 }
@@ -8894,7 +8894,7 @@ fieldset[disabled] .btn-snapchat.active {
 .btn-spotify:active,
 .btn-spotify.active,
 .open .dropdown-toggle.btn-spotify {
-  color: #000 !important;
+  color: #fff !important;
   background-color: #1DB954;
   border-color: #199946;
 }
@@ -8940,7 +8940,7 @@ fieldset[disabled] .btn-spotify.active {
 .btn-reddit:active,
 .btn-reddit.active,
 .open .dropdown-toggle.btn-reddit {
-  color: #000 !important;
+  color: #fff !important;
   background-color: #FF4500;
   border-color: #F74200;
 }
@@ -8987,7 +8987,7 @@ fieldset[disabled] .btn-reddit.active {
 .btn-pinterest.active,
 .open .dropdown-toggle.btn-pinterest {
   color: #BD081C !important;
-  background-color: #000;
+  background-color: #fff;
   border-color: #CCCCCC;
 }
 
@@ -9032,7 +9032,7 @@ fieldset[disabled] .btn-pinterest.active {
 .btn-skype:active,
 .btn-skype.active,
 .open .dropdown-toggle.btn-skype {
-  color: #000 !important;
+  color: #fff !important;
   background-color: #0078D7;
   border-color: #0062B3;
 }
@@ -9234,6 +9234,10 @@ fieldset[disabled] .btn-skype.active {
 p.stroke {
   color: white;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.lightmode-text {
+  color: #fff;
 }
 
 h4.stroke {
