@@ -65,6 +65,7 @@ Route::group(
 
 
                 Route::get('/noxbot', 'NoxBotDashboardController@index');
+                Route::post('/noxbot', 'NoxBotDashboardController@post');
 
                 Route::get('/noxbot/dashboard', function () {
                     return view('noxbot_dashboard');

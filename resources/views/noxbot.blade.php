@@ -1,7 +1,8 @@
-@extends('layouts.reactLayout')
+@extends('layouts.app')
 @section('title', 'NoxBOT')
 @section('content')
 
+<input type="hidden" id="id" value="{{ $serverConfig->id }}" />
 <h1>NoxBOT</h1>
 <hr />
 <div class="container-fluid">
@@ -48,7 +49,42 @@
 </div>
 <script type="text/javascript">
     $('#submit').click(function() {
-        console.log('click');
+        $.ajax({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            url: '/en/noxbot',
+            method: 'POST',
+            data: {
+                'id': $('#id').val(), 
+                'bot': $('#Bot').is(':checked'),
+                'info': $('#Info').is(':checked'),
+                'roles': $('#Roles').is(':checked'),
+                'giveaway': $('#Giveaway').is(':checked'),
+                'management': $('#Management').is(':checked'),
+                'ranking': $('#Ranking').is(':checked'),
+                'music': $('#Music').is(':checked'),
+                'miscs': $('#Miscs').is(':checked'),
+                'links': $('#Links').is(':checked'),
+                'twitch': $('#Twitch').is(':checked'),
+                'games': $('#Games').is(':checked'),
+            },
+            beforeSend: function() {
+                $('#submit').addClass('disabled');
+                $('#submit').attr('disabled', '');
+            },
+            success: function() {
+                $('#submit').removeClass('disabled');
+                $('#submit').removeAttr('disabled', '');
+                console.log('sent');
+            },
+            error: function (error) {
+                $('#submit').removeClass('disabled');
+                $('#submit').removeAttr('disabled', '');
+                console.log(error);
+            }
+        })
     });
+    
 </script>
 @stop
