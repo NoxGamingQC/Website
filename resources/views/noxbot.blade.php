@@ -36,6 +36,9 @@
                                     </div>
                                 </div>
                             @endforeach
+                            <div class="col-md-12 text-right">
+                                <input type="submit" id="submit" class="btn btn-primary" value="Submit" />
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -43,4 +46,9 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    $('#submit').click(function() {
+        console.log('click');
+    });
+</script>
 @stop
