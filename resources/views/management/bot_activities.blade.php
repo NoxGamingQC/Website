@@ -8,8 +8,17 @@
         <hr />
         <div class="panel panel-primary">
             <div class="panel-body">
-                @foreach($activities as $activity)
-                    <p>{{$activity['name']}}</p>
+                <div class="row">
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" id="newActivity" placeholder="New entry..." />
+                    </div>
+                     <div class="col-md-6">
+                        <button class="btn btn-success"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                    </div>
+                </div>
+                <br />
+                @foreach($activities as $key => $activity)
+                    <p id="{{$activity['name']}}">{{$activity['name']}}<button class="btn btn-danger"><i class="fa fa-times" aria-hidden="true"></i></button></p> 
                 @endforeach
             </div>
         </div>
