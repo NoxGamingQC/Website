@@ -79,7 +79,8 @@ Route::group(
 
                 Route::get('/profile/show/{id}', 'UserProfileController@index');
 
-                Route::get('/profile/edit', 'UserProfileController@edit');
+                Route::get('/profile/edit', 'UserProfileController@getEditPage');
+                Route::post('/profile/edit', 'UserProfileController@edit');
 
                 Route::get('/contact', function () {
                     return view('contact');

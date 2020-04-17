@@ -16,7 +16,7 @@
                             <p>NoxBOT is a multitasking bot for Twitch and Discord.</p>
                             <a href="/{{app()->getLocale()}}/noxbot">Go to his Dashboard here</a>
                             <hr />
-                            <p class="warning-text">NoxBOT dashboard is temporarly unavailable for your server. No worry it will be there soon <3</p>
+                            <p class="warning-text"><i>NoxBOT dashboard is temporarly unavailable for your server. No worry it will be there soon <3</i></p>
                         </div>
                     </div>
                 </div>

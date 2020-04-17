@@ -76,7 +76,6 @@
             success: function() {
                 $('#submit').removeClass('disabled');
                 $('#submit').removeAttr('disabled', '');
-                console.log('sent');
             },
             error: function (error) {
                 $('#submit').removeClass('disabled');
