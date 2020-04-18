@@ -25,7 +25,7 @@ $dropdown: true;
                 color: $text-color;
                 font-size: 115%;
                 &:hover,  &:focus {
-                    color: $text-color;
+                    color: $lightmode-text-color;
                     background-color: $brand-primary;
                 }
             }
@@ -39,7 +39,7 @@ $dropdown: true;
                         > a {
                             color: $text-color;
                             &:hover,  &:focus {
-                                color: $text-color;
+                                color: $lightmode-text-color;
                                 border-color: $brand-primary;
                                 background-color: $brand-primary;
                             }
@@ -53,13 +53,13 @@ $dropdown: true;
         }
         > .active {
             > a, > a:hover, > a:focus {
-                color: $text-highlight;
+                color: $lightmode-text-color;
                 background-color: $brand-primary;
             }
         }
         > .open {
             > a, > a:hover, > a:focus {
-                color: $text-color;
+                color: $lightmode-text-color;
                 background-color: $brand-primary;
             }
         }
@@ -68,6 +68,9 @@ $dropdown: true;
         border-color: $laravel-border-color;
         &:hover, &:focus {
             background-color: $brand-primary;
+            .icon-bar {
+                background-color: $lightmode-text-color; 
+            }
         }
         .icon-bar {
             background-color: $text-color; 
@@ -76,10 +79,11 @@ $dropdown: true;
     .navbar-collapse, .navbar-form {
         border-color: $laravel-border-color;
     }
-  .navbar-link {
-    color: $text-color;
-    &:hover {
-      color: $text-highlight; }
+    .navbar-link {
+        color: $text-color;
+        &:hover {
+        color: $text-highlight; 
+        }
     }
 }
 
@@ -93,7 +97,7 @@ $dropdown: true;
         }
         > .active {
             > a, > a:hover, > a:focus {
-                color: $text-highlight;
+                color: $lightmode-text-color;
                 background-color: $brand-primary;
             }
         }
@@ -109,5 +113,6 @@ $dropdown: true;
 
     .navbar .navbar-collapse {
         text-align: center !important;
+        color: $text-color;
     }
 }
