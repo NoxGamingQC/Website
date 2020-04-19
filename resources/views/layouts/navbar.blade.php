@@ -28,6 +28,7 @@
                                     <a href="/{{app()->getLocale()}}/management/modules">Modules</a>
                                     <a href="/{{app()->getLocale()}}/management/users">Users</a>
                                     <a href="/{{app()->getLocale()}}/management/activities">Bot Activities</a>
+                                    <a href="/{{app()->getLocale()}}/management/tasks">Tasks</a>
                                 </li>
                             </ul>
                         </li>

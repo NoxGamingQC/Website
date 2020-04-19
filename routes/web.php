@@ -93,6 +93,7 @@ Route::group(
                 Route::get('/management/modules', 'ManagementController@getModules');
                 Route::get('/management/users', 'ManagementController@getUsers');
                 Route::get('/management/activities', 'ManagementController@getBotActivities');
+                Route::get('/management/tasks', 'ToDoListController@index');
             }
         );
     }
