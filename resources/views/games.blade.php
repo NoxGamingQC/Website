@@ -5,7 +5,7 @@
     <div class="col-md-12">
         <h1>{{trans('generic.games')}} ({{$totalGameCount}})</h1>
         <hr />
-        <div class="panel panel-primary">
+        <div class="panel">
             <div class="panel-body">
                 <h3>{{trans('generic.nes_games')}} ({{count($nes)}})</h3>
                     <hr />
@@ -181,25 +181,25 @@
                         <div class="col-md-12">
                             @php ($currentCount = 0)
                             @foreach($pc as $key => $console)
-                            <div class="col-md-3">
-                                <div class="panel panel-primary">
-                                    <div class="panel-body" style="background-image: url('https://static-cdn.jtvnw.net/ttv-boxart/{{$console->Game}}-285x380.jpg') !important; background-size: cover !important; height: 380px !important;">
-                                        <h4 class="stroke"><b>{{$console->Game}}</b></h4>
-                                        <hr />
-                                        <p class="stroke">{{trans('generic.format')}}: {{$console->format}}</p>
-                                        @if ($console->Date)
-                                        <p class="stroke">{{trans('generic.release_date')}}: {{$console->Date}}</p>
-                                        @endif
+                                <div class="col-md-3">
+                                    <div class="panel panel-primary">
+                                        <div class="panel-body" style="background-image: url('https://static-cdn.jtvnw.net/ttv-boxart/{{$console->Game}}-285x380.jpg') !important; background-size: cover !important; height: 380px !important;">
+                                            <h4 class="stroke"><b>{{$console->Game}}</b></h4>
+                                            <hr />
+                                            <p class="stroke">{{trans('generic.format')}}: {{$console->format}}</p>
+                                            @if ($console->Date)
+                                            <p class="stroke">{{trans('generic.release_date')}}: {{$console->Date}}</p>
+                                            @endif
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            @if($currentCount == 3)
-                                </div>
-                                <div class="col-md-12">
-                                @php ($currentCount = 0)
-                            @else
-                                @php ($currentCount += 1)
-                            @endif
+                                @if($currentCount == 3)
+                                    </div>
+                                    <div class="col-md-12">
+                                    @php ($currentCount = 0)
+                                @else
+                                    @php ($currentCount += 1)
+                                @endif
                             @endforeach
                         </div>
                     </div>
