@@ -42,8 +42,8 @@
                             @php ($currentCount = 0)
                             @foreach($ps1 as $key => $console)
                                 <div class="col-md-3">
-                                    <div class="panel">
-                                    <div class="panel-body" style="background-image: url('https://static-cdn.jtvnw.net/ttv-boxart/{{$console->Game}}-285x380.jpg') !important; background-size: cover !important; height: 380px !important;">
+                                    <div class="panel panel-primary">
+                                    <div class="panel-body" style="background-image: url(https://static-cdn.jtvnw.net/ttv-boxart/{{$console->Game}}-285x380.jpg) !important; background-size: cover !important; height: 380px !important;">
                                             <h4 class="stroke"><b>{{$console->Game}}</b></h4>
                                             <hr />
                                             <p class="stroke">{{trans('generic.format')}}: {{$console->format}}</p>
