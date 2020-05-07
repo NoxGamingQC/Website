@@ -21,7 +21,9 @@ class LoginController extends Controller
     |
     */
 
-    use AuthenticatesUsers;
+    use AuthenticatesUsers {
+        redirectPath as laravelRedirectPath;
+    }
 
     /**
      * Where to redirect users after login.
@@ -38,6 +40,15 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    public function redirectPath()
+    {
+        // Do your logic to flash data to session...
+        session()->flash('alert', ['info' => ['title' => 'Welcome back', 'text' => 'asdf']]);
+
+        // Return the results of the method we are overriding that we aliased.
+        return $this->laravelRedirectPath();
     }
 
     public function logout(Request $request)
