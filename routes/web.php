@@ -19,6 +19,10 @@ if (env('APP_ENV') !== 'production') {
     });
 }
 
+Route::get('/noxgamingqc/overlay/start_stream', function () {
+    return view('overlay.start_stream');
+});
+
 Route::group(
     [
     'middleware' => 'Development'],

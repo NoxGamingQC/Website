@@ -162,10 +162,12 @@
                 $('#submit').attr('disabled', '');
             },
             success: function() {
+                toastr.success('Editing success', 'You\'re profile have been saved successfuly. If you changed the theme, the change will be applied on the next page you visit.')
                 $('#submit').removeClass('disabled');
                 $('#submit').removeAttr('disabled', '');
             },
             error: function (error) {
+                toastr.error('An error occured', 'An error occured while trying to edit your profil try again later.')
                 $('#submit').removeClass('disabled');
                 $('#submit').removeAttr('disabled', '');
                 console.log(error);
