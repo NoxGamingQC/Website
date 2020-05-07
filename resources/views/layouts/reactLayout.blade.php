@@ -27,6 +27,7 @@
 <body>
     <input type="hidden" name="_token" id="csrf-token" value="{{ Session::token() }}" />
     @include('layouts.navbar')
+    @include('alert.alert')
     @yield('content')
     <div id="root"></div>
     <script src="{{mix('js/app.js')}}"></script>
