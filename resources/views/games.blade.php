@@ -91,12 +91,12 @@
                             @endforeach
                         </div>
                     </div>
-                    <h3>{{trans('generic.xbox360_games')}} ({{count($xbox360)}})</h3>
+                    <h3>{{trans('generic.switch_games')}} ({{count($switch)}})</h3>
                     <hr />
                     <div class="row">
                         <div class="col-md-12">
                             @php ($currentCount = 0)
-                            @foreach($xbox360 as $key => $console)
+                            @foreach($switch as $key => $console)
                             <div class="col-md-3">
                                 <div class="panel panel-primary">
                                     <div class="panel-body" style="background-image: url('https://static-cdn.jtvnw.net/ttv-boxart/{{$console->Game}}-285x380.jpg') !important; background-size: cover !important; height: 380px !important;">
