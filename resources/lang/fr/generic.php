@@ -14,7 +14,7 @@ return [
     'nes_games' => "Jeux NES",
     'ps1_games' => "Jeux PS1",
     'xbox_games' => "Jeux Xbox",
-    'xbox360_games' => "Jeux Xbox 360",
+    'switch_games' => "Jeux Switch",
     'wii_games' => "Jeux Wii",
     'ps4_games' => "Jeux PS4",
     'pc_games' => "Jeux PC"
