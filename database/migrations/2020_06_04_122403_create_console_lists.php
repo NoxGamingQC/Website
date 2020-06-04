@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateGamesList extends Migration
+class CreateConsoleLists extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateGamesList extends Migration
      */
     public function up()
     {
-        Schema::create('games_list', function (Blueprint $table) {
+        Schema::create('console_lists', function (Blueprint $table) {
             $table->increments('id');
-            $table->text('Game')->nullable(false);
-            $table->integer('Console')->nullable(false);
+            $table->text('Console')->nullable(false);
+            $table->text('Description')->nullable(false);
             $table->string('Date')->nullable(false);
-            $table->string('CoverURL')->nullable(false);
+            $table->string('Picture')->nullable(false);
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreateGamesList extends Migration
      */
     public function down()
     {  
-        Schema::dropIfExists('games_list');
+        Schema::dropIfExists('console_lists');
     }
 }

@@ -40,6 +40,8 @@ Route::group(
         Route::get('/noxbot/data/json/subs_modules', 'NoxBOT\BotModulesController@getSubsModules');
         Route::get('/noxbot/data/json/roles_reactions', 'NoxBOT\BotRolesReactionsController@getRolesReactions');
         Route::get('/noxbot/data/json/twitch_lives', 'NoxBOT\BotTwitchLivesController@getTwitchLives');
+        
+        Route::post('/noxbot/data/json/twitch_lives/{id}', 'NoxBOT\BotTwitchLivesController@postTwitchLives');
 
         Route::group(
             [
