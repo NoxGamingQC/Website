@@ -12,7 +12,7 @@
             <div class="row">
                 <div class="col-md-7" id="twitchPlayer">
                     <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" src="https://player.twitch.tv/?channel=noxgamingqc" frameBorder="0" allowFullScreen="true" scrolling="no"></iframe>
+                        <iframe class="embed-responsive-item" src="https://player.twitch.tv/?channel=noxgamingqc&parent=noxgamingqc.herokuapp.com" frameBorder="0" allowFullScreen="true" scrolling="no"></iframe>
                     </div>
                 </div>
                 <div class="col-md-5" id="twitchDefinition">
