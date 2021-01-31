@@ -32270,10 +32270,10 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
 
 /***/ }),
 
-/***/ "./resources/assets/sass/app.less":
-/*!****************************************!*\
-  !*** ./resources/assets/sass/app.less ***!
-  \****************************************/
+/***/ "./resources/assets/sass/bootstrap.less":
+/*!**********************************************!*\
+  !*** ./resources/assets/sass/bootstrap.less ***!
+  \**********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -32313,6 +32313,19 @@ __webpack_require__.r(__webpack_exports__);
 /*!**********************************************!*\
   !*** ./resources/assets/sass/lightSkin.scss ***!
   \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./resources/assets/sass/app.scss":
+/*!****************************************!*\
+  !*** ./resources/assets/sass/app.scss ***!
+  \****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -33089,10 +33102,11 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
 /******/ 		
 /******/ 		var deferredModules = [
 /******/ 			["./resources/assets/js/app.js"],
-/******/ 			["./resources/assets/sass/app.less"],
+/******/ 			["./resources/assets/sass/bootstrap.less"],
 /******/ 			["./resources/assets/sass/defaultSkin.scss"],
 /******/ 			["./resources/assets/sass/draculaSkin.scss"],
-/******/ 			["./resources/assets/sass/lightSkin.scss"]
+/******/ 			["./resources/assets/sass/lightSkin.scss"],
+/******/ 			["./resources/assets/sass/app.scss"]
 /******/ 		];
 /******/ 		// no chunk on demand loading
 /******/ 		

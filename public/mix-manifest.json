@@ -1,9 +1,10 @@
 {
     "/js/app.js": "/js/app.js",
+    "/css/app.css": "/css/app.css",
     "/css/lightSkin.css": "/css/lightSkin.css",
     "/css/draculaSkin.css": "/css/draculaSkin.css",
     "/css/defaultSkin.css": "/css/defaultSkin.css",
-    "/css/app.css": "/css/app.css",
+    "/css/bootstrap.css": "/css/bootstrap.css",
     "/fonts/fontawesome-webfont.eot": "/fonts/fontawesome-webfont.eot",
     "/fonts/fontawesome-webfont.svg": "/fonts/fontawesome-webfont.svg",
     "/fonts/fontawesome-webfont.ttf": "/fonts/fontawesome-webfont.ttf",
