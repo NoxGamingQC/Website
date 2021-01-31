@@ -1,6 +1,13 @@
 {
     "/js/app.js": "/js/app.js",
+    "/css/lightSkin.css": "/css/lightSkin.css",
+    "/css/draculaSkin.css": "/css/draculaSkin.css",
+    "/css/defaultSkin.css": "/css/defaultSkin.css",
     "/css/app.css": "/css/app.css",
-    "/css/appDracula.css": "/css/appDracula.css",
-    "/css/appLight.css": "/css/appLight.css"
+    "/fonts/fontawesome-webfont.eot": "/fonts/fontawesome-webfont.eot",
+    "/fonts/fontawesome-webfont.svg": "/fonts/fontawesome-webfont.svg",
+    "/fonts/fontawesome-webfont.ttf": "/fonts/fontawesome-webfont.ttf",
+    "/fonts/fontawesome-webfont.woff": "/fonts/fontawesome-webfont.woff",
+    "/fonts/fontawesome-webfont.woff2": "/fonts/fontawesome-webfont.woff2",
+    "/fonts/FontAwesome.otf": "/fonts/FontAwesome.otf"
 }

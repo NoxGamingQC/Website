@@ -18,14 +18,16 @@
     <link rel="icon" href="/img/Avatar.png" type="image/png">
     @guest
     <link href="{{mix('css/app.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{mix('css/defaultSkin.css')}}" rel="stylesheet" type="text/css">
     @endguest
     @auth
+    <link href="{{mix('css/app.css')}}" rel="stylesheet" type="text/css">
         @if(Auth::user()->theme === 'dracula')
-            <link href="{{mix('css/appDracula.css')}}" rel="stylesheet" type="text/css">
+            <link href="{{mix('css/draculaSkin.css')}}" rel="stylesheet" type="text/css">
         @elseif(Auth::user()->theme === 'light')
-            <link href="{{mix('css/appLight.css')}}" rel="stylesheet" type="text/css">
+            <link href="{{mix('css/lightSkin.css')}}" rel="stylesheet" type="text/css">
         @else 
-            <link href="{{mix('css/app.css')}}" rel="stylesheet" type="text/css">
+            <link href="{{mix('css/defaultSkin.css')}}" rel="stylesheet" type="text/css">
         @endif
     @endauth
     <link rel="stylesheet" href="/css/font-awesome.min.css">
