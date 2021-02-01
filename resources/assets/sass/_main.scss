@@ -1,9 +1,14 @@
 html, body {
     background-color: $background-color;
     color: $text-color;
+    font-family: $raleway-font;
     @media (min-width: 768px) {
         padding: 2%;
     }
+}
+
+h1, h2, h3, h4, h5, h6, p, a {
+    font-family: $raleway-font !important;
 }
 
 .btn {
