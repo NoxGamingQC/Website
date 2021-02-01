@@ -26,4 +26,18 @@ return [
     'users' => "Utilisateurs",
     'bot_status' => "Status du bot",
     'tasks' => "Tâches",
+    'social_network' => "Liens sociaux",
+    'business_inquiries' => "Demandes de renseignements commerciaux",
+    'business_inquiries_text' => "Pour les demandes commerciales, veuillez m'envoyer un message à cette adresse e-mail:",
+    'contact_information' => "Information de contact",
+    'edit_profile' => "Modifier le profil",
+    'logout' => "Déconnexion",
+    'login' => "Se connecter",
+    'register' => "S'inscrire",
+    'email_address' => "Addresse courriel",
+    'password' => "Mot de passe",
+    'remember_me' => "Se souvenir de moi",
+    'forgot_password' => "Mot de passe oublié?",
+    'username' => "Nom d'utilisateur",
+    'confirm_password' => "Confirmer le mot de passe"
 ];

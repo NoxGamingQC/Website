@@ -10,8 +10,14 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::group([
+    'prefix' => '{locale}',
+    'where' => ['locale' => '[a-zA-Z]{2}'],
+    'middleware' => 'setlocale'],
+    function () {
+        Auth::routes();
+});
 
-Auth::routes();
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 if (env('APP_ENV') !== 'production') {
     Route::get('/welcome_dev', function () {
