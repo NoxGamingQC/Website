@@ -18,7 +18,7 @@ class UserProfileController extends Controller
         $lastname = $user->isLastnameShowned ? $user->Lastname : null;
         $age = $user->isAgeShowned ? Carbon::parse($user->Birthdate)->age : null;
         $birthdate = $user->isBirthdateShowned ? $user->Birthdate : null;
-        $grade = "Member";
+        $grade = "member";
 
         if ($user->isAdmin) {
             $grade = "administrator";
