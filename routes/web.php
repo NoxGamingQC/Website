@@ -23,6 +23,8 @@ Route::get('/noxgamingqc/overlay/start_stream', function () {
     return view('overlay.start_stream');
 });
 
+Route::get('language/set/{language}', 'LanguageController@index');
+
 Route::group(
     [
     'middleware' => 'Development'],

@@ -17,5 +17,8 @@ return [
     'switch_games' => "Jeux Switch",
     'wii_games' => "Jeux Wii",
     'ps4_games' => "Jeux PS4",
-    'pc_games' => "Jeux PC"
+    'pc_games' => "Jeux PC",
+    'language' => "Langage",
+    'english' => "Anglais",
+    'french' => "Français"
 ];
