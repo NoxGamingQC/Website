@@ -14,5 +14,7 @@ return [
     'id' => "ID",
     'username' => "Nom d'utilisateur",
     'language' => "Langue",
-    'nitro_subscription' => "Abonnement Nitro"
+    'nitro_subscription' => "Abonnement Nitro",
+    'age' => "Âge",
+    'birthdate' => "Date d'anniversaire"
 ];

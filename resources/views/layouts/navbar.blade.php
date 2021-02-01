@@ -21,14 +21,14 @@
                     @if(Auth::user()->isDev || Auth::user()->isAdmin || Auth::user()->isModerator)
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
-                                Management <span class="caret"></span>
+                                {{trans("generic.management")}} <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a href="/{{app()->getLocale()}}/management/modules">Modules</a>
-                                    <a href="/{{app()->getLocale()}}/management/users">Users</a>
-                                    <a href="/{{app()->getLocale()}}/management/activities">Bot Activities</a>
-                                    <a href="/{{app()->getLocale()}}/management/tasks">Tasks</a>
+                                    <a href="/{{app()->getLocale()}}/management/modules">{{trans("generic.modules")}}</a>
+                                    <a href="/{{app()->getLocale()}}/management/users">{{trans("generic.users")}}</a>
+                                    <a href="/{{app()->getLocale()}}/management/activities">{{trans("generic.bot_status")}}</a>
+                                    <a href="/{{app()->getLocale()}}/management/tasks">{{trans("generic.tasks")}}</a>
                                 </li>
                             </ul>
                         </li>

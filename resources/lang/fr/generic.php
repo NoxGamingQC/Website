@@ -20,5 +20,10 @@ return [
     'pc_games' => "Jeux PC",
     'language' => "Langue",
     'english' => "Anglais",
-    'french' => "Français"
+    'french' => "Français",
+    'management' => "Administration",
+    'modules' => "Modules",
+    'users' => "Utilisateurs",
+    'bot_status' => "Status du bot",
+    'tasks' => "Tâches",
 ];

@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12" id="title">
-            <h1>Stream</h1>
+            <h1>{{trans("stream.stream")}}</h1>
             <hr />
         </div>
         <div class="col-md-12" id="content">
@@ -18,11 +18,11 @@
                 <div class="col-md-5" id="twitchDefinition">
                     <div class="panel panel-primary">
                         <div class="panel-body text-center">
-                            <h3><i class="fa fa-video-camera" aria-hidden="true"></i> NoxGamingQC's Twitch Stream</h3>
+                            <h3><i class="fa fa-video-camera" aria-hidden="true"></i> {{trans('stream.stream_description_title')}}</h3>
                             <hr />
-                            <p>Hey! I'm NoxGamingQC. But call me Nox it's shorter. Me an my community streams a variety of games on Twitch. You can join us on stream at <a href="https://www.twitch.tv/noxgamingqc">twitch.tv/noxgamingqc</a>.</p>
-                            <a class="btn btn-primary" href="/stream/commands">Bot commands</a>
-                            <a class="btn btn-primary" href="https://discord.gg/6DGc24x">Join Discord server</a>
+                            <p>{!!trans('stream.stream_description_text')!!}</a>.</p>
+                            <a class="btn btn-primary" href="/stream/commands">{{trans('stream.bot_commands')}}</a>
+                            <a class="btn btn-primary" href="https://discord.gg/6DGc24x">{{trans('stream.join_server')}}</a>
                         </div>
                     </div>
                </div>
@@ -32,36 +32,36 @@
                 <div class="col-md-6" id="twitchGoal">
                     <div class="panel panel-primary">
                         <div class="panel-body">
-                            <h3><i class="fa fa-dot-circle-o" aria-hidden="true"></i> Twitch Goal</h3>
+                            <h3><i class="fa fa-dot-circle-o" aria-hidden="true"></i> {{trans('stream.twitch_goal')}}</h3>
                             <hr />
-                            <p><i class="fa fa-video-camera" aria-hidden="true"></i> First stream: <b>2017-11-14</b></p>
-                            <p><i class="fa fa-handshake-o" aria-hidden="true"></i> Twitch Affiliate: <b>2018-06-16</b></p>
-                            <p><i class="fa fa-clock-o" aria-hidden="true"></i> First 24 hour stream: <b>2017-11-04</b></p>
+                            <p><i class="fa fa-video-camera" aria-hidden="true"></i> {{trans('stream.first_stream')}}: <b>2017-11-14</b></p>
+                            <p><i class="fa fa-handshake-o" aria-hidden="true"></i> {{trans('stream.twitch_affiliate')}}: <b>2018-06-16</b></p>
+                            <p><i class="fa fa-clock-o" aria-hidden="true"></i> {{trans('stream.first_24h')}}: <b>2017-11-04</b></p>
                             <br />
-                            <p><i class="fa fa-heart" aria-hidden="true"></i> 10 followers: <b>2017-11-22</b></p>
-                            <p><i class="fa fa-heart" aria-hidden="true"></i> 25 followers: <b>2017-12-14</b></p>
-                            <p><i class="fa fa-heart" aria-hidden="true"></i> 50 followers: <b>2018-02-14</b></p>
-                            <p><i class="fa fa-heart" aria-hidden="true"></i> 100 followers: <b>2018-07-11</b></p>
-                            <p><i class="fa fa-heart" aria-hidden="true"></i> 500 followers: <b>N/A</b></p>
+                            <p><i class="fa fa-heart" aria-hidden="true"></i> 10 {{trans('stream.followers')}}: <b>2017-11-22</b></p>
+                            <p><i class="fa fa-heart" aria-hidden="true"></i> 25 {{trans('stream.followers')}}: <b>2017-12-14</b></p>
+                            <p><i class="fa fa-heart" aria-hidden="true"></i> 50 {{trans('stream.followers')}}: <b>2018-02-14</b></p>
+                            <p><i class="fa fa-heart" aria-hidden="true"></i> 100 {{trans('stream.followers')}}: <b>2018-07-11</b></p>
+                            <p><i class="fa fa-heart" aria-hidden="true"></i> 500 {{trans('stream.followers')}}: <b>N/A</b></p>
                             <br />
-                            <p><i class="fa fa-star" aria-hidden="true"></i> 10 subscribers: <b>N/A</b></p>
+                            <p><i class="fa fa-star" aria-hidden="true"></i> 10 {{trans('stream.subscribers')}}: <b>N/A</b></p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6" id="subsPerks">
                     <div class="panel panel-primary">
                         <div class="panel-body">
-                            <h3><i class="fa fa-star" aria-hidden="true"></i> Subscribers Perks</h3>
+                            <h3><i class="fa fa-star" aria-hidden="true"></i> {{trans('stream.subscribers_perks')}}</h3>
                             <hr />
                             <ul>
-                                <li>Get a new role on my discord server</li>
-                                <li>Ad-free streams (with limited exceptions)</li>
-                                <li>Chat during subscriber-only mode</li>
-                                <li>Not affected by chat slow mode</li>
-                                <li>Access to sub only VODs</li>
+                                <li>{{trans('stream.perk01')}}</li>
+                                <li>{{trans('stream.perk02')}}</li>
+                                <li>{{trans('stream.perk03')}}</li>
+                                <li>{{trans('stream.perk04')}}</li>
+                                <li>{{trans('stream.perk05')}}</li>
                             </ul>
                             <br />
-                            <a class="btn btn-primary" href="https://subs.twitch.tv/noxgamingqc">Subscribe now</a>
+                            <a class="btn btn-primary" href="https://subs.twitch.tv/noxgamingqc">{{trans('stream.subscribe_now')}}</a>
                         </div>
                     </div>
                 </div>
@@ -71,44 +71,44 @@
                 <div class="col-md-6" id="equipement">
                 <div class="panel panel-primary">
                         <div class="panel-body">
-                            <h3><i class="fa fa-laptop" aria-hidden="true"></i> Equipement</h3>
+                            <h3><i class="fa fa-laptop" aria-hidden="true"></i> {{trans('stream.equipement')}}</h3>
                             <hr />
-                            <p>💻 Intel® Z390 AORUS MASTER by Gigabyte</p>
-                            <p>💻 Microsoft Windows 10 (64 bits)</p>
-                            <p>💻 Intel® Core™ i5-9400F CPU</p>
-                            <p>💻 32 GB HyperX Predator DDR4 RAM @ 3200MHz</p>
-                            <p>💻 NVIDIA GeForce GTX 1070</p>
+                            <p>💻 {{trans('stream.motherboard')}}</p>
+                            <p>💻 {{trans('stream.os')}}</p>
+                            <p>💻 {{trans('stream.cpu')}}</p>
+                            <p>💻 {{trans('stream.ram')}}</p>
+                            <p>💻 {{trans('stream.gpu')}}</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6" id="console">
                     <div class="panel panel-primary">
                         <div class="panel-body">
-                            <h3><i class="fa fa-gamepad" aria-hidden="true"></i> Video games console</h3>
+                            <h3><i class="fa fa-gamepad" aria-hidden="true"></i> {{trans('stream.video_game_consoles')}}</h3>
                             <hr />
                             <p>🕹 Nintendo Entertainement System (NES)</p>
                             <p>🕹 Nintendo Wii</p>
                             <p>🕹 Playstation 1</p>
                             <p>🕹 Playstation 4</p>
-                            <p>🕹 Xbox (1<em>st</em> Generation)</p>
+                            <p>🕹 Xbox ({!!trans('stream.first_gen')!!})</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6" id="accessory">
                     <div class="panel panel-primary">
                         <div class="panel-body">
-                            <h3><i class="fa fa-headphones" aria-hidden="true"></i> Accessories</h3>
+                            <h3><i class="fa fa-headphones" aria-hidden="true"></i> {{trans('stream.accessories')}}</h3>
                             <hr />
-                            <p>🎧 MSI DS502 Gaming Headset</p>
-                            <p>🖱 Mazer - Type-R - E-BLUE</p>
-                            <p>📹 Logitech QuickCam® Pro 9000</p>
+                            <p>🎧 {{trans('stream.headset')}}</p>
+                            <p>🖱 {{trans('stream.mouse')}}</p>
+                            <p>📹 {{trans('stream.camera')}}</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6" id="controllers">
                     <div class="panel panel-primary">
                         <div class="panel-body">
-                            <h3><i class="fa fa-gamepad" aria-hidden="true"></i> Controllers</h3>
+                            <h3><i class="fa fa-gamepad" aria-hidden="true"></i> {{trans('stream.controllers')}}</h3>
                             <hr />
                             <p>🎮 MICROSOFT XBOX ONE wireless controller Gear of War 4 edition</p>
                             <p>🎮 MICROSOFT XBOX ONE wireless controller Ocean Shadow edition</p>
