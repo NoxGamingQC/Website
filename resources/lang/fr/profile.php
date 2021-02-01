@@ -4,6 +4,7 @@ return [
     'administrator' => "Administrateur",
     'moderator' => "Modérateur",
     'developper' => "Développeur",
+    'member' => "Membre",
     'user_acknowledgement' => "Profil de l'utilisateur",
     'discord_user_acknowledgement' => "Profil de l'utilisateur Discord",
     'account_level' => "Niveau du compte",
