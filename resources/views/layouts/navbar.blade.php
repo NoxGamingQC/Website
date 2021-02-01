@@ -36,6 +36,17 @@
                 @endauth
             </ul>
             <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+                            {{trans("generic.language")}} <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="/language/set/en">English ({{trans("generic.english")}})</a>
+                                <a href="/language/set/fr">Français ({{trans("generic.french")}})</a>
+                            </li>
+                        </ul>
+                    </li>
                 @auth
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
