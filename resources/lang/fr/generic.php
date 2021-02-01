@@ -18,7 +18,7 @@ return [
     'wii_games' => "Jeux Wii",
     'ps4_games' => "Jeux PS4",
     'pc_games' => "Jeux PC",
-    'language' => "Langage",
+    'language' => "Langue",
     'english' => "Anglais",
     'french' => "Français"
 ];
