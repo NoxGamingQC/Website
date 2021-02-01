@@ -54,15 +54,15 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="/{{app()->getLocale()}}/profile/edit">Edit Profile</a>
-                                <a href="{{ route('logout', app()->getLocale()) }}">Logout</a>
+                                <a href="/{{app()->getLocale()}}/profile/edit">{{trans('generic.edit_profile')}}</a>
+                                <a href="/logout">{{trans('generic.logout')}}</a>
                             </li>
                         </ul>
                     </li>
                 @endauth
                 @guest
-                    <li class="nav-login"><a href="{{ route('login', app()->getLocale()) }}">Login</a></li>
-                    <li class="nav-register"><a href="{{ route('register', app()->getLocale()) }}">Register</a></li>
+                    <li class="nav-login"><a href="{{ route('login', app()->getLocale()) }}">{{trans("generic.login")}}</a></li>
+                    <li class="nav-register"><a href="{{ route('register', app()->getLocale()) }}">{{trans("generic.register")}}</a></li>
                 @endguest
             </ul>
         </div>

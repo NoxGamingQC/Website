@@ -5,11 +5,11 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12" id="title">
-            <h1>Contact information</h1>
+            <h1>{{trans('generic.contact_information')}}</h1>
             <hr />
         </div>
         <div class="col-md-12" id="socialNetwork">
-            <h3><i class="fa fa-globe" aria-hidden="true"></i> Social network</h3>
+            <h3><i class="fa fa-globe" aria-hidden="true"></i> {{trans('generic.social_network')}}</h3>
             <hr />
             <div class="row text-center">
                 <div class="col-md-2" id="twitch">
@@ -87,9 +87,9 @@
             </div>
         </div>
         <div class="col-md-12" id="businessInquiries">
-            <h3><i class="fa fa-briefcase" aria-hidden="true"></i> Business Inquiries</h3>
+            <h3><i class="fa fa-briefcase" aria-hidden="true"></i> {{trans('generic.business_inquiries')}}</h3>
             <hr />
-            <p>For buisiness inquiries, please message me on this email address: <a href="mailto:noxgamingqc@gmail.com">noxgamingqc@gmail.com</a>.</p>
+            <p>{{trans('generic.business_inquiries_text')}} <a href="mailto:noxgamingqc@gmail.com">noxgamingqc@gmail.com</a>.</p>
         </div>
     </div>
 </div>
