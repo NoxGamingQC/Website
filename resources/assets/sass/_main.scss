@@ -1,15 +1,57 @@
 html, body {
     background-color: $background-color;
     color: $text-color;
-    font-family: $raleway-font;
     @media (min-width: 768px) {
         padding: 2%;
     }
 }
 
-h1, h2, h3, h4, h5, h6, p, a {
+h1, h2, h3, h4, h5, h6 {
+    font-family: $vesper-font;
+}
+
+p, a {
+    font-family: $raleway-font;
+}
+
+.raleway-font {
     font-family: $raleway-font !important;
 }
+
+.lobster-font {
+    font-family: $lobster-font !important;
+}
+
+.yellowtail-font {
+    font-family: $yellowtail-font !important;
+}
+
+.vesper-font {
+    font-family: $vesper-font !important;
+}
+
+.satisfy-font {
+    font-family: $satisfy-font !important;
+}
+
+.orbitron-font {
+    font-family: $orbitron-font !important;
+}
+
+.parisienne-font {
+    font-family: $parisienne-font !important;
+}
+
+.pressStart2p-font {
+    font-family: $pressStart2p-font !important;
+}
+
+.holloween-font {
+    font-family: $creepster-font !important;
+}
+
+
+
 
 .btn {
     margin-left: 15px;

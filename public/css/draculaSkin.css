@@ -3035,7 +3035,6 @@
 html, body {
   background-color: #282A36;
   color: #ffffff;
-  font-family: "Raleway", sans-serif;
 }
 @media (min-width: 768px) {
   html, body {
@@ -3043,8 +3042,48 @@ html, body {
   }
 }
 
-h1, h2, h3, h4, h5, h6, p, a {
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Vesper Libre", serif;
+}
+
+p, a {
+  font-family: "Raleway", sans-serif;
+}
+
+.raleway-font {
   font-family: "Raleway", sans-serif !important;
+}
+
+.lobster-font {
+  font-family: "Lobster", cursive !important;
+}
+
+.yellowtail-font {
+  font-family: "Yellowtail", cursive !important;
+}
+
+.vesper-font {
+  font-family: "Vesper Libre", serif !important;
+}
+
+.satisfy-font {
+  font-family: "Satisfy", cursive !important;
+}
+
+.orbitron-font {
+  font-family: "Orbitron", sans-serif !important;
+}
+
+.parisienne-font {
+  font-family: "Parisienne", cursive !important;
+}
+
+.pressStart2p-font {
+  font-family: "Press Start 2P", cursive !important;
+}
+
+.holloween-font {
+  font-family: "Creepster", cursive !important;
 }
 
 .btn {

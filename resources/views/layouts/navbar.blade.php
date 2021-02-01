@@ -7,7 +7,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/home" style="display: flex; alignItems: center">
+            <a class="navbar-brand satisfy-font" href="/home" style="display: flex; alignItems: center">
                 NoxGamingQC
             </a>
         </div>
