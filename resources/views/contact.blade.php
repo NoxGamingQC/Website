@@ -22,7 +22,7 @@
                     <a class="btn btn-youtube btn-lg" href="https://www.youtube.com/channel/UCytKDUapog2tnJD4XenehiQ">
                         <i class="fa fa-youtube-play fa-5x" aria-hidden="true"></i>
                     </a>
-                    <p>NoxRacing</p>
+                    <p>NoxGamingQC</p>
                 </div>
                 <div class="col-md-2" id="twitter">
                     <a class="btn btn-twitter btn-lg" href="https://www.twitter.com/@noxgamingqc">
@@ -34,7 +34,7 @@
                     <a class="btn btn-instagram btn-lg" href="https://www.instagram.com/noxgamingqc">
                         <i class="fa fa-instagram fa-5x" aria-hidden="true"></i>
                     </a>
-                    <p>@NoxRacingGaming</p>
+                    <p>@NoxGamingQC</p>
                 </div>
                 <div class="col-md-2" id="steam">
                     <a class="btn btn-steam btn-lg" href="http://steamcommunity.com/id/NoxGamingQC">
@@ -55,10 +55,10 @@
                     <p>NoxGamingQC</p>
                 </div>
                 <div class="col-md-2" id="snapchat">
-                    <a class="btn btn-snapchat btn-lg" href="https://www.snapchat.com/add/howlnox22607">
+                    <a class="btn btn-snapchat btn-lg" href="https://www.snapchat.com/add/NoxGamingQC">
                         <i class="fa fa-snapchat-ghost fa-5x" aria-hidden="true"></i>
                     </a>
-                    <p>HowlNox22607</p>
+                    <p>NoxGamingQC</p>
                 </div>
                 <div class="col-md-2" id="spotify">
                     <a class="btn btn-spotify btn-lg" href="https://open.spotify.com/user/howlnox22607">
@@ -89,7 +89,7 @@
         <div class="col-md-12" id="businessInquiries">
             <h3><i class="fa fa-briefcase" aria-hidden="true"></i> Business Inquiries</h3>
             <hr />
-            <p>For buisiness inquiries, please message me on this email address: <a href="mailto:noxracinggaming@gmail.com">noxracinggaming@gmail.com</a>.</p>
+            <p>For buisiness inquiries, please message me on this email address: <a href="mailto:noxgamingqc@gmail.com">noxgamingqc@gmail.com</a>.</p>
         </div>
     </div>
 </div>
