@@ -16,6 +16,9 @@ class Development
      */
     public function handle($request, Closure $next)
     {
+        if($this->app->environment('production')) {
+            \URL::forceScheme('https');
+        }
         if (env('APP_ENV') !== 'production' && !Auth::check()) {
             return redirect('maintenance');
         }
