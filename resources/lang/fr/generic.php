@@ -43,5 +43,7 @@ return [
     'video' => "Vidéo",
     'twitch' => "Twitch",
     'about_me' => "À propos",
-    'youtube' => "YouTube"
+    'youtube' => "YouTube",
+    'search' => "Rechercher",
+    'submit' => "Envoyer"
 ];

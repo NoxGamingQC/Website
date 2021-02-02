@@ -43,5 +43,7 @@ return [
     'video' => "Video",
     'twitch' => "Twitch",
     'about_me' => "About me",
-    'youtube' => "YouTube"
+    'youtube' => "YouTube",
+    'search' => "Search",
+    'submit' => "Submit"
 ];
