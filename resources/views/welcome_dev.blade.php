@@ -16,21 +16,21 @@
                     <br />
                     <p>Nous avons encontré une erreur et nous avons décidé de mettre le site web en maintence. Merci de votre patience. Nous seront de retour bientôt.</p>
                     <br />
+                    <em>P.S. Only members with developpers rights have access the website at the moment.</em>
+                    <br />
+                    <em>P.S. Seul les membres ayant les droits développeur ont accès au site web pour le moment.</em>
+                    <br />
                     @guest
-                        <em>P.S. Only members with developpers rights have access the website at the moment.</em>
-                        <br />
-                        <em>P.S. Seul les membres ayant les droits développeur ont accès au site web pour le moment.</em>
-                        <br />
                         <br />
                         <a class="btn btn-primary" href="{{ route('login', app()->getLocale()) }}">Login / Se connecter</a>
                         <a class="btn btn-primary" href="{{ route('register', app()->getLocale()) }}">Register / S'inscrire</a>
 
                     @endguest
                     @auth
-                        <a class="btn btn-primary disabled" href="#" disabled>Login / Se connecter (dev only)</a>
-                        <a class="btn btn-primary disabled" href="#" disabled>Register / S'inscrire</a>
                         <hr />
-                        P.S. Buttons are disabled, because we are detecting that your are already logged in. ¯\_(ツ)_/¯ <a href="/{{app()->getLocale()}}/home">(Travel to home page)</a>
+                       <p>¯\_(ツ)_/¯ You are logged in. If you still can't access the website take a minute and read the whole message. If you haven't been redirected to the welcome page there's a link: <a href="/{{app()->getLocale()}}/home">(Travel to home page)</a></p>
+                       <br />
+                       <p>¯\_(ツ)_/¯ Vous êtes connecter. Si vous n'avez pas accès au site web, prenez quelques minutes pour lire le message ci-haut. Si vous n'avez pas été redirigé, voici un lien vers la page d'accueil: <a href="/{{app()->getLocale()}}/home">(Allez vers la page d'accueil)</a></p>
                     @endauth
                 </div>
             </div>
