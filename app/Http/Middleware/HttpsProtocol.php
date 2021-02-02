@@ -11,7 +11,7 @@ class HttpsProtocol {
     {
             if (!$request->secure() && App::environment() === 'production') {
                 $request->header->add('X-Forwarded-Proto');
-                return redirect()->secure($request->getRequestUri());
+                return redirect()->secure($next($request));
             }
 
             return $next($request); 
