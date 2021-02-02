@@ -39,5 +39,9 @@ return [
     'remember_me' => "Se souvenir de moi",
     'forgot_password' => "Mot de passe oublié?",
     'username' => "Nom d'utilisateur",
-    'confirm_password' => "Confirmer le mot de passe"
+    'confirm_password' => "Confirmer le mot de passe",
+    'video' => "Vidéo",
+    'twitch' => "Twitch",
+    'about_me' => "À propos",
+    'youtube' => "YouTube"
 ];

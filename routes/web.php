@@ -69,8 +69,12 @@ Route::group(
                     return view('projects');
                 });
 
-                Route::get('/stream', function () {
-                    return view('stream');
+                Route::get('/twitch', function () {
+                    return view('twitch');
+                });
+
+                Route::get('/youtube', function () {
+                    abort(503);
                 });
 
                 Route::get('/stream/commands', function () {
