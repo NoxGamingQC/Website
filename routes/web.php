@@ -12,8 +12,8 @@
 */
 
 if (env('APP_ENV') !== 'production') {
-    Route::get('/welcome_dev', function () {
-        return view('welcome_dev');
+    Route::get('/maintenance', function () {
+        return view('maintenance');
     });
 }
 
