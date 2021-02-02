@@ -20,7 +20,6 @@ class Kernel extends HttpKernel
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
         \App\Http\Middleware\TrustProxies::class,
         \Barryvdh\Cors\HandleCors::class,
-        \App\Http\Middleware\HttpsProtocol::class,
     ];
 
     /**
@@ -62,5 +61,6 @@ class Kernel extends HttpKernel
         'setlocale' => \App\Http\Middleware\SetLocale::class,
         'Development' => \App\Http\Middleware\Development::class,
         'cors' => \Barryvdh\Cors\HandleCors::class,
+        'HttpsProtocol' => \App\Http\Middleware\HttpsProtocol::class,
     ];
 }
