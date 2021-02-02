@@ -10,9 +10,9 @@ class HttpsProtocol {
     public function handle($request, Closure $next)
     {
             if (!$request->secure() && App::environment() === 'production') {
-                return redirect()->secure($request->getRequestUri())->header('X-Forwarded-Proto', true);
+                return redirect()->secure($request->getRequestUri());
             }
 
-            return redirect($request->getRequestUri()); 
+            return $next($request); 
     }
 }
