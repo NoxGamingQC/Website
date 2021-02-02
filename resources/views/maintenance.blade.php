@@ -1,5 +1,5 @@
-@extends('layouts.dev_welcome')
-@section('title', 'Stream')
+@extends('layouts.maintenance')
+@section('title', 'Maintenance')
 @section('content')
 <h1>On maintenance. / En maintenance.</h1>
 <hr />
