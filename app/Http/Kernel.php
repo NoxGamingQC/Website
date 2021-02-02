@@ -61,6 +61,5 @@ class Kernel extends HttpKernel
         'setlocale' => \App\Http\Middleware\SetLocale::class,
         'Development' => \App\Http\Middleware\Development::class,
         'cors' => \Barryvdh\Cors\HandleCors::class,
-        'HttpsProtocol' => \App\Http\Middleware\HttpsProtocol::class,
     ];
 }
