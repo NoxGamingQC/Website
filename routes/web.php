@@ -10,9 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::group(
+/*Route::group(
     ['middleware' => 'HttpsProtocol'],
-    function () {
+    function () {*/
     Route::group([
         'prefix' => '{locale}',
         'where' => ['locale' => '[a-zA-Z]{2}'],
@@ -119,4 +119,4 @@ Route::group(
             );
         }
     );
-    });
+    //});
