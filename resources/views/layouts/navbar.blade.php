@@ -86,6 +86,49 @@
                     </li>
                 @endguest
             </ul>
+            <div class="col-md-3">
+                <form id="search" role="search"> 
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="navSearch" placeholder="{{trans('generic.search')}}...">
+                        <span class="input-group-btn">
+                            <button class="btn btn-primary" type="button"><i id="navSearchButton" class="fa fa-search"></i></button>
+                        </span>
+                    </div>
+                </form>
+                <div id="navSearchResult"></div>
+            </div>
         </div>
     </div>
 </nav>
+<script type="text/javascript">
+        var language = $('html').attr('lang');
+    $('#search').click(function () {
+        $.ajax({
+            url: '/' + language +'/search',
+            type: 'GET',
+            data: {
+                'search': $('#navSearch').val()
+            },
+            beforeSend: function() {
+                //$('#navSearchButton').
+            },
+            complete: function() {
+                //$('#navSearchButton').
+            },
+            success: function (response) {
+                var navSearchHTML = '';
+                navSearchHTML += '<li class="dropdown open">'
+                navSearchHTML +=    '<ul class="dropdown-menu">'
+                navSearchHTML +=        '<li>'
+                $.each(response, function(key, user) {
+                    navSearchHTML += user.username
+                    navSearchHTML +=    '<a href="/' + language + '/profile/show/' + user.id + '"> '+ user.username +'</a>'
+                })
+                navSearchHTML +=        '</li>'
+                navSearchHTML +=    '</ul>'
+                navSearchHTML += '</li>'
+                $("#navSearchResult").empty().append( navSearchHTML );
+            }
+        })
+    });
+</script>

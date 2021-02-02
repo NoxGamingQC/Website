@@ -83,6 +83,8 @@ Route::group(
                     return view('commands');
                 });
 
+                Route::get('/search', 'SearchController@index');
+                Route::get('/search', 'SearchController@search');
 
                 Route::get('/noxbot', 'NoxBotDashboardController@index');
                 Route::post('/noxbot', 'NoxBotDashboardController@post');
