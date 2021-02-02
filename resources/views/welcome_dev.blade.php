@@ -15,8 +15,8 @@
                     <p>To access this website on this current state you must be logged in at all time and have the necessary right. If it's not your case don't worry the website should be back shortly. If you're one of the developement team member, want to help and don't have your credential make sure to ask NoxGamingQC in DM on Discord.</p>
                     <hr />
                     @guest
-                        <a class="btn btn-primary" href="{{ route('login') }}">Login</a>
-                        <a class="btn btn-primary" href="{{ route('register') }}">Register</a>
+                        <a class="btn btn-primary" href="{{ route('login', app()->getLocale()) }}">Login</a>
+                        <a class="btn btn-primary" href="{{ route('register', app()->getLocale()) }}">Register</a>
                     @endguest
                     @auth
                         <a class="btn btn-primary disabled" href="#" disabled>Login</a>
