@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Auth;
-use Illuminate\Support\Facades\URL;
+
 
 class Development
 {
@@ -17,9 +17,6 @@ class Development
      */
     public function handle($request, Closure $next)
     {
-        if($this->app->environment('production')) {
-            URL::forceScheme('https');
-        }
         if (env('APP_ENV') !== 'production' && !Auth::check()) {
             return redirect('maintenance');
         }
