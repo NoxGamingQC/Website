@@ -16,9 +16,9 @@ class Development
      */
     public function handle($request, Closure $next)
     {
-        /*if (env('APP_ENV') !== 'production' && !Auth::check()) {
+        if (env('APP_ENV') !== 'production' && !Auth::check()) {
             return redirect('welcome_dev');
-        }*/
+        }
         return $next($request);
     }
 }

@@ -10,6 +10,13 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+if (env('APP_ENV') !== 'production') {
+    Route::get('/welcome_dev', function () {
+        return view('welcome_dev');
+    });
+}
+
 Route::group([
     'prefix' => '{locale}',
     'where' => ['locale' => '[a-zA-Z]{2}'],
@@ -19,11 +26,6 @@ Route::group([
 });
 
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
-if (env('APP_ENV') !== 'production') {
-    Route::get('/welcome_dev', function () {
-        return view('welcome_dev');
-    });
-}
 
 Route::get('/noxgamingqc/overlay/start_stream', function () {
     return view('overlay.start_stream');
