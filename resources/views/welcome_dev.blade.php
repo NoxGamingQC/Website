@@ -19,7 +19,7 @@
                     @guest
                         <em>P.S. Only members with developpers rights have access the website at the moment.</em>
                         <br />
-                        <em>P.S. Seul les membres ayant les droits développeur ont accéder au site web pour le moment.</em>
+                        <em>P.S. Seul les membres ayant les droits développeur ont accès au site web pour le moment.</em>
                         <br />
                         <br />
                         <a class="btn btn-primary" href="{{ route('login', app()->getLocale()) }}">Login / Se connecter</a>
