@@ -16,6 +16,15 @@ hr {
     border-top: 1px solid $text-color;
 }
 
+.close {
+    opacity: 0.75;
+    text-shadow: 0px 0px 0px transparent !important;
+}
+
+.close:hover {
+    opacity: 1;
+}
+
 .error-text {
     color: $brand-danger !important
 }

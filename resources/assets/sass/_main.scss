@@ -14,6 +14,20 @@ p, a {
     font-family: $raleway-font;
 }
 
+.modal-backdrop {
+    z-index: -1 !important;
+}
+
+.modal-title {
+    margin: 2px;
+    line-height: 1.5;
+    margin-bottom: -20;
+}
+
+.modal-content {
+    background-color: $background-color !important;
+    color: $text-color !important;
+}
 .raleway-font {
     font-family: $raleway-font !important;
 }
@@ -49,9 +63,6 @@ p, a {
 .holloween-font {
     font-family: $creepster-font !important;
 }
-
-
-
 
 .btn {
     margin-left: 15px;

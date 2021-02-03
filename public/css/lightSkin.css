@@ -3050,6 +3050,21 @@ p, a {
   font-family: "Raleway", sans-serif;
 }
 
+.modal-backdrop {
+  z-index: -1 !important;
+}
+
+.modal-title {
+  margin: 2px;
+  line-height: 1.5;
+  margin-bottom: -20;
+}
+
+.modal-content {
+  background-color: #FFF !important;
+  color: #000 !important;
+}
+
 .raleway-font {
   font-family: "Raleway", sans-serif !important;
 }
@@ -4008,6 +4023,15 @@ h4.stroke {
 
 hr {
   border-top: 1px solid #000;
+}
+
+.close {
+  opacity: 0.75;
+  text-shadow: 0px 0px 0px transparent !important;
+}
+
+.close:hover {
+  opacity: 1;
 }
 
 .error-text {

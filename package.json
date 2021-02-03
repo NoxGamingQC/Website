@@ -37,6 +37,7 @@
     "install": "^0.12.2",
     "less": "^4.1.1",
     "less-loader": "^7.3.0",
+    "moment": "^2.29.1",
     "npm": "^6.13.6",
     "querystring": "^0.2.0",
     "toastr": "^2.1.4"

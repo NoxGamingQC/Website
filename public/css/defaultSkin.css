@@ -3050,6 +3050,21 @@ p, a {
   font-family: "Raleway", sans-serif;
 }
 
+.modal-backdrop {
+  z-index: -1 !important;
+}
+
+.modal-title {
+  margin: 2px;
+  line-height: 1.5;
+  margin-bottom: -20;
+}
+
+.modal-content {
+  background-color: #222222 !important;
+  color: #ffffff !important;
+}
+
 .raleway-font {
   font-family: "Raleway", sans-serif !important;
 }
@@ -3155,7 +3170,7 @@ fieldset[disabled] .btn-default.active {
 .btn-primary:active,
 .btn-primary.active,
 .open .dropdown-toggle.btn-primary {
-  color: #fff !important;
+  color: #000 !important;
   background-color: #E56F1F;
   border-color: #090909;
 }
@@ -3201,7 +3216,7 @@ fieldset[disabled] .btn-primary.active {
 .btn-twitch:active,
 .btn-twitch.active,
 .open .dropdown-toggle.btn-twitch {
-  color: #fff !important;
+  color: #000 !important;
   background-color: #6441A4;
   border-color: #51338A;
 }
@@ -3247,7 +3262,7 @@ fieldset[disabled] .btn-twitch.active {
 .btn-youtube:active,
 .btn-youtube.active,
 .open .dropdown-toggle.btn-youtube {
-  color: #fff !important;
+  color: #000 !important;
   background-color: #FF0000;
   border-color: #C80000;
 }
@@ -3293,7 +3308,7 @@ fieldset[disabled] .btn-youtube.active {
 .btn-twitter:active,
 .btn-twitter.active,
 .open .dropdown-toggle.btn-twitter {
-  color: #fff !important;
+  color: #000 !important;
   background-color: #1da1f2;
   border-color: #178DD6;
 }
@@ -3340,7 +3355,7 @@ fieldset[disabled] .btn-twitter.active {
 .btn-facebook.active,
 .open .dropdown-toggle.btn-facebook {
   color: #3B5998 !important;
-  background-color: #fff;
+  background-color: #000;
   border-color: #CCCCCC;
 }
 
@@ -3385,7 +3400,7 @@ fieldset[disabled] .btn-facebook.active {
 .btn-instagram:active,
 .btn-instagram.active,
 .open .dropdown-toggle.btn-instagram {
-  color: #fff !important;
+  color: #000 !important;
   background-color: #DE2A7A;
   border-color: #C21F68;
 }
@@ -3431,7 +3446,7 @@ fieldset[disabled] .btn-instagram.active {
 .btn-steam:active,
 .btn-steam.active,
 .open .dropdown-toggle.btn-steam {
-  color: #fff !important;
+  color: #000 !important;
   background-color: #133B6E;
   border-color: #0E2F59;
 }
@@ -3477,7 +3492,7 @@ fieldset[disabled] .btn-steam.active {
 .btn-google-plus:active,
 .btn-google-plus.active,
 .open .dropdown-toggle.btn-google-plus {
-  color: #fff !important;
+  color: #000 !important;
   background-color: #DD4B39;
   border-color: #C74534;
 }
@@ -3524,7 +3539,7 @@ fieldset[disabled] .btn-google-plus.active {
 .btn-github.active,
 .open .dropdown-toggle.btn-github {
   color: #171515 !important;
-  background-color: #fff;
+  background-color: #000;
   border-color: #CCCCCC;
 }
 
@@ -3569,7 +3584,7 @@ fieldset[disabled] .btn-github.active {
 .btn-snapchat:active,
 .btn-snapchat.active,
 .open .dropdown-toggle.btn-snapchat {
-  color: #fff !important;
+  color: #000 !important;
   background-color: #FFFC00;
   border-color: #BBB900;
 }
@@ -3615,7 +3630,7 @@ fieldset[disabled] .btn-snapchat.active {
 .btn-spotify:active,
 .btn-spotify.active,
 .open .dropdown-toggle.btn-spotify {
-  color: #fff !important;
+  color: #000 !important;
   background-color: #1DB954;
   border-color: #199946;
 }
@@ -3661,7 +3676,7 @@ fieldset[disabled] .btn-spotify.active {
 .btn-reddit:active,
 .btn-reddit.active,
 .open .dropdown-toggle.btn-reddit {
-  color: #fff !important;
+  color: #000 !important;
   background-color: #FF4500;
   border-color: #F74200;
 }
@@ -3708,7 +3723,7 @@ fieldset[disabled] .btn-reddit.active {
 .btn-pinterest.active,
 .open .dropdown-toggle.btn-pinterest {
   color: #BD081C !important;
-  background-color: #fff;
+  background-color: #000;
   border-color: #CCCCCC;
 }
 
@@ -3753,7 +3768,7 @@ fieldset[disabled] .btn-pinterest.active {
 .btn-skype:active,
 .btn-skype.active,
 .open .dropdown-toggle.btn-skype {
-  color: #fff !important;
+  color: #000 !important;
   background-color: #0078D7;
   border-color: #0062B3;
 }
@@ -3918,7 +3933,7 @@ fieldset[disabled] .btn-skype.active {
   font-size: 115%;
 }
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-  color: #fff;
+  color: #000;
   background-color: #E56F1F;
 }
 .navbar-default .navbar-nav > li > .dropdown-menu {
@@ -3931,7 +3946,7 @@ fieldset[disabled] .btn-skype.active {
   color: #ffffff;
 }
 .navbar-default .navbar-nav > li > .dropdown-menu > li > a:hover, .navbar-default .navbar-nav > li > .dropdown-menu > li > a:focus {
-  color: #fff;
+  color: #000;
   border-color: #E56F1F;
   background-color: #E56F1F;
 }
@@ -3939,11 +3954,11 @@ fieldset[disabled] .btn-skype.active {
   background-color: #E56F1F;
 }
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
-  color: #fff;
+  color: #000;
   background-color: #E56F1F;
 }
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
-  color: #fff;
+  color: #000;
   background-color: #E56F1F;
 }
 .navbar-default .navbar-toggle {
@@ -3953,7 +3968,7 @@ fieldset[disabled] .btn-skype.active {
   background-color: #E56F1F;
 }
 .navbar-default .navbar-toggle:hover .icon-bar, .navbar-default .navbar-toggle:focus .icon-bar {
-  background-color: #fff;
+  background-color: #000;
 }
 .navbar-default .navbar-toggle .icon-bar {
   background-color: #ffffff;
@@ -3976,7 +3991,7 @@ fieldset[disabled] .btn-skype.active {
     color: #CCCCCC;
   }
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
-    color: #fff;
+    color: #000;
     background-color: #E56F1F;
   }
 }
@@ -3998,7 +4013,7 @@ p.stroke {
 }
 
 .lightmode-text {
-  color: #fff;
+  color: #000;
 }
 
 h4.stroke {
@@ -4008,6 +4023,15 @@ h4.stroke {
 
 hr {
   border-top: 1px solid #ffffff;
+}
+
+.close {
+  opacity: 0.75;
+  text-shadow: 0px 0px 0px transparent !important;
+}
+
+.close:hover {
+  opacity: 1;
 }
 
 .error-text {
