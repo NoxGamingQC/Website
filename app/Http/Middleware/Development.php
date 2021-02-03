@@ -18,7 +18,7 @@ class Development
     public function handle($request, Closure $next)
     {
         if (env('APP_ENV') !== 'production' && !Auth::check()) {
-            return redirect('maintenance');
+            return redirect('/'. app()->getLocale() . '/maintenance');
         }
         return $next($request);
     }
