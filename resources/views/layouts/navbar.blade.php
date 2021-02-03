@@ -67,7 +67,7 @@
                         <ul class="dropdown-menu">
                             <li>
                                 <a href="/{{app()->getLocale()}}/profile/edit"><i class="fa fa-wrench" aria-hidden="true"></i> {{trans('generic.edit_profile')}}</a>
-                                <a href="/logout"><i class="fa fa-sign-out" aria-hidden="true"></i> {{trans('generic.logout')}}</a>
+                                <a href="/{{app()->getLocale()}}/logout"><i class="fa fa-sign-out" aria-hidden="true"></i> {{trans('generic.logout')}}</a>
                             </li>
                         </ul>
                     </li>

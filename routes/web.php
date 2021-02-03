@@ -11,11 +11,6 @@
 |
 */
 
-if (env('APP_ENV') !== 'production') {
-    Route::get('/maintenance', function () {
-        return view('maintenance');
-    });
-}
 
 Route::group([
     'prefix' => '{locale}',
@@ -23,8 +18,13 @@ Route::group([
     'middleware' => 'setlocale'],
     function () {
         Auth::routes();
-});
-
+        if (env('APP_ENV') !== 'production') {
+            Route::get('/maintenance', function () {
+                return view('maintenance');
+            });
+        }
+    });
+    
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 Route::get('/noxgamingqc/overlay/start_stream', function () {
