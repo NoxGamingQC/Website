@@ -17,7 +17,13 @@ class Development
      */
     public function handle($request, Closure $next)
     {
-        if (env('APP_ENV') !== 'production' && !Auth::check()) {
+        $isDev = false;
+        if (Auth::check()) {
+            if(Auth::user()->isAdmin || Auth::user()->isModerator || Auth::user()->isDev) {
+                $isDev = true;
+            }
+        }
+        if (env('APP_ENV') !== 'production' && $isDev == false) {
             return redirect('/'. app()->getLocale() . '/maintenance');
         }
         return $next($request);
