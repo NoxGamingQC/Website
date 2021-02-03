@@ -14,9 +14,9 @@
                 <div class="panel-body">
                     <h3>Sorry / Désolé</h3>
 
-                    <p>Something went wrong and we decided to put the website on mainteance for a short time. Thanks for your patience. We should be back soon.</p>
+                    <p>We decided to put the website under maintenance for a short time. Thanks for your patience. We should be back soon.</p>
                     <br />
-                    <p>Nous avons encontré une erreur et nous avons décidé de mettre le site web en maintence. Merci de votre patience. Nous seront de retour bientôt.</p>
+                    <p>Nous avons décidé de mettre le site web sous maintenance. Merci de votre patience. Nous seront de retour bientôt.</p>
                     <br />
                     <em>P.S. Only members with developpers rights have access the website at the moment.</em>
                     <br />
