@@ -33,6 +33,7 @@
                        <p>¯\_(ツ)_/¯ You are logged in. If you still can't access the website take a minute and read the whole message. If you haven't been redirected to the welcome page there's a link: <a href="/{{app()->getLocale()}}/home">(Travel to home page)</a></p>
                        <br />
                        <p>¯\_(ツ)_/¯ Vous êtes connecter. Si vous n'avez pas accès au site web, prenez quelques minutes pour lire le message ci-haut. Si vous n'avez pas été redirigé, voici un lien vers la page d'accueil: <a href="/{{app()->getLocale()}}/home">(Allez vers la page d'accueil)</a></p>
+                        <a class="btn btn-primary pull-right" href="/logout"> {{trans('generic.logout')}}</a>
                     @endauth
                 </div>
             </div>
