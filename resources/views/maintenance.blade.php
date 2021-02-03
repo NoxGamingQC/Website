@@ -1,3 +1,4 @@
+@include('modal.login')
 @extends('layouts.maintenance')
 @section('title', 'Maintenance')
 @section('content')
@@ -24,6 +25,7 @@
                         <br />
                         <a class="btn btn-primary" href="{{ route('login', app()->getLocale()) }}">Login / Se connecter</a>
                         <a class="btn btn-primary" href="{{ route('register', app()->getLocale()) }}">Register / S'inscrire</a>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Launch demo modal</button>
 
                     @endguest
                     @auth
