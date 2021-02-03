@@ -1,4 +1,4 @@
-@include('modal.login')
+@include('modal.demo')
 @extends('layouts.maintenance')
 @section('title', 'Maintenance')
 @section('content')
