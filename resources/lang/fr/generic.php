@@ -45,5 +45,7 @@ return [
     'about_me' => "À propos",
     'youtube' => "YouTube",
     'search' => "Rechercher",
-    'submit' => "Envoyer"
+    'submit' => "Envoyer",
+    'close' => "Fermer",
+    'save' => "Sauvegarder"
 ];

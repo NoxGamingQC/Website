@@ -45,5 +45,7 @@ return [
     'about_me' => "About me",
     'youtube' => "YouTube",
     'search' => "Search",
-    'submit' => "Submit"
+    'submit' => "Submit",
+    'close' => "Close",
+    'save' => "Save"
 ];
