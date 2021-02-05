@@ -25,17 +25,17 @@ Route::group([
         }
     });
     
-Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
-
-Route::get('/noxgamingqc/overlay/start_stream', function () {
-    return view('overlay.start_stream');
-});
-
-Route::get('language/set/{language}', 'LanguageController@index');
-
-Route::group(
-    [
-    'middleware' => 'Development'],
+    Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+    
+    Route::get('/noxgamingqc/overlay/start_stream', function () {
+        return view('overlay.start_stream');
+    });
+    
+    Route::get('language/set/{language}', 'LanguageController@index');
+    
+    Route::group(
+        [
+            'middleware' => 'Development'],
     function () {
         Route::get('/', function () {
             return redirect(app()->getLocale() . '/home');
