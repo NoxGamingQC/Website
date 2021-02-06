@@ -29,7 +29,7 @@
                             <label for="email" class="col-md-4 control-label">{{trans('generic.email_address')}}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
+                                <input id="RegisterEmail" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
 
                                 @if ($errors->has('email'))
                                 <span class="help-block">
@@ -43,7 +43,7 @@
                             <label for="password" class="col-md-4 control-label">{{trans('generic.password')}}</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
+                                <input id="registerPassword" type="password" class="form-control" name="password" required>
 
                                 @if ($errors->has('password'))
                                 <span class="help-block">
