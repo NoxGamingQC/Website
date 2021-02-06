@@ -1,8 +1,8 @@
-@include('modal.login')
-@include('modal.register')
 @extends('layouts.maintenance')
 @section('title', 'Maintenance')
 @section('content')
+@include('modal.login')
+@include('modal.register')
 <h1>{{trans('maintenance.under_maintenance')}}</h1>
 <hr />
 <div class="container">
