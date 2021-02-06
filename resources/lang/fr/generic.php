@@ -47,5 +47,9 @@ return [
     'search' => "Rechercher",
     'submit' => "Envoyer",
     'close' => "Fermer",
-    'save' => "Sauvegarder"
+    'save' => "Sauvegarder",
+    'console_wait' => "Attends !!",
+    'console_copy_paste01' => "Si quelqu\'un t\'a dit de copier/coller quelque chose ici, il y a à peu près 11 chances sur 10 que ce soit une arnaque.",
+    'console_copy_paste02' => "Coller quelque chose ici pourrait donner aux assaillants accès à ton compte.",
+    'console_close_window' => "À moins que tu comprennes exactement ce que tu fais, ferme cette fenêtre et reste en sécurité."
 ];
