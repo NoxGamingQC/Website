@@ -14,7 +14,7 @@
 - Docker
 - docker-compose
 - posgresql
-- php
+- php 7.4
 
 
 ### Step
