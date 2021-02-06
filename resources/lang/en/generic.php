@@ -47,5 +47,9 @@ return [
     'search' => "Search",
     'submit' => "Submit",
     'close' => "Close",
-    'save' => "Save"
+    'save' => "Save",
+    'console_wait' => "Hold Up !!",
+    'console_copy_paste01' => "If someone told you to copy/paste something here you have an 11/10 chance you\'re being scammed.",
+    'console_copy_paste02' => "Pasting anything in here could give attackers access to your account.",
+    'console_close_window' => "Unless you understand exactly what you are doing, close this window and stay safe."
 ];
