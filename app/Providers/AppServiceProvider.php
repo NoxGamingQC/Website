@@ -13,7 +13,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        if($this->app->environment('production') || env('APP_URL') == 'https://noxgamingqc.herokuapp.com') {
+        if($this->app->environment('production') || env('APP_URL') !== 'http://localhost') {
             \URL::forceScheme('https');
         }
     }
