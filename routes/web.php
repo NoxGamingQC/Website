@@ -32,7 +32,7 @@ Route::group([
     });
 
     Route::get('/discord', function () {
-        return redirect()->to('https:/discord.gg/6DGc24x');
+        return redirect()->to('https://discord.gg/6DGc24x');
     });
     
     Route::get('language/set/{language}', 'LanguageController@index');
