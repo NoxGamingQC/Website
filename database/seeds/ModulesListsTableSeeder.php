@@ -15,74 +15,62 @@ class ModulesListsTableSeeder extends Seeder
             [
                 'Slug' => 'Music',
                 'isActiveDefault' => true,
-                'Maintenance' => false,
-                'Name' => 'Music',
+                'Maintenance' => false
             ],
             [
                 'Slug' => 'Bot',
                 'isActiveDefault' => true,
-                'Maintenance' => false,
-                'Name' => 'Bot Commands',
+                'Maintenance' => false
             ],
             [
                 'Slug' => 'Info',
                 'isActiveDefault' => true,
-                'Maintenance' => false,
-                'Name' => 'Info',
+                'Maintenance' => false
             ],
             [
                 'Slug' => 'Pokemon',
                 'isActiveDefault' => true,
-                'Maintenance' => false,
-                'Name' => 'Pokémon',
+                'Maintenance' => false
             ],
             [
                 'Slug' => 'Warframe',
                 'isActiveDefault' => true,
-                'Maintenance' => false,
-                'Name' => 'Warframe',
+                'Maintenance' => false
             ],
             [
                 'Slug' => 'Twitch',
                 'isActiveDefault' => false,
-                'Maintenance' => false,
-                'Name' => 'Twitch',
+                'Maintenance' => false
             ],
             [
                 'Slug' => 'Roles',
                 'isActiveDefault' => false,
-                'Maintenance' => false,
-                'Name' => 'Roles',
+                'Maintenance' => false
             ],
             [
                 'Slug' => 'Miscs',
                 'isActiveDefault' => false,
-                'Maintenance' => false,
-                'Name' => 'Miscs',
+                'Maintenance' => false
             ],
             [
                 'Slug' => 'Giveaways',
                 'isActiveDefault' => true,
-                'Maintenance' => false,
-                'Name' => 'Giveaways',
+                'Maintenance' => false
             ],
             [
                 'Slug' => 'Links',
                 'isActiveDefault' => false,
-                'Maintenance' => false,
-                'Name' => 'Links',
+                'Maintenance' => false
             ],
             [
                 'Slug' => 'Management',
                 'isActiveDefault' => true,
-                'Maintenance' => false,
-                'Name' => 'Management',
+                'Maintenance' => false
             ],
             [
                 'Slug' => 'Ranking',
                 'isActiveDefault' => true,
-                'Maintenance' => false,
-                'Name' => 'Ranking',
+                'Maintenance' => false
             ],
         ]);
     }
