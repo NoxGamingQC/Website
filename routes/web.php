@@ -30,6 +30,10 @@ Route::group([
     Route::get('/noxgamingqc/overlay/start_stream', function () {
         return view('overlay.start_stream');
     });
+
+    Route::get('/discord', function () {
+        return redirect('https:/discord.gg/6DGc24x');
+    });
     
     Route::get('language/set/{language}', 'LanguageController@index');
     
