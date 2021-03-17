@@ -18,7 +18,7 @@
                     <button id="submitSearch" class="btn btn-primary" type="button"><i id="navSearchButton" class="fa fa-search"></i></button>
                 </span>
             </div>
-            <div id="navSearchResult" style="margin-top:-5%"></div>
+            <div id="navSearchResult"></div>
         </div>
         <div class="collapse navbar-collapse" id="bs-navbar-collapse">
             <ul class="nav navbar-nav">
