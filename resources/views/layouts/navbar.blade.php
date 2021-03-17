@@ -18,7 +18,7 @@
                     <button id="submitSearch" class="btn btn-primary" type="button"><i id="navSearchButton" class="fa fa-search"></i></button>
                 </span>
             </div>
-            <div id="navSearchResult"></div>
+            <div id="navSearchResult" style="margin-top:-5%"></div>
         </div>
         <div class="collapse navbar-collapse" id="bs-navbar-collapse">
             <ul class="nav navbar-nav">
@@ -115,16 +115,17 @@
             },
             success: function (response) {
                 var navSearchHTML = '';
+                navSearchHTML += '<ul class="list-unstyled">'
                 navSearchHTML += '<li class="dropdown open">'
                 navSearchHTML +=    '<ul class="dropdown-menu">'
                 navSearchHTML +=        '<li>'
                 $.each(response, function(key, user) {
-                    navSearchHTML += user.username
                     navSearchHTML +=    '<a href="/' + language + '/profile/show/' + user.id + '"> '+ user.username +'</a>'
                 })
                 navSearchHTML +=        '</li>'
                 navSearchHTML +=    '</ul>'
                 navSearchHTML += '</li>'
+                navSearchHTML += '</ul>'
                 $("#navSearchResult").empty().append( navSearchHTML );
             }
         })
