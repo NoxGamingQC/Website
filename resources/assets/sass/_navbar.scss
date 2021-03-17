@@ -3,29 +3,30 @@ $dropdown: true;
 .navbar-default {
     background-color: $background-color;
     border-color: $laravel-border-color;
-
-    @media (min-width: 768px) {
+    @media (min-width: 992) {
         border-top-color: transparent !important;
         border-right-color: transparent !important;
         border-left-color: transparent !important;
     }
     .navbar-brand {
         color: $text-color;
-        font-size: 250%;
+        font-size: 155%;
         &:hover, &:focus {
             color: $text-highlight;
         }
     }
     .navbar-text {
         color: $text-color;
+        font-size: 155%;
     }
     .navbar-nav {
         > li {
             margin-right: 5px;
             > a {
                 color: $text-color;
-                font-size: 115%;
+                font-size: 125%;
                 &:hover,  &:focus {
+                    padding: -10px;
                     color: $lightmode-text-color;
                     background-color: $brand-primary;
                 }
@@ -88,7 +89,7 @@ $dropdown: true;
     }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     .navbar-default .navbar-nav .open .dropdown-menu {
         > li > a {
             color: $text-color;
@@ -105,7 +106,7 @@ $dropdown: true;
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
     .navbar .navbar-nav {
         display: inline-block !important;
         float: none;

@@ -11,6 +11,15 @@
                 NoxGamingQC
             </a>
         </div>
+        <div class="navbar-header form-inline hidden-xs hidden-sm">
+            <div class="input-group" style="margin-top: 3%">
+                <input type="text" class="form-control" id="navSearch" placeholder="{{trans('generic.search')}}...">
+                <span class="input-group-btn">
+                    <button id="submitSearch" class="btn btn-primary" type="button"><i id="navSearchButton" class="fa fa-search"></i></button>
+                </span>
+            </div>
+            <div id="navSearchResult"></div>
+        </div>
         <div class="collapse navbar-collapse" id="bs-navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class="nav-home"><a href="/{{app()->getLocale()}}/home"><i class="fa fa-home" aria-hidden="true"></i> {{ trans('generic.welcome') }} <span class="sr-only">current</span></a></li>
@@ -86,23 +95,12 @@
                     </li>
                 @endguest
             </ul>
-            <div class="col-md-3">
-                <form id="search" role="search"> 
-                    <div class="input-group">
-                        <input type="text" class="form-control" id="navSearch" placeholder="{{trans('generic.search')}}...">
-                        <span class="input-group-btn">
-                            <button class="btn btn-primary" type="button"><i id="navSearchButton" class="fa fa-search"></i></button>
-                        </span>
-                    </div>
-                </form>
-                <div id="navSearchResult"></div>
-            </div>
         </div>
     </div>
 </nav>
 <script type="text/javascript">
         var language = $('html').attr('lang');
-    $('#search').click(function () {
+    $('#submitSearch').click(function () {
         $.ajax({
             url: '/' + language +'/search',
             type: 'GET',

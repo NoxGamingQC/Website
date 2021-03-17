@@ -2,29 +2,29 @@
     background-image: none;
     background-color: $brand-primary;
     color: $text-color;
-    border-color: $laravel-border-color;
+    border-color: $pannel-border-color;
 }
 
 .panel-primary > .panel-body {
     background-image: none;
     background-color: $background-color;
     color: $text-color;
-    border-color: $laravel-border-color;
+    border-color: $pannel-border-color;
 }
 
 .panel-primary {
-    border-color: $laravel-border-color !important;
+    border-color: $pannel-border-color !important;
 }
 
 .panel-primary-red > .panel-body {
     background-image: none;
     background-color: $brand-primary;
     color: $text-color;
-    border-color: $laravel-border-color;
+    border-color: $pannel-border-color;
 }
 
 .panel-primary-red {
-    border-color: $laravel-border-color;
+    border-color: $pannel-border-color;
 }
 
 .panel-success > .panel-heading {
