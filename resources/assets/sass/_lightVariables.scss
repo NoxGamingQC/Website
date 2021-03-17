@@ -3,7 +3,8 @@ $body-bg: #FFF;
 $background-color: #FFF;
 
 // Borders
-$laravel-border-color: #000;
+//$laravel-border-color: #000;
+$laravel-border-color: $background-color;
 $list-group-border: $laravel-border-color;
 $navbar-default-border: $laravel-border-color;
 $panel-default-border: $laravel-border-color;
