@@ -3036,7 +3036,7 @@ html, body {
   background-color: #282A36;
   color: #ffffff;
 }
-@media (min-width: 768px) {
+@media (min-width: 1210px) {
   html, body {
     padding: 2%;
   }
@@ -3116,7 +3116,7 @@ a:hover, a:active {
 .btn-default {
   color: #ffffff !important;
   background-color: #282A36;
-  border-color: #282A36;
+  border-color: #121319;
 }
 
 .btn-default:hover,
@@ -3126,7 +3126,7 @@ a:hover, a:active {
 .open .dropdown-toggle.btn-default {
   color: #ffffff !important;
   background-color: #282A36;
-  border-color: #282A36;
+  border-color: #121319;
 }
 
 .btn-default:active,
@@ -3150,8 +3150,8 @@ fieldset[disabled] .btn-default:active,
 .btn-default.disabled.active,
 .btn-default[disabled].active,
 fieldset[disabled] .btn-default.active {
-  background-color: #282A36;
-  border-color: #282A36;
+  background-color: #121319;
+  border-color: #121319;
 }
 
 .btn-default .badge {
@@ -3162,7 +3162,7 @@ fieldset[disabled] .btn-default.active {
 .btn-primary {
   color: #ffffff !important;
   background-color: #282A36;
-  border-color: #282A36;
+  border-color: #121319;
 }
 
 .btn-primary:hover,
@@ -3172,7 +3172,7 @@ fieldset[disabled] .btn-default.active {
 .open .dropdown-toggle.btn-primary {
   color: #000 !important;
   background-color: #BD93F9;
-  border-color: #282A36;
+  border-color: #121319;
 }
 
 .btn-primary:active,
@@ -3197,7 +3197,7 @@ fieldset[disabled] .btn-primary:active,
 .btn-primary[disabled].active,
 fieldset[disabled] .btn-primary.active {
   background-color: #282A36;
-  border-color: #282A36;
+  border-color: #121319;
 }
 
 .btn-primary .badge {
@@ -3243,7 +3243,7 @@ fieldset[disabled] .btn-twitch:active,
 .btn-twitch[disabled].active,
 fieldset[disabled] .btn-twitch.active {
   background-color: #282A36;
-  border-color: #282A36;
+  border-color: #121319;
 }
 
 .btn-twitch .badge {
@@ -3289,7 +3289,7 @@ fieldset[disabled] .btn-youtube:active,
 .btn-youtube[disabled].active,
 fieldset[disabled] .btn-youtube.active {
   background-color: #282A36;
-  border-color: #282A36;
+  border-color: #121319;
 }
 
 .btn-youtube .badge {
@@ -3335,7 +3335,7 @@ fieldset[disabled] .btn-twitter:active,
 .btn-twitter[disabled].active,
 fieldset[disabled] .btn-twitter.active {
   background-color: #282A36;
-  border-color: #282A36;
+  border-color: #121319;
 }
 
 .btn-twitter .badge {
@@ -3381,7 +3381,7 @@ fieldset[disabled] .btn-facebook:active,
 .btn-facebook[disabled].active,
 fieldset[disabled] .btn-facebook.active {
   background-color: #282A36;
-  border-color: #282A36;
+  border-color: #121319;
 }
 
 .btn-facebook .badge {
@@ -3427,7 +3427,7 @@ fieldset[disabled] .btn-instagram:active,
 .btn-instagram[disabled].active,
 fieldset[disabled] .btn-instagram.active {
   background-color: #282A36;
-  border-color: #282A36;
+  border-color: #121319;
 }
 
 .btn-instagram .badge {
@@ -3473,7 +3473,7 @@ fieldset[disabled] .btn-steam:active,
 .btn-steam[disabled].active,
 fieldset[disabled] .btn-steam.active {
   background-color: #282A36;
-  border-color: #282A36;
+  border-color: #121319;
 }
 
 .btn-steam .badge {
@@ -3519,7 +3519,7 @@ fieldset[disabled] .btn-google-plus:active,
 .btn-google-plus[disabled].active,
 fieldset[disabled] .btn-google-plus.active {
   background-color: #282A36;
-  border-color: #282A36;
+  border-color: #121319;
 }
 
 .btn-google-plus .badge {
@@ -3565,7 +3565,7 @@ fieldset[disabled] .btn-github:active,
 .btn-github[disabled].active,
 fieldset[disabled] .btn-github.active {
   background-color: #282A36;
-  border-color: #282A36;
+  border-color: #121319;
 }
 
 .btn-github .badge {
@@ -3611,7 +3611,7 @@ fieldset[disabled] .btn-snapchat:active,
 .btn-snapchat[disabled].active,
 fieldset[disabled] .btn-snapchat.active {
   background-color: #282A36;
-  border-color: #282A36;
+  border-color: #121319;
 }
 
 .btn-snapchat .badge {
@@ -3657,7 +3657,7 @@ fieldset[disabled] .btn-spotify:active,
 .btn-spotify[disabled].active,
 fieldset[disabled] .btn-spotify.active {
   background-color: #191414;
-  border-color: #282A36;
+  border-color: #121319;
 }
 
 .btn-spotify .badge {
@@ -3703,7 +3703,7 @@ fieldset[disabled] .btn-reddit:active,
 .btn-reddit[disabled].active,
 fieldset[disabled] .btn-reddit.active {
   background-color: #282A36;
-  border-color: #282A36;
+  border-color: #121319;
 }
 
 .btn-reddit .badge {
@@ -3749,7 +3749,7 @@ fieldset[disabled] .btn-pinterest:active,
 .btn-pinterest[disabled].active,
 fieldset[disabled] .btn-pinterest.active {
   background-color: #282A36;
-  border-color: #282A36;
+  border-color: #121319;
 }
 
 .btn-pinterest .badge {
@@ -3795,7 +3795,7 @@ fieldset[disabled] .btn-skype:active,
 .btn-skype[disabled].active,
 fieldset[disabled] .btn-skype.active {
   background-color: #282A36;
-  border-color: #282A36;
+  border-color: #121319;
 }
 
 .btn-skype .badge {
@@ -3906,9 +3906,9 @@ fieldset[disabled] .btn-skype.active {
 
 .navbar-default {
   background-color: #282A36;
-  border-color: #282A36;
+  border-color: #121319;
 }
-@media (min-width: 768px) {
+@media (min-width: 992) {
   .navbar-default {
     border-top-color: transparent !important;
     border-right-color: transparent !important;
@@ -3917,22 +3917,24 @@ fieldset[disabled] .btn-skype.active {
 }
 .navbar-default .navbar-brand {
   color: #ffffff;
-  font-size: 250%;
+  font-size: 155%;
 }
 .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
   color: #CCCCCC;
 }
 .navbar-default .navbar-text {
   color: #ffffff;
+  font-size: 155%;
 }
 .navbar-default .navbar-nav > li {
   margin-right: 5px;
 }
 .navbar-default .navbar-nav > li > a {
   color: #ffffff;
-  font-size: 115%;
+  font-size: 125%;
 }
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  padding: -10px;
   color: #000;
   background-color: #BD93F9;
 }
@@ -3962,7 +3964,7 @@ fieldset[disabled] .btn-skype.active {
   background-color: #BD93F9;
 }
 .navbar-default .navbar-toggle {
-  border-color: #282A36;
+  border-color: #121319;
 }
 .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
   background-color: #BD93F9;
@@ -3974,7 +3976,7 @@ fieldset[disabled] .btn-skype.active {
   background-color: #ffffff;
 }
 .navbar-default .navbar-collapse, .navbar-default .navbar-form {
-  border-color: #282A36;
+  border-color: #121319;
 }
 .navbar-default .navbar-link {
   color: #ffffff;
@@ -3983,7 +3985,7 @@ fieldset[disabled] .btn-skype.active {
   color: #CCCCCC;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .navbar-default .navbar-nav .open .dropdown-menu > li > a {
     color: #ffffff;
   }
@@ -3995,7 +3997,7 @@ fieldset[disabled] .btn-skype.active {
     background-color: #BD93F9;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .navbar .navbar-nav {
     display: inline-block !important;
     float: none;

@@ -1,7 +1,7 @@
 html, body {
     background-color: $background-color;
     color: $text-color;
-    @media (min-width: 768px) {
+    @media (min-width: 1210px) {
         padding: 2%;
     }
 }
