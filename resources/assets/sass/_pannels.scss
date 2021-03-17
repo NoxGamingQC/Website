@@ -13,7 +13,7 @@
 }
 
 .panel-primary {
-    border-color: $laravel-border-color;
+    border-color: $laravel-border-color !important;
 }
 
 .panel-primary-red > .panel-body {

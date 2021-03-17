@@ -3,6 +3,7 @@ $dropdown: true;
 .navbar-default {
     background-color: $background-color;
     border-color: $laravel-border-color;
+
     @media (min-width: 768px) {
         border-top-color: transparent !important;
         border-right-color: transparent !important;
@@ -10,7 +11,7 @@ $dropdown: true;
     }
     .navbar-brand {
         color: $text-color;
-        font-size: 150%;
+        font-size: 250%;
         &:hover, &:focus {
             color: $text-highlight;
         }
