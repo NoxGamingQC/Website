@@ -13,6 +13,7 @@ class GamesListController extends Controller
 {
     public function index()
     {
+        abort(503);
         $ps1 = GamesList::where('Console', '4')->orderBy('Game')->get();
         $ps4 = GamesList::where('Console', '6')->orderBy('Game')->get();
         $xbox = GamesList::where('Console', '5')->orderBy('Game')->get();

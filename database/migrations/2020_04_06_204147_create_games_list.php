@@ -18,7 +18,8 @@ class CreateGamesList extends Migration
             $table->text('Game')->nullable(false);
             $table->integer('Console')->nullable(false);
             $table->string('Date')->nullable(false);
-            $table->string('CoverURL')->nullable(false);
+            $table->string('CoverURL')->nullable(true);
+            $table->string('format')->nullable(true);
             $table->timestamps();
         });
     }
