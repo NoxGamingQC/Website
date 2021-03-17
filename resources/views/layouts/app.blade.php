@@ -8,6 +8,7 @@
     <meta name="description" content="NoxGamingQC's Website">
     <meta name="author" content="NoxGamingQC">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="refresh" content="60">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <script src="{{mix('js/app.js')}}"></script>
     @if(env('APP_ENV', 'developement'))

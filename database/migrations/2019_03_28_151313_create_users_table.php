@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('Firstname')->nullable(true);
             $table->string('Lastname')->nullable(true);
             $table->string('Birthdate')->nullable(true);
-            $table->boolean('Gender')->nullable(true);
+            $table->integer('Gender')->nullable(true);
             $table->boolean('isFirstnameShowned')->nullable(false)->default(false);
             $table->boolean('isLastnameShowned')->nullable(false)->default(false);
             $table->boolean('isBirthdateShowned')->nullable(false)->default(false);

@@ -20,7 +20,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="/{{app()->getLocale()}}/games"><i class="fa fa-gamepad" aria-hidden="true"></i> {{ trans('generic.games_list') }}</a>
+                            <!--<a href="/{{app()->getLocale()}}/games"><i class="fa fa-gamepad" aria-hidden="true"></i> {{ trans('generic.games_list') }}</a>-->
                             <a href="/{{app()->getLocale()}}/twitch"><i class="fa fa-twitch" aria-hidden="true"></i> {{ trans('generic.twitch') }}</a>
                             <a href="/{{app()->getLocale()}}/youtube"><i class="fa fa-youtube-play" aria-hidden="true"></i> {{ trans('generic.youtube') }}</a>
                             <a href="/{{app()->getLocale()}}/contact"><i class="fa fa-address-book " aria-hidden="true"></i> {{trans('generic.contact_us')}}</a>
