@@ -89,7 +89,7 @@
         <div class="col-md-12" id="businessInquiries">
             <h3><i class="fa fa-briefcase" aria-hidden="true"></i> {{trans('generic.business_inquiries')}}</h3>
             <hr />
-            <p>{{trans('generic.business_inquiries_text')}} <a href="mailto:noxgamingqc@gmail.com">noxgamingqc@gmail.com</a>.</p>
+            <p>{{trans('generic.business_inquiries_text')}} <a href="mailto:nox@noxgamingqc.ca">nox@noxgamingqc.ca</a>.</p>
         </div>
     </div>
 </div>
