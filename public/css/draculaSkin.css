@@ -3825,11 +3825,11 @@ fieldset[disabled] .btn-skype.active {
   background-image: none;
   background-color: #BD93F9;
   color: #ffffff;
-  border-color: #282A36;
+  border-color: #BD93F9;
 }
 
 .panel-primary-red {
-  border-color: #282A36;
+  border-color: #BD93F9;
 }
 
 .panel-success > .panel-heading {
@@ -3906,7 +3906,7 @@ fieldset[disabled] .btn-skype.active {
 
 .navbar-default {
   background-color: #282A36;
-  border-color: #121319;
+  border-color: #282A36;
 }
 @media (min-width: 500px) {
   .navbar-default {
@@ -3918,6 +3918,11 @@ fieldset[disabled] .btn-skype.active {
 .navbar-default .navbar-brand {
   color: #ffffff;
   font-size: 155%;
+}
+@media (min-width: 1470px) {
+  .navbar-default .navbar-brand {
+    margin-top: 25%;
+  }
 }
 .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
   color: #CCCCCC;

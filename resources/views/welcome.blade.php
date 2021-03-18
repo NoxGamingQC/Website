@@ -4,7 +4,7 @@
 
 <div class="row">
     <div class="col-md-12 text-center" id="title">
-        <div class="panel panel-primary-red">
+        <div class="panel panel-primary-red" style="margin-top: -2%">
             <div class="panel-body">
                 <h1 class="lightmode-text satisfy-font">NoxGamingQC</h1>
                 <br />
