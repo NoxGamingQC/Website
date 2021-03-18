@@ -10,6 +10,16 @@ h1, h2, h3, h4, h5, h6 {
     font-family: $vesper-font;
 }
 
+vr {
+    border-left: 1px solid $brand-primary;
+    height: 500px;
+    position: absolute;
+    left: 50%;
+    margin-left: -3px;
+    top: 0;
+  }
+
+
 p, a {
     font-family: $raleway-font;
 }

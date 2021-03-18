@@ -13,7 +13,7 @@
             </div>
         </div>
     </div>
-    <div class="col-md-6" id="aboutme">
+    <div class="col-md-5" id="aboutme">
         <div class="panel panel-primary">
             <div class="panel-body">
                 <h3><i class="fa fa-user" aria-hidden="true"></i> {{trans('welcome.about_me')}}</h3>
@@ -22,7 +22,10 @@
             </div>
         </div>
     </div>
-    <div class="col-md-6" id="donations">
+    <div class="col-md-2">
+        <vr />
+    </div>
+    <div class="col-md-5" id="donations">
         <div class="panel panel-primary">
             <div class="panel-body">
                 <h3><i class="fa fa-money" aria-hidden="true"></i> {{trans('welcome.donation')}}</h3>

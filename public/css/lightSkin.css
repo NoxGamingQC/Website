@@ -3046,6 +3046,15 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Vesper Libre", serif;
 }
 
+vr {
+  border-left: 1px solid #337ab7;
+  height: 500px;
+  position: absolute;
+  left: 50%;
+  margin-left: -3px;
+  top: 0;
+}
+
 p, a {
   font-family: "Raleway", sans-serif;
 }
@@ -4079,7 +4088,7 @@ h4.stroke {
 }
 
 hr {
-  border-top: 1px solid #000;
+  border-top: 1px solid #337ab7;
 }
 
 .close {
