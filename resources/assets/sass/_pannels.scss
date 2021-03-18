@@ -20,11 +20,11 @@
     background-image: none;
     background-color: $brand-primary;
     color: $text-color;
-    border-color: $pannel-border-color;
+    border-color: $brand-primary;
 }
 
 .panel-primary-red {
-    border-color: $pannel-border-color;
+    border-color: $brand-primary;
 }
 
 .panel-success > .panel-heading {

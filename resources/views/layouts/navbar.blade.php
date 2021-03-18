@@ -7,12 +7,12 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand satisfy-font" href="/home" style="display: flex; alignItems: center">
+            <a class="navbar-brand satisfy-font" href="/home" style="display: flex; alignItems: center;">
                 NoxGamingQC
             </a>
         </div>
         <div class="navbar-header form-inline hidden-xs hidden-sm">
-            <div class="input-group" style="margin-top: 3%">
+            <div class="input-group" style="margin-top: 18%">
                 <input type="text" class="form-control" id="navSearch" placeholder="{{trans('generic.search')}}...">
                 <span class="input-group-btn">
                     <button id="submitSearch" class="btn btn-primary" type="button"><i id="navSearchButton" class="fa fa-search"></i></button>
