@@ -37,6 +37,18 @@ $dropdown: true;
                     background-color: $brand-primary;
                 }
             }
+            > a.disabled {
+                color: $text-disabled;
+                font-size: 125%;
+                @media (min-width: 1470px) {
+                    padding-top: 50px;
+                    padding-bottom: 50px;
+                }
+                &:hover,  &:focus {
+                    color: $text-disabled;
+                    background-color: $background-color;
+                }
+            }
             @if $dropdown {
                 > .dropdown-menu {
                     background-color: $background-color;
@@ -51,9 +63,17 @@ $dropdown: true;
                                 border-color: $brand-primary;
                                 background-color: $brand-primary;
                             }
+                        > a.disabled {
+                            color: $text-disabled !important;
+                            &:hover,  &:focus {
+                                color: $text-disabled !important;
+                                border-color: $background-color !important;
+                                background-color: $background-color !important;
+                            }
+                        }
                         }
                         &.divider {
-                        background-color: $brand-primary;
+                            background-color: $brand-primary;
                         }
                     }
                 }
@@ -64,11 +84,27 @@ $dropdown: true;
                 color: $lightmode-text-color;
                 background-color: $brand-primary;
             }
+            > a.disabled {
+                color: $text-disabled !important;
+                > &:hover, > &:focus {
+                    color: $text-disabled !important;
+                    border-color: $background-color !important;
+                    background-color: $background-color !important;
+                }
+            }
         }
         > .open {
             > a, > a:hover, > a:focus {
                 color: $lightmode-text-color;
                 background-color: $brand-primary;
+            }
+            > a.disabled {
+                color: $text-disabled !important;
+                > &:hover, > &:focus {
+                    color: $text-disabled !important;
+                    border-color: $background-color !important;
+                    background-color: $background-color !important;
+                }
             }
         }
     }

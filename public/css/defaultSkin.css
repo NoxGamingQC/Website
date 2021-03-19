@@ -3957,6 +3957,20 @@ fieldset[disabled] .btn-skype.active {
   color: #000;
   background-color: #E56F1F;
 }
+.navbar-default .navbar-nav > li > a.disabled {
+  color: #777777;
+  font-size: 125%;
+}
+@media (min-width: 1470px) {
+  .navbar-default .navbar-nav > li > a.disabled {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+.navbar-default .navbar-nav > li > a.disabled:hover, .navbar-default .navbar-nav > li > a.disabled:focus {
+  color: #777777;
+  background-color: #222222;
+}
 .navbar-default .navbar-nav > li > .dropdown-menu {
   background-color: #222222;
 }
@@ -3971,6 +3985,14 @@ fieldset[disabled] .btn-skype.active {
   border-color: #E56F1F;
   background-color: #E56F1F;
 }
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a > a.disabled {
+  color: #777777 !important;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a > a.disabled:hover, .navbar-default .navbar-nav > li > .dropdown-menu > li > a > a.disabled:focus {
+  color: #777777 !important;
+  border-color: #222222 !important;
+  background-color: #222222 !important;
+}
 .navbar-default .navbar-nav > li > .dropdown-menu > li.divider {
   background-color: #E56F1F;
 }
@@ -3978,9 +4000,25 @@ fieldset[disabled] .btn-skype.active {
   color: #000;
   background-color: #E56F1F;
 }
+.navbar-default .navbar-nav > .active > a.disabled {
+  color: #777777 !important;
+}
+> .navbar-default .navbar-nav > .active > a.disabled:hover, > .navbar-default .navbar-nav > .active > a.disabled:focus {
+  color: #777777 !important;
+  border-color: #222222 !important;
+  background-color: #222222 !important;
+}
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
   color: #000;
   background-color: #E56F1F;
+}
+.navbar-default .navbar-nav > .open > a.disabled {
+  color: #777777 !important;
+}
+> .navbar-default .navbar-nav > .open > a.disabled:hover, > .navbar-default .navbar-nav > .open > a.disabled:focus {
+  color: #777777 !important;
+  border-color: #222222 !important;
+  background-color: #222222 !important;
 }
 .navbar-default .navbar-toggle {
   border-color: #090909;
