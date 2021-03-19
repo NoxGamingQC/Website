@@ -12,7 +12,7 @@
             <div class="row">
                 <div class="col-md-7" id="twitchPlayer">
                     <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" src="https://player.twitch.tv/?channel=noxgamingqc&parent=noxgamingqc.herokuapp.com" frameBorder="0" allowFullScreen="true" scrolling="no"></iframe>
+                        <iframe class="embed-responsive-item" src="https://player.twitch.tv/?channel=noxgamingqc&parent={{env('APP_URL') == 'http://localhost'? str_replace("http://","",env('APP_URL')) : str_replace("https://","",env('APP_URL'))}}&enableExtensions=true&muted=true&autoplay=true" frameBorder="0" allowFullScreen="true" scrolling="no"></iframe>
                     </div>
                 </div>
                 <div class="col-md-5" id="twitchDefinition">
@@ -21,7 +21,7 @@
                             <h3><i class="fa fa-video-camera" aria-hidden="true"></i> {{trans('stream.stream_description_title')}}</h3>
                             <hr />
                             <p>{!!trans('stream.stream_description_text')!!}</a>.</p>
-                            <a class="btn btn-primary" href="/stream/commands">{{trans('stream.bot_commands')}}</a>
+                            <a class="btn btn-primary disabled" href="/{{app()->getLocale()}}/stream/commands" disabled>{{trans('stream.bot_commands')}}</a>
                             <a class="btn btn-primary" href="https://discord.gg/6DGc24x">{{trans('stream.join_server')}}</a>
                         </div>
                     </div>
@@ -81,19 +81,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6" id="console">
-                    <div class="panel panel-primary">
-                        <div class="panel-body">
-                            <h3><i class="fa fa-gamepad" aria-hidden="true"></i> {{trans('stream.video_game_consoles')}}</h3>
-                            <hr />
-                            <p>🕹 Nintendo Entertainement System (NES)</p>
-                            <p>🕹 Nintendo Wii</p>
-                            <p>🕹 Playstation 1</p>
-                            <p>🕹 Playstation 4</p>
-                            <p>🕹 Xbox ({!!trans('stream.first_gen')!!})</p>
-                        </div>
-                    </div>
-                </div>
                 <div class="col-md-6" id="accessory">
                     <div class="panel panel-primary">
                         <div class="panel-body">
@@ -102,19 +89,6 @@
                             <p>🎧 {{trans('stream.headset')}}</p>
                             <p>🖱 {{trans('stream.mouse')}}</p>
                             <p>📹 {{trans('stream.camera')}}</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6" id="controllers">
-                    <div class="panel panel-primary">
-                        <div class="panel-body">
-                            <h3><i class="fa fa-gamepad" aria-hidden="true"></i> {{trans('stream.controllers')}}</h3>
-                            <hr />
-                            <p>🎮 MICROSOFT XBOX ONE wireless controller Gear of War 4 edition</p>
-                            <p>🎮 MICROSOFT XBOX ONE wireless controller Ocean Shadow edition</p>
-                            <p>🎮 2 DualShock® 4 wireless controller</p>
-                            <p>🎮 White Super Smash Bros. classic Nintendo Gamecube controller</p>
-                            <p>🎮 Black Super Smash Bros. classic Nintendo Gamecube controller</p>
                         </div>
                     </div>
                 </div>

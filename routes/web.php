@@ -77,9 +77,7 @@ Route::group([
 
                 Route::get('/youtube', 'YouTubeController@index');
 
-                Route::get('/stream/commands', function () {
-                    return view('commands');
-                });
+                Route::get('/stream/commands', 'BotCommandsController@index');
 
                 Route::get('/search', 'SearchController@index');
                 Route::get('/search', 'SearchController@search');

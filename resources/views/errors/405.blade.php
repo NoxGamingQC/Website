@@ -4,7 +4,7 @@
 
 <div class="row">
     <div class="col-md-12">
-        <div class="panel panel-primary-red">
+        <div class="panel panel-block-primary">
             <div class="panel-body">
                 <h3>ERROR 405 - METHOD NOT ALLOWED.</h3>
                 <hr />
