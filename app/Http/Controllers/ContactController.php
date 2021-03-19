@@ -12,7 +12,7 @@ class ContactController extends Controller
 {
     public function index()
     {
-        if(PageLists::where('slug', 'contact')->first()->inMaintenance && env('APP_ENV') == 'production') {
+        if(PageLists::where('slug', 'contact_us')->first()->inMaintenance && env('APP_ENV') == 'production') {
             abort(503);
         }
         return view('contact');
