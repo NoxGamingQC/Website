@@ -13,7 +13,7 @@ class ToDoListController extends Controller
 {
     public function index(Request $request)
     {
-        if(PageLists::where('slug', 'management.todolist')->first()->inMaintenance && env('APP_ENV') == 'production') {
+        if(PageLists::where('slug', 'todolist')->first()->inMaintenance && env('APP_ENV') == 'production') {
             abort(503);
         }
         $tasks = ToDoList::all();
