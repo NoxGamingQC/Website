@@ -68,10 +68,10 @@
                         @endif
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a href="/{{app()->getLocale()}}/management/modules" class="{{($page_lists['management.modules']['inMaintenance']) ? 'hidden' : ''}}"><i class="fa fa-cogs" aria-hidden="true"></i> {{trans("generic.modules")}}</a>
-                                    <a href="/{{app()->getLocale()}}/management/users" class="{{($page_lists['management.users']['inMaintenance']) ? 'hidden' : ''}}"><i class="fa fa-user-circle" aria-hidden="true"></i> {{trans("generic.users")}}</a>
-                                    <a href="/{{app()->getLocale()}}/management/activities" class="{{($page_lists['management.bot_activities']['inMaintenance']) ? 'hidden' : ''}}"><i class="fa fa-bullseye" aria-hidden="true"></i> {{trans("generic.bot_status")}}</a>
-                                    <a href="/{{app()->getLocale()}}/management/tasks" class="{{($page_lists['management.todolist']['inMaintenance']) ? 'hidden' : ''}}"><i class="fa fa-tasks" aria-hidden="true"></i> {{trans("generic.tasks")}}</a>
+                                    <a href="/{{app()->getLocale()}}/management/modules" class="{{($page_lists['modules']['inMaintenance']) ? 'hidden' : ''}}"><i class="fa fa-cogs" aria-hidden="true"></i> {{trans("generic.modules")}}</a>
+                                    <a href="/{{app()->getLocale()}}/management/users" class="{{($page_lists['users']['inMaintenance']) ? 'hidden' : ''}}"><i class="fa fa-user-circle" aria-hidden="true"></i> {{trans("generic.users")}}</a>
+                                    <a href="/{{app()->getLocale()}}/management/activities" class="{{($page_lists['bot_activities']['inMaintenance']) ? 'hidden' : ''}}"><i class="fa fa-bullseye" aria-hidden="true"></i> {{trans("generic.bot_status")}}</a>
+                                    <a href="/{{app()->getLocale()}}/management/tasks" class="{{($page_lists['todolist']['inMaintenance']) ? 'hidden' : ''}}"><i class="fa fa-tasks" aria-hidden="true"></i> {{trans("generic.tasks")}}</a>
                                 </li>
                             </ul>
                         </li>
