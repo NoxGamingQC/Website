@@ -102,9 +102,7 @@ Route::group([
                 Route::get('/profile/edit', 'UserProfileController@getEditPage');
                 Route::post('/profile/edit', 'UserProfileController@edit');
 
-                Route::get('/contact', function () {
-                    return view('contact');
-                });
+                Route::get('/contact', 'ContactController@index');
 
                 Route::get('/noxbot/dashboard/{serverID}', 'NoxBotDashboardController@serverDashboard');
 
