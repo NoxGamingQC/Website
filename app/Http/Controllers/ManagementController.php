@@ -9,11 +9,15 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Modules;
 use App\BotActivities;
+use App\PageLists;
 
 class ManagementController extends Controller
 {
     public function getModules()
     {
+        if(PageLists::where('slug', 'management.modules')->first()->inMaintenance && env('APP_ENV') == 'production') {
+            abort(503);
+        }
         if (Auth::user()) {
             if (Auth::user()->isAdmin || Auth::user()->isMod || Auth::user()->isDev) {
                 $modules = [];
@@ -33,6 +37,9 @@ class ManagementController extends Controller
 
     public function getUsers()
     {
+        if(PageLists::where('slug', 'management.users')->first()->inMaintenance && env('APP_ENV') == 'production') {
+            abort(503);
+        }
         if (Auth::user()) {
             if (Auth::user()->isAdmin || Auth::user()->isMod || Auth::user()->isDev) {
                 $users = [];
@@ -67,6 +74,9 @@ class ManagementController extends Controller
 
     public function getBotActivities()
     {
+        if(PageLists::where('slug', 'management.bot_activities')->first()->inMaintenance && env('APP_ENV') == 'production') {
+            abort(503);
+        }
         if (Auth::user()) {
             if (Auth::user()->isAdmin || Auth::user()->isMod || Auth::user()->isDev) {
                 $activities = [];

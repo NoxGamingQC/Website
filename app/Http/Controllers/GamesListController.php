@@ -8,12 +8,15 @@ use Auth;
 use DB;
 use App\GamesList;
 use Carbon\Carbon;
+use App\PageLists;
 
 class GamesListController extends Controller
 {
     public function index()
     {
-        abort(503);
+        if(PageLists::where('slug', 'games')->first()->inMaintenance && env('APP_ENV') == 'production') {
+            abort(503);
+        }
         $ps1 = GamesList::where('Console', '4')->orderBy('Game')->get();
         $ps4 = GamesList::where('Console', '6')->orderBy('Game')->get();
         $xbox = GamesList::where('Console', '5')->orderBy('Game')->get();

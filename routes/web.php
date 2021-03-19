@@ -71,17 +71,11 @@ Route::group([
                     return view('welcome');
                 });
 
-                Route::get('/projects', function () {
-                    return view('projects');
-                });
+                Route::get('/projects', 'ProjectsController@index');
 
-                Route::get('/twitch', function () {
-                    return view('twitch');
-                });
+                Route::get('/twitch', 'TwitchController@index');
 
-                Route::get('/youtube', function () {
-                    abort(503);
-                });
+                Route::get('/youtube', 'YouTubeController@index');
 
                 Route::get('/stream/commands', function () {
                     return view('commands');

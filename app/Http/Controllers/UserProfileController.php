@@ -8,11 +8,15 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\User;
 use Carbon\Carbon;
+use App\PageLists;
 
 class UserProfileController extends Controller
 {
     public function index($locale, $id)
     {
+        if(PageLists::where('slug', 'profile_show')->first()->inMaintenance && env('APP_ENV') == 'production') {
+            abort(503);
+        }
         $user = User::findOrFail($id);
         $firstname = $user->isFirstnameShowned ? $user->Firstname : null;
         $lastname = $user->isLastnameShowned ? $user->Lastname : null;
@@ -77,6 +81,9 @@ class UserProfileController extends Controller
 
     public function getEditPage()
     {
+        if(PageLists::where('slug', 'profile_edit')->first()->inMaintenance && env('APP_ENV') == 'production') {
+            abort(503);
+        }
         if (Auth::user()) {
             $user = User::findOrFail(Auth::user()->id);
 
