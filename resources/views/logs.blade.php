@@ -4,10 +4,14 @@
 <div class="row">
     <div class="col-md-12">
         <form action="/{{app()->getLocale()}}/management/logs">
-            <input type="date" name="date" value="{{ $date ? $date->format('Y-m-d') : today()->format('Y-m-d') }}">
-            <button type="submit">Get</button>
+            <div class="input-group date" data-provide="datepicker">
+                <input class="form-control" type="date" name="date" value="{{ $date ? $date->format('Y-m-d') : today()->format('Y-m-d') }}" />
+                <div class="input-group-btn">
+                    <button type="button" class="btn btn-primary" type="submit">Generate</button>
+                </div>
+            </div>
         </form>
-
+        <hr />
         @if (empty($data['file']))
             <div>
                 <h3>No Logs Found</h3>
