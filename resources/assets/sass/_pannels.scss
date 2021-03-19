@@ -16,14 +16,14 @@
     border-color: $pannel-border-color !important;
 }
 
-.panel-primary-red > .panel-body {
+.panel-block-primary > .panel-body {
     background-image: none;
     background-color: $brand-primary;
     color: $text-color;
     border-color: $brand-primary;
 }
 
-.panel-primary-red {
+.panel-block-primary {
     border-color: $brand-primary;
 }
 

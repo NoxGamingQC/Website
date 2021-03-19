@@ -3830,14 +3830,14 @@ fieldset[disabled] .btn-skype.active {
   border-color: #282A36 !important;
 }
 
-.panel-primary-red > .panel-body {
+.panel-block-primary > .panel-body {
   background-image: none;
   background-color: #BD93F9;
   color: #ffffff;
   border-color: #BD93F9;
 }
 
-.panel-primary-red {
+.panel-block-primary {
   border-color: #BD93F9;
 }
 
