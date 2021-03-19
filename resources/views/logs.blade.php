@@ -11,6 +11,7 @@
                 </div>
             </div>
         </form>
+        <span class="warning-text">Warning: only the last 30 daily log files are stored on the server.</span>
         <hr />
         @if (empty($data['file']))
             <div>
