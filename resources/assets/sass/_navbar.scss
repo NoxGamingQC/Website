@@ -11,7 +11,7 @@ $dropdown: true;
     .navbar-brand {
         color: $text-color;
         font-size: 155%;
-        @media (min-width: 1470px) {
+        @media (min-width: 768px) {
             margin-top: 25%;
         }
         &:hover, &:focus {
@@ -28,7 +28,7 @@ $dropdown: true;
             > a {
                 color: $text-color;
                 font-size: 125%;
-                @media (min-width: 1470px) {
+                @media (min-width: 768px) {
                     padding-top: 50px;
                     padding-bottom: 50px;
                 }
@@ -40,7 +40,7 @@ $dropdown: true;
             > a.disabled {
                 color: $text-disabled;
                 font-size: 125%;
-                @media (min-width: 1470px) {
+                @media (min-width: 768px) {
                     padding-top: 50px;
                     padding-bottom: 50px;
                 }
@@ -131,7 +131,7 @@ $dropdown: true;
     }
 }
 
-@media (max-width: 1470px) {
+@media (max-width: 768px) {
     .navbar-default .navbar-nav .open .dropdown-menu {
         > li > a {
             color: $text-color;
@@ -148,7 +148,7 @@ $dropdown: true;
     }
 }
 
-@media (min-width: 1470px) {
+@media (min-width: 768px) {
     .navbar .navbar-nav {
         display: inline-block !important;
         float: none;
@@ -164,7 +164,7 @@ $dropdown: true;
 
 //navbar breakpoint
 
-@media (max-width: 1470px) {
+@media (max-width: 768px) {
     .navbar-header {
         float: none;
     }

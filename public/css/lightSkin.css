@@ -3928,7 +3928,7 @@ fieldset[disabled] .btn-skype.active {
   color: #000;
   font-size: 155%;
 }
-@media (min-width: 1470px) {
+@media (min-width: 768px) {
   .navbar-default .navbar-brand {
     margin-top: 25%;
   }
@@ -3947,7 +3947,7 @@ fieldset[disabled] .btn-skype.active {
   color: #000;
   font-size: 125%;
 }
-@media (min-width: 1470px) {
+@media (min-width: 768px) {
   .navbar-default .navbar-nav > li > a {
     padding-top: 50px;
     padding-bottom: 50px;
@@ -3961,7 +3961,7 @@ fieldset[disabled] .btn-skype.active {
   color: #777777;
   font-size: 125%;
 }
-@media (min-width: 1470px) {
+@media (min-width: 768px) {
   .navbar-default .navbar-nav > li > a.disabled {
     padding-top: 50px;
     padding-bottom: 50px;
@@ -4042,7 +4042,7 @@ fieldset[disabled] .btn-skype.active {
   color: #222;
 }
 
-@media (max-width: 1470px) {
+@media (max-width: 768px) {
   .navbar-default .navbar-nav .open .dropdown-menu > li > a {
     color: #000;
   }
@@ -4054,7 +4054,7 @@ fieldset[disabled] .btn-skype.active {
     background-color: #337ab7;
   }
 }
-@media (min-width: 1470px) {
+@media (min-width: 768px) {
   .navbar .navbar-nav {
     display: inline-block !important;
     float: none;
@@ -4066,7 +4066,7 @@ fieldset[disabled] .btn-skype.active {
     color: #000;
   }
 }
-@media (max-width: 1470px) {
+@media (max-width: 768px) {
   .navbar-header {
     float: none;
   }
