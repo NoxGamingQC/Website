@@ -18,13 +18,17 @@ class LogsController extends Controller
         }
         if (Auth::user()) {
             if (Auth::user()->isAdmin || Auth::user()->isMod || Auth::user()->isDev) {
-                $date = new Carbon($request->get('date', today()));
-                $filePath = storage_path("logs/laravel-{$date->format('Y-m-d')}.log");
+                if($request->date) {
+                    $date = new Carbon($request->date);
+                } else {
+                    $date = new Carbon(today());
+                }
+                $parsedDate = $date->format('Y-m-d');
+                $filePath = storage_path("logs/laravel-{$parsedDate}.log");
                 $data = [];
-
                 if(File::exists($filePath)) {
                     $data = [
-                        'lastModified' => new Carbon(File::lastModified($filePath)),
+                        'lastModified' => Carbon::parse(date("Y-m-d H:i:s", File::lastModified($filePath))),
                         'size' => File::size($filePath),
                         'file' => File::get($filePath),
                     ];

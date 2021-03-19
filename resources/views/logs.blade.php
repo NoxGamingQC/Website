@@ -7,7 +7,7 @@
             <div class="input-group date" data-provide="datepicker">
                 <input class="form-control" type="date" name="date" value="{{ $date ? $date->format('Y-m-d') : today()->format('Y-m-d') }}" />
                 <div class="input-group-btn">
-                    <button type="button" class="btn btn-primary" type="submit">Generate</button>
+                    <input type="submit" class="btn btn-primary" type="submit" value="Generate">
                 </div>
             </div>
         </form>
