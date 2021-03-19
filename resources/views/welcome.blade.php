@@ -23,7 +23,7 @@
         </div>
     </div>
     <div class="col-md-2">
-        <vr />
+        <vr class="hidden-xs hidden-sm" />
     </div>
     <div class="col-md-5" id="donations">
         <div class="panel panel-primary">
