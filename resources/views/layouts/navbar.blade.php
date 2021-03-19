@@ -97,7 +97,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="/{{app()->getLocale()}}/profile/edit"  class="{{($page_lists['management.modules']['inMaintenance']) ? 'hidden' : ''}}"><i class="fa fa-wrench" aria-hidden="true"></i> {{trans('generic.edit_profile')}}</a>
+                                <a href="/{{app()->getLocale()}}/profile/edit"  class="{{($page_lists['profile_edit']['inMaintenance']) ? 'hidden' : ''}}"><i class="fa fa-wrench" aria-hidden="true"></i> {{trans('generic.edit_profile')}}</a>
                                 <a href="/logout"><i class="fa fa-sign-out" aria-hidden="true"></i> {{trans('generic.logout')}}</a>
                             </li>
                         </ul>

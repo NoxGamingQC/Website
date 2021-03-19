@@ -7,11 +7,15 @@ use DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\ToDoList;
+use App\PageLists;
 
 class ToDoListController extends Controller
 {
     public function index(Request $request)
     {
+        if(PageLists::where('slug', 'management.todolist')->first()->inMaintenance && env('APP_ENV') == 'production') {
+            abort(503);
+        }
         $tasks = ToDoList::all();
         $pendingTasks = ToDoList::where('status', 'pending')->get();
         $completedTasks = ToDoList::where('status', 'completed')->get();
