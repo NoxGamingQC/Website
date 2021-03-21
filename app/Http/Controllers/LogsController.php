@@ -39,4 +39,24 @@ class LogsController extends Controller
         }
         abort(403);
     }
+
+    public function download(Request $request)
+    {
+        if(PageLists::where('slug', 'logs')->first()->inMaintenance && env('APP_ENV') == 'production') {
+            abort(503);
+        }
+        if (Auth::user()) {
+            if (Auth::user()->isAdmin || Auth::user()->isMod || Auth::user()->isDev) {
+                if($request->date) {
+                    $date = new Carbon($request->date);
+                } else {
+                    $date = new Carbon(today());
+                }
+                $parsedDate = $date->format('Y-m-d');
+                $filePath = storage_path("logs/laravel-{$parsedDate}.log");
+
+                return response()->download($filePath);
+            }
+        }
+    }
 }

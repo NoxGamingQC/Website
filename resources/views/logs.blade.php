@@ -18,9 +18,18 @@
                 <h3>No Logs Found</h3>
             </div>
         @else
-            <div>
+            <div class="col-md-6">
+                <br />
                 <h5>Updated On : <b>{{ $data['lastModified']->format('Y-m-d h:i a') }}</b></h5>
                 <h5>File Size : <b>{{ round($data['size'] / 1024)}} KB</b></h5>
+            </div>
+            <div class="col-md-6 text-right">
+                <form action="/{{app()->getLocale()}}/management/logs/download">
+                    <input class="hidden" type="date" name="date" value="{{ $date ? $date->format('Y-m-d') : today()->format('Y-m-d') }}" />
+                    <button class="btn btn-primary text-right" type="submit"><i id="navSearchButton" class="fa fa-download"></i> Download</button>
+                </form>
+            </div>
+            <div class="col-md-12">
                 <pre>{{ $data['file'] }}</pre>
             </div>
         @endif
