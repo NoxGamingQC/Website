@@ -51,5 +51,12 @@ return [
     'console_wait' => "Attends !!",
     'console_copy_paste01' => "Si quelqu\'un t\'a dit de copier/coller quelque chose ici, il y a à peu près 11 chances sur 10 que ce soit une arnaque.",
     'console_copy_paste02' => "Coller quelque chose ici pourrait donner aux assaillants accès à ton compte.",
-    'console_close_window' => "À moins que tu comprennes exactement ce que tu fais, ferme cette fenêtre et reste en sécurité."
+    'console_close_window' => "À moins que tu comprennes exactement ce que tu fais, ferme cette fenêtre et reste en sécurité.",
+    'logs'=>"Journeaux",
+    'download' => "Télécharger",
+    'logs_limit' => "Attention: Seulement les 30 derniers journeaux système sont stockés sur le système.",
+    'updated_on' => "Mise à jour le :",
+    'file_size' => "Poid du fichier :",
+    'generate' => "Créer",
+    'no_logs_found' => "Aucun journeaux trouvés"
 ];
