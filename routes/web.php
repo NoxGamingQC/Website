@@ -111,6 +111,7 @@ Route::group([
                 Route::get('/management/activities', 'ManagementController@getBotActivities');
                 Route::get('/management/tasks', 'ToDoListController@index');
                 Route::get('/management/logs', 'LogsController@index');
+                Route::get('/management/logs/download', 'LogsController@download');
             }
         );
     }
