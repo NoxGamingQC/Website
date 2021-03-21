@@ -51,5 +51,12 @@ return [
     'console_wait' => "Hold Up !!",
     'console_copy_paste01' => "If someone told you to copy/paste something here you have an 11/10 chance you\'re being scammed.",
     'console_copy_paste02' => "Pasting anything in here could give attackers access to your account.",
-    'console_close_window' => "Unless you understand exactly what you are doing, close this window and stay safe."
+    'console_close_window' => "Unless you understand exactly what you are doing, close this window and stay safe.",
+    'logs' => "Logs",
+    'download' => "Download",
+    'logs_limit' => "Warning: only the last 30 daily log files are stored on the server.",
+    'updated_on' => "Updated On :",
+    'file_size' => "File Size :",
+    'generate' => "Generate",
+    'no_logs_found' => "No logs found"
 ];
