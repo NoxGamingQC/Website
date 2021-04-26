@@ -31,5 +31,5 @@ return [
     'perk05' => "Accédez aux archives des subscribers",
     'subscribe_now' => "Abonnez-vous maintenant",
     'bot_commands' => "Commandes du bot",
-    'join_server' => "Rejoignez le serveur Discord"
+    'join_server' => "Rejoignez nous sur Guilded"
 ];

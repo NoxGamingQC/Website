@@ -31,5 +31,5 @@ return [
     'perk05' => "Access to sub only VODs",
     'subscribe_now' => "Subscribe now",
     'bot_commands' => "Bot commands",
-    'join_server' => "Join Discord server"
+    'join_server' => "Join us on Guilded"
 ];

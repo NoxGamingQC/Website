@@ -8,24 +8,52 @@
             <h1>{{trans('projects.projects')}}</h1>
             <hr />
             <div class="row">
+            @auth
+                @if(Auth::user()->isDev || Auth::user()->isAdmin || Auth::user()->isModerator)
+                    <div class="col-md-3">
+                        <div class="panel panel-primary">
+                            <div class="panel-body text-center">
+                                <h4>{{trans('projects.cars')}}</h4>
+                                <hr />
+                                <p>{{trans('projects.cars_description')}}</p>
+                            </div>
+                        </div>
+                    </div>
+                @endif
+            @endauth
                 <div class="col-md-3">
                     <div class="panel panel-primary">
                         <div class="panel-body text-center">
-                            <h4>NoxBOT</h4>
+                            <h4>{{trans('projects.coding')}}</h4>
                             <hr />
-                            <p>{{trans('projects.noxbot_description')}}</p>
-                            <a href="/{{app()->getLocale()}}/noxbot">{{trans("projects.noxbot_dashboard")}}</a>
-                            <hr />
-                            <p class="warning-text"><i>{{trans('projects.noxbot_dashboard_unavailable')}}</i></p>
+                            <p>{{trans('projects.coding_description')}}</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="panel panel-primary">
                         <div class="panel-body text-center">
-                            <h4>{{trans('projects.pokemon')}}</h4>
+                            <h4>{{trans('projects.games')}}</h4>
                             <hr />
-                            <p>{{trans('projects.pokemon_description')}}</p>
+                            <p>{{trans('projects.games_description')}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-primary">
+                        <div class="panel-body text-center">
+                            <h4>{{trans('projects.pc_building')}}</h4>
+                            <hr />
+                            <p>{{trans('projects.pc_building_description')}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-primary">
+                        <div class="panel-body text-center">
+                            <h4>{{trans('projects.music')}}</h4>
+                            <hr />
+                            <p>{{trans('projects.music_description')}}</p>
                         </div>
                     </div>
                 </div>

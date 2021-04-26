@@ -22,7 +22,7 @@
                             <hr />
                             <p>{!!trans('stream.stream_description_text')!!}</a>.</p>
                             <a class="btn btn-primary disabled" href="/{{app()->getLocale()}}/stream/commands" disabled>{{trans('stream.bot_commands')}}</a>
-                            <a class="btn btn-primary" href="https://discord.gg/6DGc24x">{{trans('stream.join_server')}}</a>
+                            <a class="btn btn-primary" href="https://guilded.gg/ngst">{{trans('stream.join_server')}}</a>
                         </div>
                     </div>
                </div>
