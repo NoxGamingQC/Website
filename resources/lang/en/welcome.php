@@ -3,8 +3,8 @@
 return [
     'slogan' => "A Québecois that do videos on Twitch & YouTube.",
     'about_me' => "About me",
-    'about_me_text' => "My name is Jimmy. I'm from Québec, Canada. I like music, programming, video games and movies. I like to meet new people if you see me online don't hesitate to dm me 😉. Best way to contact me is trought discord",
-    'discord_join_here' => "You can join my discord server by clicking here",
+    'about_me_text' => "My name is Jimmy. I'm from Québec, Canada. I like music, programming, video games and movies. I like to meet new people if you see me online don't hesitate to dm me 😉. Best way to contact me is trought Guilded",
+    'guilded_join_here' => "You can join us on guilded by clicking here",
     'donation' => "Donations",
     'donation_text' => "You do not need to make a donation. All donation are really appreciated and will support the stream itself. To make a donation",
     'click_here' => "click here",

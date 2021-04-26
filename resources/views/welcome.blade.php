@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Home')
+@section('title', 'Welcome')
 @section('content')
 
 <div class="row">
@@ -18,7 +18,7 @@
             <div class="panel-body">
                 <h3><i class="fa fa-user" aria-hidden="true"></i> {{trans('welcome.about_me')}}</h3>
                 <hr />
-                <p>{{trans('welcome.about_me_text')}} <a href="https://discord.gg/6DGc24x">({{trans('welcome.discord_join_here')}})</a>.</p>
+                <p>{{trans('welcome.about_me_text')}} <a href="https://guilded.gg/ngst">({{trans('welcome.guilded_join_here')}})</a>.</p>
             </div>
         </div>
     </div>
