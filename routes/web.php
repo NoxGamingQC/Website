@@ -31,8 +31,8 @@ Route::group([
         return view('overlay.start_stream');
     });
 
-    Route::get('/discord', function () {
-        return redirect()->to('https://discord.gg/6DGc24x');
+    Route::get('/guilded', function () {
+        return redirect()->to('https://guilded.gg/ngst');
     });
     
     Route::get('language/set/{language}', 'LanguageController@index');
@@ -56,6 +56,10 @@ Route::group([
         Route::get('/noxbot/data/json/twitch_lives', 'NoxBOT\BotTwitchLivesController@getTwitchLives');
         
         Route::post('/noxbot/data/json/twitch_lives/{id}', 'NoxBOT\BotTwitchLivesController@postTwitchLives');
+
+        Route::get('/guilded/subscription', function () {
+            return redirect(app()->getLocale() . '/guilded/subscription');
+        });
 
         Route::group(
             [
@@ -89,6 +93,9 @@ Route::group([
                     return view('noxbot_dashboard');
                 });
 
+                Route::get('/guilded/subscription', function () {
+                    return view('guilded.subscription');
+                });
 
                 Route::get('/games', 'GamesListController@index');
 
