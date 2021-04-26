@@ -4158,6 +4158,18 @@ hr {
   color: #337ab7 !important;
 }
 
+copper {
+  color: #ff9f68 !important;
+}
+
+silver {
+  color: silver !important;
+}
+
+gold {
+  color: gold !important;
+}
+
 .toast-title {
   font-weight: bold;
 }
