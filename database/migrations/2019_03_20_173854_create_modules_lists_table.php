@@ -13,14 +13,16 @@ class CreateModulesListsTable extends Migration
      */
     public function up()
     {
-        Schema::create('modules_lists', function (Blueprint $table) {
-            $table->increments('ID');
-            $table->string('Slug')->nullable(false);
-            $table->boolean('Maintenance')->nullable(false)->default(false);
-            $table->boolean('isActiveDefault')->nullable(false)->default(true);
-            $table->boolean('ModuleIcon')->nullable(true);
-            $table->timestamps();
-        });
+        if (!Schema::hasTable('modules_lists')) {
+            Schema::create('modules_lists', function (Blueprint $table) {
+                $table->increments('ID');
+                $table->string('Slug')->nullable(false);
+                $table->boolean('Maintenance')->nullable(false)->default(false);
+                $table->boolean('isActiveDefault')->nullable(false)->default(true);
+                $table->boolean('ModuleIcon')->nullable(true);
+                $table->timestamps();
+            });
+        }
     }
 
     /**

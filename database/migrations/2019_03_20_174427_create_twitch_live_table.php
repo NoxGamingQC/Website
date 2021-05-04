@@ -13,15 +13,17 @@ class CreateTwitchLiveTable extends Migration
      */
     public function up()
     {
-        Schema::create('twitch_live', function (Blueprint $table) {
-            $table->increments('ID');
-            $table->string('ServerID')->nullable(false);
-            $table->string('ChannelID')->nullable(false);
-            $table->string('UserID')->nullable(false);
-            $table->boolean('isLive')->nullable(false)->default(false);
-            $table->boolean('CustomMessage')->nullable(true);
-            $table->timestamps();
-        });
+        if (!Schema::hasTable('twitch_live')) {
+            Schema::create('twitch_live', function (Blueprint $table) {
+                $table->increments('ID');
+                $table->string('ServerID')->nullable(false);
+                $table->string('ChannelID')->nullable(false);
+                $table->string('UserID')->nullable(false);
+                $table->boolean('isLive')->nullable(false)->default(false);
+                $table->boolean('CustomMessage')->nullable(true);
+                $table->timestamps();
+            });
+        }
     }
 
     /**

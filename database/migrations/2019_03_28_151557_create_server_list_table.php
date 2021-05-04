@@ -13,16 +13,18 @@ class CreateServerListTable extends Migration
      */
     public function up()
     {
-        Schema::create('server_list', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('UserID')->nullable(false);
-            $table->string('ServerID')->nullable(false);
-            $table->boolean('isOwner')->nullable(false);
-            $table->string('Permissions')->nullable(false);
-            $table->string('Icon')->nullable(false);
-            $table->string('Name')->nullable(false);
-            $table->timestamps();
-        });
+        if (!Schema::hasTable('server_lists')) {
+            Schema::create('server_list', function (Blueprint $table) {
+                $table->increments('id');
+                $table->string('UserID')->nullable(false);
+                $table->string('ServerID')->nullable(false);
+                $table->boolean('isOwner')->nullable(false);
+                $table->string('Permissions')->nullable(false);
+                $table->string('Icon')->nullable(false);
+                $table->string('Name')->nullable(false);
+                $table->timestamps();
+            });
+        }
     }
 
     /**

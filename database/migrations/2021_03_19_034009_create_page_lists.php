@@ -13,13 +13,15 @@ class CreatePageLists extends Migration
      */
     public function up()
     {
-        Schema::create('page_lists', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('slug')->nullable(false);
-            $table->boolean('inMaintenance')->nullable(false);
-            $table->string('Description')->nullable(true);
-            $table->timestamps();
-        });
+        if (!Schema::hasTable('page_lists')) {
+            Schema::create('page_lists', function (Blueprint $table) {
+                $table->increments('id');
+                $table->string('slug')->nullable(false);
+                $table->boolean('inMaintenance')->nullable(false);
+                $table->string('Description')->nullable(true);
+                $table->timestamps();
+            });
+        }
     }
 
     /**

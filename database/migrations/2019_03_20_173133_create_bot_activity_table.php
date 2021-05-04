@@ -13,11 +13,13 @@ class CreateBotActivityTable extends Migration
      */
     public function up()
     {
-        Schema::create('bot_activity', function (Blueprint $table) {
-            $table->increments('ID');
-            $table->string('Activity')->nullable(false);
-            $table->timestamps();
-        });
+        if (!Schema::hasTable('bot_activity')) {
+            Schema::create('bot_activity', function (Blueprint $table) {
+                $table->increments('ID');
+                $table->string('Activity')->nullable(false);
+                $table->timestamps();
+            });
+        }
     }
 
     /**

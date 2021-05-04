@@ -13,15 +13,17 @@ class CreateGamesList extends Migration
      */
     public function up()
     {
-        Schema::create('games_list', function (Blueprint $table) {
-            $table->increments('id');
-            $table->text('Game')->nullable(false);
-            $table->integer('Console')->nullable(false);
-            $table->string('Date')->nullable(false);
-            $table->string('CoverURL')->nullable(true);
-            $table->string('format')->nullable(true);
-            $table->timestamps();
-        });
+        if (!Schema::hasTable('games_list')) {
+            Schema::create('games_list', function (Blueprint $table) {
+                $table->increments('id');
+                $table->text('Game')->nullable(false);
+                $table->integer('Console')->nullable(false);
+                $table->string('Date')->nullable(false);
+                $table->string('CoverURL')->nullable(true);
+                $table->string('format')->nullable(true);
+                $table->timestamps();
+            });
+        }
     }
 
     /**

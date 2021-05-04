@@ -13,11 +13,13 @@ class Create8ballsTable extends Migration
      */
     public function up()
     {
-        Schema::create('8balls', function (Blueprint $table) {
-            $table->increments('ID');
-            $table->string('Text')->nullable(false);
-            $table->timestamps();
-        });
+        if (!Schema::hasTable('8balls')) {
+            Schema::create('8balls', function (Blueprint $table) {
+                $table->increments('ID');
+                $table->string('Text')->nullable(false);
+                $table->timestamps();
+            });
+        }
     }
 
     /**

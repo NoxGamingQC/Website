@@ -13,12 +13,14 @@ class CreateTwitchUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('twitch_users', function (Blueprint $table) {
-            $table->increments('ID');
-            $table->string('TwitchID')->nullable(false);
-            $table->string('Points')->nullable(false)->default(0);
-            $table->timestamps();
-        });
+        if (!Schema::hasTable('bot_activity')) {
+            Schema::create('bot_activity', function (Blueprint $table) {
+                $table->increments('ID');
+                $table->string('TwitchID')->nullable(false);
+                $table->string('Points')->nullable(false)->default(0);
+                $table->timestamps();
+            });
+        }
     }
 
     /**
