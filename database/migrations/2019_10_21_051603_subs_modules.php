@@ -13,13 +13,15 @@ class SubsModules extends Migration
      */
     public function up()
     {
-        Schema::create('subs_modules', function (Blueprint $table) {
-            $table->increments('ID');
-            $table->timestamps();
-            $table->string('Name')->nullable(false);
-            $table->string('Slug')->nullable(false);
-            $table->integer('ModuleID')->nullable(false);
-        });
+        if (!Schema::hasTable('subs_modules')) {
+            Schema::create('subs_modules', function (Blueprint $table) {
+                $table->increments('ID');
+                $table->timestamps();
+                $table->string('Name')->nullable(false);
+                $table->string('Slug')->nullable(false);
+                $table->integer('ModuleID')->nullable(false);
+            });
+        }
     }
 
     /**

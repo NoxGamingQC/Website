@@ -13,16 +13,18 @@ class CreateBotListsTable extends Migration
      */
     public function up()
     {
-        Schema::create('bot_lists', function (Blueprint $table) {
-            $table->increments('ID');
-            $table->string('BotID')->nullable(false);
-            $table->boolean('isDev')->nullable(false);
-            $table->string('DefaultPrefix')->nullable(false);
-            $table->string('OauthToken')->nullable(false);
-            $table->string('YouTubeToken');
-            $table->string('website_token');
-            $table->timestamps();
-        });
+        if (!Schema::hasTable('bot_lists')) {
+            Schema::create('bot_lists', function (Blueprint $table) {
+                $table->increments('ID');
+                $table->string('BotID')->nullable(false);
+                $table->boolean('isDev')->nullable(false);
+                $table->string('DefaultPrefix')->nullable(false);
+                $table->string('OauthToken')->nullable(false);
+                $table->string('YouTubeToken');
+                $table->string('website_token');
+                $table->timestamps();
+            });
+        }
     }
 
     /**

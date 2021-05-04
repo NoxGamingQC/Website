@@ -13,14 +13,16 @@ class CreateConsoleLists extends Migration
      */
     public function up()
     {
-        Schema::create('console_lists', function (Blueprint $table) {
-            $table->increments('id');
-            $table->text('Console')->nullable(false);
-            $table->text('Description')->nullable(false);
-            $table->string('Date')->nullable(false);
-            $table->string('Picture')->nullable(false);
-            $table->timestamps();
-        });
+        if (!Schema::hasTable('console_lists')) {
+            Schema::create('console_lists', function (Blueprint $table) {
+                $table->increments('id');
+                $table->text('Console')->nullable(false);
+                $table->text('Description')->nullable(false);
+                $table->string('Date')->nullable(false);
+                $table->string('Picture')->nullable(false);
+                $table->timestamps();
+            });
+        }
     }
 
     /**
