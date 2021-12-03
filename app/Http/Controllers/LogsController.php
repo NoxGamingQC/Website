@@ -30,54 +30,55 @@ class LogsController extends Controller
                 $dataDate = [];
                 $dataStatus = [];
                 $dataStatusColor = [];
-                $rawData = explode("\n", File::get($filePath));
-                $errorNumber = 0;
-                foreach($rawData as $key => $value) {
-                    if ($value == '"} ') {
-                        $errorNumber += 1;
-                    }
-                    if(array_key_exists($errorNumber, $fileData)) {
-                        if(strlen($value) > 1) {
-                            $newData = $fileData[$errorNumber] . '\n' . utf8_encode($value);
-                            $fileData[$errorNumber] = $newData;
+                if(File::exists($filePath)) {
+                    $rawData = explode("\n", File::get($filePath));
+                    $errorNumber = 0;
+                    foreach($rawData as $key => $value) {
+                        if ($value == '"} ') {
+                            $errorNumber += 1;
                         }
-                    } else {
-                        if($value !== '"} ' && strlen($value) > 1) {
-                            array_push($fileData, utf8_encode($value));
+                        if(array_key_exists($errorNumber, $fileData)) {
+                            if(strlen($value) > 1) {
+                                $newData = $fileData[$errorNumber] . '\n' . utf8_encode($value);
+                                $fileData[$errorNumber] = $newData;
+                            }
+                        } else {
+                            if($value !== '"} ' && strlen($value) > 1) {
+                                array_push($fileData, utf8_encode($value));
+                            }
                         }
                     }
+                    foreach($fileData as $key => $value) {
+                        $logDate = str_replace("[", "", explode("]", $value)[0]) ? Carbon::parse(str_replace("[", "", explode("]", $value)[0])) : '';
+                        $logStatus = "undefined";
+                        if(str_contains($value, 'developement.ERROR') || str_contains($value, 'production.ERROR')) {
+                            $logStatus = "error";
+                            $logStatusColor = "danger";
+                        } elseif(str_contains($value, 'developement.WARNING') || str_contains($value, 'production.WARNING')) {
+                            $logStatus = "warning";
+                            $logStatusColor = "warning";
+                        } elseif(str_contains($value, 'developement.INFO') || str_contains($value, 'production.INFO')) {
+                            $logStatus = "info";
+                            $logStatusColor = "info";
+                        } elseif(str_contains($value, 'developement.ALERT') || str_contains($value, 'production.ALERT')) {
+                            $logStatus = "alert";
+                            $logStatusColor = "danger";
+                        } elseif(str_contains($value, 'developement.EMERGENCY') || str_contains($value, 'production.EMERGENCY')) {
+                            $logStatus = "emergency";
+                            $logStatusColor = "danger";
+                        } elseif(str_contains($value, 'developement.CRITICAL') || str_contains($value, 'production.CRITICAL')) {
+                            $logStatus = "critical";
+                            $logStatusColor = "danger";
+                        } elseif(str_contains($value, 'developement.NOTICE') || str_contains($value, 'production.NOTICE')) {
+                            $logStatus = "notice";
+                            $logStatusColor = "warning";
+                        } elseif(str_contains($value, 'developement.DEBUG') || str_contains($value, 'production.DEBUG')) {
+                            $logStatus = "debug";
+                            $logStatusColor = "primary";
+                        } else {
+                            $logStatusColor = "default";
+                        }
                 }
-                foreach($fileData as $key => $value) {
-                    $logDate = str_replace("[", "", explode("]", $value)[0]) ? Carbon::parse(str_replace("[", "", explode("]", $value)[0])) : '';
-                    $logStatus = "undefined";
-                    if(str_contains($value, 'developement.ERROR')) {
-                        $logStatus = "error";
-                        $logStatusColor = "danger";
-                    } elseif(str_contains($value, 'developement.WARNING')) {
-                        $logStatus = "warning";
-                        $logStatusColor = "warning";
-                    } elseif(str_contains($value, 'developement.INFO')) {
-                        $logStatus = "info";
-                        $logStatusColor = "info";
-                    } elseif(str_contains($value, 'developement.ALERT')) {
-                        $logStatus = "alert";
-                        $logStatusColor = "danger";
-                    } elseif(str_contains($value, 'developement.EMERGENCY')) {
-                        $logStatus = "emergency";
-                        $logStatusColor = "danger";
-                    } elseif(str_contains($value, 'developement.CRITICAL')) {
-                        $logStatus = "critical";
-                        $logStatusColor = "danger";
-                    } elseif(str_contains($value, 'developement.NOTICE')) {
-                        $logStatus = "notice";
-                        $logStatusColor = "warning";
-                    } elseif(str_contains($value, 'developement.DEBUG')) {
-                        $logStatus = "debug";
-                        $logStatusColor = "secondary";
-                    } else {
-                        $logStatusColor = "default";
-                    }
-                    
                     array_push($dataDate, $logDate);
                     array_push($dataStatusColor, $logStatusColor);
                     array_push($dataStatus, $logStatus);
