@@ -29,8 +29,25 @@
                     <button class="btn btn-primary text-right" type="submit"><i id="navSearchButton" class="fa fa-download"></i> {{trans('generic.download')}}</button>
                 </form>
             </div>
-            <div class="col-md-12">
-                <pre>{{ $data['file'] }}</pre>
+            <div class="col-md-12 table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">date</th>
+                            <th scope="col">status</th>
+                            <th scope="col">data</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    @foreach($data['file'] as $key => $value)
+                        <tr>
+                            <th scope="row">{{$data['elementsDates'][$key]}}</th>
+                            <td><p class="badge-{{$data['elementsStatusColor'][$key]}}">{{$data['elementsStatus'][$key]}}</p></td>
+                            <td>{!!$value!!}</td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
             </div>
         @endif
     </div>

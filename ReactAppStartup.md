@@ -2,7 +2,7 @@ Refresh js: npm run dev
 sudo docker-compose up -d --build
 
 P.S. Open Powershell (Windows cmd)
-get in dockerfile: docker exec -it noxracing_php /bin/bash
+get in dockerfile: docker exec -it noxgamingqc_php /bin/bash
 
 ----
 

@@ -4111,6 +4111,72 @@ fieldset[disabled] .btn-skype.active {
     display: block !important;
   }
 }
+.table-danger {
+  background-color: #c22222;
+}
+
+.table-info {
+  background-color: #8eb4cb;
+}
+
+.table-default {
+  background-color: #222222;
+}
+
+.table-success {
+  background-color: #2cc470;
+}
+
+.table-warning {
+  background-color: #fcf977;
+}
+
+.table-primary {
+  background-color: #E56F1F;
+}
+
+.badge-danger {
+  background-color: #c22222;
+  text-align: center;
+  border-radius: 5px 5px 5px 5px;
+  padding: 5px;
+}
+
+.badge-info {
+  background-color: #8eb4cb;
+  text-align: center;
+  border-radius: 5px 5px 5px 5px;
+  padding: 5px;
+}
+
+.badge-default {
+  background-color: #222222;
+  text-align: center;
+  border-radius: 5px 5px 5px 5px;
+  padding: 5px;
+}
+
+.badge-success {
+  background-color: #2cc470;
+  text-align: center;
+  border-radius: 5px 5px 5px 5px;
+  padding: 5px;
+}
+
+.badge-warning {
+  background-color: #fcf977;
+  text-align: center;
+  border-radius: 5px 5px 5px 5px;
+  padding: 5px;
+}
+
+.badge-primary {
+  background-color: #E56F1F;
+  text-align: center;
+  border-radius: 5px 5px 5px 5px;
+  padding: 5px;
+}
+
 p.stroke {
   color: white;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
@@ -4185,7 +4251,7 @@ gold {
 }
 
 .toast-message a:hover {
-  color: #cccccc;
+  color: #ffffff;
   text-decoration: none;
 }
 
@@ -4334,23 +4400,23 @@ button.toast-close-button {
 }
 
 .toast {
-  background-color: #030303;
+  background-color: #E56F1F;
 }
 
 .toast-success {
-  background-color: #51a351;
+  background-color: #2cc470;
 }
 
 .toast-error {
-  background-color: #bd362f;
+  background-color: #c22222;
 }
 
 .toast-info {
-  background-color: #2f96b4;
+  background-color: #8eb4cb;
 }
 
 .toast-warning {
-  background-color: #f89406;
+  background-color: #fcf977;
 }
 
 .toast-progress {
