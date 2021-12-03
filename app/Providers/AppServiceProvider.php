@@ -31,8 +31,11 @@ class AppServiceProvider extends ServiceProvider
                 'description' => $value->Description
             ];
         }
-        view()->share('page_lists', $pageListsArray);
-       
+        if($pageListsArray) {
+            view()->share('page_lists', $pageListsArray);
+        } else {
+            return view();
+        }
     }
 
     /**

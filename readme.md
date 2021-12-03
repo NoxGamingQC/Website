@@ -30,6 +30,9 @@
 - Launch the app `docker-compose up -d --build`
 - Reload the sources and the styles `npm run dev`
 
+## Useful information
+
+Laravel framework v.5.5.50
 
 ## Creator and contributors
 

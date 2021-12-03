@@ -7,10 +7,10 @@
   }
   .toast-message a,
   .toast-message label {
-    color: #ffffff;
+    color: $text-color;
   }
   .toast-message a:hover {
-    color: #cccccc;
+    color: $text-color;
     text-decoration: none;
   }
   .toast-close-button {
@@ -146,19 +146,19 @@
     margin-right: auto;
   }
   .toast {
-    background-color: #030303;
+    background-color: $brand_primary;
   }
   .toast-success {
-    background-color: #51a351;
+    background-color: $brand_success;
   }
   .toast-error {
-    background-color: #bd362f;
+    background-color: $brand_danger;
   }
   .toast-info {
-    background-color: #2f96b4;
+    background-color: $brand_info;
   }
   .toast-warning {
-    background-color: #f89406;
+    background-color: $brand_warning;
   }
   
   .toast-progress {

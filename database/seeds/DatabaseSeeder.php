@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
             ReactionRolesTableSeeder::class,
             BotActivityTableSeeder::class,
             TwitchLiveTableSeeder::class,
+            PageListsTableSeeder::class
         ]);
     }
 }

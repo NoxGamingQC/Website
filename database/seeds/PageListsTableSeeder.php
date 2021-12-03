@@ -3,7 +3,7 @@
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 
-class BotActivityTableSeeder extends Seeder
+class PageListsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,92 +12,115 @@ class BotActivityTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('bot_activity')->insert([
+        DB::table('page_lists')->insert([
             [
-                'Activity' => 'help | noxgamingqc.ca',
+                'slug' => 'noxbot_dashboard',
+                'inMaintenance' => true,
                 'created_at' => new Carbon(today()),
                 'updated_at' => new Carbon(today())
             ],
             [
-                'Activity' => 'help | ¯\_(ツ)_/¯',
+                'slug' => 'noxbot',
+                'inMaintenance' => true,
                 'created_at' => new Carbon(today()),
                 'updated_at' => new Carbon(today())
             ],
             [
-                'Activity' => 'help | discord.gg/Gkd2ud9uet',
+                'slug' => 'games',
+                'inMaintenance' => true,
                 'created_at' => new Carbon(today()),
                 'updated_at' => new Carbon(today())
             ],
             [
-                'Activity' => 'help | OwO',
+                'slug' => 'youtube',
+                'inMaintenance' => true,
                 'created_at' => new Carbon(today()),
                 'updated_at' => new Carbon(today())
             ],
             [
-                'Activity' => 'help | (づ｡◕‿◕｡)づ',
+                'slug' => 'commands',
+                'inMaintenance' => true,
                 'created_at' => new Carbon(today()),
                 'updated_at' => new Carbon(today())
             ],
             [
-                'Activity' => 'help | (ﾉ≧∇≦)ﾉ ﾐ ┸━┸',
+                'slug' => 'profile_show',
+                'inMaintenance' => true,
                 'created_at' => new Carbon(today()),
                 'updated_at' => new Carbon(today())
             ],
             [
-                'Activity' => 'help | (≧∇≦)/',
+                'slug' => 'projects',
+                'inMaintenance' => true,
                 'created_at' => new Carbon(today()),
                 'updated_at' => new Carbon(today())
             ],
             [
-                'Activity' => 'help | o(≧∇≦o)',
+                'slug' => 'profile_edit',
+                'inMaintenance' => true,
                 'created_at' => new Carbon(today()),
                 'updated_at' => new Carbon(today())
             ],
             [
-                'Activity' => 'help | UwU',
+                'slug' => 'bot_activities',
+                'inMaintenance' => true,
                 'created_at' => new Carbon(today()),
                 'updated_at' => new Carbon(today())
             ],
             [
-                'Activity' => 'help | ( ˘▽˘)っ☕',
+                'slug' => 'modules',
+                'inMaintenance' => true,
                 'created_at' => new Carbon(today()),
                 'updated_at' => new Carbon(today())
             ],
             [
-                'Activity' => 'help | O.o',
+                'slug' => 'users',
+                'inMaintenance' => true,
                 'created_at' => new Carbon(today()),
                 'updated_at' => new Carbon(today())
             ],
             [
-                'Activity' => 'help | twitch.tv/noxgamingqc',
+                'slug' => 'about_me',
+                'inMaintenance' => false,
                 'created_at' => new Carbon(today()),
                 'updated_at' => new Carbon(today())
             ],
             [
-                'Activity' => 'help | ( ◠‿◠ )',
+                'slug' => 'twitch',
+                'inMaintenance' => false,
                 'created_at' => new Carbon(today()),
                 'updated_at' => new Carbon(today())
             ],
             [
-                'Activity' => 'help | ʕ•̫͡•ʕ•̫͡•ʔ•̫͡•ʔ•̫͡•ʕ•̫͡•ʔ•̫͡•ʕ•̫͡•ʕ•̫͡•ʔ•̫͡•ʔ•̫͡•ʕ•̫͡•ʔ•̫͡•ʔ',
+                'slug' => 'contact_us',
+                'inMaintenance' => false,
                 'created_at' => new Carbon(today()),
                 'updated_at' => new Carbon(today())
             ],
             [
-                'Activity' => 'help | ･゜ﾟ･:.｡..｡.:･\'(ﾟ▽ﾟ)\'･:.｡. .｡.:･゜ﾟ･',
+                'slug' => 'logs',
+                'inMaintenance' => false,
                 'created_at' => new Carbon(today()),
                 'updated_at' => new Carbon(today())
             ],
             [
-                'Activity' => 'help | ヾ(＠⌒ー⌒＠)ノ',
+                'slug' => 'management',
+                'inMaintenance' => false,
                 'created_at' => new Carbon(today()),
                 'updated_at' => new Carbon(today())
             ],
             [
-                'Activity' => 'help | ( ͡° ͜ʖ ͡°)',
+                'slug' => 'login',
+                'inMaintenance' => false,
                 'created_at' => new Carbon(today()),
                 'updated_at' => new Carbon(today())
-            ]
+            ],
+            [
+                'slug' => 'todolist',
+                'inMaintenance' => true,
+                'created_at' => new Carbon(today()),
+                'updated_at' => new Carbon(today())
+            ],
         ]);
     }
 }
