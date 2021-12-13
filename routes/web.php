@@ -34,6 +34,10 @@ Route::group([
     Route::get('/guilded', function () {
         return redirect()->to('https://guilded.gg/ngst');
     });
+
+    Route::get('/discord', function () {
+        return redirect()->to('https://discord.com/invite/Gkd2ud9uet');
+    });
     
     Route::get('language/set/{language}', 'LanguageController@index');
     

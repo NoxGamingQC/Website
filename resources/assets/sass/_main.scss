@@ -1,6 +1,8 @@
 html, body {
     background-color: $background-color;
     color: $text-color;
+    height: 100%;
+    margin: 0;
     @media (min-width: 1210px) {
         padding: 2%;
     }
@@ -22,6 +24,10 @@ vr {
 
 p, a {
     font-family: $raleway-font;
+}
+
+.full-height {
+    height: 100% !important;
 }
 
 .modal-backdrop {
