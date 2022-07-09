@@ -3,12 +3,12 @@
 @section('content')
 
 <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-12 text-center">
         <div class="panel panel-block-primary">
             <div class="panel-body">
-                <h3>ERROR 419 - The page has expired due to inactivity.</h3>
+                <h1>ERROR 419 - The page has expired due to inactivity.</h1>
                 <hr />
-                <p>What took you so long?</p>
+                <h5>What took you so long?</h5>
             </div>
         </div>
     </div>

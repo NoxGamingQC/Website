@@ -3,12 +3,12 @@
 @section('content')
 
 <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-12 text-center">
         <div class="panel panel-block-primary">
             <div class="panel-body">
-                <h3>ERROR 503 - Service Unavailable.</h3>
+                <h1>ERROR 503 - Service Unavailable.</h1>
                 <hr />
-                <p>Under maintenance. Sorry for any inconveniance.</p>
+                <h5>Under maintenance. Sorry for any inconveniance.</h5>
             </div>
         </div>
     </div>

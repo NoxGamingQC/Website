@@ -3,12 +3,12 @@
 @section('content')
 
 <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-12 text-center">
         <div class="panel panel-block-primary">
             <div class="panel-body">
-                <h3>ERROR 500 - INTERNAL SERVER ERROR.</h3>
+                <h1>ERROR 500 - INTERNAL SERVER ERROR.</h1>
                 <hr />
-                <p>Woops, we are sorry, but something went wrong. Help us fix it by contacting us on our Discord and tell us what you did to get here.</p>
+                <h5>Hey congratulations, you found a special page. Make sure to tell us the steps you took to get over here we are curious. Pssst. yep something went wrong. Thanks for helping us.</h5>
             </div>
         </div>
     </div>
