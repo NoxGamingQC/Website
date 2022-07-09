@@ -3,12 +3,12 @@
 @section('content')
 
 <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-12 text-center">
         <div class="panel panel-block-primary">
             <div class="panel-body">
-                <h3>ERROR 404 - PAGE NOT FOUND</h3>
+                <h1>ERROR 404 - PAGE NOT FOUND</h1>
                 <hr />
-                <p>Sorry, are you lost? The page you are trying to reach doesn't exist.</p>
+                <h5>Sorry bud, but are you lost? The page you requested doesn't exist.</h5>
             </div>
         </div>
     </div>
