@@ -3368,6 +3368,7 @@ fieldset[disabled] .btn-twitter.active {
   color: #ffffff !important;
   background-color: #222222;
   border-color: #222222;
+  padding: 25%;
 }
 
 .btn-facebook:hover,
@@ -3414,6 +3415,7 @@ fieldset[disabled] .btn-facebook.active {
   color: #ffffff !important;
   background-color: #222222;
   border-color: #222222;
+  padding: 25%;
 }
 
 .btn-instagram:hover,
@@ -3460,6 +3462,7 @@ fieldset[disabled] .btn-instagram.active {
   color: #ffffff !important;
   background-color: #222222;
   border-color: #222222;
+  padding: 25%;
 }
 
 .btn-steam:hover,
@@ -3508,50 +3511,11 @@ fieldset[disabled] .btn-steam.active {
   border-color: #222222;
 }
 
-.btn-google-plus:hover,
-.btn-google-plus:focus,
-.btn-google-plus:active,
-.btn-google-plus.active,
-.open .dropdown-toggle.btn-google-plus {
-  color: #ffffff !important;
-  background-color: #DD4B39;
-  border-color: #C74534;
-}
-
-.btn-google-plus:active,
-.btn-google-plus.active,
-.open .dropdown-toggle.btn-google-plus {
-  background-image: none;
-}
-
-.btn-google-plus.disabled,
-.btn-google-plus[disabled],
-fieldset[disabled] .btn-google-plus,
-.btn-google-plus.disabled:hover,
-.btn-google-plus[disabled]:hover,
-fieldset[disabled] .btn-google-plus:hover,
-.btn-google-plus.disabled:focus,
-.btn-google-plus[disabled]:focus,
-fieldset[disabled] .btn-google-plus:focus,
-.btn-google-plus.disabled:active,
-.btn-google-plus[disabled]:active,
-fieldset[disabled] .btn-google-plus:active,
-.btn-google-plus.disabled.active,
-.btn-google-plus[disabled].active,
-fieldset[disabled] .btn-google-plus.active {
-  background-color: #222222;
-  border-color: #090909;
-}
-
-.btn-google-plus .badge {
-  color: #222222 !important;
-  background-color: #ffffff;
-}
-
 .btn-github {
   color: #ffffff !important;
   background-color: #222222;
   border-color: #222222;
+  padding: 25%;
 }
 
 .btn-github:hover,
@@ -3598,6 +3562,7 @@ fieldset[disabled] .btn-github.active {
   color: #ffffff !important;
   background-color: #222222;
   border-color: #222222;
+  padding: 25%;
 }
 
 .btn-snapchat:hover,
@@ -3644,6 +3609,7 @@ fieldset[disabled] .btn-snapchat.active {
   color: #ffffff !important;
   background-color: #222222;
   border-color: #222222;
+  padding: 25%;
 }
 
 .btn-spotify:hover,
@@ -3690,6 +3656,7 @@ fieldset[disabled] .btn-spotify.active {
   color: #ffffff !important;
   background-color: #222222;
   border-color: #222222;
+  padding: 25%;
 }
 
 .btn-reddit:hover,
@@ -3736,6 +3703,7 @@ fieldset[disabled] .btn-reddit.active {
   color: #ffffff !important;
   background-color: #222222;
   border-color: #222222;
+  padding: 25%;
 }
 
 .btn-pinterest:hover,
@@ -3782,6 +3750,7 @@ fieldset[disabled] .btn-pinterest.active {
   color: #ffffff !important;
   background-color: #222222;
   border-color: #222222;
+  padding: 25%;
 }
 
 .btn-skype:hover,
