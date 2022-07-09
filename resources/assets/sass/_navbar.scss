@@ -12,7 +12,7 @@ $dropdown: true;
         color: $text-color;
         font-size: 155%;
         @media (min-width: 768px) {
-            margin-top: 25%;
+            margin-top: 5%;
         }
         &:hover, &:focus {
             color: $text-highlight;
@@ -20,17 +20,17 @@ $dropdown: true;
     }
     .navbar-text {
         color: $text-color;
-        font-size: 155%;
+        font-size: 100%;
     }
     .navbar-nav {
         > li {
             margin-right: 5px;
             > a {
                 color: $text-color;
-                font-size: 125%;
+                font-size: 100%;
                 @media (min-width: 768px) {
-                    padding-top: 50px;
-                    padding-bottom: 50px;
+                    padding-top: 25px;
+                    padding-bottom: 25px;
                 }
                 &:hover,  &:focus {
                     color: $lightmode-text-color;
@@ -39,10 +39,10 @@ $dropdown: true;
             }
             > a.disabled {
                 color: $text-disabled;
-                font-size: 125%;
+                font-size: 100%;
                 @media (min-width: 768px) {
-                    padding-top: 50px;
-                    padding-bottom: 50px;
+                    padding-top: 25px;
+                    padding-bottom:25px;
                 }
                 &:hover,  &:focus {
                     color: $text-disabled;
@@ -129,6 +129,9 @@ $dropdown: true;
         color: $text-highlight; 
         }
     }
+    .nav-searchbar {
+        margin-top: 6%;
+    }
 }
 
 @media (max-width: 768px) {
@@ -187,7 +190,7 @@ $dropdown: true;
     }
     .navbar-nav {
         float: none!important;
-        margin-top: 7.5px;
+        margin-top: 5%;
     }
     .navbar-nav>li {
         float: none;
@@ -196,7 +199,7 @@ $dropdown: true;
         padding-top: 10px;
         padding-bottom: 10px;
     }
-    .collapse.in{
+    .collapse.in {
         display:block !important;
     }
-  }
+}
