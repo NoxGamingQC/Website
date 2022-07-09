@@ -13,7 +13,7 @@
         </div>
         <div class="navbar-header form-inline hidden-xs hidden-sm">
          @if(!$page_lists['profile_show']['inMaintenance'])
-            <div class="input-group" style="margin-top: 18%">
+            <div class="nav-searchbar input-group">
                 <input type="text" class="form-control" id="navSearch" placeholder="{{trans('generic.search')}}...">
                 <span class="input-group-btn">
                     <button id="submitSearch" class="btn btn-primary" type="button"><i id="navSearchButton" class="fa fa-search"></i></button>

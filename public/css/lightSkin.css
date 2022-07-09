@@ -3040,7 +3040,10 @@ html, body {
 }
 @media (min-width: 1210px) {
   html, body {
-    padding: 2%;
+    padding-top: 0.5%;
+    padding-right: 2%;
+    padding-left: 2%;
+    padding-bottom: 2%;
   }
 }
 
@@ -3936,7 +3939,7 @@ fieldset[disabled] .btn-skype.active {
 }
 @media (min-width: 768px) {
   .navbar-default .navbar-brand {
-    margin-top: 25%;
+    margin-top: 5%;
   }
 }
 .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
@@ -3944,19 +3947,19 @@ fieldset[disabled] .btn-skype.active {
 }
 .navbar-default .navbar-text {
   color: #000;
-  font-size: 155%;
+  font-size: 100%;
 }
 .navbar-default .navbar-nav > li {
   margin-right: 5px;
 }
 .navbar-default .navbar-nav > li > a {
   color: #000;
-  font-size: 125%;
+  font-size: 100%;
 }
 @media (min-width: 768px) {
   .navbar-default .navbar-nav > li > a {
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 25px;
+    padding-bottom: 25px;
   }
 }
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
@@ -3965,12 +3968,12 @@ fieldset[disabled] .btn-skype.active {
 }
 .navbar-default .navbar-nav > li > a.disabled {
   color: #777777;
-  font-size: 125%;
+  font-size: 100%;
 }
 @media (min-width: 768px) {
   .navbar-default .navbar-nav > li > a.disabled {
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 25px;
+    padding-bottom: 25px;
   }
 }
 .navbar-default .navbar-nav > li > a.disabled:hover, .navbar-default .navbar-nav > li > a.disabled:focus {
@@ -4047,6 +4050,9 @@ fieldset[disabled] .btn-skype.active {
 .navbar-default .navbar-link:hover {
   color: #222;
 }
+.navbar-default .nav-searchbar {
+  margin-top: 6%;
+}
 
 @media (max-width: 768px) {
   .navbar-default .navbar-nav .open .dropdown-menu > li > a {
@@ -4101,7 +4107,7 @@ fieldset[disabled] .btn-skype.active {
 
   .navbar-nav {
     float: none !important;
-    margin-top: 7.5px;
+    margin-top: 5%;
   }
 
   .navbar-nav > li {

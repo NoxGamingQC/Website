@@ -38,6 +38,10 @@ Route::group([
     Route::get('/discord', function () {
         return redirect()->to('https://discord.com/invite/PryKE2Xvrh');
     });
+
+    Route::get('/pst/discord', function () {
+        return redirect()->to('https://discord.com/invite/SAXsDwaR');
+    });
     
     Route::get('language/set/{language}', 'LanguageController@index');
     
