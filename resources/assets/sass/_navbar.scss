@@ -3,6 +3,7 @@ $dropdown: true;
 .navbar-default {
     background-color: $background-color;
     border-color: $background-color;
+    margin-bottom: -2%;
     @media (min-width: 500px) {
         border-top-color: transparent !important;
         border-right-color: transparent !important;
