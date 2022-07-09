@@ -21,10 +21,24 @@
     background-color: $brand-primary;
     color: $text-color;
     border-color: $brand-primary;
+    @media (min-width: 1210px) {
+        height: 500px !important;
+        > h1 {
+            padding-top: 5%;
+        }
+    }
 }
 
 .panel-block-primary {
     border-color: $brand-primary;
+}
+
+.panel-block-primary > .panel-body > h1 {
+    font-size: 500% !important;
+}
+
+.panel-block-primary > .panel-body > h5 {
+    font-size: 200% !important;
 }
 
 .panel-success > .panel-heading {

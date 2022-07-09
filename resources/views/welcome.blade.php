@@ -4,7 +4,7 @@
 
 <div class="row">
     <div class="col-md-12 text-center full-height" id="title">
-        <div class="panel panel-block-primary" style="margin-top: -2%;">
+        <div class="panel panel-block-primary">
             <div class="panel-body" style="padding: 5%">
                 <h1 class="lightmode-text satisfy-font">NoxGamingQC</h1>
                 <br />
@@ -13,24 +13,12 @@
             </div>
         </div>
     </div>
-    <div class="col-md-5" id="aboutme">
+    <div class="col-md-12" id="aboutme">
         <div class="panel panel-primary">
             <div class="panel-body">
                 <h3><i class="fa fa-user" aria-hidden="true"></i> {{trans('welcome.about_me')}}</h3>
                 <hr />
                 <p>{{trans('welcome.about_me_text')}} <a href="https://guilded.gg/ngst">({{trans('welcome.guilded_join_here')}})</a>.</p>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-2">
-        <vr class="hidden-xs hidden-sm" />
-    </div>
-    <div class="col-md-5" id="donations">
-        <div class="panel panel-primary">
-            <div class="panel-body">
-                <h3><i class="fa fa-money" aria-hidden="true"></i> {{trans('welcome.donation')}}</h3>
-                <hr />
-                <p>{{trans('welcome.donation_text')}} <a href="https://streamlabs.com/noxgamingqc">{{trans('welcome.click_here')}}</a>.</p>
             </div>
         </div>
     </div>

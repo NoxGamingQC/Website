@@ -3227,6 +3227,7 @@ fieldset[disabled] .btn-primary.active {
   color: #ffffff !important;
   background-color: #222222;
   border-color: #222222;
+  padding: 25%;
 }
 
 .btn-twitch:hover,
@@ -3273,6 +3274,7 @@ fieldset[disabled] .btn-twitch.active {
   color: #ffffff !important;
   background-color: #222222;
   border-color: #222222;
+  padding: 25%;
 }
 
 .btn-youtube:hover,
@@ -3319,6 +3321,7 @@ fieldset[disabled] .btn-youtube.active {
   color: #ffffff !important;
   background-color: #222222;
   border-color: #222222;
+  padding: 25%;
 }
 
 .btn-twitter:hover,
@@ -3845,9 +3848,25 @@ fieldset[disabled] .btn-skype.active {
   color: #ffffff;
   border-color: #E56F1F;
 }
+@media (min-width: 1210px) {
+  .panel-block-primary > .panel-body {
+    height: 500px !important;
+  }
+  .panel-block-primary > .panel-body > h1 {
+    padding-top: 5%;
+  }
+}
 
 .panel-block-primary {
   border-color: #E56F1F;
+}
+
+.panel-block-primary > .panel-body > h1 {
+  font-size: 500% !important;
+}
+
+.panel-block-primary > .panel-body > h5 {
+  font-size: 200% !important;
 }
 
 .panel-success > .panel-heading {
@@ -3925,6 +3944,7 @@ fieldset[disabled] .btn-skype.active {
 .navbar-default {
   background-color: #222222;
   border-color: #222222;
+  margin-bottom: -2%;
 }
 @media (min-width: 500px) {
   .navbar-default {
