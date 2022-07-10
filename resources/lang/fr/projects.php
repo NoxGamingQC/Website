@@ -13,6 +13,5 @@ return [
     'games_description' => "Jeux ayant été joué en diffusion ou sur YouTube",
     'websites' => "Site web",
     'websites_description' => "Nos site web"
-    
 ];
     

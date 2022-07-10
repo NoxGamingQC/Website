@@ -1,8 +1,8 @@
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="false">
+<div class="modal fade" id="removeConsole" tabindex="-1" aria-labelledby="removeConsole" aria-hidden="true" data-backdrop="false">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title" id="exampleModalLabel">Modal title</h4>
+        <h4 class="modal-title" id="exampleModalLabel">{{trans('game.remove_console')}}</h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span class="error-text" aria-hidden="true">&times;</span>
         </button>

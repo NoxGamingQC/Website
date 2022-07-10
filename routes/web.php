@@ -106,6 +106,10 @@ Route::group([
                 });
 
                 Route::get('/games', 'GamesListController@index');
+                Route::post('/games/add', 'GamesListController@addgame');
+                Route::post('/games/remove', 'GamesListController@removegame');
+                Route::post('/console/add', 'GamesListController@addconsole');
+                Route::post('/console/remove', 'GamesListController@removeconsole');
 
                 Route::get('/noxbot/dashboard', 'NoxBotDashboardController@getDashboard');
 
