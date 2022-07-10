@@ -8,7 +8,7 @@ window._ = require('lodash');
  */
 
 try {
-    window.$ = require('jquery');
+    window.$ = window.jQuery = require('jquery');
     
     require('bootstrap-sass');
 } catch (e) {}
