@@ -129,7 +129,7 @@
         </div>
     </div>
 </nav>
-<script type="text/javascript">
+<script>
         var language = $('html').attr('lang');
     $('#submitSearch').click(function () {
         $.ajax({

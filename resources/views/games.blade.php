@@ -3,7 +3,14 @@
 @section('content')
 <div class="row">
     <div class="col-md-12">
-        <h1>{{trans('generic.games')}} ({{$totalGameCount}})</h1>
+        <div class="col-md-6">
+            <h1>{{trans('generic.games')}} ({{$totalGameCount}})</h1>
+        </div>
+        <div class="col-md-6 text-right">
+            <button id="addGameButton" class="btn btn-success" style="margin-top: 2.5%"><i class="fa fa-plus" aria-hidden="true"></i></button>
+        </div>
+    </div>
+    <div class="col-md-12">
         <hr />
         <div class="panel panel-primary">
             <div class="panel-body">
@@ -209,3 +216,8 @@
     </div>
 </div>
 @stop
+<script type="text/javascript">
+    jQuery('#addGameButton').onclick(function() {
+        jQuery('#addGame').open();
+    });
+</script>
