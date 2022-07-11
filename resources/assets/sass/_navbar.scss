@@ -34,7 +34,7 @@ $dropdown: true;
                     padding-bottom: 25px;
                 }
                 &:hover,  &:focus {
-                    color: $lightmode-text-color;
+                    color: $text-color;
                     background-color: $brand-primary;
                 }
             }
@@ -60,7 +60,7 @@ $dropdown: true;
                         > a {
                             color: $text-color;
                             &:hover,  &:focus {
-                                color: $lightmode-text-color;
+                                color: $text-color;
                                 border-color: $brand-primary;
                                 background-color: $brand-primary;
                             }
@@ -82,7 +82,7 @@ $dropdown: true;
         }
         > .active {
             > a, > a:hover, > a:focus {
-                color: $lightmode-text-color;
+                color: $text-color;
                 background-color: $brand-primary;
             }
             > a.disabled {
@@ -96,7 +96,7 @@ $dropdown: true;
         }
         > .open {
             > a, > a:hover, > a:focus {
-                color: $lightmode-text-color;
+                color: $text-color;
                 background-color: $brand-primary;
             }
             > a.disabled {
@@ -114,7 +114,7 @@ $dropdown: true;
         &:hover, &:focus {
             background-color: $brand-primary;
             .icon-bar {
-                background-color: $lightmode-text-color; 
+                background-color: $text-color; 
             }
         }
         .icon-bar {
@@ -145,7 +145,7 @@ $dropdown: true;
         }
         > .active {
             > a, > a:hover, > a:focus {
-                color: $lightmode-text-color;
+                color: $text-color;
                 background-color: $brand-primary;
             }
         }

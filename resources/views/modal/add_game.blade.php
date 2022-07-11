@@ -14,7 +14,7 @@
         <label>{{trans('game.date')}}: </label><input type="text" class="form-control">
         <label>{{trans('game.cover_url')}}: </label><input type="text" class="form-control">
         <label>{{trans('game.format')}}:
-        <select class="selectpicker" id="format" title="Unknown">
+        <select class="selectpicker" id="format" title="{{trans('generic.select_placeholder')}}">
             <option value="0">{{trans('game.physical_copy')}}</option>
             <option value="1">{{trans('game.digital_copy')}}</option>
         </select>

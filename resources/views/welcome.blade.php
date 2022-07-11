@@ -6,9 +6,9 @@
     <div class="col-md-12 text-center full-height" id="title">
         <div class="panel panel-block-primary">
             <div class="panel-body" style="padding: 5%">
-                <h1 class="lightmode-text satisfy-font">NoxGamingQC</h1>
+                <h1 class="satisfy-font">NoxGamingQC</h1>
                 <br />
-                <h5 class="lightmode-text yellowtail-font" style="font-size: 18px">{{trans('welcome.slogan')}}</h5>
+                <h5 class="yellowtail-font" style="font-size: 18px">{{trans('welcome.slogan')}}</h5>
                 <br />
             </div>
         </div>
