@@ -58,5 +58,6 @@ return [
     'updated_on' => "Mise à jour le :",
     'file_size' => "Poid du fichier :",
     'generate' => "Créer",
-    'no_logs_found' => "Aucun journeaux trouvés"
+    'no_logs_found' => "Aucun journeaux trouvés",
+    'select_placeholder' => "Aucun choix selectionné"
 ];

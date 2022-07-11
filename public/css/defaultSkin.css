@@ -3051,7 +3051,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 vr {
-  border-left: 1px solid #E56F1F;
+  border-left: 1px solid #c22222;
   height: 500px;
   position: absolute;
   left: 50%;
@@ -3123,11 +3123,11 @@ p, a {
 }
 
 a:link, a:visited {
-  color: #E56F1F;
+  color: #c22222;
 }
 
 a:hover, a:active {
-  color: #E56F1F;
+  color: #c22222;
 }
 
 .btn-default {
@@ -3188,7 +3188,7 @@ fieldset[disabled] .btn-default.active {
 .btn-primary.active,
 .open .dropdown-toggle.btn-primary {
   color: #000 !important;
-  background-color: #E56F1F;
+  background-color: #c22222;
   border-color: #090909;
 }
 
@@ -3794,7 +3794,7 @@ fieldset[disabled] .btn-skype.active {
 
 .panel-primary > .panel-heading {
   background-image: none;
-  background-color: #E56F1F;
+  background-color: #c22222;
   color: #ffffff;
   border-color: #222222;
 }
@@ -3812,9 +3812,9 @@ fieldset[disabled] .btn-skype.active {
 
 .panel-block-primary > .panel-body {
   background-image: none;
-  background-color: #E56F1F;
+  background-color: #c22222;
   color: #ffffff;
-  border-color: #E56F1F;
+  border-color: #c22222;
 }
 @media (min-width: 1210px) {
   .panel-block-primary > .panel-body {
@@ -3826,7 +3826,7 @@ fieldset[disabled] .btn-skype.active {
 }
 
 .panel-block-primary {
-  border-color: #E56F1F;
+  border-color: #FFFFFF;
 }
 
 .panel-block-primary > .panel-body > h1 {
@@ -3875,20 +3875,20 @@ fieldset[disabled] .btn-skype.active {
 
 .panel-danger > .panel-heading {
   background-image: none;
-  background-color: #c22222;
-  color: black;
-  border-color: #560f0f;
+  background-color: #ff0000;
+  color: #1a0000;
+  border-color: maroon;
 }
 
 .panel-danger > .panel-body {
   background-image: none;
-  background-color: #c22222;
-  color: black;
-  border-color: #560f0f;
+  background-color: #ff0000;
+  color: #1a0000;
+  border-color: maroon;
 }
 
 .panel-danger {
-  border-color: #560f0f;
+  border-color: maroon;
 }
 
 .panel-info > .panel-heading {
@@ -3951,8 +3951,8 @@ fieldset[disabled] .btn-skype.active {
   }
 }
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-  color: #000;
-  background-color: #E56F1F;
+  color: #ffffff;
+  background-color: #c22222;
 }
 .navbar-default .navbar-nav > li > a.disabled {
   color: #777777;
@@ -3978,9 +3978,9 @@ fieldset[disabled] .btn-skype.active {
   color: #ffffff;
 }
 .navbar-default .navbar-nav > li > .dropdown-menu > li > a:hover, .navbar-default .navbar-nav > li > .dropdown-menu > li > a:focus {
-  color: #000;
-  border-color: #E56F1F;
-  background-color: #E56F1F;
+  color: #ffffff;
+  border-color: #c22222;
+  background-color: #c22222;
 }
 .navbar-default .navbar-nav > li > .dropdown-menu > li > a > a.disabled {
   color: #777777 !important;
@@ -3991,11 +3991,11 @@ fieldset[disabled] .btn-skype.active {
   background-color: #222222 !important;
 }
 .navbar-default .navbar-nav > li > .dropdown-menu > li.divider {
-  background-color: #E56F1F;
+  background-color: #c22222;
 }
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
-  color: #000;
-  background-color: #E56F1F;
+  color: #ffffff;
+  background-color: #c22222;
 }
 .navbar-default .navbar-nav > .active > a.disabled {
   color: #777777 !important;
@@ -4006,8 +4006,8 @@ fieldset[disabled] .btn-skype.active {
   background-color: #222222 !important;
 }
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
-  color: #000;
-  background-color: #E56F1F;
+  color: #ffffff;
+  background-color: #c22222;
 }
 .navbar-default .navbar-nav > .open > a.disabled {
   color: #777777 !important;
@@ -4021,10 +4021,10 @@ fieldset[disabled] .btn-skype.active {
   border-color: #090909;
 }
 .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
-  background-color: #E56F1F;
+  background-color: #c22222;
 }
 .navbar-default .navbar-toggle:hover .icon-bar, .navbar-default .navbar-toggle:focus .icon-bar {
-  background-color: #000;
+  background-color: #ffffff;
 }
 .navbar-default .navbar-toggle .icon-bar {
   background-color: #ffffff;
@@ -4050,8 +4050,8 @@ fieldset[disabled] .btn-skype.active {
     color: #CCCCCC;
   }
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
-    color: #000;
-    background-color: #E56F1F;
+    color: #ffffff;
+    background-color: #c22222;
   }
 }
 @media (min-width: 768px) {
@@ -4102,7 +4102,7 @@ fieldset[disabled] .btn-skype.active {
   }
 }
 .table-danger {
-  background-color: #c22222;
+  background-color: #ff0000;
 }
 
 .table-info {
@@ -4122,11 +4122,11 @@ fieldset[disabled] .btn-skype.active {
 }
 
 .table-primary {
-  background-color: #E56F1F;
+  background-color: #c22222;
 }
 
 .badge-danger {
-  background-color: #c22222;
+  background-color: #ff0000;
   text-align: center;
   border-radius: 5px 5px 5px 5px;
   padding: 5px;
@@ -4161,7 +4161,7 @@ fieldset[disabled] .btn-skype.active {
 }
 
 .badge-primary {
-  background-color: #E56F1F;
+  background-color: #c22222;
   text-align: center;
   border-radius: 5px 5px 5px 5px;
   padding: 5px;
@@ -4182,7 +4182,7 @@ h4.stroke {
 }
 
 hr {
-  border-top: 1px solid #E56F1F;
+  border-top: 1px solid #c22222;
 }
 
 .close {
@@ -4195,7 +4195,7 @@ hr {
 }
 
 .error-text {
-  color: #c22222 !important;
+  color: #ff0000 !important;
 }
 
 .warning-text {
@@ -4211,7 +4211,7 @@ hr {
 }
 
 .primary-text {
-  color: #E56F1F !important;
+  color: #c22222 !important;
 }
 
 copper {
@@ -4390,7 +4390,7 @@ button.toast-close-button {
 }
 
 .toast {
-  background-color: #E56F1F;
+  background-color: #c22222;
 }
 
 .toast-success {
@@ -4398,7 +4398,7 @@ button.toast-close-button {
 }
 
 .toast-error {
-  background-color: #c22222;
+  background-color: #ff0000;
 }
 
 .toast-info {

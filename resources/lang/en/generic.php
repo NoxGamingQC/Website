@@ -58,5 +58,6 @@ return [
     'updated_on' => "Updated On :",
     'file_size' => "File Size :",
     'generate' => "Generate",
-    'no_logs_found' => "No logs found"
+    'no_logs_found' => "No logs found",
+    'select_placeholder' => "Nothing selected"
 ];

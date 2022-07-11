@@ -3826,7 +3826,7 @@ fieldset[disabled] .btn-skype.active {
 }
 
 .panel-block-primary {
-  border-color: #337ab7;
+  border-color: #FFFFFF;
 }
 
 .panel-block-primary > .panel-body > h1 {
@@ -3951,7 +3951,7 @@ fieldset[disabled] .btn-skype.active {
   }
 }
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-  color: #fff;
+  color: #000;
   background-color: #337ab7;
 }
 .navbar-default .navbar-nav > li > a.disabled {
@@ -3978,7 +3978,7 @@ fieldset[disabled] .btn-skype.active {
   color: #000;
 }
 .navbar-default .navbar-nav > li > .dropdown-menu > li > a:hover, .navbar-default .navbar-nav > li > .dropdown-menu > li > a:focus {
-  color: #fff;
+  color: #000;
   border-color: #337ab7;
   background-color: #337ab7;
 }
@@ -3994,7 +3994,7 @@ fieldset[disabled] .btn-skype.active {
   background-color: #337ab7;
 }
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
-  color: #fff;
+  color: #000;
   background-color: #337ab7;
 }
 .navbar-default .navbar-nav > .active > a.disabled {
@@ -4006,7 +4006,7 @@ fieldset[disabled] .btn-skype.active {
   background-color: #FFF !important;
 }
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
-  color: #fff;
+  color: #000;
   background-color: #337ab7;
 }
 .navbar-default .navbar-nav > .open > a.disabled {
@@ -4024,7 +4024,7 @@ fieldset[disabled] .btn-skype.active {
   background-color: #337ab7;
 }
 .navbar-default .navbar-toggle:hover .icon-bar, .navbar-default .navbar-toggle:focus .icon-bar {
-  background-color: #fff;
+  background-color: #000;
 }
 .navbar-default .navbar-toggle .icon-bar {
   background-color: #000;
@@ -4050,7 +4050,7 @@ fieldset[disabled] .btn-skype.active {
     color: #222;
   }
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
-    color: #fff;
+    color: #000;
     background-color: #337ab7;
   }
 }

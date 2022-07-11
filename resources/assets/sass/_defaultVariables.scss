@@ -12,11 +12,13 @@ $panel-inner-border: $laravel-border-color;
 
 // Brands
 
-$brand-primary: #E56F1F;
+$brand-primary: #c22222;
 $brand-info: #8eb4cb;
 $brand-success: #2cc470;
 $brand-warning: #fcf977;
-$brand-danger: #c22222;
+$brand-danger: #ff0000;
+$brand-orange: #E56F1F;
+$brand-highlight: #FFFFFF;
 
 //Brands darker
 $brand-primary-darker: darken($brand-primary, 15%);

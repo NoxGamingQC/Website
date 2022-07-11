@@ -37,7 +37,7 @@
                                     <div class="panel-body" style="background-image: url('https://static-cdn.jtvnw.net/ttv-boxart/{{$game->Game}}-285x380.jpg') !important; background-size: cover !important; height: 380px !important;">
                                         <h4 class="stroke"><b>{{preg_replace('/\\\\/', '', $game->Game)}}</b></h4>
                                         <hr />
-                                        <p class="stroke">{{trans('generic.format')}}: {{$game->format ? trans('game.digital') : trans('game.physical')}}</p>
+                                        <p class="stroke">{{trans('generic.format')}}: {{$game->format ? trans('game.digital_copy') : trans('game.physical_copy')}}</p>
                                         @if ($game->Date)
                                         <p class="stroke">{{trans('generic.release_date')}}: {{$game->Date}}</p>
                                         @endif
