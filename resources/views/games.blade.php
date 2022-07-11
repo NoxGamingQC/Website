@@ -1,33 +1,45 @@
 @extends('layouts.app')
 @section('title', 'Games')
 @section('content')
+@auth
+    @if(Auth::user()->isDev || Auth::user()->isAdmin || Auth::user()->isModerator)
+        @include('modal.add_game')
+        @include('modal.add_console')
+    @endif
+@endauth
 <div class="row">
     <div class="col-md-12">
         <div class="col-md-6">
             <h1>{{trans('generic.games')}} ({{$totalGameCount}})</h1>
         </div>
         <div class="col-md-6 text-right">
-            <button id="addGameButton" class="btn btn-success" style="margin-top: 2.5%"><i class="fa fa-plus" aria-hidden="true"></i></button>
+        @auth
+            @if(Auth::user()->isDev || Auth::user()->isAdmin || Auth::user()->isModerator)
+                <button a class="btn btn-success" data-toggle="modal" data-target="#addConsoleModal" style="margin-top: 2.5%">{{trans('game.add_console')}}</button>
+                <button a class="btn btn-success" data-toggle="modal" data-target="#addGameModal" style="margin-top: 2.5%">{{trans('game.add_game')}}</button>
+            @endif
+        @endauth
         </div>
     </div>
     <div class="col-md-12">
         <hr />
         <div class="panel panel-primary">
             <div class="panel-body">
-                <h3>{{trans('generic.nes_games')}} ({{count($nes)}})</h3>
+            @foreach($consoles as $key=>$console)
+                <h3>{{$console->Console}} ({{count($gamesList)}})</h3>
                     <hr />
                     <div class="row">
                         <div class="col-md-12">
                             @php ($currentCount = 0)
-                            @foreach($nes as $key => $console)
+                            @foreach($gamesList[$console->id] as $key => $game)
                             <div class="col-md-3">
                                 <div class="panel panel-primary">
-                                    <div class="panel-body" style="background-image: url('https://static-cdn.jtvnw.net/ttv-boxart/{{$console->Game}}-285x380.jpg') !important; background-size: cover !important; height: 380px !important;">
-                                        <h4 class="stroke"><b>{{preg_replace('/\\\\/', '', $console->Game)}}</b></h4>
+                                    <div class="panel-body" style="background-image: url('https://static-cdn.jtvnw.net/ttv-boxart/{{$game->Game}}-285x380.jpg') !important; background-size: cover !important; height: 380px !important;">
+                                        <h4 class="stroke"><b>{{preg_replace('/\\\\/', '', $game->Game)}}</b></h4>
                                         <hr />
-                                        <p class="stroke">{{trans('generic.format')}}: {{$console->format}}</p>
-                                        @if ($console->Date)
-                                        <p class="stroke">{{trans('generic.release_date')}}: {{$console->Date}}</p>
+                                        <p class="stroke">{{trans('generic.format')}}: {{$game->format ? trans('game.digital') : trans('game.physical')}}</p>
+                                        @if ($game->Date)
+                                        <p class="stroke">{{trans('generic.release_date')}}: {{$game->Date}}</p>
                                         @endif
                                     </div>
                                 </div>
@@ -42,182 +54,10 @@
                             @endforeach
                         </div>
                     </div>
-                    <h3>{{trans('generic.ps1_games')}} ({{count($ps1)}})</h3>
-                    <hr />
-                    <div class="row">
-                        <div class="col-md-12">
-                            @php ($currentCount = 0)
-                            @foreach($ps1 as $key => $console)
-                                <div class="col-md-3">
-                                    <div class="panel panel-primary">
-                                    <div class="panel-body" style="background-image: url('https://static-cdn.jtvnw.net/ttv-boxart/{{$console->Game}}-285x380.jpg') !important; background-size: cover !important; height: 380px !important;">
-                                            <h4 class="stroke"><b>{{preg_replace('/\\\\/', '', $console->Game)}}</b></h4>
-                                            <hr />
-                                            <p class="stroke">{{trans('generic.format')}}: {{$console->format}}</p>
-                                            @if ($console->Date)
-                                            <p class="stroke">{{trans('generic.release_date')}}: {{$console->Date}}</p>
-                                            @endif
-                                        </div>
-                                    </div>
-                                </div>
-                            @if($currentCount == 3)
-                                </div>
-                                <div class="col-md-12">
-                                @php ($currentCount = 0)
-                            @else
-                                @php ($currentCount += 1)
-                            @endif
-                            @endforeach
-                        </div>
-                    </div>
-                    <h3>{{trans('generic.xbox_games')}} ({{count($xbox)}})</h3>
-                    <hr />
-                    <div class="row">
-                        <div class="col-md-12">
-                            @php ($currentCount = 0)
-                            @foreach($xbox as $key => $console)
-                            <div class="col-md-3">
-                                <div class="panel panel-primary">
-                                    <div class="panel-body" style="background-image: url('https://static-cdn.jtvnw.net/ttv-boxart/{{$console->Game}}-285x380.jpg') !important; background-size: cover !important; height: 380px !important;">
-                                        <h4 class="stroke"><b>{{preg_replace('/\\\\/', '', $console->Game)}}</b></h4>
-                                        <hr />
-                                        <p class="stroke">{{trans('generic.format')}}: {{$console->format}}</p>
-                                        @if ($console->Date)
-                                        <p class="stroke">{{trans('generic.release_date')}}: {{$console->Date}}</p>
-                                        @endif
-                                    </div>
-                                </div>
-                            </div>
-                            @if($currentCount == 3)
-                                </div>
-                                <div class="col-md-12">
-                                @php ($currentCount = 0)
-                            @else
-                                @php ($currentCount += 1)
-                            @endif
-                            @endforeach
-                        </div>
-                    </div>
-                    <h3>{{trans('generic.switch_games')}} ({{count($switch)}})</h3>
-                    <hr />
-                    <div class="row">
-                        <div class="col-md-12">
-                            @php ($currentCount = 0)
-                            @foreach($switch as $key => $console)
-                            <div class="col-md-3">
-                                <div class="panel panel-primary">
-                                    <div class="panel-body" style="background-image: url('https://static-cdn.jtvnw.net/ttv-boxart/{{$console->Game}}-285x380.jpg') !important; background-size: cover !important; height: 380px !important;">
-                                        <h4 class="stroke"><b>{{$console->Game}}</b></h4>
-                                        <hr />
-                                        <p class="stroke">{{preg_replace('/\\\\/', '', $console->Game)}}: {{$console->format}}</p>
-                                        @if ($console->Date)
-                                        <p class="stroke">{{trans('generic.release_date')}}: {{$console->Date}}</p>
-                                        @endif
-                                    </div>
-                                </div>
-                            </div>
-                            @if($currentCount == 3)
-                                </div>
-                                <div class="col-md-12">
-                                @php ($currentCount = 0)
-                            @else
-                                @php ($currentCount += 1)
-                            @endif
-                            @endforeach
-                        </div>
-                    </div>
-                    <h3>{{trans('generic.wii_games')}} ({{count($wii)}})</h3>
-                    <hr />
-                    <div class="row">
-                        <div class="col-md-12">
-                            @php ($currentCount = 0)
-                            @foreach($wii as $key => $console)
-                            <div class="col-md-3">
-                                <div class="panel panel-primary">
-                                    <div class="panel-body" style="background-image: url('https://static-cdn.jtvnw.net/ttv-boxart/{{$console->Game}}-285x380.jpg') !important; background-size: cover !important; height: 380px !important;">
-                                        <h4 class="stroke"><b>{{preg_replace('/\\\\/', '', $console->Game)}}</b></h4>
-                                        <hr />
-                                        <p class="stroke">{{trans('generic.format')}}: {{$console->format}}</p>
-                                        @if ($console->Date)
-                                        <p class="stroke">{{trans('generic.release_date')}}: {{$console->Date}}</p>
-                                        @endif
-                                    </div>
-                                </div>
-                            </div>
-                            @if($currentCount == 3)
-                                </div>
-                                <div class="col-md-12">
-                                @php ($currentCount = 0)
-                            @else
-                                @php ($currentCount += 1)
-                            @endif
-                            @endforeach
-                        </div>
-                    </div>
-                    <h3>{{trans('generic.ps4_games')}} ({{count($ps4)}})</h3>
-                    <hr />
-                    <div class="row">
-                        <div class="col-md-12">
-                            @php ($currentCount = 0)
-                            @foreach($ps4 as $key => $console)
-                            <div class="col-md-3">
-                                <div class="panel panel-primary">
-                                    <div class="panel-body" style="background-image: url('https://static-cdn.jtvnw.net/ttv-boxart/{{$console->Game}}-285x380.jpg') !important; background-size: cover !important; height: 380px !important;">
-                                        <h4 class="stroke"><b>{{preg_replace('/\\\\/', '', $console->Game)}}</b></h4>
-                                        <hr />
-                                        <p class="stroke">{{trans('generic.format')}}: {{$console->format}}</p>
-                                        @if ($console->Date)
-                                        <p class="stroke">{{trans('generic.release_date')}}: {{$console->Date}}</p>
-                                        @endif
-                                    </div>
-                                </div>
-                            </div>
-                            @if($currentCount == 3)
-                                </div>
-                                <div class="col-md-12">
-                                @php ($currentCount = 0)
-                            @else
-                                @php ($currentCount += 1)
-                            @endif
-                            @endforeach
-                        </div>
-                    </div>
-                    <h3>{{trans('generic.pc_games')}} ({{count($pc)}})</h3>
-                    <hr />
-                    <div class="row">
-                        <div class="col-md-12">
-                            @php ($currentCount = 0)
-                            @foreach($pc as $key => $console)
-                                <div class="col-md-3">
-                                    <div class="panel panel-primary">
-                                        <div class="panel-body" style="background-image: url('https://static-cdn.jtvnw.net/ttv-boxart/{{$console->Game}}-285x380.jpg') !important; background-size: cover !important; height: 380px !important;">
-                                            <h4 class="stroke"><b>{{preg_replace('/\\\\/', '', $console->Game)}}</b></h4>
-                                            <hr />
-                                            <p class="stroke">{{trans('generic.format')}}: {{$console->format}}</p>
-                                            @if ($console->Date)
-                                            <p class="stroke">{{trans('generic.release_date')}}: {{$console->Date}}</p>
-                                            @endif
-                                        </div>
-                                    </div>
-                                </div>
-                                @if($currentCount == 3)
-                                    </div>
-                                    <div class="col-md-12">
-                                    @php ($currentCount = 0)
-                                @else
-                                    @php ($currentCount += 1)
-                                @endif
-                            @endforeach
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
     </div>
 </div>
 @stop
-<script type="text/javascript">
-    jQuery('#addGameButton').onclick(function() {
-        jQuery('#addGame').open();
-    });
-</script>
