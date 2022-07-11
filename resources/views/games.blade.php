@@ -26,7 +26,7 @@
         <div class="panel panel-primary">
             <div class="panel-body">
             @foreach($consoles as $key=>$console)
-                <h3>{{$console->Console}} ({{count($gamesList)}})</h3>
+                <h3>{{$console->Console}} ({{count($gamesList[$console->id])}})</h3>
                     <hr />
                     <div class="row">
                         <div class="col-md-12">
