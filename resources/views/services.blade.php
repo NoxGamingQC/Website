@@ -17,6 +17,7 @@
                             <div class="panel-body text-center">
                                 <p>{{trans('services.format')}}</p>
                                 <p>40$CAD</p>
+                                <p class="text-warning"><i>P.S. {{trans('services.licence_not_included')}}</i></p>
                             </div>
                         </div>
                     </div>

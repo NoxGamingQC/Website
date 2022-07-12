@@ -12,5 +12,6 @@ return [
     'taxes' => "Taxes may apply. (GST/PST)",
     'delivery' => "Delivery",
     'lift' => "Lift",
-    'base_fees' => "Base fees"
+    'base_fees' => "Base fees",
+    'licence_not_included' => "Licence not included"
 ];
