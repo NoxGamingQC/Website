@@ -35,15 +35,21 @@ class GamesListController extends Controller
 
     public function addGame(Request $request) {
         if (Auth::user()->isAdmin) {
-            $game = GamesList::where('Game', $request->game);
-            if(!$game) {
-                GamesList::create([
-                    'Game' => $request->game,
-                    'Console' => $request->console,
-                    'Date' => $request->date,
-                    'CoverURL' => $request->coverURL,
-                    'format' => $request->format,
-                ]);
+            $game = GamesList::where('Game', $request->game)->get();
+            if($game->isEmpty()) {
+                $newGame = new GamesList;
+                
+                $newGame->Game = $request->game;
+                $newGame->Console = $request->console;
+                $newGame->Date = $request->date;
+                $newGame->CoverURL = $request->coverURL;
+                $newGame->format = $request->format;
+
+                $newGame->save();
+
+                return 0;
+            } else {
+                abort(403);
             }
         } else {
             abort(403);
@@ -61,15 +67,20 @@ class GamesListController extends Controller
 
     public function addConsole(Request $request) {
         if (Auth::user()->isAdmin) {
-            $console = ConsolesList::where('Console', $request->console);
-            if(!$console) {
-                ConsolesList::create([
-                    'Console' => $request->console,
-                    'Description' => $request->description,
-                    'Date' => $request->date,
-                    'Picture' => $request->Picture
-                ]);
+            $console = ConsolesList::where('Console', $request->console)->get();
+            
+            if($console->isEmpty()) {
+                $newConsole = new ConsolesList;
+                $newConsole->Console = $request->console;
+                $newConsole->Description = $request->description;
+                $newConsole->Date = $request->date;
+                $newConsole->Picture = $request->picture;
+
+                $newConsole->save();
+
+                return 200;
             }
+            abort(403);
         } else {
             abort(403);
         }
