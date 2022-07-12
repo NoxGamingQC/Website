@@ -54,6 +54,7 @@
                     </a>
                 </li>
                 @endif
+                <li class="nav-services"><a href="/{{app()->getLocale()}}/services"><i class="fa fa-briefcase" aria-hidden="true"></i> {{ trans('generic.services') }}</a></li>
                 @auth
                     @if(Auth::user()->isDev || Auth::user()->isAdmin || Auth::user()->isModerator)
                         <li class="dropdown">

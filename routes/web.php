@@ -85,6 +85,10 @@ Route::group([
 
                 Route::get('/projects', 'ProjectsController@index');
 
+                Route::get('/services', function () {
+                    return view('services');
+                });
+
                 Route::get('/twitch', 'TwitchController@index');
 
                 Route::get('/youtube', 'YouTubeController@index');

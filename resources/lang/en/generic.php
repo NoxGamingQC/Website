@@ -59,5 +59,6 @@ return [
     'file_size' => "File Size :",
     'generate' => "Generate",
     'no_logs_found' => "No logs found",
-    'select_placeholder' => "Nothing selected"
+    'select_placeholder' => "Nothing selected",
+    'services' => "Services"
 ];
