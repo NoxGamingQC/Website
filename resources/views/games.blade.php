@@ -4,7 +4,9 @@
 @auth
     @if(Auth::user()->isDev || Auth::user()->isAdmin || Auth::user()->isModerator)
         @include('modal.add_game')
+        @include('modal.edit_game')
         @include('modal.add_console')
+        @include('modal.edit_console')
     @endif
 @endauth
 <div class="row">
@@ -33,14 +35,15 @@
                             @php ($currentCount = 0)
                             @foreach($gamesList[$console->id] as $key => $game)
                             <div class="col-md-3">
-                                <div class="panel panel-primary">
+                                <div class="panel panel-primary text-center">
                                     <div class="panel-body" style="background-image: url('https://static-cdn.jtvnw.net/ttv-boxart/{{$game->Game}}-285x380.jpg') !important; background-size: cover !important; height: 380px !important;">
-                                        <h4 class="stroke"><b>{{preg_replace('/\\\\/', '', $game->Game)}}</b></h4>
-                                        <hr />
-                                        <p class="stroke">{{trans('generic.format')}}: {{$game->format ? trans('game.digital_copy') : trans('game.physical_copy')}}</p>
-                                        @if ($game->Date)
-                                        <p class="stroke">{{trans('generic.release_date')}}: {{$game->Date}}</p>
-                                        @endif
+                                        <h2 class="game-title"><b>{{preg_replace('/\\\\/', '', $game->Game)}}</b></h2>
+                                        <input id="gameName-{{$game->id}}" type="hidden" value="{{$game->Game}}">
+                                        <input id="gameConsole-{{$game->id}}" type="hidden" value="{{$game->Console}}">
+                                        <input id="gameDate-{{$game->id}}" type="hidden" value="{{$game->Date}}">
+                                        <input id="gameCoverURL-{{$game->id}}" type="hidden" value="{{$game->CoverURL}}">
+                                        <input id="gameFormat-{{$game->id}}" type="hidden" value="{{$game->format}}">
+                                        <button id="{{$game->id}}" class="edit-game-button btn btn-primary" type="button" data-toggle="modal" data-target="#editGameModal">{{trans('generic.see_more')}}</button>
                                     </div>
                                 </div>
                             </div>
@@ -60,4 +63,20 @@
         </div>
     </div>
 </div>
+<script>
+$('.edit-game-button').on('click', function() {
+var id = $(this).attr('id');
+var oldGameName = $('#gameName-' + id).val();
+var oldGameConsole = $('#gameConsole-' + id).val();
+var oldGameFormat = $('#gameFormat-' + id).val();
+var oldGameDate = $('#gameGameDate-' + id).val();
+var oldGameCoverURL = $('#gameCoverURL-' + id).val();
+
+$('#editGameName').val(oldGameName);
+$('#editGameConsole').selectpicker('val', oldGameConsole);
+$('#editGameDate').val(oldGameDate);
+$('#editGameCoverURL').val(oldGameCoverURL);
+$('#editGameFormat').selectpicker('val', oldGameFormat ? 1 : 0);
+});
+</script>
 @stop
