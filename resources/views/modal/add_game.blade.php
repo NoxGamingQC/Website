@@ -65,7 +65,7 @@ $('#submitAddGame').on('click', function() {
             'console': $('#gameConsole').val(),
             'date': $('#gameDate').val(),
             'coverURL': $('#gameCoverURL').val(),
-            'format': $('#gameformat').val(),
+            'format': $('#gameFormat').val(),
             _token: $('meta[name="csrf-token"]').attr('content')
         },
         success: function() {
