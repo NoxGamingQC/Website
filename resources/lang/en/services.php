@@ -2,7 +2,7 @@
 
 return [
     'services' => "Services",
-    'territories' => "The offers below are only available for resident of Quebec from the Mauricie region only",
+    'territories' => "The offers below are only available for resident of Quebec. We only opperate in the Mauricie region. Thank you for your understanding.",
     'computer_science' => "Computer science",
     'format' => "PC format (Windows or Linux only)",
     'diagnostics' => "Diagnostics (Windows or Linux only)",
