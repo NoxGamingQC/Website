@@ -40,6 +40,7 @@
                     </div>
                     <p class="text-center text-info">{{trans('services.traveling_fee_above')}}</p>
                     <p class="text-center text-info">{{trans('services.taxes')}}</p>
+                    <p class="text-center text-info">{{trans('services.price_may_change')}}</p>
                 </div>
                 <div class="col-md-12">
                     <h3>{{trans('services.delivery')}}</h3>
@@ -62,6 +63,7 @@
                         </div>
                     </div>
                     <p class="text-center text-info">{{trans('services.taxes')}}</p>
+                    <p class="text-center text-info">{{trans('services.price_may_change')}}</p>
                 </div>
             </div>
         </div>
