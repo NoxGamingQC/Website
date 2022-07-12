@@ -2,7 +2,7 @@
 
 return [
     'services' => "Services",
-    'territories' => "Les offres ci-dessous sont seulement offert au résident Québécois, en mauricie.",
+    'territories' => "Les offres ci-dessous sont seulement offert au résident du Québec. Nous offrons présentement nos services uniquement dans la grande région de la Mauricie. Merci de votre compréhension.",
     'computer_science' => "Informatique",
     'format' => "Formattage PC (Windows ou Linux seulement)",
     'diagnostics' => "Diagnostique (Windows ou Linux seulement)",
