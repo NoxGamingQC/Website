@@ -12,5 +12,6 @@ return [
     'taxes' => "Taxes peut s'appliquer. (TPS/TVQ)",
     'delivery' => "Livraison",
     'lift' => "Covoiturage",
-    'base_fees' => "Frais de base"
+    'base_fees' => "Frais de base",
+    'licence_not_included' => "Licence non incluse"
 ];
