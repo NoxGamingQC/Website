@@ -4098,6 +4098,10 @@ hr {
   color: #d9534f !important;
 }
 
+.text-error {
+  color: #d9534f !important;
+}
+
 .warning-text {
   color: #f0ad4e !important;
 }
