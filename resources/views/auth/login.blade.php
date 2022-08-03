@@ -5,7 +5,7 @@
     <form class="form-horizontal" method="POST" action="{{ route('login', app()->getLocale()) }}">
         <div class="row">
             <div class="col-md-12">
-                <h3>{{trans('generic.login')}}</h3>
+                <h1>{{trans('generic.login')}}</h1>
                 <hr />
                 <div class="col-md-3 text-center">
                 <h4 class="raleway-font">{{trans('auth.welcome_back')}}</h4>
