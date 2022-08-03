@@ -23,7 +23,7 @@
                     </a>
                 </div>
                 <div class="col-md-2" id="twitter">
-                    <a class="btn btn-twitter btn-lg" href="https://www.twitter.com/@noxgamingqc">
+                    <a class="btn btn-twitter btn-lg" href="https://www.twitter.com/noxgamingqc">
                         <i class="fa fa-twitter fa-5x" aria-hidden="true"></i>
                     </a>
                 </div>
