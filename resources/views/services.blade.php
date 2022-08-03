@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-md-12" id="title">
             <h1>{{trans('services.services')}}</h1>
-            <span>{{trans('services.territories')}}</span>
+            <span class="text-warning">{{trans('services.territories')}}</span>
             <hr />
             <p class="text-info">{{trans('services.taxes')}}</p>
             <p class="text-info">{{trans('services.traveling_fee_above')}}</p>
