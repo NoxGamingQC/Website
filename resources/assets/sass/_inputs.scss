@@ -13,6 +13,15 @@ input[type=password] {
     border-bottom: 1px solid $text-color !important;
     border-radius: 0 !important;
 }
+
+input[type=email] {
+    background-color:transparent;
+    border-color: transparent;
+    color: $text-color;
+    border-bottom: 1px solid $text-color !important;
+    border-radius: 0 !important;
+}
+
 textarea[type=text] {
     background-color:transparent;
     border-color: transparent;
@@ -38,6 +47,15 @@ input[type=password]:focus {
     -webkit-box-shadow: none;
     border-color: $text-color;
 }
+input[type=email]:focus {
+    outline:none !important;
+    outline-width: 0 !important;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    border-color: $text-color;
+}
+
 textarea[type=text]:focus {
     outline:none !important;
     outline-width: 0 !important;
