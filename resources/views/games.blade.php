@@ -43,7 +43,7 @@
                                         <input id="gameDate-{{$game->id}}" type="hidden" value="{{$game->Date}}">
                                         <input id="gameCoverURL-{{$game->id}}" type="hidden" value="{{$game->CoverURL}}">
                                         <input id="gameFormat-{{$game->id}}" type="hidden" value="{{$game->format}}">
-                                        <button id="{{$game->id}}" class="edit-game-button btn btn-primary" type="button" data-toggle="modal" data-target="#editGameModal">{{trans('generic.see_more')}}</button>
+                                        <button id="{{$game->id}}" class="edit-game-button btn btn-info" type="button" data-toggle="modal" data-target="#editGameModal">{{trans('generic.see_more')}}</button>
                                     </div>
                                 </div>
                             </div>

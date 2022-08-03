@@ -60,3 +60,7 @@ gold {
 a.text-color {
     color: $text-color;
 }
+
+.game-title {
+    text-shadow: -2px 0 $lightmode-text-color, 0 2px $lightmode-text-color, 2px 0 $lightmode-text-color, 0 -2px $lightmode-text-color;
+}
