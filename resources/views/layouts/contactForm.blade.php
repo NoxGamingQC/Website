@@ -30,7 +30,7 @@
                 {{trans('contact.required')}}<i class="text-danger">*</i>
             </div>
             <div class="text-center">
-                <button type="button" id="submitContactForm" class="btn btn-success">{{trans('generic.send')}}</button>
+                <button type="button" id="submitContactForm" class="btn btn-success disabled" disabled>{{trans('generic.send')}}</button>
             </div>
         </form>
     </div>
