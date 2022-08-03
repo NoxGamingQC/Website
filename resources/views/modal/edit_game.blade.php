@@ -56,7 +56,7 @@
     </div>
 </div>
 <script type="text/javascript">
-$('#submitAddGame').on('click', function() {
+$('#submitEditGame').on('click', function() {
     $.ajax({
         url: "/" + $('html').attr('lang') + "/games/edit",
         method: "post",
