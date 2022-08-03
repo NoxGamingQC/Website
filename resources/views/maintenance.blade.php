@@ -13,6 +13,7 @@
                 <h1>{{trans('maintenance.error')}}</h1>
                 <hr />
                 <h5>{{trans('maintenance.maintenance_text')}}</h5>
+                <img src="/img/Avatar.png" width="10%" />
                 <p>{{trans('maintenance.explanation')}}</p>
                 <br />
                 <em>{{trans('maintenance.dev_only')}}</em>

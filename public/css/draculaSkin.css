@@ -3712,7 +3712,7 @@ fieldset[disabled] .btn-reddit.active {
 }
 @media (min-width: 1210px) {
   .panel-block-primary > .panel-body {
-    height: 500px !important;
+    height: 600px !important;
   }
   .panel-block-primary > .panel-body > h1 {
     padding-top: 5%;
