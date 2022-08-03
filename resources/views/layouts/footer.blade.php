@@ -6,6 +6,9 @@
             <br />
             <h5 class="raleway-font">nox@noxgamingqc.ca</h5>
             <h5 class="raleway-font">819-852-8705</h5>
+            <p>
+                @include('layouts.socials')
+            </p>
         </div>
     </div>
 </div>

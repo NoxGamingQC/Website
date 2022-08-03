@@ -29,7 +29,7 @@
     <div class="col-md-12 text-center" id="social">
         <div class="panel panel-primary">
             <div class="panel-body">
-                <div class="col-md-3"></div>
+                <div class="col-md-2"></div>
                 <div class="col-md-2" id="twitch">
                     <a class="btn btn-twitch btn-lg" href="https://www.twitch.tv/noxgamingqc">
                         <i class="fa fa-twitch fa-5x" aria-hidden="true"></i>
@@ -45,7 +45,12 @@
                         <i class="fa fa-twitter fa-5x" aria-hidden="true"></i>
                     </a>
                 </div>
-                <div class="col-md-3"></div>
+                <div class="col-md-2" id="instagram">
+                    <a class="btn btn-instagram btn-lg" href="https://www.instagram.com/noxgamingqc">
+                        <i class="fa fa-instagram fa-5x" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <div class="col-md-2"></div>
             </div>
         </div>
     </div>
