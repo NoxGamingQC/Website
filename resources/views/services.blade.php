@@ -16,7 +16,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <h3>{{trans('services.computer_science')}}</h3>
-                    <hr />
+                    <br />
                     <div class="col-md-4">
                         <div class="panel panel-primary">
                             <div class="panel-body text-center">
@@ -46,7 +46,7 @@
                 </div>
                 <div class="col-md-12">
                     <h3>{{trans('services.car')}}</h3>
-                    <hr />
+                    <br />
                     <div class="col-md-6">
                         <div class="panel panel-primary">
                             <div class="panel-body text-center">
@@ -66,7 +66,7 @@
                 </div>
                 <div class="col-md-12">
                     <h3>{{trans('services.other')}}</h3>
-                    <hr />
+                    <br />
                     <div class="col-md-6 col-md-offset-3">
                         <div class="panel panel-primary">
                             <div class="panel-body text-center">
