@@ -4,7 +4,7 @@
 
 .btn-default {
     color: $text-color !important;
-    background-color: $background-color;
+    background-color: transparent;
     border-color: $laravel-border-color;
 }
 
@@ -50,7 +50,7 @@ fieldset[disabled] .btn-default.active {
 
 .btn-primary {
     color: $text-color !important;
-    background-color: $background-color;
+    background-color: transparent;
     border-color: $laravel-border-color;
 }
 
@@ -96,7 +96,7 @@ fieldset[disabled] .btn-primary.active {
 
 .btn-twitch {
     color: $text-color !important;
-    background-color: $background-color;
+    background-color: transparent;
     border-color: $pannel-border-color;
 }
 
@@ -142,7 +142,7 @@ fieldset[disabled] .btn-twitch.active {
 
 .btn-youtube {
     color: $text-color !important;
-    background-color: $background-color;
+    background-color: transparent;
     border-color: $pannel-border-color;
 }
 
@@ -188,7 +188,7 @@ fieldset[disabled] .btn-youtube.active {
 
 .btn-twitter {
     color: $text-color !important;
-    background-color: $background-color;
+    background-color: transparent;
     border-color: $pannel-border-color;
 }
 
@@ -234,7 +234,7 @@ fieldset[disabled] .btn-twitter.active {
 
 .btn-facebook {
     color: $text-color !important;
-    background-color: $background-color;
+    background-color: transparent;
     border-color: $pannel-border-color;
 }
 
@@ -280,7 +280,7 @@ fieldset[disabled] .btn-facebook.active {
 
 .btn-instagram {
     color: $text-color !important;
-    background-color: $background-color;
+    background-color: transparent;
     border-color: $pannel-border-color;
 }
 
@@ -326,7 +326,7 @@ fieldset[disabled] .btn-instagram.active {
 
 .btn-steam {
     color: $text-color !important;
-    background-color: $background-color;
+    background-color: transparent;
     border-color: $pannel-border-color;
 }
 
@@ -370,15 +370,9 @@ fieldset[disabled] .btn-steam.active {
     background-color: $text-color;
 }
 
-.btn-google-plus {
-    color: $text-color !important;
-    background-color: $background-color;
-    border-color: $pannel-border-color;
-}
-
 .btn-github {
     color: #ffffff !important;
-    background-color: $background-color;
+    background-color: transparent;
     border-color: $pannel-border-color;
 }
 
@@ -424,7 +418,7 @@ fieldset[disabled] .btn-github.active {
 
 .btn-snapchat {
     color: #ffffff !important;
-    background-color: $background-color;
+    background-color: transparent;
     border-color: $pannel-border-color;
 }
 
@@ -470,7 +464,7 @@ fieldset[disabled] .btn-snapchat.active {
 
 .btn-spotify {
     color: $text-color !important;
-    background-color: $background-color;
+    background-color: transparent;
     border-color: $pannel-border-color;
 }
 
@@ -516,7 +510,7 @@ fieldset[disabled] .btn-spotify.active {
 
 .btn-reddit {
     color: $text-color !important;
-    background-color: $background-color;
+    background-color: transparent;
     border-color: $pannel-border-color;
 }
 

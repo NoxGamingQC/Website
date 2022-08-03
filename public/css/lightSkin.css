@@ -3136,7 +3136,7 @@ a:hover, a:active {
 
 .btn-default {
   color: #000 !important;
-  background-color: #FFF;
+  background-color: transparent;
   border-color: #000;
 }
 
@@ -3182,7 +3182,7 @@ fieldset[disabled] .btn-default.active {
 
 .btn-primary {
   color: #000 !important;
-  background-color: #FFF;
+  background-color: transparent;
   border-color: #000;
 }
 
@@ -3228,7 +3228,7 @@ fieldset[disabled] .btn-primary.active {
 
 .btn-twitch {
   color: #000 !important;
-  background-color: #FFF;
+  background-color: transparent;
   border-color: #FFF;
 }
 
@@ -3274,7 +3274,7 @@ fieldset[disabled] .btn-twitch.active {
 
 .btn-youtube {
   color: #000 !important;
-  background-color: #FFF;
+  background-color: transparent;
   border-color: #FFF;
 }
 
@@ -3320,7 +3320,7 @@ fieldset[disabled] .btn-youtube.active {
 
 .btn-twitter {
   color: #000 !important;
-  background-color: #FFF;
+  background-color: transparent;
   border-color: #FFF;
 }
 
@@ -3366,7 +3366,7 @@ fieldset[disabled] .btn-twitter.active {
 
 .btn-facebook {
   color: #000 !important;
-  background-color: #FFF;
+  background-color: transparent;
   border-color: #FFF;
 }
 
@@ -3412,7 +3412,7 @@ fieldset[disabled] .btn-facebook.active {
 
 .btn-instagram {
   color: #000 !important;
-  background-color: #FFF;
+  background-color: transparent;
   border-color: #FFF;
 }
 
@@ -3458,7 +3458,7 @@ fieldset[disabled] .btn-instagram.active {
 
 .btn-steam {
   color: #000 !important;
-  background-color: #FFF;
+  background-color: transparent;
   border-color: #FFF;
 }
 
@@ -3502,15 +3502,9 @@ fieldset[disabled] .btn-steam.active {
   background-color: #000;
 }
 
-.btn-google-plus {
-  color: #000 !important;
-  background-color: #FFF;
-  border-color: #FFF;
-}
-
 .btn-github {
   color: #ffffff !important;
-  background-color: #FFF;
+  background-color: transparent;
   border-color: #FFF;
 }
 
@@ -3556,7 +3550,7 @@ fieldset[disabled] .btn-github.active {
 
 .btn-snapchat {
   color: #ffffff !important;
-  background-color: #FFF;
+  background-color: transparent;
   border-color: #FFF;
 }
 
@@ -3602,7 +3596,7 @@ fieldset[disabled] .btn-snapchat.active {
 
 .btn-spotify {
   color: #000 !important;
-  background-color: #FFF;
+  background-color: transparent;
   border-color: #FFF;
 }
 
@@ -3648,7 +3642,7 @@ fieldset[disabled] .btn-spotify.active {
 
 .btn-reddit {
   color: #000 !important;
-  background-color: #FFF;
+  background-color: transparent;
   border-color: #FFF;
 }
 
