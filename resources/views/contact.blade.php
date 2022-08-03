@@ -42,6 +42,9 @@
                         <i class="fa fa-github fa-5x" aria-hidden="true"></i>
                     </a>
                 </div>
+                <div class="col-md-12">
+                    <br />
+                </div>
                 <div class="col-md-3"></div>
                 <div class="col-md-2" id="snapchat">
                     <a class="btn btn-snapchat btn-lg" href="https://www.snapchat.com/add/NoxGamingQC">
