@@ -12,19 +12,19 @@
     <form class="form-horizontal" action="/contact" method="post">
             <div class="form-group">
                 <label class="control-label">{{trans('contact.name')}} <i class="text-danger">*</i> </label>
-                <input id="contactName" type="text" class="form-control">
+                <input id="contactName" type="text" class="form-control" placeholder="{{trans('contact.enter_name')}}">
             </div>
             <div class="form-group">
                 <label class="control-label">{{trans('contact.email')}} <i class="text-danger">*</i> </label>
-                <input id="contactEmail" type="text" class="form-control">
+                <input id="contactEmail" type="text" class="form-control" placeholder="{{trans('contact.enter_email')}}">
             </div>
             <div class="form-group">
                 <label class="control-label">{{trans('contact.object')}} </label>
-                <input id="contactObject" type="text" class="form-control">
+                <input id="contactObject" type="text" class="form-control" placeholder="{{trans('contact.enter_object')}}">
             </div>
             <div class="form-group">
                 <label class="control-label">{{trans('contact.message')}} <i class="text-danger">*</i> </label>
-                <textarea id="contactMessage" type="text" class="form-control" rows="4"></textarea>
+                <textarea id="contactMessage" type="text" class="form-control" rows="4" placeholder="{{trans('contact.enter_message')}}"></textarea>
             </div>
             <div>
                 {{trans('contact.required')}}<i class="text-danger">*</i>
