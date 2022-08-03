@@ -6,7 +6,7 @@
     <i class="fa fa-youtube-play" aria-hidden="true"></i>
 </a>
 
-<a class="btn btn-twitter" href="https://www.twitter.com/@noxgamingqc">
+<a class="btn btn-twitter" href="https://www.twitter.com/noxgamingqc">
     <i class="fa fa-twitter" aria-hidden="true"></i>
 </a>
 <a class="btn btn-instagram" href="https://www.instagram.com/noxgamingqc">
