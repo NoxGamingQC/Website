@@ -3130,6 +3130,10 @@ a:hover, a:active {
   color: #BD93F9;
 }
 
+.btn-lg {
+  padding: 25%;
+}
+
 .btn-default {
   color: #ffffff !important;
   background-color: #282A36;
@@ -3226,7 +3230,6 @@ fieldset[disabled] .btn-primary.active {
   color: #ffffff !important;
   background-color: #282A36;
   border-color: #282A36;
-  padding: 25%;
 }
 
 .btn-twitch:hover,
@@ -3273,7 +3276,6 @@ fieldset[disabled] .btn-twitch.active {
   color: #ffffff !important;
   background-color: #282A36;
   border-color: #282A36;
-  padding: 25%;
 }
 
 .btn-youtube:hover,
@@ -3320,7 +3322,6 @@ fieldset[disabled] .btn-youtube.active {
   color: #ffffff !important;
   background-color: #282A36;
   border-color: #282A36;
-  padding: 25%;
 }
 
 .btn-twitter:hover,
@@ -3367,7 +3368,6 @@ fieldset[disabled] .btn-twitter.active {
   color: #ffffff !important;
   background-color: #282A36;
   border-color: #282A36;
-  padding: 25%;
 }
 
 .btn-facebook:hover,
@@ -3414,7 +3414,6 @@ fieldset[disabled] .btn-facebook.active {
   color: #ffffff !important;
   background-color: #282A36;
   border-color: #282A36;
-  padding: 25%;
 }
 
 .btn-instagram:hover,
@@ -3461,7 +3460,6 @@ fieldset[disabled] .btn-instagram.active {
   color: #ffffff !important;
   background-color: #282A36;
   border-color: #282A36;
-  padding: 25%;
 }
 
 .btn-steam:hover,
@@ -3514,7 +3512,6 @@ fieldset[disabled] .btn-steam.active {
   color: #ffffff !important;
   background-color: #282A36;
   border-color: #282A36;
-  padding: 25%;
 }
 
 .btn-github:hover,
@@ -3561,7 +3558,6 @@ fieldset[disabled] .btn-github.active {
   color: #ffffff !important;
   background-color: #282A36;
   border-color: #282A36;
-  padding: 25%;
 }
 
 .btn-snapchat:hover,
@@ -3608,7 +3604,6 @@ fieldset[disabled] .btn-snapchat.active {
   color: #ffffff !important;
   background-color: #282A36;
   border-color: #282A36;
-  padding: 25%;
 }
 
 .btn-spotify:hover,
@@ -3655,7 +3650,6 @@ fieldset[disabled] .btn-spotify.active {
   color: #ffffff !important;
   background-color: #282A36;
   border-color: #282A36;
-  padding: 25%;
 }
 
 .btn-reddit:hover,
@@ -3695,100 +3689,6 @@ fieldset[disabled] .btn-reddit.active {
 
 .btn-reddit .badge {
   color: #282A36 !important;
-  background-color: #ffffff;
-}
-
-.btn-pinterest {
-  color: #ffffff !important;
-  background-color: #282A36;
-  border-color: #282A36;
-  padding: 25%;
-}
-
-.btn-pinterest:hover,
-.btn-pinterest:focus,
-.btn-pinterest:active,
-.btn-pinterest.active,
-.open .dropdown-toggle.btn-pinterest {
-  color: #BD081C !important;
-  background-color: #ffffff;
-  border-color: #CCCCCC;
-}
-
-.btn-pinterest:active,
-.btn-pinterest.active,
-.open .dropdown-toggle.btn-pinterest {
-  background-image: none;
-}
-
-.btn-pinterest.disabled,
-.btn-pinterest[disabled],
-fieldset[disabled] .btn-pinterest,
-.btn-pinterest.disabled:hover,
-.btn-pinterest[disabled]:hover,
-fieldset[disabled] .btn-pinterest:hover,
-.btn-pinterest.disabled:focus,
-.btn-pinterest[disabled]:focus,
-fieldset[disabled] .btn-pinterest:focus,
-.btn-pinterest.disabled:active,
-.btn-pinterest[disabled]:active,
-fieldset[disabled] .btn-pinterest:active,
-.btn-pinterest.disabled.active,
-.btn-pinterest[disabled].active,
-fieldset[disabled] .btn-pinterest.active {
-  background-color: #282A36;
-  border-color: #121319;
-}
-
-.btn-pinterest .badge {
-  color: #BD081C !important;
-  background-color: #ffffff;
-}
-
-.btn-skype {
-  color: #ffffff !important;
-  background-color: #282A36;
-  border-color: #282A36;
-  padding: 25%;
-}
-
-.btn-skype:hover,
-.btn-skype:focus,
-.btn-skype:active,
-.btn-skype.active,
-.open .dropdown-toggle.btn-skype {
-  color: #ffffff !important;
-  background-color: #0078D7;
-  border-color: #0062B3;
-}
-
-.btn-skype:active,
-.btn-skype.active,
-.open .dropdown-toggle.btn-skype {
-  background-image: none;
-}
-
-.btn-skype.disabled,
-.btn-skype[disabled],
-fieldset[disabled] .btn-skype,
-.btn-skype.disabled:hover,
-.btn-skype[disabled]:hover,
-fieldset[disabled] .btn-skype:hover,
-.btn-skype.disabled:focus,
-.btn-skype[disabled]:focus,
-fieldset[disabled] .btn-skype:focus,
-.btn-skype.disabled:active,
-.btn-skype[disabled]:active,
-fieldset[disabled] .btn-skype:active,
-.btn-skype.disabled.active,
-.btn-skype[disabled].active,
-fieldset[disabled] .btn-skype.active {
-  background-color: #282A36;
-  border-color: #121319;
-}
-
-.btn-skype .badge {
-  color: #ffffff !important;
   background-color: #ffffff;
 }
 
