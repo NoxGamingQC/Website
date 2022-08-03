@@ -19,11 +19,13 @@
                 <div id="curator-feed-default-feed-layout">
                     <a href="" target="_blank" class="crt-logo crt-tag"></a>
                 </div>
-                
+                <div class="text-center">
+                    <a class="btn btn-primary" type="button" href="https://www.instagram.com/noxgamingqc/">{{trans('generic.see_more')}}</a>
+                </div>
+                <hr />
             </div>
         </div>
     </div>
-    
     <div class="col-md-12 text-center" id="social">
         <div class="panel panel-primary">
             <div class="panel-body">

@@ -60,5 +60,6 @@ return [
     'generate' => "Créer",
     'no_logs_found' => "Aucun journeaux trouvés",
     'select_placeholder' => "Aucun choix selectionné",
-    'services' => "Services"
+    'services' => "Services",
+    'see_more' => "Voir plus"
 ];
