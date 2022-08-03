@@ -4171,6 +4171,10 @@ gold {
   color: gold !important;
 }
 
+a.text-color {
+  color: #ffffff;
+}
+
 .toast-title {
   font-weight: bold;
 }

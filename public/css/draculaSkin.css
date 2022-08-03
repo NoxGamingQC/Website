@@ -4105,6 +4105,10 @@ gold {
   color: gold !important;
 }
 
+a.text-color {
+  color: #ffffff;
+}
+
 .badge-danger {
   background-color: #CA62B8;
   text-align: center;
