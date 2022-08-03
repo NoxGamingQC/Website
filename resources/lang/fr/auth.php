@@ -15,5 +15,7 @@ return [
 
     'failed' => 'Les informations que vous avez saisi sont incorrect..',
     'throttle' => 'Trop d\'essai manqué. Réessayez dans :seconds secondes.',
+    'welcome_back' => "Bon retour",
+    'welcome_back_message' => "Nous sommes heureux de vous revoir!"
 
 ];
