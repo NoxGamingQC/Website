@@ -8,8 +8,9 @@
                 <h1>{{trans('generic.login')}}</h1>
                 <hr />
                 <div class="col-md-3 text-center">
-                <h4 class="raleway-font">{{trans('auth.welcome_back')}}</h4>
-                <p class="raleway-font">{{trans('auth.welcome_back_message')}}</p>
+                    <img src="/img/Avatar.png" width="40%" />
+                    <h4 class="raleway-font">{{trans('auth.welcome_back')}}</h4>
+                    <p class="raleway-font">{{trans('auth.welcome_back_message')}}</p>
                 </div>
                 <div class="col-md-9">
                     {{ csrf_field() }}
