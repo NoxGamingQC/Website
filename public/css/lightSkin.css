@@ -4102,7 +4102,15 @@ hr {
   color: #f0ad4e !important;
 }
 
+.text-warning {
+  color: #f0ad4e !important;
+}
+
 .info-text {
+  color: #5bc0de !important;
+}
+
+.text-info {
   color: #5bc0de !important;
 }
 

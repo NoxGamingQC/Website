@@ -3787,20 +3787,20 @@ fieldset[disabled] .btn-reddit.active {
 
 .panel-info > .panel-heading {
   background-image: none;
-  background-color: #8eb4cb;
-  color: #243f4f;
-  border-color: #457795;
+  background-color: #bed5dc;
+  color: #3f6975;
+  border-color: #6b9faf;
 }
 
 .panel-info > .panel-body {
   background-image: none;
-  background-color: #8eb4cb;
-  color: #243f4f;
-  border-color: #457795;
+  background-color: #bed5dc;
+  color: #3f6975;
+  border-color: #6b9faf;
 }
 
 .panel-info {
-  border-color: #457795;
+  border-color: #6b9faf;
 }
 
 input[type=text] {
@@ -4072,7 +4072,7 @@ textarea[type=text]:focus {
 }
 
 .table-info {
-  background-color: #8eb4cb;
+  background-color: #bed5dc;
 }
 
 .table-default {
@@ -4099,7 +4099,7 @@ textarea[type=text]:focus {
 }
 
 .badge-info {
-  background-color: #8eb4cb;
+  background-color: #bed5dc;
   text-align: center;
   border-radius: 5px 5px 5px 5px;
   padding: 5px;
@@ -4168,8 +4168,16 @@ hr {
   color: #fcf977 !important;
 }
 
+.text-warning {
+  color: #fcf977 !important;
+}
+
 .info-text {
-  color: #8eb4cb !important;
+  color: #bed5dc !important;
+}
+
+.text-info {
+  color: #bed5dc !important;
 }
 
 .success-text {
@@ -4376,7 +4384,7 @@ button.toast-close-button {
 }
 
 .toast-info {
-  background-color: #8eb4cb;
+  background-color: #bed5dc;
 }
 
 .toast-warning {
