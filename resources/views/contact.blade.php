@@ -10,7 +10,7 @@
         </div>
         <div class="col-md-12" id="socialNetwork">
             <h3><i class="fa fa-globe" aria-hidden="true"></i> {{trans('generic.social_network')}}</h3>
-            <hr />
+            <br />
             <div class="row text-center">
                 <div class="col-md-2" id="twitch">
                     <a class="btn btn-twitch btn-lg" href="https://www.twitch.tv/noxgamingqc">
@@ -63,7 +63,7 @@
         </div>
         <div class="col-md-12" id="businessInquiries">
             <h3><i class="fa fa-briefcase" aria-hidden="true"></i> {{trans('generic.business_inquiries')}}</h3>
-            <hr />
+            <br />
             <p>{{trans('generic.business_inquiries_text')}} <a href="mailto:nox@noxgamingqc.ca">nox@noxgamingqc.ca</a>.</p>
         </div>
     </div>
