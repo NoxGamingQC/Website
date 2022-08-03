@@ -61,5 +61,6 @@ return [
     'no_logs_found' => "No logs found",
     'select_placeholder' => "Nothing selected",
     'services' => "Services",
-    'see_more' => "See more"
+    'see_more' => "See more",
+    'send'=>"Send"
 ];
