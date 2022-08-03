@@ -29,24 +29,33 @@
                     @endif
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="/{{app()->getLocale()}}/games" class="{{($page_lists['games']['inMaintenance']) ? 'hidden' : ''}}"><i class="fa fa-gamepad" aria-hidden="true"></i> {{ trans('generic.games_list') }}</a>
-                            <a href="/{{app()->getLocale()}}/twitch" class="{{($page_lists['twitch']['inMaintenance']) ? 'hidden' : ''}}"><i class="fa fa-twitch" aria-hidden="true"></i> {{ trans('generic.twitch') }}</a>
-                            <a href="/{{app()->getLocale()}}/youtube" class="{{($page_lists['youtube']['inMaintenance']) ? 'hidden' : ''}}"><i class="fa fa-youtube-play" aria-hidden="true"></i> {{ trans('generic.youtube') }}</a>
                             <a href="/{{app()->getLocale()}}/contact" class="{{($page_lists['contact_us']['inMaintenance']) ? 'hidden' : ''}}"><i class="fa fa-address-book " aria-hidden="true"></i> {{trans('generic.contact_us')}}</a>
-                        
+                            <a href="/{{app()->getLocale()}}/games" class="{{($page_lists['games']['inMaintenance']) ? 'hidden' : ''}}"><i class="fa fa-gamepad" aria-hidden="true"></i> {{ trans('generic.games_list') }}</a>
+                            <a href="/{{app()->getLocale()}}/projects" class="{{($page_lists['projects']['inMaintenance']) ? 'hidden' : ''}}"><i class="fa fa-heart" aria-hidden="true"></i> {{ trans('generic.projects') }}</a>
                         </li>
                     </ul>
                 </li>
-                @if(!$page_lists['projects']['inMaintenance'])
-                <li class="nav-projects"><a href="/{{app()->getLocale()}}/projects"><i class="fa fa-heart" aria-hidden="true"></i> {{ trans('generic.projects') }}</a></li>
-                @else
-                <li class="nav-projects">
-                    <a class="disabled">
-                        <i class="fa fa-wrench" aria-hidden="true"></i> {{trans("generic.projects")}}
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+                        <i class="fa fa-briefcase" aria-hidden="true"></i> Streaming <span class="caret"></span>
                     </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="/{{app()->getLocale()}}/twitch" class="{{($page_lists['twitch']['inMaintenance']) ? 'hidden' : ''}}"><i class="fa fa-twitch" aria-hidden="true"></i> {{ trans('generic.twitch') }}</a>
+                            <a href="/{{app()->getLocale()}}/youtube" class="{{($page_lists['youtube']['inMaintenance']) ? 'hidden' : ''}}"><i class="fa fa-youtube-play" aria-hidden="true"></i> {{ trans('generic.youtube') }}</a>
+                        </li>
+                    </ul>
                 </li>
-                @endif
-                <li class="nav-services"><a href="/{{app()->getLocale()}}/services"><i class="fa fa-briefcase" aria-hidden="true"></i> {{ trans('generic.services') }}</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+                        <i class="fa fa-briefcase" aria-hidden="true"></i> NGST <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="/{{app()->getLocale()}}/services" class=""><i class="fa fa-briefcase" aria-hidden="true"></i> {{ trans('generic.services') }}</a>
+                        </li>
+                    </ul>
+                </li>
                 @auth
                     @if(Auth::user()->isDev || Auth::user()->isAdmin || Auth::user()->isModerator)
                         <li class="dropdown">
