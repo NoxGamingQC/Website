@@ -61,5 +61,6 @@ return [
     'no_logs_found' => "Aucun journeaux trouvés",
     'select_placeholder' => "Aucun choix selectionné",
     'services' => "Services",
-    'see_more' => "Voir plus"
+    'see_more' => "Voir plus",
+    'send'=>"Envoyer"
 ];
