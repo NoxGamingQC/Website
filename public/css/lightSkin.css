@@ -3811,14 +3811,6 @@ input[type=text] {
   border-radius: 0 !important;
 }
 
-.form-control {
-  background-color: transparent !important;
-  border-color: transparent !important;
-  color: #000 !important;
-  border-bottom: 1px solid #000 !important;
-  border-radius: 0 !important;
-}
-
 input[type=password] {
   background-color: transparent !important;
   border-color: transparent !important;
