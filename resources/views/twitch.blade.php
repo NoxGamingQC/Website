@@ -15,14 +15,12 @@
                         <iframe class="embed-responsive-item" src="https://player.twitch.tv/?channel=noxgamingqc&parent={{env('APP_URL') == 'http://localhost'? str_replace("http://","",env('APP_URL')) : str_replace("https://","",env('APP_URL'))}}&enableExtensions=true&muted=true&autoplay=true" frameBorder="0" allowFullScreen="true" scrolling="no"></iframe>
                     </div>
                 </div>
-                <div class="col-md-5" id="twitchDefinition">
-                    <div class="text-right">
-                        <h3><i class="fa fa-video-camera" aria-hidden="true"></i> {{trans('stream.stream_description_title')}}</h3>
-                        <hr />
-                        <p>{!!trans('stream.stream_description_text')!!}</a>.</p>
-                        <a class="btn btn-primary disabled" href="/{{app()->getLocale()}}/stream/commands" disabled>{{trans('stream.bot_commands')}}</a>
-                        <a class="btn btn-primary" href="https://discord.com/invite/PryKE2Xvrh">{{trans('stream.join_server')}}</a>
-                    </div>
+                <div class="col-md-5 text-center" id="twitchDefinition">
+                    <h3><i class="fa fa-video-camera" aria-hidden="true"></i> {{trans('stream.stream_description_title')}}</h3>
+                    <hr />
+                    <p>{!!trans('stream.stream_description_text')!!}</a>.</p>
+                    <a class="btn btn-primary disabled" href="/{{app()->getLocale()}}/stream/commands" disabled>{{trans('stream.bot_commands')}}</a>
+                    <a class="btn btn-primary" href="https://discord.com/invite/PryKE2Xvrh">{{trans('stream.join_server')}}</a>
                </div>
                 <div class="col-md-12">
                     <br />
