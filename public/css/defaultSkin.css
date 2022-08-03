@@ -3229,7 +3229,7 @@ fieldset[disabled] .btn-primary.active {
 .btn-twitch {
   color: #ffffff !important;
   background-color: transparent;
-  border-color: #222222;
+  border-color: black;
 }
 
 .btn-twitch:hover,
@@ -3275,7 +3275,7 @@ fieldset[disabled] .btn-twitch.active {
 .btn-youtube {
   color: #ffffff !important;
   background-color: transparent;
-  border-color: #222222;
+  border-color: black;
 }
 
 .btn-youtube:hover,
@@ -3321,7 +3321,7 @@ fieldset[disabled] .btn-youtube.active {
 .btn-twitter {
   color: #ffffff !important;
   background-color: transparent;
-  border-color: #222222;
+  border-color: black;
 }
 
 .btn-twitter:hover,
@@ -3367,7 +3367,7 @@ fieldset[disabled] .btn-twitter.active {
 .btn-facebook {
   color: #ffffff !important;
   background-color: transparent;
-  border-color: #222222;
+  border-color: black;
 }
 
 .btn-facebook:hover,
@@ -3413,7 +3413,7 @@ fieldset[disabled] .btn-facebook.active {
 .btn-instagram {
   color: #ffffff !important;
   background-color: transparent;
-  border-color: #222222;
+  border-color: black;
 }
 
 .btn-instagram:hover,
@@ -3459,7 +3459,7 @@ fieldset[disabled] .btn-instagram.active {
 .btn-steam {
   color: #ffffff !important;
   background-color: transparent;
-  border-color: #222222;
+  border-color: black;
 }
 
 .btn-steam:hover,
@@ -3505,7 +3505,7 @@ fieldset[disabled] .btn-steam.active {
 .btn-github {
   color: #ffffff !important;
   background-color: transparent;
-  border-color: #222222;
+  border-color: black;
 }
 
 .btn-github:hover,
@@ -3551,7 +3551,7 @@ fieldset[disabled] .btn-github.active {
 .btn-snapchat {
   color: #ffffff !important;
   background-color: transparent;
-  border-color: #222222;
+  border-color: black;
 }
 
 .btn-snapchat:hover,
@@ -3597,7 +3597,7 @@ fieldset[disabled] .btn-snapchat.active {
 .btn-spotify {
   color: #ffffff !important;
   background-color: transparent;
-  border-color: #222222;
+  border-color: black;
 }
 
 .btn-spotify:hover,
@@ -3643,7 +3643,7 @@ fieldset[disabled] .btn-spotify.active {
 .btn-reddit {
   color: #ffffff !important;
   background-color: transparent;
-  border-color: #222222;
+  border-color: black;
 }
 
 .btn-reddit:hover,
@@ -3690,18 +3690,18 @@ fieldset[disabled] .btn-reddit.active {
   background-image: none;
   background-color: #c22222;
   color: #ffffff;
-  border-color: #222222;
+  border-color: black;
 }
 
 .panel-primary > .panel-body {
   background-image: none;
   background-color: #222222;
   color: #ffffff;
-  border-color: #222222;
+  border-color: black;
 }
 
 .panel-primary {
-  border-color: #222222 !important;
+  border-color: black !important;
 }
 
 .panel-block-primary > .panel-body {

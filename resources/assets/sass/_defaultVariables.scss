@@ -4,7 +4,7 @@ $background-color: #222222;
 
 // Borders
 $laravel-border-color: darken($body-bg, 10%);
-$pannel-border-color: $background-color;
+$pannel-border-color: darken($body-bg, 25%);
 $list-group-border: $laravel-border-color;
 $navbar-default-border: $laravel-border-color;
 $panel-default-border: $laravel-border-color;
