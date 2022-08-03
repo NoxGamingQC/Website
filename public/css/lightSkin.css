@@ -3803,6 +3803,57 @@ fieldset[disabled] .btn-reddit.active {
   border-color: #1f7e9a;
 }
 
+input[type=text] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #000;
+  border-bottom: 1px solid #000 !important;
+  border-radius: 0 !important;
+}
+
+input[type=password] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #000;
+  border-bottom: 1px solid #000 !important;
+  border-radius: 0 !important;
+}
+
+textarea[type=text] {
+  background-color: transparent;
+  border-color: transparent;
+  color: #000;
+  border-bottom: 1px solid #000 !important;
+  border-radius: 0 !important;
+}
+
+input[type=text]:focus {
+  outline: none !important;
+  outline-width: 0 !important;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  border-color: #000;
+}
+
+input[type=password]:focus {
+  outline: none !important;
+  outline-width: 0 !important;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  border-color: #000;
+}
+
+textarea[type=text]:focus {
+  outline: none !important;
+  outline-width: 0 !important;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  border-color: #000;
+}
+
 .navbar-default {
   background-color: #FFF;
   border-color: #FFF;
