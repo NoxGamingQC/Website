@@ -6,43 +6,24 @@
     <div class="col-md-12 text-center full-height" id="title">
         <div class="panel panel-block-primary">
             <div class="panel-body" style="padding: 5%">
-                <h1 class="satisfy-font">NoxGamingQC</h1>
+                <h1 class="raleway-font">NoxGamingQC</h1>
                 <br />
-                <h5 class="yellowtail-font" style="font-size: 18px">{{trans('welcome.slogan')}}</h5>
+                <h5 class="raleway-font" style="font-size: 18px">{{trans('welcome.slogan')}}</h5>
                 <br />
             </div>
         </div>
     </div>
-    <div class="col-md-12" id="aboutme">
+     <div class="col-md-12" id="instagram-feed">
         <div class="panel panel-primary">
             <div class="panel-body">
-                <h3><i class="fa fa-user" aria-hidden="true"></i> {{trans('welcome.about_me')}}</h3>
-                <hr />
-                <p>{{trans('welcome.about_me_text')}} <a href="https://guilded.gg/ngst">({{trans('welcome.guilded_join_here')}})</a>.</p>
+                <div id="curator-feed-default-feed-layout">
+                    <a href="" target="_blank" class="crt-logo crt-tag"></a>
+                </div>
+                
             </div>
         </div>
     </div>
-    <div class="col-md-12" id="communityRules">
-        <div class="panel panel-primary">
-            <div class="panel-body">
-                <h3><i class="fa fa-users" aria-hidden="true"></i> {{trans('welcome.community_rules')}}</h3>
-                <hr />
-                <p><i class="fa fa-window-close error-text" aria-hidden="true"></i> {{trans('welcome.rule01')}}</p>
-                <br />
-                <p><i class="fa fa-window-close error-text" aria-hidden="true"></i> {{trans('welcome.rule02')}}</p>
-                <br />
-                <p><i class="fa fa-window-close error-text" aria-hidden="true"></i> {{trans('welcome.rule03')}}</p>
-                <br />
-                <p><i class="fa fa-window-close error-text" aria-hidden="true"></i> {{trans('welcome.rule04')}}</p>
-                <br />
-                <p><i class="fa fa-window-close error-text" aria-hidden="true"></i> {{trans('welcome.rule05')}}</p>
-                <br />
-                <p><i class="fa fa-check-square success-text" aria-hidden="true"></i> {{trans('welcome.rule06')}}</p>
-                <br />
-                <p>{!!trans('welcome.rule_text')!!}</p>
-            </div>
-        </div>
-    </div>
+    
     <div class="col-md-12 text-center" id="social">
         <div class="panel panel-primary">
             <div class="panel-body">
@@ -67,4 +48,15 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    (function(){
+        var i, e, d=document, s="script";
+        i=d.createElement("script");
+        i.async=1;
+        i.charset="UTF-8";
+        i.src="https://cdn.curator.io/published/e20a68dc-3467-45c4-87cd-dcd6c14a133a.js";
+        e=d.getElementsByTagName(s)[0];
+        e.parentNode.insertBefore(i, e);
+    })();
+</script>
 @stop

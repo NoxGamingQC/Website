@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default" style="margin-top: 5%;">
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-collapse" aria-expanded="false">
@@ -7,21 +7,12 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand satisfy-font" href="/home" style="display: flex; alignItems: center;">
-                NoxGamingQC
-            </a>
-        </div>
-        <div class="navbar-header form-inline hidden-xs hidden-sm">
-         @if(!$page_lists['profile_show']['inMaintenance'])
-            <div class="nav-searchbar input-group">
-                <input type="text" class="form-control" id="navSearch" placeholder="{{trans('generic.search')}}...">
-                <span class="input-group-btn">
-                    <button id="submitSearch" class="btn btn-primary" type="button"><i id="navSearchButton" class="fa fa-search"></i></button>
-                </span>
+            <div>
+                <img src="/img/Avatar.png" width="60" height="60" />
+                <h3 class="raleway-font" style="display: inline; margin: 5px;">NoxGamingQC</h3>
             </div>
-        @endif
-            <div id="navSearchResult"></div>
         </div>
+        
         <div class="collapse navbar-collapse" id="bs-navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class="nav-home"><a href="/{{app()->getLocale()}}/home"><i class="fa fa-home" aria-hidden="true"></i> {{ trans('generic.welcome') }} <span class="sr-only">current</span></a></li>
