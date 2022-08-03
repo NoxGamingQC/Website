@@ -4130,6 +4130,10 @@ a.text-color {
   color: #ffffff;
 }
 
+.game-title {
+  text-shadow: -2px 0 #000, 0 2px #000, 2px 0 #000, 0 -2px #000;
+}
+
 .badge-danger {
   background-color: #CA62B8;
   text-align: center;
