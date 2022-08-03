@@ -42,6 +42,7 @@
                         <i class="fa fa-github fa-5x" aria-hidden="true"></i>
                     </a>
                 </div>
+                <div class="col-md-3"></div>
                 <div class="col-md-2" id="snapchat">
                     <a class="btn btn-snapchat btn-lg" href="https://www.snapchat.com/add/NoxGamingQC">
                         <i class="fa fa-snapchat-ghost fa-5x" aria-hidden="true"></i>
@@ -57,16 +58,7 @@
                         <i class="fa fa-reddit fa-5x" aria-hidden="true"></i>
                     </a>
                 </div>
-                <div class="col-md-2" id="pinterest">
-                    <a class="btn btn-pinterest btn-lg" href="https://www.pinterest.ca/noxgamingqc/">
-                        <i class="fa fa-pinterest fa-5x" aria-hidden="true"></i>
-                    </a>
-                </div>
-                <div class="col-md-2" id="skype">
-                    <a class="btn btn-skype btn-lg" href="skype:howlnox22607?userinfo">
-                        <i class="fa fa-skype fa-5x" aria-hidden="true"></i>
-                    </a>
-                </div>
+                <div class="col-md-3"></div>
             </div>
         </div>
         <div class="col-md-12" id="businessInquiries">
