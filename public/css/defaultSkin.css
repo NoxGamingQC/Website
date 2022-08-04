@@ -3686,6 +3686,12 @@ fieldset[disabled] .btn-reddit.active {
   background-color: #ffffff;
 }
 
+.social-bar-item {
+  margin-left: 2px;
+  margin-right: 2px;
+  border-color: transparent !important;
+}
+
 .panel-primary > .panel-heading {
   background-image: none;
   background-color: #c22222;
