@@ -88,6 +88,7 @@ class UserProfileController extends Controller
             $user = User::findOrFail(Auth::user()->id);
 
             return view('profile_edit', [
+                "id" => $user->id,
                 "email"=>$user->email,
                 "username"=>$user->name,
                 "discordID"=>$user->DiscordID,

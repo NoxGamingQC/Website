@@ -1,0 +1,15 @@
+.datepicker {
+    background-color: $background-color;
+}
+
+td.active.day {
+    background-color: $brand-primary;
+}
+
+td.day:hover {
+    background-color: $input-border-focus;
+}
+
+td.disabled.day {
+    background-color: $text-disabled;
+}

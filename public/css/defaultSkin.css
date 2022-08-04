@@ -4443,3 +4443,18 @@ button.toast-close-button {
     width: 25em;
   }
 }
+.datepicker {
+  background-color: #222222;
+}
+
+td.active.day {
+  background-color: #c22222;
+}
+
+td.day:hover {
+  background-color: #e87c7c;
+}
+
+td.disabled.day {
+  background-color: #777777;
+}

@@ -2,29 +2,11 @@
 @section('title', 'Edit profile')
 @section('content')
 
-<h1>Profile Editing Page</h1>
-<hr />
 <div class="container">
     <div class="row">
-        <div class="col-md-12">
-            <div class="panel panel-primary">
-                <div class="panel-body">
-                    <h3>Discord Profile</h3>
-                    <hr />
-                    <div class="col-md-6">
-                        <ul>
-                            <li><b>ID: </b> {{$discordID}}</li>
-                            <li><b>Username: </b> {{$discordName . '#' . $discriminator}}</li>
-                            <li><b>Language: </b> {{$language}}</li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6 text-center">
-                        <img class="img-circle" src="{{$avatarURL}}" alt="{{$discordName}}" width="120px" style="padding: 7px 14px" />
-                        <p>To change your profile picture you must change it on Discord too</p>
-                    </div>
-                    <a class="btn btn-primary" href="https://discordapp.com/api/oauth2/authorize?client_id=395657323135238157&redirect_uri={{Request::url()}}&response_type=code&scope=identify&guilds&email">Update Discord information</a>
-                </div>
-            </div>
+        <div class="col-md-10">
+            <h1>Profile Edition<a href="/{{app()->getLocale()}}/profile/show/{{$id}}" class="push-right btn btn-primary">{{trans('profile.show')}}</a></h1>
+            <hr />
         </div>
         <div class="col-md-12">
             <div class="panel panel-primary">
@@ -58,7 +40,12 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="birthdate">Birthdate</label>
-                            <input type="text" class="form-control" id="birthdate" placeholder="Birthdate" value="{{$birthdate}}" />
+                            <div class="input-group date" data-provide="datepicker">
+                                <input type="text" class="datepicker form-control" id="birthdate" placeholder="Birthdate" value="{{$birthdate}}" />
+                                <div class="input-group-addon">
+                                    <span class="glyphicon glyphicon-th"></span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -135,6 +122,10 @@
     </div>
 </div>
 <script type="text/javascript">
+
+$(document).ready(function() {
+    
+
     $('#submit').click(function() {
         $.ajax({
             headers: {
@@ -174,5 +165,6 @@
             }
         })
     });
+});
 </script>
 @stop
