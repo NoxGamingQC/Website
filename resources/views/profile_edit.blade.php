@@ -5,22 +5,22 @@
 <div class="container">
     <div class="row">
         <div class="col-md-10">
-            <h1>Profile Edition<a href="/{{app()->getLocale()}}/profile/show/{{$id}}" class="push-right btn btn-primary">{{trans('profile.show')}}</a></h1>
+            <h1>{{trans('profile.profile_edit')}}<a href="/{{app()->getLocale()}}/profile/show/{{$id}}" class="push-right btn btn-primary">{{trans('profile.show')}}</a></h1>
             <hr />
         </div>
         <div class="col-md-12">
-            <h3>Profile Information</h3>
+            <h3>{{trans('profile.profile_info')}}</h3>
             <br />
             <div class="col-md-12">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="username">Username</label>
+                        <label for="username">{{trans('profile.username')}}</label>
                         <input type="text" class="form-control" id="username" placeholder="Username" value="{{$username}}" />
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="email">Email</label>
+                        <label for="email">{{trans('profile.email')}}</label>
                         <input type="email" class="form-control" id="email" placeholder="Email" value="{{$email}}" />
                     </div>
                 </div>
@@ -28,13 +28,13 @@
             <div class="col-md-12">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="firstname">Firstname</label>
+                        <label for="firstname">{{trans('profile.firstname')}}</label>
                         <input type="text" class="form-control" id="firstname" placeholder="Firstname" value="{{$firstname}}" />
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="lastname">Lastname</label>
+                        <label for="lastname">{{trans('profile.lastname')}}</label>
                         <input type="text" class="form-control" id="lastname" placeholder="Lastname" value="{{$lastname}}" />
                     </div>
                 </div>
@@ -42,7 +42,7 @@
             <div class="col-md-12">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="birthdate">Birthdate</label>
+                        <label for="birthdate">{{trans('profile.birthdate')}}</label>
                         <div class="input-group date" data-provide="datepicker">
                             <input type="text" class="datepicker form-control" id="birthdate" placeholder="Birthdate" value="{{$birthdate}}" />
                             <div class="input-group-addon">
@@ -53,12 +53,12 @@
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="gender">Gender</label>
+                        <label for="gender">{{trans('profile.gender')}}</label>
                         <br />
                         <select class="selectpicker" id="gender" title="Gender">
-                            <option value="1" {{$gender == '1' ? 'selected' : ''}}>Male</option>
-                            <option value="2" {{$gender == '2' ? 'selected' : ''}}>Female</option>
-                            <option value="0" {{$gender == '0' ? 'selected' : ''}}>Other</option>
+                            <option value="1" {{$gender == '1' ? 'selected' : ''}}>{{trans('profile.male')}}</option>
+                            <option value="2" {{$gender == '2' ? 'selected' : ''}}>{{trans('profile.female')}}</option>
+                            <option value="0" {{$gender == '0' ? 'selected' : ''}}>{{trans('profile.other')}}</option>
                         </select>
                     </div>
                 </div>
@@ -66,58 +66,58 @@
             <div class="col-md-12">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="country">Country</label>
+                        <label for="country">{{trans('profile.country')}}</label>
                         <input type="text" class="form-control" id="country" placeholder="Country" value="{{$country}}" />
                     </div>
                 </div>
             </div>
         </div>
         <div class="col-md-12">
-            <h3>Profile Preferences</h3>
+            <h3>{{trans('profile.preferences')}}</h3>
             <hr />
             <div class="col-md-12">
                 <div class="form-group">
-                    <label for="theme">Theme</label>
+                    <label for="theme">{{trans('profile.theme')}}</label>
                     <select class="selectpicker" id="theme" title="Default">
-                        <option value="default" {{$theme == 'default' ? 'selected' : ''}}>Default</option>
-                        <option value="dracula" {{$theme == 'dracula' ? 'selected' : ''}}>Dracula</option>
-                        <option value="light" {{$theme == 'light' ? 'selected' : ''}}>Light</option>
+                        <option value="default" {{$theme == 'default' ? 'selected' : ''}}>{{(trans('profile.theme_default'))}}</option>
+                        <option value="dracula" {{$theme == 'dracula' ? 'selected' : ''}}>{{(trans('profile.theme_dracula'))}}</option>
+                        <option value="light" {{$theme == 'light' ? 'selected' : ''}}>{{(trans('profile.theme_light'))}}</option>
                     </select>
-                    <p class="warning-text"><i>P.S. Theme changes will be applies on reload</i></p>
+                    <p class="warning-text"><i>{{trans('profile.theme_reload_warning')}}</i></p>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="showFirstname">Show Firstname</label>
+                    <label for="showFirstname">{{trans('profile.show_firstname')}}</label>
                     <input type="checkbox" id="showFirstname" value="{{$isFirstnameShowned}}" {{ $isFirstnameShowned ? 'checked' : '' }} />
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="showLastname">Show Lastname</label>
+                    <label for="showLastname">{{trans('profile.show_lastname')}}</label>
                     <input type="checkbox" id="showLastname" value="{{$isLastnameShowned}}" {{ $isLastnameShowned ? 'checked' : '' }} />
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="showGender">Show gender</label>
+                    <label for="showGender">{{trans('profile.show_gender')}}</label>
                     <input type="checkbox" id="showGender" value="{{$isGenderShowned}}" {{ $isGenderShowned ? 'checked' : '' }} />
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="showBirthdate">Show birthdate</label>
+                    <label for="showBirthdate">{{trans('profile.show_birthdate')}}</label>
                     <input type="checkbox" id="showBirthdate" value="{{$isBirthdateShowned}}" {{ $isBirthdateShowned ? 'checked' : '' }} />
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="showAge">Show Age</label>
+                    <label for="showAge">{{trans('profile.show_age')}}</label>
                     <input type="checkbox" id="showAge" value="{{$isAgeShowned}}" {{ $isAgeShowned ? 'checked' : '' }} />
                 </div>
             </div>
             <div class="col-md-12 text-right">
-                <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" id="submit" class="btn btn-primary">{{trans('generic.submit')}}</button>
             </div>
         </div>
     </div>
