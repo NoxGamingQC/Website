@@ -4442,3 +4442,19 @@ button.toast-close-button {
 .table-primary {
   background-color: #BD93F9;
 }
+
+.datepicker {
+  background-color: #282A36;
+}
+
+td.active.day {
+  background-color: #BD93F9;
+}
+
+td.day:hover {
+  background-color: white;
+}
+
+td.disabled.day {
+  background-color: #777777;
+}
