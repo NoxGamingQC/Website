@@ -47,7 +47,7 @@
                 <div class="col-md-12">
                     <h3>{{trans('services.car')}}</h3>
                     <br />
-                    <div class="col-md-6">
+                    <div class="col-md-4 col-md-offset-2">
                         <div class="panel panel-primary">
                             <div class="panel-body text-center">
                                 <h4>{{trans('services.exterior_cleaning')}}</h4>
@@ -55,7 +55,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <div class="panel panel-primary">
                             <div class="panel-body text-center">
                                 <h4>{{trans('services.car_polish')}}</h4>
@@ -67,7 +67,7 @@
                 <div class="col-md-12">
                     <h3>{{trans('services.other')}}</h3>
                     <br />
-                    <div class="col-md-6 col-md-offset-3">
+                    <div class="col-md-4 col-md-offset-4">
                         <div class="panel panel-primary">
                             <div class="panel-body text-center">
                                 <h4>{{trans('services.snow_removal')}}</h4>
