@@ -9,110 +9,111 @@
             <hr />
         </div>
         <div class="col-md-12">
-            <div class="panel panel-primary">
-                <div class="panel-body">
-                    <h3>Profile Information</h3>
-                    <hr />
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="username">Username</label>
-                            <input type="text" class="form-control" id="username" placeholder="Username" value="{{$username}}" />
-                        </div>
+            <h3>Profile Information</h3>
+            <br />
+            <div class="col-md-12">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control" id="username" placeholder="Username" value="{{$username}}" />
                     </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="Email" value="{{$email}}" />
-                        </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Email" value="{{$email}}" />
                     </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="firstname">Firstname</label>
-                            <input type="text" class="form-control" id="firstname" placeholder="Firstname" value="{{$firstname}}" />
-                        </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="firstname">Firstname</label>
+                        <input type="text" class="form-control" id="firstname" placeholder="Firstname" value="{{$firstname}}" />
                     </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="lastname">Lastname</label>
-                            <input type="text" class="form-control" id="lastname" placeholder="Lastname" value="{{$lastname}}" />
-                        </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="lastname">Lastname</label>
+                        <input type="text" class="form-control" id="lastname" placeholder="Lastname" value="{{$lastname}}" />
                     </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="birthdate">Birthdate</label>
-                            <div class="input-group date" data-provide="datepicker">
-                                <input type="text" class="datepicker form-control" id="birthdate" placeholder="Birthdate" value="{{$birthdate}}" />
-                                <div class="input-group-addon">
-                                    <span class="glyphicon glyphicon-th"></span>
-                                </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="birthdate">Birthdate</label>
+                        <div class="input-group date" data-provide="datepicker">
+                            <input type="text" class="datepicker form-control" id="birthdate" placeholder="Birthdate" value="{{$birthdate}}" />
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-th"></span>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="gender">Gender</label>
-                            <select class="selectpicker" id="gender" title="Gender">
-                                <option value="1" {{$gender == '1' ? 'selected' : ''}}>Male</option>
-                                <option value="2" {{$gender == '2' ? 'selected' : ''}}>Female</option>
-                                <option value="0" {{$gender == '0' ? 'selected' : ''}}>Other</option>
-                            </select>
-                        </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="gender">Gender</label>
+                        <br />
+                        <select class="selectpicker" id="gender" title="Gender">
+                            <option value="1" {{$gender == '1' ? 'selected' : ''}}>Male</option>
+                            <option value="2" {{$gender == '2' ? 'selected' : ''}}>Female</option>
+                            <option value="0" {{$gender == '0' ? 'selected' : ''}}>Other</option>
+                        </select>
                     </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="country">Country</label>
-                            <input type="text" class="form-control" id="country" placeholder="Country" value="{{$country}}" />
-                        </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="country">Country</label>
+                        <input type="text" class="form-control" id="country" placeholder="Country" value="{{$country}}" />
                     </div>
                 </div>
             </div>
         </div>
         <div class="col-md-12">
-            <div class="panel panel-primary">
-                <div class="panel-body">
-                    <h3>Profile Preferences</h3>
-                    <hr />
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <label for="theme">Theme</label>
-                            <select class="selectpicker" id="theme" title="Default">
-                                <option value="default" {{$theme == 'default' ? 'selected' : ''}}>Default</option>
-                                <option value="dracula" {{$theme == 'dracula' ? 'selected' : ''}}>Dracula</option>
-                                <option value="light" {{$theme == 'light' ? 'selected' : ''}}>Light</option>
-                            </select>
-                            <p class="warning-text"><i>P.S. Theme changes will be applies on reload</i></p>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="showFirstname">Show Firstname</label>
-                            <input type="checkbox" id="showFirstname" value="{{$isFirstnameShowned}}" {{ $isFirstnameShowned ? 'checked' : '' }} />
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="showLastname">Show Lastname</label>
-                            <input type="checkbox" id="showLastname" value="{{$isLastnameShowned}}" {{ $isLastnameShowned ? 'checked' : '' }} />
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="showGender">Show gender</label>
-                            <input type="checkbox" id="showGender" value="{{$isGenderShowned}}" {{ $isGenderShowned ? 'checked' : '' }} />
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="showBirthdate">Show birthdate</label>
-                            <input type="checkbox" id="showBirthdate" value="{{$isBirthdateShowned}}" {{ $isBirthdateShowned ? 'checked' : '' }} />
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="showAge">Show Age</label>
-                            <input type="checkbox" id="showAge" value="{{$isAgeShowned}}" {{ $isAgeShowned ? 'checked' : '' }} />
-                        </div>
-                    </div>
+            <h3>Profile Preferences</h3>
+            <hr />
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="theme">Theme</label>
+                    <select class="selectpicker" id="theme" title="Default">
+                        <option value="default" {{$theme == 'default' ? 'selected' : ''}}>Default</option>
+                        <option value="dracula" {{$theme == 'dracula' ? 'selected' : ''}}>Dracula</option>
+                        <option value="light" {{$theme == 'light' ? 'selected' : ''}}>Light</option>
+                    </select>
+                    <p class="warning-text"><i>P.S. Theme changes will be applies on reload</i></p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="showFirstname">Show Firstname</label>
+                    <input type="checkbox" id="showFirstname" value="{{$isFirstnameShowned}}" {{ $isFirstnameShowned ? 'checked' : '' }} />
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="showLastname">Show Lastname</label>
+                    <input type="checkbox" id="showLastname" value="{{$isLastnameShowned}}" {{ $isLastnameShowned ? 'checked' : '' }} />
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="showGender">Show gender</label>
+                    <input type="checkbox" id="showGender" value="{{$isGenderShowned}}" {{ $isGenderShowned ? 'checked' : '' }} />
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="showBirthdate">Show birthdate</label>
+                    <input type="checkbox" id="showBirthdate" value="{{$isBirthdateShowned}}" {{ $isBirthdateShowned ? 'checked' : '' }} />
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="showAge">Show Age</label>
+                    <input type="checkbox" id="showAge" value="{{$isAgeShowned}}" {{ $isAgeShowned ? 'checked' : '' }} />
                 </div>
             </div>
             <div class="col-md-12 text-right">
