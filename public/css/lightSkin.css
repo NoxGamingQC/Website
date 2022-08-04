@@ -4136,6 +4136,11 @@ hr {
   color: #337ab7 !important;
 }
 
+.text-copyright {
+  color: #777777 !important;
+  font-size: 12px;
+}
+
 copper {
   color: #ff9f68 !important;
 }
