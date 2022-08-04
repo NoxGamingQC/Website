@@ -36,5 +36,7 @@ return [
     'theme_light' => "Light theme",
     'male' => "Male",
     'female' => "Female",
-    'other' => "Other"
+    'other' => "Other",
+    'premium' => "Premium subscription active",
+    'not_premium' => "No subscription"
 ];
