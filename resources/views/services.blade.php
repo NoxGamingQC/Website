@@ -21,7 +21,6 @@
                         <div class="panel panel-primary">
                             <div class="panel-body text-center">
                                 <h4>{{trans('services.format')}}</h4>
-                                <br />
                                 <p class="text-warning"><i>P.S. {{trans('services.licence_not_included')}}</i></p>
                                 <p>40C$</p>
                             </div>
@@ -31,7 +30,6 @@
                         <div class="panel panel-primary">
                             <div class="panel-body text-center">
                                 <h4>{{trans('services.diagnostics')}}</h4>
-                                <br />
                                 <p class="text-warning"><i>P.S. {{trans('services.diagnostics_info')}}</i></p>
                                 <p>30C$</p>
                             </div>
@@ -53,7 +51,6 @@
                         <div class="panel panel-primary">
                             <div class="panel-body text-center">
                                 <h4>{{trans('services.exterior_cleaning')}}</h4>
-                                <br />
                                 <p>20C$</p>
                             </div>
                         </div>
@@ -62,7 +59,6 @@
                         <div class="panel panel-primary">
                             <div class="panel-body text-center">
                                 <h4>{{trans('services.car_polish')}}</h4>
-                                <br />
                                 <p>50C$</p>
                             </div>
                         </div>
@@ -75,7 +71,6 @@
                         <div class="panel panel-primary">
                             <div class="panel-body text-center">
                                 <h4>{{trans('services.snow_removal')}}</h4>
-                                <br />
                                 <p class="text-warning"><i>P.S. {{trans('services.snow_removal_info')}}</i></p>
                                 <p>20C$/hrs</p>
                             </div>
