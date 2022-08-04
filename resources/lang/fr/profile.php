@@ -36,5 +36,7 @@ return [
     'theme_light' => "Thème clair",
     'male' => "Homme",
     'female' => "Femme",
-    'other' => "Autre"
+    'other' => "Autre",
+    'premium' => "Abonnement prémium",
+    'not_premium' => "Aucun abonnement"
 ];
