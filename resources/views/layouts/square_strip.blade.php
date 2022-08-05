@@ -8,5 +8,6 @@
         <img src="/img/Payments/Apple.png" width="50" style="margin-right:2%"/>
         <img src="/img/Payments/Google.png" width="50" style="margin-right:2%"/>
     </div>
+    <br />
     <span class="text-copyright"><i>&copy Square, Inc. Square and the Square logo are trademarks of Square, Inc. Other trademarks and brands are the property of their respective owners.</i></span>
 </div>
