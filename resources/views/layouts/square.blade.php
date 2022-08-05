@@ -14,6 +14,7 @@
             <img src="/img/Payments/Google.png" width="100" style="margin-right:5%"/>
         </div>
     </div>
+    <br />
     <span class="text-copyright"><i>&copy Square, Inc. Square and the Square logo are trademarks of Square, Inc.</i></span>
     <br />
     <span class="text-copyright"><i>Other trademarks and brands are the property of their respective owners.</i></span>
