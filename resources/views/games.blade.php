@@ -11,10 +11,11 @@
 @endauth
 <div class="row">
     <div class="col-md-12">
-        <div class="col-md-6">
+        <div class="col-md-8">
             <h1>{{trans('generic.games')}} ({{$totalGameCount}})</h1>
+            <p>{{trans('game.page_description')}}</p>
         </div>
-        <div class="col-md-6 text-right">
+        <div class="col-md-4 text-right">
         @auth
             @if(Auth::user()->isDev || Auth::user()->isAdmin || Auth::user()->isModerator)
                 <button a class="btn btn-success" data-toggle="modal" data-target="#addConsoleModal" style="margin-top: 2.5%">{{trans('game.add_console')}}</button>
