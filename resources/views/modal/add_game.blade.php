@@ -18,7 +18,7 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label">{{trans('game.console')}}: </label>
                         <div class="col-sm-10">
-                            <select class="selectpicker" id="gameConsole" title="{{trans('generic.select_placeholder')}}">
+                            <select class="selectpicker" id="gameConsole" title="{{trans('generic.select_placeholder')}}" multiple>
                             @foreach($consoles as $key => $console)
                                 <option value="{{$console->id}}">{{$console->Console}}</option>
                             @endforeach
@@ -38,9 +38,15 @@
                         </div>
                     </div>
                     <div class="form-group">
+                        <label class="col-sm-2 control-label">{{trans('game.playlist')}}: </label>
+                        <div class="col-sm-10">
+                            <input id="gamePlaylist" type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <label class="col-sm-2 control-label">{{trans('game.format')}}: </label>
                         <div class="col-sm-10">
-                            <select class="selectpicker" id="gameFormat" title="{{trans('generic.select_placeholder')}}">
+                            <select class="selectpicker" id="gameFormat" title="{{trans('generic.select_placeholder')}}" multiple>
                                 <option value="0">{{trans('game.physical_copy')}}</option>
                                 <option value="1">{{trans('game.digital_copy')}}</option>
                             </select>
@@ -65,6 +71,7 @@ $('#submitAddGame').on('click', function() {
             'console': $('#gameConsole').val(),
             'date': $('#gameDate').val(),
             'coverURL': $('#gameCoverURL').val(),
+            'playlist': $('#gamePlaylist').val(),
             'format': $('#gameFormat').val(),
             _token: $('meta[name="csrf-token"]').attr('content')
         },

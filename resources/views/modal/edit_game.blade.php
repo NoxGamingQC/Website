@@ -10,6 +10,9 @@
             <form class="form-horizontal">
                 <div class="modal-body">
                     <div class="form-group">
+                        <input id="editGameID" type="hidden" class="form-control">
+                    </div>
+                    <div class="form-group">
                         <label class="col-sm-2 control-label">{{trans('game.game')}}: </label>
                         <div class="col-sm-10">
                             <input id="editGameName" type="text" class="form-control" value="">
@@ -18,7 +21,7 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label">{{trans('game.console')}}: </label>
                         <div class="col-sm-10">
-                            <select class="selectpicker" id="editGameConsole" title="{{trans('generic.select_placeholder')}}">
+                            <select class="selectpicker" id="editGameConsole" title="{{trans('generic.select_placeholder')}}" multiple>
                             @foreach($consoles as $key => $console)
                                 <option value="{{$console->id}}">{{$console->Console}}</option>
                             @endforeach
@@ -38,9 +41,15 @@
                         </div>
                     </div>
                     <div class="form-group">
+                        <label class="col-sm-2 control-label">{{trans('game.playlist')}}: </label>
+                        <div class="col-sm-10">
+                            <input id="editGamePlaylist" type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <label class="col-sm-2 control-label">{{trans('game.format')}}: </label>
                         <div class="col-sm-10">
-                            <select class="selectpicker" id="editGameFormat" title="{{trans('generic.select_placeholder')}}">
+                            <select class="selectpicker" id="editGameFormat" title="{{trans('generic.select_placeholder')}}" multiple>
                                 <option value="0">{{trans('game.physical_copy')}}</option>
                                 <option value="1">{{trans('game.digital_copy')}}</option>
                             </select>
@@ -61,11 +70,13 @@ $('#submitEditGame').on('click', function() {
         url: "/" + $('html').attr('lang') + "/games/edit",
         method: "post",
         data: {
+            'id': $('#editGameID').val(),
             'game': $('#editGameName').val(),
             'console': $('#editGameConsole').val(),
             'date': $('#editGameDate').val(),
             'coverURL': $('#editGameCoverURL').val(),
             'format': $('#editGameFormat').val(),
+            'playlist': $('#editGamePlaylist').val(),
             _token: $('meta[name="csrf-token"]').attr('content')
         },
         success: function() {
