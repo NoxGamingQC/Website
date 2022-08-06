@@ -111,6 +111,7 @@ Route::group([
 
                 Route::get('/games', 'GamesListController@index');
                 Route::post('/games/add', 'GamesListController@addgame');
+                Route::post('/games/edit', 'GamesListController@editgame');
                 Route::post('/games/remove', 'GamesListController@removegame');
                 Route::post('/console/add', 'GamesListController@addconsole');
                 Route::post('/console/remove', 'GamesListController@removeconsole');

@@ -10,5 +10,6 @@ return [
     'cover_url' => "Game cover (URL)",
     'format' => "Format",
     'physical_copy' => "Physical copy",
-    'digital_copy' => "Digital copy"
+    'digital_copy' => "Digital copy",
+    'edit_game' => "Edit a game"
 ];

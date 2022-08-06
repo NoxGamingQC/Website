@@ -10,5 +10,6 @@ return [
     'cover_url' => "Pochette de jeu (lien)",
     'format' => "Format",
     'physical_copy' => "Copie physique",
-    'digital_copy' => "Copie digital"
+    'digital_copy' => "Copie digital",
+    'edit_game' => "Modifier un jeu"
 ];

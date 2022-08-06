@@ -24,41 +24,57 @@
         @endauth
         </div>
     </div>
-    <div class="col-md-12">
-    <hr />
     @foreach($consoles as $key=>$console)
-        <h3>{{$console->Console}} ({{count($gamesList[$console->id])}})</h3>
+        @if(array_key_exists($console->id, $gamesList))
+        <div class="col-md-12">
+            <h3>{{$console->Console}} ({{count($gamesList[$console->id])}})</h3>
+            <hr />
             <br />
             <div class="row">
                 <div class="col-md-12">
                     @php ($currentCount = 0)
                     @foreach($gamesList[$console->id] as $key => $game)
-                    <div class="col-md-3">
-                        <div class="panel panel-primary text-center">
-                            <div class="panel-body" style="background-image: url('https://static-cdn.jtvnw.net/ttv-boxart/{{$game->Game}}-285x380.jpg') !important; background-size: cover !important; height: 380px !important;">
-                                <h2 class="game-title"><b>{{preg_replace('/\\\\/', '', $game->Game)}}</b></h2>
-                                <input id="gameName-{{$game->id}}" type="hidden" value="{{$game->Game}}">
-                                <input id="gameConsole-{{$game->id}}" type="hidden" value="{{$game->Console}}">
-                                <input id="gameDate-{{$game->id}}" type="hidden" value="{{$game->Date}}">
-                                <input id="gameCoverURL-{{$game->id}}" type="hidden" value="{{$game->CoverURL}}">
-                                <input id="gameFormat-{{$game->id}}" type="hidden" value="{{$game->format}}">
-                                <button id="{{$game->id}}" class="edit-game-button btn btn-info" type="button" data-toggle="modal" data-target="#editGameModal">{{trans('generic.see_more')}}</button>
+                        <div class="col-md-3">
+                            @if(is_int($game))
+                                <div class="panel panel-primary text-center">
+                                    <div class="panel-body" style="background-image: url('https://static-cdn.jtvnw.net/ttv-boxart/{{$games[$gameID]->Game}}-285x380.jpg') !important; background-size: cover !important; height: 380px !important;">
+                                        <h2 class="game-title"><b>{{preg_replace('/\\\\/', '', $games[$game]->Game)}}</b></h2>
+                                        <input id="gameName-{{$game}}" type="hidden" value="{{$games[$game]->Game}}">
+                                        <input id="gameConsole-{{$game}}" type="hidden" value="{{$games[$game]->Console}}">
+                                        <input id="gameDate-{{$game}}" type="hidden" value="{{$games[$game]->Date}}">
+                                        <input id="gameCoverURL-{{$game}}" type="hidden" value="{{$games[$game]->CoverURL}}">
+                                        <input id="gamePlaylist-{{$game}}" type="hidden" value="{{$games[$game]->Playlist}}">
+                                        <input id="gameFormat-{{$game}}" type="hidden" value="{{$games[$game]->Format}}">
+                                        <button id="{{$game}}" class="edit-game-button btn btn-info" type="button" data-toggle="modal" data-target="#editGameModal">{{trans('generic.see_more')}}</button>
+                                    </div>
+                                </div>
+                            @else
+                                <div class="panel panel-primary text-center">
+                                    <div class="panel-body" style="background-image: url('https://static-cdn.jtvnw.net/ttv-boxart/{{$game->Game}}-285x380.jpg') !important; background-size: cover !important; height: 380px !important;">
+                                        <h2 class="game-title"><b>{{preg_replace('/\\\\/', '', $game->Game)}}</b></h2>
+                                        <input id="gameName-{{$game->id}}" type="hidden" value="{{$game->Game}}">
+                                        <input id="gameConsole-{{$game->id}}" type="hidden" value="{{$game->Console}}">
+                                        <input id="gameDate-{{$game->id}}" type="hidden" value="{{$game->Date}}">
+                                        <input id="gameCoverURL-{{$game->id}}" type="hidden" value="{{$game->CoverURL}}">
+                                        <input id="gamePlaylist-{{$game->id}}" type="hidden" value="{{$game->Playlist}}">
+                                        <input id="gameFormat-{{$game->id}}" type="hidden" value="{{$game->Format}}">
+                                        <button id="{{$game->id}}" class="edit-game-button btn btn-info" type="button" data-toggle="modal" data-target="#editGameModal">{{trans('generic.see_more')}}</button>
+                                    </div>
+                                </div>
+                            @endif
+                        </div>
+                        @if($currentCount == 3)
                             </div>
-                        </div>
-                    </div>
-                    @if($currentCount == 3)
-                        </div>
-                        <div class="col-md-12">
-                        @php ($currentCount = 0)
-                    @else
-                        @php ($currentCount += 1)
-                    @endif
+                            <div class="col-md-12">
+                            @php ($currentCount = 0)
+                        @else
+                            @php ($currentCount += 1)
+                        @endif
                     @endforeach
-                </div>
+                @endif
             </div>
-            @endforeach
         </div>
-    </div>
+    @endforeach
 </div>
 <script>
 $('.edit-game-button').on('click', function() {
@@ -67,12 +83,15 @@ var oldGameName = $('#gameName-' + id).val();
 var oldGameConsole = $('#gameConsole-' + id).val();
 var oldGameFormat = $('#gameFormat-' + id).val();
 var oldGameDate = $('#gameGameDate-' + id).val();
+var oldGamePlaylist = $('#gameGamePlaylist-' + id).val();
 var oldGameCoverURL = $('#gameCoverURL-' + id).val();
 
+$('#editGameID').val(id);
 $('#editGameName').val(oldGameName);
 $('#editGameConsole').selectpicker('val', oldGameConsole);
 $('#editGameDate').val(oldGameDate);
 $('#editGameCoverURL').val(oldGameCoverURL);
+$('#editGamePlaylist').val(oldGamePlaylist);
 $('#editGameFormat').selectpicker('val', oldGameFormat ? 1 : 0);
 });
 </script>

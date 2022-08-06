@@ -19,15 +19,31 @@ class GamesListController extends Controller
         if(PageLists::where('slug', 'games')->first()->inMaintenance && env('APP_ENV') == 'production') {
             abort(503);
         }
-        $games = GamesList::all();
+        $gamesDB = GamesList::all();
         $consoles = ConsolesList::all();
         $gamesList = [];
-        foreach($consoles as $key => $value) {
-            $gamesList[$value->id] = GamesList::where('Console', $value->id)->get();
+        foreach($gamesDB as $key => $game) {
+            $games[$game->id] = $game;
+
+            $gameConsole = explode(',', $game->Console);
+            if(count($gameConsole) > 1) {
+                foreach($gameConsole as $key => $value) {
+                    if(array_key_exists($value, $gamesList) && count($gamesList[$value]) > 1) {
+                        $gamesList[$value] .= $game->id;
+                    } else {
+                        $gamesList[$value] = $game->id;
+                    }
+                }
+            } else {
+                foreach($consoles as $key => $console) {
+                    $gamesList[$console->id] = GamesList::where('Console', $console->id)->get();
+                }
+            }    
         }
-        $totalGameCount = count($games);
+        $totalGameCount = count($gamesDB);
         return view('games', [
             'consoles' => $consoles,
+            'games' => $games,
             'gamesList' => $gamesList,
             'totalGameCount' => $totalGameCount
         ]);
@@ -40,10 +56,11 @@ class GamesListController extends Controller
                 $newGame = new GamesList;
                 
                 $newGame->Game = $request->game;
-                $newGame->Console = $request->console;
+                $newGame->Console = implode(',', $request->console);
                 $newGame->Date = $request->date;
                 $newGame->CoverURL = $request->coverURL;
-                $newGame->format = $request->format;
+                $newGame->Format = implode(',', $request->format);
+                $game->Playlist = $request->playlist;
 
                 $newGame->save();
 
@@ -51,6 +68,25 @@ class GamesListController extends Controller
             } else {
                 abort(403);
             }
+        } else {
+            abort(403);
+        }
+    }
+
+    public function editGame(Request $request) {
+        if (Auth::user()->isAdmin) {
+            $game = GamesList::findOrFail($request->id);
+            $game->Game = $request->game;
+            $game->Console = implode(',', $request->console);
+            $game->Date = $request->date;
+            $game->CoverURL = $request->coverURL;
+            $game->Format = implode(',', $request->format);
+            $game->Playlist = $request->playlist;
+
+            $game->save();
+
+            return 0;
+            
         } else {
             abort(403);
         }
