@@ -28,11 +28,7 @@ class GamesListController extends Controller
             $gameConsole = explode(',', $game->Console);
             if(count($gameConsole) > 1) {
                 foreach($gameConsole as $key => $value) {
-                    if(array_key_exists($value, $gamesList) && count($gamesList[$value]) > 1) {
-                        $gamesList[$value] .= $game->id;
-                    } else {
-                        $gamesList[$value] = $game->id;
-                    }
+                    $gamesList[$value] = $game;
                 }
             } else {
                 foreach($consoles as $key => $console) {
