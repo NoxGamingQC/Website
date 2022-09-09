@@ -3051,7 +3051,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 vr {
-  border-left: 1px solid #555;
+  border-left: 1px solid #000;
   height: 500px;
   position: absolute;
   left: 50%;
@@ -3099,11 +3099,11 @@ p, a, li {
 }
 
 a:link, a:visited {
-  color: #555;
+  color: #000;
 }
 
 a:hover, a:active {
-  color: #555;
+  color: #000;
 }
 
 .btn-lg {
@@ -3168,7 +3168,7 @@ fieldset[disabled] .btn-default.active {
 .btn-primary.active,
 .open .dropdown-toggle.btn-primary {
   color: #fff !important;
-  background-color: #555;
+  background-color: #000;
   border-color: #e6e6e6;
 }
 
@@ -3670,7 +3670,7 @@ fieldset[disabled] .btn-reddit.active {
 
 .panel-primary > .panel-heading {
   background-image: none;
-  background-color: #555;
+  background-color: #000;
   color: #000000;
   border-color: #bfbfbf;
 }
@@ -3688,9 +3688,9 @@ fieldset[disabled] .btn-reddit.active {
 
 .panel-block-primary > .panel-body {
   background-image: none;
-  background-color: #555;
+  background-color: #000;
   color: #000000;
-  border-color: #555;
+  border-color: #000;
 }
 @media (min-width: 1210px) {
   .panel-block-primary > .panel-body {
@@ -3879,7 +3879,7 @@ textarea[type=text]:focus {
   }
 }
 .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
-  color: #000;
+  color: #fff;
 }
 .navbar-default .navbar-text {
   color: #000000;
@@ -3899,8 +3899,8 @@ textarea[type=text]:focus {
   }
 }
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-  color: #000000;
-  background-color: #555;
+  color: #fff;
+  background-color: #000;
 }
 .navbar-default .navbar-nav > li > a.disabled {
   color: #414141;
@@ -3926,9 +3926,9 @@ textarea[type=text]:focus {
   color: #000000;
 }
 .navbar-default .navbar-nav > li > .dropdown-menu > li > a:hover, .navbar-default .navbar-nav > li > .dropdown-menu > li > a:focus {
-  color: #000000;
-  border-color: #555;
-  background-color: #555;
+  color: #fff;
+  border-color: #000;
+  background-color: #000;
 }
 .navbar-default .navbar-nav > li > .dropdown-menu > li > a > a.disabled {
   color: #414141 !important;
@@ -3939,11 +3939,11 @@ textarea[type=text]:focus {
   background-color: #fff !important;
 }
 .navbar-default .navbar-nav > li > .dropdown-menu > li.divider {
-  background-color: #555;
+  background-color: #000;
 }
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
   color: #000000;
-  background-color: #555;
+  background-color: #000;
 }
 .navbar-default .navbar-nav > .active > a.disabled {
   color: #414141 !important;
@@ -3954,8 +3954,8 @@ textarea[type=text]:focus {
   background-color: #fff !important;
 }
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
-  color: #000000;
-  background-color: #555;
+  color: #fff;
+  background-color: #000;
 }
 .navbar-default .navbar-nav > .open > a.disabled {
   color: #414141 !important;
@@ -3969,7 +3969,7 @@ textarea[type=text]:focus {
   border-color: #e6e6e6;
 }
 .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
-  background-color: #555;
+  background-color: #000;
 }
 .navbar-default .navbar-toggle:hover .icon-bar, .navbar-default .navbar-toggle:focus .icon-bar {
   background-color: #000000;
@@ -3984,7 +3984,7 @@ textarea[type=text]:focus {
   color: #000000;
 }
 .navbar-default .navbar-link:hover {
-  color: #000;
+  color: #fff;
 }
 .navbar-default .nav-searchbar {
   margin-top: 6%;
@@ -3995,11 +3995,11 @@ textarea[type=text]:focus {
     color: #000000;
   }
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-    color: #000;
+    color: #fff;
   }
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
     color: #000000;
-    background-color: #555;
+    background-color: #000;
   }
 }
 @media (min-width: 768px) {
@@ -4070,7 +4070,7 @@ textarea[type=text]:focus {
 }
 
 .table-primary {
-  background-color: #555;
+  background-color: #000;
 }
 
 .badge-danger {
@@ -4109,7 +4109,7 @@ textarea[type=text]:focus {
 }
 
 .badge-primary {
-  background-color: #555;
+  background-color: #000;
   text-align: center;
   border-radius: 5px 5px 5px 5px;
   padding: 5px;
@@ -4130,7 +4130,7 @@ h4.stroke {
 }
 
 hr {
-  border-top: 1px solid #555;
+  border-top: 1px solid #000;
 }
 
 .close {
@@ -4171,7 +4171,7 @@ hr {
 }
 
 .primary-text {
-  color: #555 !important;
+  color: #000 !important;
 }
 
 .text-copyright {
@@ -4363,7 +4363,7 @@ button.toast-close-button {
 }
 
 .toast {
-  background-color: #555;
+  background-color: #000;
 }
 
 .toast-success {
@@ -4425,11 +4425,11 @@ button.toast-close-button {
 }
 
 td.active.day {
-  background-color: #555;
+  background-color: #000;
 }
 
 td.day:hover {
-  background-color: #959595;
+  background-color: #404040;
 }
 
 td.disabled.day {

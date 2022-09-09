@@ -34,7 +34,7 @@ $dropdown: true;
                     padding-bottom: 25px;
                 }
                 &:hover,  &:focus {
-                    color: $text-color;
+                    color: $text-highlight;
                     background-color: $brand-primary;
                 }
             }
@@ -60,7 +60,7 @@ $dropdown: true;
                         > a {
                             color: $text-color;
                             &:hover,  &:focus {
-                                color: $text-color;
+                                color: $text-highlight;
                                 border-color: $brand-primary;
                                 background-color: $brand-primary;
                             }
@@ -96,7 +96,7 @@ $dropdown: true;
         }
         > .open {
             > a, > a:hover, > a:focus {
-                color: $text-color;
+                color: $text-highlight;
                 background-color: $brand-primary;
             }
             > a.disabled {
