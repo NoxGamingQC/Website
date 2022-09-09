@@ -1,6 +1,7 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
+    "/css/queenSkin.css": "/css/queenSkin.css",
     "/css/lightSkin.css": "/css/lightSkin.css",
     "/css/draculaSkin.css": "/css/draculaSkin.css",
     "/css/defaultSkin.css": "/css/defaultSkin.css",
