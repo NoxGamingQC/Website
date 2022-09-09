@@ -9,7 +9,7 @@
                 <h1 class="raleway-font" style="color:white;">NoxGamingQC</h1>
                 <br />
                 <br />
-                <h5 class="raleway-font" style="color:white; font-size: 18px">Rest in peace to our majesty Queen Elizabeth II</h5>
+                <h5 class="raleway-font" style="color:white; font-size: 18px">Rest in peace your majesty Queen Elizabeth II</h5>
                 <h5 class="raleway-font" style="color:white; font-size: 18px">1926 - 2022</h5>
                 <!--<h5 class="raleway-font" style="font-size: 18px">{trans('welcome.slogan')}</h5>-->
                 <br />
