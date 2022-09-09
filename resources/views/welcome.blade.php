@@ -6,11 +6,15 @@
     <div class="col-md-12 text-center full-height" id="title">
         <div class="panel panel-block-primary">
             <div class="panel-body" style="padding: 5%">
-                <h1 class="raleway-font">NoxGamingQC</h1>
+                <h1 class="raleway-font" style="color:white;">NoxGamingQC</h1>
                 <br />
-                <h5 class="raleway-font" style="font-size: 18px">{{trans('welcome.slogan')}}</h5>
                 <br />
-                @include('layouts.socials')
+                <h5 class="raleway-font" style="color:white; font-size: 18px">Rest in peace to our majesty Queen Elizabeth II</h5>
+                <h5 class="raleway-font" style="color:white; font-size: 18px">1926 - 2022</h5>
+                <!--<h5 class="raleway-font" style="font-size: 18px">{trans('welcome.slogan')}</h5>-->
+                <br />
+                <!--include('layouts.socials')-->
+
             </div>
         </div>
     </div>

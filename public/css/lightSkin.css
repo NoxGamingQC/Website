@@ -3899,7 +3899,7 @@ textarea[type=text]:focus {
   }
 }
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-  color: #000;
+  color: #222;
   background-color: #337ab7;
 }
 .navbar-default .navbar-nav > li > a.disabled {
@@ -3926,7 +3926,7 @@ textarea[type=text]:focus {
   color: #000;
 }
 .navbar-default .navbar-nav > li > .dropdown-menu > li > a:hover, .navbar-default .navbar-nav > li > .dropdown-menu > li > a:focus {
-  color: #000;
+  color: #222;
   border-color: #337ab7;
   background-color: #337ab7;
 }
@@ -3954,7 +3954,7 @@ textarea[type=text]:focus {
   background-color: #FFF !important;
 }
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
-  color: #000;
+  color: #222;
   background-color: #337ab7;
 }
 .navbar-default .navbar-nav > .open > a.disabled {

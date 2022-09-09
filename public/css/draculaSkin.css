@@ -3899,7 +3899,7 @@ textarea[type=text]:focus {
   }
 }
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-  color: #ffffff;
+  color: #CCCCCC;
   background-color: #BD93F9;
 }
 .navbar-default .navbar-nav > li > a.disabled {
@@ -3926,7 +3926,7 @@ textarea[type=text]:focus {
   color: #ffffff;
 }
 .navbar-default .navbar-nav > li > .dropdown-menu > li > a:hover, .navbar-default .navbar-nav > li > .dropdown-menu > li > a:focus {
-  color: #ffffff;
+  color: #CCCCCC;
   border-color: #BD93F9;
   background-color: #BD93F9;
 }
@@ -3954,7 +3954,7 @@ textarea[type=text]:focus {
   background-color: #282A36 !important;
 }
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
-  color: #ffffff;
+  color: #CCCCCC;
   background-color: #BD93F9;
 }
 .navbar-default .navbar-nav > .open > a.disabled {
