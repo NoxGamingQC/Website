@@ -8,6 +8,7 @@
             <div class="panel-body" style="padding: 5%">
                 <h1 class="raleway-font" style="color:white;">NoxGamingQC</h1>
                 <br />
+                <hr />
                 <br />
                 <h5 class="raleway-font" style="color:white; font-size: 18px">Rest in peace your majesty Queen Elizabeth II</h5>
                 <h5 class="raleway-font" style="color:white; font-size: 18px">1926 - 2022</h5>
