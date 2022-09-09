@@ -4435,3 +4435,8 @@ td.day:hover {
 td.disabled.day {
   background-color: #414141;
 }
+
+.crt-grid-post-image {
+  filter: gray; /* IE6-9 */ /* Google Chrome, Safari 6+ & Opera 15+ */
+  filter: grayscale(1); /* Microsoft Edge and Firefox 35+ */
+}
