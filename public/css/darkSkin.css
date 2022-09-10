@@ -4305,7 +4305,8 @@ a.text-highlight {
 }
 
 .title {
-  text-shadow: -2px 0 #ffffff, 0 2px #ffffff, 2px 0 #ffffff, 0 -2px #ffffff;
+  color: #000000;
+  text-shadow: -2px 0 #FFFFFF, 0 2px #FFFFFF, 2px 0 #FFFFFF, 0 -2px #FFFFFF;
 }
 
 .toast-title {
