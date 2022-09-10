@@ -144,6 +144,8 @@ Route::group([
                 Route::get('/management/tasks', 'ToDoListController@index');
                 Route::get('/management/logs', 'LogsController@index');
                 Route::get('/management/logs/download', 'LogsController@download');
+                Route::get('/management/settings', 'SettingsController@index');
+                Route::post('/management/settings', 'SettingsController@post');
             }
         );
     }
