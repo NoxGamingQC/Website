@@ -9,7 +9,7 @@
             </button>
             <div>
                 <img class="img" src="/img/NGST.png" width="60" height="60" />
-                <h3 class="raleway-font" style="display: inline; margin: 5px;">NGST</h3>
+                <h3 class="rochester-font" style="display: inline; margin: 5px; margin-top: 15px; font-stretch: ultra-expanded;">NGST</h3>
                 @include('layouts.socials')
             </div>
         </div>

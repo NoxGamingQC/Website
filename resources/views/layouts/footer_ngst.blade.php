@@ -2,7 +2,7 @@
     <div class="col-md-12 text-center">
         <hr />
         <div style="margin:5%;">
-            <h3 class="raleway-font">NGST</h3>
+            <h3 class="rochester-font title" style="font-stretch: ultra-expanded; font-size: 250%; font-weight: 900;">NGST</h3>
             <br />
             <h5 class="raleway-font"><a class="text-color" href="mailto:nox@noxgamingqc.ca">nox@noxgamingqc.ca</a></h5>
             <h5 class="raleway-font"><a class="text-color" href="tel:819-852-8705">819-852-8705</a></h5>
