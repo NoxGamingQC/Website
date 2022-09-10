@@ -15,7 +15,7 @@
     @else
     <title>{{env('APP_NAME')}} - @yield('title')</title>
     @endif
-    <link rel="icon" href="/img/Avatar.png" type="image/png">
+    <link rel="icon" href="/img/NoxGamingQC.png" type="image/png">
     <link href="{{mix('css/bootstrap.css')}}" rel="stylesheet" type="text/css">
     <link href="{{mix('css/app.css')}}" rel="stylesheet" type="text/css">
     <link href="{{mix('css/queenSkin.css')}}" rel="stylesheet" type="text/css">
