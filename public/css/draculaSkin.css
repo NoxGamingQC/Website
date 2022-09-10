@@ -4080,36 +4080,16 @@ hr {
   opacity: 1;
 }
 
-.error-text {
-  color: #CA62B8 !important;
-}
-
 .text-error {
   color: #CA62B8 !important;
-}
-
-.warning-text {
-  color: #D9D068 !important;
 }
 
 .text-warning {
   color: #D9D068 !important;
 }
 
-.info-text {
-  color: #80DCEE !important;
-}
-
 .text-info {
   color: #80DCEE !important;
-}
-
-.success-text {
-  color: #48D06D !important;
-}
-
-.primary-text {
-  color: #BD93F9 !important;
 }
 
 .text-copyright {
