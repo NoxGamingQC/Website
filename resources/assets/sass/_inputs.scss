@@ -2,7 +2,7 @@ input[type=text] {
     background-color:transparent !important;
     border-color: transparent !important;
     color: $text-color !important;
-    border-bottom: 1px solid $text-color !important;
+    border-bottom: 1px solid $border-color !important;
     border-radius: 0 !important;
 }
 
@@ -10,7 +10,7 @@ input[type=password] {
     background-color:transparent !important;
     border-color: transparent !important;
     color: $text-color !important;
-    border-bottom: 1px solid $text-color !important;
+    border-bottom: 1px solid $border-color !important;
     border-radius: 0 !important;
 }
 
@@ -18,7 +18,7 @@ input[type=email] {
     background-color:transparent !important;
     border-color: transparent !important;
     color: $text-color !important;
-    border-bottom: 1px solid $text-color !important;
+    border-bottom: 1px solid $border-color !important;
     border-radius: 0 !important;
 }
 
@@ -26,7 +26,7 @@ textarea[type=text] {
     background-color:transparent !important;
     border-color: transparent !important;
     color: $text-color !important;
-    border-bottom: 1px solid $text-color !important;
+    border-bottom: 1px solid $border-color !important;
     border-radius: 0 !important;
 }
 
@@ -37,7 +37,7 @@ input[type=text]:focus {
     box-shadow: none;
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
-    border-color: $text-color;
+    border-color: $border-color;
 }
 
 input[type=password]:focus {
@@ -47,7 +47,7 @@ input[type=password]:focus {
     box-shadow: none;
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
-    border-color: $text-color;
+    border-color: $border-color;
 }
 input[type=email]:focus {
     background-color:transparent !important;
@@ -56,7 +56,7 @@ input[type=email]:focus {
     box-shadow: none;
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
-    border-color: $text-color;
+    border-color: $border-color;
 }
 
 textarea[type=text]:focus {
@@ -66,5 +66,5 @@ textarea[type=text]:focus {
     box-shadow: none;
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
-    border-color: $text-color;
+    border-color: $border-color;
 }

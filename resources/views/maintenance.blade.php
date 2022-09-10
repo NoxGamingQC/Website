@@ -27,32 +27,32 @@
         <div class="col-md-12 text-center">
             <div class="panel panel-block-primary">
                 <div class="panel-body">
-                    <h1>{{trans('maintenance.error')}}</h1>
+                    <h1 class="text-highlight">{{trans('maintenance.error')}}</h1>
                     <hr />
-                    <h5>{{trans('maintenance.maintenance_text')}}</h5>
+                    <h5 class="text-highlight">{{trans('maintenance.maintenance_text')}}</h5>
                     <img src="/img/Avatar.png" width="10%" />
-                    <p>{{trans('maintenance.explanation')}}</p>
+                    <p class="text-highlight">{{trans('maintenance.explanation')}}</p>
                     <br />
-                    <em>{{trans('maintenance.dev_only')}}</em>
+                    <em class="text-highlight">{{trans('maintenance.dev_only')}}</em>
                     <br />
                     @guest
                         <br />
-                        <a class="btn btn-primary" data-toggle="modal" data-target="#loginModal">{{trans('generic.login')}}</a>
-                        <a class="btn btn-primary" data-toggle="modal" data-target="#registerModal">{{trans('generic.register')}}</a>
+                        <a class="btn btn-default" data-toggle="modal" data-target="#loginModal">{{trans('generic.login')}}</a>
+                        <a class="btn btn-default" data-toggle="modal" data-target="#registerModal">{{trans('generic.register')}}</a>
                     @endguest
                     <br />
                     <br />
                     <div class="text center">
-                        <a id="frLink" class="text-color hidden" href="/fr/maintenance"> Français ({{trans("generic.french")}})</a>
-                        <a id="enLink" class="text-color hidden" href="/en/maintenance"> English ({{trans("generic.english")}})</a>
+                        <a id="frLink" class="text-highlight hidden" href="/fr/maintenance"> Français ({{trans("generic.french")}})</a>
+                        <a id="enLink" class="text-highlight hidden" href="/en/maintenance"> English ({{trans("generic.english")}})</a>
                     </div>
                     @auth
                         <hr />
                         <div class="col-md-10">
-                            <p>{{trans('maintenance.already_logged_in')}} <a class="text-color" href="/{{app()->getLocale()}}/home">{{trans('maintenance.travel_to_home_page')}}</a></p>
+                            <p class="text-highlight">{{trans('maintenance.already_logged_in')}} <a class="text-highlight" href="/{{app()->getLocale()}}/home">{{trans('maintenance.travel_to_home_page')}}</a></p>
                         </div>
                         <div class="col-md-2 text-right">
-                            <a class="btn btn-primary" href="/logout"> {{trans('generic.logout')}}</a>
+                            <a class="btn btn-default text-highlight" href="/logout"> {{trans('generic.logout')}}</a>
                         </div>
                     @endauth
                 </div>

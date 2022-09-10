@@ -3,9 +3,9 @@
 }
 
 .btn-default {
-    color: $text-color !important;
+    color: $text-highlight-color !important;
     background-color: transparent;
-    border-color: $laravel-border-color;
+    border-color: $border-color;
 }
 
 .btn-default:hover,
@@ -15,7 +15,7 @@
 .open .dropdown-toggle.btn-default {
     color: $text-color !important;
     background-color: $background-color;
-    border-color: $laravel-border-color;
+    border-color: $border-color;
 }
 
 .btn-default:active,
@@ -39,8 +39,8 @@ fieldset[disabled] .btn-default:active,
 .btn-default.disabled.active,
 .btn-default[disabled].active,
 fieldset[disabled] .btn-default.active {
-    background-color: $laravel-border-color;
-    border-color: $laravel-border-color;
+    background-color: $border-color;
+    border-color: $border-color;
 }
 
 .btn-default .badge {
@@ -51,7 +51,7 @@ fieldset[disabled] .btn-default.active {
 .btn-primary {
     color: $text-color !important;
     background-color: transparent;
-    border-color: $laravel-border-color;
+    border-color: $border-color;
 }
 
 .btn-primary:hover,
@@ -59,9 +59,9 @@ fieldset[disabled] .btn-default.active {
 .btn-primary:active,
 .btn-primary.active,
 .open .dropdown-toggle.btn-primary {
-    color: $lightmode-text-color !important;
+    color: $text-highlight-color !important;
     background-color: $brand-primary;
-    border-color: $laravel-border-color;
+    border-color: $border-color;
 }
 
 .btn-primary:active,
@@ -86,7 +86,7 @@ fieldset[disabled] .btn-primary:active,
 .btn-primary[disabled].active,
 fieldset[disabled] .btn-primary.active {
     background-color: $background-color;
-    border-color: $laravel-border-color;
+    border-color: $border-color;
 }
 
 .btn-primary .badge {
@@ -97,7 +97,7 @@ fieldset[disabled] .btn-primary.active {
 .btn-twitch {
     color: $text-color !important;
     background-color: transparent;
-    border-color: $pannel-border-color;
+    border-color: $border-color;
 }
 
 .btn-twitch:hover,
@@ -132,7 +132,7 @@ fieldset[disabled] .btn-twitch:active,
 .btn-twitch[disabled].active,
 fieldset[disabled] .btn-twitch.active {
     background-color: $background-color;
-    border-color: $laravel-border-color;
+    border-color: $border-color;
 }
 
 .btn-twitch .badge {
@@ -143,7 +143,7 @@ fieldset[disabled] .btn-twitch.active {
 .btn-youtube {
     color: $text-color !important;
     background-color: transparent;
-    border-color: $pannel-border-color;
+    border-color: $border-color;
 }
 
 .btn-youtube:hover,
@@ -178,7 +178,7 @@ fieldset[disabled] .btn-youtube:active,
 .btn-youtube[disabled].active,
 fieldset[disabled] .btn-youtube.active {
     background-color: $background-color;
-    border-color: $laravel-border-color;
+    border-color: $border-color;
 }
 
 .btn-youtube .badge {
@@ -189,7 +189,7 @@ fieldset[disabled] .btn-youtube.active {
 .btn-twitter {
     color: $text-color !important;
     background-color: transparent;
-    border-color: $pannel-border-color;
+    border-color: $border-color;
 }
 
 .btn-twitter:hover,
@@ -224,7 +224,7 @@ fieldset[disabled] .btn-twitter:active,
 .btn-twitter[disabled].active,
 fieldset[disabled] .btn-twitter.active {
     background-color: $background-color;
-    border-color: $laravel-border-color;
+    border-color: $border-color;
 }
 
 .btn-twitter .badge {
@@ -235,7 +235,7 @@ fieldset[disabled] .btn-twitter.active {
 .btn-facebook {
     color: $text-color !important;
     background-color: transparent;
-    border-color: $pannel-border-color;
+    border-color: $border-color;
 }
 
 .btn-facebook:hover,
@@ -270,7 +270,7 @@ fieldset[disabled] .btn-facebook:active,
 .btn-facebook[disabled].active,
 fieldset[disabled] .btn-facebook.active {
     background-color: $background-color;
-    border-color: $laravel-border-color;
+    border-color: $border-color;
 }
 
 .btn-facebook .badge {
@@ -281,7 +281,7 @@ fieldset[disabled] .btn-facebook.active {
 .btn-instagram {
     color: $text-color !important;
     background-color: transparent;
-    border-color: $pannel-border-color;
+    border-color: $border-color;
 }
 
 .btn-instagram:hover,
@@ -316,7 +316,7 @@ fieldset[disabled] .btn-instagram:active,
 .btn-instagram[disabled].active,
 fieldset[disabled] .btn-instagram.active {
     background-color: $background-color;
-    border-color: $laravel-border-color;
+    border-color: $border-color;
 }
 
 .btn-instagram .badge {
@@ -327,7 +327,7 @@ fieldset[disabled] .btn-instagram.active {
 .btn-steam {
     color: $text-color !important;
     background-color: transparent;
-    border-color: $pannel-border-color;
+    border-color: $border-color;
 }
 
 .btn-steam:hover,
@@ -362,7 +362,7 @@ fieldset[disabled] .btn-steam:active,
 .btn-steam[disabled].active,
 fieldset[disabled] .btn-steam.active {
     background-color: $background-color;
-    border-color: $laravel-border-color;
+    border-color: $border-color;
 }
 
 .btn-steam .badge {
@@ -373,7 +373,7 @@ fieldset[disabled] .btn-steam.active {
 .btn-github {
     color: #ffffff !important;
     background-color: transparent;
-    border-color: $pannel-border-color;
+    border-color: $border-color;
 }
 
 .btn-github:hover,
@@ -408,7 +408,7 @@ fieldset[disabled] .btn-github:active,
 .btn-github[disabled].active,
 fieldset[disabled] .btn-github.active {
     background-color: $background-color;
-    border-color: $laravel-border-color;
+    border-color: $border-color;
 }
 
 .btn-github .badge {
@@ -419,7 +419,7 @@ fieldset[disabled] .btn-github.active {
 .btn-snapchat {
     color: #ffffff !important;
     background-color: transparent;
-    border-color: $pannel-border-color;
+    border-color: $border-color;
 }
 
 .btn-snapchat:hover,
@@ -454,7 +454,7 @@ fieldset[disabled] .btn-snapchat:active,
 .btn-snapchat[disabled].active,
 fieldset[disabled] .btn-snapchat.active {
     background-color: $background-color;
-    border-color: $laravel-border-color;
+    border-color: $border-color;
 }
 
 .btn-snapchat .badge {
@@ -465,7 +465,7 @@ fieldset[disabled] .btn-snapchat.active {
 .btn-spotify {
     color: $text-color !important;
     background-color: transparent;
-    border-color: $pannel-border-color;
+    border-color: $border-color;
 }
 
 .btn-spotify:hover,
@@ -500,7 +500,7 @@ fieldset[disabled] .btn-spotify:active,
 .btn-spotify[disabled].active,
 fieldset[disabled] .btn-spotify.active {
     background-color: #191414;
-    border-color: $laravel-border-color;
+    border-color: $border-color;
 }
 
 .btn-spotify .badge {
@@ -511,7 +511,7 @@ fieldset[disabled] .btn-spotify.active {
 .btn-reddit {
     color: $text-color !important;
     background-color: transparent;
-    border-color: $pannel-border-color;
+    border-color: $border-color;
 }
 
 .btn-reddit:hover,
@@ -546,7 +546,7 @@ fieldset[disabled] .btn-reddit:active,
 .btn-reddit[disabled].active,
 fieldset[disabled] .btn-reddit.active {
     background-color: $background-color;
-    border-color: $laravel-border-color;
+    border-color: $border-color;
 }
 
 .btn-reddit .badge {
