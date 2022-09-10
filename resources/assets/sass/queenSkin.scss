@@ -15,7 +15,25 @@
 
 
 .crt-grid-post-image {
-    filter: gray; /* IE6-9 */
-    -webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
-    filter: grayscale(1); /* Microsoft Edge and Firefox 35+ */
+    filter: gray !important;
+    -webkit-filter: grayscale(1) !important;
+    filter: grayscale(1) !important; 
+}
+
+.img {
+    filter: gray !important;
+    -webkit-filter: grayscale(1) !important;
+    filter: grayscale(1) !important; ; 
+}
+
+.btn {
+    filter: gray !important;
+    -webkit-filter: grayscale(1) !important;
+    filter: grayscale(1) !important; 
+}
+
+.video-player {
+    filter: gray !important;
+    -webkit-filter: grayscale(1) !important;
+    filter: grayscale(1) !important; 
 }

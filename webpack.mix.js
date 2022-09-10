@@ -13,7 +13,7 @@ let mix = require('laravel-mix');
 
 mix.js('resources/assets/js/app.js', 'public/js');
 mix.copy('node_modules/Font-Awesome/fonts', 'public/fonts');
-mix.sass('resources/assets/sass/defaultSkin.scss', 'public/css');
+mix.sass('resources/assets/sass/darkSkin.scss', 'public/css');
 mix.sass('resources/assets/sass/draculaSkin.scss', 'public/css');
 mix.sass('resources/assets/sass/lightSkin.scss', 'public/css');
 mix.sass('resources/assets/sass/queenSkin.scss', 'public/css');

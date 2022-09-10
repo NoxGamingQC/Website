@@ -2,18 +2,18 @@
     background-image: none;
     background-color: $brand-primary;
     color: $text-color;
-    border-color: $pannel-border-color;
+    border-color: $border-color;
 }
 
 .panel-primary > .panel-body {
     background-image: none;
     background-color: $background-color;
     color: $text-color;
-    border-color: $pannel-border-color;
+    border-color: $border-color;
 }
 
 .panel-primary {
-    border-color: $pannel-border-color !important;
+    border-color: $border-color !important;
 }
 
 .panel-block-primary > .panel-body {
@@ -30,7 +30,7 @@
 }
 
 .panel-block-primary {
-    border-color: $brand-highlight;
+    border-color: $brand-primary;
 }
 
 .panel-block-primary > .panel-body > h1 {

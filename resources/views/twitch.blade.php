@@ -12,7 +12,7 @@
             <div class="row">
                 <div class="col-md-7" id="twitchPlayer">
                     <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" src="https://player.twitch.tv/?channel=noxgamingqc&parent={{env('APP_URL') == 'http://localhost'? str_replace("http://","",env('APP_URL')) : str_replace("https://","",env('APP_URL'))}}&enableExtensions=true&muted=true&autoplay=true" frameBorder="0" allowFullScreen="true" scrolling="no"></iframe>
+                        <iframe class="video-player embed-responsive-item" src="https://player.twitch.tv/?channel=noxgamingqc&parent={{env('APP_URL') == 'http://localhost'? str_replace("http://","",env('APP_URL')) : str_replace("https://","",env('APP_URL'))}}&enableExtensions=true&muted=true&autoplay=true" frameBorder="0" allowFullScreen="true" scrolling="no"></iframe>
                     </div>
                 </div>
                 <div class="col-md-5 text-center" id="twitchDefinition">

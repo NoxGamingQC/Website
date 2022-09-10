@@ -8,7 +8,7 @@
                 <span class="icon-bar"></span>
             </button>
             <div>
-                <img src="/img/Avatar.png" width="60" height="60" />
+                <img class="img" src="/img/NoxGamingQC.png" width="60" height="60" />
                 <h3 class="raleway-font" style="display: inline; margin: 5px;">NoxGamingQC</h3>
                 @include('layouts.socials')
             </div>

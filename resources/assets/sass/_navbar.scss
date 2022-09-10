@@ -16,7 +16,7 @@ $dropdown: true;
             margin-top: 5%;
         }
         &:hover, &:focus {
-            color: $text-highlight;
+            color: $text-highlight-color;
         }
     }
     .navbar-text {
@@ -34,7 +34,7 @@ $dropdown: true;
                     padding-bottom: 25px;
                 }
                 &:hover,  &:focus {
-                    color: $text-highlight;
+                    color: $text-highlight-color;
                     background-color: $brand-primary;
                 }
             }
@@ -60,7 +60,7 @@ $dropdown: true;
                         > a {
                             color: $text-color;
                             &:hover,  &:focus {
-                                color: $text-highlight;
+                                color: $text-highlight-color;
                                 border-color: $brand-primary;
                                 background-color: $brand-primary;
                             }
@@ -96,7 +96,7 @@ $dropdown: true;
         }
         > .open {
             > a, > a:hover, > a:focus {
-                color: $text-highlight;
+                color: $text-highlight-color;
                 background-color: $brand-primary;
             }
             > a.disabled {
@@ -110,7 +110,7 @@ $dropdown: true;
         }
     }
     .navbar-toggle {
-        border-color: $laravel-border-color;
+        border-color: $border-color;
         &:hover, &:focus {
             background-color: $brand-primary;
             .icon-bar {
@@ -122,12 +122,12 @@ $dropdown: true;
         }
     }
     .navbar-collapse, .navbar-form {
-        border-color: $laravel-border-color;
+        border-color: $border-color;
     }
     .navbar-link {
         color: $text-color;
         &:hover {
-        color: $text-highlight; 
+        color: $text-highlight-color; 
         }
     }
     .nav-searchbar {
@@ -140,7 +140,7 @@ $dropdown: true;
         > li > a {
             color: $text-color;
             &:hover, &:focus {
-                color: $text-highlight;
+                color: $text-highlight-color;
             }
         }
         > .active {
