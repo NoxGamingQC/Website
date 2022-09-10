@@ -31,6 +31,7 @@
                         <li>
                             <a href="/{{app()->getLocale()}}/contact" class="{{($page_lists['contact_us']['inMaintenance']) ? 'hidden' : ''}}"><i class="fa fa-address-book " aria-hidden="true"></i> {{trans('generic.contact_us')}}</a>
                             <a href="/{{app()->getLocale()}}/projects" class="{{($page_lists['projects']['inMaintenance']) ? 'hidden' : ''}}"><i class="fa fa-heart" aria-hidden="true"></i> {{ trans('generic.projects') }}</a>
+                            <a href="/{{app()->getLocale()}}/teams" class=""><i class="fa fa-users" aria-hidden="true"></i> {{ trans('generic.teams') }}</a>
                         </li>
                     </ul>
                 </li>
@@ -41,6 +42,7 @@
                     <ul class="dropdown-menu">
                         <li>
                             <a href="/{{app()->getLocale()}}/games" class="{{($page_lists['games']['inMaintenance']) ? 'hidden' : ''}}"><i class="fa fa-gamepad" aria-hidden="true"></i> {{ trans('generic.games_list') }}</a>
+                            <a href="/{{app()->getLocale()}}/partners" class=""><i class="fa fa-handshake-o" aria-hidden="true"></i> {{ trans('generic.partners') }}</a>
                             <a href="/{{app()->getLocale()}}/twitch" class="{{($page_lists['twitch']['inMaintenance']) ? 'hidden' : ''}}"><i class="fa fa-twitch" aria-hidden="true"></i> {{ trans('generic.twitch') }}</a>
                             <a href="/{{app()->getLocale()}}/youtube" class="{{($page_lists['youtube']['inMaintenance']) ? 'hidden' : ''}}"><i class="fa fa-youtube-play" aria-hidden="true"></i> {{ trans('generic.youtube') }}</a>
                         </li>
