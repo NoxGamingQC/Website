@@ -38,7 +38,7 @@
                             @if(is_int($game))
                                 <div class="panel panel-primary text-center">
                                     <div class="panel-body img" style="background-image: url('https://static-cdn.jtvnw.net/ttv-boxart/{{$games[$gameID]->Game}}-285x380.jpg') !important; background-size: cover !important; height: 380px !important;">
-                                        <h2 class="game-title"><b>{{preg_replace('/\\\\/', '', $games[$game]->Game)}}</b></h2>
+                                        <h2 class="title"><b>{{preg_replace('/\\\\/', '', $games[$game]->Game)}}</b></h2>
                                         <input id="gameName-{{$game}}" type="hidden" value="{{$games[$game]->Game}}">
                                         <input id="gameConsole-{{$game}}" type="hidden" value="{{$games[$game]->Console}}">
                                         <input id="gameDate-{{$game}}" type="hidden" value="{{$games[$game]->Date}}">
@@ -51,7 +51,7 @@
                             @else
                                 <div class="panel panel-primary text-center">
                                     <div class="panel-body img" style="background-image: url('https://static-cdn.jtvnw.net/ttv-boxart/{{$game->Game}}-285x380.jpg') !important; background-size: cover !important; height: 380px !important;">
-                                        <h2 class="game-title"><b>{{preg_replace('/\\\\/', '', $game->Game)}}</b></h2>
+                                        <h2 class="title"><b>{{preg_replace('/\\\\/', '', $game->Game)}}</b></h2>
                                         <input id="gameName-{{$game->id}}" type="hidden" value="{{$game->Game}}">
                                         <input id="gameConsole-{{$game->id}}" type="hidden" value="{{$game->Console}}">
                                         <input id="gameDate-{{$game->id}}" type="hidden" value="{{$game->Date}}">
