@@ -18,8 +18,7 @@
     <link rel="icon" href="/img/NoxGamingQC.png" type="image/png">
     <link href="{{mix('css/app.css')}}" rel="stylesheet" type="text/css">
     <link href="{{mix('css/bootstrap.css')}}" rel="stylesheet" type="text/css">
-    <!--<link href="{mix('css/queenSkin.css')}" rel="stylesheet" type="text/css">-->
-            <link href="{{mix('css/lightSkin.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{mix('css/queenSkin.css')}}" rel="stylesheet" type="text/css">
     @guest
         <!--<link href="{mix('css/darkSkin.css')}" rel="stylesheet" type="text/css">-->
     @endguest
@@ -27,6 +26,7 @@
         @if(Auth::user()->theme === 'dracula')
             <!--<link href="mix('css/draculaSkin.css')" rel="stylesheet" type="text/css">-->
         @elseif(Auth::user()->theme === 'light')
+            <!--<link href="mix('css/lightSkin.css')" rel="stylesheet" type="text/css">-->
         @else 
             <!--<link href="mix('css/darkSkin.css')" rel="stylesheet" type="text/css">-->
         @endif
