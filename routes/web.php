@@ -93,6 +93,10 @@ Route::group([
                     return view('teams');
                 });
 
+                Route::get('/partners', function () {
+                    return view('partners');
+                });
+
                 Route::get('/twitch', 'TwitchController@index');
 
                 Route::get('/youtube', 'YouTubeController@index');
