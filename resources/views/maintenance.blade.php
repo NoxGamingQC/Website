@@ -8,7 +8,7 @@
     <div class="container-fluid">
         <div class="navbar-header">
             <div>
-                <img src="/img/Avatar.png" width="60" height="60" />
+                <img class="img" src="/img/NoxGamingQC.png" width="60" height="60" />
                 <h3 class="raleway-font" style="display: inline; margin: 5px;">NoxGamingQC</h3>
                 @include('layouts.socials')
             </div>
@@ -30,7 +30,7 @@
                     <h1 class="text-highlight">{{trans('maintenance.error')}}</h1>
                     <hr />
                     <h5 class="text-highlight">{{trans('maintenance.maintenance_text')}}</h5>
-                    <img src="/img/Avatar.png" width="10%" />
+                    <img class="img" src="/img/NoxGamingQC.png" width="10%" />
                     <p class="text-highlight">{{trans('maintenance.explanation')}}</p>
                     <br />
                     <em class="text-highlight">{{trans('maintenance.dev_only')}}</em>
