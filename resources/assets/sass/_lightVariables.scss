@@ -12,7 +12,6 @@ $brand-info: #0b98c4;
 $brand-success: #198f19;
 $brand-warning: #cfad17;
 $brand-danger: #e71811;
-$text-disabled: #777777;
 $brand-orange: #E56F1F;
 
 // Typography
@@ -30,11 +29,11 @@ $line-height-base: 1.6;
 //Font color
 $text-color: #000000;
 $text-hover: #222222;
-$text-disabled: #777777;
+$text-disabled: #555555;
 
 $text-highlight-color: #ffffff;
 $text-highlight-hover: #CCCCCC;
-$text-highlight-disabled: #777777;
+$text-highlight-disabled: #555555;
 
 // Navbar
 $navbar-bg: #222222;
@@ -46,6 +45,7 @@ $btn-background-color: $background-color;
 $input-border: lighten($text-color, 40%);
 $input-border-focus: lighten($brand-primary, 25%);
 $input-color-placeholder: lighten($text-color, 30%);
+$input-disabled: #aaaaaa;
 
 // Panels
 $panel-default-heading-bg: #222222;
