@@ -79,7 +79,7 @@
                 <div class="form-group">
                     <label for="theme">{{trans('profile.theme')}}</label>
                     <select class="selectpicker" id="theme" title="Default">
-                        <option value="default" {{$theme == 'default' ? 'selected' : ''}}>{{(trans('profile.theme_default'))}}</option>
+                        <option value="dark" {{$theme == 'dark' ? 'selected' : ''}}>{{(trans('profile.theme_dark'))}}</option>
                         <option value="dracula" {{$theme == 'dracula' ? 'selected' : ''}}>{{(trans('profile.theme_dracula'))}}</option>
                         <option value="light" {{$theme == 'light' ? 'selected' : ''}}>{{(trans('profile.theme_light'))}}</option>
                     </select>
