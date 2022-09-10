@@ -63,5 +63,8 @@ return [
     'services' => "Services",
     'see_more' => "See more",
     'send'=>"Send",
-    'teams' => "Teams"
+    'teams' => "Teams",
+    'partners_affiliate' => "Affiliates & Partners",
+    'affiliates' => "Affiliates",
+    'partners' => "Partners"
 ];

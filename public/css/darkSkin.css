@@ -4544,3 +4544,8 @@ td.day:hover {
 td.disabled.day {
   background-color: #888888;
 }
+
+.extra-life-logo {
+  background-image: url("/img/Affiliates/Extra Life.png") !important;
+  background-size: cover !important;
+}

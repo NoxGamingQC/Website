@@ -4555,6 +4555,11 @@ td.disabled.day {
   filter: grayscale(1) !important;
 }
 
+.extra-life-logo {
+  background-image: url("/img/Affiliates/Extra Life_dark.png") !important;
+  background-size: cover !important;
+}
+
 .btn {
   filter: gray !important;
   filter: grayscale(1) !important;
