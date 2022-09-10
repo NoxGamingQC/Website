@@ -67,5 +67,6 @@ a.text-highlight {
 }
 
 .title {
-    text-shadow: -2px 0 $text-highlight-color, 0 2px $text-highlight-color, 2px 0 $text-highlight-color, 0 -2px $text-highlight-color;
+    color: $text-title-color;
+    text-shadow: -2px 0 $text-title-border, 0 2px $text-title-border, 2px 0 $text-title-border, 0 -2px $text-title-border;
 }
