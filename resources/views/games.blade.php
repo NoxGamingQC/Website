@@ -37,7 +37,7 @@
                         <div class="col-md-3">
                             @if(is_int($game))
                                 <div class="panel panel-primary text-center">
-                                    <div class="panel-body" style="background-image: url('https://static-cdn.jtvnw.net/ttv-boxart/{{$games[$gameID]->Game}}-285x380.jpg') !important; background-size: cover !important; height: 380px !important;">
+                                    <div class="panel-body img" style="background-image: url('https://static-cdn.jtvnw.net/ttv-boxart/{{$games[$gameID]->Game}}-285x380.jpg') !important; background-size: cover !important; height: 380px !important;">
                                         <h2 class="game-title"><b>{{preg_replace('/\\\\/', '', $games[$game]->Game)}}</b></h2>
                                         <input id="gameName-{{$game}}" type="hidden" value="{{$games[$game]->Game}}">
                                         <input id="gameConsole-{{$game}}" type="hidden" value="{{$games[$game]->Console}}">
