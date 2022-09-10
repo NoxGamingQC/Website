@@ -50,7 +50,7 @@
                                 </div>
                             @else
                                 <div class="panel panel-primary text-center">
-                                    <div class="panel-body" class="img" style="background-image: url('https://static-cdn.jtvnw.net/ttv-boxart/{{$game->Game}}-285x380.jpg') !important; background-size: cover !important; height: 380px !important;">
+                                    <div class="panel-body img" style="background-image: url('https://static-cdn.jtvnw.net/ttv-boxart/{{$game->Game}}-285x380.jpg') !important; background-size: cover !important; height: 380px !important;">
                                         <h2 class="game-title"><b>{{preg_replace('/\\\\/', '', $game->Game)}}</b></h2>
                                         <input id="gameName-{{$game->id}}" type="hidden" value="{{$game->Game}}">
                                         <input id="gameConsole-{{$game->id}}" type="hidden" value="{{$game->Console}}">
