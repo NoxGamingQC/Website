@@ -12,7 +12,7 @@
             <div class="row">
             <div class="col-md-4">
                     <div class="panel panel-primary text-center">
-                        <div class="panel-body img" style="background-image: url('/img/Teams/positivityST.jpg') !important; background-size: cover !important; height: 380px !important;">
+                        <div class="panel-body img" style="background-image: url('/img/Teams/PositivityST.jpg') !important; background-size: cover !important; height: 380px !important;">
                             <h2 class="title"><b>Positivity Stream Team</b></h2>
                             <p class="title"><b>Manager</b></p>
                         </div>
