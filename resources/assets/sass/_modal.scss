@@ -1,0 +1,21 @@
+.modal-backdrop {
+    z-index: -1 !important;
+}
+
+.modal-title {
+    margin: 2px;
+    margin-bottom: -20px;
+}
+
+.modal-title {
+    font-family: $raleway-font;
+}
+
+.modal-header.close {
+    margin-top: -2px;
+}
+
+.modal-content {
+    background-color: $background-color !important;
+    color: $text-color !important;
+}
