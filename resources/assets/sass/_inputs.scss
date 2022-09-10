@@ -4,6 +4,11 @@ input[type=text] {
     color: $text-color !important;
     border-bottom: 1px solid $border-color !important;
     border-radius: 0 !important;
+    outline:none !important;
+    outline-width: 0 !important;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
 }
 
 input[type=password] {
@@ -12,6 +17,11 @@ input[type=password] {
     color: $text-color !important;
     border-bottom: 1px solid $border-color !important;
     border-radius: 0 !important;
+    outline:none !important;
+    outline-width: 0 !important;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
 }
 
 input[type=email] {
@@ -20,6 +30,11 @@ input[type=email] {
     color: $text-color !important;
     border-bottom: 1px solid $border-color !important;
     border-radius: 0 !important;
+    outline:none !important;
+    outline-width: 0 !important;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
 }
 
 textarea[type=text] {
@@ -28,6 +43,11 @@ textarea[type=text] {
     color: $text-color !important;
     border-bottom: 1px solid $border-color !important;
     border-radius: 0 !important;
+    outline:none !important;
+    outline-width: 0 !important;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
 }
 
 input[type=text]:focus {
@@ -67,4 +87,74 @@ textarea[type=text]:focus {
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
     border-color: $border-color;
+}
+
+input[type=text]:disabled {
+    background-color:$input-disabled !important;
+    outline:none !important;
+    outline-width: 0 !important;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    border-color: $border-color;
+}
+
+input[type=password]:disabled {
+    background-color:$input-disabled !important;
+    outline:none !important;
+    outline-width: 0 !important;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    border-color: $border-color;
+}
+input[type=email]:disabled {
+    background-color:$input-disabled !important;
+    outline:none !important;
+    outline-width: 0 !important;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    border-color: $border-color;
+}
+
+textarea[type=text]:disabled {
+    background-color:$input-disabled !important;
+    outline:none !important;
+    outline-width: 0 !important;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    border-color: $border-color;
+}
+
+input[type=text]:disabled::placeholder {
+    color: $text-disabled !important;
+    opacity: 1;
+}
+
+input[type=password]:disabled::placeholder {
+    color: $text-disabled !important;
+    opacity: 1;
+}
+input[type=email]:disabled::placeholder {
+    color: $text-disabled !important;
+    opacity: 1;
+}
+
+textarea[type=text]:disabled::placeholder {
+    color: $text-disabled !important;
+    opacity: 1;
+}
+
+button[type="button"]:disabled {
+    background-color:$input-disabled !important;
+    color: $text-disabled !important;
+    opacity: 1;
+}
+
+a[type="button"]:disabled {
+    background-color:$input-disabled !important;
+    color: $text-disabled !important;
+    opacity: 1;
 }

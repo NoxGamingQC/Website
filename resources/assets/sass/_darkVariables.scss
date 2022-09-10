@@ -28,11 +28,11 @@ $line-height-base: 1.6;
 //Font color
 $text-color: #ffffff;
 $text-hover: #CCCCCC;
-$text-disabled: #777777;
+$text-disabled: #888888;
 
 $text-highlight-color: #ffffff;
 $text-highlight-hover: #CCCCCC;
-$text-highlight-disabled: #777777;
+$text-highlight-disabled: #888888;
 
 // Navbar
 $navbar-bg: #222222;
@@ -44,6 +44,7 @@ $btn-background-color: $background-color;
 $input-border: lighten($text-color, 40%);
 $input-border-focus: lighten($brand-primary, 25%);
 $input-color-placeholder: lighten($text-color, 30%);
+$input-disabled: #444444;
 
 // Panels
 $panel-default-heading-bg: #222222;
