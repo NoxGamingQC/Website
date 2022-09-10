@@ -6,9 +6,9 @@
     <div class="col-md-12 text-center">
         <div class="panel panel-block-primary">
             <div class="panel-body">
-                <h1>ERROR 404 - PAGE NOT FOUND</h1>
+                <h1 class="text-highlight">ERROR 404 - PAGE NOT FOUND</h1>
                 <hr />
-                <h5>Sorry bud, but are you lost? The page you requested doesn't exist.</h5>
+                <h5 class="text-highlight">Sorry bud, but are you lost? The page you requested doesn't exist.</h5>
             </div>
         </div>
     </div>

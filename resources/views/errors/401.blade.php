@@ -6,9 +6,9 @@
     <div class="col-md-12 text-center">
         <div class="panel panel-block-primary">
             <div class="panel-body">
-                <h1>ERROR 401 - UNAUTHORIZED ACCESS</h1>
+                <h1 class="text-highlight">ERROR 401 - UNAUTHORIZED ACCESS</h1>
                 <hr />
-                <h5>Woops, you are not suppose to be here. OwO</h5>
+                <h5 class="text-highlight">Woops, you are not suppose to be here. OwO</h5>
             </div>
         </div>
     </div>
