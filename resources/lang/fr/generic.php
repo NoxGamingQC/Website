@@ -62,5 +62,6 @@ return [
     'select_placeholder' => "Aucun choix selectionné",
     'services' => "Services",
     'see_more' => "Voir plus",
-    'send'=>"Envoyer"
+    'send'=>"Envoyer",
+    'teams' => "Équipes"
 ];

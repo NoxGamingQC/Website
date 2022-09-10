@@ -62,5 +62,6 @@ return [
     'select_placeholder' => "Nothing selected",
     'services' => "Services",
     'see_more' => "See more",
-    'send'=>"Send"
+    'send'=>"Send",
+    'teams' => "Teams"
 ];
