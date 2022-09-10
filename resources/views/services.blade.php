@@ -47,19 +47,36 @@
                 <div class="col-md-12">
                     <h3>{{trans('services.car')}}</h3>
                     <br />
-                    <div class="col-md-4 col-md-offset-2">
+                    <div class="col-md-4">
                         <div class="panel panel-primary">
                             <div class="panel-body text-center">
-                                <h4>{{trans('services.exterior_cleaning')}}</h4>
-                                <p>20C$</p>
+                                <h4>{{trans('services.car_polish')}}</h4>
+                                <p>75C$</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="panel panel-primary">
                             <div class="panel-body text-center">
-                                <h4>{{trans('services.car_polish')}}</h4>
-                                <p>50C$</p>
+                                <h4>{{trans('services.exterior_cleaning')}}</h4>
+                                <p>15C$</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="panel panel-primary">
+                            <div class="panel-body text-center">
+                                <h4>Interior cleaning</h4>
+                                <p class="text-info">The Plus cleaning is gonna be charged automatically, with notice, if your car interior is really dirty and need more product</p>
+                                <br />
+                                <p>Car (Normal): 15C$</p>
+                                <p>Car (Plus): 25C$</p>
+                                <hr />
+                                <p>SUV (Normal): 20C$</p>
+                                <p>SUV (Plus): 30C$</p>
+                                 <hr />
+                                <p>Pickup (Normal): 20C$</p>
+                                <p>Pickup (Plus): 30C$</p>
                             </div>
                         </div>
                     </div>
