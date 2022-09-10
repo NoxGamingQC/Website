@@ -3067,21 +3067,6 @@ p, a, li {
   height: 100% !important;
 }
 
-.modal-backdrop {
-  z-index: -1 !important;
-}
-
-.modal-title {
-  margin: 2px;
-  line-height: 1.5;
-  margin-bottom: -20;
-}
-
-.modal-content {
-  background-color: #222222 !important;
-  color: #ffffff !important;
-}
-
 .raleway-font {
   font-family: "Raleway", sans-serif !important;
 }
@@ -3857,6 +3842,28 @@ textarea[type=text]:focus {
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   border-color: black;
+}
+
+.modal-backdrop {
+  z-index: -1 !important;
+}
+
+.modal-title {
+  margin: 2px;
+  margin-bottom: -20px;
+}
+
+.modal-title {
+  font-family: "Raleway", sans-serif;
+}
+
+.modal-header.close {
+  margin-top: -2px;
+}
+
+.modal-content {
+  background-color: #222222 !important;
+  color: #ffffff !important;
 }
 
 .navbar-default {
