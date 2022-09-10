@@ -1,5 +1,5 @@
 // Body
-$background-color: #222222;
+$background-color: #ffffff;
 
 // Borders
 $border-color: darken($background-color, 25%);
@@ -7,11 +7,11 @@ $hr: #000000;
 $hr-highlight: #ffffff;
 
 // Brands
-$brand-primary: #cc0000;
-$brand-info: #5bc0de;
-$brand-success: #5cb85c;
-$brand-warning: #f0ad4e;
-$brand-danger: #d9534f;
+$brand-primary: #aa0000;
+$brand-info: #0b98c4;
+$brand-success: #198f19;
+$brand-warning: #cfad17;
+$brand-danger: #e71811;
 $text-disabled: #777777;
 $brand-orange: #E56F1F;
 
@@ -27,8 +27,8 @@ $font-size-base: 14px;
 $line-height-base: 1.6;
 
 //Font color
-$text-color: #ffffff;
-$text-hover: #CCCCCC;
+$text-color: #000000;
+$text-hover: #222222;
 $text-disabled: #777777;
 
 $text-highlight-color: #ffffff;

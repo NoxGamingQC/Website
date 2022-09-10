@@ -20,7 +20,7 @@
     <link href="{{mix('css/app.css')}}" rel="stylesheet" type="text/css">
     <link href="{{mix('css/queenSkin.css')}}" rel="stylesheet" type="text/css">
     @guest
-        <!--<link href="{mix('css/defaultSkin.css')}" rel="stylesheet" type="text/css">-->
+        <!--<link href="{mix('css/darkSkin.css')}" rel="stylesheet" type="text/css">-->
     @endguest
     @auth
         @if(Auth::user()->theme === 'dracula')
@@ -28,7 +28,7 @@
         @elseif(Auth::user()->theme === 'light')
             <!--<link href="{mix('css/lightSkin.css')}" rel="stylesheet" type="text/css">-->
         @else 
-            <!--<link href="{mix('css/defaultSkin.css')}" rel="stylesheet" type="text/css">-->
+            <!--<link href="{mix('css/darkSkin.css')}" rel="stylesheet" type="text/css">-->
         @endif
     @endauth
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
