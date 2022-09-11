@@ -78,6 +78,10 @@ $(document).ready(function() {
             data: {
                 'theme': $('#theme').val(),
                 'forceTheme': $('#forceTheme').is(':checked'),
+                'headline01': $('#headline01').val(),
+                'headline02': $('#headline02').val(),
+                'headlineHr': $('#headlineHr').is(':checked'),
+                'headlineSocials': $('#headlineSocials').is(':checked')
             },
             beforeSend: function() {
                 $('#submit').addClass('disabled');
