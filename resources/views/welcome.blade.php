@@ -8,13 +8,24 @@
             <div class="panel-body" style="padding: 5%">
                 <h1 class="raleway-font text-highlight">NoxGamingQC</h1>
                 <br />
-                <hr class="hr-highlight"/>
-                <br />
-                <h5 class="raleway-font text-highlight" style="font-size: 18px">Rest in peace your majesty Queen Elizabeth II</h5>
-                <h5 class="raleway-font text-highlight" style="font-size: 18px">1926 - 2022</h5>
+                @if($headline['headlineHr'] === "true")
+                    <hr class="hr-highlight"/>
+                @else
+                    <br />
+                @endif
+                @if($headline['headline01'])
+                    <br />
+                    <h5 class="raleway-font text-highlight" style="font-size: 18px">{{$headline['headline01']}}</h5>
+                    @if($headline['headline02'])
+                        <h5 class="raleway-font text-highlight" style="font-size: 18px">{{$headline['headline02']}}</h5>
+                    @endif
+                @endif
+                @if($headline['headlineSocials'] === "true")
+                    <br />
+                    @include('layouts.socials')
+                @endif
                 <!--<h5 class="raleway-font" style="font-size: 18px">{trans('welcome.slogan')}</h5>-->
                 <br />
-                <!--include('layouts.socials')-->
 
             </div>
         </div>

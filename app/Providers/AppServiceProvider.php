@@ -30,11 +30,30 @@ class AppServiceProvider extends ServiceProvider
             if($value->Slug == 'force_theme') {
                 $forceTheme = $value->Value;
             }
+            if($value->Slug == 'headline_hr') {
+                $headlineHr = $value->Value;
+            }
+            if($value->Slug == 'headline_01') {
+                $headline01 = $value->Value;
+            }
+            if($value->Slug == 'headline_02') {
+                $headline02 = $value->Value;
+            }
+            if($value->Slug == 'headline_socials') {
+                $headlineSocials = $value->Value;
+            }
         }
         
         $theme = [
             'themeName' => $themeName,
             'force' => $forceTheme
+        ];
+
+        $headline = [
+            'headline01' => $headline01,
+            'headline02' => $headline02,
+            'headlineHr' => $headlineHr,
+            'headlineSocials' => $headlineSocials
         ];
 
         $pageLists = PageLists::all();
@@ -57,6 +76,7 @@ class AppServiceProvider extends ServiceProvider
             ];
         }
 
+        view()->share('headline', $headline);
         view()->share('mainTheme', $theme);
         if($pageListsArray) {
             view()->share('page_lists', $pageListsArray);
