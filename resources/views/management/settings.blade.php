@@ -9,14 +9,45 @@
             <hr />
         </div>
         <div class="col-md-12">
+            <h3>Headline settings</h3>
+            <hr />
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>{{trans('config.headline01')}}</label>
+                    <input type="text" id="headline01" class="form-control" value="{{$headline['headline01']}}" />
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>{{trans('config.headline02')}}</label>
+                    <input type="text" id="headline02" class="form-control" value="{{$headline['headline02']}}" />
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>{{trans('config.headline_hr')}}</label>
+                    <input type="checkbox" id="headlineHr" {{$headline['headlineHr'] === 'true' ? 'checked' : ''}}>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>{{trans('config.headline_socials')}}</label>
+                    <input type="checkbox" id="headlineSocials" {{$headline['headlineSocials'] === 'true' ? 'checked' : ''}}>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <h3>Theme settings</h3>
+            <hr />
             <div class="col-md-6">
                 <div class="form-group">
                     <label>{{trans('config.theme')}}</label>
                     <select class="selectpicker" id="theme" title="Default">
-                        <option value="dark" selected>{{(trans('config.theme_dark'))}}</option>
-                        <option value="dracula">{{(trans('config.theme_dracula'))}}</option>
-                        <option value="light">{{(trans('config.theme_light'))}}</option>
-                        <option value="queen">{{(trans('config.theme_queen'))}}</option>
+                        <option value="dark" {{$mainTheme['themeName'] === "dark" ? 'selected' : ''}}>{{(trans('config.theme_dark'))}}</option>
+                        <option value="dracula" {{$mainTheme['themeName'] === "dracula" ? 'selected' : ''}}>{{(trans('config.theme_dracula'))}}</option>
+                        <option value="light" {{$mainTheme['themeName'] === "light" ? 'selected' : ''}}>{{(trans('config.theme_light'))}}</option>
+                        <option value="queen" {{$mainTheme['themeName'] === "queen" ? 'selected' : ''}}>{{(trans('config.theme_queen'))}}</option>
                     </select>
                     <br />
                     <p class="warning-text"><i>{{trans('config.theme_reload_warning')}}</i></p>
@@ -25,7 +56,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label>{{trans('config.force_theme')}}</label>
-                    <input type="checkbox" id="forceTheme">
+                    <input type="checkbox" id="forceTheme" {{$mainTheme['force'] === "true" ? 'checked' : ''}}>
                 </div>
             </div>
         </div>
