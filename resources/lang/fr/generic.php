@@ -66,5 +66,6 @@ return [
     'teams' => "Équipes",
     'partners_affiliate' => "Affiliation & partenaire",
     'affiliates' => "Affiliation",
-    'partners' => "Partenaires"
+    'partners' => "Partenaires",
+    'settings' => "Paramètre"
 ];
