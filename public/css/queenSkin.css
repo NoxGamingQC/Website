@@ -3096,7 +3096,7 @@ a:hover, a:active {
 }
 
 .btn-default {
-  color: #ffffff !important;
+  color: #000 !important;
   background-color: transparent;
   border-color: #bfbfbf;
 }

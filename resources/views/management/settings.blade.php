@@ -5,11 +5,11 @@
 <div class="container">
     <div class="row">
         <div class="col-md-10">
-            <h1>Website settings</h1>
+            <h1>{{trans('config.website_settings')}}</h1>
             <hr />
         </div>
         <div class="col-md-12">
-            <h3>Headline settings</h3>
+            <h3>{{trans('config.headline_settings')}}</h3>
             <hr />
             <div class="col-md-6">
                 <div class="form-group">
@@ -38,7 +38,7 @@
             </div>
         </div>
         <div class="col-md-12">
-            <h3>Theme settings</h3>
+            <h3>{{trans('config.theme_settings')}}</h3>
             <hr />
             <div class="col-md-6">
                 <div class="form-group">
