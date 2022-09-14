@@ -86,7 +86,7 @@ Route::group([
                 Route::get('/projects', 'ProjectsController@index');
 
                 
-                Route::post('/contact/form', 'HomeController@sendContactUsEmail');
+                Route::post('/contact/form', 'ContactController@sendContactUsEmail');
 
                 Route::get('/services', function () {
                     return view('services');
