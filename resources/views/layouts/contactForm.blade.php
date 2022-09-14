@@ -57,7 +57,7 @@ $(document).ready(function() {
                 $('#submitContactForm').attr('disabled', '');
             },
             success: function() {
-                toastr.success('Editing success', 'Your message as been sent successfully.')
+                toastr.success('Message sent', 'Your message as been sent successfully.')
                 $('#submitContactForm').removeClass('disabled');
                 $('#submitContactForm').removeAttr('disabled', '');
             },
