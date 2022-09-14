@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App;
 use Auth;
 use DB;
 use App\Http\Controllers\Controller;
