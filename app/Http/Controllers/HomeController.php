@@ -44,7 +44,7 @@ class HomeController extends Controller
         ];
         if($name !== "" && $email !== "" && $message !== "") {
             Mail::send('emails.contact_us', $data, function($message) {
-                $message->from('website@mg.noxgamingqc.ca', 'Website');
+                $message->from('website@noxgamingqc.ca', 'Website');
                 $message->to('jbedard@noxgamingqc.ca');
                 $message->subject('You received a new message');
             });

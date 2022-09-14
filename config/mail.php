@@ -56,8 +56,8 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'noreply@mg.noxgamingqc.ca'),
-        'name' => env('MAIL_FROM_NAME', 'NGST'),
+        'address' => env('MAIL_FROM_ADDRESS', 'noreply@noxgamingqc.ca'),
+        'name' => env('MAIL_FROM_NAME', 'NoxGamingQC'),
     ],
 
     /*
