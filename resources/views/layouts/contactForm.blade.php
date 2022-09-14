@@ -17,6 +17,7 @@
             <div class="form-group">
                 <label class="control-label">{{trans('contact.email')}} <i class="text-danger">*</i> </label>
                 <input id="contactEmail" type="text" class="form-control" placeholder="{{trans('contact.enter_email')}}">
+                <p id="contactEmailNotValid" class="text-danger hidden" hidden> Please enter a valid email address</p>
             </div>
             <div class="form-group">
                 <label class="control-label">{{trans('contact.object')}} </label>
@@ -39,35 +40,48 @@
 <script type="text/javascript">
 
 $(document).ready(function() {
+
+    function Validate() {
+        var emailAddress = $('#contactEmail').val();
+        var emailRGEX = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+        return emailRGEX.test(emailAddress);
+    }
+
     $('#submitContactForm').click(function() {
-        $.ajax({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            },
-            url: '/'+ $('html[lang]').attr('lang') +'/contact/form',
-            method: 'POST',
-            data: {
-                'name': $('#contactName').val(),
-                'email': $('#contactEmail').val(),
-                'object': $('#contactObject').val(),
-                'message': $('#contactMessage').val()
-            },
-            beforeSend: function() {
-                $('#submitContactForm').addClass('disabled');
-                $('#submitContactForm').attr('disabled', '');
-            },
-            success: function() {
-                toastr.success('Message sent', 'Your message as been sent successfully.')
-                $('#submitContactForm').removeClass('disabled');
-                $('#submitContactForm').removeAttr('disabled', '');
-            },
-            error: function (error) {
-                toastr.error('An error occured', 'An error occured while trying to send your message.')
-                $('#submitContactForm').removeClass('disabled');
-                $('#submitContactForm').removeAttr('disabled', '');
-                console.log(error);
-            }
-        })
+        if(Validate()) {
+            $('#contactEmailNotValid').addClass('hidden');
+            $.ajax({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                url: '/'+ $('html[lang]').attr('lang') +'/contact/form',
+                method: 'POST',
+                data: {
+                    'name': $('#contactName').val(),
+                    'email': $('#contactEmail').val(),
+                    'object': $('#contactObject').val(),
+                    'message': $('#contactMessage').val()
+                },
+                beforeSend: function() {
+                    $('#submitContactForm').addClass('disabled');
+                    $('#submitContactForm').attr('disabled', '');
+                },
+                success: function() {
+                    toastr.success('Message sent', 'Your message as been sent successfully.')
+                    $('#submitContactForm').removeClass('disabled');
+                    $('#submitContactForm').removeAttr('disabled', '');
+                },
+                error: function (error) {
+                    toastr.error('An error occured', 'An error occured while trying to send your message.')
+                    $('#submitContactForm').removeClass('disabled');
+                    $('#submitContactForm').removeAttr('disabled', '');
+                    console.log(error);
+                }
+            })
+        } else {
+            $('#contactEmailNotValid').removeClass('hidden');
+            $('#contactEmailNotValid').removeAttr('hidden');
+        }
     });
 });
 </script>
