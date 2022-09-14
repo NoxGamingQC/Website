@@ -27,6 +27,7 @@ class ContactController extends Controller
         $object = $request->object ? $request->object : '';
         $message = $request->message;
         $language = App::getLocale();
+        $email_regex = '^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}^';
         $data = [
             'name' => $name,
             'email' => $email,
@@ -34,7 +35,7 @@ class ContactController extends Controller
             'contactMessage' => $message,
             'language' => $language
         ];
-        if($name !== "" && $email !== "" && $message !== "") {
+        if($name !== "" && preg_match($email_regex,$email) && $message !== "") {
             Mail::send('emails.contact_us', $data, function($message) {
                 $message->from('website@noxgamingqc.ca', 'Website');
                 $message->to('nox@noxgamingqc.ca');
