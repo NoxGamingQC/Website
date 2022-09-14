@@ -27,7 +27,7 @@ class ContactController extends Controller
         $object = $request->object ? $request->object : '';
         $message = $request->message;
         $language = App::getLocale();
-        $email_regex = '^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}^';
+        $email_regex = '/^[\w-]+@+([\w-]+\.)+[\w-]{2,4}$/gm';
         $data = [
             'name' => $name,
             'email' => $email,
