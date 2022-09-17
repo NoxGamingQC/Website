@@ -6,4 +6,5 @@
  */
 
 require('./bootstrap');
+require('./facebook');
 window.toastr = require('toastr');
