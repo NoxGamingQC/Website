@@ -2078,6 +2078,8 @@ module.exports = JSON.parse("{\"name\":\"axios\",\"version\":\"0.21.4\",\"descri
  */
 __webpack_require__(/*! ./bootstrap */ "./resources/assets/js/bootstrap.js");
 
+__webpack_require__(/*! ./facebook */ "./resources/assets/js/facebook.js");
+
 window.toastr = __webpack_require__(/*! toastr */ "./node_modules/toastr/toastr.js");
 
 /***/ }),
@@ -2135,6 +2137,38 @@ if (token) {
 //     cluster: 'mt1',
 //     encrypted: true
 // });
+
+/***/ }),
+
+/***/ "./resources/assets/js/facebook.js":
+/*!*****************************************!*\
+  !*** ./resources/assets/js/facebook.js ***!
+  \*****************************************/
+/***/ (() => {
+
+window.fbAsyncInit = function () {
+  FB.init({
+    appId: '1939714869643030',
+    cookie: true,
+    xfbml: true,
+    version: 'v14.0'
+  });
+  FB.AppEvents.logPageView();
+};
+
+(function (d, s, id) {
+  var js,
+      fjs = d.getElementsByTagName(s)[0];
+
+  if (d.getElementById(id)) {
+    return;
+  }
+
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://connect.facebook.net/en_US/sdk.js";
+  fjs.parentNode.insertBefore(js, fjs);
+})(document, 'script', 'facebook-jssdk');
 
 /***/ }),
 
