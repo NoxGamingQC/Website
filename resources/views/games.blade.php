@@ -78,21 +78,21 @@
 </div>
 <script>
 $('.edit-game-button').on('click', function() {
-var id = $(this).attr('id');
-var oldGameName = $('#gameName-' + id).val();
-var oldGameConsole = $('#gameConsole-' + id).val();
-var oldGameFormat = $('#gameFormat-' + id).val();
-var oldGameDate = $('#gameGameDate-' + id).val();
-var oldGamePlaylist = $('#gameGamePlaylist-' + id).val();
-var oldGameCoverURL = $('#gameCoverURL-' + id).val();
+    var id = $(this).attr('id');
+    var oldGameName = $('#gameName-' + id).val();
+    var oldGameConsole = $('#gameConsole-' + id).val();
+    var oldGameFormat = $('#gameFormat-' + id).val();
+    var oldGameDate = $('#gameGameDate-' + id).val();
+    var oldGamePlaylist = $('#gameGamePlaylist-' + id).val();
+    var oldGameCoverURL = $('#gameCoverURL-' + id).val();
 
-$('#editGameID').val(id);
-$('#editGameName').val(oldGameName);
-$('#editGameConsole').selectpicker('val', oldGameConsole);
-$('#editGameDate').val(oldGameDate);
-$('#editGameCoverURL').val(oldGameCoverURL);
-$('#editGamePlaylist').val(oldGamePlaylist);
-$('#editGameFormat').selectpicker('val', oldGameFormat ? 1 : 0);
-});
+    $('#editGameID').val(id);
+    $('#editGameName').val(oldGameName);
+    $('#editGameConsole').selectpicker('val', oldGameConsole);
+    $('#editGameDate').val(oldGameDate);
+    $('#editGameCoverURL').val(oldGameCoverURL);
+    $('#editGamePlaylist').val(oldGamePlaylist);
+    $('#editGameFormat').selectpicker('val', oldGameFormat ? 1 : 0);
+    });
 </script>
 @stop
