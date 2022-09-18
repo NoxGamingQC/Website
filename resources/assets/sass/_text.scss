@@ -67,6 +67,7 @@ a.text-highlight {
 }
 
 .title {
+    font-family: $rochester-font !important;
     color: $text-title-color;
     text-shadow: -2px 0 $text-title-border, 0 2px $text-title-border, 2px 0 $text-title-border, 0 -2px $text-title-border;
 }
