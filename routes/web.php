@@ -140,7 +140,7 @@ Route::group([
                 Route::post('/noxbot/data/user/store', 'NoxBotDashboardController@linkDiscord');
 
                 
-                Route::get('/shop', 'SquareController@index');
+                Route::get('/store', 'SquareController@index');
 
                 Route::get('/management/modules', 'ManagementController@getModules');
                 Route::get('/management/users', 'ManagementController@getUsers');
