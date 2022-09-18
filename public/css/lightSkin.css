@@ -3047,7 +3047,7 @@ html, body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Rochester", cursive;
+  font-family: "Raleway", sans-serif;
 }
 
 vr {
@@ -4239,6 +4239,7 @@ a.text-highlight {
 }
 
 .title {
+  font-family: "Rochester", cursive !important;
   color: #000000;
   text-shadow: -2px 0 #FFFFFF, 0 2px #FFFFFF, 2px 0 #FFFFFF, 0 -2px #FFFFFF;
 }
