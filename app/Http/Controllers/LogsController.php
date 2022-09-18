@@ -49,7 +49,7 @@ class LogsController extends Controller
                         }
                     }
                     foreach($fileData as $key => $value) {
-                        $logDate = str_replace("[", "", explode("]", $value)[0]) ? Carbon::parse(str_replace("[", "", explode("]", $value)[0])) : '';
+                        $logDate = str_replace("[", "", explode("]", $value)[0]) ? Carbon::parse(str_replace("[", "", explode("]", $value)[0]))->format('Y-m-d H:i:s') : '';
                         $logStatus = "undefined";
                         if(str_contains($value, 'developement.ERROR') || str_contains($value, 'production.ERROR')) {
                             $logStatus = "error";

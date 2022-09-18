@@ -41,8 +41,8 @@
                     <tbody>
                     @foreach($data['file'] as $key => $value)
                         <tr>
-                            <th scope="row">{{$data['elementsDates'][$key]}}</th>
-                            <td><p class="badge-{{$data['elementsStatusColor'][$key]}}">{{$data['elementsStatus'][$key]}}</p></td>
+                            <th scope="row">{{array_key_exists($key, $data['elementsDates']) ? $data['elementsDates'][$key] : ''}}</th>
+                            <td><p class="badge-{{array_key_exists($key, $data['elementsStatusColor']) ? $data['elementsStatusColor'][$key] : ''}}">{{array_key_exists($key, $data['elementsStatus']) ? $data['elementsStatus'][$key] : ''}}</p></td>
                             <td>{!!$value!!}</td>
                         </tr>
                     @endforeach
