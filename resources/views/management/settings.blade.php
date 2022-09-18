@@ -47,7 +47,7 @@
                         <option value="dark" {{$mainTheme['themeName'] === "dark" ? 'selected' : ''}}>{{(trans('config.theme_dark'))}}</option>
                         <option value="dracula" {{$mainTheme['themeName'] === "dracula" ? 'selected' : ''}}>{{(trans('config.theme_dracula'))}}</option>
                         <option value="light" {{$mainTheme['themeName'] === "light" ? 'selected' : ''}}>{{(trans('config.theme_light'))}}</option>
-                        <option value="queen" {{$mainTheme['themeName'] === "queen" ? 'selected' : ''}}>{{(trans('config.theme_queen'))}}</option>
+                        <option value="grayscale" {{$mainTheme['themeName'] === "grayscale" ? 'selected' : ''}}>{{(trans('config.theme_grayscale'))}}</option>
                     </select>
                     <br />
                     <p class="warning-text"><i>{{trans('config.theme_reload_warning')}}</i></p>

@@ -11,7 +11,7 @@ return [
     'headline_socials' => "Ajouter la barre sociale en dessous des gros titres",
     'theme' => "Thème",
     'force_theme' => "Forcer le thème pour tout le monde",
-    'theme_queen' => "Thème de la reine",
+    'theme_grayscale' => "Thème nuance de gris",
     'theme_dark' => "Thème sombre",
     'theme_dracula' => "Thème Dracula",
     'theme_light' => "Thème clair",
