@@ -10,7 +10,7 @@ return [
     'headline_socials' => "Add social bar on the headline",
     'theme' => "Theme",
     'force_theme' => "Force theme for everyone",
-    'theme_queen' => "Queen theme",
+    'theme_grayscale' => "Grayscale theme",
     'theme_dark' => "Dark theme",
     'theme_dracula' => "Dracula theme",
     'theme_light' => "Light theme",
