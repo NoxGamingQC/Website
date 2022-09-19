@@ -37,7 +37,7 @@ class ContactController extends Controller
         ];
         if($name !== "" && preg_match($email_regex,$email) && $message !== "") {
             Mail::send('emails.contact_us', $data, function($message) {
-                $message->from('website@noxgamingqc.ca', 'Website');
+                $message->from('noreply@noxgamingqc.ca', 'NGST');
                 $message->to('nox@noxgamingqc.ca');
                 $message->subject('You received a new message');
             });
