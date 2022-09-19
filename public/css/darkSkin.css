@@ -3655,6 +3655,24 @@ fieldset[disabled] .btn-reddit.active {
   border-color: transparent !important;
 }
 
+.panel-default > .panel-heading {
+  background-image: none;
+  background-color: #c22222;
+  color: #ffffff;
+  border-color: #222222;
+}
+
+.panel-default > .panel-body {
+  background-image: none;
+  background-color: #222222;
+  color: #ffffff;
+  border-color: #222222;
+}
+
+.panel-default {
+  border-color: #222222 !important;
+}
+
 .panel-primary > .panel-heading {
   background-image: none;
   background-color: #c22222;

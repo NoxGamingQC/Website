@@ -11,8 +11,8 @@
                     <div class="panel panel-primary">
                         <div class="panel-body">
                             <div class="text-center">
-                                <h4>{{ $module['icon'] }} {{$module['slug']}}</h4>
-                                <hr />
+                                <h4><b>{{ $module['icon'] }} {{$module['slug']}}</b></h4>
+                                <br />
                             </div>
                             <div class="row">
                                 <div class="col-md-12">

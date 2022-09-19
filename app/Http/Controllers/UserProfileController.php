@@ -32,7 +32,7 @@ class UserProfileController extends Controller
             $grade = "developper";
         }
 
-        $discordBadges = $user->Badges ? explode(';', $user->Badges) : [];
+        $badges = $user->Badges ? explode(';', $user->Badges) : [];
 
         if (!!$user->PremiumType) {
             array_push($discordBadges, 'Discord Nitro');
@@ -65,9 +65,9 @@ class UserProfileController extends Controller
             "isPremium" => $user->isPremium,
             "discordName" => $user->DiscordName,
             "language" => $user->Language,
-            "discordBadges" => $discordBadges,
+            "badges" => $badges,
             "nitroSubscription"=> $premiumType,
-            "avatarURL" => 'https://cdn.discordapp.com/avatars/' . $user->DiscordID . '/' . $user->AvatarURL . '.png',
+            "avatarURL" => $user->AvatarURL,
             "discriminator" => $user->Discriminator,
             "discordEmail" => $user->DiscordEmail,
             "firstname" => $firstname,
