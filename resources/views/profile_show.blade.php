@@ -4,13 +4,17 @@
 <div class="row">
     <div class="col-md-12">
         <div class="panel panel-block-primary">
-            <div class="panel-body" style="padding: 20%">
+            <div class="panel-body" style="padding: 5%">
                 <div class="text-center">
-                    <img class="img-circle" src="{{$avatarURL}}" alt="{{$discordName}}" width="120px" style="padding: 7px 14px" />
-                    <h1>{{$username}} <small style="color: #BBBBBB;">{{$firstname}} {{$lastname}}</small></h1>
+                    <img class="img-circle" src="{{$avatarURL}}" alt="{{$discordName}}" width="250px" style="padding: 7px 14px" />
+                    <h1>
+                        {{$username}}
+                        <br />
+                        <small style="color: #BBBBBB;">{{$firstname}} {{$lastname}}</small>
+                    </h1>
                     <h3>{{ trans('profile.' . $grade) }}</h3>
-                    @foreach ($discordBadges as $badge)
-                    <img src="/img/{{$badge}}.png" alt="{{$badge}}" width="75px" style="padding: 7px 14px" />
+                    @foreach ($badges as $badge)
+                        <img src="/img/Badges/{{$badge}}.png" alt="{{$badge}}" width="75px" style="padding: 7px 14px" />
                     @endforeach
                 </div>
             </div>

@@ -1,3 +1,21 @@
+.panel-default > .panel-heading {
+    background-image: none;
+    background-color: $brand-primary;
+    color: $text-color;
+    border-color: $background-color;
+}
+
+.panel-default > .panel-body {
+    background-image: none;
+    background-color: $background-color;
+    color: $text-color;
+    border-color: $background-color;
+}
+
+.panel-default {
+    border-color: $background-color !important;
+}
+
 .panel-primary > .panel-heading {
     background-image: none;
     background-color: $brand-primary;
