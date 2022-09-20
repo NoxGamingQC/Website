@@ -91,6 +91,8 @@ class Square extends Model
                 if(in_array(env('SQUARE_LOCATION_ID'), $item->getPresentAtLocationIds())) {
                     if($item->getItemData()->getImageIds()) {
                         $itemImage = $item->getItemData()->getImageIds()[0] ? $images[$item->getItemData()->getImageIds()[0]]['url'] : null;
+                    } else {
+                        $itemImage = null;
                     }
                     array_push($catalog, [
                         'id' => $item->getId(),
