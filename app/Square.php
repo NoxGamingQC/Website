@@ -89,12 +89,15 @@ class Square extends Model
         foreach ($catalogItems as $key => $item) {
             if(is_array($item->getPresentAtLocationIds())) {
                 if(in_array(env('SQUARE_LOCATION_ID'), $item->getPresentAtLocationIds())) {
+                    if($item->getItemData()->getImageIds()) {
+                        $itemImage = $item->getItemData()->getImageIds()[0] ? $images[$item->getItemData()->getImageIds()[0]]['url'] : null;
+                    }
                     array_push($catalog, [
                         'id' => $item->getId(),
                         'name' => $item->getItemData()->getName(),
                         'description' => $item->getItemData()->getDescription(),
                         'category' => $item->getItemData()->getCategoryId() ? $categories[$item->getItemData()->getCategoryId()]['name'] : null,
-                        'imageURL' => $item->getItemData()->getImageIds()[0] ? $images[$item->getItemData()->getImageIds()[0]]['url'] : null,
+                        'imageURL' => $itemImage,
                         'variationsCount' => count($item->getItemData()->getVariations())
                     ]);
                 }
