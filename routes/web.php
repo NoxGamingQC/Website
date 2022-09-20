@@ -85,10 +85,6 @@ Route::group([
 
                 Route::get('/projects', 'ProjectsController@index');
 
-                Route::get('/services', function () {
-                    return view('services');
-                });
-
                 Route::get('/teams', function () {
                     return view('teams');
                 });
@@ -139,9 +135,6 @@ Route::group([
 
                 Route::post('/noxbot/data/user/store', 'NoxBotDashboardController@linkDiscord');
 
-                
-                Route::get('/store', 'SquareController@index');
-
                 Route::get('/management/modules', 'ManagementController@getModules');
                 Route::get('/management/users', 'ManagementController@getUsers');
                 Route::get('/management/activities', 'ManagementController@getBotActivities');
@@ -150,6 +143,12 @@ Route::group([
                 Route::get('/management/logs/download', 'LogsController@download');
                 Route::get('/management/settings', 'SettingsController@index');
                 Route::post('/management/settings', 'SettingsController@post');
+
+                
+                Route::get('/ngst/store', 'SquareController@index');
+                Route::get('/ngst/services', function () {
+                    return view('services');
+                });
             }
         );
     }
