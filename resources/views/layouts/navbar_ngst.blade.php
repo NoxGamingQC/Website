@@ -16,7 +16,7 @@
         
         <div class="collapse navbar-collapse" id="bs-navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="nav-home"><a href="/{{app()->getLocale()}}/home"><i class="fa fa-home" aria-hidden="true"></i> {{ trans('generic.welcome') }} <span class="sr-only">current</span></a></li>
+                <li class="nav-home"><a href="/{{app()->getLocale()}}/ngst/home"><i class="fa fa-home" aria-hidden="true"></i> {{ trans('generic.welcome') }} <span class="sr-only">current</span></a></li>
                 <li class="dropdown">
                     @if(!$page_lists['about_me']['inMaintenance'])
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
@@ -29,35 +29,25 @@
                     @endif
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="/{{app()->getLocale()}}/contact" class="{{($page_lists['contact_us']['inMaintenance']) ? 'hidden' : ''}}"><i class="fa fa-address-book " aria-hidden="true"></i> {{trans('generic.contact_us')}}</a>
-                            <a href="/{{app()->getLocale()}}/projects" class="{{($page_lists['projects']['inMaintenance']) ? 'hidden' : ''}}"><i class="fa fa-heart" aria-hidden="true"></i> {{ trans('generic.projects') }}</a>
-                            <a href="/{{app()->getLocale()}}/teams" class=""><i class="fa fa-users" aria-hidden="true"></i> {{ trans('generic.teams') }}</a>
+                            <a href="/{{app()->getLocale()}}/ngst/contact" class="{{($page_lists['contact_us']['inMaintenance']) ? 'hidden' : ''}}"><i class="fa fa-address-book " aria-hidden="true"></i> {{trans('generic.contact_us')}}</a>
+                            <a href="/{{app()->getLocale()}}/ngst/projects" class="{{($page_lists['projects']['inMaintenance']) ? 'hidden' : ''}}"><i class="fa fa-heart" aria-hidden="true"></i> {{ trans('generic.projects') }}</a>
                         </li>
                     </ul>
                 </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
-                        <i class="fa fa-video-camera" aria-hidden="true"></i> Streaming <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href="/{{app()->getLocale()}}/games" class="{{($page_lists['games']['inMaintenance']) ? 'hidden' : ''}}"><i class="fa fa-gamepad" aria-hidden="true"></i> {{ trans('generic.games_list') }}</a>
-                            <a href="/{{app()->getLocale()}}/partners" class=""><i class="fa fa-handshake-o" aria-hidden="true"></i> {{ trans('generic.partners') }}</a>
-                            <a href="/{{app()->getLocale()}}/twitch" class="{{($page_lists['twitch']['inMaintenance']) ? 'hidden' : ''}}"><i class="fa fa-twitch" aria-hidden="true"></i> {{ trans('generic.twitch') }}</a>
-                            <a href="/{{app()->getLocale()}}/youtube" class="{{($page_lists['youtube']['inMaintenance']) ? 'hidden' : ''}}"><i class="fa fa-youtube-play" aria-hidden="true"></i> {{ trans('generic.youtube') }}</a>
-                        </li>
-                    </ul>
-                </li>
+                
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                         <i class="fa fa-briefcase" aria-hidden="true"></i> NGST <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="/{{app()->getLocale()}}/services" class=""><i class="fa fa-briefcase" aria-hidden="true"></i> {{ trans('generic.services') }}</a>
+                            <a href="/{{app()->getLocale()}}/ngst/services" class=""><i class="fa fa-briefcase" aria-hidden="true"></i> {{ trans('generic.services') }}</a>
+                            <a href="/{{app()->getLocale()}}/ngst/store" class=""><i class="fa fa-shopping-cart" aria-hidden="true"></i> {{ trans('generic.store') }}</a>
                         </li>
                     </ul>
                 </li>
+                <li ><a href="/{{app()->getLocale()}}/home" class=""><i class="fa fa-video-camera" aria-hidden="true"></i> NoxGamingQC</a></li>
+                            
                 @auth
                     @if(Auth::user()->isDev || Auth::user()->isAdmin || Auth::user()->isModerator)
                         <li class="dropdown">
