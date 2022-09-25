@@ -13,6 +13,11 @@
                     <div class="panel panel-primary">
                         <div class="panel-body">
                             <div class="text-center">
+                                @if($user['avatarURL'])
+                                    <img class="img-circle" src="{{$user['avatarURL']}}" alt="{{$user['username']}}" title="{{$user['username']}}" width="100px" style="padding-bottom: 5px" />
+                                @else
+                                    <img class="img-circle" src="/img/no-avatar.jpg" alt="{{$user['username']}}" title="{{$user['username']}}" width="100px" style="padding-bottom: 5px" />
+                                @endif
                                 <h4><b>{{$user['username']}}{{ $user['isBOT'] ? ' [BOT]' : ''}}</b></h4>
                                 <br />
                                 <select class="selectpicker" id="gender" title="Gender">
