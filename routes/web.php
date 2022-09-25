@@ -33,6 +33,7 @@
     });
 
     Route::get('language/set/{language}', 'LanguageController@index');
+    Route::post('/management/settings', 'SettingsController@post');
 
     // Route with redirections
     Route::get('/guilded', function () {
@@ -142,7 +143,6 @@
             Route::get('/management/logs', 'LogsController@index');
             Route::get('/management/logs/download', 'LogsController@download');
             Route::get('/management/settings', 'SettingsController@index');
-            Route::post('/management/settings', 'SettingsController@post');
 
             //NGST routes
             Route::get('/ngst/store', 'SquareController@index');
