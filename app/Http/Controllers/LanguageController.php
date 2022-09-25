@@ -10,7 +10,7 @@ class LanguageController extends Controller
 {
     public function index($language)
     {
-        if($language == 'fr' || $language == 'en') {
+        if($language == 'fr-ca' || $language == 'en-ca') {
             app()->setLocale($language);
         } else {
             abort(403);
