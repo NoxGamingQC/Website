@@ -19,6 +19,17 @@
                     </div>
                 </div>
                 <div class="col-md-6">
+                    <div class="col-md-6">
+                        <label for="avatar">{{trans('profile.avatar')}}</label>
+                        <input class="form-control" id="selectAvatar" type="file" />
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <img class="img img-circle" id="avatar" src="{{$avatarURL}}" width="100px"/>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="col-md-6">
                     <div class="form-group">
                         <label for="email">{{trans('profile.email')}}</label>
                         <input type="email" class="form-control" id="email" placeholder="Email" value="{{$email}}" />
@@ -148,6 +159,7 @@ $(document).ready(function() {
                 'showGender': $('#showGender').is(':checked'),
                 'showBirthdate': $('#showBirthdate').is(':checked'),
                 'showAge': $('#showAge').is(':checked'),
+                'avatar' : $('#avatar').attr('src'),
             },
             beforeSend: function() {
                 $('#submit').addClass('disabled');
@@ -166,6 +178,34 @@ $(document).ready(function() {
             }
         })
     });
+
+const input = document.getElementById("selectAvatar");
+const avatar = document.getElementById("avatar");
+
+const convertBase64 = (file) => {
+    return new Promise((resolve, reject) => {
+        const fileReader = new FileReader();
+        fileReader.readAsDataURL(file);
+
+        fileReader.onload = () => {
+            resolve(fileReader.result);
+        };
+
+        fileReader.onerror = (error) => {
+            reject(error);
+        };
+    });
+};
+
+const uploadImage = async (event) => {
+    const file = event.target.files[0];
+    const base64 = await convertBase64(file);
+    avatar.src = base64;
+};
+
+input.addEventListener("change", (e) => {
+    uploadImage(e);
+});
 });
 </script>
 @stop
