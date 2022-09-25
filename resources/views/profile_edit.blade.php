@@ -132,7 +132,7 @@ $(document).ready(function() {
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
-            url: '/en/profile/edit',
+            url: '/profile/edit',
             method: 'POST',
             data: {
                 'username': $('#username').val(),
