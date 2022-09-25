@@ -26,6 +26,13 @@
                                     <option value="2" {{$user['grade'] == 'moderator' ? 'selected' : ''}}>Moderator</option>
                                     <option value="3" {{$user['grade'] == 'administrator' ? 'selected' : ''}}>Administrator</option>
                                 </select>
+                                <hr />
+                                <div class="col-md-6 text-left">
+                                    <a class="btn btn-primary" href="/{{app()->getLocale()}}/profile/show/{{$user['id']}}">View</a>
+                                </div>
+                                <div class="col-md-6 text-right">
+                                    <button class="btn btn-success disabled" type="button" disabled>Save</button>
+                                </div>
                             </div>
                         </div>
                     </div>
