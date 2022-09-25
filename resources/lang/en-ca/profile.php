@@ -31,12 +31,13 @@ return [
     'show_gender' => "Show gender",
     'show_birthdate' => "Show birthdate",
     'show_age' => "Show age",
-    'theme_default' => "Default theme",
+    'theme_dark' => "Dark theme",
     'theme_dracula' => "Dracula",
     'theme_light' => "Light theme",
     'male' => "Male",
     'female' => "Female",
     'other' => "Other",
-    'premium' => "Premium subscription active",
-    'not_premium' => "No subscription"
+    'premium' => "Premium user",
+    'not_premium' => "No subscription",
+    'avatar' => "Profile picture"
 ];

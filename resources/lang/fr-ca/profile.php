@@ -31,12 +31,13 @@ return [
     'show_gender' => "Afficher le sexe",
     'show_birthdate' => "Afficher la date d'anniversaire",
     'show_age' => "Afficher votre age",
-    'theme_default' => "Thème par défault",
+    'theme_dark' => "Thème sombre",
     'theme_dracula' => "Dracula",
     'theme_light' => "Thème clair",
     'male' => "Homme",
     'female' => "Femme",
     'other' => "Autre",
-    'premium' => "Abonnement prémium",
-    'not_premium' => "Aucun abonnement"
+    'premium' => "Utilisateur prémium",
+    'not_premium' => "Aucun abonnement",
+    'avatar' => "Photo de profile"
 ];
