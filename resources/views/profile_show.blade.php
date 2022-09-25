@@ -24,7 +24,11 @@
                     </div>
                 @endif
                 <div class="col-md-12 text-center">
-                    <img class="img-circle" src="{{$avatarURL}}" alt="{{$username}}" title="{{$username}}" width="250px" style="padding: 7px 14px" />
+                    @if($avatarURL)
+                        <img class="img-circle" src="{{$avatarURL}}" alt="{{$username}}" title="{{$username}}" width="250px" style="padding: 7px 14px" />
+                    @else
+                        <img class="img-circle" src="/img/no-avatar.jpg" alt="{{$username}}" title="{{$username}}" width="250px" style="padding: 7px 14px" />
+                    @endif
                     <h1>
                         {{$username}}
                         <br />

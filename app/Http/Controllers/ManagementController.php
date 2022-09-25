@@ -59,7 +59,7 @@ class ManagementController extends Controller
                     
                     array_push($users, [
                         'username' => $user->name,
-                        'avatarURL' => $user->avatarURL,
+                        'avatarURL' => $user->AvatarURL,
                         'isBOT' => $user->isBOT,
                         'grade' => $grade
                     ]);
