@@ -82,8 +82,8 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="/language/set/en"><i class="fa fa-language" aria-hidden="true"></i> English ({{trans("generic.english")}})</a>
-                            <a href="/language/set/fr"><i class="fa fa-language" aria-hidden="true"></i> Français ({{trans("generic.french")}})</a>
+                            <a href="/language/set/en-ca"><i class="fa fa-language" aria-hidden="true"></i> English (Canada)</a>
+                            <a href="/language/set/fr-ca"><i class="fa fa-language" aria-hidden="true"></i> Français (Canada)</a>
                         </li>
                     </ul>
                 </li>
