@@ -98,7 +98,7 @@ class UserProfileController extends Controller
                 "isPremium"=>$user->isPremium,
                 "discordName"=>$user->DiscordName,
                 "language"=>$user->Language,
-                "avatarURL" => 'https://cdn.discordapp.com/avatars/' . $user->DiscordID . '/' . $user->AvatarURL . '.png',
+                "avatarURL" => $user->AvatarURL,
                 "discriminator"=>$user->Discriminator,
                 "firstname"=>$user->Firstname,
                 "lastname"=>$user->Lastname,
@@ -128,6 +128,7 @@ class UserProfileController extends Controller
             $user->Gender = $request->gender;
             $user->Country = $request->country;
             $user->theme = $request->theme;
+            $user->AvatarURL = $request->avatar;
             $user->isFirstnameShowned = $request->showFirstname;
             $user->isLastnameShowned = $request->showLastname;
             $user->isGenderShowned = $request->showGender;
