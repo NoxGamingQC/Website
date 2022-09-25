@@ -73,7 +73,7 @@ $(document).ready(function() {
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
-            url: '/en/management/settings',
+            url: '/management/settings',
             method: 'POST',
             data: {
                 'theme': $('#theme').val(),
