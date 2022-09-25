@@ -18,7 +18,7 @@
     <link rel="icon" href="/img/NoxGamingQC.png" type="image/png">
     <link href="{{mix('css/app.css')}}" rel="stylesheet" type="text/css">
     <link href="{{mix('css/bootstrap.css')}}" rel="stylesheet" type="text/css">
-    @if($mainTheme['force'])
+    @if($mainTheme['force'] === "true")
         @if($mainTheme['themeName'] === 'dracula')
             <link href="{{mix('css/draculaSkin.css')}}" rel="stylesheet" type="text/css">
         @elseif($mainTheme['themeName'] === 'light')
