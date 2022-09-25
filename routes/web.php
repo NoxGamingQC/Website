@@ -51,11 +51,11 @@
             'middleware' => 'Development'
     ], function () {
     Route::get('/', function () {
-        return redirect(app()->getLocale() . '/home');
+        return redirect(app()->getLocale() . '/');
     });
 
     Route::get('/home', function () {
-        return redirect(app()->getLocale() . '/home');
+        return redirect(app()->getLocale() . '/');
     });
 
 
@@ -75,11 +75,11 @@
         function () {
             //Route that require language
             Route::get('/', function () {
-                return redirect('home');
+                return view('welcome');
             });
 
             Route::get('/home', function () {
-                return view('welcome');
+                return redirect(app()->getLocale() . '/');
             });
 
             Route::get('/projects', 'ProjectsController@index');
