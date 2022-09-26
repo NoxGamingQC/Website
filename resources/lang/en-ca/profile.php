@@ -39,5 +39,7 @@ return [
     'other' => "Other",
     'premium' => "Premium user",
     'not_premium' => "No subscription",
-    'avatar' => "Profile picture"
+    'avatar' => "Profile picture",
+    'premium_time' => "Premium expiration date",
+    'lifetime' => "Lifetime subscription"
 ];

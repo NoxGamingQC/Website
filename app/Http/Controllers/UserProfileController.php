@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\User;
 use Carbon\Carbon;
 use App\PageLists;
+use App\Points;
 
 class UserProfileController extends Controller
 {
@@ -34,18 +35,17 @@ class UserProfileController extends Controller
 
         $badges = $user->Badges ? explode(';', $user->Badges) : [];
 
-        //if (!!$user->PremiumType) {
-        //    array_push($discordBadges, 'Discord Nitro');
-        //}
+        $points = Points::getPoints($user->id);
+        $pointCount = Points::getTotalPoints($user->id);
 
-        if (!!$user->PremiumType && $user->PremiumType == 1) {
-            $premiumType = 'Discord Nitro Classic';
-        } elseif (!!$user->PremiumType && $user->PremiumType == 2) {
-            $premiumType = 'Discord Nitro';
+        if($user->PremiumDuration === 'lifetime') {
+            $premiumTime = 'lifetime';
+        } elseif($user->PremiumDuration == null) {
+            $premiumTime = null;
         } else {
-            $premiumType = 'N/A';
+            $premiumTime = $user->PremiumDuration;
         }
-
+        
         if ($user->isGenderShowned && $user->Gender !== null) {
             if($user->Gender == 0) {
                 $gender = 'Other';
@@ -66,7 +66,7 @@ class UserProfileController extends Controller
             "discordName" => $user->DiscordName,
             "language" => $user->Language,
             "badges" => $badges,
-            "nitroSubscription"=> $premiumType,
+            "premiumTime" => $premiumTime,
             "avatarURL" => $user->AvatarURL,
             "discriminator" => $user->Discriminator,
             "discordEmail" => $user->DiscordEmail,
@@ -76,6 +76,8 @@ class UserProfileController extends Controller
             "gender" => $gender,
             "birthdate" => $birthdate,
             "country" => $user->Country,
+            'pointCount' => $pointCount,
+            'points' => $points
         ]);
     }
 
