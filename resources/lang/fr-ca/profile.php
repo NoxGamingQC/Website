@@ -41,5 +41,7 @@ return [
     'not_premium' => "Aucun abonnement",
     'avatar' => "Photo de profile",
     'premium_time' => "Date d'expiration de l'abonnement premium",
-    'lifetime' => "Abonnement à vie"
+    'lifetime' => "Abonnement à vie",
+    'points' => "points",
+    'points_log' => "Journeaux de point"
 ];
