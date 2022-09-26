@@ -34,9 +34,9 @@ class UserProfileController extends Controller
 
         $badges = $user->Badges ? explode(';', $user->Badges) : [];
 
-        if (!!$user->PremiumType) {
-            array_push($discordBadges, 'Discord Nitro');
-        }
+        //if (!!$user->PremiumType) {
+        //    array_push($discordBadges, 'Discord Nitro');
+        //}
 
         if (!!$user->PremiumType && $user->PremiumType == 1) {
             $premiumType = 'Discord Nitro Classic';
