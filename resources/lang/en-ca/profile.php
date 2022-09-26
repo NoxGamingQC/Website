@@ -41,5 +41,7 @@ return [
     'not_premium' => "No subscription",
     'avatar' => "Profile picture",
     'premium_time' => "Premium expiration date",
-    'lifetime' => "Lifetime subscription"
+    'lifetime' => "Lifetime subscription",
+    'points' => "points",
+    'points_log' => "Points logs"
 ];

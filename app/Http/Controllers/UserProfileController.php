@@ -35,7 +35,7 @@ class UserProfileController extends Controller
 
         $badges = $user->Badges ? explode(';', $user->Badges) : [];
 
-        $points = Points::getPoints($user->id);
+        $points = Points::getPointsLogs($user->id);
         $pointCount = Points::getTotalPoints($user->id);
 
         if($user->PremiumDuration === 'lifetime') {

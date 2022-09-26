@@ -45,7 +45,7 @@
             </div>
         </div>
     </div>
-    <div class="col-md-12">
+    <div class="col-md-6">
         <h3>{{ trans('profile.user_acknowledgement') }}</h3>
         <br />
         <ul>
@@ -55,6 +55,19 @@
             @if($birthdate)<li><b>{{ trans('profile.birthdate') }}:</b> {{$birthdate}}</li>@endif
             @if($age)<li><b>{{ trans('profile.age') }}:</b> {{$age}}</li>@endif
         </ul>
+    </div>
+    <div class="col-md-6">
+        <h3>{{ trans('profile.points_log') }}</h3>
+        <br />
+        @if($points)
+            <ul>
+                @foreach ($points as $key => $point)
+                    <li>{{$point->Quantity . ' ' . trans('profile.points')}} - {{$point->Comment}}</li>
+                @endforeach
+            </ul>
+        @else
+        <p>{{trans('profile.no_points')}}</p>
+        @endif
     </div>
 </div>
 @stop
