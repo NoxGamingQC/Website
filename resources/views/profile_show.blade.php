@@ -4,7 +4,10 @@
 <div class="row">
     <div class="col-md-12">
         <div class="panel panel-block-primary">
-            <div class="panel-body" style="padding: 5%">
+            <div class="panel-body" style="padding: 5%; padding-top: 2% !important">
+                <div class="col-md-12">
+                    <h3>Points: {{$pointCount}}</h3>
+                </div>
                 @if ($country)
                     @if($isPremium)
                     <div class="col-md-6 text-left">
@@ -46,7 +49,9 @@
         <h3>{{ trans('profile.user_acknowledgement') }}</h3>
         <br />
         <ul>
-            @if($gender)<li><b>{{ trans('profile.gender') }}:</b> {{$gender}}</li>@endif
+            @if($premiumTime === 'lifetime')<li><b>{{ trans('profile.premium_time') }}:</b> {{trans('profile.lifetime')}}</li>@endif
+            @if($premiumTime && $premiumTime !== 'lifetime')<li><b>{{ trans('profile.premium_time') }}:</b> {{$premiumTime}}</li>@endif
+            @if($gender)<li><b>{{ trans('profile.gender') }}:</b> {{trans('profile.' . strtolower($gender))}}</li>@endif
             @if($birthdate)<li><b>{{ trans('profile.birthdate') }}:</b> {{$birthdate}}</li>@endif
             @if($age)<li><b>{{ trans('profile.age') }}:</b> {{$age}}</li>@endif
         </ul>
