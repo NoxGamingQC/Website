@@ -3091,6 +3091,22 @@ a:hover, a:active {
   color: #c22222;
 }
 
+.status-online {
+  border: 5px solid #3AA55D;
+}
+
+.status-idle {
+  border: 5px solid #F9A61A;
+}
+
+.status-dnd {
+  border: 5px solid #EC4145;
+}
+
+.status-offline {
+  border: 5px solid #737F8C;
+}
+
 .btn-lg {
   padding: 25%;
 }
@@ -3720,56 +3736,56 @@ fieldset[disabled] .btn-reddit.active {
 
 .panel-success > .panel-heading {
   background-image: none;
-  background-color: #2cc470;
-  color: #020905;
-  border-color: #155c35;
+  background-color: #3AA55D;
+  color: black;
+  border-color: #194728;
 }
 
 .panel-success > .panel-body {
   background-image: none;
-  background-color: #2cc470;
-  color: #020905;
-  border-color: #155c35;
+  background-color: #3AA55D;
+  color: black;
+  border-color: #194728;
 }
 
 .panel-success {
-  border-color: #155c35;
+  border-color: #194728;
 }
 
 .panel-warning > .panel-heading {
   background-image: none;
-  background-color: #fcf977;
-  color: #8a8703;
-  border-color: #eee905;
+  background-color: #F9A61A;
+  color: #2c1c01;
+  border-color: #905c04;
 }
 
 .panel-warning > .panel-body {
   background-image: none;
-  background-color: #fcf977;
-  color: #8a8703;
-  border-color: #eee905;
+  background-color: #F9A61A;
+  color: #2c1c01;
+  border-color: #905c04;
 }
 
 .panel-warning {
-  border-color: #eee905;
+  border-color: #905c04;
 }
 
 .panel-danger > .panel-heading {
   background-image: none;
-  background-color: #ff0000;
-  color: #1a0000;
-  border-color: maroon;
+  background-color: #EC4145;
+  color: #410708;
+  border-color: #9e1013;
 }
 
 .panel-danger > .panel-body {
   background-image: none;
-  background-color: #ff0000;
-  color: #1a0000;
-  border-color: maroon;
+  background-color: #EC4145;
+  color: #410708;
+  border-color: #9e1013;
 }
 
 .panel-danger {
-  border-color: maroon;
+  border-color: #9e1013;
 }
 
 .panel-info > .panel-heading {
@@ -4189,7 +4205,7 @@ a[type=button]:disabled {
   }
 }
 .table-danger {
-  background-color: #ff0000;
+  background-color: #EC4145;
 }
 
 .table-info {
@@ -4201,11 +4217,11 @@ a[type=button]:disabled {
 }
 
 .table-success {
-  background-color: #2cc470;
+  background-color: #3AA55D;
 }
 
 .table-warning {
-  background-color: #fcf977;
+  background-color: #F9A61A;
 }
 
 .table-primary {
@@ -4213,7 +4229,7 @@ a[type=button]:disabled {
 }
 
 .badge-danger {
-  background-color: #ff0000;
+  background-color: #EC4145;
   text-align: center;
   border-radius: 5px 5px 5px 5px;
   padding: 5px;
@@ -4234,14 +4250,14 @@ a[type=button]:disabled {
 }
 
 .badge-success {
-  background-color: #2cc470;
+  background-color: #3AA55D;
   text-align: center;
   border-radius: 5px 5px 5px 5px;
   padding: 5px;
 }
 
 .badge-warning {
-  background-color: #fcf977;
+  background-color: #F9A61A;
   text-align: center;
   border-radius: 5px 5px 5px 5px;
   padding: 5px;
@@ -4286,11 +4302,11 @@ hr {
 }
 
 .text-error {
-  color: #ff0000 !important;
+  color: #EC4145 !important;
 }
 
 .text-warning {
-  color: #fcf977 !important;
+  color: #F9A61A !important;
 }
 
 .text-info {
@@ -4496,11 +4512,11 @@ button.toast-close-button {
 }
 
 .toast-success {
-  background-color: #2cc470;
+  background-color: #3AA55D;
 }
 
 .toast-error {
-  background-color: #ff0000;
+  background-color: #EC4145;
 }
 
 .toast-info {
@@ -4508,7 +4524,7 @@ button.toast-close-button {
 }
 
 .toast-warning {
-  background-color: #fcf977;
+  background-color: #F9A61A;
 }
 
 .toast-progress {

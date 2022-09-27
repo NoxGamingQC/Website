@@ -14,9 +14,9 @@
                         <div class="panel-body">
                             <div class="text-center">
                                 @if($user['avatarURL'])
-                                    <img class="img-circle" src="{{$user['avatarURL']}}" alt="{{$user['username']}}" title="{{$user['username']}}" width="100px" style="padding-bottom: 5px" />
+                                    <img class="img-circle status-offline" src="{{$user['avatarURL']}}" alt="{{$user['username']}}" title="{{$user['username']}}" width="100px" />
                                 @else
-                                    <img class="img-circle" src="/img/no-avatar.jpg" alt="{{$user['username']}}" title="{{$user['username']}}" width="100px" style="padding-bottom: 5px" />
+                                    <img class="img-circle status-offline" src="/img/no-avatar.jpg" alt="{{$user['username']}}" title="{{$user['username']}}" width="100px" />
                                 @endif
                                 <h4>
                                     <b>
