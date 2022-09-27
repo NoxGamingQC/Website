@@ -59,7 +59,7 @@ class UserProfileController extends Controller
         }
 
         $statusTime = new Carbon($user->statusTimeCheck);
-        if($statusTime->diffInMinutes(Carbon::now()) > 5) {
+        if($statusTime->diffInMinutes(Carbon::now()) > 1) {
             $state = 'offline';
         } else {
             $state = $user->status;
