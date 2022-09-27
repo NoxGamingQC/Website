@@ -23,7 +23,7 @@
                     @else
                     <div class="col-md-12 text-right">
                     @endif
-                        <img src="/img/Badges/premium.png" alt="{{trans('profile.premium')}}" title="{{trans('profile.premium')}}" width="40px" />
+                        <i class="fa fa-star fa-4x" aria-hidden="true"></i>
                     </div>
                 @endif
                 <div class="col-md-12 text-center">
@@ -39,7 +39,7 @@
                     </h1>
                     <h3>{{ trans('profile.' . $grade) }}</h3>
                     @foreach ($badges as $badge)
-                        <img src="/img/Badges/{{$badge}}.png" alt="{{ucfirst($badge)}}" title="{{ucfirst($badge)}}" width="75px" style="padding: 7px 14px" />
+                        <p style="display:inline"><i class="fa fa-{{$badge}} fa-4x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;</p>
                     @endforeach
                 </div>
             </div>
