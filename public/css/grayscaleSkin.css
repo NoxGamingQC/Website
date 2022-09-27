@@ -4313,6 +4313,10 @@ hr {
   color: #CECECE !important;
 }
 
+.text-success {
+  color: #7C7C7C !important;
+}
+
 .text-copyright {
   color: #555555 !important;
   font-size: 12px;

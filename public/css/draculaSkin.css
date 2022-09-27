@@ -4247,6 +4247,10 @@ hr {
   color: #80DCEE !important;
 }
 
+.text-success {
+  color: #48D06D !important;
+}
+
 .text-copyright {
   color: #888888 !important;
   font-size: 12px;
