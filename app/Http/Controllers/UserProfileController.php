@@ -159,10 +159,6 @@ class UserProfileController extends Controller
                 $user->statusTimeCheck = Carbon::now();
                 $user->save();
             }
-        } else {
-            abort(403);
         }
-
-        
     }
 }
