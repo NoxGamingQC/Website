@@ -14,7 +14,7 @@
                     @else
                     <div class="col-md-12 text-left">
                     @endif
-                        <img class="img-circle" src="https://cdn.countryflags.com/thumbs/{{str_replace(' ', '-', strtolower($country))}}/flag-square-500.png" alt="{{$country}}" title="{{$country}}" width="40px" />
+                        <img class="img img-circle" src="https://cdn.countryflags.com/thumbs/{{str_replace(' ', '-', strtolower($country))}}/flag-square-500.png" alt="{{$country}}" title="{{$country}}" width="40px" />
                     </div>
                 @endif
                 @if($isPremium)
@@ -28,9 +28,9 @@
                 @endif
                 <div class="col-md-12 text-center">
                     @if($avatarURL)
-                        <img class="img-circle status-offline" src="{{$avatarURL}}" alt="{{$username}}" title="{{$username}}" width="250px" />
+                        <img class="img img-circle status-offline" src="{{$avatarURL}}" alt="{{$username}}" title="{{$username}}" width="250px" />
                     @else
-                        <img class="img-circle status-offline" src="/img/no-avatar.jpg" alt="{{$username}}" title="{{$username}}" width="250px" />
+                        <img class="img img-circle status-offline" src="/img/no-avatar.jpg" alt="{{$username}}" title="{{$username}}" width="250px" />
                     @endif
                     <h1>
                         {{$username}}

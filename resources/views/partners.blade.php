@@ -16,7 +16,7 @@
             <div class="row">
                 <div class="col-md-4 col-md-offset-2">
                 <div class="panel panel-primary text-center">
-                    <div class="panel-body" style="background-image: url('/img/Partners/CorpsRoyaux.png') !important; background-size: cover !important; height: 350px !important;">
+                    <div class="panel-body img" style="background-image: url('/img/Partners/CorpsRoyaux.png') !important; background-size: cover !important; height: 350px !important;">
                         <h3 class="title"><b>Corps Royaux</b></h3>
                     </div>
                 </div>

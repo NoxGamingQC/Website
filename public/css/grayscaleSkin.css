@@ -3051,7 +3051,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 vr {
-  border-left: 1px solid #000;
+  border-left: 1px solid #515151;
   height: 500px;
   position: absolute;
   left: 50%;
@@ -3084,27 +3084,27 @@ p, a, li {
 }
 
 a:link, a:visited {
-  color: #000;
+  color: #515151;
 }
 
 a:hover, a:active {
-  color: #000;
+  color: #515151;
 }
 
 .status-online {
-  border: 5px solid #135c34;
+  border: 5px solid #7C7C7C;
 }
 
 .status-idle {
-  border: 5px solid #949349;
+  border: 5px solid #AFAFAF;
 }
 
 .status-dnd {
-  border: 5px solid #8a0000;
+  border: 5px solid #747474;
 }
 
 .status-offline {
-  border: 5px solid #737F8C;
+  border: 5px solid #7C7C7C;
 }
 
 .btn-lg {
@@ -3169,7 +3169,7 @@ fieldset[disabled] .btn-default.active {
 .btn-primary.active,
 .open .dropdown-toggle.btn-primary {
   color: #ffffff !important;
-  background-color: #000;
+  background-color: #515151;
   border-color: #bfbfbf;
 }
 
@@ -3673,7 +3673,7 @@ fieldset[disabled] .btn-reddit.active {
 
 .panel-default > .panel-heading {
   background-image: none;
-  background-color: #000;
+  background-color: #515151;
   color: #000;
   border-color: #fff;
 }
@@ -3691,7 +3691,7 @@ fieldset[disabled] .btn-reddit.active {
 
 .panel-primary > .panel-heading {
   background-image: none;
-  background-color: #000;
+  background-color: #515151;
   color: #000;
   border-color: #bfbfbf;
 }
@@ -3709,9 +3709,9 @@ fieldset[disabled] .btn-reddit.active {
 
 .panel-block-primary > .panel-body {
   background-image: none;
-  background-color: #000;
+  background-color: #515151;
   color: #000;
-  border-color: #000;
+  border-color: #515151;
 }
 @media (min-width: 1210px) {
   .panel-block-primary > .panel-body {
@@ -3723,7 +3723,7 @@ fieldset[disabled] .btn-reddit.active {
 }
 
 .panel-block-primary {
-  border-color: #000;
+  border-color: #515151;
 }
 
 .panel-block-primary > .panel-body > h1 {
@@ -3736,74 +3736,74 @@ fieldset[disabled] .btn-reddit.active {
 
 .panel-success > .panel-heading {
   background-image: none;
-  background-color: #135c34;
-  color: black;
-  border-color: black;
+  background-color: #7C7C7C;
+  color: #090909;
+  border-color: #3c3c3c;
 }
 
 .panel-success > .panel-body {
   background-image: none;
-  background-color: #135c34;
-  color: black;
-  border-color: black;
+  background-color: #7C7C7C;
+  color: #090909;
+  border-color: #3c3c3c;
 }
 
 .panel-success {
-  border-color: black;
+  border-color: #3c3c3c;
 }
 
 .panel-warning > .panel-heading {
   background-image: none;
-  background-color: #949349;
-  color: black;
-  border-color: #3f3e1f;
+  background-color: #AFAFAF;
+  color: #3c3c3c;
+  border-color: #6f6f6f;
 }
 
 .panel-warning > .panel-body {
   background-image: none;
-  background-color: #949349;
-  color: black;
-  border-color: #3f3e1f;
+  background-color: #AFAFAF;
+  color: #3c3c3c;
+  border-color: #6f6f6f;
 }
 
 .panel-warning {
-  border-color: #3f3e1f;
+  border-color: #6f6f6f;
 }
 
 .panel-danger > .panel-heading {
   background-image: none;
-  background-color: #8a0000;
-  color: black;
-  border-color: #0b0000;
+  background-color: #747474;
+  color: #010101;
+  border-color: #343434;
 }
 
 .panel-danger > .panel-body {
   background-image: none;
-  background-color: #8a0000;
-  color: black;
-  border-color: #0b0000;
+  background-color: #747474;
+  color: #010101;
+  border-color: #343434;
 }
 
 .panel-danger {
-  border-color: #0b0000;
+  border-color: #343434;
 }
 
 .panel-info > .panel-heading {
   background-image: none;
-  background-color: #255b6b;
-  color: black;
-  border-color: #040a0c;
+  background-color: #CECECE;
+  color: #5b5b5b;
+  border-color: #8e8e8e;
 }
 
 .panel-info > .panel-body {
   background-image: none;
-  background-color: #255b6b;
-  color: black;
-  border-color: #040a0c;
+  background-color: #CECECE;
+  color: #5b5b5b;
+  border-color: #8e8e8e;
 }
 
 .panel-info {
-  border-color: #040a0c;
+  border-color: #8e8e8e;
 }
 
 input[type=text] {
@@ -4055,7 +4055,7 @@ a[type=button]:disabled {
 }
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
   color: #ffffff;
-  background-color: #000;
+  background-color: #515151;
 }
 .navbar-default .navbar-nav > li > a.disabled {
   color: #555555;
@@ -4082,8 +4082,8 @@ a[type=button]:disabled {
 }
 .navbar-default .navbar-nav > li > .dropdown-menu > li > a:hover, .navbar-default .navbar-nav > li > .dropdown-menu > li > a:focus {
   color: #ffffff;
-  border-color: #000;
-  background-color: #000;
+  border-color: #515151;
+  background-color: #515151;
 }
 .navbar-default .navbar-nav > li > .dropdown-menu > li > a > a.disabled {
   color: #555555 !important;
@@ -4094,11 +4094,11 @@ a[type=button]:disabled {
   background-color: #fff !important;
 }
 .navbar-default .navbar-nav > li > .dropdown-menu > li.divider {
-  background-color: #000;
+  background-color: #515151;
 }
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
   color: #000;
-  background-color: #000;
+  background-color: #515151;
 }
 .navbar-default .navbar-nav > .active > a.disabled {
   color: #555555 !important;
@@ -4110,7 +4110,7 @@ a[type=button]:disabled {
 }
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
   color: #ffffff;
-  background-color: #000;
+  background-color: #515151;
 }
 .navbar-default .navbar-nav > .open > a.disabled {
   color: #555555 !important;
@@ -4124,7 +4124,7 @@ a[type=button]:disabled {
   border-color: #bfbfbf;
 }
 .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
-  background-color: #000;
+  background-color: #515151;
 }
 .navbar-default .navbar-toggle:hover .icon-bar, .navbar-default .navbar-toggle:focus .icon-bar {
   background-color: #000;
@@ -4154,7 +4154,7 @@ a[type=button]:disabled {
   }
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
     color: #000;
-    background-color: #000;
+    background-color: #515151;
   }
 }
 @media (min-width: 768px) {
@@ -4205,11 +4205,11 @@ a[type=button]:disabled {
   }
 }
 .table-danger {
-  background-color: #8a0000;
+  background-color: #747474;
 }
 
 .table-info {
-  background-color: #255b6b;
+  background-color: #CECECE;
 }
 
 .table-default {
@@ -4217,26 +4217,26 @@ a[type=button]:disabled {
 }
 
 .table-success {
-  background-color: #135c34;
+  background-color: #7C7C7C;
 }
 
 .table-warning {
-  background-color: #949349;
+  background-color: #AFAFAF;
 }
 
 .table-primary {
-  background-color: #000;
+  background-color: #515151;
 }
 
 .badge-danger {
-  background-color: #8a0000;
+  background-color: #747474;
   text-align: center;
   border-radius: 5px 5px 5px 5px;
   padding: 5px;
 }
 
 .badge-info {
-  background-color: #255b6b;
+  background-color: #CECECE;
   text-align: center;
   border-radius: 5px 5px 5px 5px;
   padding: 5px;
@@ -4250,21 +4250,21 @@ a[type=button]:disabled {
 }
 
 .badge-success {
-  background-color: #135c34;
+  background-color: #7C7C7C;
   text-align: center;
   border-radius: 5px 5px 5px 5px;
   padding: 5px;
 }
 
 .badge-warning {
-  background-color: #949349;
+  background-color: #AFAFAF;
   text-align: center;
   border-radius: 5px 5px 5px 5px;
   padding: 5px;
 }
 
 .badge-primary {
-  background-color: #000;
+  background-color: #515151;
   text-align: center;
   border-radius: 5px 5px 5px 5px;
   padding: 5px;
@@ -4302,15 +4302,15 @@ hr {
 }
 
 .text-error {
-  color: #8a0000 !important;
+  color: #747474 !important;
 }
 
 .text-warning {
-  color: #949349 !important;
+  color: #AFAFAF !important;
 }
 
 .text-info {
-  color: #255b6b !important;
+  color: #CECECE !important;
 }
 
 .text-copyright {
@@ -4508,23 +4508,23 @@ button.toast-close-button {
 }
 
 .toast {
-  background-color: #000;
+  background-color: #515151;
 }
 
 .toast-success {
-  background-color: #135c34;
+  background-color: #7C7C7C;
 }
 
 .toast-error {
-  background-color: #8a0000;
+  background-color: #747474;
 }
 
 .toast-info {
-  background-color: #255b6b;
+  background-color: #CECECE;
 }
 
 .toast-warning {
-  background-color: #949349;
+  background-color: #AFAFAF;
 }
 
 .toast-progress {
@@ -4570,7 +4570,7 @@ button.toast-close-button {
 }
 
 td.active.day {
-  background-color: #000;
+  background-color: #515151;
 }
 
 td.day:hover {
