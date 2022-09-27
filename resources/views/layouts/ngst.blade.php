@@ -8,7 +8,6 @@
     <meta name="description" content="NGST's Website">
     <meta name="author" content="NoxGamingQC">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="refresh" content="60">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @if(env('APP_ENV', 'developement'))
     <title>{{env('APP_ENV') == 'developement' ? 'Dev - ' : ''}}{{env('APP_NAME')}} - @yield('title')</title>

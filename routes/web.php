@@ -34,6 +34,7 @@
 
     Route::get('language/set/{language}', 'LanguageController@index');
     Route::post('/management/settings', 'SettingsController@post');
+    Route::post('/profile/update_state', 'UserProfileController@updateState');
 
     // Route with redirections
     Route::get('/guilded', function () {

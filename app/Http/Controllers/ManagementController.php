@@ -8,8 +8,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\User;
 use App\Modules;
-use App\BotActivities;
+use Carbon\Carbon;
 use App\PageLists;
+use App\BotActivities;
 
 class ManagementController extends Controller
 {
@@ -58,6 +59,13 @@ class ManagementController extends Controller
                     }
 
                     $badges = $user->Badges ? explode(';', $user->Badges) : [];
+
+                    $statusTime = new Carbon($user->statusTimeCheck);
+                    if($statusTime->diffInMinutes(Carbon::now()) > 5) {
+                        $state = 'offline';
+                    } else {
+                        $state = $user->status;
+                    }
                     
                     array_push($users, [
                         'id' => $user->id,
@@ -72,7 +80,8 @@ class ManagementController extends Controller
                         'discordID' => $user->DiscordID,
                         'discordName' => $user->DiscordName,
                         'discriminator' => $user->Discriminator,
-                        'badges' => $badges
+                        'badges' => $badges,
+                        'state' => $state
                     ]);
                 }
                 return view('management.users', [

@@ -2080,6 +2080,8 @@ __webpack_require__(/*! ./bootstrap */ "./resources/assets/js/bootstrap.js");
 
 __webpack_require__(/*! ./facebook */ "./resources/assets/js/facebook.js");
 
+__webpack_require__(/*! ./userState */ "./resources/assets/js/userState.js");
+
 window.toastr = __webpack_require__(/*! toastr */ "./node_modules/toastr/toastr.js");
 
 /***/ }),
@@ -2169,6 +2171,71 @@ window.fbAsyncInit = function () {
   js.src = "https://connect.facebook.net/en_US/sdk.js";
   fjs.parentNode.insertBefore(js, fjs);
 })(document, 'script', 'facebook-jssdk');
+
+/***/ }),
+
+/***/ "./resources/assets/js/userState.js":
+/*!******************************************!*\
+  !*** ./resources/assets/js/userState.js ***!
+  \******************************************/
+/***/ (() => {
+
+var idleTime = 0;
+$(document).ready(function () {
+  var idleInterval = setInterval(timerIncrement, 15000);
+  $(this).mousemove(function (e) {
+    checkIfOnline();
+    idleTime = 0;
+  });
+  $(this).keypress(function (e) {
+    checkIfOnline();
+    idleTime = 0;
+  });
+});
+
+function checkIfOnline() {
+  if (idleTime != 0 && idleTime <= 1) {
+    $.ajax({
+      headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+      },
+      url: '/profile/update_state',
+      method: 'POST',
+      data: {
+        'state': 'online'
+      },
+      success: function success() {},
+      error: function error(_error) {
+        console.log(_error);
+      }
+    });
+  }
+}
+
+function timerIncrement() {
+  idleTime = idleTime + 1;
+
+  if (idleTime > 1) {
+    $.ajax({
+      headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+      },
+      url: '/profile/update_state',
+      method: 'POST',
+      data: {
+        'state': 'idle'
+      },
+      success: function success() {},
+      error: function error(_error2) {
+        console.log(_error2);
+      }
+    });
+  }
+
+  if (idleTime > 39) {
+    window.location.reload();
+  }
+}
 
 /***/ }),
 
