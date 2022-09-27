@@ -56,3 +56,19 @@ a:link, a:visited {
 a:hover, a:active {
     color: $brand-primary;
 }
+
+.status-online {
+    border: 5px solid $brand-success;
+}
+
+.status-idle {
+    border: 5px solid $brand-warning;
+}
+
+.status-dnd {
+    border: 5px solid $brand-danger;
+}
+
+.status-offline {
+    border: 5px solid $brand-offline;
+}

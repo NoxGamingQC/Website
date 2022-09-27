@@ -3091,6 +3091,22 @@ a:hover, a:active {
   color: #000;
 }
 
+.status-online {
+  border: 5px solid #135c34;
+}
+
+.status-idle {
+  border: 5px solid #949349;
+}
+
+.status-dnd {
+  border: 5px solid #8a0000;
+}
+
+.status-offline {
+  border: 5px solid #737F8C;
+}
+
 .btn-lg {
   padding: 25%;
 }
