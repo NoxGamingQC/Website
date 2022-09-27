@@ -56,13 +56,23 @@ class ManagementController extends Controller
                     if ($user->isAdmin) {
                         $grade = 'administrator';
                     }
+
+                    $badges = $user->Badges ? explode(';', $user->Badges) : [];
                     
                     array_push($users, [
                         'id' => $user->id,
                         'username' => $user->name,
                         'avatarURL' => $user->AvatarURL,
                         'isBOT' => $user->isBOT,
-                        'grade' => $grade
+                        'grade' => $grade,
+                        'isPremium' => $user->isPremium,
+                        'isVerified' => $user->isVerified,
+                        'isEmailSubscriber' => $user->isEmailSubscriber,
+                        'country' => $user->Country,
+                        'discordID' => $user->DiscordID,
+                        'discordName' => $user->DiscordName,
+                        'discriminator' => $user->Discriminator,
+                        'badges' => $badges
                     ]);
                 }
                 return view('management.users', [
