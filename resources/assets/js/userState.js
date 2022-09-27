@@ -1,6 +1,6 @@
 var idleTime = 0;
     $(document).ready(function () {
-        var idleInterval = setInterval(timerIncrement, 6000);
+        var idleInterval = setInterval(timerIncrement, 10000);
 
         $(this).mousemove(function (e) {
             checkIfOnline();
