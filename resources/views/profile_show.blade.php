@@ -4,7 +4,7 @@
 <div class="row">
     <div class="col-md-12">
         <div class="panel panel-block-primary">
-            <div class="panel-body" style="padding: 5%; padding-top: 2% !important">
+            <div class="panel-body" style="padding: 5%; padding-top: 2% !important;">
                 <div class="col-md-12">
                     <h3>Points: {{$pointCount}}</h3>
                 </div>
@@ -23,7 +23,7 @@
                     @else
                     <div class="col-md-12 text-right">
                     @endif
-                        <i class="fa fa-star fa-4x" aria-hidden="true"></i>
+                        <img src="/img/Badges/premium.png" alt="{{trans('profile.premium')}}" title="{{trans('profile.premium')}}" width="60px" />
                     </div>
                 @endif
                 <div class="col-md-12 text-center">
@@ -39,8 +39,9 @@
                     </h1>
                     <h3>{{ trans('profile.' . $grade) }}</h3>
                     @foreach ($badges as $badge)
-                        <p style="display:inline"><i class="fa fa-{{$badge}} fa-4x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;</p>
+                        <img src="/img/Badges/{{$badge}}.png" alt="{{ucfirst($badge)}}" title="{{ucfirst($badge)}}" width="100px" style="padding: 7px 14px" />
                     @endforeach
+                    <br />
                 </div>
             </div>
         </div>
