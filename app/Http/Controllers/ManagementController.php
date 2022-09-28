@@ -59,13 +59,6 @@ class ManagementController extends Controller
                     }
 
                     $badges = $user->Badges ? explode(';', $user->Badges) : [];
-
-                    $statusTime = new Carbon($user->statusTimeCheck);
-                    if($statusTime->diffInMinutes(Carbon::now()) > 1) {
-                        $state = 'offline';
-                    } else {
-                        $state = $user->status;
-                    }
                     
                     array_push($users, [
                         'id' => $user->id,
@@ -81,7 +74,7 @@ class ManagementController extends Controller
                         'discordName' => $user->DiscordName,
                         'discriminator' => $user->Discriminator,
                         'badges' => $badges,
-                        'state' => $state
+                        'state' => $user->status
                     ]);
                 }
                 return view('management.users', [

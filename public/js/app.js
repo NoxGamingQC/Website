@@ -2180,9 +2180,11 @@ window.fbAsyncInit = function () {
   \******************************************/
 /***/ (() => {
 
-var idleTime = 0;
+var idleTime = 1;
 $(document).ready(function () {
-  var idleInterval = setInterval(timerIncrement, 10000);
+  checkIfOnline();
+  setTimeout(checkIfOnline, 46000);
+  var idleInterval = setInterval(timerIncrement, 300000);
   $(this).mousemove(function (e) {
     checkIfOnline();
     idleTime = 0;
@@ -2236,6 +2238,23 @@ function timerIncrement() {
     window.location.reload();
   }
 }
+
+window.addEventListener('beforeunload', function (e) {
+  $.ajax({
+    headers: {
+      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    },
+    url: '/profile/update_state',
+    method: 'POST',
+    data: {
+      'state': 'offline'
+    },
+    success: function success() {},
+    error: function error(_error3) {
+      console.log(_error3);
+    }
+  });
+});
 
 /***/ }),
 

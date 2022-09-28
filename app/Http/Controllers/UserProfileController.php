@@ -58,13 +58,6 @@ class UserProfileController extends Controller
             $gender = null;
         }
 
-        $statusTime = new Carbon($user->statusTimeCheck);
-        if($statusTime->diffInMinutes(Carbon::now()) > 1) {
-            $state = 'offline';
-        } else {
-            $state = $user->status;
-        }
-
         return view('profile_show', [
             "username" => $user->name,
             "discordID" => $user->DiscordID,
@@ -85,7 +78,7 @@ class UserProfileController extends Controller
             "country" => $user->Country,
             'pointCount' => $pointCount,
             'points' => $points,
-            'state' => $state,
+            'state' => $user->status,
         ]);
     }
 
@@ -153,6 +146,9 @@ class UserProfileController extends Controller
 
     public function updateState(Request $request) {
         if (Auth::user()) {
+            if($request->state === 'offline') {
+                sleep(45);
+            }
             $user = User::findOrFail(Auth::user()->id);
             if($user->Status != $request->state && !$user->isStatusLock) {
                 $user->status = $request->state;
