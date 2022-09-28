@@ -28,9 +28,9 @@
                 @endif
                 <div class="col-md-12 text-center">
                     @if($avatarURL)
-                        <img class="img img-circle status-{{$state}}" src="{{$avatarURL}}" alt="{{$username}}" title="{{$username}}" width="250px" />
+                        <img class="img img-circle {{$isCurrentUser ? 'user-status' : ''}} status-{{$state}}" src="{{$avatarURL}}" alt="{{$username}}" title="{{$username}}" width="250px" />
                     @else
-                        <img class="img img-circle status-{{$state}}" src="/img/no-avatar.jpg" alt="{{$username}}" title="{{$username}}" width="250px" />
+                        <img class="img img-circle {{$isCurrentUser ? 'user-status' : ''}} status-{{$state}}" src="/img/no-avatar.jpg" alt="{{$username}}" title="{{$username}}" width="250px" />
                     @endif
                     <h1>
                         {{$username}}
