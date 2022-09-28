@@ -65,6 +65,12 @@ class ManagementController extends Controller
                     } else {
                         $isCurrentUser = false;
                     }
+
+                    if ($user->lockStatus === 'online' || $user->status === 'offline') {
+                        $state = $user->status;
+                    } else {
+                        $state = $user->lockStatus;
+                    }
                     
                     array_push($users, [
                         'id' => $user->id,
@@ -80,7 +86,7 @@ class ManagementController extends Controller
                         'discordName' => $user->DiscordName,
                         'discriminator' => $user->Discriminator,
                         'badges' => $badges,
-                        'state' => $user->status,
+                        'state' => $state,
                         'isCurrentUser' => $isCurrentUser
                     ]);
                 }
