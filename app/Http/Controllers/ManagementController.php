@@ -59,6 +59,9 @@ class ManagementController extends Controller
                     }
 
                     $badges = $user->Badges ? explode(';', $user->Badges) : [];
+
+                    
+                    $isCurrentUser = ($user->id == Auth::user()->id);
                     
                     array_push($users, [
                         'id' => $user->id,
@@ -74,7 +77,8 @@ class ManagementController extends Controller
                         'discordName' => $user->DiscordName,
                         'discriminator' => $user->Discriminator,
                         'badges' => $badges,
-                        'state' => $user->status
+                        'state' => $user->status,
+                        'isCurrentUser' => $isCurrentUser
                     ]);
                 }
                 return view('management.users', [

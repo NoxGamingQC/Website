@@ -1,21 +1,24 @@
 var idleTime = 1;
+var checkStatus = 1;
     $(document).ready(function () {
         checkIfOnline();
         setTimeout(checkIfOnline, 46000);
-        var idleInterval = setInterval(timerIncrement, 300000);
+        var idleInterval = setInterval(timerIncrement, 100000);
 
         $(this).mousemove(function (e) {
             checkIfOnline();
+            checkStatus = 0;
             idleTime = 0;
         });
         $(this).keypress(function (e) {
             checkIfOnline();
+            checkStatus = 0;
             idleTime = 0;
         });
     });
 
     function checkIfOnline () {
-        if(idleTime != 0 && idleTime <= 1) {
+        if(checkStatus) {
             $.ajax({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -27,6 +30,9 @@ var idleTime = 1;
                 },
                 
                 success: function() {
+                    $('.user-status').addClass('status-online');
+                    $('.user-status').removeClass('status-offline');
+                    $('.user-status').removeClass('status-idle');
                 },
                 error: function (error) {
                     console.log(error);
@@ -37,6 +43,7 @@ var idleTime = 1;
 
     function timerIncrement() {
         idleTime = idleTime + 1;
+        checkStatus = 1;
         if(idleTime > 1) {
             $.ajax({
                 headers: {
@@ -49,6 +56,9 @@ var idleTime = 1;
                 },
                 
                 success: function() {
+                    $('.user-status').addClass('status-idle');
+                    $('.user-status').removeClass('status-offline');
+                    $('.user-status').removeClass('status-online');
                 },
                 error: function (error) {
                     console.log(error);

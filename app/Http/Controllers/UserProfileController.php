@@ -57,6 +57,7 @@ class UserProfileController extends Controller
         } else {
             $gender = null;
         }
+        $isCurrentUser = ($user->id == Auth::user()->id);
 
         return view('profile_show', [
             "username" => $user->name,
@@ -79,6 +80,7 @@ class UserProfileController extends Controller
             'pointCount' => $pointCount,
             'points' => $points,
             'state' => $user->status,
+            'isCurrentUser' => $isCurrentUser
         ]);
     }
 
