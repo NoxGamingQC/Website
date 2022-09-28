@@ -57,7 +57,11 @@ class UserProfileController extends Controller
         } else {
             $gender = null;
         }
-        $isCurrentUser = ($user->id == Auth::user()->id);
+        if(Auth::check()) {
+            $isCurrentUser = ($user->id == Auth::user()->id);
+        } else {
+            $isCurrentUser = false;
+        }
 
         return view('profile_show', [
             "username" => $user->name,

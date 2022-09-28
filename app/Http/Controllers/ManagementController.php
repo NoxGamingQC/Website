@@ -60,8 +60,11 @@ class ManagementController extends Controller
 
                     $badges = $user->Badges ? explode(';', $user->Badges) : [];
 
-                    
-                    $isCurrentUser = ($user->id == Auth::user()->id);
+                    if(Auth::check()) {
+                        $isCurrentUser = ($user->id == Auth::user()->id);
+                    } else {
+                        $isCurrentUser = false;
+                    }
                     
                     array_push($users, [
                         'id' => $user->id,
