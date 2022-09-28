@@ -29,10 +29,12 @@ var checkStatus = 1;
                     'state': 'online'
                 },
                 
-                success: function() {
-                    $('.user-status').addClass('status-online');
-                    $('.user-status').removeClass('status-offline');
-                    $('.user-status').removeClass('status-idle');
+                success: function(isLocked) {
+                    if(!isLocked) {
+                        $('.user-status').addClass('status-online');
+                        $('.user-status').removeClass('status-offline');
+                        $('.user-status').removeClass('status-idle');
+                    }
                 },
                 error: function (error) {
                     console.log(error);
@@ -55,10 +57,12 @@ var checkStatus = 1;
                     'state': 'idle'
                 },
                 
-                success: function() {
-                    $('.user-status').addClass('status-idle');
-                    $('.user-status').removeClass('status-offline');
-                    $('.user-status').removeClass('status-online');
+                success: function(isLocked) {
+                    if(!isLocked) {
+                        $('.user-status').addClass('status-idle');
+                        $('.user-status').removeClass('status-offline');
+                        $('.user-status').removeClass('status-online');
+                    }
                 },
                 error: function (error) {
                     console.log(error);

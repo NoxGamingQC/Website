@@ -63,6 +63,12 @@ class UserProfileController extends Controller
             $isCurrentUser = false;
         }
 
+        if ($user->lockStatus === 'online' || $user->status === 'offline') {
+            $state = $user->status;
+        } else {
+            $state = $user->lockStatus;
+        }
+
         return view('profile_show', [
             "username" => $user->name,
             "discordID" => $user->DiscordID,
@@ -83,7 +89,7 @@ class UserProfileController extends Controller
             "country" => $user->Country,
             'pointCount' => $pointCount,
             'points' => $points,
-            'state' => $user->status,
+            'state' => $state,
             'isCurrentUser' => $isCurrentUser
         ]);
     }
@@ -95,6 +101,12 @@ class UserProfileController extends Controller
         }
         if (Auth::user()) {
             $user = User::findOrFail(Auth::user()->id);
+
+            if ($user->lockStatus === 'online' || $user->status === 'offline') {
+                $state = $user->status;
+            } else {
+                $state = $user->lockStatus;
+            }
 
             return view('profile_edit', [
                 "id" => $user->id,
@@ -120,7 +132,7 @@ class UserProfileController extends Controller
                 "isBirthdateShowned"=>$user->isBirthdateShowned,
                 "isAgeShowned"=>$user->isAgeShowned,
                 "country"=>$user->Country,
-                'state' => $user->status
+                'state' => $state
             ]);
         } else {
             abort(403);
@@ -156,10 +168,15 @@ class UserProfileController extends Controller
                 sleep(45);
             }
             $user = User::findOrFail(Auth::user()->id);
-            if($user->Status != $request->state && !$user->isStatusLock) {
+            if($user->Status != $request->state) {
                 $user->status = $request->state;
                 $user->statusTimeCheck = Carbon::now();
                 $user->save();
+            }
+            if($user->lockStatus === 'online') {
+                return false;
+            } else {
+                return true;
             }
         }
     }
