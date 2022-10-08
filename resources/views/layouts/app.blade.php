@@ -18,46 +18,16 @@
     <link href="{{mix('css/app.css')}}" rel="stylesheet" type="text/css">
     <link href="{{mix('css/bootstrap.css')}}" rel="stylesheet" type="text/css">
     @if($mainTheme['force'] === "true")
-        @if($mainTheme['themeName'] === 'dracula')
-            <link href="{{mix('css/draculaSkin.css')}}" rel="stylesheet" type="text/css">
-        @elseif($mainTheme['themeName'] === 'light')
-            <link href="{{mix('css/lightSkin.css')}}" rel="stylesheet" type="text/css">
-        @elseif($mainTheme['themeName'] === 'dark') 
-            <link href="{{mix('css/darkSkin.css')}}" rel="stylesheet" type="text/css">
-        @elseif($mainTheme['themeName'] === 'grayscale')
-            <link href="{{mix('css/grayscaleSkin.css')}}" rel="stylesheet" type="text/css">
-        @endif
+        <link href="{{mix('css/'. $mainTheme['themeName'] . 'Skin.css')}}" rel="stylesheet" type="text/css">
     @else
         @guest
-            @if($mainTheme['themeName'] === 'dracula')
-                <link href="{{mix('css/draculaSkin.css')}}" rel="stylesheet" type="text/css">
-            @elseif($mainTheme['themeName'] === 'light')
-                <link href="{{mix('css/lightSkin.css')}}" rel="stylesheet" type="text/css">
-            @elseif($mainTheme['themeName'] === 'dark') 
-                <link href="{{mix('css/darkSkin.css')}}" rel="stylesheet" type="text/css">
-            @elseif($mainTheme['themeName'] === 'grayscale')
-                <link href="{{mix('css/grayscaleSkin.css')}}" rel="stylesheet" type="text/css">
-            @endif
+            <link href="{{mix('css/'. $mainTheme['themeName'] . 'Skin.css')}}" rel="stylesheet" type="text/css">
         @endguest
         @auth
-            @if(Auth::user()->theme === 'dracula')
-                <link href="{{mix('css/draculaSkin.css')}}" rel="stylesheet" type="text/css">
-            @elseif(Auth::user()->theme === 'light')
-                <link href="{{mix('css/lightSkin.css')}}" rel="stylesheet" type="text/css">
-            @elseif(Auth::user()->theme === 'dark')
-                <link href="{{mix('css/darkSkin.css')}}" rel="stylesheet" type="text/css">
-            @elseif(Auth::user()->theme === 'grayscale')
-                <link href="{{mix('css/grayscaleSkin.css')}}" rel="stylesheet" type="text/css">
+             @if(Auth::user()->theme)
+                <link href="{{mix('css/'. Auth::user()->theme . 'Skin.css')}}" rel="stylesheet" type="text/css">
             @else
-                @if($mainTheme['themeName'] === 'dracula')
-                    <link href="{{mix('css/draculaSkin.css')}}" rel="stylesheet" type="text/css">
-                @elseif($mainTheme['themeName'] === 'light')
-                    <link href="{{mix('css/lightSkin.css')}}" rel="stylesheet" type="text/css">
-                @elseif($mainTheme['themeName'] === 'dark') 
-                    <link href="{{mix('css/darkSkin.css')}}" rel="stylesheet" type="text/css">
-                @elseif($mainTheme['themeName'] === 'grayscale')
-                    <link href="{{mix('css/grayscaleSkin.css')}}" rel="stylesheet" type="text/css">
-                @endif
+                <link href="{{mix('css/'. $mainTheme['themeName'] . 'Skin.css')}}" rel="stylesheet" type="text/css">
             @endif
         @endauth
     @endif

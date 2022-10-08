@@ -2076,9 +2076,8 @@ module.exports = JSON.parse("{\"name\":\"axios\",\"version\":\"0.21.4\",\"descri
  * dependencies. Then, we will be ready to develop a robust and powerful
  * application frontend using useful Laravel and JavaScript libraries.
  */
-__webpack_require__(/*! ./bootstrap */ "./resources/assets/js/bootstrap.js");
+__webpack_require__(/*! ./bootstrap */ "./resources/assets/js/bootstrap.js"); //require('./facebook');
 
-__webpack_require__(/*! ./facebook */ "./resources/assets/js/facebook.js");
 
 __webpack_require__(/*! ./userState */ "./resources/assets/js/userState.js");
 
@@ -2142,38 +2141,6 @@ if (token) {
 
 /***/ }),
 
-/***/ "./resources/assets/js/facebook.js":
-/*!*****************************************!*\
-  !*** ./resources/assets/js/facebook.js ***!
-  \*****************************************/
-/***/ (() => {
-
-window.fbAsyncInit = function () {
-  FB.init({
-    appId: '1939714869643030',
-    cookie: true,
-    xfbml: true,
-    version: 'v14.0'
-  });
-  FB.AppEvents.logPageView();
-};
-
-(function (d, s, id) {
-  var js,
-      fjs = d.getElementsByTagName(s)[0];
-
-  if (d.getElementById(id)) {
-    return;
-  }
-
-  js = d.createElement(s);
-  js.id = id;
-  js.src = "https://connect.facebook.net/en_US/sdk.js";
-  fjs.parentNode.insertBefore(js, fjs);
-})(document, 'script', 'facebook-jssdk');
-
-/***/ }),
-
 /***/ "./resources/assets/js/userState.js":
 /*!******************************************!*\
   !*** ./resources/assets/js/userState.js ***!
@@ -2209,10 +2176,12 @@ function checkIfOnline() {
       data: {
         'state': 'online'
       },
-      success: function success() {
-        $('.user-status').addClass('status-online');
-        $('.user-status').removeClass('status-offline');
-        $('.user-status').removeClass('status-idle');
+      success: function success(isLocked) {
+        if (!isLocked) {
+          $('.user-status').addClass('status-online');
+          $('.user-status').removeClass('status-offline');
+          $('.user-status').removeClass('status-idle');
+        }
       },
       error: function error(_error) {
         console.log(_error);
@@ -2235,10 +2204,12 @@ function timerIncrement() {
       data: {
         'state': 'idle'
       },
-      success: function success() {
-        $('.user-status').addClass('status-idle');
-        $('.user-status').removeClass('status-offline');
-        $('.user-status').removeClass('status-online');
+      success: function success(isLocked) {
+        if (!isLocked) {
+          $('.user-status').addClass('status-idle');
+          $('.user-status').removeClass('status-offline');
+          $('.user-status').removeClass('status-online');
+        }
       },
       error: function error(_error2) {
         console.log(_error2);
@@ -32964,6 +32935,19 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
 
 /***/ }),
 
+/***/ "./resources/assets/sass/halloweenSkin.scss":
+/*!**************************************************!*\
+  !*** ./resources/assets/sass/halloweenSkin.scss ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./resources/assets/sass/app.scss":
 /*!****************************************!*\
   !*** ./resources/assets/sass/app.scss ***!
@@ -33814,6 +33798,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
 /******/ 			["./resources/assets/sass/draculaSkin.scss"],
 /******/ 			["./resources/assets/sass/lightSkin.scss"],
 /******/ 			["./resources/assets/sass/grayscaleSkin.scss"],
+/******/ 			["./resources/assets/sass/halloweenSkin.scss"],
 /******/ 			["./resources/assets/sass/app.scss"]
 /******/ 		];
 /******/ 		// no chunk on demand loading
