@@ -14,5 +14,6 @@ return [
     'theme_dark' => "Dark theme",
     'theme_dracula' => "Dracula theme",
     'theme_light' => "Light theme",
-    'theme_reload_warning' => "Theme will be applied on reload."
+    'theme_reload_warning' => "Theme will be applied on reload.",
+    'theme_halloween' => "Halloween theme"
 ];

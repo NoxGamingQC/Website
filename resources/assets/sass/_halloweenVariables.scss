@@ -1,0 +1,54 @@
+// Body
+$background-color: #18181A;
+
+// Borders
+$border-color: darken($background-color, 25%);
+$hr: #000000;
+$hr-highlight: #ffffff;
+
+// Brands
+$brand-primary: #5E32BA;
+$brand-info: #BFDA7A;
+$brand-success: #96C457;
+$brand-warning: #E9804D;
+$brand-danger: #EB6123;
+$brand-orange: #EB6123;
+$brand-offline: #737F8C;
+
+// Typography
+$icon-font-path: "~/bootstrap-sass/assets/fonts/bootstrap/";
+
+//Font
+$raleway-font: "Raleway", sans-serif;
+$rochester-font: "Rochester", cursive;
+$vesper-font: 'Vesper Libre', serif;
+
+$font-size-base: 14px;
+$line-height-base: 1.6;
+
+//Font color
+$text-color: #ffffff;
+$text-hover: #CCCCCC;
+$text-disabled: #888888;
+
+$text-highlight-color: #ffffff;
+$text-highlight-hover: #CCCCCC;
+$text-highlight-disabled: #888888;
+
+$text-title-color: #000000;
+$text-title-border: #FFFFFF;
+
+// Navbar
+$navbar-bg: #222222;
+
+// Buttons
+$btn-background-color: $background-color;
+
+// Inputs
+$input-border: lighten($text-color, 40%);
+$input-border-focus: lighten($brand-primary, 25%);
+$input-color-placeholder: lighten($text-color, 30%);
+$input-disabled: #444444;
+
+// Panels
+$panel-default-heading-bg: #222222;

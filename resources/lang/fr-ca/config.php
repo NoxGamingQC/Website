@@ -15,5 +15,6 @@ return [
     'theme_dark' => "Thème sombre",
     'theme_dracula' => "Thème Dracula",
     'theme_light' => "Thème clair",
-    'theme_reload_warning' => "Le thème sera appliqué au prochain chargement de page"
+    'theme_reload_warning' => "Le thème sera appliqué au prochain chargement de page",
+    'theme_halloween' => "Thème Halloween"
 ];

@@ -48,6 +48,7 @@
                         <option value="dracula" {{$mainTheme['themeName'] === "dracula" ? 'selected' : ''}}>{{(trans('config.theme_dracula'))}}</option>
                         <option value="light" {{$mainTheme['themeName'] === "light" ? 'selected' : ''}}>{{(trans('config.theme_light'))}}</option>
                         <option value="grayscale" {{$mainTheme['themeName'] === "grayscale" ? 'selected' : ''}}>{{(trans('config.theme_grayscale'))}}</option>
+                        <option value="halloween" {{$mainTheme['themeName'] === "halloween" ? 'selected' : ''}}>{{(trans('config.theme_halloween'))}}</option>
                     </select>
                     <br />
                     <p class="warning-text"><i>{{trans('config.theme_reload_warning')}}</i></p>
