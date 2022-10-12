@@ -1,8 +1,9 @@
 # Website
 
 [![Build Status](https://api.travis-ci.com/NoxGamingQC/Website.svg?token=8xPnyZAhxFTwCpTJsxsG&branch=master&status=errored)](https://travis-ci.com/NoxGamingQC/Website)
-[![Dependencies](https://david-dm.org/NoxGamingQC/Website.svg)](https://david-dm.org/NoxGamingQC/Website)
-[![Dev-Dependencies](https://david-dm.org/NoxGamingQC/Website/dev-status.svg)](https://david-dm.org/NoxGamingQC/Website?type=dev)
+[![PHP version](https://img.shields.io/badge/laravel-5.5.50-blue)](#)
+[![PHP version](https://img.shields.io/badge/php-%3E%3D7.4-blue)](#)
+[![PHP version](https://img.shields.io/badge/npm-%5E6.13.6-blue)](#)
 [![Online Discord Members](https://discord.com/api/guilds/938558244924829756/widget.png?style=shield)](https://noxgamingqc.ca/discord)
 
 Our website [noxgamingqc.ca](https://noxgamingqc.ca). It use the version 5.5.50 of the Laravel framework.
