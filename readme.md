@@ -3,9 +3,11 @@
 [![Build Status](https://api.travis-ci.com/NoxGamingQC/Website.svg?token=8xPnyZAhxFTwCpTJsxsG&branch=master&status=errored)](https://travis-ci.com/NoxGamingQC/Website)
 [![Dependencies](https://david-dm.org/NoxGamingQC/Website.svg)](https://david-dm.org/NoxGamingQC/Website)
 [![Dev-Dependencies](https://david-dm.org/NoxGamingQC/Website/dev-status.svg)](https://david-dm.org/NoxGamingQC/Website?type=dev)
-[![Online Discord Members](https://discordapp.com/api/guilds/605028700182020101/widget.png?style=shield)](https://discord.gg/6DGc24x)
+[![Online Discord Members](https://discordapp.com/api/guilds/938558244924829756/widget.png?style=shield)](https://noxgamingqc.ca/discord)
 
-## Setting up your environement
+Our website [noxgamingqc.ca](https://noxgamingqc.ca). It use the version 5.5.50 of the Laravel framework.
+
+## Installation
 
 ### Prerequirement
 
@@ -16,38 +18,49 @@
 - posgresql
 - php 7.4
 
-
-### Step
+### Steps
 
 - Create a new repository
 - Navigate into the new repository
 - Fork the project
-- Import the git repository into it `git remote add origin <repository_git_url>`
+- Import the git repository into it
+
+```bash
+git remote add origin <repository_git_url>
+```
+
 - Duplicate `.env.exemple` and name it `.env`
-- Install the node_modules `npm install`
-- Get a new app key: `php artisan key:generate`
-- Generate the database `php artisan migrate`
-- Launch the app `docker-compose up -d --build`
-- Reload the sources and the styles `npm run dev`
 
-## Useful information
+```bash
+npm install
+php artisan key:generate
+php artisan migrate
+npm run dev
+```
 
-Laravel framework v.5.5.50
+## Usage
 
-## Creator and contributors
+```php
+// Usage description here
+```
 
-- NoxGamingQC
+### Testing
 
-### Useful Link
+```bash
+docker-compose up -d --build
+```
 
-[GitHub](https://github.com/NoxGamingQC/Website)
+Navigate to `localhost:8000`
 
-[Website](http://rebrand.ly/noxgamingqc)
+## Credits
+
+- [NoxGamingQC](https://github.com/noxgamingqc)
+- [All Contributors](../../contributors)
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+The MIT License (MIT). Please see the [license file](LICENSE.md) for more information.
 
-## Miscs
+## Known errors
 
-If you receive the error `Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 7.2.5".`, you can do `composer install --ignore-platform-reqs`.
+- If you receive the error `Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 7.2.5".`, you can do `composer install --ignore-platform-reqs` until the issue is fixed.
