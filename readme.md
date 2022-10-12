@@ -32,9 +32,10 @@ git remote add origin <repository_git_url>
 - Duplicate `.env.exemple` and name it `.env`
 
 ```bash
-npm install
 php artisan key:generate
+composer install
 php artisan migrate
+npm install
 npm run dev
 ```
 
