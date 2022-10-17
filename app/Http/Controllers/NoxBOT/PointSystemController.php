@@ -28,7 +28,7 @@ class PointSystemController extends Controller
                 $points->Comment = $request->comment;
                 $points->save();
                 return 0;
-            } else if ($isBotValid && $bot->Environement === "development") {
+            } else if ($isBotValid && $bot->Environement === "developement") {
                 return 0;
             }
         }
