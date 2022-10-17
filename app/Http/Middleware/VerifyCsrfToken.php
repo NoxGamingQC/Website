@@ -12,6 +12,7 @@ class VerifyCsrfToken extends Middleware
      * @var array
      */
     protected $except = [
-        'noxbot/data/json/*'
+        'noxbot/data/json/*',
+        'noxbot/data/*'
     ];
 }
