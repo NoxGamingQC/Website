@@ -17,23 +17,21 @@ class PointSystemController extends Controller
         $bot = BotLists::where('BotID', $request->BotID)->first();
         if($bot) {
             $isBotValid = ($bot->Token === $request->token);
-        }
-        if($isBotValid && $bot->Environement === "production") {
-            $user = User::where('DiscordID', $request->userID)->first();
-            if($user) {
-                $userID = $user->id;
+            if($isBotValid && $bot->Environement === "production") {
+                $user = User::where('DiscordID', $request->userID)->first();
+                if($user) {
+                    $userID = $user->id;
+                }
+                $points = new Points();
+                $points->UserID = $userID;
+                $points->Quantity = ($request->points * $request->mulitplier);
+                $points->Comment = $request->comment;
+                $points->save();
+                return 0;
+            } else if ($isBotValid && $bot->Environement === "development") {
+                return 0;
             }
-            $points = new Points();
-            $points->UserID = $userID;
-            $points->Quantity = ($request->points * $request->mulitplier);
-            $points->Comment = $request->comment;
-            $points->save();
-            return 0;
-        } else if ($isBotValid && $bot->Environement === "development") {
-            return 0;
-        } else {
-            abort(403);
         }
-        
+        abort(403);
     }
 }
