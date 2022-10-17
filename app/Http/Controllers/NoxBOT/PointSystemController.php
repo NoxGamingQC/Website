@@ -6,11 +6,26 @@ use Auth;
 use DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\User;
+use App\Points;
+use App\BotLists;
 
 class PointSystemController extends Controller
 {
     public function addPoints(Request $request)
     {
-        abort(503);
+        $bot = BotLists::where('BotID', $request->BotID)->first();
+        $isBotValid = ($bot->token === $request->token);
+        if($isBotValid) {
+            $user = User::where('DiscordID', $request->userID)->first();
+            if($user) {
+                $userID = $user->id;
+            }
+            $points = new Points();
+            $points->UserID = $userID;
+            $points->Quantity = ($request->points * $request->mulitplier);
+            $points->Comment = $request->comment;
+            $points->save();
+        }
     }
 }
