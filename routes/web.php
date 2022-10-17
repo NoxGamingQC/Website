@@ -62,6 +62,7 @@
 
     // NoxBOT routes
     Route::get('/noxbot/data/json/activities', 'NoxBOT\BotActivitiesController@getActivities');
+    Route::post('/noxbot/data/points/add', 'NoxBOT\PointSystemController@addPoints');
     Route::get('/noxbot/data/json/modules', 'NoxBOT\BotModulesController@getModules');
     Route::get('/noxbot/data/json/subs_modules', 'NoxBOT\BotModulesController@getSubsModules');
     Route::get('/noxbot/data/json/roles_reactions', 'NoxBOT\BotRolesReactionsController@getRolesReactions');
