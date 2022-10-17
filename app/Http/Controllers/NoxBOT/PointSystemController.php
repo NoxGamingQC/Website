@@ -14,8 +14,8 @@ class PointSystemController extends Controller
 {
     public function addPoints(Request $request)
     {
-        return $request->botID;
         $bot = BotLists::where('BotID', $request->botID)->first();
+        return $bot;
         if($bot) {
             $isBotValid = ($bot->Token === $request->websiteToken);
             if($isBotValid && $bot->Environement === "production") {
