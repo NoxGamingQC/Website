@@ -17,6 +17,7 @@
         <div class="col-md-12 text-center">
             <h1><i>USER</i></h1>
             <h3>est en route vers le restaurant.</h3>
+            <h5>Il y a 1 minute</h5>
         </div>
     </div>
     
