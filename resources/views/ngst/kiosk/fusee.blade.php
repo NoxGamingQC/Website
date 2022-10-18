@@ -35,10 +35,10 @@
             </div>
         </div>
     @else
-        <div class="col-md-12 text-center">
+        <div class="row">
+            <div class="col-md-12 text-center">
                 <img class="img-circle" src="https://rotisseriesfusee.com/wp-content/uploads/2021/01/logo-fusee-1.png" width="100" />
             </div>
-        <div class="row">
             <div class="col-md-12 text-center">
                 <h3>En attente d'un livreur...</h3>
             </div>
