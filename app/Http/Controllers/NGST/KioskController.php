@@ -10,6 +10,6 @@ class KioskController extends Controller
     public function getFusee()
     {
 
-        return view('ngst.kiosk.fusee')
+        return view('ngst.kiosk.fusee');
     }
 }
