@@ -26,7 +26,7 @@
                 background-position: center; /* Center the image */
                 background-repeat: no-repeat; /* Do not repeat the image */
                 background-size: 350px;
-                opacity: 0.2;
+                opacity: 0.1;
                 top: 0;
                 left: 0;
                 bottom: 0;
