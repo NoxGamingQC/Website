@@ -19,6 +19,15 @@
             <h3>est en route vers le restaurant.</h3>
         </div>
     </div>
+    
+    <div class="row">
+        <div class="col-md-offset-8 col-md-4 text-right">
+            <p><i>USER - 5 MIN</i></p>
+            <p><i>USER - 10 MIN</i></p>
+            <p><i>USER - 15 MIN</i></p>
+            <p><i>USER - 20 MIN</i></p>
+        </div>
+    </div>
 </div>
 
 @stop
