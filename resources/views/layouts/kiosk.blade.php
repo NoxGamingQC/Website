@@ -25,7 +25,7 @@
                 height: 450px; /* You must set a specified height */
                 background-position: center; /* Center the image */
                 background-repeat: no-repeat; /* Do not repeat the image */
-                background-size: 350px;
+                background-size: 450px;
                 opacity: 0.1;
                 top: 0;
                 left: 0;
