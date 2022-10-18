@@ -16,6 +16,7 @@
             }
             body {
                 background-color: transparent;
+                font-family: 'Verdana', sans-serif;
             }
             body::after {
                 content: "";
