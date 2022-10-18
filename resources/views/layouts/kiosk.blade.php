@@ -11,13 +11,16 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
         <script src="{{mix('js/app.js')}}"></script>
         <style>
+            @font-face {
+                font-family: 'Verdana';
+                src: url(/fonts/verdana.ttf);
+            }
             html {
                 background-color: #efe3ba;
             }
             body {
                 background-color: transparent;
-                font-family: 'Verdana', sans-serif;
-                src: url('/fonts/verdana.ttf');
+                font-family: 'Verdana';
             }
             body::after {
                 content: "";
