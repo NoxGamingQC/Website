@@ -17,6 +17,7 @@
             body {
                 background-color: transparent;
                 font-family: 'Verdana', sans-serif;
+                src: url('/fonts/verdana.ttf');
             }
             body::after {
                 content: "";
