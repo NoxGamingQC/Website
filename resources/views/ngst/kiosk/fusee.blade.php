@@ -21,11 +21,11 @@
     </div>
     
     <div class="row">
-        <div class="col-md-offset-8 col-md-4 text-right">
-            <p><i>USER - 5 MIN</i></p>
-            <p><i>USER - 10 MIN</i></p>
-            <p><i>USER - 15 MIN</i></p>
-            <p><i>USER - 20 MIN</i></p>
+        <div class="col-md-12 text-right">
+            <p><i>USER - 5 minutes</i></p>
+            <p><i>USER - 10 minutes</i></p>
+            <p><i>USER - 15 minutes</i></p>
+            <p><i>USER - 20 minutes</i></p>
         </div>
     </div>
 </div>
