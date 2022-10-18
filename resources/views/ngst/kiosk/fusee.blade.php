@@ -15,7 +15,7 @@
             <img class="img-circle" src="/img/no-avatar.jpg" width="100" />
         </div>
         <div class="col-md-12 text-center">
-            <h1><i>USER</i></h1>
+            <h1><i>JIMMY B.</i></h1>
             <h3>est en route vers le restaurant.</h3>
             <h5>Il y a 1 minute</h5>
         </div>
@@ -23,10 +23,10 @@
     
     <div class="row">
         <div class="col-md-12 text-right">
-            <p><i>USER - Il y a 5 minutes</i></p>
-            <p><i>USER - Il y a 10 minutes</i></p>
-            <p><i>USER - Il y a 15 minutes</i></p>
-            <p><i>USER - Il y a 20 minutes</i></p>
+            <p><i>JIMMY B. - Il y a 5 minutes</i></p>
+            <p><i>JIMMY B. - Il y a 10 minutes</i></p>
+            <p><i>JIMMY B. - Il y a 15 minutes</i></p>
+            <p><i>JIMMY B. - Il y a 20 minutes</i></p>
         </div>
     </div>
 </div>
