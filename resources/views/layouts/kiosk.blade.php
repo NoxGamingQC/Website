@@ -8,6 +8,7 @@
         <meta name="author" content="NoxGamingQC">
         <meta name="viewport" content="width=800, height=480, initial-scale=1, user-scalable=0">
         <meta name="csrf-token" content="{{ csrf_token() }}">
+        <meta http-equiv="refresh" content="60">
         <link href="{{mix('css/bootstrap.css')}}" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
         <script src="{{mix('js/app.js')}}"></script>
@@ -21,11 +22,11 @@
             body::after {
                 content: "";
                 background-image: url("https://rotisseriesfusee.com/wp-content/uploads/2021/01/logo-fusee-1.png");
-                height: 350px; /* You must set a specified height */
+                height: 450px; /* You must set a specified height */
                 background-position: center; /* Center the image */
                 background-repeat: no-repeat; /* Do not repeat the image */
                 background-size: 350px;
-                opacity: 0.5;
+                opacity: 0.2;
                 top: 0;
                 left: 0;
                 bottom: 0;
