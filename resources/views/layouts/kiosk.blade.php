@@ -4,11 +4,9 @@
         <meta name="google-site-verification" content="D30gPHSCahf2lVeDo0Ndgc8vI1cQvv8d1gXIZa3B2ds" />
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="description" content="NoxGamingQC's Website">
-        <meta name="author" content="NoxGamingQC">
         <meta name="viewport" content="width=800, height=480, initial-scale=1, user-scalable=0">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <meta http-equiv="refresh" content="60">
+        <meta http-equiv="refresh" content="30">
         <link href="{{mix('css/bootstrap.css')}}" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
         <script src="{{mix('js/app.js')}}"></script>

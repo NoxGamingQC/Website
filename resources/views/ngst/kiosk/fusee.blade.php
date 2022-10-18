@@ -23,10 +23,10 @@
     
     <div class="row">
         <div class="col-md-12 text-right">
-            <p><i>USER - 5 minutes</i></p>
-            <p><i>USER - 10 minutes</i></p>
-            <p><i>USER - 15 minutes</i></p>
-            <p><i>USER - 20 minutes</i></p>
+            <p><i>USER - Il y a 5 minutes</i></p>
+            <p><i>USER - Il y a 10 minutes</i></p>
+            <p><i>USER - Il y a 15 minutes</i></p>
+            <p><i>USER - Il y a 20 minutes</i></p>
         </div>
     </div>
 </div>
