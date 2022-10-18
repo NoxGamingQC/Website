@@ -19,7 +19,7 @@
             @endif
         </div>
         <div class="col-md-12 text-center">
-            <h1><i>{{$kiosk[0]->Firstname}} {{substr($kiosk[0]->Lastname, 0, 1)}}.</i></h1>
+            <h1><i>{{strtoupper($kiosk[0]->Firstname)}} {{strtoupper(substr($kiosk[0]->Lastname, 0, 1))}}.</i></h1>
             <h3>est en route vers le restaurant.</h3>
             <h5>{{$kiosk[0]->time}}</h5>
         </div>
@@ -29,7 +29,7 @@
         <div class="col-md-12 text-right">
             @foreach($kiosk as $key => $value)
                 @if($key >= 1)
-                    <p><i>{{$value->Firstname}} {{substr($value->Lastname, 0, 1)}}. - {{$value->time}}</i></p>
+                    <p><i>{{strtoupper($value->Firstname)}} {{strtoupper(substr($value->Lastname, 0, 1))}}. - {{$value->time}}</i></p>
                 @endif
             @endforeach
         </div>
