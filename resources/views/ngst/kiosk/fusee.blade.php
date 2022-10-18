@@ -3,21 +3,20 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-12">
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-            <h3 class="text-center">.... est en route vers le restaurant.</h3>
+        <div class="col-md-12 text-center">
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+        </div>
+        <div class="col-md-12 text-center">
+            <img class="img-circle" src="/img/no-avatar.jpg" width="100" />
+        </div>
+        <div class="col-md-12 text-center">
+            <h1><i>USER</i></h1>
+            <h3>est en route vers le restaurant.</h3>
         </div>
     </div>
 </div>
