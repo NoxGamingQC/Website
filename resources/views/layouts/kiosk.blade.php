@@ -59,7 +59,7 @@
                     success: function (data) {
                         $.each(data.kiosk, function(key, value) {
                             if(key == 0){
-                                $('#userAvatar0').attr('src', value.logoURL);
+                                $('#userAvatar0').attr('src', value.AvatarURL);
                             }
                             $('#userName'+ key).html(value.Firstname + " " + value.Lastname[0] + ".");
                             $('#userTime'+ key).html(value.time);
