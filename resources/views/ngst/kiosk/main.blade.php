@@ -21,7 +21,11 @@
         </div>
         <div class="col-md-12 text-center">
             <h1><i>{{strtoupper($kiosk[0]->Firstname)}} {{strtoupper(substr($kiosk[0]->Lastname, 0, 1))}}.</i></h1>
-            <h3>est en route vers le restaurant.</h3>
+             @if($company->language === "fr")
+                <h3>est en route vers le restaurant.</h3>
+            @elseif($company->language === "en")
+                <h3>is on his/her way to the restaurant.</h3>
+            @endif
             <h5>{{$kiosk[0]->time}}</h5>
         </div>
         <div class="col-md-12 text-right">
@@ -33,7 +37,7 @@
         </div>
         @else
             <div class="col-md-12 text-center">
-                <img class="img-circle" src="https://rotisseriesfusee.com/wp-content/uploads/2021/01/logo-fusee-1.png" width="100" />
+                <img class="img-circle" src="{{$company->logoURL}}" width="100" />
             </div>
             <div class="col-md-12 text-center">
                 <h3>En attente d'un livreur...</h3>
