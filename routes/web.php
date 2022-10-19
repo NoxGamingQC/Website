@@ -11,6 +11,7 @@
 |
 */
     Route::get('/company/kiosk/{id}', 'NGST\KioskController@index');
+    Route::get('/company/kiosk/{id}/refresh', 'NGST\KioskController@refreshData');
 
 
     Route::group([
