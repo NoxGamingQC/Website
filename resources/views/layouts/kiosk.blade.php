@@ -16,7 +16,7 @@
             }
             html {
                 @if($company->haveGradient)
-                background: linear-gradient({{$company->color_2}} 1%,#FFFFFF 45%,#FFFFFF 65%, {{$company->color_1}} 99%);
+                background: linear-gradient({{$company->color_2}} 1%,#FFFFFF 35%,#FFFFFF 65%, {{$company->color_1}} 99%);
                 background-repeat: no-repeat;
                 background-size: cover;
                 @else
