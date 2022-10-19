@@ -16,7 +16,7 @@
             }
             html {
                 @if($company->haveGradient)
-                background: linear-gradient({{$company->color_2}} 1%, {{$company->color_1}} 60%);
+                background: linear-gradient({{$company->color_2}} 1%,#FFFFFF 50%,  {{$company->color_1}} 99%);
                 background-repeat: no-repeat;
                 background-size: cover;
                 @else
@@ -70,7 +70,6 @@
                     }
                 });
             })();
-            
         </script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
