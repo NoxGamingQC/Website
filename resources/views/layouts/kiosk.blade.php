@@ -16,7 +16,9 @@
                 src: url(/fonts/verdana.ttf);
             }
             html {
-                background-color: #efe3ba;
+                background: linear-gradient(blue, #efe3ba);
+                background-repeat: no-repeat;
+                background-size: cover;
             }
             body {
                 background-color: transparent;
