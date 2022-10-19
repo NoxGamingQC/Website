@@ -61,7 +61,7 @@
                             if(key == 0){
                                 $('#userAvatar0').attr('src', value.AvatarURL);
                             }
-                            $('#userName'+ key).html(value.Firstname + " " + value.Lastname[0] + ".");
+                            $('#userName'+ key).html(value.Firstname.toUpperCase() + " " + value.Lastname[0].toUpperCase() + ".");
                             $('#userTime'+ key).html(value.time);
                         });
                     },
