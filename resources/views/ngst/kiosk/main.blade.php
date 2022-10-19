@@ -40,7 +40,11 @@
                 <img class="img-circle" src="{{$company->logoURL}}" width="100" />
             </div>
             <div class="col-md-12 text-center">
-                <h3>En attente d'un livreur...</h3>
+                @if($company->language === "fr")
+                    <h3>En attente d'un livreur...</h3>
+                @elseif($company->language === "en")
+                    <h3>Waiting for a driver...</h3>
+                @endif
             </div>
         @endif
     </div>
