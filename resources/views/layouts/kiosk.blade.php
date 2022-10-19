@@ -19,6 +19,8 @@
                 background: linear-gradient(blue, #efe3ba);
                 background-repeat: no-repeat;
                 background-size: cover;
+                width: 800px;
+                height: 480px;
             }
             body {
                 background-color: transparent;
