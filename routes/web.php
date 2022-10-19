@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-    Route::get('/store/{slug}/kiosk', 'NGST\KioskController@index');
+    Route::get('/company/kiosk/{id}', 'NGST\KioskController@index');
 
 
     Route::group([

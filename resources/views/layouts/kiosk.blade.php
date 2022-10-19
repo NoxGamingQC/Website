@@ -16,9 +16,13 @@
                 src: url(/fonts/verdana.ttf);
             }
             html {
-                background: linear-gradient(#1A319A 1%, #efe3ba 60%);
+                @if($company->haveGradient)
+                background: linear-gradient({{$company->color_2}} 1%, {{$company->color_1}} 60%);
                 background-repeat: no-repeat;
                 background-size: cover;
+                @else
+                    background-color: {{$company->color_1}};
+                @endif
                 width: 800px;
                 height: 480px;
             }
@@ -28,7 +32,7 @@
             }
             body::after {
                 content: "";
-                background-image: url("https://rotisseriesfusee.com/wp-content/uploads/2021/01/logo-fusee-1.png");
+                background-image: url("{{$company->logoURL}}");
                 height: 450px; /* You must set a specified height */
                 background-position: center; /* Center the image */
                 background-repeat: no-repeat; /* Do not repeat the image */
