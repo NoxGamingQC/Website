@@ -1,5 +1,5 @@
-@if(session('alert'))
-    @foreach(session('alert') as $key => $alert)
+@if($alerts)
+    @foreach($alerts as $key => $alert)
         @if(array_key_exists('success', $alert))
             <div class="row">
                 <div class="panel panel-success">

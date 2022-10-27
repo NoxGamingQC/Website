@@ -64,7 +64,7 @@ class LoginController extends Controller
     {
         Auth::logout();
         return redirect()->back()->with([
-            'alert' => ['success', [
+            'alerts' => ['success', [
                 'title' => "Log out",
                 'text' => "You logged out successfully"
             ]]
