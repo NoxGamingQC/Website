@@ -1,6 +1,6 @@
 @if(session('alert'))
     @foreach(session('alert') as $key => $alert)
-        @if($alert['success'])
+        @if(array_key_exists('success', $alert))
             <div class="row">
                 <div class="panel panel-success">
                     <div class="panel-body alert-success text-center">
@@ -10,7 +10,7 @@
                 </div>
             </div>
         @endif
-        @if($alert['warning'])
+        @if(array_key_exists('warning', $alert))
             <div class="row">
                 <div class="panel panel-warning">
                     <div class="panel-body alert-warning text-center">
@@ -20,7 +20,7 @@
                 </div>
             </div>
         @endif
-        @if($alert['danger'])
+        @if(array_key_exists('danger', $alert))
             <div class="row">
                 <div class="panel panel-danger">
                     <div class="panel-body alert-error text-center">
@@ -30,7 +30,7 @@
                 </div>
             </div>
         @endif
-        @if($alert['info'])
+        @if(array_key_exists('info', $alert))
             <div class="row">
                 <div class="panel panel-info">
                     <div class="panel-body alert-info text-center">
