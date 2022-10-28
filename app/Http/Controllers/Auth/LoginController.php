@@ -56,7 +56,7 @@ class LoginController extends Controller
     {
         if(!session()->has('url.intended'))
         {
-            session(['url.intended' => url()->previous()]);
+            session(['url.intended' => url()->previous()->with('success', 'You logged in successfully.')]);
         }
         return view('auth.login');    
     }
@@ -65,6 +65,6 @@ class LoginController extends Controller
     {
         Session::flush();
         Auth::logout();
-        return redirect()->back()->with('success', 'You logged out successfully'); ;
+        return redirect()->back()->with('success', 'You logged out successfully.');
     }
 }
