@@ -56,7 +56,7 @@ class LoginController extends Controller
     {
         if(!session()->has('url.intended'))
         {
-            session(['url.intended' => url()->previous()->with('success', 'You logged in successfully.')]);
+            session(['url.intended' => url()->previous()]);
         }
         return view('auth.login');    
     }
