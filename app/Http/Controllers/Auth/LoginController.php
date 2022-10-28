@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
-use Auth;
-use App;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class LoginController extends Controller
 {
@@ -62,6 +63,7 @@ class LoginController extends Controller
 
     public function logout(Request $request)
     {
+        Session::flush();
         Auth::logout();
         return redirect()->back()->with('success', 'You logged out successfully'); ;
     }
