@@ -18,16 +18,16 @@
     <link href="{{mix('css/app.css')}}" rel="stylesheet" type="text/css">
     <link href="{{mix('css/bootstrap.css')}}" rel="stylesheet" type="text/css">
     @if($mainTheme['force'] === "true")
-        <link href="{{mix('css/'. $mainTheme['themeName'] . 'Skin.css')}}" rel="stylesheet" type="text/css">
+        <link href="{{mix('css/'. $mainTheme['themeName'] . 'Theme.css')}}" rel="stylesheet" type="text/css">
     @else
         @guest
-            <link href="{{mix('css/'. $mainTheme['themeName'] . 'Skin.css')}}" rel="stylesheet" type="text/css">
+            <link href="{{mix('css/'. $mainTheme['themeName'] . 'Theme.css')}}" rel="stylesheet" type="text/css">
         @endguest
         @auth
              @if(Auth::user()->theme)
-                <link href="{{mix('css/'. Auth::user()->theme . 'Skin.css')}}" rel="stylesheet" type="text/css">
+                <link href="{{mix('css/'. Auth::user()->theme . 'Theme.css')}}" rel="stylesheet" type="text/css">
             @else
-                <link href="{{mix('css/'. $mainTheme['themeName'] . 'Skin.css')}}" rel="stylesheet" type="text/css">
+                <link href="{{mix('css/'. $mainTheme['themeName'] . 'Theme.css')}}" rel="stylesheet" type="text/css">
             @endif
         @endauth
     @endif
