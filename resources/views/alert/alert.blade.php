@@ -1,10 +1,9 @@
 
-<!--<div class="row">
-    <div class="col-md-12">
-        <div class="panel panel-success">
-            <div class="panel-body alert-success text-center">
-                <h4 class="text">$alert['success'][$key]->text</h4>
-            </div>
-        </div>
+@if (Session::has('success'))
+ <div class="alert alert-success alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert">
+            <i class="fa fa-times"></i>
+        </button>
+        <strong>Success !</strong> {{ session('success') }}
     </div>
-</div>-->
+@endif
