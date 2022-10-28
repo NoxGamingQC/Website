@@ -18,6 +18,7 @@ return [
     'welcome_back' => "Welcome back",
     'welcome_back_message' => "It's nice to see you again!",
     'welcome' => "Welcome",
-    'welcome_info' => "Thanks for creating an account. We love to hear about you."
+    'welcome_info' => "Thanks for creating an account. We love to hear about you.",
+    'logout' => "You are now logged out.",
 
 ];

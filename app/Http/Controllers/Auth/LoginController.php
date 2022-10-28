@@ -65,6 +65,6 @@ class LoginController extends Controller
     {
         Session::flush();
         Auth::logout();
-        return redirect()->back()->with('success', 'You logged out successfully.');
+        return redirect()->back()->with('success', trans('auth.logout'));
     }
 }

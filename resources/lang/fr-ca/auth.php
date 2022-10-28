@@ -18,6 +18,7 @@ return [
     'welcome_back' => "Bon retour",
     'welcome_back_message' => "Nous sommes heureux de vous revoir!",
     'welcome' => "Bienvenue",
-    'welcome_info' => "Merci de considerer de créer un compte. Au plaisir de vous voir bientôt."
+    'welcome_info' => "Merci de considerer de créer un compte. Au plaisir de vous voir bientôt.",
+    'logout' => "Vous êtes maintenant déconnecter.",
 
 ];
