@@ -1,0 +1,75 @@
+@import "font-awesome";
+
+// Body
+$background-color: #2E9AEA;
+
+// Borders
+$border-color: darken($background-color, 25%);
+$hr: #fff;
+$hr-highlight: #ffffff;
+
+// Brands
+$brand-primary: #F45FAA;
+$brand-info: #80DCEE;
+$brand-success: #1DEA5D;
+$brand-warning: #E3F40C;
+$brand-danger: #F5A660;
+$brand-orange: #F5A660;
+$brand-highlight: #FFFFFF;
+$brand-offline: #737F8C;
+
+// Typography
+$icon-font-path: "~/bootstrap-sass/assets/fonts/bootstrap/";
+
+//Font
+$raleway-font: "Raleway", sans-serif;
+$rochester-font: "Rochester", cursive;
+$vesper-font: 'Vesper Libre', serif;
+
+$font-size-base: 14px;
+$line-height-base: 1.6;
+
+//Font color
+$text-color: #ffffff;
+$text-hover: #CCCCCC;
+$text-disabled: #888888;
+
+$text-highlight-color: #ffffff;
+$text-highlight-hover: #CCCCCC;
+$text-highlight-disabled: #888888;
+
+
+$text-title-color: #000000;
+$text-title-border: #FFFFFF;
+
+// Navbar
+$navbar-bg: #222222;
+
+// Buttons
+$btn-background-color: $background-color;
+
+// Inputs
+$input-border: lighten($text-color, 40%);
+$input-border-focus: lighten($brand-primary, 25%);
+$input-color-placeholder: lighten($text-color, 30%);
+$input-disabled: #444444;
+
+// Panels
+$panel-default-heading-bg: #222222;
+
+@import "main";
+@import "buttons";
+@import "pannels";
+@import 'inputs';
+@import 'modal';
+@import "navbar";
+@import "text";
+@import "badge";
+@import 'toastr';
+@import "table";
+@import 'datepicker';
+
+.extra-life-logo {
+    background-image: url('/img/Affiliates/Extra Life.png') !important;
+    background-size: cover !important;
+}

@@ -32948,6 +32948,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/assets/sass/unicornTheme.scss":
+/*!*************************************************!*\
+  !*** ./resources/assets/sass/unicornTheme.scss ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./resources/assets/sass/app.scss":
 /*!****************************************!*\
   !*** ./resources/assets/sass/app.scss ***!
@@ -33799,6 +33812,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
 /******/ 			["./resources/assets/sass/lightSkin.scss"],
 /******/ 			["./resources/assets/sass/grayscaleSkin.scss"],
 /******/ 			["./resources/assets/sass/halloweenSkin.scss"],
+/******/ 			["./resources/assets/sass/unicornTheme.scss"],
 /******/ 			["./resources/assets/sass/app.scss"]
 /******/ 		];
 /******/ 		// no chunk on demand loading
