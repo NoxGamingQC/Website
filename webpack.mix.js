@@ -13,11 +13,11 @@ let mix = require('laravel-mix');
 
 mix.js('resources/assets/js/app.js', 'public/js');
 mix.copy('node_modules/Font-Awesome/fonts', 'public/fonts');
-mix.sass('resources/assets/sass/darkSkin.scss', 'public/css');
-mix.sass('resources/assets/sass/draculaSkin.scss', 'public/css');
-mix.sass('resources/assets/sass/lightSkin.scss', 'public/css');
-mix.sass('resources/assets/sass/grayscaleSkin.scss', 'public/css');
-mix.sass('resources/assets/sass/halloweenSkin.scss', 'public/css');
+mix.sass('resources/assets/sass/darkTheme.scss', 'public/css');
+mix.sass('resources/assets/sass/draculaTheme.scss', 'public/css');
+mix.sass('resources/assets/sass/lightTheme.scss', 'public/css');
+mix.sass('resources/assets/sass/grayscaleTheme.scss', 'public/css');
+mix.sass('resources/assets/sass/halloweenTheme.scss', 'public/css');
 mix.sass('resources/assets/sass/unicornTheme.scss', 'public/css');
 mix.sass('resources/assets/sass/app.scss', 'public/css');
 mix.less('resources/assets/sass/bootstrap.less', 'public/css');

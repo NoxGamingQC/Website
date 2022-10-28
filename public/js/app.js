@@ -32935,10 +32935,10 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
 
 /***/ }),
 
-/***/ "./resources/assets/sass/halloweenSkin.scss":
-/*!**************************************************!*\
-  !*** ./resources/assets/sass/halloweenSkin.scss ***!
-  \**************************************************/
+/***/ "./resources/assets/sass/halloweenTheme.scss":
+/*!***************************************************!*\
+  !*** ./resources/assets/sass/halloweenTheme.scss ***!
+  \***************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -32987,35 +32987,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/assets/sass/darkSkin.scss":
-/*!*********************************************!*\
-  !*** ./resources/assets/sass/darkSkin.scss ***!
-  \*********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
-/***/ "./resources/assets/sass/draculaSkin.scss":
-/*!************************************************!*\
-  !*** ./resources/assets/sass/draculaSkin.scss ***!
-  \************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
-/***/ "./resources/assets/sass/lightSkin.scss":
+/***/ "./resources/assets/sass/darkTheme.scss":
 /*!**********************************************!*\
-  !*** ./resources/assets/sass/lightSkin.scss ***!
+  !*** ./resources/assets/sass/darkTheme.scss ***!
   \**********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -33026,10 +33000,36 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/assets/sass/grayscaleSkin.scss":
-/*!**************************************************!*\
-  !*** ./resources/assets/sass/grayscaleSkin.scss ***!
-  \**************************************************/
+/***/ "./resources/assets/sass/draculaTheme.scss":
+/*!*************************************************!*\
+  !*** ./resources/assets/sass/draculaTheme.scss ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./resources/assets/sass/lightTheme.scss":
+/*!***********************************************!*\
+  !*** ./resources/assets/sass/lightTheme.scss ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./resources/assets/sass/grayscaleTheme.scss":
+/*!***************************************************!*\
+  !*** ./resources/assets/sass/grayscaleTheme.scss ***!
+  \***************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -33807,11 +33807,11 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
 /******/ 		var deferredModules = [
 /******/ 			["./resources/assets/js/app.js"],
 /******/ 			["./resources/assets/sass/bootstrap.less"],
-/******/ 			["./resources/assets/sass/darkSkin.scss"],
-/******/ 			["./resources/assets/sass/draculaSkin.scss"],
-/******/ 			["./resources/assets/sass/lightSkin.scss"],
-/******/ 			["./resources/assets/sass/grayscaleSkin.scss"],
-/******/ 			["./resources/assets/sass/halloweenSkin.scss"],
+/******/ 			["./resources/assets/sass/darkTheme.scss"],
+/******/ 			["./resources/assets/sass/draculaTheme.scss"],
+/******/ 			["./resources/assets/sass/lightTheme.scss"],
+/******/ 			["./resources/assets/sass/grayscaleTheme.scss"],
+/******/ 			["./resources/assets/sass/halloweenTheme.scss"],
 /******/ 			["./resources/assets/sass/unicornTheme.scss"],
 /******/ 			["./resources/assets/sass/app.scss"]
 /******/ 		];
