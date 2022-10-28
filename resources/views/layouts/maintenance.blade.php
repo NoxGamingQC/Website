@@ -20,44 +20,44 @@
     <link href="{{mix('css/app.css')}}" rel="stylesheet" type="text/css">
     @if($mainTheme['force'])
         @if($mainTheme['themeName'] === 'dracula')
-            <link href="{{mix('css/draculaSkin.css')}}" rel="stylesheet" type="text/css">
+            <link href="{{mix('css/draculaTheme.css')}}" rel="stylesheet" type="text/css">
         @elseif($mainTheme['themeName'] === 'light')
-            <link href="{{mix('css/lightSkin.css')}}" rel="stylesheet" type="text/css">
+            <link href="{{mix('css/lightTheme.css')}}" rel="stylesheet" type="text/css">
         @elseif($mainTheme['themeName'] === 'dark') 
-            <link href="{{mix('css/darkSkin.css')}}" rel="stylesheet" type="text/css">
+            <link href="{{mix('css/darkTheme.css')}}" rel="stylesheet" type="text/css">
         @elseif($mainTheme['themeName'] === 'queen')
-            <link href="{{mix('css/queenSkin.css')}}" rel="stylesheet" type="text/css">
+            <link href="{{mix('css/queenTheme.css')}}" rel="stylesheet" type="text/css">
         @endif
     @else
         @guest
             @if($mainTheme['themeName'] === 'dracula')
-                <link href="{{mix('css/draculaSkin.css')}}" rel="stylesheet" type="text/css">
+                <link href="{{mix('css/draculaTheme.css')}}" rel="stylesheet" type="text/css">
             @elseif($mainTheme['themeName'] === 'light')
-                <link href="{{mix('css/lightSkin.css')}}" rel="stylesheet" type="text/css">
+                <link href="{{mix('css/lightTheme.css')}}" rel="stylesheet" type="text/css">
             @elseif($mainTheme['themeName'] === 'dark') 
-                <link href="{{mix('css/darkSkin.css')}}" rel="stylesheet" type="text/css">
+                <link href="{{mix('css/darkTheme.css')}}" rel="stylesheet" type="text/css">
             @elseif($mainTheme['themeName'] === 'queen')
-                <link href="{{mix('css/queenSkin.css')}}" rel="stylesheet" type="text/css">
+                <link href="{{mix('css/queenTheme.css')}}" rel="stylesheet" type="text/css">
             @endif
         @endguest
         @auth
             @if(Auth::user()->theme === 'dracula')
-                <link href="{{mix('css/draculaSkin.css')}}" rel="stylesheet" type="text/css">
+                <link href="{{mix('css/draculaTheme.css')}}" rel="stylesheet" type="text/css">
             @elseif(Auth::user()->theme === 'light')
-                <link href="{{mix('css/lightSkin.css')}}" rel="stylesheet" type="text/css">
+                <link href="{{mix('css/lightTheme.css')}}" rel="stylesheet" type="text/css">
             @elseif(Auth::user()->theme === 'dark')
-                <link href="{{mix('css/darkSkin.css')}}" rel="stylesheet" type="text/css">
+                <link href="{{mix('css/darkTheme.css')}}" rel="stylesheet" type="text/css">
             @elseif(Auth::user()->theme === 'queen')
-                <link href="{{mix('css/queenSkin.css')}}" rel="stylesheet" type="text/css">
+                <link href="{{mix('css/queenTheme.css')}}" rel="stylesheet" type="text/css">
             @else
                 @if($mainTheme['themeName'] === 'dracula')
-                    <link href="{{mix('css/draculaSkin.css')}}" rel="stylesheet" type="text/css">
+                    <link href="{{mix('css/draculaTheme.css')}}" rel="stylesheet" type="text/css">
                 @elseif($mainTheme['themeName'] === 'light')
-                    <link href="{{mix('css/lightSkin.css')}}" rel="stylesheet" type="text/css">
+                    <link href="{{mix('css/lightTheme.css')}}" rel="stylesheet" type="text/css">
                 @elseif($mainTheme['themeName'] === 'dark') 
-                    <link href="{{mix('css/darkSkin.css')}}" rel="stylesheet" type="text/css">
+                    <link href="{{mix('css/darkTheme.css')}}" rel="stylesheet" type="text/css">
                 @elseif($mainTheme['themeName'] === 'queen')
-                    <link href="{{mix('css/queenSkin.css')}}" rel="stylesheet" type="text/css">
+                    <link href="{{mix('css/queenTheme.css')}}" rel="stylesheet" type="text/css">
                 @endif
             @endif
         @endauth
