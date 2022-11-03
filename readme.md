@@ -18,7 +18,7 @@ Our website [noxgamingqc.ca](https://noxgamingqc.ca).
 - Docker
 - docker-compose
 - posgresql
-- php 7.4
+- php 8.0.2 or higher
 
 ### Steps
 
