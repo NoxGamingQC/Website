@@ -1,4 +1,4 @@
-FROM centos:centos7
+FROM centos:centos8
 
 #   Installs the EPEL and Webtatic repositories
 RUN rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
