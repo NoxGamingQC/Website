@@ -2,8 +2,8 @@
 
 [![Build Status](https://api.travis-ci.com/NoxGamingQC/Website.svg?token=8xPnyZAhxFTwCpTJsxsG&branch=master&status=errored)](https://travis-ci.com/NoxGamingQC/Website)
 [![License](https://img.shields.io/github/license/NoxGamingQC/Website)](#)
-[![PHP version](https://img.shields.io/badge/laravel-5.5.50-blue)](#)
-[![PHP version](https://img.shields.io/badge/php-%3E%3D7.4-blue)](#)
+[![PHP version](https://img.shields.io/badge/laravel-9.38.0-blue)](#)
+[![PHP version](https://img.shields.io/badge/php-%5E8.0.2-blue)](#)
 [![PHP version](https://img.shields.io/badge/npm-%5E6.13.6-blue)](#)
 [![Online Discord Members](https://discord.com/api/guilds/938558244924829756/widget.png?style=shield)](https://noxgamingqc.ca/discord)
 
