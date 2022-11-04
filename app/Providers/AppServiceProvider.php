@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Auth;
 use App\PageLists;
 use App\MainConfig;
 
@@ -58,7 +59,7 @@ class AppServiceProvider extends ServiceProvider
 
         $pageLists = PageLists::all();
         $pageListsArray = [];
-        if(env('APP_ENV') === 'production' || $isDev == false) {
+        if(env('APP_ENV') === 'production') {
             foreach($pageLists as $key => $value) {
                 $inMaintenance = false;
                 if($maintenance === true) {
@@ -71,6 +72,16 @@ class AppServiceProvider extends ServiceProvider
                     'inMaintenance' => $inMaintenance,
                     'description' => $value->Description
                 ];
+            }
+            if(Auth::check()) {
+                if(Auth::user()->isAdmin || Auth::user()->isModerator || Auth::user()->isDev) {
+                    foreach($pageLists as $key => $value) {
+                        $pageListsArray [$value->slug] = [
+                            'inMaintenance' => false,
+                            'description' => $value->Description
+                        ];
+                    }
+                }
             }
         } else {
             foreach($pageLists as $key => $value) {
