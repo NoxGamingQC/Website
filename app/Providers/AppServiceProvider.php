@@ -94,6 +94,7 @@ class AppServiceProvider extends ServiceProvider
 
         view()->share('headline', $headline);
         view()->share('mainTheme', $theme);
+        view()->share('sourceVersion', env('SOURCE_VERSION', 'Undefined'));
         if($pageListsArray) {
             view()->share('page_lists', $pageListsArray);
         } else {
