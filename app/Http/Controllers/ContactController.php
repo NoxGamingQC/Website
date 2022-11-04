@@ -14,7 +14,12 @@ class ContactController extends Controller
 {
     public function index()
     {
-        if(PageLists::where('slug', 'contact_us')->first()->inMaintenance && env('APP_ENV') == 'production') {
+        if(PageLists::where('slug', 'contact_us')->first()->inMaintenance && env('APP_ENV') === 'production') {
+            if(Auth::check()) {
+                if(Auth::user()->isAdmin || Auth::user()->isModerator || Auth::user()->isDev) {
+                    return view('contact');
+                }
+            }
             abort(503);
         }
         return view('contact');
