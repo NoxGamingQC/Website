@@ -10,8 +10,9 @@
             <div class="row">
                 <div class="col-md-12">
                     <p>{{trans('projects.projects_description')}}</p>
+                    <br />
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <div class="panel panel-primary">
                         <div class="panel-body text-center">
                             <h4>This website</h4>
@@ -21,7 +22,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <div class="panel panel-primary">
                         <div class="panel-body text-center">
                             <h4>NoxBOT</h4>
@@ -31,7 +32,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <div class="panel panel-primary">
                         <div class="panel-body text-center">
                             <h4>M.R. Liquidations</h4>
