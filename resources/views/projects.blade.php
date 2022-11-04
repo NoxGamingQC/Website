@@ -8,6 +8,9 @@
             <h1>{{trans('projects.projects')}}</h1>
             <hr />
             <div class="row">
+                <div class="col-md-12">
+                    <p>{{trans('projects.projects_description')}}</p>
+                </div>
                 <div class="col-md-3">
                     <div class="panel panel-primary">
                         <div class="panel-body text-center">
