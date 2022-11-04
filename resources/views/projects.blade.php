@@ -11,27 +11,30 @@
                 <div class="col-md-3">
                     <div class="panel panel-primary">
                         <div class="panel-body text-center">
-                            <h4>{{trans('projects.apps')}}</h4>
+                            <h4>This website</h4>
                             <hr />
-                            <p>{{trans('projects.apps_description')}}</p>
+                            <p>{{trans('projects.website_description')}}</p>
+                            <a href="https://www.noxgamingqc.ca">noxgamingqc.ca</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="panel panel-primary">
                         <div class="panel-body text-center">
-                            <h4>{{trans('projects.games')}}</h4>
+                            <h4>NoxBOT</h4>
                             <hr />
-                            <p>{{trans('projects.games_description')}}</p>
+                            <p>{{trans('projects.noxbot_description')}}</p>
+                            <a href="https://github.noxgamingqc.ca/NoxBOT">github.noxgamingqc.ca/NoxBOT</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="panel panel-primary">
                         <div class="panel-body text-center">
-                            <h4>{{trans('projects.websites')}}</h4>
+                            <h4>M.R. Liquidations</h4>
                             <hr />
-                            <p>{{trans('projects.websites_description')}}</p>
+                            <p>{{trans('projects.mrliquidations_website')}}</p>
+                            <a href="https://www.mrliquidations.ca">mrliquidations.ca</a>
                         </div>
                     </div>
                 </div>
