@@ -58,22 +58,27 @@ class AppServiceProvider extends ServiceProvider
 
         $pageLists = PageLists::all();
         $pageListsArray = [];
-        foreach($pageLists as $key => $value) {
-            $inMaintenance = false;
-            if($maintenance === true) {
-                $inMaintenance = true;
-            } else {
-                if($this->app->environment('production')) {
-                    $inMaintenance = $value->inMaintenance;
+        if(env('APP_ENV') === 'production' || $isDev == false) {
+            foreach($pageLists as $key => $value) {
+                $inMaintenance = false;
+                if($maintenance === true) {
+                    $inMaintenance = true;
                 } else {
-                    $inMaintenance = false;
+                    $inMaintenance = $value->inMaintenance;
                 }
-            }
 
-            $pageListsArray [$value->slug] = [
-                'inMaintenance' => $inMaintenance,
-                'description' => $value->Description
-            ];
+                $pageListsArray [$value->slug] = [
+                    'inMaintenance' => $inMaintenance,
+                    'description' => $value->Description
+                ];
+            }
+        } else {
+            foreach($pageLists as $key => $value) {
+                $pageListsArray [$value->slug] = [
+                    'inMaintenance' => false,
+                    'description' => $value->Description
+                ];
+            }
         }
 
         view()->share('headline', $headline);
