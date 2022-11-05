@@ -92,7 +92,7 @@ class AppServiceProvider extends ServiceProvider
             }
         }
         if(env('GIT_SHA')) {
-            $sourceVersion = env('COMMIT_SHA');
+            $sourceVersion = env('GIT_SHA');
         } else {
             $sourceVersion = 'undefined';
         }
