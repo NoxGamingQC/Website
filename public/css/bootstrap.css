@@ -5121,14 +5121,6 @@ a.thumbnail.active {
 .alert-danger .alert-link {
   color: #843534;
 }
-@-webkit-keyframes progress-bar-stripes {
-  from {
-    background-position: 40px 0;
-  }
-  to {
-    background-position: 0 0;
-  }
-}
 @keyframes progress-bar-stripes {
   from {
     background-position: 40px 0;
@@ -5164,7 +5156,6 @@ a.thumbnail.active {
 }
 .progress.active .progress-bar,
 .progress-bar.active {
-  -webkit-animation: progress-bar-stripes 2s linear infinite;
   animation: progress-bar-stripes 2s linear infinite;
 }
 .progress-bar-success {

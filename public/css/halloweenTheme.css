@@ -110,22 +110,11 @@
 }
 
 .fa-spin {
-  -webkit-animation: fa-spin 2s infinite linear;
   animation: fa-spin 2s infinite linear;
 }
 
 .fa-pulse {
-  -webkit-animation: fa-spin 1s infinite steps(8);
   animation: fa-spin 1s infinite steps(8);
-}
-
-@-webkit-keyframes fa-spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(359deg);
-  }
 }
 @keyframes fa-spin {
   0% {
@@ -3712,6 +3701,7 @@ fieldset[disabled] .btn-reddit.active {
   background-color: #5E32BA;
   color: #ffffff;
   border-color: #5E32BA;
+  background: linear-gradient(220deg, #EB6123, #5E32BA);
 }
 @media (min-width: 1210px) {
   .panel-block-primary > .panel-body {

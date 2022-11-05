@@ -273,7 +273,7 @@ axios.isAxiosError = __webpack_require__(/*! ./helpers/isAxiosError */ "./node_m
 module.exports = axios;
 
 // Allow use of default import syntax in TypeScript
-module.exports.default = axios;
+module.exports["default"] = axios;
 
 
 /***/ }),
@@ -996,7 +996,7 @@ module.exports = function transformData(data, headers, fns) {
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
-/* provided dependency */ var process = __webpack_require__(/*! process/browser */ "./node_modules/process/browser.js");
+/* provided dependency */ var process = __webpack_require__(/*! process/browser.js */ "./node_modules/process/browser.js");
 
 
 var utils = __webpack_require__(/*! ./utils */ "./node_modules/axios/lib/utils.js");
@@ -2054,17 +2054,6 @@ module.exports = {
 
 /***/ }),
 
-/***/ "./node_modules/axios/package.json":
-/*!*****************************************!*\
-  !*** ./node_modules/axios/package.json ***!
-  \*****************************************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = JSON.parse("{\"name\":\"axios\",\"version\":\"0.21.4\",\"description\":\"Promise based HTTP client for the browser and node.js\",\"main\":\"index.js\",\"scripts\":{\"test\":\"grunt test\",\"start\":\"node ./sandbox/server.js\",\"build\":\"NODE_ENV=production grunt build\",\"preversion\":\"npm test\",\"version\":\"npm run build && grunt version && git add -A dist && git add CHANGELOG.md bower.json package.json\",\"postversion\":\"git push && git push --tags\",\"examples\":\"node ./examples/server.js\",\"coveralls\":\"cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js\",\"fix\":\"eslint --fix lib/**/*.js\"},\"repository\":{\"type\":\"git\",\"url\":\"https://github.com/axios/axios.git\"},\"keywords\":[\"xhr\",\"http\",\"ajax\",\"promise\",\"node\"],\"author\":\"Matt Zabriskie\",\"license\":\"MIT\",\"bugs\":{\"url\":\"https://github.com/axios/axios/issues\"},\"homepage\":\"https://axios-http.com\",\"devDependencies\":{\"coveralls\":\"^3.0.0\",\"es6-promise\":\"^4.2.4\",\"grunt\":\"^1.3.0\",\"grunt-banner\":\"^0.6.0\",\"grunt-cli\":\"^1.2.0\",\"grunt-contrib-clean\":\"^1.1.0\",\"grunt-contrib-watch\":\"^1.0.0\",\"grunt-eslint\":\"^23.0.0\",\"grunt-karma\":\"^4.0.0\",\"grunt-mocha-test\":\"^0.13.3\",\"grunt-ts\":\"^6.0.0-beta.19\",\"grunt-webpack\":\"^4.0.2\",\"istanbul-instrumenter-loader\":\"^1.0.0\",\"jasmine-core\":\"^2.4.1\",\"karma\":\"^6.3.2\",\"karma-chrome-launcher\":\"^3.1.0\",\"karma-firefox-launcher\":\"^2.1.0\",\"karma-jasmine\":\"^1.1.1\",\"karma-jasmine-ajax\":\"^0.1.13\",\"karma-safari-launcher\":\"^1.0.0\",\"karma-sauce-launcher\":\"^4.3.6\",\"karma-sinon\":\"^1.0.5\",\"karma-sourcemap-loader\":\"^0.3.8\",\"karma-webpack\":\"^4.0.2\",\"load-grunt-tasks\":\"^3.5.2\",\"minimist\":\"^1.2.0\",\"mocha\":\"^8.2.1\",\"sinon\":\"^4.5.0\",\"terser-webpack-plugin\":\"^4.2.3\",\"typescript\":\"^4.0.5\",\"url-search-params\":\"^0.10.0\",\"webpack\":\"^4.44.2\",\"webpack-dev-server\":\"^3.11.0\"},\"browser\":{\"./lib/adapters/http.js\":\"./lib/adapters/xhr.js\"},\"jsdelivr\":\"dist/axios.min.js\",\"unpkg\":\"dist/axios.min.js\",\"typings\":\"./index.d.ts\",\"dependencies\":{\"follow-redirects\":\"^1.14.0\"},\"bundlesize\":[{\"path\":\"./dist/axios.min.js\",\"threshold\":\"5kB\"}]}");
-
-/***/ }),
-
 /***/ "./resources/assets/js/app.js":
 /*!************************************!*\
   !*** ./resources/assets/js/app.js ***!
@@ -2076,11 +2065,10 @@ module.exports = JSON.parse("{\"name\":\"axios\",\"version\":\"0.21.4\",\"descri
  * dependencies. Then, we will be ready to develop a robust and powerful
  * application frontend using useful Laravel and JavaScript libraries.
  */
-__webpack_require__(/*! ./bootstrap */ "./resources/assets/js/bootstrap.js"); //require('./facebook');
 
-
+__webpack_require__(/*! ./bootstrap */ "./resources/assets/js/bootstrap.js");
+//require('./facebook');
 __webpack_require__(/*! ./userState */ "./resources/assets/js/userState.js");
-
 window.toastr = __webpack_require__(/*! toastr */ "./node_modules/toastr/toastr.js");
 
 /***/ }),
@@ -2092,6 +2080,7 @@ window.toastr = __webpack_require__(/*! toastr */ "./node_modules/toastr/toastr.
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
 window._ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
  * for JavaScript based Bootstrap features such as modals and tabs. This
@@ -2100,18 +2089,18 @@ window._ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 
 try {
   window.$ = window.jQuery = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
-
   __webpack_require__(/*! bootstrap-sass */ "./node_modules/bootstrap-sass/assets/javascripts/bootstrap.js");
 } catch (e) {}
+
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
  * to our Laravel back-end. This library automatically handles sending the
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
 
-
 window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+
 /**
  * Next we will register the CSRF Token as a common header with Axios so that
  * all outgoing HTTP requests automatically have it attached. This is just
@@ -2119,19 +2108,22 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
  */
 
 var token = document.head.querySelector('meta[name="csrf-token"]');
-
 if (token) {
   window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
 } else {
   console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
 }
+
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
  * for events that are broadcast by Laravel. Echo and event broadcasting
  * allows your team to easily build robust real-time web applications.
  */
+
 // import Echo from 'laravel-echo'
+
 // window.Pusher = require('pusher-js');
+
 // window.Echo = new Echo({
 //     broadcaster: 'pusher',
 //     key: 'your-pusher-key',
@@ -2164,7 +2156,6 @@ $(document).ready(function () {
     idleTime = 0;
   });
 });
-
 function checkIfOnline() {
   if (checkStatus) {
     $.ajax({
@@ -2189,11 +2180,9 @@ function checkIfOnline() {
     });
   }
 }
-
 function timerIncrement() {
   idleTime = idleTime + 1;
   checkStatus = 1;
-
   if (idleTime > 1) {
     $.ajax({
       headers: {
@@ -2216,12 +2205,10 @@ function timerIncrement() {
       }
     });
   }
-
   if (idleTime > 39) {
     window.location.reload();
   }
 }
-
 window.addEventListener('beforeunload', function (e) {
   $.ajax({
     headers: {
@@ -33712,6 +33699,17 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
 }(__webpack_require__.amdD));
 
 
+/***/ }),
+
+/***/ "./node_modules/axios/package.json":
+/*!*****************************************!*\
+  !*** ./node_modules/axios/package.json ***!
+  \*****************************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"Promise based HTTP client for the browser and node.js","main":"index.js","scripts":{"test":"grunt test","start":"node ./sandbox/server.js","build":"NODE_ENV=production grunt build","preversion":"npm test","version":"npm run build && grunt version && git add -A dist && git add CHANGELOG.md bower.json package.json","postversion":"git push && git push --tags","examples":"node ./examples/server.js","coveralls":"cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js","fix":"eslint --fix lib/**/*.js"},"repository":{"type":"git","url":"https://github.com/axios/axios.git"},"keywords":["xhr","http","ajax","promise","node"],"author":"Matt Zabriskie","license":"MIT","bugs":{"url":"https://github.com/axios/axios/issues"},"homepage":"https://axios-http.com","devDependencies":{"coveralls":"^3.0.0","es6-promise":"^4.2.4","grunt":"^1.3.0","grunt-banner":"^0.6.0","grunt-cli":"^1.2.0","grunt-contrib-clean":"^1.1.0","grunt-contrib-watch":"^1.0.0","grunt-eslint":"^23.0.0","grunt-karma":"^4.0.0","grunt-mocha-test":"^0.13.3","grunt-ts":"^6.0.0-beta.19","grunt-webpack":"^4.0.2","istanbul-instrumenter-loader":"^1.0.0","jasmine-core":"^2.4.1","karma":"^6.3.2","karma-chrome-launcher":"^3.1.0","karma-firefox-launcher":"^2.1.0","karma-jasmine":"^1.1.1","karma-jasmine-ajax":"^0.1.13","karma-safari-launcher":"^1.0.0","karma-sauce-launcher":"^4.3.6","karma-sinon":"^1.0.5","karma-sourcemap-loader":"^0.3.8","karma-webpack":"^4.0.2","load-grunt-tasks":"^3.5.2","minimist":"^1.2.0","mocha":"^8.2.1","sinon":"^4.5.0","terser-webpack-plugin":"^4.2.3","typescript":"^4.0.5","url-search-params":"^0.10.0","webpack":"^4.44.2","webpack-dev-server":"^3.11.0"},"browser":{"./lib/adapters/http.js":"./lib/adapters/xhr.js"},"jsdelivr":"dist/axios.min.js","unpkg":"dist/axios.min.js","typings":"./index.d.ts","dependencies":{"follow-redirects":"^1.14.0"},"bundlesize":[{"path":"./dist/axios.min.js","threshold":"5kB"}]}');
+
 /***/ })
 
 /******/ 	});
@@ -33722,8 +33720,9 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
 /******/ 		// Check if module is in cache
-/******/ 		if(__webpack_module_cache__[moduleId]) {
-/******/ 			return __webpack_module_cache__[moduleId].exports;
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
 /******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = __webpack_module_cache__[moduleId] = {
@@ -33745,14 +33744,43 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
 /******/ 	// expose the modules object (__webpack_modules__)
 /******/ 	__webpack_require__.m = __webpack_modules__;
 /******/ 	
-/******/ 	// the startup function
-/******/ 	// It's empty as some runtime module handles the default behavior
-/******/ 	__webpack_require__.x = x => {};
 /************************************************************************/
 /******/ 	/* webpack/runtime/amd define */
 /******/ 	(() => {
 /******/ 		__webpack_require__.amdD = function () {
 /******/ 			throw new Error('define cannot be used indirect');
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/chunk loaded */
+/******/ 	(() => {
+/******/ 		var deferred = [];
+/******/ 		__webpack_require__.O = (result, chunkIds, fn, priority) => {
+/******/ 			if(chunkIds) {
+/******/ 				priority = priority || 0;
+/******/ 				for(var i = deferred.length; i > 0 && deferred[i - 1][2] > priority; i--) deferred[i] = deferred[i - 1];
+/******/ 				deferred[i] = [chunkIds, fn, priority];
+/******/ 				return;
+/******/ 			}
+/******/ 			var notFulfilled = Infinity;
+/******/ 			for (var i = 0; i < deferred.length; i++) {
+/******/ 				var [chunkIds, fn, priority] = deferred[i];
+/******/ 				var fulfilled = true;
+/******/ 				for (var j = 0; j < chunkIds.length; j++) {
+/******/ 					if ((priority & 1 === 0 || notFulfilled >= priority) && Object.keys(__webpack_require__.O).every((key) => (__webpack_require__.O[key](chunkIds[j])))) {
+/******/ 						chunkIds.splice(j--, 1);
+/******/ 					} else {
+/******/ 						fulfilled = false;
+/******/ 						if(priority < notFulfilled) notFulfilled = priority;
+/******/ 					}
+/******/ 				}
+/******/ 				if(fulfilled) {
+/******/ 					deferred.splice(i--, 1)
+/******/ 					var r = fn();
+/******/ 					if (r !== undefined) result = r;
+/******/ 				}
+/******/ 			}
+/******/ 			return result;
 /******/ 		};
 /******/ 	})();
 /******/ 	
@@ -33799,22 +33827,19 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
 /******/ 		
 /******/ 		// object to store loaded and loading chunks
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
-/******/ 		// Promise = chunk loading, 0 = chunk loaded
+/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
-/******/ 			"/js/app": 0
+/******/ 			"/js/app": 0,
+/******/ 			"css/app": 0,
+/******/ 			"css/grayscaleTheme": 0,
+/******/ 			"css/lightTheme": 0,
+/******/ 			"css/draculaTheme": 0,
+/******/ 			"css/darkTheme": 0,
+/******/ 			"css/bootstrap": 0,
+/******/ 			"css/unicornTheme": 0,
+/******/ 			"css/halloweenTheme": 0
 /******/ 		};
 /******/ 		
-/******/ 		var deferredModules = [
-/******/ 			["./resources/assets/js/app.js"],
-/******/ 			["./resources/assets/sass/bootstrap.less"],
-/******/ 			["./resources/assets/sass/darkTheme.scss"],
-/******/ 			["./resources/assets/sass/draculaTheme.scss"],
-/******/ 			["./resources/assets/sass/lightTheme.scss"],
-/******/ 			["./resources/assets/sass/grayscaleTheme.scss"],
-/******/ 			["./resources/assets/sass/halloweenTheme.scss"],
-/******/ 			["./resources/assets/sass/unicornTheme.scss"],
-/******/ 			["./resources/assets/sass/app.scss"]
-/******/ 		];
 /******/ 		// no chunk on demand loading
 /******/ 		
 /******/ 		// no prefetching
@@ -33825,73 +33850,53 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
 /******/ 		
 /******/ 		// no HMR manifest
 /******/ 		
-/******/ 		var checkDeferredModules = x => {};
+/******/ 		__webpack_require__.O.j = (chunkId) => (installedChunks[chunkId] === 0);
 /******/ 		
 /******/ 		// install a JSONP callback for chunk loading
 /******/ 		var webpackJsonpCallback = (parentChunkLoadingFunction, data) => {
-/******/ 			var [chunkIds, moreModules, runtime, executeModules] = data;
+/******/ 			var [chunkIds, moreModules, runtime] = data;
 /******/ 			// add "moreModules" to the modules object,
 /******/ 			// then flag all "chunkIds" as loaded and fire callback
-/******/ 			var moduleId, chunkId, i = 0, resolves = [];
+/******/ 			var moduleId, chunkId, i = 0;
+/******/ 			if(chunkIds.some((id) => (installedChunks[id] !== 0))) {
+/******/ 				for(moduleId in moreModules) {
+/******/ 					if(__webpack_require__.o(moreModules, moduleId)) {
+/******/ 						__webpack_require__.m[moduleId] = moreModules[moduleId];
+/******/ 					}
+/******/ 				}
+/******/ 				if(runtime) var result = runtime(__webpack_require__);
+/******/ 			}
+/******/ 			if(parentChunkLoadingFunction) parentChunkLoadingFunction(data);
 /******/ 			for(;i < chunkIds.length; i++) {
 /******/ 				chunkId = chunkIds[i];
 /******/ 				if(__webpack_require__.o(installedChunks, chunkId) && installedChunks[chunkId]) {
-/******/ 					resolves.push(installedChunks[chunkId][0]);
+/******/ 					installedChunks[chunkId][0]();
 /******/ 				}
 /******/ 				installedChunks[chunkId] = 0;
 /******/ 			}
-/******/ 			for(moduleId in moreModules) {
-/******/ 				if(__webpack_require__.o(moreModules, moduleId)) {
-/******/ 					__webpack_require__.m[moduleId] = moreModules[moduleId];
-/******/ 				}
-/******/ 			}
-/******/ 			if(runtime) runtime(__webpack_require__);
-/******/ 			if(parentChunkLoadingFunction) parentChunkLoadingFunction(data);
-/******/ 			while(resolves.length) {
-/******/ 				resolves.shift()();
-/******/ 			}
-/******/ 		
-/******/ 			// add entry modules from loaded chunk to deferred list
-/******/ 			if(executeModules) deferredModules.push.apply(deferredModules, executeModules);
-/******/ 		
-/******/ 			// run deferred modules when all chunks ready
-/******/ 			return checkDeferredModules();
+/******/ 			return __webpack_require__.O(result);
 /******/ 		}
 /******/ 		
 /******/ 		var chunkLoadingGlobal = self["webpackChunkwebsite"] = self["webpackChunkwebsite"] || [];
 /******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
 /******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
-/******/ 		
-/******/ 		function checkDeferredModulesImpl() {
-/******/ 			var result;
-/******/ 			for(var i = 0; i < deferredModules.length; i++) {
-/******/ 				var deferredModule = deferredModules[i];
-/******/ 				var fulfilled = true;
-/******/ 				for(var j = 1; j < deferredModule.length; j++) {
-/******/ 					var depId = deferredModule[j];
-/******/ 					if(installedChunks[depId] !== 0) fulfilled = false;
-/******/ 				}
-/******/ 				if(fulfilled) {
-/******/ 					deferredModules.splice(i--, 1);
-/******/ 					result = __webpack_require__(__webpack_require__.s = deferredModule[0]);
-/******/ 				}
-/******/ 			}
-/******/ 			if(deferredModules.length === 0) {
-/******/ 				__webpack_require__.x();
-/******/ 				__webpack_require__.x = x => {};
-/******/ 			}
-/******/ 			return result;
-/******/ 		}
-/******/ 		var startup = __webpack_require__.x;
-/******/ 		__webpack_require__.x = () => {
-/******/ 			// reset startup function so it can be called again when more startup code is added
-/******/ 			__webpack_require__.x = startup || (x => {});
-/******/ 			return (checkDeferredModules = checkDeferredModulesImpl)();
-/******/ 		};
 /******/ 	})();
 /******/ 	
 /************************************************************************/
-/******/ 	// run startup
-/******/ 	__webpack_require__.x();
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/grayscaleTheme","css/lightTheme","css/draculaTheme","css/darkTheme","css/bootstrap","css/unicornTheme","css/halloweenTheme"], () => (__webpack_require__("./resources/assets/js/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/grayscaleTheme","css/lightTheme","css/draculaTheme","css/darkTheme","css/bootstrap","css/unicornTheme","css/halloweenTheme"], () => (__webpack_require__("./resources/assets/sass/bootstrap.less")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/grayscaleTheme","css/lightTheme","css/draculaTheme","css/darkTheme","css/bootstrap","css/unicornTheme","css/halloweenTheme"], () => (__webpack_require__("./resources/assets/sass/darkTheme.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/grayscaleTheme","css/lightTheme","css/draculaTheme","css/darkTheme","css/bootstrap","css/unicornTheme","css/halloweenTheme"], () => (__webpack_require__("./resources/assets/sass/draculaTheme.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/grayscaleTheme","css/lightTheme","css/draculaTheme","css/darkTheme","css/bootstrap","css/unicornTheme","css/halloweenTheme"], () => (__webpack_require__("./resources/assets/sass/lightTheme.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/grayscaleTheme","css/lightTheme","css/draculaTheme","css/darkTheme","css/bootstrap","css/unicornTheme","css/halloweenTheme"], () => (__webpack_require__("./resources/assets/sass/grayscaleTheme.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/grayscaleTheme","css/lightTheme","css/draculaTheme","css/darkTheme","css/bootstrap","css/unicornTheme","css/halloweenTheme"], () => (__webpack_require__("./resources/assets/sass/halloweenTheme.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/grayscaleTheme","css/lightTheme","css/draculaTheme","css/darkTheme","css/bootstrap","css/unicornTheme","css/halloweenTheme"], () => (__webpack_require__("./resources/assets/sass/unicornTheme.scss")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app","css/grayscaleTheme","css/lightTheme","css/draculaTheme","css/darkTheme","css/bootstrap","css/unicornTheme","css/halloweenTheme"], () => (__webpack_require__("./resources/assets/sass/app.scss")))
+/******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
+/******/ 	
 /******/ })()
 ;
