@@ -91,14 +91,12 @@ class AppServiceProvider extends ServiceProvider
                 ];
             }
         }
-        if(file_exists('.source_version')) {
-            $sourceVersionFile = fopen('.source_version', "r");
-            if($sourceVersionFile) {
-                $sourceVersion =  fgets($sourceVersionFile);
-                fclose($sourceVersionFile);
-            } else {
-                $sourceVersion = 'undefined';
-            }
+        if(env('COMMIT_SHA')) {
+            $sourceVersion = env('COMMIT_SHA');
+        } else if(env('SHORT_SHA')) {
+            $sourceVersion = env('SHORT_SHA');
+        } else if(env('TAG_NAME')) {
+            $sourceVersion = env('TAG_NAME');
         } else {
             $sourceVersion = 'undefined';
         }
