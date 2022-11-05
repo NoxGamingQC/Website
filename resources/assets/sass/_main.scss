@@ -1,14 +1,19 @@
+@import "buttons";
+@import "pannels";
+@import 'inputs';
+@import 'modal';
+@import "navbar";
+@import "text";
+@import "badge";
+@import 'toastr';
+@import "table";
+@import 'datepicker';
+
 html, body {
     background-color: $background-color;
     color: $text-color;
-    height: 100%;
     margin: 0;
-    @media (min-width: 1210px) {
-        padding-top: 0.5%;
-        padding-right: 2%;
-        padding-left: 2%;
-        padding-bottom: 2%;
-    }
+    padding: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -30,7 +35,7 @@ p, a, li {
 }
 
 .full-height {
-    height: 100% !important;
+    height: 100%;
 }
 
 .raleway-font {

@@ -13,11 +13,11 @@ let mix = require('laravel-mix');
 
 mix.js('resources/assets/js/app.js', 'public/js');
 mix.copy('node_modules/Font-Awesome/fonts', 'public/fonts');
-mix.sass('resources/assets/sass/darkTheme.scss', 'public/css');
-mix.sass('resources/assets/sass/draculaTheme.scss', 'public/css');
-mix.sass('resources/assets/sass/lightTheme.scss', 'public/css');
-mix.sass('resources/assets/sass/grayscaleTheme.scss', 'public/css');
-mix.sass('resources/assets/sass/halloweenTheme.scss', 'public/css');
-mix.sass('resources/assets/sass/unicornTheme.scss', 'public/css');
+mix.sass('resources/assets/sass/themes/darkTheme.scss', 'public/css');
+mix.sass('resources/assets/sass/themes/draculaTheme.scss', 'public/css');
+mix.sass('resources/assets/sass/themes/lightTheme.scss', 'public/css');
+mix.sass('resources/assets/sass/themes/grayscaleTheme.scss', 'public/css');
+mix.sass('resources/assets/sass/themes/halloweenTheme.scss', 'public/css');
+mix.sass('resources/assets/sass/themes/unicornTheme.scss', 'public/css');
 mix.sass('resources/assets/sass/app.scss', 'public/css');
 mix.less('resources/assets/sass/bootstrap.less', 'public/css');

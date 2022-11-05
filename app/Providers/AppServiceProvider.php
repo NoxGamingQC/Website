@@ -92,9 +92,17 @@ class AppServiceProvider extends ServiceProvider
             }
         }
 
+        $sourceVersionFile = fopen('.source_version', "r");
+        if($sourceVersionFile) {
+            $sourceVersion =  fgets($sourceVersionFile);
+            fclose($sourceVersionFile);
+        } else {
+            $sourceVersion = 'undefined';
+        }
+
         view()->share('headline', $headline);
         view()->share('mainTheme', $theme);
-        view()->share('sourceVersion', env('SOURCE_VERSION', 'Undefined'));
+        view()->share('sourceVersion', $sourceVersion);
         if($pageListsArray) {
             view()->share('page_lists', $pageListsArray);
         } else {

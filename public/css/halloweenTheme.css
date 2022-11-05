@@ -3020,82 +3020,6 @@
   clip: auto;
 }
 
-html, body {
-  background-color: #18181A;
-  color: #ffffff;
-  height: 100%;
-  margin: 0;
-}
-@media (min-width: 1210px) {
-  html, body {
-    padding-top: 0.5%;
-    padding-right: 2%;
-    padding-left: 2%;
-    padding-bottom: 2%;
-  }
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Raleway", sans-serif;
-}
-
-vr {
-  border-left: 1px solid #5E32BA;
-  height: 500px;
-  position: absolute;
-  left: 50%;
-  margin-left: -3px;
-  top: 0;
-}
-
-p, a, li {
-  font-family: "Raleway", sans-serif;
-}
-
-.full-height {
-  height: 100% !important;
-}
-
-.raleway-font {
-  font-family: "Raleway", sans-serif !important;
-}
-
-.rochester-font {
-  font-family: "Rochester", cursive !important;
-}
-
-.vesper-font {
-  font-family: "Vesper Libre", serif !important;
-}
-
-.btn {
-  margin-left: 15px;
-}
-
-a:link, a:visited {
-  color: #5E32BA;
-}
-
-a:hover, a:active {
-  color: #5E32BA;
-}
-
-.status-online {
-  border: 5px solid #96C457;
-}
-
-.status-idle {
-  border: 5px solid #E9804D;
-}
-
-.status-dnd {
-  border: 5px solid #EB6123;
-}
-
-.status-offline {
-  border: 5px solid #737F8C;
-}
-
 .btn-lg {
   padding: 25%;
 }
@@ -3699,9 +3623,10 @@ fieldset[disabled] .btn-reddit.active {
 .panel-block-primary > .panel-body {
   background-image: none;
   background-color: #5E32BA;
-  color: #ffffff;
-  border-color: #5E32BA;
   background: linear-gradient(220deg, #EB6123, #5E32BA);
+  color: #ffffff;
+  border: 0 solid transparent;
+  border-radius: 0;
 }
 @media (min-width: 1210px) {
   .panel-block-primary > .panel-body {
@@ -3713,7 +3638,8 @@ fieldset[disabled] .btn-reddit.active {
 }
 
 .panel-block-primary {
-  border-color: #5E32BA;
+  border: 0 solid transparent;
+  border-radius: 0;
 }
 
 .panel-block-primary > .panel-body > h1 {
@@ -4194,72 +4120,6 @@ a[type=button]:disabled {
     display: block !important;
   }
 }
-.table-danger {
-  background-color: #EB6123;
-}
-
-.table-info {
-  background-color: #BFDA7A;
-}
-
-.table-default {
-  background-color: #18181A;
-}
-
-.table-success {
-  background-color: #96C457;
-}
-
-.table-warning {
-  background-color: #E9804D;
-}
-
-.table-primary {
-  background-color: #5E32BA;
-}
-
-.badge-danger {
-  background-color: #EB6123;
-  text-align: center;
-  border-radius: 5px 5px 5px 5px;
-  padding: 5px;
-}
-
-.badge-info {
-  background-color: #BFDA7A;
-  text-align: center;
-  border-radius: 5px 5px 5px 5px;
-  padding: 5px;
-}
-
-.badge-default {
-  background-color: #18181A;
-  text-align: center;
-  border-radius: 5px 5px 5px 5px;
-  padding: 5px;
-}
-
-.badge-success {
-  background-color: #96C457;
-  text-align: center;
-  border-radius: 5px 5px 5px 5px;
-  padding: 5px;
-}
-
-.badge-warning {
-  background-color: #E9804D;
-  text-align: center;
-  border-radius: 5px 5px 5px 5px;
-  padding: 5px;
-}
-
-.badge-primary {
-  background-color: #5E32BA;
-  text-align: center;
-  border-radius: 5px 5px 5px 5px;
-  padding: 5px;
-}
-
 p.stroke {
   color: white;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
@@ -4336,6 +4196,48 @@ a.text-highlight {
   font-family: "Rochester", cursive !important;
   color: #000000;
   text-shadow: -2px 0 #FFFFFF, 0 2px #FFFFFF, 2px 0 #FFFFFF, 0 -2px #FFFFFF;
+}
+
+.badge-danger {
+  background-color: #EB6123;
+  text-align: center;
+  border-radius: 5px 5px 5px 5px;
+  padding: 5px;
+}
+
+.badge-info {
+  background-color: #BFDA7A;
+  text-align: center;
+  border-radius: 5px 5px 5px 5px;
+  padding: 5px;
+}
+
+.badge-default {
+  background-color: #18181A;
+  text-align: center;
+  border-radius: 5px 5px 5px 5px;
+  padding: 5px;
+}
+
+.badge-success {
+  background-color: #96C457;
+  text-align: center;
+  border-radius: 5px 5px 5px 5px;
+  padding: 5px;
+}
+
+.badge-warning {
+  background-color: #E9804D;
+  text-align: center;
+  border-radius: 5px 5px 5px 5px;
+  padding: 5px;
+}
+
+.badge-primary {
+  background-color: #5E32BA;
+  text-align: center;
+  border-radius: 5px 5px 5px 5px;
+  padding: 5px;
 }
 
 .toast-title {
@@ -4559,6 +4461,30 @@ button.toast-close-button {
     width: 25em;
   }
 }
+.table-danger {
+  background-color: #EB6123;
+}
+
+.table-info {
+  background-color: #BFDA7A;
+}
+
+.table-default {
+  background-color: #18181A;
+}
+
+.table-success {
+  background-color: #96C457;
+}
+
+.table-warning {
+  background-color: #E9804D;
+}
+
+.table-primary {
+  background-color: #5E32BA;
+}
+
 .datepicker {
   background-color: #18181A;
 }
@@ -4573,6 +4499,74 @@ td.day:hover {
 
 td.disabled.day {
   background-color: #888888;
+}
+
+html, body {
+  background-color: #18181A;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Raleway", sans-serif;
+}
+
+vr {
+  border-left: 1px solid #5E32BA;
+  height: 500px;
+  position: absolute;
+  left: 50%;
+  margin-left: -3px;
+  top: 0;
+}
+
+p, a, li {
+  font-family: "Raleway", sans-serif;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.raleway-font {
+  font-family: "Raleway", sans-serif !important;
+}
+
+.rochester-font {
+  font-family: "Rochester", cursive !important;
+}
+
+.vesper-font {
+  font-family: "Vesper Libre", serif !important;
+}
+
+.btn {
+  margin-left: 15px;
+}
+
+a:link, a:visited {
+  color: #5E32BA;
+}
+
+a:hover, a:active {
+  color: #5E32BA;
+}
+
+.status-online {
+  border: 5px solid #96C457;
+}
+
+.status-idle {
+  border: 5px solid #E9804D;
+}
+
+.status-dnd {
+  border: 5px solid #EB6123;
+}
+
+.status-offline {
+  border: 5px solid #737F8C;
 }
 
 .extra-life-logo {
