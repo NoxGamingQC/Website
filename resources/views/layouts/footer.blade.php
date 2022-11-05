@@ -11,7 +11,8 @@
                 @include('layouts.socials')
             </p>
             <br />
-            <p>Commit: {{$sourceVersion}}</p>
+            <p><small>commit: {{$sourceVersion}}<small></p>
+            <p><small>build at: {{$sourceVersion}}<small></p>
         </div>
     </div>
 </div>
