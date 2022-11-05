@@ -2,17 +2,7 @@
 
 @import "grayscaleVariables";
 
-@import "main";
-@import "buttons";
-@import "pannels";
-@import 'inputs';
-@import 'modal';
-@import "navbar";
-@import "table";
-@import "badge";
-@import "text";
-@import 'toastr';
-@import 'datepicker';
+@import "../main";
 
 
 .crt-grid-post-image {

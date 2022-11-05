@@ -57,17 +57,7 @@ $input-disabled: #444444;
 // Panels
 $panel-default-heading-bg: #222222;
 
-@import "main";
-@import "buttons";
-@import "pannels";
-@import 'inputs';
-@import 'modal';
-@import "navbar";
-@import "text";
-@import "badge";
-@import 'toastr';
-@import "table";
-@import 'datepicker';
+@import "../main";
 
 .extra-life-logo {
     background-image: url('/img/Affiliates/Extra Life.png') !important;

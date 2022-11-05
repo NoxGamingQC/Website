@@ -3020,82 +3020,6 @@
   clip: auto;
 }
 
-html, body {
-  background-color: #222222;
-  color: #ffffff;
-  height: 100%;
-  margin: 0;
-}
-@media (min-width: 1210px) {
-  html, body {
-    padding-top: 0.5%;
-    padding-right: 2%;
-    padding-left: 2%;
-    padding-bottom: 2%;
-  }
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Raleway", sans-serif;
-}
-
-vr {
-  border-left: 1px solid #BD93F9;
-  height: 500px;
-  position: absolute;
-  left: 50%;
-  margin-left: -3px;
-  top: 0;
-}
-
-p, a, li {
-  font-family: "Raleway", sans-serif;
-}
-
-.full-height {
-  height: 100% !important;
-}
-
-.raleway-font {
-  font-family: "Raleway", sans-serif !important;
-}
-
-.rochester-font {
-  font-family: "Rochester", cursive !important;
-}
-
-.vesper-font {
-  font-family: "Vesper Libre", serif !important;
-}
-
-.btn {
-  margin-left: 15px;
-}
-
-a:link, a:visited {
-  color: #BD93F9;
-}
-
-a:hover, a:active {
-  color: #BD93F9;
-}
-
-.status-online {
-  border: 5px solid #48D06D;
-}
-
-.status-idle {
-  border: 5px solid #D9D068;
-}
-
-.status-dnd {
-  border: 5px solid #CA62B8;
-}
-
-.status-offline {
-  border: 5px solid #737F8C;
-}
-
 .btn-lg {
   padding: 25%;
 }
@@ -3699,9 +3623,10 @@ fieldset[disabled] .btn-reddit.active {
 .panel-block-primary > .panel-body {
   background-image: none;
   background-color: #BD93F9;
-  color: #ffffff;
-  border-color: #BD93F9;
   background: linear-gradient(220deg, #ffb86c, #BD93F9);
+  color: #ffffff;
+  border: 0 solid transparent;
+  border-radius: 0;
 }
 @media (min-width: 1210px) {
   .panel-block-primary > .panel-body {
@@ -3713,7 +3638,8 @@ fieldset[disabled] .btn-reddit.active {
 }
 
 .panel-block-primary {
-  border-color: #BD93F9;
+  border: 0 solid transparent;
+  border-radius: 0;
 }
 
 .panel-block-primary > .panel-body > h1 {
@@ -4573,6 +4499,74 @@ td.day:hover {
 
 td.disabled.day {
   background-color: #888888;
+}
+
+html, body {
+  background-color: #222222;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Raleway", sans-serif;
+}
+
+vr {
+  border-left: 1px solid #BD93F9;
+  height: 500px;
+  position: absolute;
+  left: 50%;
+  margin-left: -3px;
+  top: 0;
+}
+
+p, a, li {
+  font-family: "Raleway", sans-serif;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.raleway-font {
+  font-family: "Raleway", sans-serif !important;
+}
+
+.rochester-font {
+  font-family: "Rochester", cursive !important;
+}
+
+.vesper-font {
+  font-family: "Vesper Libre", serif !important;
+}
+
+.btn {
+  margin-left: 15px;
+}
+
+a:link, a:visited {
+  color: #BD93F9;
+}
+
+a:hover, a:active {
+  color: #BD93F9;
+}
+
+.status-online {
+  border: 5px solid #48D06D;
+}
+
+.status-idle {
+  border: 5px solid #D9D068;
+}
+
+.status-dnd {
+  border: 5px solid #CA62B8;
+}
+
+.status-offline {
+  border: 5px solid #737F8C;
 }
 
 .extra-life-logo {

@@ -37,9 +37,10 @@
 .panel-block-primary > .panel-body {
     background-image: none;
     background-color: $brand-primary;
-    color: $text-color;
-    border-color: $brand-primary;
     background: linear-gradient(220deg, $brand-orange, $brand-primary);
+    color: $text-color;
+    border: 0 solid transparent;
+    border-radius: 0;
     @media (min-width: 1210px) {
         height: 700px !important;
         > h1 {
@@ -49,7 +50,8 @@
 }
 
 .panel-block-primary {
-    border-color: $brand-primary;
+    border: 0 solid transparent;
+    border-radius: 0;
 }
 
 .panel-block-primary > .panel-body > h1 {
