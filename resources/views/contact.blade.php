@@ -1,6 +1,7 @@
 @extends('layouts.noxgamingqc.app')
 @section('title', trans('contact.contact'))
 @section('slogan', trans('contact.description'))
+@section('header', false)
 @section('content')
 
 <div class="row">
