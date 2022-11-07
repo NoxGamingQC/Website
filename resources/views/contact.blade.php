@@ -1,10 +1,11 @@
 @extends('layouts.noxgamingqc.app')
 @section('title', trans('contact.contact'))
-@section('slogan', trans('contact.contact_slogan'))
+@section('slogan', trans('contact.description'))
 @section('content')
 
-<div class="container">
-        <div class="col-md-12" id="socialNetwork">
+<div class="row">
+    <div class="col-md-12 content-item" id="socialNetwork">
+        <div class="container">
             <h3><i class="fa fa-globe" aria-hidden="true"></i> {{trans('generic.social_network')}}</h3>
             <br />
             <div class="row text-center">
@@ -58,9 +59,14 @@
                     </a>
                 </div>
                 <div class="col-md-3"></div>
+                </div>
             </div>
         </div>
-        <div class="col-md-12" id="businessInquiries">
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12 content-item bg-dark" id="businessInquiries">
+        <div class="container">
             <h3><i class="fa fa-briefcase" aria-hidden="true"></i> {{trans('generic.business_inquiries')}}</h3>
             <br />
             <p>{{trans('generic.business_inquiries_text')}} <a href="mailto:jbedard@noxgamingqc.ca">jbedard@noxgamingqc.ca</a>.</p>
