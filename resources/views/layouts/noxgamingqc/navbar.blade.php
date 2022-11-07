@@ -7,14 +7,9 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <div>
-                <img class="img" src="/img/NoxGamingQC.png" width="60" height="60" />
-                <h3 class="rochester-font" style="display: inline; margin: 5px; margin-top: 15px; font-stretch: ultra-expanded;">NoxGamingQC</h3>
-            </div>
         </div>
-        
         <div class="collapse navbar-collapse" id="bs-navbar-collapse">
-            <ul class="nav navbar-nav">
+            <ul class="nav navbar-nav navbar-center">
                 <li class="nav-home"><a href="/{{app()->getLocale()}}/home"><i class="fa fa-home" aria-hidden="true"></i> {{ trans('generic.welcome') }} <span class="sr-only">current</span></a></li>
                 <li class="dropdown">
                     @if(!$page_lists['about_me']['inMaintenance'])
@@ -47,6 +42,7 @@
                         </li>
                     </ul>
                 </li>
+                <li><img class="img" src="/img/NoxGamingQC.png" width="60" height="60" /></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                         <i class="fa fa-briefcase" aria-hidden="true"></i> NGST <span class="caret"></span>
@@ -84,8 +80,6 @@
                         </li>
                     @endif
                 @endauth
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                         <i class="fa fa-language" aria-hidden="true"></i> {{trans("generic.language")}} <span class="caret"></span>
