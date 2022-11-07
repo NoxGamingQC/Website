@@ -86,6 +86,7 @@
                     <p>🎧 {{trans('stream.headset')}}</p>
                     <p>🖱 {{trans('stream.mouse')}}</p>
                     <p>📹 {{trans('stream.camera')}}</p>
+                    <p>🎙️ {{trans('stream.microphone')}}</p>
                 </div>
             </div>
         </div>
