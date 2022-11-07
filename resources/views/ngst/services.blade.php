@@ -39,7 +39,28 @@
                         <div class="panel panel-primary">
                             <div class="panel-body text-center">
                                 <p>{{trans('services.computer_other')}}</p>
-                                <p>18C$/h</p>
+                                <p>25C$/h</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="panel panel-primary">
+                            <div class="panel-body text-center">
+                                <p>Website</p>
+                                <hr />
+                                <p>300$C/h</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="panel panel-primary">
+                            <div class="panel-body text-center">
+                                <p>Website maintenance</p>
+                                <hr />
+                                <p>1 month: 100$C</p>
+                                <p>6 month: 500$C</p>
+                                <p>1 year: 800$C</p>
+                                <p>2 years: 1000$C</p>
                             </div>
                         </div>
                     </div>
