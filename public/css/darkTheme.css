@@ -4207,10 +4207,12 @@ a.text-highlight {
   color: #ffffff;
 }
 
-.title {
-  font-family: "Rochester", cursive !important;
-  color: #000000;
-  text-shadow: -2px 0 #FFFFFF, 0 2px #FFFFFF, 2px 0 #FFFFFF, 0 -2px #FFFFFF;
+.img-text {
+  font-family: "Raleway", sans-serif !important;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.5333333333);
+  padding: 2px;
+  border-radius: 5px;
 }
 
 .badge-danger {
@@ -4530,7 +4532,7 @@ html, body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Raleway", sans-serif;
+  font-family: "Rochester", cursive !important;
 }
 
 vr {
