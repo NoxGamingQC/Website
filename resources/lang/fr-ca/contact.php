@@ -1,6 +1,8 @@
 <?php
 
 return [
+    'contact' => "Contactez-nous",
+    'contact_slogan' => "Il existe différente façon de nous contacter, les voicis.",
     'name' => "Nom",
     'email' => "E-mail",
     'object' => "Objet",

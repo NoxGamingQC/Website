@@ -2,6 +2,7 @@
 
 return [
     'copyright' => "© Copyright Jimmy Béland-Bédard. All right reserved.",
+    'copyright_noxgamingqc' => "© Copyright NoxGamingQC. All right reserved.",
     'welcome' => "Welcome",
     'streams' => "Streams",
     'projects' => "Projects",
