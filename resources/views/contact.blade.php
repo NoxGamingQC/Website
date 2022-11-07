@@ -1,13 +1,9 @@
-@extends('layouts.app')
-@section('title', 'Contact')
+@extends('layouts.noxgamingqc.app')
+@section('title', trans('contact.contact'))
+@section('slogan', trans('contact.contact_slogan'))
 @section('content')
 
 <div class="container">
-    <div class="row">
-        <div class="col-md-12" id="title">
-            <h1>{{trans('generic.contact_information')}}</h1>
-            <hr />
-        </div>
         <div class="col-md-12" id="socialNetwork">
             <h3><i class="fa fa-globe" aria-hidden="true"></i> {{trans('generic.social_network')}}</h3>
             <br />
