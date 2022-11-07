@@ -31,7 +31,7 @@
             </div>
         </div>
     </div>
-    <div class="col-md-12 content-item bg-dark">
+    <div class="col-md-12 content-item">
         <div class="container-fluid">
             @include('layouts.contactForm')
         </div>
