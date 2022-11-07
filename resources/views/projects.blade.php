@@ -3,36 +3,43 @@
 @section('slogan', trans('projects.description'))
 @section('content')
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-4">
-            <div class="panel panel-primary">
-                <div class="panel-body text-center">
-                    <h4>This website</h4>
-                    <hr />
-                    <p>{{trans('projects.website_description')}}</p>
-                    <a href="https://www.noxgamingqc.ca">noxgamingqc.ca</a>
-                </div>
+<div class="row">
+    <div class="col-md-12 bg-dark content-item">
+        <div class="container">
+            <div class="col-md-6 text-left">
+                <h4>Our website</h4>
+                <br />
+                <p>{{trans('projects.website_description')}} <a class="btn btn-primary" href="https://www.noxgamingqc.ca">Visit</a></p>
+                
+            </div>
+            <div class="col-md-6">
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="panel panel-primary">
-                <div class="panel-body text-center">
-                    <h4>NoxBOT</h4>
-                    <hr />
-                    <p>{{trans('projects.noxbot_description')}}</p>
-                    <a href="https://github.noxgamingqc.ca/NoxBOT">github.noxgamingqc.ca/NoxBOT</a>
-                </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12 content-item">
+        <div class="container">
+            <div class="col-md-6">
+            </div>
+            <div class="col-md-6 text-right">
+                <h4>NoxBOT</h4>
+                <br />
+                <p><a class="btn btn-primary" href="https://github.noxgamingqc.ca/NoxBOT">Visit</a>  {{trans('projects.noxbot_description')}}</p>
+                
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="panel panel-primary">
-                <div class="panel-body text-center">
-                    <h4>M.R. Liquidations</h4>
-                    <hr />
-                    <p>{{trans('projects.mrliquidations_website')}}</p>
-                    <a href="https://www.mrliquidations.ca">mrliquidations.ca</a>
-                </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12 bg-dark content-item">
+        <div class="container">
+            <div class="col-md-6 text-left">
+                <h4>M.R. Liquidations</h4>
+                <br />
+                <p>{{trans('projects.mrliquidations_website')}} <a class="btn btn-primary" href="https://www.mrliquidations.ca">Visit</a></p>
+            </div>
+            <div class="col-md-6">
             </div>
         </div>
     </div>
