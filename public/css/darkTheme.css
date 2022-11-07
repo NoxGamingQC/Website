@@ -3939,6 +3939,10 @@ a[type=button]:disabled {
   color: #ffffff !important;
 }
 
+.navbar {
+  z-index: 3;
+}
+
 .navbar-default {
   background-color: #222222;
   border-color: #222222;
@@ -4517,6 +4521,12 @@ html, body {
   color: #ffffff;
   margin: 0;
   padding: 0;
+  z-index: 0;
+  overflow-x: hidden;
+}
+
+.bg-dark {
+  background-color: #151515;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -4581,20 +4591,31 @@ a:hover, a:active {
 }
 
 .header {
+  z-index: 1;
   background-image: none;
   background-color: #c22222;
   background: linear-gradient(220deg, #E56F1F, #c22222);
   color: #ffffff;
   border: 0 solid transparent;
   border-radius: 0;
-  height: 300px !important;
+  height: 400px !important;
+  margin-bottom: 5%;
 }
-.header > h1 {
-  padding-top: 100px;
+.header h1 {
+  font-size: 50px;
+  margin-top: -2%;
+}
+.header > .row {
+  padding-top: 200px;
 }
 
 .content {
-  margin-bottom: 5%;
+  z-index: 2;
+}
+
+.content-item {
+  padding-top: 5%;
+  padding-bottom: 5%;
 }
 
 .extra-life-logo {

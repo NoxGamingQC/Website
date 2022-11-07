@@ -1,14 +1,11 @@
-<div class="row">
+<div class="row" style="margin:5%;">
     <div class="col-md-12 text-center">
-        <hr />
-        <div style="margin:5%;">
-            <p>
-                @include('layouts.socials')
-            </p>
-            <br />
-            <h5 class="raleway-font">{{trans('generic.copyright_noxgamingqc')}}</h5>
-            <br />
-            <p><small>commit: {{$sourceVersion}}<small></p>
-        </div>
+        <p>
+            @include('layouts.socials')
+        </p>
+        <br />
+        <h5 class="raleway-font">{{trans('generic.copyright_noxgamingqc')}}</h5>
+        <br />
+        <p><small>commit: {{$sourceVersion}}<small></p>
     </div>
 </div>
