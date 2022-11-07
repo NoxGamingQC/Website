@@ -10,30 +10,12 @@
             <div>
                 <img class="img" src="/img/NGST.png" width="60" height="60" />
                 <h3 class="rochester-font" style="display: inline; margin: 5px; margin-top: 15px; font-stretch: ultra-expanded;">NGST</h3>
-                @include('layouts.socials')
             </div>
         </div>
         
         <div class="collapse navbar-collapse" id="bs-navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="nav-home"><a href="/{{app()->getLocale()}}/ngst/home"><i class="fa fa-home" aria-hidden="true"></i> {{ trans('generic.welcome') }} <span class="sr-only">current</span></a></li>
-                <li class="dropdown">
-                    @if(!$page_lists['about_me']['inMaintenance'])
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
-                        <i class="fa fa-user" aria-hidden="true"></i> {{trans("generic.about_me")}} <span class="caret"></span>
-                    </a>
-                    @else
-                    <a class="disabled">
-                        <i class="fa fa-wrench" aria-hidden="true"></i> {{trans("generic.about_me")}} <span class="caret"></span>
-                    </a>
-                    @endif
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href="/{{app()->getLocale()}}/ngst/contact" class="{{($page_lists['contact_us']['inMaintenance']) ? 'hidden' : ''}}"><i class="fa fa-address-book " aria-hidden="true"></i> {{trans('generic.contact_us')}}</a>
-                            <a href="/{{app()->getLocale()}}/ngst/projects" class="{{($page_lists['projects']['inMaintenance']) ? 'hidden' : ''}}"><i class="fa fa-heart" aria-hidden="true"></i> {{ trans('generic.projects') }}</a>
-                        </li>
-                    </ul>
-                </li>
+                <li class="nav-home"><a href="/{{app()->getLocale()}}/home"><i class="fa fa-home" aria-hidden="true"></i> {{ trans('generic.welcome') }} <span class="sr-only">current</span></a></li>
                 
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
