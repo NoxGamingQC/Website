@@ -14,6 +14,12 @@ html, body {
     color: $text-color;
     margin: 0;
     padding: 0;
+    z-index: 0;
+    overflow-x: hidden;
+}
+
+.bg-dark {
+    background-color: darken($background-color, 5%);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -79,18 +85,29 @@ a:hover, a:active {
 }
 
 .header {
+    z-index: 1;
     background-image: none;
     background-color: $brand-primary;
     background: linear-gradient(220deg, $brand-orange, $brand-primary);
     color: $text-color;
     border: 0 solid transparent;
     border-radius: 0;
-    height: 300px !important;
-    > h1 {
-        padding-top: 100px;
+    height: 400px !important;
+    margin-bottom: 5%;
+    h1 {
+        font-size: 50px;
+        margin-top: -2%;
+    }
+    > .row {
+        padding-top: 200px;
     }
 }
 
 .content {
-    margin-bottom: 5%;
+    z-index:2;
+}
+
+.content-item {
+    padding-top: 5%;
+    padding-bottom: 5%
 }

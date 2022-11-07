@@ -36,10 +36,10 @@
 </head>
 
 <body>
-    @include('layouts.navbar')
+    @include('layouts.noxgamingqc.navbar')
     @include('alert.alert')
     @yield('content')
-    @include('layouts.footer')
+    @include('layouts.noxgamingqc.footer')
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>

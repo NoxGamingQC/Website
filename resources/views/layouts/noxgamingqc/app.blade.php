@@ -36,7 +36,7 @@
 </head>
 
 <body>
-    @include('layouts.navbar')
+    @include('layouts.noxgamingqc.navbar')
     @include('alert.alert')
     @include('layouts.noxgamingqc.header')
     <div class="content">

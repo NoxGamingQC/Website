@@ -1,5 +1,9 @@
 $dropdown: true;
 
+.navbar {
+    z-index:3;
+}
+
 .navbar-default {
     background-color: $background-color;
     border-color: $background-color;
