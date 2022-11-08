@@ -39,7 +39,7 @@
                         <div class="panel panel-primary">
                             <div class="panel-body text-center">
                                 <p>{{trans('services.computer_other')}}</p>
-                                <p>25C$/h</p>
+                                <p>30C$/h</p>
                             </div>
                         </div>
                     </div>
