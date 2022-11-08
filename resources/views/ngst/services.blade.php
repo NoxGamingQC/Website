@@ -48,7 +48,7 @@
                             <div class="panel-body text-center">
                                 <p>Website</p>
                                 <hr />
-                                <p>500$C/h</p>
+                                <p>500C$/h</p>
                             </div>
                         </div>
                     </div>
