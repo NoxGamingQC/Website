@@ -7,7 +7,7 @@ return [
     'format' => "PC format (Windows or Linux only)",
     'diagnostics' => "Diagnostics (Windows or Linux only)",
     'diagnostics_info' => "It will be refund if the problem isn't found",
-    'computer_other' => "All other problem related to electronic devices, cost may vary depending on the situation. Job may be refused if not describe correctly.",
+    'computer_other' => "For all other case, we charge on time",
     'traveling_fee_above' => "Traveling fees of 0.75\$CAD/km applies on every item above, if located at more than 8km of my actual position. Can't be refunded.",
     'taxes' => "Taxes may apply. (GST/PST)",
     'delivery' => "Delivery",
