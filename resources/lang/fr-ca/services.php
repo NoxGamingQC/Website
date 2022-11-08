@@ -7,7 +7,7 @@ return [
     'format' => "Formattage PC (Windows ou Linux seulement)",
     'diagnostics' => "Diagnostique (Windows ou Linux seulement)",
     'diagnostics_info' => "Sera remboursé si le problème n'a pas été trouvé",
-    'computer_other' => "Tout les autres problème informatique, le coût peut être sujet à changement dépendant des traveaux a effectuer. Le travail peut être refusé si non décris correctement.",
+    'computer_other' => "Pour tout les autres cas, nous chargeons à l'heure.",
     'traveling_fee_above' => "Des frais de déplacement de 0.75\$CAD/km s'applique sur tout les items listé ci-haut, si à plus de 8km de ma position actuelle. Ne peut être remboursé.",
     'taxes' => "Taxes peut s'appliquer. (TPS/TVQ)",
     'delivery' => "Livraison",
