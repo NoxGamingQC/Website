@@ -20,7 +20,7 @@ class SquareController extends Controller
         $items = Square::getItems($squareClient);
         $categories = Square::getAvailableCategories($squareClient);
 
-        return view('store', [
+        return view('ngst.store', [
             'categories' => $categories,
             'items' => $items
         ]);
