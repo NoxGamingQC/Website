@@ -1,4 +1,4 @@
-@extends('layouts.ngst')
+@extends('layouts.ngst.app')
 @section('title', 'Store')
 @section('content')
 @include('modal.store')
