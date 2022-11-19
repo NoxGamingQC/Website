@@ -3,6 +3,7 @@
 return [
     'copyright' => "© Copyright Jimmy Béland-Bédard. Tous droits réservés.",
     'copyright_noxgamingqc' => "© Copyright NoxGamingQC. Tous droits réservés.",
+    'copyright_ngst' => "© Copyright NGST. Tous droits réservés.",
     'welcome' => "Accueil",
     'streams' => "Diffusions",
     'projects' => "Projets",
