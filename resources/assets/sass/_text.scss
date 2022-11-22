@@ -1,3 +1,17 @@
+h1 {
+    font-size: 75px;
+    @media not all and (min-width: $screen-md-min) {
+        font-size: 50px;
+    }
+}
+
+h2 {
+    font-size: 50px;
+    @media not all and (min-width: $screen-md-min) {
+        font-size: 36px;
+    }
+}
+
 p.stroke {
     color: white;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;

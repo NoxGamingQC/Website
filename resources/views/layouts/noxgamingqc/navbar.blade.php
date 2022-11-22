@@ -42,7 +42,7 @@
                         </li>
                     </ul>
                 </li>
-                <li style="margin-left:10px; margin-right:10px"><img class="img" src="/img/NoxGamingQC.png" width="60" height="60" /></li>
+                <li class="mobile-hidden" style="margin-left:10px; margin-right:10px"><img class="img" src="/img/NoxGamingQC.png" width="60" height="60" /></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                         <i class="fa fa-briefcase" aria-hidden="true"></i> NGST <span class="caret"></span>
