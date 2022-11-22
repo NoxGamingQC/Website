@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="navbar-header">
             <h3 class="raleway-font" style="margin-left:5%;">NoxGamingQC
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-collapse" aria-expanded="false" style="margin-top:-2%;margin-bottom:20px;padding:4%;border-radius:10px;">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-collapse" aria-expanded="false" style="margin-top:-5px;margin-bottom:20px;padding:12px;border-radius:10px;">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
