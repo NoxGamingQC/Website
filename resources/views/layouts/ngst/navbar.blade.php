@@ -12,7 +12,7 @@
             <ul class="nav navbar-nav navbar-center">
                 <li class="nav-home"><a href="/{{app()->getLocale()}}/home"><i class="fa fa-home" aria-hidden="true"></i> {{ trans('generic.welcome') }} <span class="sr-only">current</span></a></li>
                 <li><a href="/{{app()->getLocale()}}/ngst/services" class=""><i class="fa fa-briefcase" aria-hidden="true"></i> {{ trans('generic.services') }}</a></li>
-                <li style="margin-left:10px; margin-right:10px"><img class="img" src="/img/NGST.png" width="60" height="60" /></li>
+                <li class="mobile-hidden" style="margin-left:10px; margin-right:10px"><img class="img" src="/img/NGST.png" width="60" height="60" /></li>
                 <li><a href="/{{app()->getLocale()}}/ngst/store" class=""><i class="fa fa-shopping-cart" aria-hidden="true"></i> {{ trans('generic.store') }}</a></li>
                 @auth
                     @if(Auth::user()->isDev || Auth::user()->isAdmin || Auth::user()->isModerator)
