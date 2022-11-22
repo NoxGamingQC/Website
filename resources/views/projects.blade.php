@@ -4,7 +4,7 @@
 @section('content')
 
 <div class="row">
-    <div class="col-md-12 bg-dark content-item">
+    <div class="col-md-12 content-item">
         <div class="container">
             <div class="col-md-6 text-left">
                 <h4>Our website</h4>
@@ -18,7 +18,7 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-md-12 content-item">
+    <div class="col-md-12 bg-dark content-item">
         <div class="container">
             <div class="col-md-6">
             </div>
@@ -32,7 +32,7 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-md-12 bg-dark content-item">
+    <div class="col-md-12 content-item">
         <div class="container">
             <div class="col-md-6 text-left">
                 <h4>M.R. Liquidations</h4>
@@ -40,6 +40,20 @@
                 <p>{{trans('projects.mrliquidations_website')}} <a class="btn btn-primary" href="https://www.mrliquidations.ca">Visit</a></p>
             </div>
             <div class="col-md-6">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12 bg-dark content-item">
+        <div class="container">
+            <div class="col-md-6 text-center">
+                <img src="/img/Projects/panacea-thumbnail.png" height="175px" />
+            </div>
+            <div class="col-md-6 text-right">
+                <h4>Project Panacea</h4>
+                <br />
+                <p>In development <a class="btn btn-primary disables" disabled>soon</a></p>
             </div>
         </div>
     </div>
