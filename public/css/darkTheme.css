@@ -3939,6 +3939,42 @@ a[type=button]:disabled {
   color: #ffffff !important;
 }
 
+@media (max-width: 1100px) {
+  .navbar-header {
+    float: none;
+  }
+  .navbar-left, .navbar-right {
+    float: none !important;
+  }
+  .navbar-toggle {
+    display: block;
+  }
+  .navbar-collapse {
+    border-top: 1px solid transparent;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+  .navbar-fixed-top {
+    top: 0;
+    border-width: 0 0 1px;
+  }
+  .navbar-collapse.collapse {
+    display: none !important;
+  }
+  .navbar-nav {
+    float: none !important;
+    margin-top: 7.5px;
+  }
+  .navbar-nav > li {
+    float: none;
+  }
+  .navbar-nav > li > a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .collapse.in {
+    display: block !important;
+  }
+}
 .navbar {
   z-index: 3;
 }
@@ -4138,7 +4174,7 @@ a[type=button]:disabled {
 h1 {
   font-size: 75px;
 }
-@media not all and (min-width: 992px) {
+@media not all and (min-width: 1200px) {
   h1 {
     font-size: 50px;
   }
@@ -4147,7 +4183,7 @@ h1 {
 h2 {
   font-size: 50px;
 }
-@media not all and (min-width: 992px) {
+@media not all and (min-width: 1200px) {
   h2 {
     font-size: 36px;
   }
@@ -4545,7 +4581,7 @@ html, body {
   overflow-x: hidden;
 }
 
-@media not all and (min-width: 992px) {
+@media not all and (min-width: 1200px) {
   .mobile-hidden {
     display: none !important;
     visibility: hidden !important;
