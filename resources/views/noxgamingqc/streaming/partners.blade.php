@@ -1,5 +1,5 @@
 @extends('layouts.noxgamingqc.app')
-@section('title', trans('generic.partners_affiliate'))
+@section('title', trans('general.partners_affiliate'))
 @section('content')
 
 <div class="row">
@@ -7,7 +7,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12" id="title">
-                    <h2>{{trans('generic.partners')}}</h2>
+                    <h2>{{trans('general.partners')}}</h2>
                     <hr />
                 </div>
                 <div class="col-md-12">
@@ -35,7 +35,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12" id="title">
-                    <h2>{{trans('generic.affiliates')}}</h2>
+                    <h2>{{trans('general.affiliates')}}</h2>
                     <hr />
                 </div>
                 <div class="col-md-12">

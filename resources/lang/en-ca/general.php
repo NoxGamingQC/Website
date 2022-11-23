@@ -69,5 +69,6 @@ return [
     'partners_affiliate' => "Affiliates & Partners",
     'affiliates' => "Affiliates",
     'partners' => "Partners",
-    'settings' => "Settings"
+    'settings' => "Settings",
+    'store' => "Store"
 ];

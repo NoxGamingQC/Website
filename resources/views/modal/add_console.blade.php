@@ -36,8 +36,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">{{trans('generic.close')}}</button>
-                    <button id="submitAddConsole" type="button" class="btn btn-success">{{trans('generic.save')}}</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">{{trans('general.close')}}</button>
+                    <button id="submitAddConsole" type="button" class="btn btn-success">{{trans('general.save')}}</button>
                 </div>
             </form>
         </div>

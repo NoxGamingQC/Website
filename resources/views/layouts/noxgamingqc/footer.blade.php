@@ -4,7 +4,7 @@
             @include('layouts.socials')
         </p>
         <br />
-        <h5 class="raleway-font">{{trans('generic.copyright_noxgamingqc')}}</h5>
+        <h5 class="raleway-font">{{trans('general.copyright_noxgamingqc')}}</h5>
         <br />
         <p><small>commit: {{$sourceVersion}}<small></p>
     </div>

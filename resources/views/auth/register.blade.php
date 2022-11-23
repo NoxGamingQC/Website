@@ -6,7 +6,7 @@
     <form class="form-horizontal" method="POST" action="{{ route('register', app()->getLocale()) }}">
         <div class="row">
             <div class="col-md-12">
-                <h1>{{trans('generic.register')}}</h1>
+                <h1>{{trans('general.register')}}</h1>
                 <hr />
                 <div class="col-md-3 text-center">
                     <img class="img" src="/img/NoxGamingQC.png" width="40%" />
@@ -17,7 +17,7 @@
                     {{ csrf_field() }}
 
                     <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                        <label for="name" class="control-label">{{trans('generic.username')}}</label>
+                        <label for="name" class="control-label">{{trans('general.username')}}</label>
                         <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
 
                         @if ($errors->has('name'))
@@ -28,7 +28,7 @@
                     </div>
 
                     <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                        <label for="email" class="control-label">{{trans('generic.email_address')}}</label>
+                        <label for="email" class="control-label">{{trans('general.email_address')}}</label>
                         <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
 
                         @if ($errors->has('email'))
@@ -39,7 +39,7 @@
                     </div>
 
                     <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                        <label for="password" class="control-label">{{trans('generic.password')}}</label>
+                        <label for="password" class="control-label">{{trans('general.password')}}</label>
                         <input id="password" type="password" class="form-control" name="password" required>
 
                         @if ($errors->has('password'))
@@ -50,7 +50,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="password-confirm" class="control-label">{{trans('generic.confirm_password')}}</label>
+                        <label for="password-confirm" class="control-label">{{trans('general.confirm_password')}}</label>
                         <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                     </div>
                 </div>
@@ -61,7 +61,7 @@
                     <div class="form-group">
                         <div class="text-right">
                             <button type="submit" class="btn btn-primary">
-                                {{trans('generic.register')}}
+                                {{trans('general.register')}}
                             </button>
                         </div>
                     </div>
