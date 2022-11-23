@@ -45,7 +45,7 @@
                                             <input id="gameCoverURL-{{$game}}" type="hidden" value="{{$games[$game]->CoverURL}}">
                                             <input id="gamePlaylist-{{$game}}" type="hidden" value="{{$games[$game]->Playlist}}">
                                             <input id="gameFormat-{{$game}}" type="hidden" value="{{$games[$game]->Format}}">
-                                            <button id="{{$game}}" class="edit-game-button btn btn-info" type="button" data-toggle="modal" data-target="#editGameModal">{{trans('generic.see_more')}}</button>
+                                            <button id="{{$game}}" class="edit-game-button btn btn-info hidden" type="button" data-toggle="modal" data-target="#editGameModal">{{trans('generic.see_more')}}</button>
                                         </div>
                                     </div>
                                 @else
@@ -58,7 +58,7 @@
                                             <input id="gameCoverURL-{{$game->id}}" type="hidden" value="{{$game->CoverURL}}">
                                             <input id="gamePlaylist-{{$game->id}}" type="hidden" value="{{$game->Playlist}}">
                                             <input id="gameFormat-{{$game->id}}" type="hidden" value="{{$game->Format}}">
-                                            <button id="{{$game->id}}" class="edit-game-button btn btn-info" type="button" data-toggle="modal" data-target="#editGameModal">{{trans('generic.see_more')}}</button>
+                                            <button id="{{$game->id}}" class="edit-game-button btn btn-info hidden" type="button" data-toggle="modal" data-target="#editGameModal">{{trans('generic.see_more')}}</button>
                                         </div>
                                     </div>
                                 @endif
