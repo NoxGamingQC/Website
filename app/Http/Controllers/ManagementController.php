@@ -30,7 +30,7 @@ class ManagementController extends Controller
                         'icon' => $module->ModuleIcon
                     ]);
                 }
-                return view('management.modules', ['modules' => $modules]);
+                return view('noxgamingqc.management.modules', ['modules' => $modules]);
             }
         }
         abort(403);
@@ -90,7 +90,7 @@ class ManagementController extends Controller
                         'isCurrentUser' => $isCurrentUser
                     ]);
                 }
-                return view('management.users', [
+                return view('noxgamingqc.management.users', [
                     'users' => $users
                 ]);
             }
@@ -111,7 +111,7 @@ class ManagementController extends Controller
                         'name' => str_replace('help |', ' ', $activity->Activity),
                     ]);
                 }
-                return view('management.bot_activities', [
+                return view('noxgamingqc.management.bot_activities', [
                     'activities' => $activities
                 ]);
             }

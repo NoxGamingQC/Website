@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container">
-    <div class="row">
+    <div class="row" style="margin-top:10%">
         <div class="col-md-10">
             <h1>{{trans('profile.profile_edit')}}<a href="/{{app()->getLocale()}}/profile/show/{{$id}}" class="push-right btn btn-primary">{{trans('profile.show')}}</a></h1>
             <hr />

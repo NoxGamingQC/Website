@@ -15,11 +15,11 @@ class ProjectsController extends Controller
         if(PageLists::where('slug', 'projects')->first()->inMaintenance && env('APP_ENV') === 'production') {
             if(Auth::check()) {
                 if(Auth::user()->isAdmin || Auth::user()->isModerator || Auth::user()->isDev) {
-                    return view('projects');
+                    return view('noxgamingqc.about_me.projects');
                 }
             }
             abort(503);
         }
-        return view('projects');
+        return view('noxgamingqc.about_me.projects');
     }
 }

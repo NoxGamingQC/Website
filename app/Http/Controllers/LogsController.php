@@ -94,7 +94,7 @@ class LogsController extends Controller
                         'elementsStatusColor' => $dataStatusColor
                     ];
                 }
-                return view('logs', compact('date', 'data'));
+                return view('noxgamingqc.management.logs', compact('date', 'data'));
             }
         }
         abort(403);
