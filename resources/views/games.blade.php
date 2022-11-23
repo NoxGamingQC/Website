@@ -31,7 +31,9 @@
     @endif
         <div class="col-md-12">
             <div class="container">
-                <h1>{{$console->Console}} ({{count($gamesList[$console->id])}})</h1>
+                <h2>{{$console->Console}} ({{count($gamesList[$console->id])}})</h2>
+                <br />
+                <br />
                 <div class="row">
                     <div class="col-md-12">
                         @php ($currentCount = 0)
@@ -40,7 +42,7 @@
                                 @if(is_int($game))
                                     <div class="panel panel-primary text-center" style="border-radius: 10px;">
                                         <div class="panel-body img" style="background-image: url({{"\""}}https://static-cdn.jtvnw.net/ttv-boxart/{{$games[$gameID]->Game}}-285x380.jpg{{"\""}})  !important; background-size: cover !important; background-position: center center; min-height: 380px !important; height: 380px !important;border-radius: 10px;">
-                                            <h2 class="img-text"><b>{{preg_replace('/\\\\/', '', $games[$game]->Game)}}</b></h2>
+                                            <h3 class="img-text"><b>{{preg_replace('/\\\\/', '', $games[$game]->Game)}}</b></h3>
                                             <input id="gameName-{{$game}}" type="hidden" value="{{$games[$game]->Game}}">
                                             <input id="gameConsole-{{$game}}" type="hidden" value="{{$games[$game]->Console}}">
                                             <input id="gameDate-{{$game}}" type="hidden" value="{{$games[$game]->Date}}">
@@ -53,7 +55,7 @@
                                 @else
                                     <div class="panel panel-primary text-center" style="border-radius: 10px;">
                                         <div class="panel-body img" style="background-image: url({{"\""}}https://static-cdn.jtvnw.net/ttv-boxart/{{$game->Game}}-285x380.jpg{{"\""}}) !important; background-size: cover !important; background-position: center center; min-height: 380px !important; height: 380px !important;border-radius: 10px;">
-                                            <h2 class="img-text"><b>{{preg_replace('/\\\\/', '', $game->Game)}}</b></h2>
+                                            <h3 class="img-text"><b>{{preg_replace('/\\\\/', '', $game->Game)}}</b></h3>
                                             <input id="gameName-{{$game->id}}" type="hidden" value="{{$game->Game}}">
                                             <input id="gameConsole-{{$game->id}}" type="hidden" value="{{$game->Console}}">
                                             <input id="gameDate-{{$game->id}}" type="hidden" value="{{$game->Date}}">
