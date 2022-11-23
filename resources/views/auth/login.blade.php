@@ -6,7 +6,7 @@
     <form class="form-horizontal" method="POST" action="{{ route('login', app()->getLocale()) }}">
         <div class="row">
             <div class="col-md-12">
-                <h1>{{trans('generic.login')}}</h1>
+                <h1>{{trans('general.login')}}</h1>
                 <hr />
                 <div class="col-md-3 text-center">
                     <img class="img" src="/img/NoxGamingQC.png" width="40%" />
@@ -16,7 +16,7 @@
                 <div class="col-md-9">
                     {{ csrf_field() }}
                     <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                        <label for="email" class="control-label">{{trans('generic.email_address')}}</label>
+                        <label for="email" class="control-label">{{trans('general.email_address')}}</label>
                             <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
                             @if ($errors->has('email'))
                             <span class="help-block">
@@ -26,7 +26,7 @@
                     </div>
                     <br />
                     <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                        <label for="password" class="control-label">{{trans('generic.password')}}</label>
+                        <label for="password" class="control-label">{{trans('general.password')}}</label>
                         <input id="password" type="password" class="form-control" name="password" required>
 
                             @if ($errors->has('password'))
@@ -41,19 +41,19 @@
             <div class="col-md-3 col-md-offset-3">
                 <div class="checkbox">
                     <label>
-                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> {{trans('generic.remember_me')}}
+                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> {{trans('general.remember_me')}}
                     </label>
                 </div>
             </div>
 
             <div class="col-md-3">
                 <a class="btn btn-link" href="{{ route('password.request', app()->getLocale()) }}">
-                    {{trans('generic.forgot_password')}}
+                    {{trans('general.forgot_password')}}
                 </a>
             </div>
             <div class="col-md-3 text-right">
                 <button type="submit" class="btn btn-primary">
-                    {{trans('generic.login')}}
+                    {{trans('general.login')}}
                 </button>
             </div>
         </div>

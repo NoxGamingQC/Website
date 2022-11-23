@@ -30,14 +30,14 @@
             <br />
             @guest
                 <br />
-                <a class="btn btn-default" data-toggle="modal" data-target="#loginModal">{{trans('generic.login')}}</a>
-                <a class="btn btn-default" data-toggle="modal" data-target="#registerModal">{{trans('generic.register')}}</a>
+                <a class="btn btn-default" data-toggle="modal" data-target="#loginModal">{{trans('general.login')}}</a>
+                <a class="btn btn-default" data-toggle="modal" data-target="#registerModal">{{trans('general.register')}}</a>
             @endguest
             <br />
             <br />
             <div class="text center">
-                <a id="frLink" class="text-highlight hidden" href="/fr/maintenance"> Français ({{trans("generic.french")}})</a>
-                <a id="enLink" class="text-highlight hidden" href="/en/maintenance"> English ({{trans("generic.english")}})</a>
+                <a id="frLink" class="text-highlight hidden" href="/fr/maintenance"> Français ({{trans("general.french")}})</a>
+                <a id="enLink" class="text-highlight hidden" href="/en/maintenance"> English ({{trans("general.english")}})</a>
             </div>
             @auth
                 <hr />
@@ -45,7 +45,7 @@
                     <p class="text-highlight">{{trans('maintenance.already_logged_in')}} <a class="text-highlight" href="/{{app()->getLocale()}}/home">{{trans('maintenance.travel_to_home_page')}}</a></p>
                 </div>
                 <div class="col-md-2 text-right">
-                    <a class="btn btn-default text-highlight" href="/logout"> {{trans('generic.logout')}}</a>
+                    <a class="btn btn-default text-highlight" href="/logout"> {{trans('general.logout')}}</a>
                 </div>
             @endauth
         </div>

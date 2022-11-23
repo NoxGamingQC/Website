@@ -18,7 +18,7 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label">{{trans('game.console')}}: </label>
                         <div class="col-sm-10">
-                            <select class="selectpicker" id="gameConsole" title="{{trans('generic.select_placeholder')}}" multiple>
+                            <select class="selectpicker" id="gameConsole" title="{{trans('general.select_placeholder')}}" multiple>
                             @foreach($consoles as $key => $console)
                                 <option value="{{$console->id}}">{{$console->Console}}</option>
                             @endforeach
@@ -46,7 +46,7 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label">{{trans('game.format')}}: </label>
                         <div class="col-sm-10">
-                            <select class="selectpicker" id="gameFormat" title="{{trans('generic.select_placeholder')}}" multiple>
+                            <select class="selectpicker" id="gameFormat" title="{{trans('general.select_placeholder')}}" multiple>
                                 <option value="0">{{trans('game.physical_copy')}}</option>
                                 <option value="1">{{trans('game.digital_copy')}}</option>
                             </select>
@@ -54,8 +54,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">{{trans('generic.close')}}</button>
-                    <button type="button" id="submitAddGame" class="btn btn-success">{{trans('generic.save')}}</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">{{trans('general.close')}}</button>
+                    <button type="button" id="submitAddGame" class="btn btn-success">{{trans('general.save')}}</button>
                 </div>
             </form>
         </div>
