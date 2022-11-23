@@ -3977,6 +3977,7 @@ a[type=button]:disabled {
 }
 .navbar {
   z-index: 3;
+  border-radius: 0px !important;
 }
 
 .navbar-default {
