@@ -82,7 +82,7 @@
         function () {
             //Route that require language
             Route::get('/', function () {
-                return view('welcome');
+                return view('noxgamingqc.welcome');
             });
 
             Route::get('/home', function () {
@@ -92,11 +92,11 @@
             Route::get('/projects', 'ProjectsController@index');
 
             Route::get('/teams', function () {
-                return view('teams');
+                return view('noxgamingqc.about_me.teams');
             });
 
             Route::get('/partners', function () {
-                return view('partners');
+                return view('noxgamingqc.streaming.partners');
             });
 
             Route::get('/twitch', 'TwitchController@index');

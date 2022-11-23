@@ -1,7 +1,8 @@
 @extends('layouts.app')
 @section('title', $username . '\'s profile')
 @section('content')
-<div class="row">
+
+<div class="row" style="margin-top:5%">
     <div class="col-md-12">
         <div class="panel panel-block-primary">
             <div class="panel-body" style="padding: 5%; padding-top: 2% !important;">

@@ -22,7 +22,7 @@ class ContactController extends Controller
             }
             abort(503);
         }
-        return view('contact');
+        return view('noxgamingqc.about_me.contact');
     }
 
     public function sendContactUsEmail(Request $request)
