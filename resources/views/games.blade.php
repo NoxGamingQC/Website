@@ -22,14 +22,16 @@
         </div>
     @endif
 @endauth
-<div class="row bg-dark content-item">
-    @foreach($consoles as $key=>$console)
-        @if(array_key_exists($console->id, $gamesList))
+@foreach($consoles as $key=>$console)
+    @if(array_key_exists($console->id, $gamesList))
+    @if(($key % 2) == 0)
+        <div class="row bg-dark content-item">
+    @else
+        <div class="row content-item">
+    @endif
         <div class="col-md-12">
             <div class="container">
-                <h3>{{$console->Console}} ({{count($gamesList[$console->id])}})</h3>
-                <hr />
-                <br />
+                <h1>{{$console->Console}} ({{count($gamesList[$console->id])}})</h1>
                 <div class="row">
                     <div class="col-md-12">
                         @php ($currentCount = 0)
@@ -69,8 +71,8 @@
                 </div>
             </div>
         </div>
-    @endforeach
-</div>
+    </div>
+@endforeach
 <script>
 $('.edit-game-button').on('click', function() {
     var id = $(this).attr('id');
