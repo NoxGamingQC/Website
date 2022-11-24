@@ -57,7 +57,8 @@ class MailController extends Controller
         $mail->object = $message->getHeaderValue('Subject');
         $mail->sender = $message->getHeaderValue('From');
         $mail->recipient = $message->getHeaderValue('To');
-        $mail->message = $message->getHtmlContent() ? $message->getHtmlContent() : $message->getTextContent();
+        //$mail->message = $message->getHtmlContent() ? $message->getHtmlContent() : $message->getTextContent();
+        $mail->message = $message;
         $mail->content_type = $message->getHeaderValue('Content-Type');;
         $mail->save();
     }
