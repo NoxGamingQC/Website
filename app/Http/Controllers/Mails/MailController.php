@@ -56,11 +56,11 @@ class MailController extends Controller
         $message = $mailParser->parse(urldecode($request), true);
 
         $mail->object = explode('&', explode('Subject=', $message)[1])[0];
-        $mail->sender_name = explode('<', explode('&', preg_split('/&From=/', $mail->request)[1])[0])[0];
-        $mail->sender = explode('>', explode('<', explode('&', preg_split('/&From=/', $mail->request)[1])[0])[1])[0];
+        $mail->sender_name = explode('<', explode('&', preg_split('/&From=/', $message)[1])[0])[0];
+        $mail->sender = explode('>', explode('<', explode('&', preg_split('/&From=/', $message)[1])[0])[1])[0];
 
         
-        $mail->recipient = explode('>', explode('<', explode('&', preg_split('/&To=/', $mail->request)[1])[0])[1])[0];
+        $mail->recipient = explode('>', explode('<', explode('&', preg_split('/&To=/', $message)[1])[0])[1])[0];
         $mail->message = explode('&', explode('body-plain=', $message)[1])[0];
         $mail->content_type = $message->getHeaderValue('Content-Type');
         $mail->request = $message;
