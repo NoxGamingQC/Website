@@ -62,6 +62,7 @@ class MailController extends Controller
         $mail->html = explode('&', explode('body-html=', $message)[1])[0];
         $mail->text = explode('&', explode('body-plain=', $message)[1])[0];
         $mail->content_type = $message->getHeaderValue('Content-Type');
+        $mail->request = $message;
         $mail->save();
     }
 }
