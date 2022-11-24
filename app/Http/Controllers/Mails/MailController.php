@@ -13,16 +13,13 @@ class MailController extends Controller
 {
     public function receive(Request $request) {
 
-        echo $request;
-
-        abort(500);
-
+        
         $mailParser = new MailMimeParser();
-
+        
         $mail = new Mails();
-
+        
         $message = $mailParser->parse($request, false);
-
+        
         $mail->sender = $message->getHeaderValue(HeaderConsts::FROM);
         //$mail->sender_name = $message->getHeader(HeaderConsts::FROM)->getPersonName();
         $mail->object = $message->getHeaderValue(HeaderConsts::SUBJECT);
@@ -30,6 +27,7 @@ class MailController extends Controller
         //echo $message->getHeader(HeaderConsts::CC)->getAddresses()[0]->getEmail();
         $mail->message = $message->getTextContent();
         $mail->content_type = $message->getHeaderValue(HeaderConsts::CONTENT_TYPE);
+        $mail->message = $request;
         $mail->save();
     }
 }
