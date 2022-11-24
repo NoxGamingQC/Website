@@ -54,7 +54,7 @@ class MailController extends Controller
         
         $mail->sender = $request['sender'];
         $mail->recipient = $request['recipient'];
-        $mail->recipient_name = explode('<', $request['from'])[0];
+        $mail->sender_name = explode('<', $request['from'])[0];
         $mail->object = $request['subject'];
         $mail->text = $request['body-plain'];
         $mail->html = $request['body-html'];
