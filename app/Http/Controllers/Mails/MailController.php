@@ -22,11 +22,26 @@ class MailController extends Controller
         abort(403);
     }
 
+    /*public function show($language, $id) {
+        if(Auth::check()) {
+            if(Auth::user()->local_mail) {
+                if(Auth::user()->local_mail == Mails::findOrFail($id)->recipient) {
+                    $mail = Mails::findOrFail($id);
+                    return view('noxgamingqc.profile.mail')->with(['mail' => $mail]);
+                }
+            }
+        }
+        abort(403);
+    }*/
+
     public function show($language, $id) {
         if(Auth::check()) {
             if(Auth::user()->local_mail) {
                 if(Auth::user()->local_mail == Mails::findOrFail($id)->recipient) {
                     $mail = Mails::findOrFail($id);
+                    
+                    $mailParser = new MailMimeParser();
+
                     return view('noxgamingqc.profile.mail')->with(['mail' => $mail]);
                 }
             }
@@ -49,21 +64,25 @@ class MailController extends Controller
     }
 
     public function receive(Request $request) {
-        $mailParser = new MailMimeParser();
+        //$mailParser = new MailMimeParser();
         
         $mail = new Mails();
         
-        $message = $mailParser->parse(urldecode($request), true);
+        //$message = $mailParser->parse(urldecode($request), true);
 
-        $mail->object = explode('&', explode('Subject=', $message)[1])[0];
-        $mail->sender_name = explode('<', explode('&', preg_split('/&From=/', $message)[1])[0])[0];
-        $mail->sender = explode('>', explode('<', explode('&', preg_split('/&From=/', $message)[1])[0])[1])[0];
+        //$mail->object = explode('&', explode('Subject=', $message)[1])[0];
+        //$mail->sender_name = explode('<', explode('&', preg_split('/&From=/', $message)[1])[0])[0];
+        //$mail->sender = explode('>', explode('<', explode('&', preg_split('/&From=/', $message)[1])[0])[1])[0];
+        $mail->sender = $request['sender'];
+        $mail->recipient = $request['recipient'];
+        $mail->object = $request['subject'];
+        $mail->message = $request['body-plain'];
 
-        
-        $mail->recipient = explode('>', explode('<', explode('&', preg_split('/&To=/', $message)[1])[0])[1])[0];
-        $mail->message = explode('&', explode('body-plain=', $message)[1])[0];
-        $mail->content_type = $message->getHeaderValue('Content-Type');
-        $mail->request = $message;
+        //
+        //$mail->recipient = explode('>', explode('<', explode('&', preg_split('/&To=/', $message)[1])[0])[1])[0];
+        //$mail->message = explode('&', explode('body-plain=', $message)[1])[0];
+        //$mail->content_type = $message->getHeaderValue('Content-Type');
+        $mail->request = $request;
         $mail->save();
     }
 }
