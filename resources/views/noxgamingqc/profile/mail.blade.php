@@ -19,7 +19,7 @@
             <div class="col-md-12">
                 <hr />
                 <h2>{{$mail->object}}</h2>
-                <p class="text-justify">{!! $mail->message !!}</p>
+                <p class="text-justify">{!! $mail->html !!}</p>
             </div>
         </div>
     </div>
