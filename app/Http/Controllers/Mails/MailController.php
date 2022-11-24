@@ -15,7 +15,7 @@ class MailController extends Controller
     public function index() {
         if(Auth::check()) {
             if(Auth::user()->local_mail) {
-                $mails = Mails::where('recipient', Auth::user()->local_mail)->get();
+                $mails = Mails::where('recipient', Auth::user()->local_mail)->orderBy('created_at', 'desc')->get();
                 return view('noxgamingqc.profile.mails')->with(['mails' => $mails]);
             }
         }
