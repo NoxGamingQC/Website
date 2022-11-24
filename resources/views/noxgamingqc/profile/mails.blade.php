@@ -19,8 +19,8 @@
                     @foreach($mails as $key => $mail)
                         <tr>
                             <td>{{$mail->sender_name ? $mail->sender_name : $mail->sender}}</td>
-                            <td>{{$mail->object}}</td>
-                            <td style="text-overflow:ellipsis;overflow:hidden;white-space:nowrap;max-width:150px;">{{ $mail->text }}</td>
+                            <td style="text-overflow:ellipsis;overflow:hidden;white-space:nowrap;max-width:150px;">{{ $mail->object }}</td>
+                            <td style="text-overflow:ellipsis;overflow:hidden;white-space:nowrap;max-width:150px;">{{ $mail->message }}</td>
                             <td>{{$mail->created_at}}</td>
                             <td><a href="/{{app()->getLocale()}}/profile/mail/{{$mail->id}}" class="btn btn-primary"><i class="fa fa-eye"></i></a></td>
                             <td><a class="btn btn-danger text-white" href="/{{app()->getLocale()}}/profile/mail/{{$mail->id}}/delete"><i class="fa fa-trash"></i></a></td>
