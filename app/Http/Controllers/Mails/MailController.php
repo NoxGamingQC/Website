@@ -13,6 +13,10 @@ class MailController extends Controller
 {
     public function receive(Request $request) {
 
+        echo $request;
+
+        abort(500);
+
         $mailParser = new MailMimeParser();
 
         $mail = new Mails();
