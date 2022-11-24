@@ -53,7 +53,7 @@ class MailController extends Controller
         
         $mail = new Mails();
         
-        $message = $mailParser->parse($request, true);
+        $message = $mailParser->parse(urldecode($request), true);
         $mail->object = $message->getHeaderValue('Subject');
         $mail->sender = $message->getHeaderValue('From');
         $mail->recipient = $message->getHeaderValue('To');
