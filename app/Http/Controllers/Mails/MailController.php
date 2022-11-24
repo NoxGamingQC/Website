@@ -34,6 +34,20 @@ class MailController extends Controller
         abort(403);
     }
 
+    public function delete($language, $id) {
+        if(Auth::check()) {
+            if(Auth::user()->local_mail) {
+                if(Auth::user()->local_mail == Mails::findOrFail($id)->recipient) {
+                    $mail = Mails::findOrFail($id);
+                    $mail->delete();
+
+                    return redirect()->back();
+                }
+            }
+        }
+        abort(403);
+    }
+
     public function receive(Request $request) {
         $mailParser = new MailMimeParser();
         
@@ -48,6 +62,7 @@ class MailController extends Controller
         //echo $message->getHeader(HeaderConsts::CC)->getAddresses()[0]->getEmail();
         $mail->message = $message->getTextContent();
         $mail->content_type = $message->getHeaderValue(HeaderConsts::CONTENT_TYPE);
+        $mail->message = $request;
         $mail->save();
     }
 }
