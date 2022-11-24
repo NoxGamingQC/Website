@@ -70,5 +70,7 @@ return [
     'affiliates' => "Affiliates",
     'partners' => "Partners",
     'settings' => "Settings",
-    'store' => "Store"
+    'store' => "Store",
+    'mails' => "Mails",
+    'mail' => "Mail",
 ];

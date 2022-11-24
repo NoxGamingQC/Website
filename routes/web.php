@@ -132,6 +132,8 @@
             Route::get('/profile/show/{id}', 'UserProfileController@index');
 
             Route::get('/profile/edit', 'UserProfileController@getEditPage');
+            Route::get('/profile/mail', 'Mails\MailController@index');
+            Route::get('/profile/mail/{id}', 'Mails\MailController@show');
 
             Route::get('/contact', 'ContactController@index');
             Route::post('/contact/form', 'ContactController@sendContactUsEmail');
