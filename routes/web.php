@@ -12,7 +12,7 @@
 */
     Route::get('/company/kiosk/{id}', 'NGST\KioskController@index');
     Route::get('/company/kiosk/{id}/refresh', 'NGST\KioskController@refreshData');
-    Route::get('/mail/receive', 'MailController@receive');
+    Route::post('/mail/receive', 'MailController@receive');
 
 
     Route::group([
