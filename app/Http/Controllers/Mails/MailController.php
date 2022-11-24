@@ -41,7 +41,7 @@ class MailController extends Controller
                     $mail = Mails::findOrFail($id);
                     $mail->delete();
 
-                    return redirect()->back();
+                    return redirect(app()->getLocale() . '/profile/mail');
                 }
             }
         }
