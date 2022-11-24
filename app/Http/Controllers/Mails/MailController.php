@@ -62,7 +62,7 @@ class MailController extends Controller
         //echo $message->getHeader(HeaderConsts::CC)->getAddresses()[0]->getEmail();
         $mail->message = $message->getTextContent();
         $mail->content_type = $message->getHeaderValue(HeaderConsts::CONTENT_TYPE);
-        $mail->message = $request;
+        $mail->message = $message;
         $mail->save();
     }
 }
