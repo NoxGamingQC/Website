@@ -53,16 +53,15 @@ class MailController extends Controller
         
         $mail = new Mails();
         
-        $message = $mailParser->parse($request, false);
+        $message = $mailParser->parse($request, true);
         
-        $mail->sender = $message->getHeaderValue(HeaderConsts::FROM);
+        $mail->sender = $message->getHeader('From');
         //$mail->sender_name = $message->getHeader(HeaderConsts::FROM)->getPersonName();
-        $mail->object = $message->getHeaderValue(HeaderConsts::SUBJECT);
-        $mail->recipient = $message->getHeaderValue(HeaderConsts::TO);
+        $mail->object = $message->getHeaderValue('Subject');
+        $mail->recipient = $message->getHeader('To');
         //echo $message->getHeader(HeaderConsts::CC)->getAddresses()[0]->getEmail();
-        $mail->message = $message->getTextContent();
+        $mail->message = $message->getHtmlContent();
         $mail->content_type = $message->getHeaderValue(HeaderConsts::CONTENT_TYPE);
-        $mail->message = $message;
         $mail->save();
     }
 }
