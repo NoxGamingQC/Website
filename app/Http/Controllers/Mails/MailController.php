@@ -18,7 +18,7 @@ class MailController extends Controller
         $mail = new Mails();
 
         $message = $mailParser->parse($request, false);
-        
+
         $mail->sender = $message->getHeaderValue(HeaderConsts::FROM);
         //$mail->sender_name = $message->getHeader(HeaderConsts::FROM)->getPersonName();
         $mail->object = $message->getHeaderValue(HeaderConsts::SUBJECT);
