@@ -8,12 +8,33 @@ use ZBateson\MailMimeParser\MailMimeParser;
 use ZBateson\MailMimeParser\Message;
 use ZBateson\MailMimeParser\Header\HeaderConsts;
 use App\Mails;
+use Auth;
 
 class MailController extends Controller
 {
-    public function receive(Request $request) {
+    public function index() {
+        if(Auth::check()) {
+            if(Auth::user()->local_mail) {
+                $mails = Mails::where('recipient', Auth::user()->local_mail)->get();
+                return view('noxgamingqc.profile.mails')->with(['mails' => $mails]);
+            }
+        }
+        abort(403);
+    }
 
-        
+    public function show($language, $id) {
+        if(Auth::check()) {
+            if(Auth::user()->local_mail) {
+                if(Auth::user()->local_mail == Mails::findOrFail($id)->recipient) {
+                    $mail = Mails::findOrFail($id);
+                    return view('noxgamingqc.profile.mail')->with(['mail' => $mail]);
+                }
+            }
+        }
+        abort(403);
+    }
+
+    public function receive(Request $request) {
         $mailParser = new MailMimeParser();
         
         $mail = new Mails();
@@ -27,7 +48,6 @@ class MailController extends Controller
         //echo $message->getHeader(HeaderConsts::CC)->getAddresses()[0]->getEmail();
         $mail->message = $message->getTextContent();
         $mail->content_type = $message->getHeaderValue(HeaderConsts::CONTENT_TYPE);
-        $mail->message = $request;
         $mail->save();
     }
 }

@@ -70,5 +70,7 @@ return [
     'affiliates' => "Affiliation",
     'partners' => "Partenaires",
     'settings' => "Paramètre",
-    'store' => "Boutique"
+    'store' => "Boutique",
+    'mails' => "Courriels",
+    'mail' => "Courriel",
 ];
