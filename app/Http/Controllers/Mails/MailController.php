@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Mails;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use ZBateson\MailMimeParser\MailMimeParser;
 use ZBateson\MailMimeParser\Message;
 use ZBateson\MailMimeParser\Header\HeaderConsts;
 use App\Mails;
@@ -48,12 +47,10 @@ class MailController extends Controller
         abort(403);
     }
 
-    public function receive(Request $request) {
-        $mailParser = new MailMimeParser();
-        
+    public function receive(Request $request) {        
         $mail = new Mails();
         
-        $message = $mailParser->parse($request, true);
+        $message = Message::parse($request, true);
         
         $mail->sender = $message->getHeader('From');
         //$mail->sender_name = $message->getHeader(HeaderConsts::FROM)->getPersonName();
