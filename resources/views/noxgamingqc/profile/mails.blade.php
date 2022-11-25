@@ -1,6 +1,6 @@
 @extends('layouts.noxgamingqc.app')
 @section('title', trans('general.mails'))
-@section('header', false)
+@section('slogan', "Currently in development. But don't worry you are still gonna receive your mail :P")
 @section('content')
 
 <div class="row">
