@@ -13,7 +13,7 @@
                 <p>Received on: {{$mail->created_at}}</p>
             </div>
             <div class="col-md-6 text-right">
-                <a class="btn btn-danger" href="/{{app()->getLocale()}}/profile/mail/{{$mail->id}}/delete"><i class="fa fa-trash"></i></a>
+                <a class="btn btn-danger text-color" href="/{{app()->getLocale()}}/profile/mail/{{$mail->id}}/delete"><i class="fa fa-trash"></i></a>
                 <a class="btn btn-primary" href="/{{app()->getLocale()}}/profile/mail">Go back</a>
             </div>
             <div class="col-md-12">
