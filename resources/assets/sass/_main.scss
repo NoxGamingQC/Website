@@ -119,3 +119,15 @@ a:hover, a:active {
     padding-top: 5%;
     padding-bottom: 5%
 }
+
+a.text-color:link, a.text-color:visited {
+    color: $text-color !important;
+}
+
+a.text-color:hover, a.text-color:active {
+    color: $text-color !important;
+    .row {
+        background-color: darken($background-color, 10%);
+        border-radius: 10px;
+    }
+}

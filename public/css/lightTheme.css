@@ -4682,6 +4682,18 @@ a:hover, a:active {
   padding-bottom: 5%;
 }
 
+a.text-color:link, a.text-color:visited {
+  color: #000000 !important;
+}
+
+a.text-color:hover, a.text-color:active {
+  color: #000000 !important;
+}
+a.text-color:hover .row, a.text-color:active .row {
+  background-color: #e6e6e6;
+  border-radius: 10px;
+}
+
 .extra-life-logo {
   background-image: url("/img/Affiliates/Extra Life_dark.png") !important;
   background-size: cover !important;

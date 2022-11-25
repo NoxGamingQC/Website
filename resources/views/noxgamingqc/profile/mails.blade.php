@@ -4,30 +4,28 @@
 @section('content')
 
 <div class="row">
-    <div class="col-md-12 content-item bg-dark">
+    <div class="col-sm-12 content-item bg-dark">
         <div class="container"> 
             @if(count($mails) > 0)
-                <table class="table">
-                    <tr>
-                        <th>Sender</th>
-                        <th>Object</th>
-                        <th>Message</th>
-                        <th>Date</th>
-                        <th>View</th>
-                        <th>Delete</th>
-                    </tr>
-                    @foreach($mails as $key => $mail)
-                        <tr>
-                            <td>{{$mail->sender_name ? $mail->sender_name : $mail->sender}}</td>
-                            <td style="text-overflow:ellipsis;overflow:hidden;white-space:nowrap;max-width:150px;">{{ $mail->object }}</td>
-                            <td style="text-overflow:ellipsis;overflow:hidden;white-space:nowrap;max-width:150px;">{{ $mail->text }}</td>
-                            <td>{{$mail->created_at}}</td>
-                            <td><a href="/{{app()->getLocale()}}/profile/mail/{{$mail->id}}" class="btn btn-primary"><i class="fa fa-eye"></i></a></td>
-                            <td><a class="btn btn-danger text-white" href="/{{app()->getLocale()}}/profile/mail/{{$mail->id}}/delete"><i class="fa fa-trash"></i></a></td>
-                        </tr>
+                @foreach($mails as $key => $mail)
+                    <div class="col-md-12">
+                        <a href="/{{app()->getLocale()}}/profile/mail/{{$mail->id}}" class="mail-container text-color">
+                            <div class="row" style="padding-top: 3%;padding-bottom: 3%">
+                                <div class="col-md-6" style="text-overflow:ellipsis;overflow:hidden;white-space:nowrap;max-width:70%">
+                                    <span>{{$mail->sender_name ? $mail->sender_name : $mail->sender}}</span>
+                                </div>
+                                <div class="col-md-6 text-right">
+                                    <span>{{Carbon\Carbon::parse($mail->created_at)->format('M d')}}</span>
+                                </div>
+                                <div class="col-md-12">
+                                    <p style="text-overflow:ellipsis;overflow:hidden;white-space:nowrap;max-width:80%;margin-bottom:1px;">{{ $mail->object }}</p>
+                                    <p style="text-overflow:ellipsis;overflow:hidden;white-space:nowrap;max-width:80%;margin-bottom:1px;">{{ $mail->text }}</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
                     @endforeach
-                </table>
-            @else
+                @else
                 <h2 class="text-center">You don't have mail</h2>
             @endif
         </div>
