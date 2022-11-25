@@ -14,9 +14,27 @@ class MailController extends Controller
 {
     public function index() {
         if(Auth::check()) {
+            $mails = null;
             if(Auth::user()->local_mail) {
-                $mails = Mails::where('recipient', Auth::user()->local_mail)->orderBy('created_at', 'desc')->get();
+                if(Auth::user()->isAdmin) {
+                    $mails = Mails::where('recipient', Auth::user()->local_mail)
+                                    ->orWhere('recipient', 'admin@noxgamingqc.ca')
+                                    ->orWhere('recipient', 'nox@noxgamingqc.ca')
+                                    ->orWhere('recipient', 'info@noxgamingqc.ca')
+                                    ->orderBy('created_at', 'desc')
+                                    ->get();
+                } else {
+                    $mails = Mails::where('recipient', Auth::user()->local_mail)
+                                    ->orderBy('created_at', 'desc')
+                                    ->get();
+                }
                 return view('noxgamingqc.profile.mails')->with(['mails' => $mails]);
+            } else if(Auth::user()->isAdmin) {
+                $mails = Mails::where('recipient', 'admin@noxgamingqc.ca')
+                                ->orWhere('recipient', 'nox@noxgamingqc.ca')
+                                ->orWhere('recipient', 'info@noxgamingqc.ca')
+                                ->orderBy('created_at', 'desc')
+                                ->get();
             }
         }
         abort(403);
@@ -25,10 +43,17 @@ class MailController extends Controller
     public function show($language, $id) {
         if(Auth::check()) {
             if(Auth::user()->local_mail) {
-                if(Auth::user()->local_mail == Mails::findOrFail($id)->recipient) {
+                if(Auth::user()->isAdmin) {
+                    $mail = Mails::findOrFail($id);
+                    return view('noxgamingqc.profile.mail')->with(['mail' => $mail]);
+                } else {
                     $mail = Mails::findOrFail($id);
                     return view('noxgamingqc.profile.mail')->with(['mail' => $mail]);
                 }
+                return view('noxgamingqc.profile.mails')->with(['mails' => $mails]);
+            } else if(Auth::user()->isAdmin) {
+                $mail = Mails::findOrFail($id);
+                return view('noxgamingqc.profile.mail')->with(['mail' => $mail]);
             }
         }
         abort(403);
