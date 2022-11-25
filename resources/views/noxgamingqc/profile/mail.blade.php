@@ -20,7 +20,11 @@
                 <hr />
                 <h2>{{$mail->object}}</h2>
                 <br />
-                {!! $mail->html !!}
+                @if($mail->html)
+                    {!! $mail->html !!}
+                @else
+                    {{$mail->text}}
+                @endif
             </div>
         </div>
     </div>
