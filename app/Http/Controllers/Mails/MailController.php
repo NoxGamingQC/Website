@@ -48,9 +48,11 @@ class MailController extends Controller
                     return view('noxgamingqc.profile.mail')->with(['mail' => $mail]);
                 } else {
                     $mail = Mails::findOrFail($id);
-                    return view('noxgamingqc.profile.mail')->with(['mail' => $mail]);
+                    if(Auth::user()->local_mail == $mail->recipient) {
+                        return view('noxgamingqc.profile.mail')->with(['mail' => $mail]);
+                    }
+                    abort(403);
                 }
-                return view('noxgamingqc.profile.mails')->with(['mails' => $mails]);
             } else if(Auth::user()->isAdmin) {
                 $mail = Mails::findOrFail($id);
                 return view('noxgamingqc.profile.mail')->with(['mail' => $mail]);
