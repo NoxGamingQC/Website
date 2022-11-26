@@ -20,13 +20,13 @@
                                 <table border="0" cellspacing="0" cellpadding="0" align="center">
                                     <tr>
                                         <td class="em_grey em_font_11" align="left" valign="middle" style="font-size: 13px; line-height: 15px; color:#FFFFFF;">
-                                            @yield('brand') sent this message to user (username). @yield('brand') is committed to your privacy. Learn more about our <u class="link">privacy notice</u> and <u class="link">user agreement</u>.
+                                            @yield('brand') sent this message to {{$to_name}} ({{$to}}). @yield('brand') is committed to your privacy. Learn more about our <u class="link">privacy notice</u> and <u class="link">user agreement</u>.
                                             <br />
                                             <br />
                                             If you have a question, go to the <u class="link">contact us</u> section.
                                             <br />
                                             <br />
-                                            &copy 2018-2022 @yield('brand').
+                                            ©2018-2022 @yield('brand').
                                         </td>
                                     </tr>
                                 </table>

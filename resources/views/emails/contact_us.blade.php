@@ -5,7 +5,7 @@
 <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
     <tr>
         <td class="em_blue em_font_22" align="center" valign="top">
-            <h1>A message require your attention.</h1>
+            <h1 style="color:#FFF !important">A message require your attention.</h1>
             <hr />
         </td>
     </tr>
@@ -19,7 +19,7 @@
                 </tr>
                 <tr>
                     <td align="left" valign="top">
-                        <h2>{{$object}}</h2>
+                        <h2 style="color:#FFF !important">{{$object}}</h2>
                     </td>
                 </tr>
                 <tr>
