@@ -40,6 +40,6 @@ td, a, span {
 </head>
 <body class="em_body" style="margin:0px auto; padding:0px;" bgcolor="#efefef">
     @yield('content')
-    @include('layouts.email_footer')
+    @include('layouts.email.footer')
 </body>
 </html>
