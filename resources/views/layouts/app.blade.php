@@ -3,6 +3,7 @@
 
 <head>
     <meta name="google-site-verification" content="D30gPHSCahf2lVeDo0Ndgc8vI1cQvv8d1gXIZa3B2ds" />
+    <meta name="facebook-domain-verification" content="uki484ngemqhks0g9endzi9hb1nobp" />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="NoxGamingQC's Website">
