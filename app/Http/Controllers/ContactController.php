@@ -28,6 +28,8 @@ class ContactController extends Controller
     public function sendContactUsEmail(Request $request)
     {
         $name = $request->name;
+        $toEmail = 'jbedard@noxgamingqc.ca';
+        $toName = 'Jimmy';
         $email = $request->email;
         $object = $request->object ? $request->object : '';
         $message = $request->message;
@@ -38,12 +40,19 @@ class ContactController extends Controller
             'email' => $email,
             'object' => $object,
             'contactMessage' => $message,
-            'language' => $language
+            'language' => $language,
+            'to'=> 'NoxGamingQC',
+            'to_name' => 'Jimmy Bédard'
         ];
         if($name !== "" && preg_match($email_regex,$email) && $message !== "") {
             Mail::send('emails.contact_us', $data, function($message) {
-                $message->from('noreply@noxgamingqc.ca', 'NGST');
+                $message->from('noreply@noxgamingqc.ca', 'NoxGamingQC');
                 $message->to('jbedard@noxgamingqc.ca');
+                $message->subject('You received a new message');
+            });
+            Mail::send('emails.contact_us', $data, function($message) {
+                $message->from('noreply@noxgamingqc.ca', 'NoxGamingQC');
+                $message->to('noxgamingqc@gmail.com');
                 $message->subject('You received a new message');
             });
         } else {
