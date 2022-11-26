@@ -4003,11 +4003,12 @@ a[type=button]:disabled {
   border-color: #2E9AEA;
   margin-bottom: -2%;
 }
-@media (min-width: 500px) {
+@media (min-width: 1200px) {
   .navbar-default {
     border-top-color: transparent !important;
     border-right-color: transparent !important;
     border-left-color: transparent !important;
+    border-bottom: 5px solid #F45FAA;
   }
 }
 .navbar-default .navbar-brand {

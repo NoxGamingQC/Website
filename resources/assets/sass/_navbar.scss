@@ -46,10 +46,11 @@ $dropdown: true;
     background-color: $background-color;
     border-color: $background-color;
     margin-bottom: -2%;
-    @media (min-width: 500px) {
+    @media (min-width: $screen-md-min) {
         border-top-color: transparent !important;
         border-right-color: transparent !important;
         border-left-color: transparent !important;
+        border-bottom: 5px solid $brand-primary;
     }
     .navbar-brand {
         color: $text-color;
