@@ -83,6 +83,7 @@ class Square extends Model
     public static function getItems($squareClient) {
         $catalog = [];
         $catalogItems = $squareClient->getCatalogApi()->listCatalog(null, 'ITEM')->getResult()->getObjects();
+        $measurementUnits = $squareClient->getCatalogApi()->listCatalog(null, 'MEASUREMENT_UNIT')->getResult()->getObjects();
         $categories = Square::getCategories($squareClient);
         $images = Square::getImages($squareClient);
         
@@ -92,6 +93,23 @@ class Square extends Model
             if(is_array($item->getPresentAtLocationIds())) {
                 if(in_array(env('SQUARE_LOCATION_ID'), $item->getPresentAtLocationIds())) {
                     foreach($item->getItemData()->getVariations() as $key => $variation) {
+                        $priceUnit = null;
+                        if($item->getItemData()->getName() == 'Déneigement entrée') {
+                            foreach($measurementUnits as $key => $measurementUnit) {
+                                if($variation->getItemVariationData()->getMeasurementUnitId() === $measurementUnit->getId()) {
+                                    if($measurementUnit->getMeasurementUnitData()->getMeasurementUnit()->getTimeUnit()) {
+                                        if($measurementUnit->getMeasurementUnitData()->getMeasurementUnit()->getTimeUnit() === 'GENERIC_HOUR') {
+                                            $priceUnit = '/h';
+                                        }
+                                    }
+                                    if($measurementUnit->getMeasurementUnitData()->getMeasurementUnit()->getTimeUnit()) {
+                                        if($measurementUnit->getMeasurementUnitData()->getMeasurementUnit()->getTimeUnit() === 'METRIC_KILOMETER') {
+                                            $priceUnit = '/km';
+                                        }
+                                    }
+                                }
+                            }
+                        }
                         if($variation->getItemVariationData()->getPricingType() === 'VARIABLE_PRICING') {
                             $price = 'variable';
                         }
@@ -125,6 +143,7 @@ class Square extends Model
                         'variationsCount' => count($item->getItemData()->getVariations()),
                         'variations' => $item->getItemData()->getVariations(),
                         'price' => $price,
+                        'priceUnit' => $priceUnit,
                         'isAvailable' => $isAvailable
                     ]);
                 }

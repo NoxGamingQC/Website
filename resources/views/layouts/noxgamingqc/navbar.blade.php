@@ -51,7 +51,6 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="/{{app()->getLocale()}}/ngst/services" class=""><i class="fa fa-briefcase" aria-hidden="true"></i> {{ trans('general.services') }}</a>
                             <a href="/{{app()->getLocale()}}/ngst/store" class=""><i class="fa fa-shopping-cart" aria-hidden="true"></i> {{ trans('general.store') }}</a>
                         </li>
                     </ul>
