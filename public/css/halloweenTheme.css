@@ -3627,6 +3627,24 @@ fieldset[disabled] .btn-reddit.active {
   border-color: black;
 }
 
+.panel-primary-dark {
+  border-color: black !important;
+}
+
+.panel-primary-dark > .panel-heading {
+  background-image: none;
+  background-color: #5E32BA;
+  color: #ffffff;
+  border-color: black;
+}
+
+.panel-primary-dark > .panel-body {
+  background-image: none;
+  background-color: black;
+  color: #ffffff;
+  border-color: black;
+}
+
 .panel-primary {
   border-color: black !important;
 }
@@ -4580,6 +4598,7 @@ html, body {
   padding: 0;
   z-index: 0;
   overflow-x: hidden;
+  max-width: 99vw;
 }
 
 @media not all and (min-width: 1200px) {

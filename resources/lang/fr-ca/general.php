@@ -73,4 +73,7 @@ return [
     'store' => "Boutique",
     'mails' => "Courriels",
     'mail' => "Courriel",
+    'available' => "Disponible",
+    'not_available' => "Non disponible",
+    'variable' => "Variable"
 ];

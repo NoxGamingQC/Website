@@ -5,30 +5,43 @@
 
 
 <div class="row">
-    <div class="col-md-12 content-item">
-        @foreach ($categories as $category)
-            <div class="col-md-12">
-                <h3>{{$category['name']}}</h3>
-                <hr />
-                @foreach($items as $item)
-                    @if($item['category'] === $category['name'])
-                        <div class=" col-md-3">
-                            <div class="panel panel-primary">
-                                <div class="panel-body text-center">
-                                    @if($item['imageURL'])
-                                        <img id="image-{{$item['id']}}" src="{{$item['imageURL']}}" class="img-rounded" style="width:20%" />
-                                    @endif
-                                    <h4 id="name-{{$item['id']}}" value="{{$item['name']}}">{{$item['name']}}</h4>
-                                    <p id="variationCount-{{$item['id']}}" value="{{$item['variationsCount']}}">{{$item['variationsCount'] > 1 ? $item['variationsCount'] . ' variations' : ''}}</p>
+    <div class="col-md-12 content-item bg-dark">
+        <div class="container">
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-10">
+                <div class="row">
+                    @foreach($items as $item)
+                        <div class="col-md-4 panel panel-primary-dark" style="max-height:400px; height:400px;padding-left:0;padding-right:0;border:0 solid transparant;margin:-1px;border-radius:10px;margin-bottom:5%;">
+                            <div class="panel-body text-center" style="max-height:400px; height:400px; border: 1px solid black;border-radius:10px;margin:-1px;">
+                                @if($item['imageURL'])
+                                    <img id="image-{{$item['id']}}" src="{{$item['imageURL']}}" class="img-rounded"  style="max-width:250px; max-height:250px; height:250px;" />
+                                @else
+                                    <img id="image-{{$item['id']}}" src="/img/no-image.png"  style="width:250px" />
+                                @endif
+                                <div class="col-md-12">
+                                    <br />
+                                    <div class="col-md-6">
+                                        <h4 id="name-{{$item['id']}}" value="{{$item['name']}}">{{$item['name']}}</h4>
+                                    </div>
+                                    <div class="col-md-6">
+                                        @if($item['variationsCount'] > 1)
+                                            <br />
+                                            <p id="variationCount-{{$item['id']}}" value="{{$item['variationsCount']}}">{{$item['variationsCount'] > 1 ? $item['variationsCount'] . ' variations' : ''}}</p>
+                                        @else
+                                            <br />
+                                            <p class="{{$item['price'] === 'variable' ? 'text-warning' : ''}}" value="{{$item['price']}}">{{$item['price'] === 'variable' ? trans('general.variable') : $item['price']}}</p>
+                                        @endif
+                                        <button id="{{$item['id']}}" class="store-modal-button btn btn-{{$item['isAvailable'] ? 'success' : 'danger'}}" type="button" data-toggle="modal" data-target="#storeModal">{{$item['isAvailable'] ? trans('general.available') : trans('general.not_available')}}</button>
+                                    </div>
                                     <input id="description-{{$item['id']}}" type="hidden" value="{{$item['description']}}">
-                                    <button id="{{$item['id']}}" class="store-modal-button btn btn-info" type="button" data-toggle="modal" data-target="#storeModal">{{trans('generic.see_more')}}</button>
                                 </div>
                             </div>
                         </div>
-                    @endif
-                @endforeach
+                    @endforeach
+                </div>
             </div>
-        @endforeach
+        </div>
     </div>
 </div>
 <script>
@@ -46,4 +59,4 @@ $(document).ready(function () {
     })
 });
 </script>
-@stop
+@endsection
