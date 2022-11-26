@@ -43,7 +43,7 @@
 
 .panel-primary-dark > .panel-body {
     background-image: none;
-    background-color: darken($background-color, 10%);
+    background-color: darken($background-color, 5%);
     color: $text-color;
     border-color: $border-color;
 }

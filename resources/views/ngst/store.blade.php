@@ -22,7 +22,7 @@
                                 <div class="col-md-12">
                                     <br />
                                     <div class="col-md-6">
-                                        <h4 id="name-{{$item['id']}}" value="{{$item['name']}}">{{$item['name']}}</h4>
+                                        <h4 class="raleway-font" id="name-{{$item['id']}}" value="{{$item['name']}}">{{$item['name']}}</h4>
                                     </div>
                                     <div class="col-md-6">
                                         @if($item['variationsCount'] > 1)
@@ -30,9 +30,9 @@
                                             <p id="variationCount-{{$item['id']}}" value="{{$item['variationsCount']}}">{{$item['variationsCount'] > 1 ? $item['variationsCount'] . ' variations' : ''}}</p>
                                         @else
                                             <br />
-                                            <p class="{{$item['price'] === 'variable' ? 'text-warning' : ''}}" value="{{$item['price']}}">{{$item['price'] === 'variable' ? trans('general.variable') : $item['price']}}</p>
+                                            <p class="{{$item['price'] === 'variable' ? 'text-warning' : ''}}" value="{{$item['price']}}">{{$item['price'] === 'variable' ? trans('general.variable') : 'C' . number_format(($item['price'] / 100), 2, ',', ' ') . '$' . $item['priceUnit']}}</p>
                                         @endif
-                                        <button id="{{$item['id']}}" class="store-modal-button btn btn-{{$item['isAvailable'] ? 'success' : 'danger'}}" type="button" data-toggle="modal" data-target="#storeModal">{{$item['isAvailable'] ? trans('general.available') : trans('general.not_available')}}</button>
+                                        <button id="{{$item['id']}}" class="store-modal-button btn btn-{{$item['isAvailable'] ? 'success' : 'danger disabled'}}" type="button" data-toggle="modal" data-target="#storeModal" {{$item['isAvailable'] ? '' : 'disabled'}}>{{$item['isAvailable'] ? trans('general.available') : trans('general.not_available')}}</button>
                                     </div>
                                     <input id="description-{{$item['id']}}" type="hidden" value="{{$item['description']}}">
                                 </div>
