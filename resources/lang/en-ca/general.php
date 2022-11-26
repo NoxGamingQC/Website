@@ -73,4 +73,7 @@ return [
     'store' => "Store",
     'mails' => "Mails",
     'mail' => "Mail",
+    'available' => "Available",
+    'not_available' => "Not available",
+    'variable' => "Variable"
 ];

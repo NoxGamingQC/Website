@@ -30,6 +30,24 @@
     border-color: $border-color;
 }
 
+.panel-primary-dark {
+    border-color: $border-color !important;
+}
+
+.panel-primary-dark > .panel-heading {
+    background-image: none;
+    background-color: $brand-primary;
+    color: $text-color;
+    border-color: $border-color;
+}
+
+.panel-primary-dark > .panel-body {
+    background-image: none;
+    background-color: darken($background-color, 10%);
+    color: $text-color;
+    border-color: $border-color;
+}
+
 .panel-primary {
     border-color: $border-color !important;
 }

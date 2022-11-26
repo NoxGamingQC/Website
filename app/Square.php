@@ -85,22 +85,47 @@ class Square extends Model
         $catalogItems = $squareClient->getCatalogApi()->listCatalog(null, 'ITEM')->getResult()->getObjects();
         $categories = Square::getCategories($squareClient);
         $images = Square::getImages($squareClient);
-
+        
         foreach ($catalogItems as $key => $item) {
+            $isAvailable = false;
+            $price = null;
             if(is_array($item->getPresentAtLocationIds())) {
                 if(in_array(env('SQUARE_LOCATION_ID'), $item->getPresentAtLocationIds())) {
+                    foreach($item->getItemData()->getVariations() as $key => $variation) {
+                        if($variation->getItemVariationData()->getPricingType() === 'VARIABLE_PRICING') {
+                            $price = 'variable';
+                        }
+                        if($variation->getItemVariationData()->getPriceMoney()) {
+                            $price = $variation->getItemVariationData()->getPriceMoney()->getAmount();
+                        }
+                        if(!$variation->getItemVariationData()->getLocationOverrides()) {
+                            $isAvailable = true;
+                        } else {
+                            foreach($variation->getItemVariationData()->getLocationOverrides() as $key => $location) {
+                                if(env('SQUARE_LOCATION_ID') === $location->getLocationId()) {
+                                    if($location->getSoldOut() !== true) {
+                                        $isAvailable = true;
+                                    }
+                                }
+                            }
+                        }
+                    }
                     if($item->getItemData()->getImageIds()) {
                         $itemImage = $item->getItemData()->getImageIds()[0] ? $images[$item->getItemData()->getImageIds()[0]]['url'] : null;
                     } else {
                         $itemImage = null;
                     }
+
                     array_push($catalog, [
                         'id' => $item->getId(),
                         'name' => $item->getItemData()->getName(),
                         'description' => $item->getItemData()->getDescription(),
                         'category' => $item->getItemData()->getCategoryId() ? $categories[$item->getItemData()->getCategoryId()]['name'] : null,
                         'imageURL' => $itemImage,
-                        'variationsCount' => count($item->getItemData()->getVariations())
+                        'variationsCount' => count($item->getItemData()->getVariations()),
+                        'variations' => $item->getItemData()->getVariations(),
+                        'price' => $price,
+                        'isAvailable' => $isAvailable
                     ]);
                 }
             }   
