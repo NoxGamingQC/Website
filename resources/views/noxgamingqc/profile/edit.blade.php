@@ -92,9 +92,10 @@
                 <div class="form-group">
                     <label for="theme">{{trans('profile.theme')}}</label>
                     <select class="selectpicker" id="theme" title="Default">
-                        <option value="dark" {{$theme == 'dark' ? 'selected' : ''}}>{{(trans('profile.theme_dark'))}}</option>
-                        <option value="dracula" {{$theme == 'dracula' ? 'selected' : ''}}>{{(trans('profile.theme_dracula'))}}</option>
-                        <option value="light" {{$theme == 'light' ? 'selected' : ''}}>{{(trans('profile.theme_light'))}}</option>
+                        <option value="dark" {{$theme === "dark" ? 'selected' : ''}}>{{(trans('profile.theme_dark'))}}</option>
+                        <option value="dracula" {{$theme === "dracula" ? 'selected' : ''}}>{{(trans('profile.theme_dracula'))}}</option>
+                        <option value="light" {{$theme === "light" ? 'selected' : ''}}>{{(trans('profile.theme_light'))}}</option>
+                        <option value="grayscale" {{$theme === "grayscale" ? 'selected' : ''}}>{{(trans('profile.theme_grayscale'))}}</option>
                     </select>
                 </div>
             </div>

@@ -1,15 +1,11 @@
-@extends('layouts.app')
-@section('title', 'Edit profile')
+@extends('layouts.noxgamingqc.app')
+@section('title', trans('config.website_settings'))
 @section('content')
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-10">
-            <h1>{{trans('config.website_settings')}}</h1>
-            <hr />
-        </div>
-        <div class="col-md-12">
-            <h3>{{trans('config.headline_settings')}}</h3>
+<div class="row">
+    <div class="col-md-12 content-item">
+        <div class="container">
+            <h2>{{trans('config.headline_settings')}}</h2>
             <hr />
             <div class="col-md-6">
                 <div class="form-group">
@@ -37,8 +33,12 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-12">
-            <h3>{{trans('config.theme_settings')}}</h3>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12 content-item bg-dark">
+        <div class="container">
+            <h2>{{trans('config.theme_settings')}}</h2>
             <hr />
             <div class="col-md-6">
                 <div class="form-group">
@@ -50,10 +50,8 @@
                         <option value="grayscale" {{$mainTheme['themeName'] === "grayscale" ? 'selected' : ''}}>{{(trans('config.theme_grayscale'))}}</option>
                         <option value="halloween" {{$mainTheme['themeName'] === "halloween" ? 'selected' : ''}}>{{(trans('config.theme_halloween'))}}</option>
                     </select>
-                    <br />
-                    <p class="warning-text"><i>{{trans('config.theme_reload_warning')}}</i></p>
                 </div>
-                </div>
+            </div>
             <div class="col-md-6">
                 <div class="form-group">
                     <label>{{trans('config.force_theme')}}</label>
@@ -92,6 +90,7 @@ $(document).ready(function() {
                 toastr.success('Editing success', 'You\'re profile have been saved successfuly. If you changed the theme, the change will be applied on the next page you visit.')
                 $('#submit').removeClass('disabled');
                 $('#submit').removeAttr('disabled', '');
+                window.location.reload()
             },
             error: function (error) {
                 toastr.error('An error occured', 'An error occured while trying to edit your profil try again later.')

@@ -34,6 +34,7 @@ return [
     'theme_dark' => "Dark theme",
     'theme_dracula' => "Dracula",
     'theme_light' => "Light theme",
+    'theme_grayscale' => "Grayscale theme",
     'male' => "Male",
     'female' => "Female",
     'other' => "Other",

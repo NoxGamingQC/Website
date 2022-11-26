@@ -1,13 +1,11 @@
-@extends('layouts.app')
+@extends('layouts.noxgamingqc.app')
 @section('title', 'Management - Users')
 @section('content')
 
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <h1>Users</h1>
-            <hr />
+<div class="row">
+    <div class="col-md-12 content-item">
+        <div class="container">
             @foreach($users as $user)
                 <div class="col-md-4">
                     <div class="panel panel-primary">
@@ -22,7 +20,7 @@
                                     <b>
                                         @if($user['isPremium'])
                                             <i class="fa fa-star text-warning" aria-hidden="true"></i>
-                                         @endif   
+                                        @endif   
                                         {{$user['username']}}{{ $user['isBOT'] ? ' [BOT]' : ''}}
                                         @if($user['isVerified'])
                                         <i class="fa fa-check-circle-o text-success" aria-hidden="true"></i>
