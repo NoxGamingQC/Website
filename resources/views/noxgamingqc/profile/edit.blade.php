@@ -1,15 +1,11 @@
-@extends('layouts.app')
-@section('title', 'Edit profile')
+@extends('layouts.noxgamingqc.app')
+@section('title', trans('profile.profile_edit'))
 @section('content')
 
-<div class="container">
-    <div class="row" style="margin-top:10%">
-        <div class="col-md-10">
-            <h1>{{trans('profile.profile_edit')}}<a href="/{{app()->getLocale()}}/profile/show/{{$id}}" class="push-right btn btn-primary">{{trans('profile.show')}}</a></h1>
-            <hr />
-        </div>
-        <div class="col-md-12">
-            <h3>{{trans('profile.profile_info')}}</h3>
+<div class="row">
+    <div class="col-md-12 content-item">
+        <div class="container">
+            <h3>{{trans('profile.profile_info')}} <a href="/{{app()->getLocale()}}/profile/show/{{$id}}" class="push-right btn btn-primary">{{trans('profile.show')}}</a></h3>
             <br />
             <div class="col-md-12">
                 <div class="col-md-6">
@@ -83,7 +79,13 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-12">
+    </div>
+</div>
+
+
+<div class="row bg-dark">
+    <div class="col-md-12 content-item">
+        <div class="container">
             <h3>{{trans('profile.preferences')}}</h3>
             <hr />
             <div class="col-md-12">
@@ -94,7 +96,6 @@
                         <option value="dracula" {{$theme == 'dracula' ? 'selected' : ''}}>{{(trans('profile.theme_dracula'))}}</option>
                         <option value="light" {{$theme == 'light' ? 'selected' : ''}}>{{(trans('profile.theme_light'))}}</option>
                     </select>
-                    <p class="warning-text"><i>{{trans('profile.theme_reload_warning')}}</i></p>
                 </div>
             </div>
             <div class="col-md-6">
@@ -169,6 +170,7 @@ $(document).ready(function() {
                 toastr.success('Editing success', 'You\'re profile have been saved successfuly. If you changed the theme, the change will be applied on the next page you visit.')
                 $('#submit').removeClass('disabled');
                 $('#submit').removeAttr('disabled', '');
+                window.location.reload();
             },
             error: function (error) {
                 toastr.error('An error occured', 'An error occured while trying to edit your profil try again later.')
