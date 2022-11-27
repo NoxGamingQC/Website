@@ -49,6 +49,7 @@
                         <option value="light" {{$mainTheme['themeName'] === "light" ? 'selected' : ''}}>{{(trans('config.theme_light'))}}</option>
                         <option value="grayscale" {{$mainTheme['themeName'] === "grayscale" ? 'selected' : ''}}>{{(trans('config.theme_grayscale'))}}</option>
                         <option value="halloween" {{$mainTheme['themeName'] === "halloween" ? 'selected' : ''}}>{{(trans('config.theme_halloween'))}}</option>
+                        <option value="christmas" {{$mainTheme['themeName'] === "christmas" ? 'selected' : ''}}>{{(trans('config.theme_christmas'))}}</option>
                     </select>
                 </div>
             </div>

@@ -19,5 +19,6 @@ mix.sass('resources/assets/sass/themes/lightTheme.scss', 'public/css');
 mix.sass('resources/assets/sass/themes/grayscaleTheme.scss', 'public/css');
 mix.sass('resources/assets/sass/themes/halloweenTheme.scss', 'public/css');
 mix.sass('resources/assets/sass/themes/unicornTheme.scss', 'public/css');
+mix.sass('resources/assets/sass/themes/christmasTheme.scss', 'public/css');
 mix.sass('resources/assets/sass/app.scss', 'public/css');
 mix.less('resources/assets/sass/bootstrap.less', 'public/css');
