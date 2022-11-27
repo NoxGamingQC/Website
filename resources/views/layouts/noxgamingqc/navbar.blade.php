@@ -1,15 +1,16 @@
 <nav class="navbar navbar-default" style="position:fixed;padding-top:3vh; width:100vw">
     <div class="container-fluid">
-        <div class="navbar-header">
-            <h3 class="raleway-font" style="margin-left:5%;">
-                NoxGamingQC
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-collapse" aria-expanded="false" style="margin-top:-5px;margin-bottom:20px;padding:12px;border-radius:10px;">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </h3>
+        <div class="navbar-header" style="margin: 10px;">
+            <a href="/{{app()->getLocale()}}" class="text-color" style="text-decoration:none;">
+                <img class="img" src="/img/NoxGamingQC.png" width="50" height="50" />
+                <h3 class="raleway-font" style="display: inline; margin: 5px;">NoxGamingQC</h3>
+            </a>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-collapse" aria-expanded="false" style="margin-top:-5px;margin-bottom:20px;padding:12px;border-radius:10px;">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
         </div>
         <div class="collapse navbar-collapse" id="bs-navbar-collapse">
             <ul class="nav navbar-nav navbar-center">
