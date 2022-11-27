@@ -91,12 +91,20 @@
             <div class="col-md-12">
                 <div class="form-group">
                     <label for="theme">{{trans('profile.theme')}}</label>
-                    <select class="selectpicker" id="theme" title="Default">
-                        <option value="dark" {{$theme === "dark" ? 'selected' : ''}}>{{(trans('profile.theme_dark'))}}</option>
+                    <select class="selectpicker" id="theme" title="Default" {{$mainTheme['force'] === "true" ? 'disabled' : ''}}>
+                        <option value="dark" {{($theme === "dark" || !isset($theme)) ? 'selected' : ''}}>{{(trans('profile.theme_dark'))}}</option>
                         <option value="dracula" {{$theme === "dracula" ? 'selected' : ''}}>{{(trans('profile.theme_dracula'))}}</option>
                         <option value="light" {{$theme === "light" ? 'selected' : ''}}>{{(trans('profile.theme_light'))}}</option>
                         <option value="grayscale" {{$theme === "grayscale" ? 'selected' : ''}}>{{(trans('profile.theme_grayscale'))}}</option>
                     </select>
+                    @if($mainTheme['force'] === "true")
+                        <br />
+                        <span class="text-warning">
+                            Sorry, but the theme is currently locked by an administrator
+                            <br />
+                            and can't be changed at this moment. Please try again later.
+                        </span>
+                    @endif
                 </div>
             </div>
             <div class="col-md-6">
@@ -168,7 +176,7 @@ $(document).ready(function() {
                 $('#submit').attr('disabled', '');
             },
             success: function() {
-                toastr.success('Editing success', 'You\'re profile have been saved successfuly. If you changed the theme, the change will be applied on the next page you visit.')
+                toastr.success('Editing success', 'You\'re profile have been saved successfuly. Please wait while we reload the page.')
                 $('#submit').removeClass('disabled');
                 $('#submit').removeAttr('disabled', '');
                 window.location.reload();

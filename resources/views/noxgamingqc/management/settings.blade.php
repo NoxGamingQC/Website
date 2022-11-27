@@ -88,7 +88,7 @@ $(document).ready(function() {
                 $('#submit').attr('disabled', '');
             },
             success: function() {
-                toastr.success('Editing success', 'You\'re profile have been saved successfuly. If you changed the theme, the change will be applied on the next page you visit.')
+                toastr.success('Editing success', 'You\'re profile have been saved successfuly. Please wait while we reload the page.')
                 $('#submit').removeClass('disabled');
                 $('#submit').removeAttr('disabled', '');
                 window.location.reload()
