@@ -23,7 +23,8 @@
                 <div class="row">
                     @foreach($items as $item)
                         <div class="col-md-4 panel panel-primary-dark {{$item['category'] ? strtolower(str_replace('.', '-', str_replace(' ', '-', $item['category']))) : ''}}" style="max-height:400px; height:400px;padding-left:0;padding-right:0;border:0 solid transparant;margin:-1px;border-radius:10px;margin-bottom:5%;">
-                            <div class="panel-body text-center" style="max-height:400px; height:400px; border: 1px solid black;border-radius:10px;margin:-1px;">
+                            <div class="panel-body text-center" style="max-height:450px; height:450px; border: 1px solid black;border-radius:10px;margin:-1px;">
+                                <br />
                                 @if($item['imageURL'])
                                     <img id="image-{{$item['id']}}" src="{{$item['imageURL']}}" class="img-rounded"  style="max-width:250px; max-height:250px; height:250px;" />
                                 @else
