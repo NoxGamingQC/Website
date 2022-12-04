@@ -86,9 +86,10 @@ class Square extends Model
         $measurementUnits = $squareClient->getCatalogApi()->listCatalog(null, 'MEASUREMENT_UNIT')->getResult()->getObjects();
         $categories = Square::getCategories($squareClient);
         $images = Square::getImages($squareClient);
-        
         foreach ($catalogItems as $key => $item) {
             $isAvailable = false;
+            $isSamePrice = true;
+            $lastPrice = null;
             $price = null;
             if(is_array($item->getPresentAtLocationIds())) {
                 if(in_array(env('SQUARE_LOCATION_ID'), $item->getPresentAtLocationIds())) {
@@ -115,6 +116,11 @@ class Square extends Model
                         }
                         if($variation->getItemVariationData()->getPriceMoney()) {
                             $price = $variation->getItemVariationData()->getPriceMoney()->getAmount();
+                            if($lastPrice == null) {
+                                $lastPrice = $price;
+                            } else if($lastPrice !== $price) {
+                                $isSamePrice = false;
+                            }
                         }
                         if(!$variation->getItemVariationData()->getLocationOverrides()) {
                             $isAvailable = true;
@@ -144,7 +150,8 @@ class Square extends Model
                         'variations' => $item->getItemData()->getVariations(),
                         'price' => $price,
                         'priceUnit' => $priceUnit,
-                        'isAvailable' => $isAvailable
+                        'isAvailable' => $isAvailable,
+                        'isSamePrice' => $isSamePrice
                     ]);
                 }
             }   
