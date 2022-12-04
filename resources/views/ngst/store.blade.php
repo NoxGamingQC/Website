@@ -32,7 +32,7 @@
                                 <div class="col-md-12">
                                     <br />
                                     <div class="col-md-6">
-                                        <h4 class="raleway-font" id="name-{{$item['id']}}" value="{{$item['name']}}">{{$item['name']}}</h4>
+                                        <h4 class="raleway-font" id="name-{{$item['id']}}" value="{{$item['name']}}">{{trans($item['name'])}}</h4>
                                     </div>
                                     <div class="col-md-6">
                                         @if(($item['variationsCount'] > 1) && $item['isSamePrice'])

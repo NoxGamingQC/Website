@@ -15,5 +15,14 @@ return [
     'other' => "Other",
     'computer_science' => "Computer / Tech",
     'landscaping' => "Landscaping",
-    'snow_removal' => "Driveway snow removal"
+    'snow_removal' => "Driveway snow removal",
+    'pc_format' => "PC format",
+    'pc_diagnostic' => "PC diagnostic",
+    'car_exterior_cleaning' => "Exterior cleaning",
+    'car_interior_cleaning' => "Interior cleaning",
+    'car_wax' => "Car waxing",
+    'car_all_cleaning' => "Offer - interior / exterior cleaning",
+    'hoodie' => "Hoodie",
+    'donations' => "Donations",
+    'website' => "Website"
 ];

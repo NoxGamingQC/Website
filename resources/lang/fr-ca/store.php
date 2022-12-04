@@ -15,6 +15,14 @@ return [
     'other' => "Autre",
     'computer_science' => "Informatique",
     'landscaping' => "Entretien paysager",
-    'snow_removal' => "Déneigement entrée"
-
+    'snow_removal' => "Déneigement entrée",
+    'pc_format' => "Formatage PC",
+    'pc_diagnostic' => "Diagnostique PC",
+    'car_exterior_cleaning' => "Nettoyage extérieur",
+    'car_interior_cleaning' => "Nettoyage Intérieur",
+    'car_wax' => "Cirage de Véhicule",
+    'car_all_cleaning' => "Offre - Lavage Intérieur / Extérieur",
+    'hoodie' => "Coton Ouaté",
+    'donations' => "Donations",
+    'website' => "Site Web"
 ];
