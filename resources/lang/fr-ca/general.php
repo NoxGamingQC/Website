@@ -75,5 +75,6 @@ return [
     'mail' => "Courriel",
     'available' => "Disponible",
     'not_available' => "Non disponible",
-    'variable' => "Variable"
+    'variable' => "Variable",
+    'consoles' => "Consoles"
 ];

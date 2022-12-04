@@ -42,7 +42,6 @@ class Square extends Model
 
     public static function getCategories($squareClient) {
         $catalogCategories = $squareClient->getCatalogApi()->listCatalog(null, 'CATEGORY')->getResult()->getObjects();
-
         foreach($catalogCategories as $key => $categorie) {
             $categories[$categorie->getId()] = [
                 'id' => $categorie->getId(),
