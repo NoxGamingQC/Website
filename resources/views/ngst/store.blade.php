@@ -1,5 +1,6 @@
 @extends('layouts.ngst.app')
-@section('title', 'Store')
+@section('title', trans('store.store'))
+@section('slogan', trans('store.slogan'))
 @section('content')
 @include('modal.store')
 
@@ -11,8 +12,9 @@
                 @foreach($categories as $key => $category)
                     <div>
                         <h4 class="raleway-font">
-                            <label><input class="sorting-checkboxes" type="checkbox" value="{{strtolower(str_replace('.', '-', str_replace(' ', '-', $category['name'])))}}" checked/>&nbsp{{trans($category['name'])}}</label>
-                            <br />
+                            <label>
+                                <input class="sorting-checkboxes" type="checkbox" value="{{strtolower(str_replace('.', '-', str_replace(' ', '-', $category['name'])))}}" checked/>&nbsp{{trans($category['name'])}}
+                            </label>
                         </h4>
                     </div>
                 @endforeach
