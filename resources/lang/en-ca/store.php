@@ -1,6 +1,8 @@
 <?php
 
 return [
+    'store' => "Store",
+    'slogan' => "We ship all accross Canada and the United States. We are able to travel for services only for Shawinigan, QC, CA and Trois-Rivières, QC, CA.",
     'variable_price' => "Variable price",
     'price_not_available' => "Price unavailable",
     'out_of_stock' => "Out of stock",
@@ -12,5 +14,6 @@ return [
     'car' => "Car",
     'other' => "Other",
     'computer_science' => "Computer / Tech",
-    'landscaping' => "Landscaping"
+    'landscaping' => "Landscaping",
+    'snow_removal' => "Driveway snow removal"
 ];
