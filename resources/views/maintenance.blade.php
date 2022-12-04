@@ -35,8 +35,8 @@
             <br />
             <br />
             <div class="text center">
-                <a id="frLink" class="text-color hidden" href="/fr/maintenance"> Français ({{trans("general.french")}})</a>
-                <a id="enLink" class="text-color hidden" href="/en/maintenance"> English ({{trans("general.english")}})</a>
+                <a id="frLink" class="text-color hidden" href="/fr-ca/maintenance"> Français ({{trans("general.french")}})</a>
+                <a id="enLink" class="text-color hidden" href="/en-ca/maintenance"> English ({{trans("general.english")}})</a>
             </div>
             @auth
                 <hr />
