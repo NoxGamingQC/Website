@@ -25,4 +25,13 @@ class SquareController extends Controller
             'items' => $items
         ]);
     }
+
+    public function showItem($language, $id) {
+        $squareClient = Square::getAccess();
+        $item = Square::getItem($squareClient, $id);
+
+        return view('ngst.item', [
+            'item' => $item
+        ]);
+    }
 }

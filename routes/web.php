@@ -157,6 +157,7 @@
 
             //NGST routes
             Route::get('/ngst/store', 'SquareController@index');
+            Route::get('/ngst/store/item/{id}', 'SquareController@showItem');
 
             //PositivityST routes
         });
