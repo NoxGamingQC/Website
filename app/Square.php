@@ -228,7 +228,8 @@ class Square extends Model
                                 'price' => $price,
                                 'priceUnit' => isset($priceUnit) ? $priceUnit : null,
                                 'isAvailable' => $isAvailable,
-                                'isSamePrice' => $isSamePrice
+                                'isSamePrice' => $isSamePrice,
+                                'images' => $images
                             ];
                             return $requestedItem;
                         }

@@ -77,5 +77,6 @@ return [
     'not_available' => "Not available",
     'variable' => "Variable",
     'consoles' => "Consoles",
-    'no_description_available' => "No description available."
+    'no_description_available' => "No description available.",
+    'available_soon' => "Available soon"
 ];
