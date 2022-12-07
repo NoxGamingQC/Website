@@ -4261,15 +4261,15 @@ hr {
   font-size: 12px;
 }
 
-copper {
+.copper {
   color: #ff9f68 !important;
 }
 
-silver {
+.silver {
   color: silver !important;
 }
 
-gold {
+.gold {
   color: gold !important;
 }
 
@@ -4329,6 +4329,16 @@ a.text-highlight {
   text-align: center;
   border-radius: 5px 5px 5px 5px;
   padding: 5px;
+}
+
+.badge {
+  padding: 5%;
+  padding-left: 20%;
+  padding-right: 20%;
+  font-size: larger;
+  border: 2px solid black;
+  overflow: visible;
+  white-space: nowrap;
 }
 
 .toast-title {
