@@ -29,7 +29,7 @@
                                     <div class="text-center image-{{$item['id']}}" style="background-image: url('{{$item['imageURL']}}');background-repeat: no-repeat;background-size: auto 80%;background-position:center;height:250px;">
                                         @if(!$item['isAvailable'])
                                             <div style="rotate:-25deg;vertical-align: middle;padding:30%">
-                                                <span class="badge-danger text-right" style="padding:5%;padding-left:20%;padding-right:20%;font-size: larger;border:2px solid black;overflow: visible;">{{trans('store.out_of_stock')}}</span>
+                                                <span class="badge-danger text-right" style="padding:5%;padding-left:20%;padding-right:20%;font-size: larger;border:2px solid black;overflow: visible;white-space: nowrap">{{trans('store.out_of_stock')}}</span>
                                             </div>
                                         @endif
                                     </div>
@@ -37,7 +37,7 @@
                                     <div class="text-center image-{{$item['id']}}" style="background-image: url('/img/no-image.png');background-repeat: no-repeat;background-size: auto 100%;background-position:center;height:250px;">
                                         @if(!$item['isAvailable'])
                                             <div style="rotate:-25deg;vertical-align: middle;padding:30%">
-                                                <span class="badge-danger text-right" style="padding:5%;padding-left:20%;padding-right:20%;font-size: larger;border:2px solid black;overflow: visible;">{{trans('store.out_of_stock')}}</span>
+                                                <span class="badge-danger text-right" style="padding:5%;padding-left:20%;padding-right:20%;font-size: larger;border:2px solid black;overflow: visible;white-space: nowrap">{{trans('store.out_of_stock')}}</span>
                                             </div>
                                         @endif
                                     </div>
