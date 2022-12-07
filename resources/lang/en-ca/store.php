@@ -24,5 +24,7 @@ return [
     'car_all_cleaning' => "Offer - interior / exterior cleaning",
     'hoodie' => "Hoodie",
     'donations' => "Donations",
-    'website' => "Website"
+    'website' => "Website",
+    'inventory' => "Inventory",
+    'price' => "Price"
 ];

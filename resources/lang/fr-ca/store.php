@@ -24,5 +24,7 @@ return [
     'car_all_cleaning' => "Offre - Lavage Intérieur / Extérieur",
     'hoodie' => "Coton Ouaté",
     'donations' => "Donations",
-    'website' => "Site Web"
+    'website' => "Site Web",
+    'inventory' => "Inventaire",
+    'price' => "Prix"
 ];
