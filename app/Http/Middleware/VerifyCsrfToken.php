@@ -14,6 +14,7 @@ class VerifyCsrfToken extends Middleware
     protected $except = [
         'mail/receive',
         'noxbot/data/json/*',
-        'noxbot/data/*'
+        'noxbot/data/*',
+        '/profile/update_state'
     ];
 }
