@@ -17,6 +17,8 @@ RUN yum install -y \
     php-mbstring php-pgsql \
     php-odbc php-pdo php-xml \
     freetds php-pdo_dblib httpd \
+    php*-mbstring php*-mcrypt \
+    php*-imap \
     php-pecl-zip \
     git
 
