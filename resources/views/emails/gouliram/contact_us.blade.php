@@ -24,10 +24,10 @@
                 </tr>
                 <tr>
                     <td class="em_grey em_center" align="left" valign="top" style="font-size: 16px; line-height: 24px; color:#000;">
-                        De: {$name} @ {$email}
+                        De: {{$name}} @ {{$email}}
                         <br />
                         <br />
-                        {$message_content}
+                        {{$message_content}}
                     </td>
                 </tr>
                 <tr>

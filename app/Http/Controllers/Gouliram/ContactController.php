@@ -19,8 +19,6 @@ class ContactController extends Controller
             'name' => $name,
             'email' => $email,
             'message_content' => $message,
-            'to'=> 'Gouliram',
-            'to_name' => 'Gouliram'
         ];
         if($name !== "" && preg_match($email_regex, $email) && $message !== "") {
             Mail::send('emails.gouliram.contact_us', $data, function($message) {

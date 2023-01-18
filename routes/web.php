@@ -56,9 +56,6 @@
     });
 
     // Gouliram routes
-    Route::get('/gouliram/contact', function() {
-        return view('emails.gouliram.contact_us');
-    });
     Route::post('/gouliram/contact', 'Gouliram\ContactController@contactUsEmail');
     
     //Other routes
