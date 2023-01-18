@@ -15,6 +15,7 @@ class VerifyCsrfToken extends Middleware
         'mail/receive',
         'noxbot/data/json/*',
         'noxbot/data/*',
-        '/profile/update_state'
+        '/profile/update_state',
+        '/gouliram/*'
     ];
 }
