@@ -109,6 +109,7 @@
 
             Route::get('/twitch', 'TwitchController@index');
             Route::get('/youtube', 'YouTubeController@index');
+            Route::get('/projects/minecraft', 'Projects\MinecraftController@index');
 
             Route::get('/stream/commands', 'BotCommandsController@index');
 
