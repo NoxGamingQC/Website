@@ -70,6 +70,10 @@
         return redirect(app()->getLocale() . '/');
     });
 
+    Route::get('/projects/minecraft', function () {
+        return redirect(app()->getLocale() . '/projects/minecraft');
+    });
+
     // NoxBOT routes
     Route::get('/noxbot/data/json/activities', 'NoxBOT\BotActivitiesController@getActivities');
     Route::post('/noxbot/data/points/add', 'NoxBOT\PointSystemController@addPoints');
