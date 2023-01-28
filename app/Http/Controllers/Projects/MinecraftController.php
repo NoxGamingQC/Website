@@ -12,5 +12,6 @@ class MinecraftController extends Controller
     public function index()
     {
         abort(503);
+        return view('noxgamingqc.about_me.projects.minecraft');
     }
 }
