@@ -3,11 +3,12 @@
 @section('title','Pancakes')
 @section('slogan', 'Fais 10-12 pancakes')
 
-<div class="container-fluid">
+<div class="container">
     <div class="row">
-        <div class="col-md-12 text-center">
-            <h3>Ingredients</h3>
-            <ul>
+        <div class="col-md-12 text-left">
+            <h2>Ingredients</h2>
+            <br />
+            <ul style="font-size:24px">
                 <li>1 1/3 tasse de farine</li>
                 <li>3 c. à thé de poudre à pâte</li>
                 <li>1/2 c. à thé de sel</li>
