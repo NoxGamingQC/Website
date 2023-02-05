@@ -12,9 +12,7 @@ class KioskController extends Controller
 {
     public function index($id)
     {
-        return view('ngst.kiosk.recipe_list')->with([
-            'kiosk' => 'true'
-        ]);
+        return redirect('/company/kiosk/cookbook');
         $company = Companies::find($id)->first();
         $kiosk = Kiosk::where('Company', $id)->join('users', 'users.id', '=', 'kiosk.UserID')->orderBy('kiosk.created_at', 'DESC')
         ->take(6)->get(['kiosk.Company', 'users.Firstname', 'users.Lastname', 'users.AvatarURL', 'kiosk.created_at']);
@@ -29,29 +27,35 @@ class KioskController extends Controller
         ]);
     }
 
-    public function recipeList() {
+    public function cookbook() {
         return view('ngst.kiosk.recipe_list')->with([
             'kiosk' => 'true'
         ]);
     }
 
     public function recipe($slug) {
-        return view('ngst.kiosk.recipe.'. $slug);
+        return view('ngst.kiosk.recipe.'. $slug)->with([
+            'kiosk' => 'true'
+        ]);
     }
 
     public function refreshData($id)
     {
-        $company = Companies::find($id)->first();
-        $kiosk = Kiosk::where('Company', $id)->join('users', 'users.id', '=', 'kiosk.UserID')->orderBy('kiosk.created_at', 'DESC')
-        ->take(6)->get(['kiosk.Company', 'users.Firstname', 'users.Lastname', 'users.AvatarURL', 'kiosk.created_at']);
-        Carbon::setLocale($company->language);
-        foreach($kiosk as $key => $value) {
-            $value->time = Carbon::parse($value->created_at)->diffForHumans();
+        if(isset($id)) {
+            $company = Companies::find($id)->first();
+            $kiosk = Kiosk::where('Company', $id)->join('users', 'users.id', '=', 'kiosk.UserID')->orderBy('kiosk.created_at', 'DESC')
+            ->take(6)->get(['kiosk.Company', 'users.Firstname', 'users.Lastname', 'users.AvatarURL', 'kiosk.created_at']);
+            Carbon::setLocale($company->language);
+            foreach($kiosk as $key => $value) {
+                $value->time = Carbon::parse($value->created_at)->diffForHumans();
+            }
+            Carbon::setLocale('en');
+            return response()->json([
+                'kiosk' => $kiosk,
+                'company' => $company
+            ]);
+        } else {
+            return view('ngst.kiosk.recipe_list');
         }
-        Carbon::setLocale('en');
-        return response()->json([
-            'kiosk' => $kiosk,
-            'company' => $company
-        ]);
     }
 }

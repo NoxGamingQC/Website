@@ -8,7 +8,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="NoxGamingQC's Website">
     <meta name="author" content="NoxGamingQC">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    @if(isset($kiosk) && $kiosk == true)
+        <meta name="viewport" content="width=800, height=480, initial-scale=1, user-scalable=1">
+        <meta http-equiv="refresh" content="60">
+    @else
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    @endif
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @if(env('APP_ENV', 'developement'))
     <title>{{env('APP_ENV') == 'developement' ? 'Dev - ' : ''}}{{env('APP_NAME')}} - @yield('title')</title>
