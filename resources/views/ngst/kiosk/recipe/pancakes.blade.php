@@ -6,7 +6,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12 text-right">
-            <a class="btn btn-primary" style="font-size:24px;padding:2%">Retourner vers les recettes</a>
+            <a class="btn btn-primary" href="/kiosk/cookbook" style="font-size:24px;padding:2%">Retourner vers les recettes</a>
         </div>
     </div>
 </div>
