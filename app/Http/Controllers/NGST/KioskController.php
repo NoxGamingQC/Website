@@ -12,7 +12,7 @@ class KioskController extends Controller
 {
     public function index($id)
     {
-        return redirect('/company/kiosk/cookbook');
+        return redirect('/kiosk/cookbook');
         $company = Companies::find($id)->first();
         $kiosk = Kiosk::where('Company', $id)->join('users', 'users.id', '=', 'kiosk.UserID')->orderBy('kiosk.created_at', 'DESC')
         ->take(6)->get(['kiosk.Company', 'users.Firstname', 'users.Lastname', 'users.AvatarURL', 'kiosk.created_at']);
