@@ -2,7 +2,14 @@
 @section('content')
 @section('title','Pancakes')
 @section('slogan', 'Fais 10-12 pancakes')
-
+¸
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 text-right">
+            <a class="btn btn-primary" style="font-size:24px;padding:2%">Retourner vers les recettes</a>
+        </div>
+    </div>
+</div>
 <div class="container">
     <div class="row">
         <div class="col-md-12 text-left">
