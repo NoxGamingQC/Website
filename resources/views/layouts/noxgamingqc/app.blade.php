@@ -43,7 +43,7 @@
 
 <body>
     @if(isset($kiosk) && $kiosk == true)
-        <@include('layouts.noxgamingqc.header')
+        @include('layouts.noxgamingqc.header')
         <div class="content">
             @yield('content')
         </div>
