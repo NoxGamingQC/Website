@@ -11,7 +11,10 @@
 |
 */
     Route::get('/company/kiosk/{id}', 'NGST\KioskController@index');
-    Route::get('/company/kiosk/{id}/refresh', 'NGST\KioskController@refreshData');
+    //Route::get('/company/kiosk/{id}/refresh', 'NGST\KioskController@refreshData');
+    Route::get('/company/kiosk/cookbook', 'NGST\KioskController@cookbook');
+    Route::get('/company/kiosk/recipe/{slug}', 'NGST\KioskController@recipe');
+    Route::get('/company/kiosk/refresh', 'NGST\KioskController@refreshData');
     Route::post('/mail/receive', 'Mails\MailController@receive');
     /*Route::get('/mail/test', function() {
         return view('emails.newsletter');
