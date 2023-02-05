@@ -1,6 +1,7 @@
 @extends('layouts.noxgamingqc.app')
 @section('content')
 @section('title','Mon livre de recettes')
+@section('navbar', 'disabled')
 
 <div class="container-fluid">
     <div class="row">
