@@ -12,13 +12,13 @@
 */
     Route::get('/company/kiosk/{id}', 'NGST\KioskController@index');
     //Route::get('/company/kiosk/{id}/refresh', 'NGST\KioskController@refreshData');
-    Route::get('/kiosk/cookbook', 'NGST\KioskController@cookbook');
-    Route::get('/company/kiosk/recipe/{slug}', 'NGST\KioskController@recipe');
-    Route::get('/company/kiosk/refresh', 'NGST\KioskController@refreshData');
     Route::post('/mail/receive', 'Mails\MailController@receive');
     /*Route::get('/mail/test', function() {
         return view('emails.newsletter');
     });*/
+    Route::get('/kiosk/cookbook', 'NGST\KioskController@cookbook');
+    Route::get('/company/kiosk/recipe/{slug}', 'NGST\KioskController@recipe');
+    Route::get('/company/kiosk/refresh', 'NGST\KioskController@refreshData');
 
 
     Route::group([
@@ -109,6 +109,10 @@
             Route::get('/teams', function () {
                 return view('noxgamingqc.about_me.teams');
             });
+            
+            Route::get('/kiosk/cookbook', 'NGST\KioskController@cookbook');
+            Route::get('/company/kiosk/recipe/{slug}', 'NGST\KioskController@recipe');
+            Route::get('/company/kiosk/refresh', 'NGST\KioskController@refreshData');
 
             Route::get('/partners', function () {
                 return view('noxgamingqc.streaming.partners');

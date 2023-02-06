@@ -158,3 +158,21 @@ a[type="button"]:disabled {
     color: $text-disabled !important;
     opacity: 1;
 }
+
+.form-control[readonly] {
+    background-color: $background-color !important;
+    color: $text-color !important;
+    opacity: 1;
+}
+
+.form-control[readonly] {
+    background-color: $background-color !important;
+    color: $text-color !important;
+    opacity: 1;
+}
+
+.form-control[readonly]:hover, .form-control[readonly]:active {
+    background-color: $brand-primary !important;
+    color: $text-color !important;
+    opacity: 1;
+}
