@@ -6,7 +6,8 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12 text-right">
-            <a class="btn btn-primary" href="/{{app()->getLocale()}}/kiosk/cookbook" style="font-size:24px;padding:2%">Retourner vers les recettes</a>
+            <br />
+            <a href="/{{app()->getLocale()}}/kiosk/cookbook"><input class="btn btn-primary form-control" style="font-size:24px;padding:5%" value="{{trans('cookbook.go_back_to_list')}}" readonly></a>
         </div>
     </div>
 </div>
