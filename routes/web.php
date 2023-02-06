@@ -16,8 +16,12 @@
     /*Route::get('/mail/test', function() {
         return view('emails.newsletter');
     });*/
-    Route::get('/kiosk/cookbook', 'NGST\KioskController@cookbook');
-    Route::get('/company/kiosk/recipe/{slug}', 'NGST\KioskController@recipe');
+    Route::get('/kiosk/cookbook', function () {
+        return redirect()->to('/fr-ca/kiosk/cookbook');
+    });
+    Route::get('/kiosk/recipe/{slug}', function ($slug) {
+        return redirect()->to('/fr-ca/kiosk/recipe/' . $slug);
+    });
     Route::get('/company/kiosk/refresh', 'NGST\KioskController@refreshData');
 
 
@@ -111,7 +115,7 @@
             });
             
             Route::get('/kiosk/cookbook', 'NGST\KioskController@cookbook');
-            Route::get('/company/kiosk/recipe/{slug}', 'NGST\KioskController@recipe');
+            Route::get('/kiosk/recipe/{slug}', 'NGST\KioskController@recipe');
             Route::get('/company/kiosk/refresh', 'NGST\KioskController@refreshData');
 
             Route::get('/partners', function () {

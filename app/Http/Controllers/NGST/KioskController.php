@@ -33,7 +33,7 @@ class KioskController extends Controller
         ]);
     }
 
-    public function recipe($slug) {
+    public function recipe($language, $slug) {
         return view('ngst.kiosk.recipe.'. $slug)->with([
             'kiosk' => 'true'
         ]);
