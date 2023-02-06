@@ -31,7 +31,7 @@
 <div class="container bg-dark">
     <div class="row">
         <div class="col-md-12 text-left">
-            <h2>Directions</h2>
+            <h2>Directives</h2>
             <br />
             <ul style="font-size:24px">
             </ul>
