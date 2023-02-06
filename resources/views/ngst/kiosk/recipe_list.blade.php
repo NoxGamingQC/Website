@@ -7,8 +7,11 @@
     <div class="row">
         <div class="col-md-12">
             <br />
-            <a href="/kiosk/cookbook"><input class="btn btn-primary form-control" href="/language/set/fr-ca" style="font-size:24px;padding:2%" value="{{trans('cookbook.french')}}" readonly></a>
-            <!--<a href="/kiosk/cookbook"><input class="btn btn-primary form-control" href="/language/set/en-ca" style="font-size:24px;padding:2%" value="{{trans('cookbook.english')}}" readonly></a>-->
+            @if(app()->getLocale() == 'fr-ca')
+                <a href="/kiosk/cookbook"><input class="btn btn-primary form-control" href="/en-ca/kiosk/cookbook" style="font-size:24px;padding:2%" value="{{trans('cookbook.english')}}" readonly></a>
+            @elseif (app()->getLocale() == 'en-ca')
+                <a href="/kiosk/cookbook"><input class="btn btn-primary form-control" href="/fr-ca/kiosk/cookbook" style="font-size:24px;padding:2%" value="{{trans('cookbook.french')}}" readonly></a>
+            @endif
         </div>
     </div>
     <div class="row">
