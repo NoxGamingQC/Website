@@ -79,6 +79,14 @@ a:hover, a:active {
     color: $brand-primary;
 }
 
+a:link.text-color, a:visited.text-color {
+    color: $text-color;
+}
+
+a:hover.text-color, a:active.text-color {
+    color: $text-color;
+}
+
 .status-online {
     border: 5px solid $brand-success;
 }

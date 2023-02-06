@@ -3935,6 +3935,24 @@ a[type=button]:disabled {
   opacity: 1;
 }
 
+.form-control[readonly] {
+  background-color: #222222 !important;
+  color: #ffffff !important;
+  opacity: 1;
+}
+
+.form-control[readonly] {
+  background-color: #222222 !important;
+  color: #ffffff !important;
+  opacity: 1;
+}
+
+.form-control[readonly]:hover, .form-control[readonly]:active {
+  background-color: #c22222 !important;
+  color: #ffffff !important;
+  opacity: 1;
+}
+
 .modal-backdrop {
   z-index: -1 !important;
 }
@@ -4668,6 +4686,14 @@ a:link, a:visited {
 
 a:hover, a:active {
   color: #c22222;
+}
+
+a:link.text-color, a:visited.text-color {
+  color: #ffffff;
+}
+
+a:hover.text-color, a:active.text-color {
+  color: #ffffff;
 }
 
 .status-online {
