@@ -15,7 +15,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-4 text-left">
+        <div class="col-sm-4 text-left">
             <h2>{{trans('cookbook.breakfast')}}</h2>
             <br />
             <ul style="font-size:24px">
@@ -23,13 +23,13 @@
                 <li><a class="text-color" href="/company/kiosk/recipe/pancakes">{{trans('cookbook.pancakes')}}</a></li>
             </ul>
         </div>
-        <div class="col-md-4 text-left">
+        <div class="col-sm-4 text-left">
             <h2>{{trans('cookbook.lunch')}}</h2>
             <br />
             <ul style="font-size:24px">
             </ul>
         </div>
-        <div class="col-md-4 text-left">
+        <div class="col-sm-4 text-left">
             <h2>{{trans('cookbook.dessert')}}</h2>
             <br />
             <ul style="font-size:24px">
