@@ -19,8 +19,8 @@
             <h2>{{trans('cookbook.breakfast')}}</h2>
             <br />
             <ul class="no-decoration" style="font-size:24px; line-height: 2">
-                <li><a class="text-color" href="/company/kiosk/recipe/crepes">{{trans('cookbook.crepes')}}</a></li>
-                <li><a class="text-color" href="/company/kiosk/recipe/pancakes">{{trans('cookbook.pancakes')}}</a></li>
+                <li><a class="text-color" href="/kiosk/recipe/crepes">{{trans('cookbook.crepes')}}</a></li>
+                <li><a class="text-color" href="/kiosk/recipe/pancakes">{{trans('cookbook.pancakes')}}</a></li>
             </ul>
         </div>
         <div class="col-sm-4 text-center">
