@@ -2,7 +2,7 @@
 @section('content')
 @section('title','Pancakes')
 @section('slogan', 'Fais 10-12 pancakes')
-¸
+
 <div class="container">
     <div class="row">
         <div class="col-md-12 text-right">
