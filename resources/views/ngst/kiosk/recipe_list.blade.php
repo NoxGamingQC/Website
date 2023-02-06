@@ -8,9 +8,9 @@
         <div class="col-md-12">
             <br />
             @if(app()->getLocale() == 'fr-ca')
-                <a href="/en-ca/kiosk/cookbook"><input class="btn btn-primary form-control" style="font-size:24px;padding:2%" value="{{trans('cookbook.english')}}" readonly></a>
+                <a href="/en-ca/kiosk/cookbook"><input class="btn btn-primary form-control" style="font-size:24px;padding:5%" value="{{trans('cookbook.english')}}" readonly></a>
             @elseif (app()->getLocale() == 'en-ca')
-                <a href="/fr-ca/kiosk/cookbook"><input class="btn btn-primary form-control" style="font-size:24px;padding:2%" value="{{trans('cookbook.french')}}" readonly></a>
+                <a href="/fr-ca/kiosk/cookbook"><input class="btn btn-primary form-control" style="font-size:24px;padding:5%" value="{{trans('cookbook.french')}}" readonly></a>
             @endif
         </div>
     </div>
