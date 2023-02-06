@@ -4299,6 +4299,11 @@ a.text-highlight {
   color: #ffffff;
 }
 
+.no-decoration {
+  text-decoration: none !important;
+  list-style-type: none !important;
+}
+
 .img-text {
   font-family: "Raleway", sans-serif !important;
   color: #ffffff;

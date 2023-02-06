@@ -8,31 +8,31 @@
         <div class="col-md-12">
             <br />
             @if(app()->getLocale() == 'fr-ca')
-                <a href="/kiosk/cookbook"><input class="btn btn-primary form-control" href="/en-ca/kiosk/cookbook" style="font-size:24px;padding:2%" value="{{trans('cookbook.english')}}" readonly></a>
+                <a href="/en-ca/kiosk/cookbook"><input class="btn btn-primary form-control" style="font-size:24px;padding:2%" value="{{trans('cookbook.english')}}" readonly></a>
             @elseif (app()->getLocale() == 'en-ca')
-                <a href="/kiosk/cookbook"><input class="btn btn-primary form-control" href="/fr-ca/kiosk/cookbook" style="font-size:24px;padding:2%" value="{{trans('cookbook.french')}}" readonly></a>
+                <a href="/fr-ca/kiosk/cookbook"><input class="btn btn-primary form-control" style="font-size:24px;padding:2%" value="{{trans('cookbook.french')}}" readonly></a>
             @endif
         </div>
     </div>
     <div class="row">
-        <div class="col-sm-4 text-left">
+        <div class="col-sm-4 text-center">
             <h2>{{trans('cookbook.breakfast')}}</h2>
             <br />
-            <ul style="font-size:24px">
+            <ul class="no-decoration" style="font-size:24px; line-height: 2">
                 <li><a class="text-color" href="/company/kiosk/recipe/crepes">{{trans('cookbook.crepes')}}</a></li>
                 <li><a class="text-color" href="/company/kiosk/recipe/pancakes">{{trans('cookbook.pancakes')}}</a></li>
             </ul>
         </div>
-        <div class="col-sm-4 text-left">
+        <div class="col-sm-4 text-center">
             <h2>{{trans('cookbook.lunch')}}</h2>
             <br />
-            <ul style="font-size:24px">
+            <ul class="no-decoration" style="font-size:24px;line-height: 2;">
             </ul>
         </div>
-        <div class="col-sm-4 text-left">
+        <div class="col-sm-4 text-center">
             <h2>{{trans('cookbook.dessert')}}</h2>
             <br />
-            <ul style="font-size:24px">
+            <ul class="no-decoration" style="font-size:24px;line-height: 2;">
             </ul>
         </div>
     </div>
