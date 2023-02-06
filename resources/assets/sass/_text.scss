@@ -84,6 +84,10 @@ a.text-highlight {
     color: $text-highlight-color;
 }
 
+.no-decoration {
+    text-decoration: none !important;
+    list-style-type: none !important;
+}
 .img-text {
     font-family: $raleway-font !important;
     color: $text-color;
