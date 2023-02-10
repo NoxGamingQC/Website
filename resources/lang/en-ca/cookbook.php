@@ -17,4 +17,5 @@ return [
     'kamikaze' => "Kamikaze",
     'rob_roy' => "Rob Roy",
     'screwdriver' => "Screwdriver",
+    'broccoli_cream' => "Broccoli cream"
 ];
