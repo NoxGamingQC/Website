@@ -10,5 +10,6 @@ return [
     'lunch' => "Lunch",
     'dessert' => "Dessert",
     'crepes' => "Crepes",
-    'pancakes' => "Pancakes"
+    'pancakes' => "Pancakes",
+    'drink' => "Drink"
 ];
