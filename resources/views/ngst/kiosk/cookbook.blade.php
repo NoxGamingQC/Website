@@ -26,7 +26,7 @@
             <a href="/{{app()->getLocale()}}/kiosk/cookbook/lunch"><input class="btn btn-primary form-control" style="font-size:24px;padding:10%" value="{{trans('cookbook.lunch')}}" readonly></a>
         </div>
         <div class="col-sm-4 text-center">
-            <a href="/{{app()->getLocale()}}/kiosk/cookbook/desert"><input class="btn btn-primary form-control" style="font-size:24px;padding:10%" value="{{trans('cookbook.dessert')}}" readonly></a>
+            <a href="/{{app()->getLocale()}}/kiosk/cookbook/dessert"><input class="btn btn-primary form-control" style="font-size:24px;padding:10%" value="{{trans('cookbook.dessert')}}" readonly></a>
         </div>
         <div class="col-md-12">
             <br />
