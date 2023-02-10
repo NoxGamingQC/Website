@@ -5,7 +5,7 @@ return [
     'slogan' => "In development",
     'french' => "Voir en Français (French)",
     'english' => "See in english (English)",
-    'go_back_to_last_page' => "Go back to last page",
+    'go_back_to_last_page' => "Go back to the last page",
     'breakfast' => "Breakfast",
     'lunch' => "Lunch",
     'dessert' => "Dessert",
