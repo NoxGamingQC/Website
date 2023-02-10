@@ -28,13 +28,19 @@ class KioskController extends Controller
     }
 
     public function cookbook() {
-        return view('ngst.kiosk.recipe_list')->with([
+        return view('ngst.kiosk.cookbook')->with([
             'kiosk' => 'true'
         ]);
     }
 
-    public function recipe($language, $slug) {
-        return view('ngst.kiosk.recipe.'. $slug)->with([
+    public function cookbookCategory($language, $slug) {
+        return view('ngst.kiosk.cookbook.'. $slug)->with([
+            'kiosk' => 'true'
+        ]);
+    }
+
+    public function recipe($language, $category ,$slug) {
+        return view('ngst.kiosk.cookbook.recipe.' . $slug)->with([
             'kiosk' => 'true'
         ]);
     }
