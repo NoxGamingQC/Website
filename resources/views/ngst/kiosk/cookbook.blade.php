@@ -28,6 +28,8 @@
         <div class="col-sm-4 text-center">
             <a href="/{{app()->getLocale()}}/kiosk/cookbook/dessert"><input class="btn btn-primary form-control" style="font-size:24px;padding:10%" value="{{trans('cookbook.dessert')}}" readonly></a>
         </div>
+    </div>
+    <div class="row">
         <div class="col-md-12">
             <br />
             &nbsp
