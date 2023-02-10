@@ -11,5 +11,10 @@ return [
     'dessert' => "Dessert",
     'crepes' => "Crêpes",
     'pancakes' => "Pancakes",
-    'drink' => "Brevages"
+    'drinks' => "Brevages",
+    'cosmopolitan' => "Cosmopolitan",
+    'daquiri' => "Daquiri",
+    'kamikaze' => "Kamikaze",
+    'rob_roy' => "Rob Roy",
+    'screwdriver' => "Screwdriver",
 ];

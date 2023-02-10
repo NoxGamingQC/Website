@@ -37,7 +37,7 @@
     </div>
     <div class="row">
         <div class="col-sm-4 text-center">
-            <a href="/{{app()->getLocale()}}/kiosk/cookbook/drink"><input class="btn btn-primary form-control" style="font-size:24px;padding:10%" value="{{trans('cookbook.drink')}}" readonly></a>
+            <a href="/{{app()->getLocale()}}/kiosk/cookbook/drinks"><input class="btn btn-primary form-control" style="font-size:24px;padding:10%" value="{{trans('cookbook.drinks')}}" readonly></a>
         </div>
     </div>
     <div class="row">
