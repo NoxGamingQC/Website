@@ -27,16 +27,23 @@
             </ul>
         </div>
     </div>
+    <div class="row">
+        <div class="col-md-12">
+            <br />
+            &nbsp
+        </div>
+    </div>
 </div>
-<div class="container-fluid bg-dark">
-<div class="container bg-dark">
+<div class="container">
     <div class="row">
         <div class="col-md-12 text-left">
             <h2>Directives</h2>
             <br />
             <ul style="font-size:24px">
+                <li class="text-justify">Dans un bol, mélanger la farine, le sucre et le sel. Ajouté les oeufs, 1/2 tasse de lait et la vanille, puis bien mélanger au fouet jusqu'à ce que la pâte sois lisse et homogène. Ajouter le reste du lait graduellement en remuant. Incorporer le beurre fondu.</li>
+                <li class="text-justify">Chauffer une poêle à feu moyen. Lorsque la poêle est chaude, badigeonner de beurre.</li>
+                <li class="text-justify">Pour chaques crêpes, verser environ 3 c. à soupe au centre de la poêle. Lorsque les bords se décolle facilement, retourner et poursuivre la cuisson pendant 10 secondes</li>
             </ul>
-        </div>
         </div>
     </div>
 </div>
