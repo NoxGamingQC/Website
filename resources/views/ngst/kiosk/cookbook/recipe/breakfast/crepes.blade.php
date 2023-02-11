@@ -20,7 +20,7 @@
                 <li>1 1/2 tasse de lait</li>
                 <li>2 oeufs</li>
                 <li>1 tasse de farine</li>
-                <li>3 c. à soupe de sucre</li>
+                <li>5 c. à soupe de sucre</li>
                 <li>1 pincé de sel</li>
                 <li>1 c. à soupe de beurre fondu</li>
                 <li>1/2 c. à thé de vanille</li>
