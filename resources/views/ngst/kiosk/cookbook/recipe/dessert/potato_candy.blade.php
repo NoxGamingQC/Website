@@ -17,13 +17,9 @@
             <h2>Ingredients</h2>
             <br />
             <ul style="font-size:24px">
-                <li>1 1/2 tasse de lait</li>
-                <li>2 oeufs</li>
-                <li>1 tasse de farine</li>
-                <li>3 c. à soupe de sucre</li>
-                <li>1 pincé de sel</li>
-                <li>1 c. à soupe de beurre fondu</li>
-                <li>1/2 c. à thé de vanille</li>
+                <li>1 pomme de terre</li>
+                <li>Sucre en poudre</li>
+                <li>Beurre d'arachides</li>
             </ul>
         </div>
     </div>
@@ -40,9 +36,12 @@
             <h2>Directives</h2>
             <br />
             <ul style="font-size:24px">
-                <li class="text-justify">Dans un bol, mélanger la farine, le sucre et le sel. Ajouté les oeufs, 1/2 tasse de lait et la vanille, puis bien mélanger au fouet jusqu'à ce que la pâte sois lisse et homogène. Ajouter le reste du lait graduellement en remuant. Incorporer le beurre fondu.</li>
-                <li class="text-justify">Chauffer une poêle à feu moyen. Lorsque la poêle est chaude, badigeonner de beurre.</li>
-                <li class="text-justify">Pour chaques crêpes, verser environ 3 c. à soupe au centre de la poêle. Lorsque les bords se décolle facilement, retourner et poursuivre la cuisson pendant 10 secondes</li>
+                <li class="text-justify">Pilez 1 pomme de terre bouillie et mélangez-y du sucre en poudre jusqu'à ce que le sucre en ait absorbé toute l'humidité.</li>
+                <li class="text-justify">Soupoudrez la table et étendez-y avec un rouleau à pâte, le mélange de pomme de terre et de sucre.</li>
+                <li class="text-justify">Formez une abaisse très mince que vous enduirez ensuite d'une mince couche de beurre d'arachides.</li>
+                <li class="text-justify">Enroulez ensuite l'abaisse du bout des doigts.</li>
+                <li class="text-justify">Enveloppez cette longue tige dans du papier ciré et placez-la dans le réfrigérateur pendant 1 heure.</li>
+                <li class="text-justify">Coupez-la en tranches d'un quart de pouce d'épaisseur pour formez des espèces de biscuits plats et ronds que vous disposerez sur une grande assiette.</li>
             </ul>
         </div>
     </div>
