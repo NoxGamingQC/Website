@@ -22,4 +22,8 @@ return [
     'fruit_cake' => "Fruit cake",
     'graham_cake' => "Graham cake",
     'sugar_cone' => "Sugar cone",
+    'meat_loaf' => "Meat loaf",
+    'sauces_icing' => "Sauces & icing",
+    'simple_icing' => "Simple icing",
+    'spagetti_sauce' => "Spagetti sauce"
 ];
