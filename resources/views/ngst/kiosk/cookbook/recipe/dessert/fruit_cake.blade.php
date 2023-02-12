@@ -41,7 +41,7 @@
             <ul style="font-size:24px">
                 <li class="text-justify">Dans un plat en pyrex couvrir le fond de beurre.</li>
                 <li class="text-justify">Déposer le mélange dans le plat.</li>
-                <li class="text-justify">Cuire au four à 325C oendant 50 minutes</li>
+                <li class="text-justify">Cuire au four à 325C pendant 50 minutes</li>
             </ul>
         </div>
     </div>
