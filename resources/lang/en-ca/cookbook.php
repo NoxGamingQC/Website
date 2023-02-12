@@ -18,5 +18,8 @@ return [
     'rob_roy' => "Rob Roy",
     'screwdriver' => "Screwdriver",
     'broccoli_cream' => "Broccoli cream",
-    'potato_candy' => "Potato candy"
+    'potato_candy' => "Potato candy",
+    'fruit_cake' => "Fruit cake",
+    'graham_cake' => "Graham cake",
+    'sugar_cone' => "Sugar cone",
 ];
