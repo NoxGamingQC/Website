@@ -22,4 +22,8 @@ return [
     'fruit_cake' => "Gâteau au fruit",
     'graham_cake' => "Gâteau Graham",
     'sugar_cone' => "Cornet au sucre",
+    'meat_loaf' => "Pain de viande",
+    'sauces_icing' => "Sauces & glaçages",
+    'simple_icing' => "Glaçage simple",
+    'spagetti_sauce' => "Sauce à spagetthi"
 ];
