@@ -121,7 +121,7 @@
             <ul style="font-size:24px">
                 <li>2 tasses de sucre blanc</li>
                 <li>1/4 de tasse de beurre ou margarine</li>
-                <li>3/4 tasses de crème 35%r</li>
+                <li>3/4 tasses de crème 35%</li>
                 <li>16 guimauves</li>
                 <li>1/2 tasses de noix hachée</li>
             </ul>
