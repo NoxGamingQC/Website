@@ -10,7 +10,7 @@
     <meta name="author" content="NoxGamingQC">
     @if(isset($kiosk) && $kiosk == true)
         <meta name="viewport" content="width=800, height=480, initial-scale=1, user-scalable=1">
-        <meta http-equiv="refresh" content="60">
+        <meta http-equiv="refresh" content="36000">
     @else
         <meta name="viewport" content="width=device-width, initial-scale=1">
     @endif
