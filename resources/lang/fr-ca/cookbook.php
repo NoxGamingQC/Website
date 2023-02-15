@@ -25,5 +25,7 @@ return [
     'meat_loaf' => "Pain de viande",
     'sauces_icing' => "Sauces & glaçages",
     'simple_icing' => "Glaçage simple",
-    'spagetti_sauce' => "Sauce à spagetthi"
+    'spagetti_sauce' => "Sauce à spagetthi",
+    'sugar_and_cream' => "Sucre à la crème",
+    'version' => "Version"
 ];
