@@ -10,15 +10,15 @@
         </div>
         <div class="col-md-12 text-right">
             <div class="row">
-                <div class="col-md-4 text-center">
+                <div class="col-sm-4 text-center">
                     <br />
                    <input id="v1" class="btn btn-primary form-control" style="font-size:24px;padding:10%" value="{{trans('cookbook.version')}} 1" readonly>
                 </div>
-                <div class="col-md-4 text-center">
+                <div class="col-sm-4 text-center">
                     <br />
                    <input id="v2" class="btn btn-primary form-control" style="font-size:24px;padding:10%" value="{{trans('cookbook.version')}} 2" readonly>
                 </div>
-                <div class="col-md-4 text-center">
+                <div class="col-sm-4 text-center">
                     <br />
                    <input id="v3" class="btn btn-primary form-control" style="font-size:24px;padding:10%" value="{{trans('cookbook.version')}} 3" readonly>
                 </div>
