@@ -25,6 +25,9 @@
             <a href="/{{app()->getLocale()}}/kiosk/cookbook/dessert/potato_candy"><input class="btn btn-primary form-control" style="font-size:24px;padding:10%" value="{{trans('cookbook.potato_candy')}}" readonly></a>
         </div>
         <div class="col-sm-4 text-center" style="margin-bottom:3%">
+            <a href="/{{app()->getLocale()}}/kiosk/cookbook/dessert/sugar_and_cream"><input class="btn btn-primary form-control" style="font-size:24px;padding:10%" value="{{trans('cookbook.sugar_and_cream')}}" readonly></a>
+        </div>
+        <div class="col-sm-4 text-center" style="margin-bottom:3%">
             <a href="/{{app()->getLocale()}}/kiosk/cookbook/dessert/sugar_cone"><input class="btn btn-primary form-control" style="font-size:24px;padding:10%" value="{{trans('cookbook.sugar_cone')}}" readonly></a>
         </div>
     </div>
