@@ -16,9 +16,9 @@
     @endif
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @if(env('APP_ENV', 'developement'))
-    <title>{{env('APP_ENV') == 'developement' ? 'Dev - ' : ''}}{{env('APP_NAME')}} - @yield('title')</title>
+    <title>{{env('APP_ENV') == 'developement' ? 'Dev - ' : ''}}{{env('APP_NAME')}} - @yield('title') @yield('name')</title>
     @else
-    <title>{{env('APP_NAME')}} - @yield('title')</title>
+    <title>{{env('APP_NAME')}} - @yield('title') @yield('name')</title>
     @endif
     <link rel="icon" href="/img/NoxGamingQC.png" type="image/png">
     <link href="{{mix('css/app.css')}}" rel="stylesheet" type="text/css">

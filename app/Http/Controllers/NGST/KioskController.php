@@ -29,19 +29,28 @@ class KioskController extends Controller
 
     public function cookbook() {
         return view('ngst.kiosk.cookbook')->with([
-            'kiosk' => 'true'
+            'kiosk' => 'true',
+            'recipe' => 'true',
+            'isRecipe' => false,
+            'isButtonLastPage' => 'false'
         ]);
     }
 
     public function cookbookCategory($language, $slug) {
         return view('ngst.kiosk.cookbook.'. $slug)->with([
-            'kiosk' => 'true'
+            'kiosk' => 'true',
+            'recipe' => 'true',
+            'isRecipe' => false,
+            'lastLink' => '/' . app()->getLocale() . '/kiosk/cookbook',
         ]);
     }
 
     public function recipe($language, $category ,$slug) {
         return view('ngst.kiosk.cookbook.recipe.' . $category . '.' . $slug)->with([
-            'kiosk' => 'true'
+            'kiosk' => 'true',
+            'recipe' => 'true',
+            'isRecipe' => true,
+            'lastLink' => '/' . app()->getLocale() . '/kiosk/cookbook/' . $category,
         ]);
     }
 

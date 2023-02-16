@@ -31,5 +31,6 @@ return [
     'version' => "Version",
     'candy_no_cooking' => "Bonbon sans cuisson",
     'tomato_garlic_toast' => "Toast aux tomates et à l'ail",
-    'chocolate_cake_in_cup' => "Gâteau au chocolat dans une tasse"
+    'chocolate_cake_in_cup' => "Gâteau au chocolat dans une tasse",
+    'by' => "par"
 ];

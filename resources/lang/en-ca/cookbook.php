@@ -31,5 +31,6 @@ return [
     'version' => "Version",
     'candy_no_cooking' => "Candy without cooking",
     'tomato_garlic_toast' => "Tomato and garlic toast",
-    'chocolate_cake_in_cup' => "Chocolate cake in a cup"
+    'chocolate_cake_in_cup' => "Chocolate cake in a cup",
+    'by' => "par"
 ];

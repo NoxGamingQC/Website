@@ -1,32 +1,9 @@
 @extends('layouts.noxgamingqc.app')
 @section('content')
-@section('title','Crêpes')
-@section('slogan', 'by NoxGamingQC')
-
+@section('name','Crêpes')
+@section('author', 'NoxGamingQC')
+@section('yields', '12-15 crêpes')
 <div class="container">
-    <div class="row">
-        <div class="col-md-12 text-right">
-            <br />
-            <a href="/{{app()->getLocale()}}/kiosk/cookbook/breakfast"><input class="btn btn-primary form-control" style="font-size:24px;padding:5%" value="{{trans('cookbook.go_back_to_last_page')}}" readonly></a>
-        </div>
-    </div>
-</div>
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <hr style="border-color:white" />
-            <li>Temps de préparation: </li>
-            <li>Temps de cuisson: </li>
-            <li>Résultat:  12-15 crêpes</li>
-            <hr style="border-color:white" />
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <li>Description du produit </li>
-            <hr style="border-bottom: solid 3px" />
-        </div>
-    </div>
     <div class="row">
         <div class="col-md-12 text-left">
             <h2>Ingredients</h2>
