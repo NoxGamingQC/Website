@@ -39,4 +39,6 @@ return [
     'prep_time' => "Temps de préparation",
     'cook_time' => "Temps de cuisson",
     'yields' => "Résultat",
+    'macaroni_salad' => "Salade de macaroni",
+    'side_dish' => "Plat d'accompagnement"
 ];

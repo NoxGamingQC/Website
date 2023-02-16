@@ -39,4 +39,6 @@ return [
     'prep_time' => "Prep time",
     'cook_time' => "Cook time",
     'yields' => "Yields",
+    'macaroni_salad' => "Macaroni salad",
+    'side_dish' => "Side dish"
 ];
