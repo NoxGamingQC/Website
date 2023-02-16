@@ -12,15 +12,15 @@
             <div class="row">
                 <div class="col-sm-4 text-center">
                     <br />
-                   <input id="v1" class="btn btn-primary form-control" style="font-size:24px;padding:10%" value="★ {{trans('cookbook.version')}} 1 ★" readonly>
+                   <input id="v1" class="btn btn-primary form-control" style="font-size:18px;padding:10%" value="★ {{trans('cookbook.version')}} 1 ★" readonly>
                 </div>
                 <div class="col-sm-4 text-center">
                     <br />
-                   <input id="v2" class="btn btn-primary form-control" style="font-size:24px;padding:10%" value="{{trans('cookbook.version')}} 2" readonly>
+                   <input id="v2" class="btn btn-primary form-control" style="font-size:18px;padding:10%" value="{{trans('cookbook.version')}} 2" readonly>
                 </div>
                 <div class="col-sm-4 text-center">
                     <br />
-                   <input id="v3" class="btn btn-primary form-control" style="font-size:24px;padding:10%" value="{{trans('cookbook.version')}} 3" readonly>
+                   <input id="v3" class="btn btn-primary form-control" style="font-size:18px;padding:10%" value="{{trans('cookbook.version')}} 3" readonly>
                 </div>
             </div>
         </div>
@@ -31,7 +31,7 @@
         <div class="col-md-12 text-left">
             <h2>Ingredients</h2>
             <br />
-            <ul style="font-size:24px">
+            <ul style="font-size:18px">
                 <li>2 tasses de sucre blanc</li>
                 <li>1/4 de tasse de beurre ou margarine</li>
                 <li>3/4 tasses de crème 35%</li>
@@ -52,7 +52,7 @@
         <div class="col-md-12 text-left">
             <h2>Directives</h2>
             <br />
-            <ul style="font-size:24px">
+            <ul style="font-size:18px">
                 <li class="text-justify">Dans une casserole mélangez les quatres premiers ingrédients.</li>
                 <li class="text-justify">Amenez à ébullition 5 minutes environ.</li>
                 <li class="text-justify">Enlevez la casserole du feu et ajoutez les noix au besoin.</li>
@@ -74,7 +74,7 @@
         <div class="col-md-12 text-left">
             <h2>Ingredients</h2>
             <br />
-            <ul style="font-size:24px">
+            <ul style="font-size:18px">
                 <li>1 tasse de sucre blanc</li>
                 <li>1 tasse de cassonade pâle ou dorée</li>
                 <li>1 tasse de crème 35% à fouetter</li>
@@ -95,7 +95,7 @@
         <div class="col-md-12 text-left">
             <h2>Directives</h2>
             <br />
-            <ul style="font-size:24px">
+            <ul style="font-size:18px">
                 <li class="text-justify">Mélanger légèrement le sucre, la cassonade et la crème dans un bol en verre.</li>
                 <li class="text-justify">Chauffer 10 minutes (environ) à "high" au micro-onde.</li>
                 <li class="text-justify">Sortir le bol.</li>
@@ -119,7 +119,7 @@
         <div class="col-md-12 text-left">
             <h2>Ingredients</h2>
             <br />
-            <ul style="font-size:24px">
+            <ul style="font-size:18px">
                 <li>2 tasses de sucre</li>
                 <li>2 tasses de cassonade</li>
                 <li>2/3 de tasse de sirop de maïs</li>
@@ -140,7 +140,7 @@
         <div class="col-md-12 text-left">
             <h2>Directives</h2>
             <br />
-            <ul style="font-size:24px">
+            <ul style="font-size:18px">
                 <li class="text-justify">Bien mélanger tous les ingrédients.</li>
                 <li class="text-justify">Amener à ébullition.</li>
                 <li class="text-justify">Cuire 3 minutes à feu vif.</li>

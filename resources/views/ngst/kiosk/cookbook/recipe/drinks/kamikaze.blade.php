@@ -12,7 +12,7 @@
         <div class="col-md-12 text-left">
             <h2>Ingredients</h2>
             <br />
-            <ul style="font-size:24px">
+            <ul style="font-size:18px">
                 <li>3oz Vodka</li>
                 <li>3oz curacao bleu ou de triple sec</li>
                 <li>2oz de jus de lime ou de citron</li>
@@ -31,7 +31,7 @@
         <div class="col-md-12 text-left">
             <h2>Directives</h2>
             <br />
-            <ul style="font-size:24px">
+            <ul style="font-size:18px">
                 <li>Servir dans un verre à Martini</li>
             </ul>
         </div>

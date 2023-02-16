@@ -12,7 +12,7 @@
         <div class="col-md-12 text-left">
             <h2>Ingredients</h2>
             <br />
-            <ul style="font-size:24px">
+            <ul style="font-size:18px">
                 <li>2 tasses de sucre</li>
                 <li>1/2 tasse de cacao</li>
                 <li>1/2 tasse de margarine</li>
@@ -35,7 +35,7 @@
         <div class="col-md-12 text-left">
             <h2>Directives</h2>
             <br />
-            <ul style="font-size:24px">
+            <ul style="font-size:18px">
                 <li class="text-justify">Cuire le sucre, le cacao, la margarine et le lait jusqu'à ébullition.</li>
                 <li class="text-justify">Ajouter le gruau et le beurre d'arachide.</li>
             </ul>

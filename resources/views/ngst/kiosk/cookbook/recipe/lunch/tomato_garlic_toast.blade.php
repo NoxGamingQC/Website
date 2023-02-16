@@ -12,7 +12,7 @@
         <div class="col-md-12 text-left">
             <h2>Ingredients</h2>
             <br />
-            <ul style="font-size:24px">
+            <ul style="font-size:18px">
                 <li>5 grosses tomates prunes, en dés</li>
                 <li>2 c. à soupe de basilic frais, haché</li>
                 <li>2 c. à soupe d'huile d'olive</li>
@@ -35,7 +35,7 @@
         <div class="col-md-12 text-left">
             <h2>Directives</h2>
             <br />
-            <ul style="font-size:24px">
+            <ul style="font-size:18px">
                 <li class="text-justify">Tous mélanger, sauf le pain.</li>
                 <li class="text-justify">Recouvrir les pain avec 1/4 de la préparation (environ 3 c. à soupe).</li>
             </ul>

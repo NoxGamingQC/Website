@@ -12,7 +12,7 @@
         <div class="col-md-12 text-left">
             <h2>Ingredients</h2>
             <br />
-            <ul style="font-size:24px">
+            <ul style="font-size:18px">
                 <li>4oz de scotch</li>
                 <li>2oz de vermouth rouge</li>
                 <li>4 goutes amer</li>
@@ -32,7 +32,7 @@
         <div class="col-md-12 text-left">
             <h2>Directives</h2>
             <br />
-            <ul style="font-size:24px">
+            <ul style="font-size:18px">
                 <li>Servir dans un verre Old fashionned</li>
             </ul>
         </div>

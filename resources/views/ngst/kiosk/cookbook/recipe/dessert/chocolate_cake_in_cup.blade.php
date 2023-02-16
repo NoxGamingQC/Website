@@ -12,7 +12,7 @@
         <div class="col-md-12 text-left">
             <h2>Ingredients</h2>
             <br />
-            <ul style="font-size:24px">
+            <ul style="font-size:18px">
                 <li>3 c. à soupe de farine</li>
                 <li>2 c. à soupe de cassonade</li>
                 <li>2 c. à thé de cacao</li>
@@ -36,7 +36,7 @@
         <div class="col-md-12 text-left">
             <h2>Directives</h2>
             <br />
-            <ul style="font-size:24px">
+            <ul style="font-size:18px">
                 <li class="text-justify">Mélangez jusqu'à homogénité.</li>
                 <li class="text-justify">Cuire 45 secondes au micro-ondes.</li>
             </ul>

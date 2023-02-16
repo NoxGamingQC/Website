@@ -12,7 +12,7 @@
         <div class="col-md-12 text-left">
             <h2>Ingredients</h2>
             <br />
-            <ul style="font-size:24px">
+            <ul style="font-size:18px">
                 <li>1 1/3 tasse de farine</li>
                 <li>3 c. à thé de poudre à pâte</li>
                 <li>1/2 c. à thé de sel</li>
