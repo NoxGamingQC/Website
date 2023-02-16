@@ -12,7 +12,7 @@
             <div class="row">
                 <div class="col-sm-4 text-center">
                     <br />
-                   <input id="v1" class="btn btn-primary form-control" style="font-size:24px;padding:10%" value="{{trans('cookbook.version')}} 1" readonly>
+                   <input id="v1" class="btn btn-primary form-control" style="font-size:24px;padding:10%" value="★ {{trans('cookbook.version')}} 1 ★" readonly>
                 </div>
                 <div class="col-sm-4 text-center">
                     <br />
@@ -36,7 +36,7 @@
                 <li>1/4 de tasse de beurre ou margarine</li>
                 <li>3/4 tasses de crème 35%</li>
                 <li>16 guimauves</li>
-                <li>1/2 tasses de noix hachée</li>
+                <li>1/2 tasses de noix hachée (facultatif)</li>
             </ul>
         </div>
     </div>
@@ -55,7 +55,7 @@
             <ul style="font-size:24px">
                 <li class="text-justify">Dans une casserole mélangez les quatres premiers ingrédients.</li>
                 <li class="text-justify">Amenez à ébullition 5 minutes environ.</li>
-                <li class="text-justify">Enlevez la casserole du feu et ajoutez les noix.</li>
+                <li class="text-justify">Enlevez la casserole du feu et ajoutez les noix au besoin.</li>
                 <li class="text-justify">Mélangez.</li>
                 <li class="text-justify">Versez dans une assiettes beurré et laissé refroidir, avant de coupez en carré.</li>
             </ul>
