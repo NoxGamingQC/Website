@@ -1,6 +1,7 @@
 @extends('layouts.noxgamingqc.app')
 @section('content')
 @section('name','Cosmopolitan')
+@section('author', 'Ricardo')
 
 <div class="container">
     <div class="row">

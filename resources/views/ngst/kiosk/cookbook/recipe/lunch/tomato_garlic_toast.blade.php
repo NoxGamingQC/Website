@@ -1,7 +1,8 @@
 @extends('layouts.noxgamingqc.app')
 @section('content')
 @section('name', trans('cookbook.tomato_garlic_toast'))
-@section('author', 'Donne 4 portions')
+@section('author', 'NoxGamingQC')
+@section('yields', 'Donne 4 portions')
 
 <div class="container">
     <div class="row">
