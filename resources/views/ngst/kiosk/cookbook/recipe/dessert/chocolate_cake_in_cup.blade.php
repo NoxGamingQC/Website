@@ -3,6 +3,9 @@
 @section('name',trans('cookbook.chocolate_cake_in_cup'))
 @section('author', 'Ricardo')
 @section('yields', '1 portion')
+@section('prep_time', trans('cookbook.not_available'))
+@section('cook_time', trans('cookbook.not_available'))
+@section('description', trans('cookbook.not_available'))
 
 <div class="container">
     <div class="row">

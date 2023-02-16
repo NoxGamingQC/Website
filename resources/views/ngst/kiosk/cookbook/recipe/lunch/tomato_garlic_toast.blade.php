@@ -3,6 +3,9 @@
 @section('name', trans('cookbook.tomato_garlic_toast'))
 @section('author', 'NoxGamingQC')
 @section('yields', 'Donne 4 portions')
+@section('prep_time', trans('cookbook.not_available'))
+@section('cook_time', trans('cookbook.not_available'))
+@section('description', trans('cookbook.not_available'))
 
 <div class="container">
     <div class="row">

@@ -32,5 +32,11 @@ return [
     'candy_no_cooking' => "Bonbon sans cuisson",
     'tomato_garlic_toast' => "Toast aux tomates et à l'ail",
     'chocolate_cake_in_cup' => "Gâteau au chocolat dans une tasse",
-    'by' => "par"
+    'by' => "par",
+    'my_grandma' => "ma grand-mère",
+    'not_available' => "Non disponible",
+    'my_mom' => "ma maman",
+    'prep_time' => "Temps de préparation",
+    'cook_time' => "Temps de cuisson",
+    'yields' => "Résultat",
 ];
