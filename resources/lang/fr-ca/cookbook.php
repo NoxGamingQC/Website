@@ -28,5 +28,6 @@ return [
     'spagetti_sauce' => "Sauce à spagetthi",
     'sugar_and_cream' => "Sucre à la crème",
     'version' => "Version",
-    'candy_no_cooking' => "Bonbon sans cuisson"
+    'candy_no_cooking' => "Bonbon sans cuisson",
+    'tomato_garlic_toast' => "Toast aux tomates et à l'ail"
 ];
