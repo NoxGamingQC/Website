@@ -1,6 +1,7 @@
 @extends('layouts.noxgamingqc.app')
 @section('content')
 @section('name',trans('cookbook.simple_icing'))
+@section('author', 'My grandma')
 
 <div class="container">
     <div class="row">
