@@ -30,5 +30,6 @@ return [
     'sugar_and_cream' => "Sugar and cream",
     'version' => "Version",
     'candy_no_cooking' => "Candy without cooking",
-    'tomato_garlic_toast' => "Tomato and garlic toast"
+    'tomato_garlic_toast' => "Tomato and garlic toast",
+    'chocolate_cake_in_cup' => "Chocolate cake in a cup"
 ];
