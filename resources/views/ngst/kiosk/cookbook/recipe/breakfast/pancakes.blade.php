@@ -1,16 +1,8 @@
 @extends('layouts.noxgamingqc.app')
 @section('content')
-@section('title','Pancakes')
-@section('slogan', 'Fais 10-12 pancakes')
+@section('name','Pancakes')
+@section('author', 'Fais 10-12 pancakes')
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-12 text-right">
-            <br />
-            <a href="/{{app()->getLocale()}}/kiosk/cookbook/breakfast"><input class="btn btn-primary form-control" style="font-size:24px;padding:5%" value="{{trans('cookbook.go_back_to_last_page')}}" readonly></a>
-        </div>
-    </div>
-</div>
 <div class="container">
     <div class="row">
         <div class="col-md-12 text-left">

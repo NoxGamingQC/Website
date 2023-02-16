@@ -1,16 +1,8 @@
 @extends('layouts.noxgamingqc.app')
 @section('content')
-@section('title', trans('cookbook.tomato_garlic_toast'))
-@section('slogan', 'Donne 4 portions')
+@section('name', trans('cookbook.tomato_garlic_toast'))
+@section('author', 'Donne 4 portions')
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-12 text-right">
-            <br />
-            <a href="/{{app()->getLocale()}}/kiosk/cookbook/lunch"><input class="btn btn-primary form-control" style="font-size:24px;padding:5%" value="{{trans('cookbook.go_back_to_last_page')}}" readonly></a>
-        </div>
-    </div>
-</div>
 <div class="container">
     <div class="row">
         <div class="col-md-12 text-left">

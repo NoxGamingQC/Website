@@ -1,6 +1,6 @@
 @extends('layouts.noxgamingqc.app')
 @section('content')
-@section('title', trans('cookbook.title'))
+@section('name', trans('cookbook.title'))
 @section('slogan', trans('cookbook.slogan'))
 
 <div class="container">
