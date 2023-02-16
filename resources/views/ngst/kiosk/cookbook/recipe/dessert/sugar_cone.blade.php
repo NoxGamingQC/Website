@@ -12,7 +12,7 @@
         <div class="col-md-12 text-left">
             <h2>Ingredients</h2>
             <br />
-            <ul style="font-size:24px">
+            <ul style="font-size:18px">
                 <li>1/2 lbs de beurre</li>
                 <li>2 tasse de cassonnade</li>
                 <li>1/2 tasse de sirop d'érable</li>
@@ -34,7 +34,7 @@
         <div class="col-md-12 text-left">
             <h2>Directives</h2>
             <br />
-            <ul style="font-size:24px">
+            <ul style="font-size:18px">
             <li class="text-justify">Faire fondre 1/2 lbs de beurre au micro-onde.</li>
             <li class="text-justify">Ajouter la cassonnade, le sirop d'érable, 1 boite eagle brand</li>
             <li class="text-justify">Faire cuire 7 minutes au micro-onde et brasser toutes les 2 minutes</li>

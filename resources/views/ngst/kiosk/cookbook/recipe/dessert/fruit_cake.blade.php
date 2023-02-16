@@ -12,7 +12,7 @@
         <div class="col-md-12 text-left">
             <h2>Ingredients</h2>
             <br />
-            <ul style="font-size:24px">
+            <ul style="font-size:18px">
                 <li>19oz de salade de fruit (1 grosse canne avec le jus)</li>
                 <li>2 oeufs</li>
                 <li>1 1/2 tasse de sucre</li>
@@ -35,7 +35,7 @@
         <div class="col-md-12 text-left">
             <h2>Directives</h2>
             <br />
-            <ul style="font-size:24px">
+            <ul style="font-size:18px">
                 <li class="text-justify">Dans un plat en pyrex couvrir le fond de beurre.</li>
                 <li class="text-justify">Déposer le mélange dans le plat.</li>
                 <li class="text-justify">Cuire au four à 325C pendant 50 minutes</li>

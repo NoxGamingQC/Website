@@ -12,7 +12,7 @@
         <div class="col-md-12 text-left">
             <h2>Ingredients</h2>
             <br />
-            <ul style="font-size:24px">
+            <ul style="font-size:18px">
                 <li>1 pomme de terre</li>
                 <li>Environ 8 tasses de sucre en poudre</li>
                 <li>Environ 1 pot de beurre d'arachides</li>
@@ -31,7 +31,7 @@
         <div class="col-md-12 text-left">
             <h2>Directives</h2>
             <br />
-            <ul style="font-size:24px">
+            <ul style="font-size:18px">
                 <li class="text-justify">Pilez 1 pomme de terre bouillie et mélangez-y du sucre en poudre jusqu'à ce que le sucre en ait absorbé toute l'humidité.</li>
                 <li class="text-justify">Soupoudrez la table et étendez-y avec un rouleau à pâte, le mélange de pomme de terre et de sucre.</li>
                 <li class="text-justify">Formez une abaisse très mince que vous enduirez ensuite d'une mince couche de beurre d'arachides.</li>

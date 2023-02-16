@@ -12,7 +12,7 @@
         <div class="col-md-12 text-left">
             <h2>Ingredients</h2>
             <br />
-            <ul style="font-size:24px">
+            <ul style="font-size:18px">
                 <li>1 tasse de beurre</li>
                 <li>1 1/2 tasse de sucre</li>
                 <li>325ml de lait carnation</li>
@@ -32,7 +32,7 @@
         <div class="col-md-12 text-left">
             <h2>Directives</h2>
             <br />
-            <ul style="font-size:24px">
+            <ul style="font-size:18px">
                 <li class="text-justify">Cuire sur le feu jusqu'à ébulition et faire épaissir (dans un très grand chaudron).</li>
                 <li class="text-justify">Verser sur le gâteau une fois refroidi.</li>
             </ul>

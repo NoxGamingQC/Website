@@ -12,7 +12,7 @@
         <div class="col-md-12 text-left">
             <h2>Ingredients</h2>
             <br />
-            <ul style="font-size:24px">
+            <ul style="font-size:18px">
                 <li>3 tasses de bouillon de poulet</li>
                 <li>1 paquet de brocoli</li>
                 <li>1 oignon</li>
@@ -32,7 +32,7 @@
         <div class="col-md-12 text-left">
             <h2>Directives</h2>
             <br />
-            <ul style="font-size:24px">
+            <ul style="font-size:18px">
                 <li class="text-justify">Cuire quelques minutes. Passez au blender.</li>
                 <li class="text-justify">Au moment de servir, chauffer et ajouter 1/2 tasse de crème ou 1 tasse de lait. Servir chaud.</li>
             </ul>

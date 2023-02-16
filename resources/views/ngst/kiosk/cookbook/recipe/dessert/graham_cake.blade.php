@@ -12,7 +12,7 @@
         <div class="col-md-12 text-left">
             <h2>Ingredients</h2>
             <br />
-            <ul style="font-size:24px">
+            <ul style="font-size:18px">
                 <li class="text-info no-decoration"><b><u>Gâteau</u></b></li>
                 <li>2 c. à thé de beurre</li>
                 <li>1 tasse de sucre</li>
@@ -44,7 +44,7 @@
         <div class="col-md-12 text-left">
             <h2>Directives</h2>
             <br />
-            <ul style="font-size:24px">
+            <ul style="font-size:18px">
                 <li class="text-info no-decoration"><b><u>Gâteau</u></b></li>
                 <li class="text-justify">Battre le beurre, le sucre, l'oeuf et le lait au malaxeur à vitesse moyenne pendant 3 minutes</li>
                 <li class="text-justify">Ajouté le reste des ingrédients.</li>

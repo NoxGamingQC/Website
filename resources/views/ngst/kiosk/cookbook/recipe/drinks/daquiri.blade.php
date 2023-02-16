@@ -12,7 +12,7 @@
         <div class="col-md-12 text-left">
             <h2>Ingredients</h2>
             <br />
-            <ul style="font-size:24px">
+            <ul style="font-size:18px">
                 <li>4oz de rhum blanc</li>
                 <li>2oz de jus de lime</li>
                 <li>1oz de sirop simple</li>
@@ -32,7 +32,7 @@
         <div class="col-md-12 text-left">
             <h2>Directives</h2>
             <br />
-            <ul style="font-size:24px">
+            <ul style="font-size:18px">
                 <li>Servir dans un verre à Martini</li>
             </ul>
         </div>

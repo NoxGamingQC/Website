@@ -12,7 +12,7 @@
         <div class="col-md-12 text-left">
             <h2>Ingredients</h2>
             <br />
-            <ul style="font-size:24px">
+            <ul style="font-size:18px">
                 <li>3 petites tasses d'oignons</li>
                 <li>6 branches de céleri</li>
                 <li>1 tasse de margarine</li>
@@ -40,7 +40,7 @@
         <div class="col-md-12 text-left">
             <h2>Directives</h2>
             <br />
-            <ul style="font-size:24px">
+            <ul style="font-size:18px">
                <li class="text-justify">N/A</li>
             </ul>
         </div>
