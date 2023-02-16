@@ -32,7 +32,10 @@
             <a href="/{{app()->getLocale()}}/kiosk/cookbook/drinks"><input class="btn btn-primary form-control" style="font-size:24px;padding:10%" value="{{trans('cookbook.drinks')}}" readonly></a>
         </div>
         <div class="col-sm-4 text-center" style="margin-bottom:3%">
-            <a href="/{{app()->getLocale()}}/kiosk/cookbook/sauces_icing"><input class="btn btn-primary form-control" style="font-size:24px;padding:10%" value="{{trans('cookbook.sauces_icing')}}" readonly></a>
+            <a href="/{{app()->getLocale()}}/kiosk/cookbook/sauces"><input class="btn btn-primary form-control" style="font-size:24px;padding:10%" value="{{trans('cookbook.sauces')}}" readonly></a>
+        </div>
+        <div class="col-sm-4 text-center" style="margin-bottom:3%">
+            <a href="/{{app()->getLocale()}}/kiosk/cookbook/icing"><input class="btn btn-primary form-control" style="font-size:24px;padding:10%" value="{{trans('cookbook.icing')}}" readonly></a>
         </div>
     </div>
     <div class="row">
