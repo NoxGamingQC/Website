@@ -27,5 +27,6 @@ return [
     'simple_icing' => "Simple icing",
     'spagetti_sauce' => "Spagetti sauce",
     'sugar_and_cream' => "Sugar and cream",
-    'version' => "Version"
+    'version' => "Version",
+    'candy_no_cooking' => "Candy without cooking"
 ];
