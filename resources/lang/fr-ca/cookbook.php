@@ -27,5 +27,6 @@ return [
     'simple_icing' => "Glaçage simple",
     'spagetti_sauce' => "Sauce à spagetthi",
     'sugar_and_cream' => "Sucre à la crème",
-    'version' => "Version"
+    'version' => "Version",
+    'candy_no_cooking' => "Bonbon sans cuisson"
 ];
