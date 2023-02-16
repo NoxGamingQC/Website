@@ -27,15 +27,15 @@
                     <div class="row">
                         <div class="col-md-12">
                             <hr style="border-color:white" />
-                            <li>Temps de préparation: @yield('prep_time')</li>
-                            <li>Temps de cuisson: @yield('cook_time')</li>
-                            <li>Résultat:  @yield('yields')</li>
+                            <h4 class="raleway-font">{{trans('cookbook.prep_time')}}: @yield('prep_time')</h4>
+                            <h4 class="raleway-font">{{trans('cookbook.cook_time')}}: @yield('cook_time')</h4>
+                            <h4 class="raleway-font">{{trans('cookbook.yields')}}:  @yield('yields')</h4>
                             <hr style="border-color:white" />
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            @yield('description')
+                            <h4 class="raleway-font">@yield('description')</h4>
                             <hr style="border-bottom: solid 3px" />
                         </div>
                     </div>

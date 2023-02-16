@@ -2,7 +2,11 @@
 @section('content')
 @section('name','Crêpes')
 @section('author', 'LadyAlie')
+@section('prep_time', trans('cookbook.not_available'))
+@section('cook_time', trans('cookbook.not_available'))
 @section('yields', '12-15 crêpes')
+@section('description', trans('cookbook.not_available'))
+
 <div class="container">
     <div class="row">
         <div class="col-md-12 text-left">

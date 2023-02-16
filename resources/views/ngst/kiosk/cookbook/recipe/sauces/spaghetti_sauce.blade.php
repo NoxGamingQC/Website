@@ -1,7 +1,11 @@
 @extends('layouts.noxgamingqc.app')
 @section('content')
 @section('name', trans('cookbook.spaghetti_sauce'))
-@section('author', 'My grandma')
+@section('author', trans('cookbook.my_grandma'))
+@section('prep_time', trans('cookbook.not_available'))
+@section('cook_time', trans('cookbook.not_available'))
+@section('yields', trans('cookbook.not_available'))
+@section('description', trans('cookbook.not_available'))
 
 <div class="container">
     <div class="row">

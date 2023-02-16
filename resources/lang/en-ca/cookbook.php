@@ -32,5 +32,11 @@ return [
     'candy_no_cooking' => "Candy without cooking",
     'tomato_garlic_toast' => "Tomato and garlic toast",
     'chocolate_cake_in_cup' => "Chocolate cake in a cup",
-    'by' => "par"
+    'by' => "par",
+    'my_grandma' => "my grandma",
+    'not_available' => "Not available",
+    'my_mom' => "my mom",
+    'prep_time' => "Prep time",
+    'cook_time' => "Cook time",
+    'yields' => "Yields",
 ];

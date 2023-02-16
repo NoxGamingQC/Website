@@ -2,6 +2,10 @@
 @section('content')
 @section('name','Daquiri')
 @section('author', 'Ricardo')
+@section('prep_time', trans('cookbook.not_available'))
+@section('cook_time', trans('cookbook.not_available'))
+@section('yields', trans('cookbook.not_available'))
+@section('description', trans('cookbook.not_available'))
 
 <div class="container">
     <div class="row">
