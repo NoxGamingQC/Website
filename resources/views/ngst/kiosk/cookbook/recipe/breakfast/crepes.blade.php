@@ -1,7 +1,7 @@
 @extends('layouts.noxgamingqc.app')
 @section('content')
 @section('title','Crêpes')
-@section('slogan', 'Fais 12-15 crêpes')
+@section('slogan', 'by NoxGamingQC')
 
 <div class="container">
     <div class="row">
@@ -12,6 +12,21 @@
     </div>
 </div>
 <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <hr style="border-color:white" />
+            <li>Temps de préparation: </li>
+            <li>Temps de cuisson: </li>
+            <li>Résultat:  12-15 crêpes</li>
+            <hr style="border-color:white" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <li>Description du produit </li>
+            <hr style="border-bottom: solid 3px" />
+        </div>
+    </div>
     <div class="row">
         <div class="col-md-12 text-left">
             <h2>Ingredients</h2>
