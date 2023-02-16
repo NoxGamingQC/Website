@@ -32,11 +32,11 @@
             <h2>Ingredients</h2>
             <br />
             <ul style="font-size:24px">
-                <li>2 tasses de sucre</li>
-                <li>2 tasses de cassonade</li>
-                <li>2/3 de tasse de sirop de maïs</li>
-                <li>1/4 de tasse de beurre</li>
-                <li>6oz de lait évaporé</li>
+                <li>2 tasses de sucre blanc</li>
+                <li>1/4 de tasse de beurre ou margarine</li>
+                <li>3/4 tasses de crème 35%</li>
+                <li>16 guimauves</li>
+                <li>1/2 tasses de noix hachée</li>
             </ul>
         </div>
     </div>
@@ -53,11 +53,11 @@
             <h2>Directives</h2>
             <br />
             <ul style="font-size:24px">
-                <li class="text-justify">Bien mélanger tous les ingrédients.</li>
-                <li class="text-justify">Amener à ébullition.</li>
-                <li class="text-justify">Cuire 3 minutes à feu vif.</li>
-                <li class="text-justify">Refroidir en battant à la mixette à vitesse moyenne pendant 10 minutes.</li>
-                <li class="text-justify">Étendre dans un moule beurré de 10 x 6 1/2 environ</li>
+                <li class="text-justify">Dans une casserole mélangez les quatres premiers ingrédients.</li>
+                <li class="text-justify">Amenez à ébullition 5 minutes environ.</li>
+                <li class="text-justify">Enlevez la casserole du feu et ajoutez les noix.</li>
+                <li class="text-justify">Mélangez.</li>
+                <li class="text-justify">Versez dans une assiettes beurré et laissé refroidir, avant de coupez en carré.</li>
             </ul>
         </div>
     </div>
@@ -113,17 +113,18 @@
     </div>
 </div>
 
+
 <div class="container v3 hidden">
     <div class="row">
         <div class="col-md-12 text-left">
             <h2>Ingredients</h2>
             <br />
             <ul style="font-size:24px">
-                <li>2 tasses de sucre blanc</li>
-                <li>1/4 de tasse de beurre ou margarine</li>
-                <li>3/4 tasses de crème 35%</li>
-                <li>16 guimauves</li>
-                <li>1/2 tasses de noix hachée</li>
+                <li>2 tasses de sucre</li>
+                <li>2 tasses de cassonade</li>
+                <li>2/3 de tasse de sirop de maïs</li>
+                <li>1/4 de tasse de beurre</li>
+                <li>6oz de lait évaporé</li>
             </ul>
         </div>
     </div>
@@ -140,11 +141,11 @@
             <h2>Directives</h2>
             <br />
             <ul style="font-size:24px">
-                <li class="text-justify">Dans une casserole mélangez les quatres premiers ingrédients.</li>
-                <li class="text-justify">Amenez à ébullition 5 minutes environ.</li>
-                <li class="text-justify">Enlevez la casserole du feu et ajoutez les noix.</li>
-                <li class="text-justify">Mélangez.</li>
-                <li class="text-justify">Versez dans une assiettes beurré et laissé refroidir, avant de coupez en carré.</li>
+                <li class="text-justify">Bien mélanger tous les ingrédients.</li>
+                <li class="text-justify">Amener à ébullition.</li>
+                <li class="text-justify">Cuire 3 minutes à feu vif.</li>
+                <li class="text-justify">Refroidir en battant à la mixette à vitesse moyenne pendant 10 minutes.</li>
+                <li class="text-justify">Étendre dans un moule beurré de 10 x 6 1/2 environ</li>
             </ul>
         </div>
     </div>
