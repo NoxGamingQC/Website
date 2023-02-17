@@ -12,6 +12,9 @@
             <a href="/{{app()->getLocale()}}/kiosk/cookbook/dessert/chocolate_cake_in_cup"><input class="btn btn-primary form-control" style="font-size:18px;padding:10%" value="{{trans('cookbook.chocolate_cake_in_cup')}}" readonly></a>
         </div>
         <div class="col-sm-4 text-center" style="margin-bottom:3%">
+            <a href="/{{app()->getLocale()}}/kiosk/cookbook/dessert/crema_di_cafe"><input class="btn btn-primary form-control" style="font-size:18px;padding:10%" value="{{trans('cookbook.crema_di_cafe')}}" readonly></a>
+        </div>
+        <div class="col-sm-4 text-center" style="margin-bottom:3%">
             <a href="/{{app()->getLocale()}}/kiosk/cookbook/dessert/fruit_cake"><input class="btn btn-primary form-control" style="font-size:18px;padding:10%" value="{{trans('cookbook.fruit_cake')}}" readonly></a>
         </div>
         <div class="col-sm-4 text-center" style="margin-bottom:3%">

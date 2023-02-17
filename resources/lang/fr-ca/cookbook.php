@@ -40,5 +40,6 @@ return [
     'cook_time' => "Temps de cuisson",
     'yields' => "Résultat",
     'macaroni_salad' => "Salade de macaroni",
+    'crema_di_cafe' => "Crema di Cafè",
     'side_dish' => "Plat d'accompagnement"
 ];
