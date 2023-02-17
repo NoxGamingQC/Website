@@ -1,6 +1,6 @@
 @extends('layouts.noxgamingqc.app')
 @section('content')
-@section('name', trans('cookbook.crema_di_cafe'))
+@section('name', trans('cookbook.crema_di_caffe'))
 @section('author', 'NoxGamingQC')
 @section('prep_time', trans('cookbook.not_available'))
 @section('cook_time', trans('cookbook.not_available'))
@@ -34,7 +34,7 @@
             <br />
             <ul style="font-size:18px">
                 <li class="text-justify">Ajouter tout les ingrédients dans un grand bol.</li>
-                <li class="text-justify">Battre de 5 à 10 minutes à la mixette ou jusqu'à l'obtention d'une mousse.</li>
+                <li class="text-justify">Battre de 5 à 10 minutes à la mixette ou jusqu'à l'obtention d'une texture crémeuse et mousseuse.</li>
                 <li class="text-justify">Servir.</li>
 
             </ul>
