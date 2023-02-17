@@ -40,6 +40,6 @@ return [
     'cook_time' => "Cook time",
     'yields' => "Yields",
     'macaroni_salad' => "Macaroni salad",
-    'crema_di_cafe' => "Crema di Cafè",
+    'crema_di_caffe' => "Crema di Caffè",
     'side_dish' => "Side dish"
 ];
