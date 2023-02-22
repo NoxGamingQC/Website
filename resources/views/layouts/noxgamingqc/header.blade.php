@@ -1,6 +1,6 @@
 @if($kiosk == true)
     @if($recipe == true)
-        <div class="header" style="width:100vw !important;height:480px !important;">
+        <div class="header" style="height:480px !important;">
             <div class="row text-center">
                 <h1 class="text-highlight" style="font-size:65px">@yield('name')</h1>
                 <br />
