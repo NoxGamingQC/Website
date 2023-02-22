@@ -3,9 +3,9 @@
         <div class="header" style="height:480px !important;">
             <div class="text-right" style="margin-right:5%;">
                 <br />
-                <h3 id="currentTime"></h3>
+                <h2 id="currentTime"></h2>
             </div>
-            <div class="row text-center" style="padding-top: 125px;">
+            <div class="row text-center" style="padding-top: 100px;">
                 <h1 class="text-highlight" style="font-size:65px">@yield('name')</h1>
                 <br />
                 <h3 class="raleway-font text-highlight" style="margin-left:5%;max-width:90%">@yield('slogan')</h3>
