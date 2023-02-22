@@ -1,4 +1,4 @@
-@if($kiosk == true)
+@if(isset($kiosk) && $kiosk == true)
     @if($recipe == true)
         <div class="header" style="height:480px !important;">
             <div class="row text-center">
