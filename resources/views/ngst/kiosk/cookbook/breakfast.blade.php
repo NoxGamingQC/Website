@@ -6,10 +6,10 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-4 text-center" style="margin-bottom:3%">
-            <a href="/{{app()->getLocale()}}/kiosk/cookbook/breakfast/crepes"><input class="btn btn-primary form-control" style="font-size:18px;padding:10%" value="{{trans('cookbook.crepes')}}" readonly></a>
+            <a href="/{{app()->getLocale()}}/kiosk/cookbook/breakfast/crepes"><input class="btn btn-primary form-control" style="font-size:18px;padding:15%" value="{{trans('cookbook.crepes')}}" readonly></a>
         </div>
         <div class="col-sm-4 text-center" style="margin-bottom:3%">
-            <a href="/{{app()->getLocale()}}/kiosk/cookbook/breakfast/pancakes"><input class="btn btn-primary form-control" style="font-size:18px;padding:10%" value="{{trans('cookbook.pancakes')}}" readonly></a>
+            <a href="/{{app()->getLocale()}}/kiosk/cookbook/breakfast/pancakes"><input class="btn btn-primary form-control" style="font-size:18px;padding:15%" value="{{trans('cookbook.pancakes')}}" readonly></a>
         </div>
     </div>
 </div>
