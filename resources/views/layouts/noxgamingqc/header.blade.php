@@ -1,7 +1,11 @@
 @if(isset($kiosk) && $kiosk == true)
     @if($recipe == true)
         <div class="header" style="height:480px !important;">
-            <div class="row text-center">
+            <div class="text-right" style="margin-right:5%;">
+                <br />
+                <h3 id="currentTime"></h3>
+            </div>
+            <div class="row text-center" style="padding-top: 125px;">
                 <h1 class="text-highlight" style="font-size:65px">@yield('name')</h1>
                 <br />
                 <h3 class="raleway-font text-highlight" style="margin-left:5%;max-width:90%">@yield('slogan')</h3>
@@ -11,6 +15,18 @@
                 <br />
             </div>
         </div>
+        <script>
+            $(document).ready(function() {
+                updateClock()
+            });
+
+            function updateClock() {
+                var time = new Date();
+                $('#currentTime').html(('0' + time.getHours()).slice(-2) + ':' + ('0' + time.getMinutes()).slice(-2) + ':' + ('0' + time.getSeconds()).slice(-2))
+                setTimeout(updateClock, 1000);
+            }
+            
+        </script>
         @if(!isset($isButtonLastPage) || $isButtonLastPage === 'true')
             <div class="container">
                 <div class="row">
