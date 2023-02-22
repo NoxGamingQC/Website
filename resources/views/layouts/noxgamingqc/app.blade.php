@@ -50,6 +50,9 @@
             -ms-overflow-style: {
                 none;
             }
+            html, body {
+                max-width: 100vw;
+            }
         </style>
         @include('layouts.noxgamingqc.header')
         <div class="content">
