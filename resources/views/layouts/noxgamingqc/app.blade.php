@@ -43,6 +43,14 @@
 
 <body>
     @if(isset($kiosk) && $kiosk == true)
+        <style>
+            ::-webkit-scrollbar {
+                display:none
+            }
+            -ms-overflow-style: {
+                none;
+            }
+        </style>
         @include('layouts.noxgamingqc.header')
         <div class="content">
             @yield('content')
