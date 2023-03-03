@@ -22,6 +22,8 @@ Docker image for PHP7 with MSSQL drivers running on a CentOS host.
 - php-common
 - php-mbstring
 - php-pgsql
+- php-imap
+- php-mcrypt
 - php-odbc
 - php-pdo
 - php-xml

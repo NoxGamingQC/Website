@@ -1,4 +1,4 @@
-<div class="row" style="margin:5%;">
+<div class="row bg-color" style="margin:5%;">
     <div class="col-md-12 text-center">
         <p>
             @include('layouts.socials')

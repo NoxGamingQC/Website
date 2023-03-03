@@ -15,10 +15,10 @@ RUN yum install -y \
     wget php php-gd \
     php-common php-fpm \
     php-mbstring php-pgsql \
+    php-imap php-mcrypt \
     php-odbc php-pdo php-xml \
     freetds php-pdo_dblib httpd \
-    php*-mbstring php*-mcrypt \
-    php*-imap \
+    php-mcrypt php-imap \
     php-pecl-zip \
     git
 
