@@ -11,7 +11,6 @@
 |
 */
     Route::get('/company/kiosk/{id}', 'NGST\KioskController@index');
-    Route::post('/imap', 'NGST\ImapController@post');
     //Route::get('/company/kiosk/{id}/refresh', 'NGST\KioskController@refreshData');
     Route::post('/mail/receive', 'Mails\MailController@receive');
     /*Route::get('/mail/test', function() {
@@ -157,6 +156,7 @@
             Route::get('/profile/edit', 'UserProfileController@getEditPage');
             Route::get('/profile/mail', 'Mails\MailController@index');
             Route::get('/profile/mail/{id}', 'Mails\MailController@show');
+            Route::get('/profile/mail/{id}/content', 'Mails\MailController@showContent');
             Route::get('/profile/mail/{id}/delete', 'Mails\MailController@delete');
 
             Route::get('/contact', 'ContactController@index');
