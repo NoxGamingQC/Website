@@ -8,6 +8,7 @@ use ZBateson\MailMimeParser\MailMimeParser;
 use ZBateson\MailMimeParser\Message;
 use ZBateson\MailMimeParser\Header\HeaderConsts;
 use App\Mails;
+use App\MailIndex;
 use Auth;
 
 class MailController extends Controller
@@ -122,9 +123,16 @@ class MailController extends Controller
     }
 
     public function receive(Request $request) {
-        
+        $index = MailIndex::where('owner','=', $request['recipient'])->where('object', 'LIKE', '%'. $request['subject'] .'%')->where('participants', '=', $request['sender'])->get();
+        if(count($index) == 0) {
+            $index = new MailIndex();
+            $index->owner = $request['recipient'];
+            $index->object = $request['subject'];
+            $index->participants = $request['sender'];
+            $index->save();
+        }
+
         $mail = new Mails();
-        
         $mail->sender = $request['sender'];
         $mail->recipient = $request['recipient'];
         $mail->sender_name = explode('<', $request['from'])[0];
@@ -132,6 +140,7 @@ class MailController extends Controller
         $mail->text = $request['body-plain'];
         $mail->html = $request['body-html'];
         $mail->request = $request;
+        $mail->message_id = $index->id;
         $mail->save();
     }
 }
