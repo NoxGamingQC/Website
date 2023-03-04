@@ -4,6 +4,7 @@ namespace App\Exceptions;
 
 use Throwable;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Support\Facades\Mail;
 
 class Handler extends ExceptionHandler
 {
@@ -62,6 +63,11 @@ class Handler extends ExceptionHandler
                 return response()->view('errors.405', [], 405);
             }
             if ($exception->statusCode() == 500) {
+                $text = 'Hmm, something went wrong on the website. You should check out the logs.';
+                Mail::send('emails.text_message', ['text' => $text], function($message) {
+                    $message->from('noreply@noxgamingqc.ca', 'NoxGamingQC');
+                    $message->to(env('TXT_ALERT_EMAIL'));
+                });
                 return response()->view('errors.500', [], 500);
             }
         }
