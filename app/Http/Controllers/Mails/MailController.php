@@ -17,11 +17,6 @@ class MailController extends Controller
         if(Auth::check()) {
             $mails = null;
             $emailList = explode(';', Auth::user()->local_mail);
-            /*[
-                'admin@noxgamingqc.ca',
-                'info@noxgamingqc.ca',
-                'nox@noxgamingqc.ca'
-            ]*/
             $mails = Mails::whereIn('recipient', $emailList)
                         ->orderBy('created_at', 'desc')
                         ->get();
