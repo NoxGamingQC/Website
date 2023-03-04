@@ -12,14 +12,14 @@
                         <a href="/{{app()->getLocale()}}/profile/mail/{{$mail->id}}" class="mail-container text-color">
                             <div class="row" style="padding-top: 3%;padding-bottom: 3%">
                                 <div class="col-md-6" style="text-overflow:ellipsis;overflow:hidden;white-space:nowrap;max-width:70%">
-                                    <span>{{$mail->sender_name ? $mail->sender_name : $mail->sender}}</span>
+                                    <span>{{explode(';', $mail->participants)[0]}}</span>
                                 </div>
                                 <div class="col-md-6 text-right">
                                     <span>{{Carbon\Carbon::parse($mail->created_at)->format('M d')}}</span>
                                 </div>
                                 <div class="col-md-12">
-                                    <p style="text-overflow:ellipsis;overflow:hidden;white-space:nowrap;max-width:80%;margin-bottom:1px;">{{ $mail->object }}</p>
-                                    <p style="text-overflow:ellipsis;overflow:hidden;white-space:nowrap;max-width:80%;margin-bottom:1px;">{{ $mail->text }}</p>
+                                    <p style="text-overflow:ellipsis;overflow:hidden;white-space:nowrap;max-width:80%;margin-bottom:1px;">{{ $mailContent[$mail->id]->object }}</p>
+                                    <p style="text-overflow:ellipsis;overflow:hidden;white-space:nowrap;max-width:80%;margin-bottom:1px;">{{ $mailContent[$mail->id]->text }}</p>
                                 </div>
                             </div>
                         </a>
