@@ -36,12 +36,15 @@ class MailController extends Controller
 
     public function show($language, $id) {
         if(Auth::check()) {
-            $mail = Mails::findOrFail($id);
+            $mail = MailIndex::findOrFail($id);
             $emailList = explode(';', Auth::user()->local_mail);
-            if(in_array($mail->recipient, $emailList)) {
+            $mailsContent =  Mails::where('message_id', $id)->whereIn('recipient', $emailList)->orderBy('created_at', 'desc')->get();
+            if(in_array($mail->owner, $emailList)) {
                 return view('noxgamingqc.profile.mail')->with([
                     'header' => 'false',
-                    'mail' => $mail
+                    'mails' => $mail,
+                    'mailsContent' => $mailsContent
+                    
                 ]);
             }
         }
@@ -50,11 +53,12 @@ class MailController extends Controller
 
     public function showContent($language, $id) {
         if(Auth::check()) {
-            $mail = Mails::findOrFail($id);
             $emailList = explode(';', Auth::user()->local_mail);
-            if(in_array($mail->recipient, $emailList)) {
-                return view('noxgamingqc.profile.mail')->with([
-                    'mail' => $mail
+            $mailContent =  Mails::where('id', $id)->whereIn('recipient', $emailList)->get()->first();
+            if(in_array($mailContent->recipient, $emailList)) {
+                return view('noxgamingqc.profile.mail_content')->with([
+                    'header' => 'false',
+                    'mailContent' => $mailContent
                 ]);
             }
         }
@@ -65,10 +69,10 @@ class MailController extends Controller
         if(Auth::check()) {
             if(Auth::user()->local_mail) {
                 if(Auth::user()->local_mail == Mails::findOrFail($id)->recipient) {
-                    $mail = Mails::findOrFail($id);
+                    /*$mail = Mails::findOrFail($id);
                     $mail->delete();
 
-                    return redirect(app()->getLocale() . '/profile/mail');
+                    return redirect(app()->getLocale() . '/profile/mail');*/
                 }
             }
         }
