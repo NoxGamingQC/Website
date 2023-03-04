@@ -1,8 +1,9 @@
 @extends('layouts.noxgamingqc.app')
 @section('title', trans('general.mail'))
-@section('header', false)
 @section('content')
 
+<input id="id" type="hidden" value="{{$mail->id}}">
+<input id="replyType" type="hidden" value="">
 <div class="row">
     <div class="col-md-12">
         <br />
@@ -12,7 +13,8 @@
                 <div class="col-md-2">
                 </div>
                 <div class="col-md-8">
-                    <h3 class="raleway-font"><b>{{$mail->object}}</b></h3>
+                    <h3 id="object" class="raleway-font" value="{{$mail->object}}"><b>{{$mail->object}}</b></h3>
+                    <textarea id="objectEdit" class="form-control hidden" rows="1" style="font-size:24px;font-weight:bold;resize: none;">{{$mail->object}}</textarea>
                     <br />
                     <br />
                 </div>
@@ -36,14 +38,23 @@
                     </div>
                     <div class="col-md-4 text-right">
                         <div class="col-md-12">
-                            <a class="btn btn-primary" href="#"><i class="fa fa-reply" area-hidden="true"></i></a>
-                            <a class="btn btn-primary" href="#"><i class="fa fa-reply-all" area-hidden="true"></i></a>
-                            <a class="btn btn-primary" href="#"><i class="fa fa-share" area-hidden="true"></i></a>
-                            <a class="btn btn-danger text-color" href="/{{app()->getLocale()}}/profile/mail/{{$mail->id}}/delete"><i class="fa fa-trash"></i></a>
+                            <a id="replyButton" class="btn btn-primary" href="#"><i class="fa fa-reply" area-hidden="true"></i></a>
+                            <a id="replyAllButton" class="btn btn-primary" href="#"><i class="fa fa-reply-all" area-hidden="true"></i></a>
+                            <a id="forwardButton" class="btn btn-primary" href="#"><i class="fa fa-share" area-hidden="true"></i></a>
+                            <a id="cancelButton" class="btn btn-primary hidden" href="#"><i class="fa fa-times" area-hidden="true"></i></a>
+                            <a id="deleteButton" class="btn btn-danger text-color" href="/{{app()->getLocale()}}/profile/mail/{{$mail->id}}/delete"><i class="fa fa-trash"></i></a>
                         </div>
                         <div class="col-md-12">
                             &nbsp
                             <p>{{Carbon\Carbon::parse($mail->created_at)->setTimezone('America/Toronto')->format('D Y-m-d H:i')}}</p>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        &nbsp
+                        <textarea id="replyText" class="form-control hidden" rows="10" placeholder="This is currently just a demo. It will not send email yet."></textarea>
+                        &nbsp
+                        <div class="text-right">
+                            <input id="sendButton" type="button" class="btn btn-success hidden" value="{{trans('general.send')}}" />
                         </div>
                     </div>
                     <div class="col-md-12">
@@ -67,8 +78,53 @@
     </div>
 </div>
 <script language="javascript">
-    function autoResizeDiv()
-    {
+    $(document).ready(function() {
+        $('#replyButton').on('click', function() {
+            $('#object').addClass('hidden');
+            $('#objectEdit').removeClass('hidden');
+            $('#replyText').removeClass('hidden');
+            $('#deleteButton').addClass('hidden');
+            $('#cancelButton').removeClass('hidden');
+            $('#sendButton').removeClass('hidden');
+            $('#objectEdit').html('RE:' + $('#object').attr('value'));
+            $('#replyType').attr('value', 'reply');
+        });
+        $('#replyAllButton').on('click', function() {
+            $('#object').addClass('hidden');
+            $('#objectEdit').removeClass('hidden');
+            $('#replyText').removeClass('hidden');
+            $('#deleteButton').addClass('hidden');
+            $('#cancelButton').removeClass('hidden');
+            $('#sendButton').removeClass('hidden');
+            $('#objectEdit').html('RE:' + $('#object').attr('value'));
+            $('#replyType').attr('value', 'reply-all');
+        });
+        $('#forwardButton').on('click', function() {
+            $('#object').addClass('hidden');
+            $('#objectEdit').removeClass('hidden');
+            $('#replyText').removeClass('hidden');
+            $('#deleteButton').addClass('hidden');
+            $('#cancelButton').removeClass('hidden');
+            $('#sendButton').removeClass('hidden');
+            $('#objectEdit').html('TR:' + $('#object').attr('value'));
+            $('#replyType').attr('value', 'forward');
+        });
+        $('#cancelButton').on('click', function() {
+            $('#object').removeClass('hidden');
+            $('#objectEdit').addClass('hidden');
+            $('#replyText').addClass('hidden');
+            $('#deleteButton').removeClass('hidden');
+            $('#cancelButton').addClass('hidden');
+            $('#sendButton').addClass('hidden');
+            $('#objectEdit').html($('#object').attr('value'));
+            $('#replyType').attr('value', '');
+        });
+        $('#sendButton').on('click', function() {
+
+        });
+    });
+
+    function autoResizeDiv() {
         document.getElementById('mailContent').style.height = window.innerHeight +'px';
     }
     window.onresize = autoResizeDiv;

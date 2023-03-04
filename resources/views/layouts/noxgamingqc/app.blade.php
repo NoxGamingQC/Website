@@ -54,14 +54,21 @@
                 max-width: 100vw;
             }
         </style>
-        @include('layouts.noxgamingqc.header')
+        
+        @if(isset($header) && $header === 'false')
+        @else
+            @include('layouts.noxgamingqc.header')
+        @endif
         <div class="content">
             @yield('content')
         </div>
     @else
         @include('layouts.noxgamingqc.navbar')
         @include('alert.alert')
-        @include('layouts.noxgamingqc.header')
+        @if(isset($header) && $header === 'false')
+        @else
+            @include('layouts.noxgamingqc.header')
+        @endif
         <div class="content">
             @yield('content')
         </div>
