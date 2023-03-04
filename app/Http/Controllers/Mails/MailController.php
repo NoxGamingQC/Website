@@ -123,16 +123,19 @@ class MailController extends Controller
     }
 
     public function receive(Request $request) {
-        $index = MailIndex::where('owner','=', $request['recipient'])->where('object', 'LIKE', '%'. $request['subject'] .'%')->where('participants', '=', $request['sender'])->first();
+        $index = MailIndex::where('owner','=', $request['recipient'])->where('object', 'LIKE', '%'. $request['subject'] .'%')->where('participants', '=', $request['sender'])->get();
+        $mail = new Mails();
         if(count($index) == 0) {
             $index = new MailIndex();
             $index->owner = $request['recipient'];
             $index->object = $request['subject'];
             $index->participants = $request['sender'];
             $index->save();
+            $mail->message_id = $index->id;
+        } else {
+            $mail->first()->message_id = $index->id;
         }
 
-        $mail = new Mails();
         $mail->sender = $request['sender'];
         $mail->recipient = $request['recipient'];
         $mail->sender_name = explode('<', $request['from'])[0];
@@ -140,7 +143,6 @@ class MailController extends Controller
         $mail->text = $request['body-plain'];
         $mail->html = $request['body-html'];
         $mail->request = $request;
-        $mail->message_id = $index->id;
         $mail->save();
     }
 }
