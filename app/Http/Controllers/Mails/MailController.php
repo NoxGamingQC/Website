@@ -16,49 +16,29 @@ class MailController extends Controller
     public function index() {
         if(Auth::check()) {
             $mails = null;
+            $mail = [];
             $emailList = explode(';', Auth::user()->local_mail);
-            $mails = Mails::whereIn('recipient', $emailList)
+            $mails = MailIndex::whereIn('owner', $emailList)
                         ->orderBy('created_at', 'desc')
                         ->get();
+
+            foreach($mails as $key => $value) {
+                $mail[$value->id] =  Mails::where('message_id', $value->id)->whereIn('recipient', $emailList)->get()->first();
+            }
                 
-            return view('noxgamingqc.profile.mails')->with(['mails' => $mails]);
+            return view('noxgamingqc.profile.mails')->with([
+                    'mails' => $mails,
+                    'mailContent' => $mail
+            ]);
         }
         abort(403);
     }
 
     public function show($language, $id) {
         if(Auth::check()) {
-            if(Auth::user()->local_mail) {
-                if(Auth::user()->isAdmin) {
-                    $mail = Mails::findOrFail($id);
-                    if(!$mail->seen) {
-                        $mail->seen = true;
-                    }
-                    $mail->save();
-                    return view('noxgamingqc.profile.mail')->with([
-                        'header' => 'false',
-                        'mail' => $mail
-                    ]);
-                } else {
-                    $mail = Mails::findOrFail($id);
-                    if(Auth::user()->local_mail == $mail->recipient) {
-                        if(!$mail->seen) {
-                            $mail->seen = true;
-                        }
-                        $mail->save();
-                        return view('noxgamingqc.profile.mail')->with([
-                            'header' => 'false',
-                            'mail' => $mail
-                        ]);
-                    }
-                    abort(403);
-                }
-            } else if(Auth::user()->isAdmin) {
-                $mail = Mails::findOrFail($id);
-                if(!$mail->seen) {
-                    $mail->seen = true;
-                }
-                $mail->save();
+            $mail = Mails::findOrFail($id);
+            $emailList = explode(';', Auth::user()->local_mail);
+            if(in_array($mail->recipient, $emailList)) {
                 return view('noxgamingqc.profile.mail')->with([
                     'header' => 'false',
                     'mail' => $mail
@@ -70,24 +50,12 @@ class MailController extends Controller
 
     public function showContent($language, $id) {
         if(Auth::check()) {
-            if(Auth::user()->local_mail) {
-                if(Auth::user()->isAdmin) {
-                    $mail = Mails::findOrFail($id);
-                    return view('noxgamingqc.profile.mail_content')->with([
-                        'mail' => $mail
-                    ]);
-                } else {
-                    $mail = Mails::findOrFail($id);
-                    if(Auth::user()->local_mail == $mail->recipient) {
-                        return view('noxgamingqc.profile.mail_content')->with([
-                            'mail' => $mail
-                        ]);
-                    }
-                    abort(403);
-                }
-            } else if(Auth::user()->isAdmin) {
-                $mail = Mails::findOrFail($id);
-                return view('noxgamingqc.profile.mail')->with(['mail' => $mail]);
+            $mail = Mails::findOrFail($id);
+            $emailList = explode(';', Auth::user()->local_mail);
+            if(in_array($mail->recipient, $emailList)) {
+                return view('noxgamingqc.profile.mail')->with([
+                    'mail' => $mail
+                ]);
             }
         }
         abort(403);
