@@ -133,7 +133,7 @@ class MailController extends Controller
             $index->save();
             $mail->message_id = $index->id;
         } else {
-            $mail->first()->message_id = $index->id;
+            $mail->message_id = $index->first()->id;
         }
 
         $mail->sender = $request['sender'];
