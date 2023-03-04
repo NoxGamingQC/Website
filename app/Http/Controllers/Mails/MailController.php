@@ -16,27 +16,17 @@ class MailController extends Controller
     public function index() {
         if(Auth::check()) {
             $mails = null;
-            if(Auth::user()->local_mail) {
-                if(Auth::user()->isAdmin) {
-                    $mails = Mails::where('recipient', Auth::user()->local_mail)
-                                    ->orWhere('recipient', 'admin@noxgamingqc.ca')
-                                    ->orWhere('recipient', 'nox@noxgamingqc.ca')
-                                    ->orWhere('recipient', 'info@noxgamingqc.ca')
-                                    ->orderBy('created_at', 'desc')
-                                    ->get();
-                } else {
-                    $mails = Mails::where('recipient', Auth::user()->local_mail)
-                                    ->orderBy('created_at', 'desc')
-                                    ->get();
-                }
-                return view('noxgamingqc.profile.mails')->with(['mails' => $mails]);
-            } else if(Auth::user()->isAdmin) {
-                $mails = Mails::where('recipient', 'admin@noxgamingqc.ca')
-                                ->orWhere('recipient', 'nox@noxgamingqc.ca')
-                                ->orWhere('recipient', 'info@noxgamingqc.ca')
-                                ->orderBy('created_at', 'desc')
-                                ->get();
-            }
+            $emailList = explode(';', Auth::user()->local_mail);
+            /*[
+                'admin@noxgamingqc.ca',
+                'info@noxgamingqc.ca',
+                'nox@noxgamingqc.ca'
+            ]*/
+            $mails = Mails::whereIn('recipient', $emailList)
+                        ->orderBy('created_at', 'desc')
+                        ->get();
+                
+            return view('noxgamingqc.profile.mails')->with(['mails' => $mails]);
         }
         abort(403);
     }
