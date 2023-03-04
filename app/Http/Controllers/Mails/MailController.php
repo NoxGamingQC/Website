@@ -45,6 +45,10 @@ class MailController extends Controller
             if(Auth::user()->local_mail) {
                 if(Auth::user()->isAdmin) {
                     $mail = Mails::findOrFail($id);
+                    if(!$mail->seen) {
+                        $mail->seen = true;
+                    }
+                    $mail->save();
                     return view('noxgamingqc.profile.mail')->with([
                         'header' => 'false',
                         'mail' => $mail
@@ -52,6 +56,10 @@ class MailController extends Controller
                 } else {
                     $mail = Mails::findOrFail($id);
                     if(Auth::user()->local_mail == $mail->recipient) {
+                        if(!$mail->seen) {
+                            $mail->seen = true;
+                        }
+                        $mail->save();
                         return view('noxgamingqc.profile.mail')->with([
                             'header' => 'false',
                             'mail' => $mail
@@ -61,6 +69,10 @@ class MailController extends Controller
                 }
             } else if(Auth::user()->isAdmin) {
                 $mail = Mails::findOrFail($id);
+                if(!$mail->seen) {
+                    $mail->seen = true;
+                }
+                $mail->save();
                 return view('noxgamingqc.profile.mail')->with([
                     'header' => 'false',
                     'mail' => $mail

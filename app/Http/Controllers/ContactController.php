@@ -55,6 +55,12 @@ class ContactController extends Controller
                 $message->to('noxgamingqc@gmail.com');
                 $message->subject('You received a new message');
             });
+
+            $text = 'Hey, you received mail from your website.';
+                Mail::send('emails.text_message', ['text' => $text], function($message) {
+                    $message->from('noreply@noxgamingqc.ca', 'NoxGamingQC');
+                    $message->to(env('TXT_ALERT_EMAIL'));
+                });
         } else {
             abort(403);
         }
