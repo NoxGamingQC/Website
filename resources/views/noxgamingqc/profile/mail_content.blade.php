@@ -5,6 +5,6 @@
         </style>
     </header>
     <body>
-        {!! $mail->html !!}
+        {!! $mailContent->html !!}
     </body>
 </html>
