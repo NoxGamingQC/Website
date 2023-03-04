@@ -78,5 +78,6 @@ return [
     'variable' => "Variable",
     'consoles' => "Consoles",
     'no_description_available' => "No description available.",
-    'available_soon' => "Available soon"
+    'available_soon' => "Available soon",
+    'type_message_here' => "Type your message here...",
 ];

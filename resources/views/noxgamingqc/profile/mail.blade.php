@@ -51,7 +51,7 @@
                     </div>
                     <div class="col-md-12">
                         &nbsp
-                        <textarea id="replyText" class="form-control hidden" rows="10" placeholder="This is currently just a demo. It will not send email yet."></textarea>
+                        <textarea id="replyText" class="form-control hidden" rows="10" placeholder="{{trans('general.type_message_here')}}"></textarea>
                         &nbsp
                         <div class="text-right">
                             <input id="sendButton" type="button" class="btn btn-success hidden" value="{{trans('general.send')}}" />
@@ -120,7 +120,39 @@
             $('#replyType').attr('value', '');
         });
         $('#sendButton').on('click', function() {
-
+            $.ajax({
+                url: "/mail/send",
+                method: 'POST',
+                data: {
+                    'id': $('#id').val(),
+                    'type': $('#replyType').attr('value'),
+                    'object': $('#objectEdit').val(),
+                    'message' : $('#replyText').val(),
+                },
+                beforeSend: function() {
+                    $('#sendButton').addClass('disabled');
+                    $('#sendButton').attr('disabled', '');
+                },
+                success: function() {
+                    toastr.success('Editing success', 'Email sent.')
+                    $('#sendButton').removeClass('disabled');
+                    $('#sendButton').removeAttr('disabled', '');
+                    $('#object').removeClass('hidden');
+                    $('#objectEdit').addClass('hidden');
+                    $('#replyText').addClass('hidden');
+                    $('#deleteButton').removeClass('hidden');
+                    $('#cancelButton').addClass('hidden');
+                    $('#sendButton').addClass('hidden');
+                    $('#objectEdit').html($('#object').attr('value'));
+                    $('#replyType').attr('value', '');
+                },
+                error: function (error) {
+                    toastr.error('An error occured', 'An error occured while trying to send mail.')
+                    $('#sendButton').removeClass('disabled');
+                    $('#sendButton').removeAttr('disabled', '');
+                    console.log(error);
+                }
+            });
         });
     });
 
