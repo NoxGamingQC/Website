@@ -13,6 +13,7 @@
     Route::get('/company/kiosk/{id}', 'NGST\KioskController@index');
     //Route::get('/company/kiosk/{id}/refresh', 'NGST\KioskController@refreshData');
     Route::post('/mail/receive', 'Mails\MailController@receive');
+    Route::post('/mail/send', 'Mails\MailController@sendMail');
     /*Route::get('/mail/test', function() {
         return view('emails.newsletter');
     });*/
