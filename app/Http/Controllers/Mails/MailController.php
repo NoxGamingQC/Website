@@ -3,10 +3,8 @@
 namespace App\Http\Controllers\Mails;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
-use ZBateson\MailMimeParser\MailMimeParser;
-use ZBateson\MailMimeParser\Message;
-use ZBateson\MailMimeParser\Header\HeaderConsts;
 use App\Mails;
 use App\MailIndex;
 use Auth;
@@ -28,7 +26,8 @@ class MailController extends Controller
                 
             return view('noxgamingqc.profile.mails')->with([
                     'mails' => $mails,
-                    'mailContent' => $mail
+                    'mailContent' => $mail,
+                    'emailList' => $emailList
             ]);
         }
         abort(403);
@@ -43,8 +42,8 @@ class MailController extends Controller
                 return view('noxgamingqc.profile.mail')->with([
                     'header' => 'false',
                     'mails' => $mail,
-                    'mailsContent' => $mailsContent
-                    
+                    'mailsContent' => $mailsContent,
+                    'emailList' => $emailList
                 ]);
             }
         }
@@ -63,6 +62,26 @@ class MailController extends Controller
             }
         }
         abort(403);
+    }
+
+    public function sendMail(Request $request) {
+        if(Auth::check()) {
+            $emailList = explode(';', Auth::user()->local_mail);
+            if(in_array($request->sender, $emailList)) {
+                $data = [
+                    'sender' => $request->sender,
+                    'recipient' => $request->recipient,
+                    'object' => $request->object,
+                    'messageContent' => $request->message
+                ];
+
+                Mail::send('emails.standard', $data, function($message) use ($data) {
+                    $message->from($data['sender'], Auth::user()->name);
+                    $message->to($data['recipient']);
+                    $message->subject($data['object']);
+                });
+            }
+        }
     }
 
     public function delete($language, $id) {
