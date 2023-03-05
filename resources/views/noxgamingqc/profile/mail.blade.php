@@ -45,11 +45,10 @@
                         </div>
                         <div class="col-md-4 text-right">
                             <div class="col-md-12">
-                                <a id="replyButton" class="btn btn-primary" href="#"><i class="fa fa-reply" area-hidden="true"></i></a>
-                                <a id="replyAllButton" class="btn btn-primary" href="#"><i class="fa fa-reply-all" area-hidden="true"></i></a>
-                                <a id="forwardButton" class="btn btn-primary" href="#"><i class="fa fa-share" area-hidden="true"></i></a>
-                                <a id="cancelButton" class="btn btn-primary hidden" href="#"><i class="fa fa-times" area-hidden="true"></i></a>
-                                <a id="deleteButton" class="btn btn-danger text-color" href="/{{app()->getLocale()}}/profile/mail/{{$mail->id}}/delete"><i class="fa fa-trash"></i></a>
+                                <a id="replyButton{{$mail->id}}" data-id="{{$mail->id}}" class="btn btn-primary reply-button" href="#"><i class="fa fa-reply" area-hidden="true"></i></a>
+                                <a id="replyAllButton{{$mail->id}}" data-id="{{$mail->id}}" class="btn btn-primary reply-all-button" href="#"><i class="fa fa-reply-all" area-hidden="true"></i></a>
+                                <a id="forwardButton{{$mail->id}}" data-id="{{$mail->id}}" class="btn btn-primary forward-button" href="#"><i class="fa fa-share" area-hidden="true"></i></a>
+                                <a id="cancelButton{{$mail->id}}" data-id="{{$mail->id}}" class="btn btn-primary hidden cancel-button" href="#"><i class="fa fa-times" area-hidden="true"></i></a>
                             </div>
                             <div class="col-md-12">
                                 &nbsp
@@ -58,10 +57,10 @@
                         </div>
                         <div class="col-md-12">
                             &nbsp
-                            <textarea id="replyText" class="form-control hidden" rows="10" placeholder="{{trans('general.type_message_here')}}"></textarea>
+                            <textarea id="replyText{{$mail->id}}" class="form-control hidden" rows="10" placeholder="{{trans('general.type_message_here')}}"></textarea>
                             &nbsp
                             <div class="text-right">
-                                <input id="sendButton" type="button" class="btn btn-success hidden" value="{{trans('general.send')}}" />
+                                <input id="{{$mail->id}}" type="button" class="btn btn-success send-button hidden" value="{{trans('general.send')}}" />
                             </div>
                         </div>
                         <div class="col-md-12">
@@ -91,55 +90,60 @@
 </div>
 <script language="javascript">
     $(document).ready(function() {
-        $('#replyButton').on('click', function() {
+        $('.reply-button').on('click', function() {
+            var id = $(this).attr('data-id');
             $('#object').addClass('hidden');
             $('#objectEdit').removeClass('hidden');
-            $('#replyText').removeClass('hidden');
-            $('#deleteButton').addClass('hidden');
-            $('#cancelButton').removeClass('hidden');
-            $('#sendButton').removeClass('hidden');
+            $('#replyText' + id).removeClass('hidden');
+            $('#deleteButton' + id).addClass('hidden');
+            $('#cancelButton' + id).removeClass('hidden');
+            $('#' + id).removeClass('hidden');
             $('#objectEdit').html('RE:' + $('#object').attr('value'));
             $('#replyType').attr('value', 'reply');
         });
-        $('#replyAllButton').on('click', function() {
+        $('.reply-all-button').on('click', function() {
+            var id = $(this).attr('data-id');
             $('#object').addClass('hidden');
             $('#objectEdit').removeClass('hidden');
-            $('#replyText').removeClass('hidden');
-            $('#deleteButton').addClass('hidden');
-            $('#cancelButton').removeClass('hidden');
-            $('#sendButton').removeClass('hidden');
+            $('#replyText' + id).removeClass('hidden');
+            $('#deleteButton' + id).addClass('hidden');
+            $('#cancelButton' + id).removeClass('hidden');
+            $('#' + id).removeClass('hidden');
             $('#objectEdit').html('RE:' + $('#object').attr('value'));
             $('#replyType').attr('value', 'reply-all');
         });
-        $('#forwardButton').on('click', function() {
+        $('.forward-button').on('click', function() {
+            var id = $(this).attr('data-id');
             $('#object').addClass('hidden');
             $('#objectEdit').removeClass('hidden');
-            $('#replyText').removeClass('hidden');
-            $('#deleteButton').addClass('hidden');
-            $('#cancelButton').removeClass('hidden');
-            $('#sendButton').removeClass('hidden');
+            $('#replyText' + id).removeClass('hidden');
+            $('#deleteButton' + id).addClass('hidden');
+            $('#cancelButton' + id).removeClass('hidden');
+            $('#' + id).removeClass('hidden');
             $('#objectEdit').html('TR:' + $('#object').attr('value'));
             $('#replyType').attr('value', 'forward');
         });
-        $('#cancelButton').on('click', function() {
+        $('.cancel-button').on('click', function() {
+            var id = $(this).attr('data-id');
             $('#object').removeClass('hidden');
             $('#objectEdit').addClass('hidden');
-            $('#replyText').addClass('hidden');
-            $('#deleteButton').removeClass('hidden');
-            $('#cancelButton').addClass('hidden');
-            $('#sendButton').addClass('hidden');
+            $('#replyText' + id).addClass('hidden');
+            $('#deleteButton' + id).removeClass('hidden');
+            $('#cancelButton' + id).addClass('hidden');
+            $('#' + id).addClass('hidden');
             $('#objectEdit').html($('#object').attr('value'));
             $('#replyType').attr('value', '');
         });
-        $('#sendButton').on('click', function() {
+        $('.send-button').on('click', function() {
+            var id = this.attr('id');
             $.ajax({
                 url: "/mail/send",
                 method: 'POST',
                 data: {
-                    'id': $('#id').val(),
+                    'id': id,
                     'type': $('#replyType').attr('value'),
                     'object': $('#objectEdit').val(),
-                    'message' : $('#replyText').val(),
+                    'message' : $('#replyText' + id).val(),
                 },
                 beforeSend: function() {
                     $('#sendButton').addClass('disabled');
