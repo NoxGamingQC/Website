@@ -46,8 +46,8 @@
                         <div class="col-md-4 text-right">
                             <div class="col-md-12">
                                 <a id="replyButton{{$mail->id}}" data-id="{{$mail->id}}" class="btn btn-primary reply-button" href="#"><i class="fa fa-reply" area-hidden="true"></i></a>
-                                <a id="replyAllButton{{$mail->id}}" data-id="{{$mail->id}}" class="btn btn-primary reply-all-button" href="#"><i class="fa fa-reply-all" area-hidden="true"></i></a>
-                                <a id="forwardButton{{$mail->id}}" data-id="{{$mail->id}}" class="btn btn-primary forward-button" href="#"><i class="fa fa-share" area-hidden="true"></i></a>
+                                <a id="replyAllButton{{$mail->id}}" data-id="{{$mail->id}}" class="btn btn-primary reply-all-button disabled" disabled href="#"><i class="fa fa-reply-all" area-hidden="true"></i></a>
+                                <a id="forwardButton{{$mail->id}}" data-id="{{$mail->id}}" class="btn btn-primary forward-button disabled" disabled href="#"><i class="fa fa-share" area-hidden="true"></i></a>
                                 <a id="cancelButton{{$mail->id}}" data-id="{{$mail->id}}" class="btn btn-primary hidden cancel-button" href="#"><i class="fa fa-times" area-hidden="true"></i></a>
                             </div>
                             <div class="col-md-12">
@@ -135,39 +135,40 @@
             $('#replyType').attr('value', '');
         });
         $('.send-button').on('click', function() {
-            var id = this.attr('id');
+            var id = $(this).attr('id');
             $.ajax({
                 url: "/mail/send",
                 method: 'POST',
                 data: {
+                     _token: $('meta[name="csrf-token"]').attr('content'),
                     'id': id,
                     'type': $('#replyType').attr('value'),
                     'sender': $('#sender' + id).attr('value'),
                     'recipient': $('#recipient' + id).attr('value'),
                     'object': $('#objectEdit').val(),
-                    'message' : $('#replyText' + id).val(),
+                    'message' : $('#replyText' + id).val()
                 },
                 beforeSend: function() {
-                    $('#sendButton').addClass('disabled');
-                    $('#sendButton').attr('disabled', '');
+                    $('#' + id).addClass('disabled');
+                    $('#' + id).attr('disabled', '');
                 },
                 success: function() {
                     toastr.success('Editing success', 'Email sent.')
-                    $('#sendButton').removeClass('disabled');
-                    $('#sendButton').removeAttr('disabled', '');
+                    $('#' + id).removeClass('disabled');
+                    $('#' + id).removeAttr('disabled', '');
                     $('#object').removeClass('hidden');
                     $('#objectEdit').addClass('hidden');
                     $('#replyText').addClass('hidden');
                     $('#deleteButton').removeClass('hidden');
                     $('#cancelButton').addClass('hidden');
-                    $('#sendButton').addClass('hidden');
+                    $('#' + id).addClass('hidden');
                     $('#objectEdit').html($('#object').attr('value'));
                     $('#replyType').attr('value', '');
                 },
                 error: function (error) {
                     toastr.error('An error occured', 'An error occured while trying to send mail.')
-                    $('#sendButton').removeClass('disabled');
-                    $('#sendButton').removeAttr('disabled', '');
+                    $('#' + id).removeClass('disabled');
+                    $('#' + id).removeAttr('disabled', '');
                     console.log(error);
                 }
             });
