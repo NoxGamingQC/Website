@@ -25,8 +25,8 @@
                                     <span>{{Carbon\Carbon::parse($mail->created_at)->format('M d')}}</span>
                                 </div>
                                 <div class="col-md-12">
-                                    <p style="text-overflow:ellipsis;overflow:hidden;white-space:nowrap;max-width:80%;margin-bottom:1px;">{{ $mailContent[$mail->id]->object }}</p>
-                                    <p style="text-overflow:ellipsis;overflow:hidden;white-space:nowrap;max-width:80%;margin-bottom:1px;">{{ $mailContent[$mail->id]->text }}</p>
+                                    <p style="text-overflow:ellipsis;overflow:hidden;white-space:nowrap;max-width:80%;margin-bottom:1px;">{{ isset($mailContent[$mail->id]) ? $mailContent[$mail->id]->object : 'No object'}}</p>
+                                    <p style="text-overflow:ellipsis;overflow:hidden;white-space:nowrap;max-width:80%;margin-bottom:1px;">{{  isset($mailContent[$mail->id]) ? $mailContent[$mail->id]->text : 'No message'}}</p>
                                 </div>
                             </div>
                         </a>
