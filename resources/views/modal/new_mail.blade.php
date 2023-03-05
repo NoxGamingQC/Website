@@ -58,11 +58,20 @@ $('#submitMail').on('click', function() {
             'message': $('#message').val(),
             _token: $('meta[name="csrf-token"]').attr('content')
         },
+        beforeSend: function() {
+            $('#submitMail').addClass('disabled');
+            $('#submitMail').attr('disabled', '');
+        },
         success: function() {
             toastr.success('Mail has been sent successfully.', 'Mail sent');
+            $('#submitMail').removeClass('disabled');
+            $('#submitMail').removeAttr('disabled', '');
+            window.location.reload();
         },
         error: function(error) {
             toastr.error('An error occured while trying to sent mail.', 'Error');
+            $('#submitMail').removeClass('disabled');
+            $('#submitMail').removeAttr('disabled', '');
         }
     });
 });

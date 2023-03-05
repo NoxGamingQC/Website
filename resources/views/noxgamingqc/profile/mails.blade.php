@@ -9,7 +9,7 @@
         <div class="container"> 
             <div class="col-md-12 text-center">
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sendMailModal"><i class="fa fa-envelope-o" aria-hidden="true"></i> {{trans('mail.new_message')}}</button>
-                <button type="button" class="btn btn-primary"><i class="fa fa-pencil" aria-hidden="true"></i> {{trans('mail.edit_signature')}}</button>
+                <button type="button" class="btn btn-primary disabled" disabled><i class="fa fa-pencil" aria-hidden="true"></i> {{trans('mail.edit_signature')}}</button>
                 <br />
                 <br />
             </div>
