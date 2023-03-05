@@ -112,7 +112,7 @@ class MailController extends Controller
             $mail->message_id = $index->first()->id;
         }
 
-        preg_match_all('/[a-z0-9_\-\+\.]+@[a-z0-9\-]+\.([a-z]{2,4})(?:\.[a-z]{2})?/i', $request['sender'], $matches);
+        preg_match_all("/[\._a-zA-Z0-9-]+@[\._a-zA-Z0-9-]+/i", $request['sender'], $matches);
 
         $mail->sender = $matches[0];
         $mail->recipient = $request['recipient'];
