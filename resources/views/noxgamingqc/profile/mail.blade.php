@@ -38,8 +38,8 @@
                                     <img class="img-circle" src="/img/no-avatar.jpg" width="100%">
                                 </div>
                                 <div class="col-md-10">
-                                    <h4 class="raleway-font" style="overflow:visible">{{$mail->sender_name}} &lt;{{$mail->sender}}&gt;</h4>
-                                    <p>À : {{$mail->recipient}}</p>
+                                    <h4 id="recipient{{$mail->id}}" class="raleway-font" style="overflow:visible" value="{{$mail->sender}}">{{$mail->sender_name}} &lt;{{$mail->sender}}&gt;</h4>
+                                    <p id="sender{{$mail->id}}" value="{{$mail->recipient}}">À : {{$mail->recipient}}</p>
                                 </div>
                             </div>
                         </div>
@@ -142,6 +142,8 @@
                 data: {
                     'id': id,
                     'type': $('#replyType').attr('value'),
+                    'sender': $('#sender' + id).attr('value'),
+                    'recipient': $('#recipient' + id).attr('value'),
                     'object': $('#objectEdit').val(),
                     'message' : $('#replyText' + id).val(),
                 },
