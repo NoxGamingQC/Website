@@ -2,7 +2,6 @@
 @section('title', 'Management - Users')
 @section('content')
 
-
 <div class="row">
     <div class="col-md-12 content-item">
         <div class="container">
@@ -16,7 +15,7 @@
                                 @else
                                     <img class="img img-circle {{$user['isCurrentUser'] ? 'user-status' : ''}} status-{{$user['state']}}" src="/img/no-avatar.jpg" alt="{{$user['username']}}" title="{{$user['username']}}" width="100px" />
                                 @endif
-                                <h4>
+                                <h4 class="raleway-font">
                                     <b>
                                         @if($user['isPremium'])
                                             <i class="fa fa-star text-warning" aria-hidden="true"></i>
