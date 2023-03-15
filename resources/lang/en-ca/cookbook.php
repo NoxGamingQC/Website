@@ -6,6 +6,17 @@ return [
     'french' => "Voir en Français (French)",
     'english' => "See in english (English)",
     'go_back_to_last_page' => "Go back to the last page",
+    'by' => "by",
+    'cup' => "cup",
+    'tablespoon' => "tablespoon",
+    'teaspoon' => "teaspoon",
+    'pinch' => "pinch",
+    '' => '',
+
+
+
+
+
     'breakfast' => "Breakfast",
     'lunch' => "Lunch",
     'dessert' => "Dessert",
@@ -32,7 +43,6 @@ return [
     'candy_no_cooking' => "Candy without cooking",
     'tomato_garlic_toast' => "Tomato and garlic toast",
     'chocolate_cake_in_cup' => "Chocolate cake in a cup",
-    'by' => "par",
     'my_grandma' => "my grandma",
     'not_available' => "Not available",
     'my_mom' => "my mom",

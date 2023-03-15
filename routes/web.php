@@ -113,9 +113,9 @@
                 return view('noxgamingqc.about_me.teams');
             });
             
-            Route::get('/kiosk/cookbook', 'NGST\KioskController@cookbook');
-            Route::get('/kiosk/cookbook/{category}', 'NGST\KioskController@cookbookCategory');
-            Route::get('/kiosk/cookbook/{category}/{slug}', 'NGST\KioskController@recipe');
+            Route::get('/kiosk/cookbook', 'NGST\RecipeController@cookbook');
+            Route::get('/kiosk/cookbook/{category}', 'NGST\RecipeController@category');
+            Route::get('/kiosk/recipe/{id}', 'NGST\RecipeController@recipe');
             Route::get('/company/kiosk/refresh', 'NGST\KioskController@refreshData');
 
             Route::get('/partners', function () {
