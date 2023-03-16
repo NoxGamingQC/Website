@@ -33,6 +33,7 @@ class RecipeController extends Controller
             'kiosk' => 'true',
             'category' => $category,
             'recipes' => $recipes,
+            'recipe' => true,
             'isRecipe' => false,
             'lastLink' => '/' . app()->getLocale() . '/kiosk/cookbook',
         ]);
