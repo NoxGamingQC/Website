@@ -58,6 +58,7 @@
                 '</div>'+
                 '<div class="col-md-3">'+
                     '<select class="selectpicker" title="Type">'+
+                        '<option class="type" value=""></option>'+
                         '<option class="type" value="cup">{{trans('cookbook.cup')}}</option>'+
                         '<option class="type" value="tablespoon">{{trans('cookbook.tablespoon')}}</option>'+
                         '<option class="type" value="teaspoon">{{trans('cookbook.teaspoon')}}</option>'+
@@ -119,7 +120,7 @@
                 'order': key + 1,
                 'name_fr': $(value).find('.name-fr')[0].value,
                 'name_en': $(value).find('.name-en')[0].value
-            } );
+            });
         });
         $('.step').each(function(key, value) {
             steps.push({
