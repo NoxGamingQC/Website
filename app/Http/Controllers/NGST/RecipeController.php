@@ -57,4 +57,8 @@ class RecipeController extends Controller
             'lastLink' => '/' . app()->getLocale() . '/kiosk/cookbook/',
         ]);
     }
+
+    public function saveRecipe() {
+        
+    }
 }

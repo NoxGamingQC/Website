@@ -15,6 +15,7 @@ return [
     'add_recipe' => "Ajouter une recette",
     'add_description' => "Ajouter la description ici...",
     'author' => "Autheur",
+    'recipe_name' => "Nom de la recette",
 
     'breakfast' => "Déjeuner",
     'lunch' => "Repas",

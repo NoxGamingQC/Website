@@ -20,6 +20,7 @@
     Route::get('/kiosk/cookbook', function () {
         return redirect()->to('/fr-ca/kiosk/cookbook');
     });
+    Route::post('/recipe/add', 'NGST\RecipeController@saveRecipe');
 
     Route::get('/company/kiosk/refresh', 'NGST\KioskController@refreshData');
 

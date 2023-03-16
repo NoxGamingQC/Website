@@ -52,6 +52,22 @@
                             @else
                                 <div class="row">
                                     <div class="col-md-3">
+                                        <h4 class="raleway-font text-right"><span>{{trans('cookbook.recipe_name')}} (FR):</span></h4>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <h4 class="raleway-font"><input id="recipeName" type="text" class="form-control"></h4>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <h4 class="raleway-font text-right"><span>{{trans('cookbook.recipe_name')}} (EN):</span></h4>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <h4 class="raleway-font"><input id="recipeName" type="text" class="form-control"></h4>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3">
                                         <h4 class="raleway-font text-right"><span>{{trans('cookbook.author')}}:</span></h4>
                                     </div>
                                     <div class="col-md-9">
@@ -63,7 +79,7 @@
                                         <h4 class="raleway-font text-right"><span>{{trans('cookbook.prep_time')}}:</span></h4>
                                     </div>
                                     <div class="col-md-9">
-                                        <h4 class="raleway-font"><input id="prep_time" type="text" class="form-control"></h4>
+                                        <h4 class="raleway-font"><input id="prepTime" type="text" class="form-control"></h4>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -71,7 +87,7 @@
                                         <h4 class="raleway-font text-right"><span>{{trans('cookbook.cook_time')}}:</span></h4>
                                     </div>
                                     <div class="col-md-9">
-                                        <h4 class="raleway-font"><input id="cook_time" type="text" class="form-control"></h4>
+                                        <h4 class="raleway-font"><input id="cookTime" type="text" class="form-control"></h4>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -91,7 +107,10 @@
                             @if(!isset($add_mode))
                                 <h4 class="raleway-font">@yield('description')</h4>
                             @else
-                                <textarea type="text" class="form-control" rows="4" placeholder="{{trans('cookbook.add_description')}}"></textarea>
+                                <textarea type="text" class="form-control" rows="4" placeholder="{{trans('cookbook.add_description')}} (FR)"></textarea>
+                                <br />
+                                <br />
+                                <textarea type="text" class="form-control" rows="4" placeholder="{{trans('cookbook.add_description')}} (EN)"></textarea>
                             @endif
                             <hr style="border-bottom: solid 3px" />
                         </div>
