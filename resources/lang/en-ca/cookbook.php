@@ -16,6 +16,8 @@ return [
     'add_description' => "Add the description here...",
     'author' => "Author",
     'recipe_name' => "Recipe name",
+    'steps' => "Steps",
+    'ingredients' => "Ingredients",
 
 
 
