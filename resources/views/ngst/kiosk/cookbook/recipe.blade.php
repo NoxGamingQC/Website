@@ -37,29 +37,31 @@
         </div>
     </div>
 </div>
-<div class="container">
-    <div class="row">
-        <div class="col-md-12 text-left">
-            <h2>{{trans('cookbook.steps')}}</h2>
-            <br />
-            <ul style="font-size:18px">
-            @if(app()->getLocale() === 'fr-ca')
-                    @foreach($recipe->steps as $key => $step)
-                        <li class="text-justify {{$step->isWarning ? 'text-warning' : ''}} {{$step->isDanger ? 'text-danger' : ''}}">{{$step->text_fr}}</li>
-                    @endforeach
-                @else
-                    @foreach($recipe->steps as $key => $step)
-                        <li class="text-justify {{$step->isWarning ? 'text-warning' : ''}} {{$step->isDanger ? 'text-danger' : ''}}">{{$step->text_en}}</li>
-                    @endforeach
-                @endif
-            </ul>
+@if(count($recipe->steps) > 0)
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-left">
+                <h2>{{trans('cookbook.steps')}}</h2>
+                <br />
+                <ul style="font-size:18px">
+                @if(app()->getLocale() === 'fr-ca')
+                        @foreach($recipe->steps as $key => $step)
+                            <li class="text-justify {{$step->isWarning ? 'text-warning' : ''}} {{$step->isDanger ? 'text-danger' : ''}}">{{$step->text_fr}}</li>
+                        @endforeach
+                    @else
+                        @foreach($recipe->steps as $key => $step)
+                            <li class="text-justify {{$step->isWarning ? 'text-warning' : ''}} {{$step->isDanger ? 'text-danger' : ''}}">{{$step->text_en}}</li>
+                        @endforeach
+                    @endif
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <br />
+                &nbsp
+            </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-12">
-            <br />
-            &nbsp
-        </div>
-    </div>
-</div>
+@endif
 @endsection
