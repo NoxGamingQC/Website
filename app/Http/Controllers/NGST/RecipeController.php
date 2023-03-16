@@ -9,6 +9,7 @@ use App\Recipe\RecipeSteps;
 use App\Recipe\Categories;
 use App\Recipe\Recipe;
 use Carbon\Carbon;
+use Auth;
 
 class RecipeController extends Controller
 {
@@ -79,23 +80,25 @@ class RecipeController extends Controller
 
                 foreach($request->ingredients as $key => $value) {
                     $ingredient = new IngredientList();
-                    $ingredient->name_fr = $value->name_fr;
-                    $ingredient->name_en = $value->name_en;
+                    $ingredient->name_fr = $value['name_fr'];
+                    $ingredient->name_en = $value['name_en'];
                     $ingredient->recipe_id = $recipe->id;
-                    $ingredient->quantity = $value->quantity;
-                    $ingredient->type = $value->type;
-                    $ingredient->order = $value->order;
+                    $ingredient->quantity = $value['quantity'];
+                    $ingredient->type = $value['type'] ? $value['type'] : null;
+                    $ingredient->order = $value['order'];
                     $ingredient->save();
                 }
-                foreach($request->steps as $key => $value) {
-                    $step = new RecipeSteps();
-                    $step->text_fr = $value->description_fr;
-                    $step->text_en = $value->description_en;
-                    $step->isDanger = (($value->level === 'danger')? true : false);
-                    $step->isWarning = (($value->level === 'warning') ? true : false);
-                    $step->recipe_id = $recipe->id;
-                    $step->order = $value->order;
-                    $step->save();
+                if($request->steps) {
+                    foreach($request->steps as $key => $value) {
+                        $step = new RecipeSteps();
+                        $step->text_fr = $value['description_fr'];
+                        $step->text_en = $value['description_en'];
+                        $step->isDanger = (($value['level'] === 'danger')? true : false);
+                        $step->isWarning = (($value['level'] === 'warning') ? true : false);
+                        $step->recipe_id = $recipe->id;
+                        $step->order = $value['order'];
+                        $step->save();
+                    }
                 }
             }
         }
