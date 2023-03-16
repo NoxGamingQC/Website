@@ -15,7 +15,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12 text-left">
-            <h2>Ingredients</h2>
+            <h2>{{trans('cookbook.ingredients')}}</h2>
             <br />
             <ul style="font-size:18px">
                 @if(app()->getLocale() === 'fr-ca')
@@ -40,7 +40,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12 text-left">
-            <h2>Directives</h2>
+            <h2>{{trans('cookbook.steps')}}</h2>
             <br />
             <ul style="font-size:18px">
             @if(app()->getLocale() === 'fr-ca')
