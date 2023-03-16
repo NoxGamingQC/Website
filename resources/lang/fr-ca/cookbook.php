@@ -25,6 +25,7 @@ return [
     'add_step' => "Ajouter les directives ici...",
     'category' => "Catégorie",
     'no_recipe_available' => "Désolé, aucune recette n'est disponible dans cette catégorie pour le moment.",
+    'oz' => "once",
 
     'breakfast' => "Déjeuner",
     'lunch' => "Repas",

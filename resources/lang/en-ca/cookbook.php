@@ -25,6 +25,7 @@ return [
     'add_step' => "Add the steps here...",
     'category' => "Category",
     'no_recipe_available' => "Sorry, no recipes are available in this category at this moment.",
+    'oz' => "oz",
 
 
 
