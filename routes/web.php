@@ -116,6 +116,7 @@
             Route::get('/kiosk/cookbook', 'NGST\RecipeController@cookbook');
             Route::get('/kiosk/cookbook/{category}', 'NGST\RecipeController@category');
             Route::get('/kiosk/recipe/{id}', 'NGST\RecipeController@recipe');
+            Route::get('/recipe/add', 'NGST\RecipeController@addRecipe');
             Route::get('/company/kiosk/refresh', 'NGST\KioskController@refreshData');
 
             Route::get('/partners', function () {

@@ -10,7 +10,9 @@
                 <br />
                 <h3 class="raleway-font text-highlight" style="margin-left:5%;max-width:90%">@yield('slogan')</h3>
                 @if($isRecipe == true)
-                    <h4 class="raleway-font text-highlight" style="margin-left:5%;max-width:90%">{{ trans('cookbook.by'). ' ' }}@yield('author')</h4>
+                    @if(!isset($add_mode))
+                        <h4 class="raleway-font text-highlight" style="margin-left:5%;max-width:90%">{{ trans('cookbook.by'). ' ' }}@yield('author')</h4>
+                    @endif
                 @endif
                 <br />
             </div>
@@ -43,15 +45,54 @@
                     <div class="row">
                         <div class="col-md-12">
                             <hr style="border-color:white" />
-                            <h4 class="raleway-font">{{trans('cookbook.prep_time')}}: @yield('prep_time')</h4>
-                            <h4 class="raleway-font">{{trans('cookbook.cook_time')}}: @yield('cook_time')</h4>
-                            <h4 class="raleway-font">{{trans('cookbook.yields')}}:  @yield('yields')</h4>
+                            @if(!isset($add_mode))
+                                <h4 class="raleway-font">{{trans('cookbook.prep_time')}}: @yield('prep_time')</h4>
+                                <h4 class="raleway-font">{{trans('cookbook.cook_time')}}: @yield('cook_time')</h4>
+                                <h4 class="raleway-font">{{trans('cookbook.yields')}}:  @yield('yields')</h4>
+                            @else
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <h4 class="raleway-font text-right"><span>{{trans('cookbook.author')}}:</span></h4>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <h4 class="raleway-font"><input id="author" type="text" class="form-control"></h4>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <h4 class="raleway-font text-right"><span>{{trans('cookbook.prep_time')}}:</span></h4>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <h4 class="raleway-font"><input id="prep_time" type="text" class="form-control"></h4>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <h4 class="raleway-font text-right"><span>{{trans('cookbook.cook_time')}}:</span></h4>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <h4 class="raleway-font"><input id="cook_time" type="text" class="form-control"></h4>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <h4 class="raleway-font text-right"><span>{{trans('cookbook.yields')}}:</span></h4>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <h4 class="raleway-font"><input id="result" type="text" class="form-control"></h4>
+                                    </div>
+                                </div>
+                            @endif
                             <hr style="border-color:white" />
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            <h4 class="raleway-font">@yield('description')</h4>
+                            @if(!isset($add_mode))
+                                <h4 class="raleway-font">@yield('description')</h4>
+                            @else
+                                <textarea type="text" class="form-control" rows="4" placeholder="{{trans('cookbook.add_description')}}"></textarea>
+                            @endif
                             <hr style="border-bottom: solid 3px" />
                         </div>
                     </div>
