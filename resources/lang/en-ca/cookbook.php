@@ -23,6 +23,7 @@ return [
     'critical' => "Critical",
     'normal' => "Normal",
     'add_step' => "Add the steps here...",
+    'category' => "Category",
 
 
 

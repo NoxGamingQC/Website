@@ -98,6 +98,24 @@
                                         <h4 class="raleway-font"><input id="result" type="text" class="form-control"></h4>
                                     </div>
                                 </div>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <h4 class="raleway-font text-right"><span>{{trans('cookbook.category')}}:</span></h4>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <select class="selectpicker" title="{{trans('cookbook.category')}}">
+                                            @if(app()->getLocale() === 'fr-ca')
+                                                @foreach($categories as $key => $category)
+                                                    <option class="category" value="{{$category->id}}">{{$category->name_fr}}</option>
+                                                @endforeach
+                                            @else
+                                                @foreach($categories as $key => $category)
+                                                    <option class="category" value="{{$category->id}}">{{$category->name_en}}</option>
+                                                @endforeach
+                                            @endif
+                                        </select>
+                                    </div>
+                                </div>
                             @endif
                             <hr style="border-color:white" />
                         </div>

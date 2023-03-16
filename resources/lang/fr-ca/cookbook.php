@@ -23,6 +23,7 @@ return [
     'critical' => "Critique",
     'normal' => "Normal",
     'add_step' => "Ajouter les directives ici...",
+    'category' => "Catégorie",
 
     'breakfast' => "Déjeuner",
     'lunch' => "Repas",

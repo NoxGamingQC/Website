@@ -2,7 +2,6 @@
 @section('name', trans('cookbook.add_recipe'))
 @section('content')
 
-
 <div class="container">
     <div class="row">
         <div class="col-md-12 text-left">
@@ -117,16 +116,17 @@
             ingredients.push({
                 'quantity': $(value).find('.quantity')[0].value,
                 'type': $(value).find('.type:selected')[0].value,
-                'order': key,
+                'order': key + 1,
                 'name_fr': $(value).find('.name-fr')[0].value,
                 'name_en': $(value).find('.name-en')[0].value
             } );
         });
         $('.step').each(function(key, value) {
             steps.push({
-                'type': $(value).find('.level:selected')[0].value,
+                'level': $(value).find('.level:selected')[0].value,
                 'description_fr': $(value).find('.description-fr')[0].value,
                 'description_en': $(value).find('.description-en')[0].value,
+                'order': key + 1,
             });
         });
 
@@ -145,6 +145,7 @@
                 'result': $('#result').val(),
                 'description_fr': $('#descriptionFR').val(),
                 'description_en': $('#descriptionEN').val(),
+                'category': $('.category:selected').val(),
                 'ingredients': ingredients,
                 'steps': steps
             },
