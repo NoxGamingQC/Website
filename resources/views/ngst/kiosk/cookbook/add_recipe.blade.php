@@ -58,10 +58,11 @@
                 '</div>'+
                 '<div class="col-md-3">'+
                     '<select class="selectpicker" title="Type">'+
-                        '<option class="type" value=""></option>'+
+                        '<option class="type" value="">N/A</option>'+
                         '<option class="type" value="cup">{{trans('cookbook.cup')}}</option>'+
                         '<option class="type" value="tablespoon">{{trans('cookbook.tablespoon')}}</option>'+
                         '<option class="type" value="teaspoon">{{trans('cookbook.teaspoon')}}</option>'+
+                        '<option class="type" value="oz">{{trans('cookbook.oz')}}</option>'+
                         '<option class="type" value="pinch">{{trans('cookbook.pinch')}}</option>'+
                     '</select>'+
                 '</div>'+
