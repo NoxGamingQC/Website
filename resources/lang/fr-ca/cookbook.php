@@ -18,6 +18,7 @@ return [
     'recipe_name' => "Nom de la recette",
     'steps' => "Directives",
     'ingredients' => "Ingrédients",
+    'ingredient' => "Ingrédient",
 
     'breakfast' => "Déjeuner",
     'lunch' => "Repas",

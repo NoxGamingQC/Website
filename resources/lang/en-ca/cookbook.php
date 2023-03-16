@@ -8,8 +8,8 @@ return [
     'go_back_to_last_page' => "Go back to the last page",
     'by' => "by",
     'cup' => "cup",
-    'tablespoon' => "tablespoon",
-    'teaspoon' => "teaspoon",
+    'tablespoon' => "tbsp",
+    'teaspoon' => "tsp",
     'pinch' => "pinch",
     '' => '',
     'add_recipe' => "Add a recipe",
@@ -18,6 +18,7 @@ return [
     'recipe_name' => "Recipe name",
     'steps' => "Steps",
     'ingredients' => "Ingredients",
+    'ingredient' => "Ingredient",
 
 
 
