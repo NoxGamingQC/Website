@@ -10,6 +10,15 @@
 @import "table";
 @import 'datepicker';
 
+@media print {
+    .no-print {
+       display: none !important;
+    }
+    .print {
+       display: block !important;
+    }
+ }
+
 html, body {
     background-color: $background-color;
     color: $text-color;
