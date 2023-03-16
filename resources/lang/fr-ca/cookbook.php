@@ -22,6 +22,7 @@ return [
     'warning' => "Avertissement",
     'critical' => "Critique",
     'normal' => "Normal",
+    'add_step' => "Ajouter les directives ici...",
 
     'breakfast' => "Déjeuner",
     'lunch' => "Repas",
