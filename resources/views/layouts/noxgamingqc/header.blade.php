@@ -1,6 +1,6 @@
 @if(isset($kiosk) && $kiosk == true)
     @if($recipe == true)
-        <div class="header" style="height:480px !important;">
+        <div class="header no-print" style="height:480px !important;">
             <div class="text-right" style="margin-right:5%;">
                 <br />
                 <h2 id="currentTime"></h2>
@@ -30,7 +30,7 @@
             
         </script>
         @if(!isset($isButtonLastPage) || $isButtonLastPage === 'true')
-            <div class="container">
+            <div class="container no-print">
                 <div class="row">
                     <div class="col-md-12 text-right">
                         <br />
@@ -44,6 +44,8 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
+                            <h2 class="text-center raleway-font print" style="display:none">@yield('name')<small> {{trans('cookbook.by')}} @yield('author')</small></h2>
+                            <hr class="print" style="display:none;border-color:black" />
                             <hr style="border-color:white" />
                             @if(!isset($add_mode))
                                 <h4 class="raleway-font">{{trans('cookbook.prep_time')}}: @yield('prep_time')</h4>

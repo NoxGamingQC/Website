@@ -4647,6 +4647,14 @@ td.disabled.day {
   background-color: #555555;
 }
 
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  .print {
+    display: block !important;
+  }
+}
 html, body {
   background-color: #fff;
   color: #000;
