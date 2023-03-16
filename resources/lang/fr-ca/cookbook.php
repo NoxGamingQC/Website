@@ -12,6 +12,9 @@ return [
     'teaspoon' => "c. à thé",
     'pinch' => "pincée",
     '' => '',
+    'add_recipe' => "Ajouter une recette",
+    'add_description' => "Ajouter la description ici...",
+    'author' => "Autheur",
 
     'breakfast' => "Déjeuner",
     'lunch' => "Repas",

@@ -159,20 +159,38 @@ a[type="button"]:disabled {
     opacity: 1;
 }
 
-.form-control[readonly] {
+.btn-primary.form-control[readonly] {
     background-color: $background-color !important;
     color: $text-color !important;
     opacity: 1;
 }
 
-.form-control[readonly] {
+.btn-primary.form-control[readonly] {
     background-color: $background-color !important;
     color: $text-color !important;
     opacity: 1;
 }
 
-.form-control[readonly]:hover, .form-control[readonly]:active {
+.btn-primary.form-control[readonly]:hover, .form-control[readonly]:active {
     background-color: $brand-primary !important;
+    color: $text-color !important;
+    opacity: 1;
+}
+
+.btn-success.form-control[readonly] {
+    background-color: $background-color !important;
+    color: $text-color !important;
+    opacity: 1;
+}
+
+.btn-success.form-control[readonly] {
+    background-color: $background-color !important;
+    color: $text-color !important;
+    opacity: 1;
+}
+
+.btn-success.form-control[readonly]:hover, .btn-success.form-control[readonly]:active {
+    background-color: $brand-success !important;
     color: $text-color !important;
     opacity: 1;
 }

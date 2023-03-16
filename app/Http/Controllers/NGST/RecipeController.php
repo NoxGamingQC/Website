@@ -48,4 +48,13 @@ class RecipeController extends Controller
             'lastLink' => '/' . app()->getLocale() . '/kiosk/cookbook/' . $recipe->category->id,
         ]);
     }
+    public function addRecipe() {
+        return view('ngst.kiosk.cookbook.add_recipe')->with([
+            'kiosk' => 'true',
+            'isRecipe' => true,
+            'recipe' => true,
+            'add_mode' => true,
+            'lastLink' => '/' . app()->getLocale() . '/kiosk/cookbook/',
+        ]);
+    }
 }

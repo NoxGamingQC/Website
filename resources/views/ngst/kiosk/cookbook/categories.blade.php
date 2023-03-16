@@ -10,6 +10,17 @@
 @endif
 
 <div class="container">
+    @auth
+        @if(Auth::user()->isAdmin || Auth::user()->isModerator || Auth::user()->isDev)
+            <div class="row">
+                <div class="col-md-12">
+                     <a href="/{{app()->getLocale()}}/recipe/add"><input class="btn btn-success form-control" style="font-size:24px;padding:5%" value="{{trans('cookbook.add_recipe')}}" readonly></a>
+                    <br />
+                    <br />
+                </div>
+            </div>
+        @endif
+    @endauth
     <div class="row">
         @if(app()->getLocale() === 'fr-ca')
             @foreach($recipes as $key => $recipe)

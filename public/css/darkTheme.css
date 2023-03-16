@@ -3935,20 +3935,38 @@ a[type=button]:disabled {
   opacity: 1;
 }
 
-.form-control[readonly] {
+.btn-primary.form-control[readonly] {
   background-color: #222222 !important;
   color: #ffffff !important;
   opacity: 1;
 }
 
-.form-control[readonly] {
+.btn-primary.form-control[readonly] {
   background-color: #222222 !important;
   color: #ffffff !important;
   opacity: 1;
 }
 
-.form-control[readonly]:hover, .form-control[readonly]:active {
+.btn-primary.form-control[readonly]:hover, .form-control[readonly]:active {
   background-color: #c22222 !important;
+  color: #ffffff !important;
+  opacity: 1;
+}
+
+.btn-success.form-control[readonly] {
+  background-color: #222222 !important;
+  color: #ffffff !important;
+  opacity: 1;
+}
+
+.btn-success.form-control[readonly] {
+  background-color: #222222 !important;
+  color: #ffffff !important;
+  opacity: 1;
+}
+
+.btn-success.form-control[readonly]:hover, .btn-success.form-control[readonly]:active {
+  background-color: #3AA55D !important;
   color: #ffffff !important;
   opacity: 1;
 }
