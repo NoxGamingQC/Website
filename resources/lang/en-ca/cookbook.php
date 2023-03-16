@@ -19,6 +19,9 @@ return [
     'steps' => "Steps",
     'ingredients' => "Ingredients",
     'ingredient' => "Ingredient",
+    'warning' => "Warning",
+    'critical' => "Critical",
+    'normal' => "Normal",
 
 
 

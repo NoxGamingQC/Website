@@ -85,13 +85,20 @@
         var stepCount = $('#stepsList').children.length + 1;
         $('#stepsList').append(
             '<div id="step'+ stepCount +'" class="row">'+
-                '<div class="col-md-5">'+
+                '<div class="col-md-4">'+
                     '<textarea id="descriptionFR'+ stepCount +'" type="text" class="form-control" placeholder="{{trans('cookbook.add_step')}} (FR)" rows="4"></textarea>'+
                 '</div>'+
-                '<div class="col-md-5">'+
+                '<div class="col-md-4">'+
                     '<textarea id="descriptionEN'+ stepCount +'" type="text" class="form-control" placeholder="{{trans('cookbook.add_step')}} (EN)" rows="4"></textarea>'+
                 '</div>'+
-                '<div class="col-md-2">'+
+                '<div class="col-md-3">'+
+                    '<select class="selectpicker" id="type'+stepCount+'" title="level">'+
+                        '<option value="normal" selected>{{trans('cookbook.normal')}}</option>'+
+                        '<option class="text-warning" value="warning">{{trans('cookbook.warning')}}</option>'+
+                        '<option class="text-danger" value="danger">{{trans('cookbook.critical')}}</option>'+
+                    '</select>'+
+                '</div>'+
+                '<div class="col-md-1">'+
                     '<h4 class="raleway-font"><button class="remove btn btn-danger" value="step'+ stepCount +'" type="button"><i class="fa fa-times" aria-hidden="true"></i></button></h4>'+
                 '</div>'+
             '</div>'+

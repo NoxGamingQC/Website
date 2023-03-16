@@ -19,6 +19,9 @@ return [
     'steps' => "Directives",
     'ingredients' => "Ingrédients",
     'ingredient' => "Ingrédient",
+    'warning' => "Avertissement",
+    'critical' => "Critique",
+    'normal' => "Normal",
 
     'breakfast' => "Déjeuner",
     'lunch' => "Repas",
