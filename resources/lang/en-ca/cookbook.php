@@ -22,6 +22,7 @@ return [
     'warning' => "Warning",
     'critical' => "Critical",
     'normal' => "Normal",
+    'add_step' => "Add the steps here...",
 
 
 

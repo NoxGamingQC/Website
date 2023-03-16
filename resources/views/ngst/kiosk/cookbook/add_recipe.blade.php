@@ -52,28 +52,27 @@
 </div>
 <script type="text/javascript">
     $('#addIngredient').on('click', function() {
-        var ingredientCount = $('#ingredientList').children.length + 1;
         $('#ingredientList').append(
-            '<div id="ingredient'+ ingredientCount +'" class="row">'+
+            '<div class="row row-container ingredient">'+
                 '<div class="col-md-2">'+
-                    '<h4 class="raleway-font"><input id="quantity'+ ingredientCount  +'" type="text" class="form-control text-center" placeholder="0"></h4>'+
+                    '<h4 class="raleway-font"><input type="text" class="form-control text-center quantity" placeholder="0"></h4>'+
                 '</div>'+
                 '<div class="col-md-3">'+
-                    '<select class="selectpicker" id="type'+ingredientCount+'" title="Type">'+
-                        '<option value="cup">{{trans('cookbook.cup')}}</option>'+
-                        '<option value="tablespoon">{{trans('cookbook.tablespoon')}}</option>'+
-                        '<option value="teaspoon">{{trans('cookbook.teaspoon')}}</option>'+
-                        '<option value="pinch">{{trans('cookbook.pinch')}}</option>'+
+                    '<select class="selectpicker" title="Type">'+
+                        '<option class="type" value="cup">{{trans('cookbook.cup')}}</option>'+
+                        '<option class="type" value="tablespoon">{{trans('cookbook.tablespoon')}}</option>'+
+                        '<option class="type" value="teaspoon">{{trans('cookbook.teaspoon')}}</option>'+
+                        '<option class="type" value="pinch">{{trans('cookbook.pinch')}}</option>'+
                     '</select>'+
                 '</div>'+
                 '<div class="col-md-3">'+
-                    '<h4 class="raleway-font"><input id="nameFR'+ ingredientCount +'" type="text" class="form-control" placeholder="{{trans('cookbook.ingredient')}} (FR)"></h4>'+
+                    '<h4 class="raleway-font"><input type="text" class="form-control name-fr" placeholder="{{trans('cookbook.ingredient')}} (FR)"></h4>'+
                 '</div>'+
                 '<div class="col-md-3">'+
-                    '<h4 class="raleway-font"><input id="nameEN'+ ingredientCount +'" type="text" class="form-control" placeholder="{{trans('cookbook.ingredient')}} (EN)"></h4>'+
+                    '<h4 class="raleway-font"><input type="text" class="form-control name-en" placeholder="{{trans('cookbook.ingredient')}} (EN)"></h4>'+
                 '</div>'+
                 '<div class="col-md-1">'+
-                    '<h4 class="raleway-font"><button class="remove btn btn-danger" value="ingredient'+ ingredientCount +'" type="button"><i class="fa fa-times" aria-hidden="true"></i></button></h4>'+
+                    '<h4 class="raleway-font"><button class="remove btn btn-danger" value="ingredient" type="button"><i class="fa fa-times" aria-hidden="true"></i></button></h4>'+
                 '</div>'+
             '</div>'+
             '<br />'
@@ -82,24 +81,23 @@
     });
 
     $('#addStep').on('click', function() {
-        var stepCount = $('#stepsList').children.length + 1;
         $('#stepsList').append(
-            '<div id="step'+ stepCount +'" class="row">'+
+            '<div class="row row-container step">'+
                 '<div class="col-md-4">'+
-                    '<textarea id="descriptionFR'+ stepCount +'" type="text" class="form-control" placeholder="{{trans('cookbook.add_step')}} (FR)" rows="4"></textarea>'+
+                    '<textarea type="text" class="form-control description-fr" placeholder="{{trans('cookbook.add_step')}} (FR)" rows="4"></textarea>'+
                 '</div>'+
                 '<div class="col-md-4">'+
-                    '<textarea id="descriptionEN'+ stepCount +'" type="text" class="form-control" placeholder="{{trans('cookbook.add_step')}} (EN)" rows="4"></textarea>'+
+                    '<textarea type="text" class="form-control description-en" placeholder="{{trans('cookbook.add_step')}} (EN)" rows="4"></textarea>'+
                 '</div>'+
                 '<div class="col-md-3">'+
-                    '<select class="selectpicker" id="type'+stepCount+'" title="level">'+
-                        '<option value="normal" selected>{{trans('cookbook.normal')}}</option>'+
-                        '<option class="text-warning" value="warning">{{trans('cookbook.warning')}}</option>'+
-                        '<option class="text-danger" value="danger">{{trans('cookbook.critical')}}</option>'+
+                    '<select class="selectpicker level">'+
+                        '<option class="level" value="normal" selected>{{trans('cookbook.normal')}}</option>'+
+                        '<option class="text-warning level" value="warning">{{trans('cookbook.warning')}}</option>'+
+                        '<option class="text-danger level" value="danger">{{trans('cookbook.critical')}}</option>'+
                     '</select>'+
                 '</div>'+
                 '<div class="col-md-1">'+
-                    '<h4 class="raleway-font"><button class="remove btn btn-danger" value="step'+ stepCount +'" type="button"><i class="fa fa-times" aria-hidden="true"></i></button></h4>'+
+                    '<h4 class="raleway-font"><button class="remove btn btn-danger" value="step" type="button"><i class="fa fa-times" aria-hidden="true"></i></button></h4>'+
                 '</div>'+
             '</div>'+
             '<br />'
@@ -107,9 +105,69 @@
         $(".selectpicker").selectpicker("render");
     });
 
-    $('body').on('click',".remove", function(e){
+    $('body').on('click', ".remove", function(e) {
         var id = $(this).attr('value');
-        $(this).parents('#' + id).remove();
+        $(this).parents('.row-container').remove();
+    });
+
+    $('#submit').on('click', function() {
+        var ingredients = [];
+        var steps = [];
+        $('.ingredient').each(function(key, value) {
+            ingredients.push({
+                'quantity': $(value).find('.quantity')[0].value,
+                'type': $(value).find('.type:selected')[0].value,
+                'order': key,
+                'name_fr': $(value).find('.name-fr')[0].value,
+                'name_en': $(value).find('.name-en')[0].value
+            } );
+        });
+        $('.step').each(function(key, value) {
+            steps.push({
+                'type': $(value).find('.level:selected')[0].value,
+                'description_fr': $(value).find('.description-fr')[0].value,
+                'description_en': $(value).find('.description-en')[0].value,
+            });
+        });
+
+        $.ajax({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            url: '/recipe/add',
+            method: 'POST',
+            data: {
+                'name_fr': $('#recipeNameFR').val(),
+                'name_en': $('#recipeNameEN').val(),
+                'author': $('#author').val(),
+                'prep_time': $('#prepTime').val(),
+                'cook_time': $('#cookTime').val(),
+                'result': $('#result').val(),
+                'description_fr': $('#descriptionFR').val(),
+                'description_en': $('#descriptionEN').val(),
+                'ingredients': ingredients,
+                'steps': steps
+            },
+
+            beforeSend: function() {
+                $('#submitContactForm').addClass('disabled');
+                $('#submitContactForm').attr('disabled', '');
+            },
+
+            success: function() {
+                toastr.success('Recipe saved', 'Recipe has been added with success.')
+                $('#submitContactForm').removeClass('disabled');
+                $('#submitContactForm').removeAttr('disabled', '');
+                window.location.href = "/kiosk/cookbook"
+            },
+
+            error: function (error) {
+                toastr.error('An error occured', 'An error occured while trying to save your recipe.')
+                $('#submitContactForm').removeClass('disabled');
+                $('#submitContactForm').removeAttr('disabled', '');
+                console.log(error);
+            }
+        })
     });
 </script>
 @endsection
