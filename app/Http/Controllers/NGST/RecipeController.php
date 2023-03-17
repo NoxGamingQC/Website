@@ -105,7 +105,7 @@ class RecipeController extends Controller
         }
     }
 
-    public function recipe($language, $id) {
+    public function recipe(Request $request, $language, $id) {
         
         if(Auth::check()) {
             if(Auth::user()->isPremium) {
