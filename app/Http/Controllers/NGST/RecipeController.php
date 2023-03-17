@@ -15,7 +15,6 @@ use Auth;
 class RecipeController extends Controller
 {
     public function cookbook(Request $request) {
-        $key = null;
         if(Auth::check()) {
             if(Auth::user()->isPremium) {
                 $categories = Categories::all();
@@ -34,7 +33,7 @@ class RecipeController extends Controller
                     'description' => trans('general.need_premium_description'),
                 ]);
             }
-        } elseif ($key !== null) {
+        } elseif ($request->kiosk_key !== null) {
             $isRealKey = KioskKey::where('key', $request->kiosk_key)->first();
             if($isRealKey) {
                 $categories = Categories::all();
