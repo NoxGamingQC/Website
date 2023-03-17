@@ -9,11 +9,13 @@ use App\Recipe\RecipeSteps;
 use App\Recipe\Categories;
 use App\Recipe\Recipe;
 use Carbon\Carbon;
+use App\KioskKey;
 use Auth;
 
 class RecipeController extends Controller
 {
-    public function cookbook() {
+    public function cookbook(Request $request) {
+        $key = null;
         if(Auth::check()) {
             if(Auth::user()->isPremium) {
                 $categories = Categories::all();
@@ -32,6 +34,20 @@ class RecipeController extends Controller
                     'description' => trans('general.need_premium_description'),
                 ]);
             }
+        } elseif ($key) {
+            $isRealKey = KioskKey::where('key', $request->kiosk_key)->first();
+            if($isRealKey) {
+                $categories = Categories::all();
+                return view('ngst.kiosk.cookbook.cookbook')->with([
+                    'kiosk' => 'true',
+                    'categories' => $categories,
+                    'recipe' => true,
+                    'isRecipe' => false,
+                    'lastLink' => '/' . app()->getLocale() . '/kiosk/cookbook?key=' . $request->kiosk_key,
+                ]);
+            } else {
+                abort(403);
+            }
         } else {
             return view('errors.custom')->with([
                 'title' => trans('general.need_login_title'),
@@ -41,7 +57,9 @@ class RecipeController extends Controller
         }
     }
 
-    public function category($language, $id) {
+    public function category(Request $request, $language, $id) {
+        
+        dd($request->kiosk_key);
         $category = Categories::findOrFail($id);
         $recipes = Recipe::where('category_id', $id)->get();
 
