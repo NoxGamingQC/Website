@@ -80,4 +80,10 @@ return [
     'no_description_available' => "Aucune description disponible.",
     'available_soon' => "Bientôt disponible",
     'type_message_here' => "Tapez votre message ici...",
+    'need_premium_title' => "Désolé, vous n'êtes pas autorisé à aller plus loin",
+    'need_premium_slogan' => "Pour les utilisateurs premium uniquement.",
+    'need_premium_description' => "Désolé, pour accéder à cette ressource vous devez avoir l'abonnement premium.",
+    'need_login_title' => "Désolé, vous n'êtes pas autorisé à aller plus loin",
+    'need_login_slogan' => "Authentification requise",
+    'need_login_description' => "Désolé, pour accéder à cette ressource, vous devez être connecté.",
 ];
