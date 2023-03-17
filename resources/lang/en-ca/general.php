@@ -80,4 +80,11 @@ return [
     'no_description_available' => "No description available.",
     'available_soon' => "Available soon",
     'type_message_here' => "Type your message here...",
+    'need_premium_title' => "Sorry, you can't go further",
+    'need_premium_slogan' => "For premium user only",
+    'need_premium_description' => "Sorry, this ressource requires you to have the premium subscription.",
+    'need_login_title' => "Sorry, you can't go further",
+    'need_login_slogan' => "Login is required",
+    'need_login_description' => "Sorry, this ressource requires you to be logged in.",
+];
 ];

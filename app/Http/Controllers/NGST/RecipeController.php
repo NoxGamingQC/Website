@@ -14,15 +14,31 @@ use Auth;
 class RecipeController extends Controller
 {
     public function cookbook() {
-        $categories = Categories::all();
+        if(Auth::check()) {
+            if(Auth::user()->isPremium) {
+                $categories = Categories::all();
 
-        return view('ngst.kiosk.cookbook.cookbook')->with([
-            'kiosk' => 'true',
-            'categories' => $categories,
-            'recipe' => true,
-            'isRecipe' => false,
-            'lastLink' => '/' . app()->getLocale() . '/kiosk/cookbook',
-        ]);
+                return view('ngst.kiosk.cookbook.cookbook')->with([
+                    'kiosk' => 'true',
+                    'categories' => $categories,
+                    'recipe' => true,
+                    'isRecipe' => false,
+                    'lastLink' => '/' . app()->getLocale() . '/kiosk/cookbook',
+                ]);
+            } else {
+                return view('errors.custom')->with([
+                    'title' => trans('general.need_premium_title'),
+                    'slogan' => trans('general.need_premium_slogan'),
+                    'description' => trans('general.need_premium_description'),
+                ]);
+            }
+        } else {
+            return view('errors.custom')->with([
+                'title' => trans('general.need_login_title'),
+                'slogan' => trans('general.need_login_slogan'),
+                'description' => trans('general.need_login_description'),
+            ]);
+        }
     }
 
     public function category($language, $id) {
