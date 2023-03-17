@@ -87,4 +87,3 @@ return [
     'need_login_slogan' => "Login is required",
     'need_login_description' => "Sorry, this ressource requires you to be logged in.",
 ];
-];
