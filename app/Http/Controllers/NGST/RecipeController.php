@@ -42,6 +42,7 @@ class RecipeController extends Controller
                     'categories' => $categories,
                     'recipe' => true,
                     'isRecipe' => false,
+                    'kiosk_key' => $request->kiosk_key,
                     'lastLink' => '/' . app()->getLocale() . '/kiosk/cookbook?kiosk_key=' . $request->kiosk_key,
                 ]);
             } else {
@@ -57,44 +58,117 @@ class RecipeController extends Controller
     }
 
     public function category(Request $request, $language, $id) {
-        
-        dd($request->kiosk_key);
-        $category = Categories::findOrFail($id);
-        $recipes = Recipe::where('category_id', $id)->get();
+        if(Auth::check()) {
+            if(Auth::user()->isPremium) {
+                $category = Categories::findOrFail($id);
+                $recipes = Recipe::where('category_id', $id)->get();
 
-        return view('ngst.kiosk.cookbook.categories')->with([
-            'kiosk' => 'true',
-            'category' => $category,
-            'recipes' => $recipes,
-            'recipe' => true,
-            'isRecipe' => false,
-            'lastLink' => '/' . app()->getLocale() . '/kiosk/cookbook',
-        ]);
+                return view('ngst.kiosk.cookbook.categories')->with([
+                    'kiosk' => 'true',
+                    'category' => $category,
+                    'recipes' => $recipes,
+                    'recipe' => true,
+                    'isRecipe' => false,
+                    'lastLink' => '/' . app()->getLocale() . '/kiosk/cookbook',
+                ]);
+            } else {
+                return view('errors.custom')->with([
+                    'title' => trans('general.need_premium_title'),
+                    'slogan' => trans('general.need_premium_slogan'),
+                    'description' => trans('general.need_premium_description'),
+                ]);
+            }
+        } elseif ($request->kiosk_key !== null) {
+            $isRealKey = KioskKey::where('key', $request->kiosk_key)->first();
+            if($isRealKey) {
+                $category = Categories::findOrFail($id);
+                $recipes = Recipe::where('category_id', $id)->get();
+        
+                return view('ngst.kiosk.cookbook.categories')->with([
+                    'kiosk' => 'true',
+                    'category' => $category,
+                    'recipes' => $recipes,
+                    'recipe' => true,
+                    'isRecipe' => false,
+                    'kiosk_key' => $request->kiosk_key,
+                    'lastLink' => '/' . app()->getLocale() . '/kiosk/cookbook?kiosk_key='. $request->kiosk_key,
+                ]);
+            } else {
+                abort(403);
+            }
+        } else {
+            return view('errors.custom')->with([
+                'title' => trans('general.need_login_title'),
+                'slogan' => trans('general.need_login_slogan'),
+                'description' => trans('general.need_login_description'),
+            ]);
+        }
     }
 
     public function recipe($language, $id) {
-        $recipe = Recipe::findOrFail($id);
-        $recipe->category = $recipe->getCategory();
-        $recipe->ingredients = $recipe->getIngredients();
-        $recipe->steps = $recipe->getSteps();
+        
+        if(Auth::check()) {
+            if(Auth::user()->isPremium) {
+                $recipe = Recipe::findOrFail($id);
+                $recipe->category = $recipe->getCategory();
+                $recipe->ingredients = $recipe->getIngredients();
+                $recipe->steps = $recipe->getSteps();
 
-        return view('ngst.kiosk.cookbook.recipe')->with([
-            'kiosk' => 'true',
-            'isRecipe' => true,
-            'recipe' => $recipe,
-            'lastLink' => '/' . app()->getLocale() . '/kiosk/cookbook/' . $recipe->category->id,
-        ]);
+                return view('ngst.kiosk.cookbook.recipe')->with([
+                    'kiosk' => 'true',
+                    'isRecipe' => true,
+                    'recipe' => $recipe,
+                    'lastLink' => '/' . app()->getLocale() . '/kiosk/cookbook/' . $recipe->category->id,
+                ]);
+            } else {
+                return view('errors.custom')->with([
+                    'title' => trans('general.need_premium_title'),
+                    'slogan' => trans('general.need_premium_slogan'),
+                    'description' => trans('general.need_premium_description'),
+                ]);
+            }
+        } elseif ($request->kiosk_key !== null) {
+            $isRealKey = KioskKey::where('key', $request->kiosk_key)->first();
+            if($isRealKey) {
+                $recipe = Recipe::findOrFail($id);
+                $recipe->category = $recipe->getCategory();
+                $recipe->ingredients = $recipe->getIngredients();
+                $recipe->steps = $recipe->getSteps();
+
+                return view('ngst.kiosk.cookbook.recipe')->with([
+                    'kiosk' => 'true',
+                    'isRecipe' => true,
+                    'recipe' => $recipe,
+                    'kiosk_key' => $request->kiosk_key,
+                    'lastLink' => '/' . app()->getLocale() . '/kiosk/cookbook/'. $recipe->category->id . '?kiosk_key='. $request->kiosk_key,
+                ]);
+            } else {
+                abort(403);
+            }
+        } else {
+            return view('errors.custom')->with([
+                'title' => trans('general.need_login_title'),
+                'slogan' => trans('general.need_login_slogan'),
+                'description' => trans('general.need_login_description'),
+            ]);
+        }
     }
+
     public function addRecipe() {
-        $categories = Categories::all();
-        return view('ngst.kiosk.cookbook.add_recipe')->with([
-            'kiosk' => 'true',
-            'categories' => $categories,
-            'isRecipe' => true,
-            'recipe' => true,
-            'add_mode' => true,
-            'lastLink' => '/' . app()->getLocale() . '/kiosk/cookbook/',
-        ]);
+        if (Auth::user()) {
+            if (Auth::user()->isAdmin || Auth::user()->isMod || Auth::user()->isDev) {
+                $categories = Categories::all();
+                return view('ngst.kiosk.cookbook.add_recipe')->with([
+                    'kiosk' => 'true',
+                    'categories' => $categories,
+                    'isRecipe' => true,
+                    'recipe' => true,
+                    'add_mode' => true,
+                    'lastLink' => '/' . app()->getLocale() . '/kiosk/cookbook/',
+                ]);
+            }
+        }
+        abort(403);
     }
 
     public function saveRecipe(Request $request) {
