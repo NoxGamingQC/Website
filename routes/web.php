@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Http\Request;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,8 +19,12 @@
     /*Route::get('/mail/test', function() {
         return view('emails.newsletter');
     });*/
-    Route::get('/kiosk/cookbook', function () {
-        return redirect()->to('/fr-ca/kiosk/cookbook');
+    Route::get('/kiosk/cookbook', function (Request $request) {
+        if($request->kiosk_key) {
+            return redirect()->to('/fr-ca/kiosk/cookbook?kiosk_key='. $request->kiosk_key);
+        } else {
+            return redirect()->to('/fr-ca/kiosk/cookbook');
+        }
     });
     Route::post('/recipe/add', 'NGST\RecipeController@saveRecipe');
 
