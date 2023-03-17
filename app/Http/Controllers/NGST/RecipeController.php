@@ -34,7 +34,7 @@ class RecipeController extends Controller
                     'description' => trans('general.need_premium_description'),
                 ]);
             }
-        } elseif ($key) {
+        } elseif ($key !== null) {
             $isRealKey = KioskKey::where('key', $request->kiosk_key)->first();
             if($isRealKey) {
                 $categories = Categories::all();
