@@ -10,7 +10,7 @@
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
     
-    RewriteCond %{HTTPS} on
+    RewriteCond %{HTTPS} !=on
     RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
     RewriteCond %{HTTP_HOST} ^localhost:8000 [NC]
