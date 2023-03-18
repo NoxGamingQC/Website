@@ -6,6 +6,8 @@ use Illuminate\Support\ServiceProvider;
 use Auth;
 use App\PageLists;
 use App\MainConfig;
+use Illuminate\Support\Facades\App;
+use URL;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -16,10 +18,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        if($this->app->environment('production') || env('APP_URL') !== 'http://localhost:8000') {
-            \URL::forceScheme('https');
-        } else {
-            \URL::forceScheme('http');
+        if (App::environment(['staging', 'production'])) {
+            URL::forceScheme('https');
         }
 
         $mainConfig = MainConfig::all();
