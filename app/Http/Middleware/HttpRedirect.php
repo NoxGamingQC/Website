@@ -17,7 +17,7 @@ class HttpRedirect
      */
     public function handle(Request $request, Closure $next)
     {
-        if (!$request->secure() && App::environment('production')) {
+        if ((!$request->secure() || $_SERVER['REQUEST_SCHEME'] == 'http') && App::environment('production') && ('http://' . $_SERVER['HTTP_HOST'] !== env('APP_URL'))) {
             return redirect()->secure($request->getRequestUri());
         }
 
