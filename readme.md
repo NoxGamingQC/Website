@@ -7,7 +7,7 @@
 [![PHP version](https://img.shields.io/badge/npm-%5E6.13.6-blue)](#)
 [![Online Discord Members](https://discord.com/api/guilds/938558244924829756/widget.png?style=shield)](https://noxgamingqc.ca/discord)
 
-Our website [noxgamingqc.ca](https://noxgamingqc.ca).
+Our website [noxgamingqc.ca](https://www.noxgamingqc.ca).
 
 ## Installation
 
