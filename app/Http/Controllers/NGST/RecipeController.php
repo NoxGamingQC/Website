@@ -49,6 +49,7 @@ class RecipeController extends Controller
                 abort(403);
             }
         } else {
+            return redirect()->to('/login');
             return view('errors.custom')->with([
                 'title' => trans('general.need_login_title'),
                 'slogan' => trans('general.need_login_slogan'),
@@ -97,6 +98,7 @@ class RecipeController extends Controller
                 abort(403);
             }
         } else {
+            return redirect()->to('/login');
             return view('errors.custom')->with([
                 'title' => trans('general.need_login_title'),
                 'slogan' => trans('general.need_login_slogan'),
@@ -146,6 +148,7 @@ class RecipeController extends Controller
                 abort(403);
             }
         } else {
+            return redirect()->to('/login');
             return view('errors.custom')->with([
                 'title' => trans('general.need_login_title'),
                 'slogan' => trans('general.need_login_slogan'),
