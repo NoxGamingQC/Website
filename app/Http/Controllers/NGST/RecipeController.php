@@ -53,7 +53,7 @@ class RecipeController extends Controller
                 'title' => trans('general.need_login_title'),
                 'slogan' => trans('general.need_login_slogan'),
                 'description' => trans('general.need_login_description'),
-                'redirect' => app()->getLocale() . '/login'
+                'redirect' => '/' . app()->getLocale() . '/login'
             ]);
         }
     }
@@ -102,7 +102,7 @@ class RecipeController extends Controller
                 'title' => trans('general.need_login_title'),
                 'slogan' => trans('general.need_login_slogan'),
                 'description' => trans('general.need_login_description'),
-                'redirect' => app()->getLocale() . '/login'
+                'redirect' => '/' . app()->getLocale() . '/login'
             ]);
         }
     }
@@ -152,7 +152,7 @@ class RecipeController extends Controller
                 'title' => trans('general.need_login_title'),
                 'slogan' => trans('general.need_login_slogan'),
                 'description' => trans('general.need_login_description'),
-                'redirect' => app()->getLocale() . '/login'
+                'redirect' => '/' . app()->getLocale() . '/login'
             ]);
         }
     }
