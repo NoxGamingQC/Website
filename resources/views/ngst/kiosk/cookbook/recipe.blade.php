@@ -1,4 +1,17 @@
 @extends('layouts.noxgamingqc.app')
+@section('kiosk-button')
+@auth
+    @if(Auth::user()->isAdmin || Auth::user()->isModerator || Auth::user()->isDev)
+        <div class="row">
+            <div class="col-md-12">
+                    <a href="/{{app()->getLocale()}}/recipe/edit/{{$recipe->id}}"><input class="btn btn-warning form-control" style="font-size:24px;padding:5%" value="{{trans('cookbook.edit_recipe')}}" readonly></a>
+                <br />
+                <br />
+            </div>
+        </div>
+    @endif
+@endauth
+@endsection
 @section('content')
 @section('author',  $recipe->created_by ?  $recipe->created_by : trans('cookbook.not_available'))
 @section('prep_time', $recipe->prep_time ? $recipe->prep_time : trans('cookbook.not_available'))

@@ -39,6 +39,7 @@
                         <br />
                     </div>
                 </div>
+                @yield('kiosk-button')
             </div>
             @if($isRecipe == true)
                 <div class="container">
@@ -57,7 +58,7 @@
                                         <h4 class="raleway-font text-right"><span>{{trans('cookbook.recipe_name')}} (FR):</span></h4>
                                     </div>
                                     <div class="col-md-9">
-                                        <h4 class="raleway-font"><input id="recipeNameFR" type="text" class="form-control"></h4>
+                                        <h4 class="raleway-font"><input id="recipeNameFR" type="text" class="form-control" value="{{isset($recipe) ? $recipe->name_fr : ''}}"></h4>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -65,7 +66,7 @@
                                         <h4 class="raleway-font text-right"><span>{{trans('cookbook.recipe_name')}} (EN):</span></h4>
                                     </div>
                                     <div class="col-md-9">
-                                        <h4 class="raleway-font"><input id="recipeNameEN" type="text" class="form-control"></h4>
+                                        <h4 class="raleway-font"><input id="recipeNameEN" type="text" class="form-control" value="{{isset($recipe) ? $recipe->name_en : ''}}"></h4>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -73,7 +74,7 @@
                                         <h4 class="raleway-font text-right"><span>{{trans('cookbook.author')}}:</span></h4>
                                     </div>
                                     <div class="col-md-9">
-                                        <h4 class="raleway-font"><input id="author" type="text" class="form-control"></h4>
+                                        <h4 class="raleway-font"><input id="author" type="text" class="form-control" value="{{isset($recipe) ? $recipe->created_by : ''}}"></h4>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -81,7 +82,7 @@
                                         <h4 class="raleway-font text-right"><span>{{trans('cookbook.prep_time')}}:</span></h4>
                                     </div>
                                     <div class="col-md-9">
-                                        <h4 class="raleway-font"><input id="prepTime" type="text" class="form-control"></h4>
+                                        <h4 class="raleway-font"><input id="prepTime" type="text" class="form-control" value="{{isset($recipe) ? $recipe->prep_time : ''}}"></h4>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -89,7 +90,7 @@
                                         <h4 class="raleway-font text-right"><span>{{trans('cookbook.cook_time')}}:</span></h4>
                                     </div>
                                     <div class="col-md-9">
-                                        <h4 class="raleway-font"><input id="cookTime" type="text" class="form-control"></h4>
+                                        <h4 class="raleway-font"><input id="cookTime" type="text" class="form-control" value="{{isset($recipe) ? $recipe->cook_time : ''}}"></h4>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -97,7 +98,7 @@
                                         <h4 class="raleway-font text-right"><span>{{trans('cookbook.yields')}}:</span></h4>
                                     </div>
                                     <div class="col-md-9">
-                                        <h4 class="raleway-font"><input id="result" type="text" class="form-control"></h4>
+                                        <h4 class="raleway-font"><input id="result" type="text" class="form-control" value="{{isset($recipe) ? $recipe->result : ''}}"></h4>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -108,11 +109,11 @@
                                         <select class="selectpicker" title="{{trans('cookbook.category')}}">
                                             @if(app()->getLocale() === 'fr-ca')
                                                 @foreach($categories as $key => $category)
-                                                    <option class="category" value="{{$category->id}}">{{$category->name_fr}}</option>
+                                                    <option class="category" value="{{$category->id}}" {{isset($recipe) ? ($recipe->category_id == $category->id ? 'selected' : '') : ''}}>{{$category->name_fr}}</option>
                                                 @endforeach
                                             @else
                                                 @foreach($categories as $key => $category)
-                                                    <option class="category" value="{{$category->id}}">{{$category->name_en}}</option>
+                                                    <option class="category" value="{{$category->id}}" {{isset($recipe) ? ($recipe->category_id == $category->id ? 'selected' : '') : ''}}>{{$category->name_en}}</option>
                                                 @endforeach
                                             @endif
                                         </select>
@@ -127,10 +128,10 @@
                             @if(!isset($add_mode))
                                 <h4 class="raleway-font">@yield('description')</h4>
                             @else
-                                <textarea id="descriptionFR" type="text" class="form-control" rows="4" placeholder="{{trans('cookbook.add_description')}} (FR)"></textarea>
+                                <textarea id="descriptionFR" type="text" class="form-control" rows="4" placeholder="{{trans('cookbook.add_description')}} (FR)">{{isset($recipe) ? $recipe->description_fr : ''}}</textarea>
                                 <br />
                                 <br />
-                                <textarea id="descriptionEN" type="text" class="form-control" rows="4" placeholder="{{trans('cookbook.add_description')}} (EN)"></textarea>
+                                <textarea id="descriptionEN" type="text" class="form-control" rows="4" placeholder="{{trans('cookbook.add_description')}} (EN)">{{isset($recipe) ? $recipe->description_en : ''}}</textarea>
                             @endif
                             <hr style="border-bottom: solid 3px" />
                         </div>

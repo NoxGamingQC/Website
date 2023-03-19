@@ -13,6 +13,7 @@ return [
     'pinch' => "pincée",
     '' => '',
     'add_recipe' => "Ajouter une recette",
+    'edit_recipe' => "Modifier la recette",
     'add_description' => "Ajouter la description ici...",
     'author' => "Autheur",
     'recipe_name' => "Nom de la recette",

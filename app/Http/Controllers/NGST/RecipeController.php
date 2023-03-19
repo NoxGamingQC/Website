@@ -174,6 +174,27 @@ class RecipeController extends Controller
         abort(403);
     }
 
+    public function editRecipe($language, $id) {
+        if (Auth::user()) {
+            if (Auth::user()->isAdmin || Auth::user()->isMod || Auth::user()->isDev) {
+                $categories = Categories::all();
+                $recipe = Recipe::findOrFail($id);
+                $recipe->category = $recipe->getCategory();
+                $recipe->ingredients = $recipe->getIngredients();
+                $recipe->steps = $recipe->getSteps();
+                return view('ngst.kiosk.cookbook.edit_recipe')->with([
+                    'kiosk' => 'true',
+                    'categories' => $categories,
+                    'isRecipe' => true,
+                    'recipe' => $recipe,
+                    'add_mode' => true,
+                    'lastLink' => '/' . app()->getLocale() . '/kiosk/cookbook/',
+                ]);
+            }
+        }
+        abort(403);
+    }
+
     public function saveRecipe(Request $request) {
         if (Auth::user()) {
             if (Auth::user()->isAdmin || Auth::user()->isMod || Auth::user()->isDev) {

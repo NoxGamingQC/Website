@@ -3971,6 +3971,42 @@ a[type=button]:disabled {
   opacity: 1;
 }
 
+.btn-warning.form-control[readonly] {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  opacity: 1;
+}
+
+.btn-warning.form-control[readonly] {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  opacity: 1;
+}
+
+.btn-warning.form-control[readonly]:hover, .btn-warning.form-control[readonly]:active {
+  background-color: #F9A61A !important;
+  color: #000000 !important;
+  opacity: 1;
+}
+
+.btn-danger.form-control[readonly] {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  opacity: 1;
+}
+
+.btn-danger.form-control[readonly] {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  opacity: 1;
+}
+
+.btn-danger.form-control[readonly]:hover, .btn-danger.form-control[readonly]:active {
+  background-color: #EC4145 !important;
+  color: #000000 !important;
+  opacity: 1;
+}
+
 .modal-backdrop {
   z-index: -1 !important;
 }
