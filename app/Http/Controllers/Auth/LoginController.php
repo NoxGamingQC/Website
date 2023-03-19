@@ -43,6 +43,10 @@ class LoginController extends Controller
 
     public function showLoginForm()
     {  
+        if(!session()->has('url.intended'))
+        {
+            session(['url.intended' => url()->previous()]);
+        }
         return view("auth.login");
     }  
 
@@ -57,7 +61,7 @@ class LoginController extends Controller
 
         if (Auth::attempt($credentials)) {
 
-            return redirect()->intended();
+            return redirect(session()->get('url.intended'));
         }
 
         return redirect("login")->withSuccess('Oppes! You have entered invalid credentials');
