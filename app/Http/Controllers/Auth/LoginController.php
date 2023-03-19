@@ -1,13 +1,12 @@
 <?php
-
+  
 namespace App\Http\Controllers\Auth;
 
-use App;
 use App\Http\Controllers\Controller;
+use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Session;
 
 class LoginController extends Controller
 {
@@ -22,15 +21,15 @@ class LoginController extends Controller
     |
     */
 
-    use AuthenticatesUsers {
-        redirectPath as laravelRedirectPath;
-    }
+    use AuthenticatesUsers;
 
     /**
      * Where to redirect users after login.
      *
      * @var string
      */
+    protected $redirectTo = '/home';
+
     /**
      * Create a new controller instance.
      *
@@ -41,25 +40,25 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-    public function redirectPath()
-    {
-        // Do your logic to flash data to session...
-        session()->flash('alert', ['info' => ['title' => 'Welcome back', 'text' => 'asdf']]);
-
-        // Return the results of the method we are overriding that we aliased.
-        return $this->laravelRedirectPath();
-    }
-
     public function showLoginForm()
-    {
-        session(['link' => url()->previous()]);
-        return view('auth.login');    
-    }
+    {  
+        return view("auth.login");
+    }  
 
-    public function logout(Request $request)
+    public function login(Request $request)
     {
-        Session::flush();
-        Auth::logout();
-        return redirect()->back()->with('success', 'You are now logged out');
+        $request->validate([
+            'email' => 'required',
+            'password' => 'required',
+        ]);
+
+        $credentials = $request->only('email', 'password');
+
+        if (Auth::attempt($credentials)) {
+
+            return redirect()->intended();
+        }
+
+        return redirect("login")->withSuccess('Oppes! You have entered invalid credentials');
     }
 }
