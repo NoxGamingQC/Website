@@ -40,5 +40,11 @@
         </div>
     </div>
 </div>
-
+@if(isset($redirect))
+    <script type="text/javascript">
+        $(document).ready(function() {
+            window.location.href = "{{$redirect}}"
+        })
+    </script>
+@endif
 @endsection
