@@ -13,6 +13,7 @@ return [
     'pinch' => "pinch",
     '' => '',
     'add_recipe' => "Add a recipe",
+    'edit_recipe' => "Edit a recipe",
     'add_description' => "Add the description here...",
     'author' => "Author",
     'recipe_name' => "Recipe name",
