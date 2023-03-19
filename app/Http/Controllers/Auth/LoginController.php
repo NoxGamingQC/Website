@@ -58,6 +58,10 @@ class LoginController extends Controller
         ]);
 
         $credentials = $request->only('email', 'password');
+        
+        if ($this->attemptLogin($request)) {
+            return $this->sendLoginResponse($request);
+        }
 
         if (Auth::attempt($credentials)) {
 
