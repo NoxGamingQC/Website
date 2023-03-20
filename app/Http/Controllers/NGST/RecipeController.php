@@ -17,7 +17,7 @@ class RecipeController extends Controller
     public function cookbook(Request $request) {
         if(Auth::check()) {
             if(Auth::user()->isPremium) {
-                $categories = Categories::all();
+                $categories = Categories::where('is_shown', true)->orderBy('name_' . (app()->getLocale() == 'fr-ca' ? 'fr' : 'en'))->get();
 
                 return view('ngst.kiosk.cookbook.cookbook')->with([
                     'kiosk' => 'true',
@@ -37,7 +37,7 @@ class RecipeController extends Controller
         } elseif ($request->kiosk_key !== null) {
             $isRealKey = KioskKey::where('key', $request->kiosk_key)->first();
             if($isRealKey) {
-                $categories = Categories::all();
+                $categories = Categories::where('is_shown', true)->orderBy('name_' . (app()->getLocale() == 'fr-ca' ? 'fr' : 'en'))->get();
                 return view('ngst.kiosk.cookbook.cookbook')->with([
                     'kiosk' => 'true',
                     'categories' => $categories,
@@ -64,7 +64,7 @@ class RecipeController extends Controller
         if(Auth::check()) {
             if(Auth::user()->isPremium) {
                 $category = Categories::findOrFail($id);
-                $recipes = Recipe::where('category_id', $id)->get();
+                $recipes = Recipe::where('category_id', $id)->orderBy('name_' . (app()->getLocale() == 'fr-ca' ? 'fr' : 'en'))->get();
 
                 return view('ngst.kiosk.cookbook.categories')->with([
                     'kiosk' => 'true',
@@ -85,7 +85,7 @@ class RecipeController extends Controller
             $isRealKey = KioskKey::where('key', $request->kiosk_key)->first();
             if($isRealKey) {
                 $category = Categories::findOrFail($id);
-                $recipes = Recipe::where('category_id', $id)->get();
+                $recipes = Recipe::where('category_id', $id)->orderBy('name_' . (app()->getLocale() == 'fr-ca' ? 'fr' : 'en'))->get();
         
                 return view('ngst.kiosk.cookbook.categories')->with([
                     'kiosk' => 'true',
