@@ -25,6 +25,7 @@ class RecipeController extends Controller
                     'recipe' => true,
                     'isRecipe' => false,
                     'lastLink' => '/' . app()->getLocale() . '/kiosk/cookbook',
+                    'name' => Auth::user()->name
                 ]);
             } else {
                 return view('errors.custom')->with([
@@ -44,6 +45,7 @@ class RecipeController extends Controller
                     'isRecipe' => false,
                     'kiosk_key' => $request->kiosk_key,
                     'lastLink' => '/' . app()->getLocale() . '/kiosk/cookbook?kiosk_key=' . $request->kiosk_key,
+                    'name' => $isRealKey->name
                 ]);
             } else {
                 abort(403);

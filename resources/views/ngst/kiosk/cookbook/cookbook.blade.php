@@ -1,7 +1,7 @@
 @extends('layouts.noxgamingqc.app')
 @section('content')
 @section('name', trans('cookbook.title'))
-@section('slogan', trans('cookbook.slogan'))
+@section('slogan', trans('general.hi') . ', ' . $name)
 
 <div class="container">
     <div class="row">
