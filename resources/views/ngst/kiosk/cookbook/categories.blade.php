@@ -26,13 +26,13 @@
             @if(app()->getLocale() === 'fr-ca')
                 @foreach($recipes as $key => $recipe)
                     <div class="col-sm-4 text-center" style="margin-bottom:3%">
-                        <a href="/{{app()->getLocale()}}/kiosk/recipe/{{$recipe->id}}{{isset($kiosk_key) ? '?kiosk_key=' . $kiosk_key : ''}}"><button class="btn btn-primary form-control" style="font-size:18px;padding:12% 15% 18% 15%" readonly>{{$recipe->name_fr}} <input type="button" class="btn btn-badge btn-sm btn-danger" value="{{trans('cookbook.alcoholic')}}" style="padding: 5px 5px !important;pointer-events: none;" readonly/></button></a>
+                        <a href="/{{app()->getLocale()}}/kiosk/recipe/{{$recipe->id}}{{isset($kiosk_key) ? '?kiosk_key=' . $kiosk_key : ''}}"><button class="btn btn-primary form-control" style="font-size:18px;padding:10% 15% 20% 15%; overflow:hidden" readonly>{{$recipe->name_fr}} <input type="button" class="btn btn-badge btn-sm btn-danger" value="{{trans('cookbook.alcoholic')}}" style="padding: 5px 5px !important;pointer-events: none;" readonly/></button></a>
                     </div>
                 @endforeach
             @else
                 @foreach($recipes as $key => $recipe)
                     <div class="col-sm-4 text-center" style="margin-bottom:3%">
-                        <a href="/{{app()->getLocale()}}/kiosk/recipe/{{$recipe->id}}{{isset($kiosk_key) ? '?kiosk_key=' . $kiosk_key : ''}}"><button class="btn btn-primary form-control" style="font-size:18px;padding:12% 15% 18% 15%" readonly>{{$recipe->name_en}} <input type="button" class="btn btn-badge btn-sm btn-danger" value="{{trans('cookbook.alcoholic')}}" style="padding: 5px 5px !important;pointer-events: none;" readonly/></button></a>
+                        <a href="/{{app()->getLocale()}}/kiosk/recipe/{{$recipe->id}}{{isset($kiosk_key) ? '?kiosk_key=' . $kiosk_key : ''}}"><button class="btn btn-primary form-control" style="font-size:18px;padding:10% 15% 20% 15%; overflow:hidden" readonly>{{$recipe->name_en}} <input type="button" class="btn btn-badge btn-sm btn-danger" value="{{trans('cookbook.alcoholic')}}" style="padding: 5px 5px !important;pointer-events: none;" readonly/></button></a>
                     </div>
                 @endforeach
             @endif
