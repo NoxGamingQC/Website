@@ -27,6 +27,7 @@ return [
     'category' => "Category",
     'no_recipe_available' => "Sorry, no recipes are available in this category at this moment.",
     'oz' => "oz",
+    'alcoholic' => "Alcoholic",
 
 
 

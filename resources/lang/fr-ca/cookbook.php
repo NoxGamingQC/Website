@@ -27,6 +27,7 @@ return [
     'category' => "Catégorie",
     'no_recipe_available' => "Désolé, aucune recette n'est disponible dans cette catégorie pour le moment.",
     'oz' => "once",
+    'alcoholic' => "Alcoolisée",
 
     'breakfast' => "Déjeuner",
     'lunch' => "Repas",
