@@ -1,4 +1,4 @@
-@extends('layouts.ngst.app')
+@extends('layouts.noxgamingqc.app')
 @section('title', trans($item['name']))
 @section('content')
 

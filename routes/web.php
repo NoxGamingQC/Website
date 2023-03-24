@@ -186,8 +186,8 @@ use Illuminate\Http\Request;
             Route::get('/management/settings', 'SettingsController@index');
 
             //NGST routes
-            Route::get('/ngst/store', 'SquareController@index');
-            Route::get('/ngst/store/item/{id}', 'SquareController@showItem');
+            Route::get('/store', 'SquareController@index');
+            Route::get('/store/item/{id}', 'SquareController@showItem');
 
             //PositivityST routes
         });
