@@ -48,7 +48,7 @@
                 </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
-                        <i class="fa fa-briefcase" aria-hidden="true"></i> NGST <span class="caret"></span>
+                        <i class="fa fa-briefcase" aria-hidden="true"></i> {{trans('general.miscs')}} <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
                         <li>

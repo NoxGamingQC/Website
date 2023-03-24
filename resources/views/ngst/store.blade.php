@@ -1,4 +1,4 @@
-@extends('layouts.ngst.app')
+@extends('layouts.noxgamingqc.app')
 @section('title', trans('store.store'))
 @section('slogan', trans('store.slogan'))
 @section('content')
@@ -57,7 +57,7 @@
                                             <br />
                                             <p class="{{$item['price'] === 'variable' ? 'text-danger' : ''}}" value="{{$item['price']}}">{{$item['price'] === 'variable' ? trans('store.price_not_available') : 'C' . number_format(($item['price'] / 100), 2, ',', ' ') . '$' . $item['priceUnit']}}</p>
                                         @endif
-                                        <a id="{{$item['id']}}" class="text-center btn btn-primary" type="button" href="/{{app()->getLocale()}}/ngst/store/item/{{$item['id']}}">{{trans('general.see_more')}}</a>
+                                        <a id="{{$item['id']}}" class="text-center btn btn-primary" type="button" href="/{{app()->getLocale()}}/store/item/{{$item['id']}}">{{trans('general.see_more')}}</a>
                                     </div>
                                 </div>
                             </div>
