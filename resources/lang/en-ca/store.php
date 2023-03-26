@@ -26,5 +26,10 @@ return [
     'donations' => "Donations",
     'website' => "Website",
     'inventory' => "Inventory",
-    'price' => "Price"
+    'price' => "Price",
+    'pc_setup' => "PC setup",
+    'phone_setup' => "Phone/tablet setup",
+    'data_migration' => "Data migration",
+    'express_repair' => "Express repair",
+    'full_restauration' => "Full restauration"
 ];
