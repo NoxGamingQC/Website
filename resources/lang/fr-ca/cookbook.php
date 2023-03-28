@@ -8,7 +8,7 @@ return [
     'by' => "par",
     'go_back_to_last_page' => "Retourner à la page précédente",
     'cup' => "tasse",
-    'tablespoon' => "c. à table",
+    'tablespoon' => "c. à soupe",
     'teaspoon' => "c. à thé",
     'pinch' => "pincée",
     '' => '',
