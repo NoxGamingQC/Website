@@ -120,7 +120,7 @@ class MailController extends Controller
         $mail->object = $request['subject'];
         $mail->text = $request['body-plain'];
         $mail->html = $request['body-html'];
-        $mail->request = $request;
+        //$mail->request = $request;
         $mail->save();
     }
 }
