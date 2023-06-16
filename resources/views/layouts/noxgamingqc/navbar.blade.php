@@ -57,7 +57,7 @@
                                 <a href="/{{app()->getLocale()}}/kiosk/cookbook" class=""><i class="fa fa-book" aria-hidden="true"></i> {{ trans('cookbook.title') }}</a>
                             @endif
                             @endauth
-                            <a href="/{{app()->getLocale()}}/store" class=""><i class="fa fa-shopping-cart" aria-hidden="true"></i> {{ trans('general.store') }}</a>
+                            <!--<a href="/{app()->getLocale()}}/store" class=""><i class="fa fa-shopping-cart" aria-hidden="true"></i> { trans('general.store') }}</a>-->
                         </li>
                     </ul>
                 </li>

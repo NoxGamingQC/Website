@@ -7,6 +7,20 @@
     padding: 25%;
 }
 
+a.btn-default {
+    padding: 1% 2% !important;
+}
+a.btn-primary {
+    padding: 1% 2% !important;
+}
+
+button.btn-default {
+    padding: 1% 2% !important;
+}
+button.btn-primary {
+    padding: 1% 2% !important;
+}
+
 .btn-default {
     color: $text-color !important;
     background-color: lighten($background-color, 5%);
