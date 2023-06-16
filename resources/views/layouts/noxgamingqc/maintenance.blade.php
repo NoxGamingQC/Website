@@ -34,7 +34,7 @@
         <script src="{{mix('js/app.js')}}"></script>
     </head>
 
-    <body>
+    <body style="background-color: #050505">
         <div class="content">
             @yield('content')
         </div>
