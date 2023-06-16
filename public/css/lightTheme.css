@@ -4071,17 +4071,13 @@ a[type=button]:disabled {
 }
 
 .navbar-default {
-  background-color: #ffffff;
-  border-color: #ffffff;
   margin-bottom: -2%;
-}
-@media (min-width: 1200px) {
-  .navbar-default {
-    border-top-color: transparent !important;
-    border-right-color: transparent !important;
-    border-left-color: transparent !important;
-    border-bottom: 5px solid #c22222;
-  }
+  background: linear-gradient(rgba(15, 15, 15, 0.9), rgb(5, 5, 5)), url("/img/NoxGamingQC.png");
+  background-position: 50% 35%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0.5%;
+  border: none;
 }
 .navbar-default .navbar-brand {
   color: #000000;
@@ -4787,7 +4783,7 @@ a:hover.text-color, a:active.text-color {
   z-index: 1;
   background-image: none;
   background-color: #c22222;
-  background: linear-gradient(220deg, #E56F1F, #c22222);
+  background: linear-gradient(220deg, #ffffff, #811717);
   color: #000000;
   border: 0 solid transparent;
   border-radius: 0;
