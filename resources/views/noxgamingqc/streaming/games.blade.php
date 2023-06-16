@@ -54,7 +54,7 @@
                                     </div>
                                 @else
                                     <div class="panel panel-primary text-center" style="border-radius: 10px;">
-                                        <div class="panel-body img" style="background-image: url({{"\""}}https://static-cdn.jtvnw.net/ttv-boxart/{{$game->Game}}-285x380.jpg{{"\""}}) !important; background-size: cover !important; background-position: center center; min-height: 380px !important; height: 380px !important;border-radius: 10px;border: 3px solid white;">
+                                        <div class="panel-body img" style="background-image: url({{"\""}}https://static-cdn.jtvnw.net/ttv-boxart/{{$game->Game}}-285x380.jpg{{"\""}}) !important; background-size: cover !important; background-position: center center; min-height: 200px !important; height: 200px !important;border-radius: 10px;border: 3px solid white;">
                                             <h3 class="img-text"><b>{{preg_replace('/\\\\/', '', $game->Game)}}</b></h3>
                                             <input id="gameName-{{$game->id}}" type="hidden" value="{{$game->Game}}">
                                             <input id="gameConsole-{{$game->id}}" type="hidden" value="{{$game->Console}}">
