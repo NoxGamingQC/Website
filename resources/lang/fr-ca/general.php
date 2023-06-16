@@ -45,6 +45,7 @@ return [
     'video' => "Vidéo",
     'twitch' => "Twitch",
     'about_me' => "À propos",
+    'about_us' => "À propos",
     'youtube' => "YouTube",
     'search' => "Rechercher",
     'submit' => "Envoyer",

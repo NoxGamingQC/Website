@@ -22,7 +22,7 @@
                     </a>
                     @else
                     <a class="disabled">
-                        <i class="fa fa-wrench" aria-hidden="true"></i> {{trans("general.about_me")}} <span class="caret"></span>
+                        <i class="fa fa-wrench" aria-hidden="true"></i> {{trans("general.about_us")}} <span class="caret"></span>
                     </a>
                     @endif
                     <ul class="dropdown-menu">
@@ -30,19 +30,11 @@
                             <a href="/{{app()->getLocale()}}/contact" class="{{($page_lists['contact_us']['inMaintenance']) ? 'hidden' : ''}}"><i class="fa fa-address-book " aria-hidden="true"></i> {{trans('general.contact_us')}}</a>
                             <a href="/{{app()->getLocale()}}/projects" class="{{($page_lists['projects']['inMaintenance']) ? 'hidden' : ''}}"><i class="fa fa-heart" aria-hidden="true"></i> {{ trans('general.projects') }}</a>
                             <a href="/{{app()->getLocale()}}/teams" class=""><i class="fa fa-users" aria-hidden="true"></i> {{ trans('general.teams') }}</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
-                        <i class="fa fa-video-camera" aria-hidden="true"></i> Streaming <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li>
                             <a href="/{{app()->getLocale()}}/games" class="{{($page_lists['games']['inMaintenance']) ? 'hidden' : ''}}"><i class="fa fa-gamepad" aria-hidden="true"></i> {{ trans('general.games_list') }}</a>
                             <a href="/{{app()->getLocale()}}/partners" class=""><i class="fa fa-handshake-o" aria-hidden="true"></i> {{ trans('general.partners') }}</a>
                             <a href="/{{app()->getLocale()}}/twitch" class="{{($page_lists['twitch']['inMaintenance']) ? 'hidden' : ''}}"><i class="fa fa-twitch" aria-hidden="true"></i> {{ trans('general.twitch') }}</a>
                             <a href="/{{app()->getLocale()}}/youtube" class="{{($page_lists['youtube']['inMaintenance']) ? 'hidden' : ''}}"><i class="fa fa-youtube-play" aria-hidden="true"></i> {{ trans('general.youtube') }}</a>
+                        
                         </li>
                     </ul>
                 </li>
