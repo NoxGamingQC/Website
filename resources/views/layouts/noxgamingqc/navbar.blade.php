@@ -18,7 +18,7 @@
                 <li class="dropdown">
                     @if(!$page_lists['about_me']['inMaintenance'])
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
-                        <i class="fa fa-user" aria-hidden="true"></i> {{trans("general.about_me")}} <span class="caret"></span>
+                        <i class="fa fa-user" aria-hidden="true"></i> {{trans("general.about_us")}} <span class="caret"></span>
                     </a>
                     @else
                     <a class="disabled">

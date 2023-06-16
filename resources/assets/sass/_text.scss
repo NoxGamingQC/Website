@@ -98,5 +98,6 @@ a.text-highlight {
     color: $text-color;
     background-color: $text-bg-color;
     padding: 2px;
-    border-radius: 5px
+    border-radius: 5px;
+    backdrop-filter: blur(10px);
 }
