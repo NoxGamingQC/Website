@@ -3036,7 +3036,7 @@
 .btn-default.active,
 .open .dropdown-toggle.btn-default {
   color: #ffffff !important;
-  background-color: #222222;
+  background-color: #050505;
   border-color: black;
 }
 
@@ -3066,7 +3066,7 @@ fieldset[disabled] .btn-default.active {
 }
 
 .btn-default .badge {
-  color: #222222 !important;
+  color: #050505 !important;
   background-color: #ffffff;
 }
 
@@ -3107,12 +3107,12 @@ fieldset[disabled] .btn-primary:active,
 .btn-primary.disabled.active,
 .btn-primary[disabled].active,
 fieldset[disabled] .btn-primary.active {
-  background-color: #222222;
+  background-color: #050505;
   border-color: black;
 }
 
 .btn-primary .badge {
-  color: #222222 !important;
+  color: #050505 !important;
   background-color: #ffffff;
 }
 
@@ -3153,12 +3153,12 @@ fieldset[disabled] .btn-twitch:active,
 .btn-twitch.disabled.active,
 .btn-twitch[disabled].active,
 fieldset[disabled] .btn-twitch.active {
-  background-color: #222222;
+  background-color: #050505;
   border-color: black;
 }
 
 .btn-twitch .badge {
-  color: #222222 !important;
+  color: #050505 !important;
   background-color: #ffffff;
 }
 
@@ -3199,12 +3199,12 @@ fieldset[disabled] .btn-youtube:active,
 .btn-youtube.disabled.active,
 .btn-youtube[disabled].active,
 fieldset[disabled] .btn-youtube.active {
-  background-color: #222222;
+  background-color: #050505;
   border-color: black;
 }
 
 .btn-youtube .badge {
-  color: #222222 !important;
+  color: #050505 !important;
   background-color: #ffffff;
 }
 
@@ -3245,12 +3245,12 @@ fieldset[disabled] .btn-twitter:active,
 .btn-twitter.disabled.active,
 .btn-twitter[disabled].active,
 fieldset[disabled] .btn-twitter.active {
-  background-color: #222222;
+  background-color: #050505;
   border-color: black;
 }
 
 .btn-twitter .badge {
-  color: #222222 !important;
+  color: #050505 !important;
   background-color: #ffffff;
 }
 
@@ -3291,12 +3291,12 @@ fieldset[disabled] .btn-facebook:active,
 .btn-facebook.disabled.active,
 .btn-facebook[disabled].active,
 fieldset[disabled] .btn-facebook.active {
-  background-color: #222222;
+  background-color: #050505;
   border-color: black;
 }
 
 .btn-facebook .badge {
-  color: #222222 !important;
+  color: #050505 !important;
   background-color: #ffffff;
 }
 
@@ -3337,12 +3337,12 @@ fieldset[disabled] .btn-instagram:active,
 .btn-instagram.disabled.active,
 .btn-instagram[disabled].active,
 fieldset[disabled] .btn-instagram.active {
-  background-color: #222222;
+  background-color: #050505;
   border-color: black;
 }
 
 .btn-instagram .badge {
-  color: #222222 !important;
+  color: #050505 !important;
   background-color: #ffffff;
 }
 
@@ -3383,12 +3383,12 @@ fieldset[disabled] .btn-steam:active,
 .btn-steam.disabled.active,
 .btn-steam[disabled].active,
 fieldset[disabled] .btn-steam.active {
-  background-color: #222222;
+  background-color: #050505;
   border-color: black;
 }
 
 .btn-steam .badge {
-  color: #222222 !important;
+  color: #050505 !important;
   background-color: #ffffff;
 }
 
@@ -3403,7 +3403,7 @@ fieldset[disabled] .btn-steam.active {
 .btn-github:active,
 .btn-github.active,
 .open .dropdown-toggle.btn-github {
-  color: #222222 !important;
+  color: #050505 !important;
   background-color: #ffffff;
   border-color: #CCCCCC;
 }
@@ -3429,12 +3429,12 @@ fieldset[disabled] .btn-github:active,
 .btn-github.disabled.active,
 .btn-github[disabled].active,
 fieldset[disabled] .btn-github.active {
-  background-color: #222222;
+  background-color: #050505;
   border-color: black;
 }
 
 .btn-github .badge {
-  color: #222222 !important;
+  color: #050505 !important;
   background-color: #ffffff;
 }
 
@@ -3477,12 +3477,12 @@ fieldset[disabled] .btn-snapchat:active,
 .btn-snapchat.disabled.active,
 .btn-snapchat[disabled].active,
 fieldset[disabled] .btn-snapchat.active {
-  background-color: #222222;
+  background-color: #050505;
   border-color: black;
 }
 
 .btn-snapchat .badge {
-  color: #222222 !important;
+  color: #050505 !important;
   background-color: #ffffff;
 }
 
@@ -3569,12 +3569,12 @@ fieldset[disabled] .btn-reddit:active,
 .btn-reddit.disabled.active,
 .btn-reddit[disabled].active,
 fieldset[disabled] .btn-reddit.active {
-  background-color: #222222;
+  background-color: #050505;
   border-color: black;
 }
 
 .btn-reddit .badge {
-  color: #222222 !important;
+  color: #050505 !important;
   background-color: #ffffff;
 }
 
@@ -3582,7 +3582,7 @@ fieldset[disabled] .btn-reddit.active {
   margin-left: 2px;
   margin-right: 2px;
   border-color: transparent;
-  background-color: #484848;
+  background-color: #2b2b2b;
 }
 
 .btn-circle {
@@ -3599,18 +3599,18 @@ fieldset[disabled] .btn-reddit.active {
   background-image: none;
   background-color: #c22222;
   color: #ffffff;
-  border-color: #222222;
+  border-color: #050505;
 }
 
 .panel-default > .panel-body {
   background-image: none;
-  background-color: #222222;
+  background-color: #050505;
   color: #ffffff;
-  border-color: #222222;
+  border-color: #050505;
 }
 
 .panel-default {
-  border-color: #222222 !important;
+  border-color: #050505 !important;
 }
 
 .panel-primary > .panel-heading {
@@ -3622,7 +3622,7 @@ fieldset[disabled] .btn-reddit.active {
 
 .panel-primary > .panel-body {
   background-image: none;
-  background-color: #222222;
+  background-color: #050505;
   color: #ffffff;
   border-color: black;
 }
@@ -3640,7 +3640,7 @@ fieldset[disabled] .btn-reddit.active {
 
 .panel-primary-dark > .panel-body {
   background-image: none;
-  background-color: #151515;
+  background-color: black;
   color: #ffffff;
   border-color: black;
 }
@@ -3936,13 +3936,13 @@ a[type=button]:disabled {
 }
 
 .btn-primary.form-control[readonly] {
-  background-color: #222222 !important;
+  background-color: #050505 !important;
   color: #ffffff !important;
   opacity: 1;
 }
 
 .btn-primary.form-control[readonly] {
-  background-color: #222222 !important;
+  background-color: #050505 !important;
   color: #ffffff !important;
   opacity: 1;
 }
@@ -3954,13 +3954,13 @@ a[type=button]:disabled {
 }
 
 .btn-success.form-control[readonly] {
-  background-color: #222222 !important;
+  background-color: #050505 !important;
   color: #ffffff !important;
   opacity: 1;
 }
 
 .btn-success.form-control[readonly] {
-  background-color: #222222 !important;
+  background-color: #050505 !important;
   color: #ffffff !important;
   opacity: 1;
 }
@@ -3972,13 +3972,13 @@ a[type=button]:disabled {
 }
 
 .btn-warning.form-control[readonly] {
-  background-color: #222222 !important;
+  background-color: #050505 !important;
   color: #ffffff !important;
   opacity: 1;
 }
 
 .btn-warning.form-control[readonly] {
-  background-color: #222222 !important;
+  background-color: #050505 !important;
   color: #ffffff !important;
   opacity: 1;
 }
@@ -3990,13 +3990,13 @@ a[type=button]:disabled {
 }
 
 .btn-danger.form-control[readonly] {
-  background-color: #222222 !important;
+  background-color: #050505 !important;
   color: #ffffff !important;
   opacity: 1;
 }
 
 .btn-danger.form-control[readonly] {
-  background-color: #222222 !important;
+  background-color: #050505 !important;
   color: #ffffff !important;
   opacity: 1;
 }
@@ -4025,7 +4025,7 @@ a[type=button]:disabled {
 }
 
 .modal-content {
-  background-color: #222222 !important;
+  background-color: #050505 !important;
   color: #ffffff !important;
 }
 
@@ -4071,17 +4071,13 @@ a[type=button]:disabled {
 }
 
 .navbar-default {
-  background-color: #222222;
-  border-color: #222222;
   margin-bottom: -2%;
-}
-@media (min-width: 1200px) {
-  .navbar-default {
-    border-top-color: transparent !important;
-    border-right-color: transparent !important;
-    border-left-color: transparent !important;
-    border-bottom: 5px solid #c22222;
-  }
+  background: linear-gradient(rgba(15, 15, 15, 0.9), rgb(5, 5, 5)), url("/img/NoxGamingQC.png");
+  background-position: 50% 35%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0.5%;
+  border: none;
 }
 .navbar-default .navbar-brand {
   color: #ffffff;
@@ -4128,13 +4124,13 @@ a[type=button]:disabled {
 }
 .navbar-default .navbar-nav > li > a.disabled:hover, .navbar-default .navbar-nav > li > a.disabled:focus {
   color: #888888;
-  background-color: #222222;
+  background-color: #050505;
 }
 .navbar-default .navbar-nav > li > .dropdown-menu {
-  background-color: #222222;
+  background-color: #050505;
 }
 .navbar-default .navbar-nav > li > .dropdown-menu > li:hover {
-  background-color: #222222;
+  background-color: #050505;
 }
 .navbar-default .navbar-nav > li > .dropdown-menu > li > a {
   color: #ffffff;
@@ -4149,8 +4145,8 @@ a[type=button]:disabled {
 }
 .navbar-default .navbar-nav > li > .dropdown-menu > li > a > a.disabled:hover, .navbar-default .navbar-nav > li > .dropdown-menu > li > a > a.disabled:focus {
   color: #888888 !important;
-  border-color: #222222 !important;
-  background-color: #222222 !important;
+  border-color: #050505 !important;
+  background-color: #050505 !important;
 }
 .navbar-default .navbar-nav > li > .dropdown-menu > li.divider {
   background-color: #c22222;
@@ -4164,8 +4160,8 @@ a[type=button]:disabled {
 }
 > .navbar-default .navbar-nav > .active > a.disabled:hover, > .navbar-default .navbar-nav > .active > a.disabled:focus {
   color: #888888 !important;
-  border-color: #222222 !important;
-  background-color: #222222 !important;
+  border-color: #050505 !important;
+  background-color: #050505 !important;
 }
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
   color: #ffffff;
@@ -4176,8 +4172,8 @@ a[type=button]:disabled {
 }
 > .navbar-default .navbar-nav > .open > a.disabled:hover, > .navbar-default .navbar-nav > .open > a.disabled:focus {
   color: #888888 !important;
-  border-color: #222222 !important;
-  background-color: #222222 !important;
+  border-color: #050505 !important;
+  background-color: #050505 !important;
 }
 .navbar-default .navbar-toggle {
   border-color: black;
@@ -4385,7 +4381,7 @@ a.text-highlight {
 }
 
 .badge-default {
-  background-color: #222222;
+  background-color: #050505;
   text-align: center;
   border-radius: 5px 5px 5px 5px;
   padding: 5px;
@@ -4652,7 +4648,7 @@ button.toast-close-button {
 }
 
 .table-default {
-  background-color: #222222;
+  background-color: #050505;
 }
 
 .table-success {
@@ -4668,7 +4664,7 @@ button.toast-close-button {
 }
 
 .datepicker {
-  background-color: #222222;
+  background-color: #050505;
 }
 
 td.active.day {
@@ -4692,7 +4688,7 @@ td.disabled.day {
   }
 }
 html, body {
-  background-color: #222222;
+  background-color: #050505;
   color: #ffffff;
   margin: 0;
   padding: 0;
@@ -4711,7 +4707,7 @@ html, body {
 }
 
 .bg-dark {
-  background-color: #151515;
+  background-color: black;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -4787,7 +4783,7 @@ a:hover.text-color, a:active.text-color {
   z-index: 1;
   background-image: none;
   background-color: #c22222;
-  background: linear-gradient(220deg, #E56F1F, #c22222);
+  background: linear-gradient(220deg, #050505, #811717);
   color: #ffffff;
   border: 0 solid transparent;
   border-radius: 0;
@@ -4817,7 +4813,7 @@ a.text-color:hover, a.text-color:active {
   color: #ffffff !important;
 }
 a.text-color:hover .row, a.text-color:active .row {
-  background-color: #090909;
+  background-color: black;
   border-radius: 10px;
 }
 
