@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default" style="position:fixed;padding-top:3vh; width:99vw">
+<nav class="navbar navbar-default" style="position:fixed;padding-top:3vh; width:99vw;">
     <div class="container-fluid">
         <div class="navbar-header" style="margin: 10px;">
             <a href="/{{app()->getLocale()}}" class="text-color" style="text-decoration:none;">
