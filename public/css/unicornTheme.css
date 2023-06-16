@@ -3020,14 +3020,20 @@
   clip: auto;
 }
 
+.btn {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
 .btn-lg {
   padding: 25%;
 }
 
 .btn-default {
   color: #ffffff !important;
-  background-color: transparent;
-  border-color: #0e568b;
+  background-color: #45a5ec;
+  border-color: #5cb0ef;
+  padding: 3% 8% !important;
 }
 
 .btn-default:hover,
@@ -3072,8 +3078,9 @@ fieldset[disabled] .btn-default.active {
 
 .btn-primary {
   color: #ffffff !important;
-  background-color: transparent;
-  border-color: #0e568b;
+  background-color: #45a5ec;
+  border-color: #5cb0ef;
+  padding: 3% 8% !important;
 }
 
 .btn-primary:hover,

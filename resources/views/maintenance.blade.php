@@ -4,7 +4,7 @@
 @include('modal.login')
 @include('modal.register')
 
-<nav class="navbar navbar-default" style="background:linear-gradient(rgba(15, 15, 15, 0.9), rgba(5, 5, 5, 1)),url('/img/NoxGamingQC.png');background-position: 50% 35%;background-repeat: no-repeat;background-size: cover; padding: 0.5%;border:none">
+<nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
             <div>
@@ -27,8 +27,8 @@
         <br />
         @guest
             <br />
-            <a class="btn btn-default" data-toggle="modal" style="background-color:#121212;border-color:#191919;padding: 1% 2%" data-target="#loginModal">{{trans('general.login')}}</a>
-            <a class="btn btn-default" data-toggle="modal" style="background-color:#121212;border-color:#191919;padding: 1% 2%" data-target="#registerModal">{{trans('general.register')}}</a>
+            <a class="btn btn-default" data-toggle="modal" data-target="#loginModal">{{trans('general.login')}}</a>
+            <a class="btn btn-default" data-toggle="modal" data-target="#registerModal">{{trans('general.register')}}</a>
         @endguest
         <br />
         <br />
