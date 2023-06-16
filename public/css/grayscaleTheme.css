@@ -3020,14 +3020,20 @@
   clip: auto;
 }
 
+.btn {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
 .btn-lg {
   padding: 25%;
 }
 
 .btn-default {
   color: #000 !important;
-  background-color: transparent;
-  border-color: #bfbfbf;
+  background-color: white;
+  border-color: white;
+  padding: 3% 8% !important;
 }
 
 .btn-default:hover,
@@ -3072,8 +3078,9 @@ fieldset[disabled] .btn-default.active {
 
 .btn-primary {
   color: #000 !important;
-  background-color: transparent;
-  border-color: #bfbfbf;
+  background-color: white;
+  border-color: white;
+  padding: 3% 8% !important;
 }
 
 .btn-primary:hover,
