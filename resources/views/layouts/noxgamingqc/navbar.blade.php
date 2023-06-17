@@ -113,7 +113,7 @@
                 @endauth
                 @guest
                     @if(!$page_lists['login']['inMaintenance'])
-                        <li class="dropdown">
+                        <li id="profile" class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                                 <i class="fa fa-user-circle-o" aria-hidden="true"></i> My profile <span class="caret"></span>
                             </a>
@@ -139,6 +139,9 @@
 <script>
     var language = $('html').attr('lang');
     $('#' + window.location.pathname.split('/' + language + '/')[1].split('/')[0]).addClass('current-page')
+    if('#' + window.location.pathname.split('/' + language + '/')[1].split('/')[0] == 'login' || '#' + window.location.pathname.split('/' + language + '/')[1].split('/')[0] == "register") {
+        $('#profile').addClass('current-page')
+    }
     $('#submitSearch').click(function () {
         $.ajax({
             url: '/' + language +'/search',
