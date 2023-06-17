@@ -119,27 +119,91 @@ use Illuminate\Http\Request;
                 return redirect(app()->getLocale() . '/');
             });
 
-            Route::get('/projects', 'ProjectsController@index');
+            /*
+              
+                ABOUT US ROUTES
+              
+            */
+            Route::get('about_us/twitch', 'TwitchController@index');
+            Route::get('about_us/youtube', 'YouTubeController@index');
 
-            Route::get('/teams', function () {
+            Route::get('about_us/teams', function () {
                 return view('noxgamingqc.about_me.teams');
             });
-            
-            Route::get('/kiosk/cookbook', 'NGST\RecipeController@cookbook');
-            Route::get('/kiosk/cookbook/{category}', 'NGST\RecipeController@category');
-            Route::get('/kiosk/recipe/{id}', 'NGST\RecipeController@recipe');
+
+            Route::get('about_us/partners', function () {
+                return view('noxgamingqc.streaming.partners');
+            });
+
+            Route::get('about_us/contact', 'ContactController@index');
+            Route::post('/contact/form', 'ContactController@sendContactUsEmail');
+
+            //Projects Routes
+            Route::get('about_us/projects', 'ProjectsController@index');
+            Route::get('about_us/projects/minecraft', 'Projects\MinecraftController@index');
+            //Games Routes
+            Route::get('about_us/games', 'GamesListController@index');
+            Route::post('/games/add', 'GamesListController@addgame');
+            Route::post('/games/edit', 'GamesListController@editgame');
+            Route::post('/games/remove', 'GamesListController@removegame');
+            Route::post('/console/add', 'GamesListController@addconsole');
+            Route::post('/console/remove', 'GamesListController@removeconsole');
+
+
+            /*
+              
+                MISCS ROUTES
+              
+            */
+            //Cookbook routes
+            Route::get('/cookbook', 'NGST\RecipeController@cookbook');
+            Route::get('/cookbook/{category}', 'NGST\RecipeController@category');
+            Route::get('/recipe/{id}', 'NGST\RecipeController@recipe');
             Route::get('/recipe/add', 'NGST\RecipeController@addRecipe');
             Route::get('/recipe/edit/{id}', 'NGST\RecipeController@editRecipe');
             Route::get('/company/kiosk/refresh', 'NGST\KioskController@refreshData');
 
-            Route::get('/partners', function () {
-                return view('noxgamingqc.streaming.partners');
-            });
+            
+            //NGST routes
+            Route::get('/store', 'SquareController@index');
+            Route::get('/store/item/{id}', 'SquareController@showItem');
 
-            Route::get('/twitch', 'TwitchController@index');
-            Route::get('/youtube', 'YouTubeController@index');
-            Route::get('/projects/minecraft', 'Projects\MinecraftController@index');
+            /*
+              
+                PROFILES ROUTES
+              
+            */
+            Route::get('/profile/show/{id}', 'UserProfileController@index');
 
+            Route::get('/profile/edit', 'UserProfileController@getEditPage');
+            Route::get('/profile/mail', 'Mails\MailController@index');
+            Route::get('/profile/mail/{id}', 'Mails\MailController@show');
+            Route::get('/profile/mail/{id}/content', 'Mails\MailController@showContent');
+            Route::get('/profile/mail/{id}/delete', 'Mails\MailController@delete');
+
+
+            Route::get('/noxbot/dashboard/{serverID}', 'NoxBotDashboardController@serverDashboard');
+
+            Route::post('/noxbot/data/user/store', 'NoxBotDashboardController@linkDiscord');
+
+            /*
+              
+                MANAGEMENT ROUTES
+              
+            */
+            Route::get('/management/modules', 'ManagementController@getModules');
+            Route::get('/management/users', 'ManagementController@getUsers');
+            Route::get('/management/activities', 'ManagementController@getBotActivities');
+            Route::get('/management/tasks', 'ToDoListController@index');
+            Route::get('/management/logs', 'LogsController@index');
+            Route::get('/management/logs/download', 'LogsController@download');
+            Route::get('/management/settings', 'SettingsController@index');
+            
+            /*
+              
+                OTHER ROUTES
+              
+            */
             Route::get('/stream/commands', 'BotCommandsController@index');
 
             Route::get('/search', 'SearchController@index');
@@ -156,45 +220,9 @@ use Illuminate\Http\Request;
                 return view('guilded.subscription');
             });
 
-            Route::get('/games', 'GamesListController@index');
-            Route::post('/games/add', 'GamesListController@addgame');
-            Route::post('/games/edit', 'GamesListController@editgame');
-            Route::post('/games/remove', 'GamesListController@removegame');
-            Route::post('/console/add', 'GamesListController@addconsole');
-            Route::post('/console/remove', 'GamesListController@removeconsole');
-
             Route::get('/noxbot/dashboard', 'NoxBotDashboardController@getDashboard');
 
 
-            Route::get('/profile/show/{id}', 'UserProfileController@index');
-
-            Route::get('/profile/edit', 'UserProfileController@getEditPage');
-            Route::get('/profile/mail', 'Mails\MailController@index');
-            Route::get('/profile/mail/{id}', 'Mails\MailController@show');
-            Route::get('/profile/mail/{id}/content', 'Mails\MailController@showContent');
-            Route::get('/profile/mail/{id}/delete', 'Mails\MailController@delete');
-
-            Route::get('/contact', 'ContactController@index');
-            Route::post('/contact/form', 'ContactController@sendContactUsEmail');
-
-            Route::get('/noxbot/dashboard/{serverID}', 'NoxBotDashboardController@serverDashboard');
-
-            Route::post('/noxbot/data/user/store', 'NoxBotDashboardController@linkDiscord');
-
-            //Management routes
-            Route::get('/management/modules', 'ManagementController@getModules');
-            Route::get('/management/users', 'ManagementController@getUsers');
-            Route::get('/management/activities', 'ManagementController@getBotActivities');
-            Route::get('/management/tasks', 'ToDoListController@index');
-            Route::get('/management/logs', 'LogsController@index');
-            Route::get('/management/logs/download', 'LogsController@download');
-            Route::get('/management/settings', 'SettingsController@index');
-
-            //NGST routes
-            Route::get('/store', 'SquareController@index');
-            Route::get('/store/item/{id}', 'SquareController@showItem');
-
-            //PositivityST routes
         });
     }
 );
