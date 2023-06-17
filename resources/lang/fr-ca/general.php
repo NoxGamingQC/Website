@@ -57,7 +57,7 @@ return [
     'console_close_window' => "À moins que tu comprennes exactement ce que tu fais, ferme cette fenêtre et reste en sécurité.",
     'logs'=>"Journeaux",
     'download' => "Télécharger",
-    'logs_limit' => "Attention: Seulement les 30 derniers journeaux système sont stockés sur le système.",
+    'logs_limit' => "Attention: Seulement les 14 derniers journeaux système sont stockés sur le système.",
     'updated_on' => "Mise à jour le :",
     'file_size' => "Poid du fichier :",
     'generate' => "Créer",
