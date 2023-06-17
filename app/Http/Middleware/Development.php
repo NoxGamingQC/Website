@@ -20,6 +20,8 @@ class Development
         $isDev = false;
         if(env('APP_URL') !== 'http://localhost:8000') {
             \URL::forceScheme('https');
+        } else {
+            $isDev = true;
         }
         if (Auth::check()) {
             if(Auth::user()->isAdmin || Auth::user()->isModerator || Auth::user()->isDev) {
