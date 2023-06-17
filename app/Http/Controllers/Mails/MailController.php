@@ -104,7 +104,7 @@ class MailController extends Controller
         if(count(explode('<', (explode('>', $request['sender'])[0]))) > 0) {
             $senderEmail = explode('<', (explode('>', $request['sender'])[0]))[1];
         } else {
-            $senderEmail = $request['sender']
+            $senderEmail = $request['sender'];
         }
         if(count($index) == 0) {
             $index = new MailIndex();
