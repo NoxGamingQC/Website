@@ -1,13 +1,15 @@
-@extends('layouts.app')
-@section('title', 'Register')
+@extends('layouts.noxgamingqc.app')
+@section('title', trans('general.register'))
+@section('header', false)
+@section('content')
 
 @section('content')
 <div class="container">
     <form class="form-horizontal" method="POST" action="{{ route('register', app()->getLocale()) }}">
         <div class="row">
             <div class="col-md-12">
-                <h1>{{trans('general.register')}}</h1>
-                <hr />
+                <br />
+                <br />
                 <div class="col-md-3 text-center">
                     <img class="img" src="/img/NoxGamingQC.png" width="40%" />
                     <h4 class="raleway-font">{{trans('auth.welcome')}}</h4>
