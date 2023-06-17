@@ -15,6 +15,9 @@ class SetLocale
      */
     public function handle($request, Closure $next)
     {
+        if(env('APP_URL') !== 'http://localhost:8000') {
+            \URL::forceScheme('https');
+        }
         app()->setLocale($request->segment(1));
         return $next($request);
     }
