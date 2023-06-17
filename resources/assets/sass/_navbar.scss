@@ -27,6 +27,9 @@ $dropdown: true;
     }
     .navbar-nav>li {
         float: none;
+        .active {
+            background-color: $brand-primary;
+        }
     }
     .navbar-nav>li>a {
         padding-top: 10px;

@@ -4063,6 +4063,9 @@ a[type=button]:disabled {
   .navbar-nav > li {
     float: none;
   }
+  .navbar-nav > li .active {
+    background-color: #c22222;
+  }
   .navbar-nav > li > a {
     padding-top: 10px;
     padding-bottom: 10px;
@@ -4366,7 +4369,6 @@ a.text-highlight {
 }
 
 .img-text {
-  text-align: center;
   font-family: "Raleway", sans-serif !important;
   color: #ffffff;
   background-color: rgba(0, 0, 0, 0.5333333333);

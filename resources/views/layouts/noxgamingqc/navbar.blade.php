@@ -14,8 +14,8 @@
         </div>
         <div class="collapse navbar-collapse" id="bs-navbar-collapse">
             <ul class="nav navbar-nav navbar-center">
-                <li class="nav-home"><a href="/{{app()->getLocale()}}/home"><i class="fa fa-home" aria-hidden="true"></i> {{ trans('general.welcome') }} <span class="sr-only">current</span></a></li>
-                <li class="dropdown">
+                <li id="home" class="nav-home"><a href="/{{app()->getLocale()}}/home"><i class="fa fa-home" aria-hidden="true"></i> {{ trans('general.welcome') }} <span class="sr-only">current</span></a></li>
+                <li id="about_us" class="dropdown">
                     @if(!$page_lists['about_me']['inMaintenance'])
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                         <i class="fa fa-user" aria-hidden="true"></i> {{trans("general.about_us")}} <span class="caret"></span>
@@ -40,7 +40,7 @@
                 </li>
                 @auth
                     @if(Auth::user()->isPremium)
-                        <li class="dropdown">
+                        <li id="miscs" class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                                 <i class="fa fa-briefcase" aria-hidden="true"></i> {{trans('general.miscs')}} <span class="caret"></span>
                             </a>
@@ -59,7 +59,7 @@
                 @endauth
                 @auth
                     @if(Auth::user()->isDev || Auth::user()->isAdmin || Auth::user()->isModerator)
-                        <li class="dropdown">
+                        <li id="management" class="dropdown">
                         @if(!$page_lists['management']['inMaintenance'])
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                                 <i class="fa fa-dashboard" aria-hidden="true"></i> {{trans("general.management")}} <span class="caret"></span>
@@ -95,7 +95,7 @@
                     </ul>
                 </li>
                 @auth
-                    <li class="dropdown">
+                    <li id="profile" class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                             <i class="fa fa-user-circle-o" aria-hidden="true"></i> {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
@@ -137,7 +137,8 @@
     </div>
 </nav>
 <script>
-        var language = $('html').attr('lang');
+    var language = $('html').attr('lang');
+    $('#' + window.location.pathname.split('/' + language + '/')[1].split('/')[0]).addClass('active')
     $('#submitSearch').click(function () {
         $.ajax({
             url: '/' + language +'/search',
