@@ -18,6 +18,9 @@ class Development
     public function handle($request, Closure $next)
     {
         $isDev = false;
+        if(env('APP_URL') !== 'http://localhost:8000') {
+            \URL::forceScheme('https');
+        }
         if (Auth::check()) {
             if(Auth::user()->isAdmin || Auth::user()->isModerator || Auth::user()->isDev) {
                 $isDev = true;
