@@ -160,3 +160,7 @@ a.text-color:hover, a.text-color:active {
 .no-decoration, .no-decoration:hover, .no-decoration:focus{
     text-decoration: none;
 }
+
+.pointer-cursor:hover {
+    cursor: pointer;
+}

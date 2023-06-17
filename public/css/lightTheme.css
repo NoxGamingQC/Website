@@ -4855,6 +4855,10 @@ a.text-color:hover .row, a.text-color:active .row {
   text-decoration: none;
 }
 
+.pointer-cursor:hover {
+  cursor: pointer;
+}
+
 .extra-life-logo {
   background-image: url("/img/Affiliates/Extra Life_dark.png") !important;
   background-size: cover !important;
