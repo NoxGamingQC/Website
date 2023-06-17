@@ -101,7 +101,10 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                         <i class="fa fa-bell" aria-hidden="true"><span class="badge-danger raleway-font" style="display: block;position:absolute;padding:2px 4px;border-radius: 50%;margin-left:8px;margin-top:-8px;font-size: 11px;">0</span></i>
                     </a>
-                    <ul id="notificationDropdown" class="dropdown-menu hidden" hidden>
+                    <ul id="notificationDropdown" class="dropdown-menu">
+                        <li id="NoNotificationText">
+                            <span class="text-center">No notification</span>
+                        </li>
                     </ul>
                 </li>
 
