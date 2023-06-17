@@ -4083,7 +4083,7 @@ a[type=button]:disabled {
   margin-bottom: -2%;
   padding-top: 0px !important;
   padding-bottom: 0px !important;
-  background: linear-gradient(rgba(15, 15, 15, 0.9), rgb(5, 5, 5)), url("/img/NoxGamingQC.png"), linear-gradient(rgb(15, 15, 15), rgb(5, 5, 5));
+  background: linear-gradient(rgba(200, 200, 200, 0.9), #fff), url("/img/NoxGamingQC.png"), linear-gradient(#fff, #fff);
   background-position: 50% 35%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -4096,7 +4096,7 @@ a[type=button]:disabled {
 }
 @media (min-width: 768px) {
   .navbar-default .navbar-brand {
-    margin-top: 10%;
+    margin-top: 5%;
   }
 }
 .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:active {
@@ -4722,6 +4722,17 @@ html, body {
   z-index: 0;
   overflow-x: hidden;
   max-width: 99vw;
+}
+
+.footer {
+  background: linear-gradient(#fff, rgba(200, 200, 200, 0.9)), url("/img/NoxGamingQC.png"), linear-gradient(#fff, #fff);
+  background-position: 50% 65%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 5%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  margin-top: 3%;
 }
 
 @media not all and (min-width: 1200px) {
