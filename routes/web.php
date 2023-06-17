@@ -81,11 +81,11 @@ use Illuminate\Http\Request;
             'middleware' => 'Development'
     ], function () {
     Route::get('/', function () {
-        return redirect(app()->getLocale() . '/');
+        return redirect(app()->getLocale() . '/home');
     });
 
     Route::get('/home', function () {
-        return redirect(app()->getLocale() . '/');
+        return redirect(app()->getLocale() . '/home');
     });
 
     Route::get('/projects/minecraft', function () {
@@ -112,11 +112,11 @@ use Illuminate\Http\Request;
         function () {
             //Route that require language
             Route::get('/', function () {
-                return view('noxgamingqc.welcome');
+                return redirect(app()->getLocale() . '/home');
             });
 
             Route::get('/home', function () {
-                return redirect(app()->getLocale() . '/');
+                return view('noxgamingqc.welcome');
             });
 
             /*
