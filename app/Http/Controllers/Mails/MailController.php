@@ -102,7 +102,10 @@ class MailController extends Controller
     public function receive(Request $request) {
         $isEmailExists = User::isMailExist($request['recipient']);
         if(!$isEmailExists) {
-            abort(550, $message = 'Email address doesn\'t exists');
+            abort(550, 'Email address doesn\'t exists', [
+                'code' => '550-5.1.1',
+                'message' => 'Email address doesn\'t exists'
+        ]);
         }
         $index = MailIndex::where('owner','=', $request['recipient'])->where('object', 'LIKE', '%'. $request['subject'] .'%')->where('participants', '=', $request['sender'])->get();
         $mail = new Mails();
