@@ -29,6 +29,17 @@ html, body {
     max-width: 99vw;
 }
 
+.footer {
+    background:linear-gradient($background-color, $background-highlight),url('/img/NoxGamingQC.png'), linear-gradient($background-color, $background-color);
+    background-position: 50% 65%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 5%;
+    padding-top:3%;
+    padding-bottom:3%;
+    margin-top:3%;
+}
+
 .mobile-hidden {
     @media not all and (min-width: $screen-md-min) {
         display: none !important;
