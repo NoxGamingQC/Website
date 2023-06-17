@@ -49,7 +49,7 @@
 </div>
 <script type="text/javascript">
     var language = $('html').attr('lang');
-    if(language == 'fr') {
+    if(language == 'fr-ca') {
         $('#enLink').removeClass('hidden');
         $('#frLink').addClass('hidden');
     } else {
