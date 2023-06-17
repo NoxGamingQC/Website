@@ -3,9 +3,9 @@
 return [
     'sorry' => "Sorry",
     'under_maintenance' => "Under maintenance",
-    'explanation' => "The website under maintenance for a short time. Thanks for your patience.",
+    'explanation' => "Our website is under maintenance for a short period of time. Thanks for your patience.",
     'dev_only' => "P.S. Only members with developpers rights have access the website at the moment.",
-    'already_logged_in' => "¯\_(ツ)_/¯ You are logged in. If you still can't access the website take a minute and read the whole message. If you haven't been redirected to the welcome page there's a link: ",
+    'already_logged_in' => "You are logged in. You can try to go to the home page, but if you can't reach it at this moment, you might not have the required rights. If you still want to try, here is a link to the home page: ",
     'travel_to_home_page' => "Travel to home page",
     'maintenance_text' => "Sorry for any inconveniance.",
     'error'=> "Under maintenance."
