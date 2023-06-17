@@ -101,11 +101,7 @@ class MailController extends Controller
     public function receive(Request $request) {
         $index = MailIndex::where('owner','=', $request['recipient'])->where('object', 'LIKE', '%'. $request['subject'] .'%')->where('participants', '=', $request['sender'])->get();
         $mail = new Mails();
-        if(count(explode('<', (explode('>', $request['sender']))) > 0) {
-            $senderEmail = explode('<', (explode('>', $request['sender'])[0]))[1];
-        } else {
-            $senderEmail = $request['sender'];
-        }
+        $senderEmail = $request['sender'];
         if(count($index) == 0) {
             $index = new MailIndex();
             $index->owner = $request['recipient'];
