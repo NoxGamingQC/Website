@@ -57,7 +57,7 @@ return [
     'console_close_window' => "Unless you understand exactly what you are doing, close this window and stay safe.",
     'logs' => "Logs",
     'download' => "Download",
-    'logs_limit' => "Warning: only the last 30 daily log files are stored on the server.",
+    'logs_limit' => "Warning: only the last 14 daily log files are stored on the server.",
     'updated_on' => "Updated On :",
     'file_size' => "File Size :",
     'generate' => "Generate",
