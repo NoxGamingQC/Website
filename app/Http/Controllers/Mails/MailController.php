@@ -102,7 +102,7 @@ class MailController extends Controller
     public function receive(Request $request) {
         $isEmailExists = User::isMailExist($request['recipient']);
         if(!$isEmailExists) {
-            abort(422);
+            abort(550);
         }
         $index = MailIndex::where('owner','=', $request['recipient'])->where('object', 'LIKE', '%'. $request['subject'] .'%')->where('participants', '=', $request['sender'])->get();
         $mail = new Mails();
