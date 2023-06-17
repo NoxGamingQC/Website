@@ -144,6 +144,14 @@
                     @endif
                 @endguest
             </ul>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon"><i class="fa fa-search" aria-hidden="true"></i></div>
+                        <input type="text" class="form-control" placeholder="{{trans('general.search')}} ..." />
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </nav>
