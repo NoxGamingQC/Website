@@ -152,7 +152,7 @@
                     <div class="input-group">
                         <div class="input-group-addon"><i class="fa fa-search" aria-hidden="true"></i></div>
                         <input type="text" class="form-control" placeholder="{{trans('general.search')}} ..." />
-                        <div class="input-group-addon btn-primary pointer-cursor"><a class="text-color no-decoration pointer-cursor">{{trans('general.search')}}</a></div>
+                        <div class="input-group-addon btn-primary pointer-cursor hidden" hidden><a class="text-color no-decoration pointer-cursor hidden" hidden>{{trans('general.search')}}</a></div>
                     </div>
                 </div>
             </div>
