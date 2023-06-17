@@ -27,8 +27,8 @@
         <br />
         @guest
             <br />
-            <a class="btn btn-default" href="/login">{{trans('general.login')}}</a>
-            <a class="btn btn-default" href="/register"">{{trans('general.register')}}</a>
+            <a class="btn btn-default" href="/{{app()->getLocale()}}/login">{{trans('general.login')}}</a>
+            <a class="btn btn-default" href="/{{app()->getLocale()}}/register">{{trans('general.register')}}</a>
         @endguest
         <br />
         <br />
