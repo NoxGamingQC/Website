@@ -27,8 +27,8 @@
         <br />
         @guest
             <br />
-            <a class="btn btn-default" data-toggle="modal" data-target="#loginModal">{{trans('general.login')}}</a>
-            <a class="btn btn-default" data-toggle="modal" data-target="#registerModal">{{trans('general.register')}}</a>
+            <a class="btn btn-default" href="/login">{{trans('general.login')}}</a>
+            <a class="btn btn-default" href="/register"">{{trans('general.register')}}</a>
         @endguest
         <br />
         <br />
