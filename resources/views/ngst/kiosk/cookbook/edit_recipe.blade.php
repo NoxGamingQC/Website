@@ -209,7 +209,7 @@
                 toastr.success('Recipe saved', 'Recipe has been added with success.')
                 $('#submitContactForm').removeClass('disabled');
                 $('#submitContactForm').removeAttr('disabled', '');
-                window.location.href = "/kiosk/cookbook"
+                window.location.href = "/cookbook"
             },
 
             error: function (error) {
