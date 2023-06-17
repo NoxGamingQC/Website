@@ -42,6 +42,7 @@
 </head>
 
 <body>
+<input id="websiteLocationID" type="hidden">
     @if(isset($kiosk) && $kiosk == true)
         <style>
             ::-webkit-scrollbar {

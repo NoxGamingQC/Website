@@ -37,6 +37,7 @@
 </head>
 
 <body>
+    <input id="websiteLocationID" type="hidden">
     @include('layouts.noxgamingqc.navbar')
     @include('alert.alert')
     @yield('content')
