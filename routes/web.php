@@ -39,6 +39,11 @@ use Illuminate\Http\Request;
         Auth::routes();
         if (env('APP_ENV') !== 'production') {
             Route::get('/maintenance', function () {
+                if(Auth::check()) {
+                    if(Auth::user()->isAdmin || Auth::user()->isModerator || Auth::user()->isDev) {
+                        return redirect(app()->getLocale() . '/home');
+                    }
+                }
                 return view('maintenance');
             });
         }
