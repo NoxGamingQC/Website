@@ -156,3 +156,7 @@ a.text-color:hover, a.text-color:active {
         border-radius: 10px;
     }
 }
+
+.no-decoration, .no-decoration:hover, .no-decoration:focus{
+    text-decoration: none;
+}

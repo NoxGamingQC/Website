@@ -4851,6 +4851,10 @@ a.text-color:hover .row, a.text-color:active .row {
   border-radius: 10px;
 }
 
+.no-decoration, .no-decoration:hover, .no-decoration:focus {
+  text-decoration: none;
+}
+
 .crt-grid-post-image {
   filter: gray !important;
   filter: grayscale(1) !important;
