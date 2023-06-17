@@ -149,6 +149,7 @@
                     <div class="input-group">
                         <div class="input-group-addon"><i class="fa fa-search" aria-hidden="true"></i></div>
                         <input type="text" class="form-control" placeholder="{{trans('general.search')}} ..." />
+                        <div class="input-group-addon btn-primary"><a class="text-color no-decoration">{{trans('general.search')}}</a></div>
                     </div>
                 </div>
             </div>
