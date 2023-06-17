@@ -47,11 +47,6 @@
         @endauth
     </div>
 </div>
-@auth
-    <script type="text/javascript">
-        window.location.href = '/home'
-    </script>
-@endauth
 <script type="text/javascript">
     var language = $('html').attr('lang');
     if(language == 'fr-ca') {
