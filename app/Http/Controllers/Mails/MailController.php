@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Mails;
 use App\MailIndex;
 use Auth;
+use App\User;
 
 class MailController extends Controller
 {
@@ -99,6 +100,10 @@ class MailController extends Controller
     }
 
     public function receive(Request $request) {
+        $isEmailExists = User::isMailExist($request['recipient']);
+        if(!$isEmailExists) {
+            abort(550);
+        }
         $index = MailIndex::where('owner','=', $request['recipient'])->where('object', 'LIKE', '%'. $request['subject'] .'%')->where('participants', '=', $request['sender'])->get();
         $mail = new Mails();
         $senderEmail = $request['sender'];

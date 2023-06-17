@@ -43,4 +43,23 @@ class User extends Authenticatable
     {
         $this->isAdmin;
     }
+
+    public static function isMailExist($email) 
+    {
+        $isExist = false;
+        foreach(User::all() as $key => $user) {
+            $emailList = explode(';', $user->local_mail);
+            if(count($emailList) > 1) {
+                foreach($emailList as $key => $emailAdress) {
+                    if($emailAdress == $email) {
+                        $isExist = true;
+                    }
+                }
+            }
+            if($email == $user->local_mail) {
+                $isExist = true;
+            }
+        }
+        return $isExist;
+    }
 }
