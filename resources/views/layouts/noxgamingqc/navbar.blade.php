@@ -1,6 +1,6 @@
 <nav class="navbar navbar-default" style="position:fixed;padding-top:3vh; width:99vw;">
     <div class="container-fluid">
-        <div class="navbar-header" style="margin: 10px;">
+        <div class="navbar-header" style="margin: 18px;">
             <a href="/{{app()->getLocale()}}" class="text-color" style="text-decoration:none;">
                 <img class="img" src="/img/NoxGamingQC.png" width="50" height="50" />
                 <h3 class="raleway-font" style="display: inline; margin: 5px;">NoxGamingQC</h3>
@@ -138,7 +138,7 @@
 </nav>
 <script>
     var language = $('html').attr('lang');
-    $('#' + window.location.pathname.split('/' + language + '/')[1].split('/')[0]).addClass('active')
+    $('#' + window.location.pathname.split('/' + language + '/')[1].split('/')[0]).addClass('current-page')
     $('#submitSearch').click(function () {
         $.ajax({
             url: '/' + language +'/search',
