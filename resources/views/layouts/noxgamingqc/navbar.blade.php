@@ -115,7 +115,6 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li>
-                                
                                 @if(Auth::user()->local_mail)
                                     <a href="/{{app()->getLocale()}}/profile/mail"><i class="fa fa-envelope" aria-hidden="true"></i> {{trans('general.mails')}}</a>
                                 @endif
@@ -151,8 +150,10 @@
                 <div class="form-group">
                     <div class="input-group">
                         <div class="input-group-addon"><i class="fa fa-search" aria-hidden="true"></i></div>
-                        <input type="text" class="form-control" placeholder="{{trans('general.search')}} ..." />
+                        <input id="navSearch" type="text" class="form-control" placeholder="{{trans('general.search')}} ..." />
                         <div class="input-group-addon btn-primary pointer-cursor hidden" hidden><a class="text-color no-decoration pointer-cursor hidden" hidden>{{trans('general.search')}}</a></div>
+                        <div id="navSearchResult" style="margin-top: 30px">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -165,7 +166,21 @@
     if('#' + window.location.pathname.split('/' + language + '/')[1].split('/')[0] == 'login' || '#' + window.location.pathname.split('/' + language + '/')[1].split('/')[0] == "register") {
         $('#profile').addClass('current-page')
     }
-    $('#submitSearch').click(function () {
+    var typingTimer;                //timer identifier
+    var doneTypingInterval = 1000;  //time in ms, 5 seconds for example
+    var $input = $('#navSearch');
+
+    //on keyup, start the countdown
+    $input.on('keyup', function () {
+        clearTimeout(typingTimer);
+        typingTimer = setTimeout(doneTyping, doneTypingInterval);
+    });
+
+    $input.on('keydown', function () {
+        clearTimeout(typingTimer);
+    });
+
+    function doneTyping () {
         $.ajax({
             url: '/' + language +'/search',
             type: 'GET',
@@ -194,5 +209,5 @@
                 $("#navSearchResult").empty().append( navSearchHTML );
             }
         })
-    });
+    }
 </script>
