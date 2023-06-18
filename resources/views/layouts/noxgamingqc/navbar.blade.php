@@ -97,7 +97,7 @@
                     </ul>
                 </li>
 
-                <li class="dropdown">
+                <li class="dropdown mobile-hidden">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                         <i class="fa fa-bell" aria-hidden="true"><span class="badge-danger raleway-font" style="display: block;position:absolute;padding:2px 4px;border-radius: 50%;margin-left:8px;margin-top:-8px;font-size: 11px;">0</span></i>
                     </a>
@@ -146,7 +146,7 @@
                     @endif
                 @endguest
             </ul>
-            <div class="col-md-12">
+            <div class="col-md-12 mobile-hidden">
                 <div class="form-group">
                     <div class="input-group">
                         <div class="input-group-addon"><i class="fa fa-search" aria-hidden="true"></i></div>
