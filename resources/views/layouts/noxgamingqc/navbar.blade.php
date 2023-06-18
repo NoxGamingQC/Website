@@ -150,7 +150,7 @@
                 <div class="form-group">
                     <div class="input-group">
                         <div class="input-group-addon"><i class="fa fa-search" aria-hidden="true"></i></div>
-                        <input id="navSearch" type="text" class="form-control" placeholder="{{trans('general.search')}} ..." />
+                        <input id="navSearch" type="text" class="form-control disabled" placeholder="{{trans('general.search')}} ..." disabled />
                         <div class="input-group-addon btn-primary pointer-cursor hidden" hidden><a class="text-color no-decoration pointer-cursor hidden" hidden>{{trans('general.search')}}</a></div>
                         <div id="navSearchResult" style="margin-top: 30px">
                         </div>
