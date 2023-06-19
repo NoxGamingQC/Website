@@ -43,7 +43,7 @@ class GamesListController extends Controller
             }    
         }
         $totalGameCount = count($gamesDB);
-        return view('noxgamingqc.streaming.games', [
+        return view('view.about_us.games', [
             'consoles' => $consoles,
             'games' => $games,
             'gamesList' => $gamesList,

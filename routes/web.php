@@ -52,10 +52,6 @@ use Illuminate\Http\Request;
     // No Languages routes
     Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
-    Route::get('/noxgamingqc/overlay/start_stream', function () {
-        return view('overlay.start_stream');
-    });
-
     Route::get('language/set/{language}', 'LanguageController@index');
     Route::post('/management/settings', 'SettingsController@post');
     Route::post('/profile/update_state', 'UserProfileController@updateState');
@@ -116,7 +112,7 @@ use Illuminate\Http\Request;
             });
 
             Route::get('/home', function () {
-                return view('noxgamingqc.welcome');
+                return view('view.welcome');
             });
 
             /*
@@ -128,11 +124,11 @@ use Illuminate\Http\Request;
             Route::get('about_us/youtube', 'YouTubeController@index');
 
             Route::get('about_us/teams', function () {
-                return view('noxgamingqc.about_me.teams');
+                return view('view.about_us.teams');
             });
 
             Route::get('about_us/partners', function () {
-                return view('noxgamingqc.streaming.partners');
+                return view('view.about_us.partners');
             });
 
             Route::get('about_us/contact', 'ContactController@index');

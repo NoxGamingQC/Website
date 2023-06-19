@@ -20,6 +20,6 @@ class ProjectsController extends Controller
             }
             abort(503);
         }
-        return view('noxgamingqc.about_me.projects');
+        return view('view.about_us.projects');
     }
 }

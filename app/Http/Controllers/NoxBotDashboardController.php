@@ -65,7 +65,7 @@ class NoxBotDashboardController extends Controller
                     ],
                 ];
 
-                return view('noxbot', [
+                return view('view.noxbot', [
                     "serverConfig" => $serverConfig,
                     'serverSetting' => $serverSetting
                 ]);

@@ -15,6 +15,6 @@ class TwitchController extends Controller
         if(PageLists::where('slug', 'twitch')->first()->inMaintenance && env('APP_ENV') == 'production') {
             abort(503);
         }
-        return view('noxgamingqc.streaming.twitch');
+        return view('view.about_us.twitch');
     }
 }
