@@ -49,6 +49,15 @@ html, body {
     }
 }
 
+.desktop-hidden {
+    @media not all and (max-width: $screen-md-min) {
+        display: none !important;
+        visibility: hidden !important;
+        margin: 0px !important;
+        padding: 0px !important;
+    }
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-family: $rochester-font !important;
 }

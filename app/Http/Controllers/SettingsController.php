@@ -16,7 +16,7 @@ class SettingsController extends Controller
     {
         if (Auth::user()) {
             if (Auth::user()->isAdmin || Auth::user()->isMod || Auth::user()->isDev) {
-                return view('noxgamingqc.management.settings');
+                return view('view.management.settings');
             }
         }
         abort(403);
