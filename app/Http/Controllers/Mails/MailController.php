@@ -25,7 +25,7 @@ class MailController extends Controller
                 $mail[$value->id] =  Mails::where('message_id', $value->id)->whereIn('recipient', $emailList)->get()->first();
             }
                 
-            return view('noxgamingqc.profile.mails')->with([
+            return view('view.profile.mails')->with([
                     'mails' => $mails,
                     'mailContent' => $mail,
                     'emailList' => $emailList
@@ -40,7 +40,7 @@ class MailController extends Controller
             $emailList = explode(';', Auth::user()->local_mail);
             $mailsContent =  Mails::where('message_id', $id)->whereIn('recipient', $emailList)->orderBy('created_at', 'desc')->get();
             if(in_array($mail->owner, $emailList)) {
-                return view('noxgamingqc.profile.mail')->with([
+                return view('view.profile.mail')->with([
                     'header' => 'false',
                     'mails' => $mail,
                     'mailsContent' => $mailsContent,
@@ -56,7 +56,7 @@ class MailController extends Controller
             $emailList = explode(';', Auth::user()->local_mail);
             $mailContent =  Mails::where('id', $id)->whereIn('recipient', $emailList)->get()->first();
             if(in_array($mailContent->recipient, $emailList)) {
-                return view('noxgamingqc.profile.mail_content')->with([
+                return view('view.profile.mail_content')->with([
                     'header' => 'false',
                     'mailContent' => $mailContent
                 ]);
