@@ -111,7 +111,12 @@
                 @auth
                     <li id="profile" class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
-                            <i class="fa fa-user-circle-o" aria-hidden="true"></i> {{ Auth::user()->name }} <span class="caret"></span>
+                             @if(Auth::user()->AvatarURL)
+                                <img class="img img-circle status-{{Auth::user()->status}}" src="{{Auth::user()->AvatarURL}}" width="24px" style="border-width: 2px;" />
+                            @else
+                                <img class="img img-circle status-{{Auth::user()->status}}" src="/img/no-avatar.jpg" width="24px" style="border-width: 2px;" />
+                            @endif
+                            {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
                             <li>

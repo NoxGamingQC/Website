@@ -58,22 +58,22 @@
         
         @if(isset($header) && $header === 'false')
         @else
-            @include('layouts.noxgamingqc.header')
+            @include('layouts.noxgamingqc.desktop.header')
         @endif
         <div class="content">
             @yield('content')
         </div>
     @else
-        @include('layouts.noxgamingqc.navbar')
+        @include('layouts.noxgamingqc.desktop.navbar')
         @include('alert.alert')
         @if(isset($header) && $header === 'false')
         @else
-            @include('layouts.noxgamingqc.header')
+            @include('layouts.noxgamingqc.desktop.header')
         @endif
         <div class="content">
             @yield('content')
         </div>
-        @include('layouts.noxgamingqc.footer')
+        @include('layouts.noxgamingqc.desktop.footer')
     @endif
         
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
