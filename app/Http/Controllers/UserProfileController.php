@@ -69,7 +69,7 @@ class UserProfileController extends Controller
             $state = $user->lockStatus;
         }
 
-        return view('noxgamingqc.profile.show', [
+        return view('view.profile.show', [
             "username" => $user->name,
             "discordID" => $user->DiscordID,
             "grade" => $grade,
@@ -108,7 +108,7 @@ class UserProfileController extends Controller
                 $state = $user->lockStatus;
             }
 
-            return view('noxgamingqc.profile.edit', [
+            return view('view.profile.edit', [
                 "id" => $user->id,
                 "email"=>$user->email,
                 "username"=>$user->name,
