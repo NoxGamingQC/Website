@@ -70,7 +70,7 @@ $dropdown: true;
         font-size: 100%;
     }
     .navbar-nav {
-        > li {
+        li {
             margin-right: 5px;
             padding-top: 1%;
             padding-bottom: 1%;
@@ -105,7 +105,7 @@ $dropdown: true;
             @if $dropdown {
                 > .dropdown-menu {
                     background-color: $background-color;
-                    > li {
+                    li {
                         &:hover, &:focus, &:active {
                             background-color: $background-color;
                         }
@@ -193,7 +193,7 @@ $dropdown: true;
 
 @media (max-width: 768px) {
     .navbar-default .navbar-nav .open .dropdown-menu {
-        > li > a {
+        li > a {
             color: $text-color;
             &:hover, &:focus, &:active {
                 color: $text-highlight-color;
