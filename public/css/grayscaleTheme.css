@@ -4111,14 +4111,24 @@ a[type=button]:disabled {
   padding-top: 1%;
   padding-bottom: 1%;
 }
+.navbar-default .navbar-nav li > a.nav {
+  color: #000;
+  font-size: 100%;
+}
+@media (min-width: 768px) {
+  .navbar-default .navbar-nav li > a.nav {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+}
 .navbar-default .navbar-nav li > a {
   color: #000;
   font-size: 100%;
 }
 @media (min-width: 768px) {
   .navbar-default .navbar-nav li > a {
-    padding-top: 25px;
-    padding-bottom: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 }
 .navbar-default .navbar-nav li > a:hover, .navbar-default .navbar-nav li > a:focus {
@@ -4135,8 +4145,8 @@ a[type=button]:disabled {
 }
 @media (min-width: 768px) {
   .navbar-default .navbar-nav li .disabled {
-    padding-top: 25px;
-    padding-bottom: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 }
 .navbar-default .navbar-nav li .disabled:hover, .navbar-default .navbar-nav li .disabled:focus, .navbar-default .navbar-nav li .disabled:active {

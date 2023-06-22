@@ -14,10 +14,10 @@
         </div>
         <div class="collapse navbar-collapse" id="bs-navbar-collapse">
             <ul class="nav navbar-nav navbar-left">
-                <li id="home" class="nav-home"><a href="/{{app()->getLocale()}}/home"><i class="fa fa-home" aria-hidden="true"></i> {{ trans('general.welcome') }} <span class="sr-only">current</span></a></li>
+                <li id="home" class="nav-home"><a href="/{{app()->getLocale()}}/home" class="nav"><i class="fa fa-home" aria-hidden="true"></i> {{ trans('general.welcome') }} <span class="sr-only">current</span></a></li>
                 <li id="about_us" class="dropdown">
                     @if(!$page_lists['about_me']['inMaintenance'])
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+                    <a href="#" class="dropdown-toggle nav" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                         <i class="fa fa-user" aria-hidden="true"></i> {{trans("general.about_us")}} <span class="caret"></span>
                     </a>
                     @else
@@ -41,7 +41,7 @@
                 @auth
                     @if(Auth::user()->isPremium)
                         <li id="miscs" class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+                            <a href="#" class="dropdown-toggle nav" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                                 <i class="fa fa-briefcase" aria-hidden="true"></i> {{trans('general.miscs')}} <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu">
@@ -61,7 +61,7 @@
                     @if(Auth::user()->isDev || Auth::user()->isAdmin || Auth::user()->isModerator)
                         <li id="management" class="dropdown">
                         @if(!$page_lists['management']['inMaintenance'])
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+                            <a href="#" class="dropdown-toggle nav" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                                 <i class="fa fa-dashboard" aria-hidden="true"></i> {{trans("general.management")}} <span class="caret"></span>
                             </a>
                         @else
@@ -86,7 +86,7 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+                    <a href="#" class="dropdown-toggle nav" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                         <i class="fa fa-language" aria-hidden="true"></i> {{trans("general.language")}} <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
@@ -98,7 +98,7 @@
                 </li>
 
                 <li class="dropdown mobile-hidden">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+                    <a href="#" class="dropdown-toggle nav" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                         <i class="fa fa-bell" aria-hidden="true"><span class="badge-danger raleway-font" style="display: block;position:absolute;padding:2px 4px;border-radius: 50%;margin-left:8px;margin-top:-8px;font-size: 11px;">0</span></i>
                     </a>
                     <ul id="notificationDropdown" class="dropdown-menu">
@@ -110,7 +110,7 @@
 
                 @auth
                     <li id="profile" class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+                        <a href="#" class="dropdown-toggle nav" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                              @if(Auth::user()->AvatarURL)
                                 <img class="img img-circle status-{{Auth::user()->status}}" src="{{Auth::user()->AvatarURL}}" width="24px" style="border-width: 2px;" />
                             @else
@@ -132,7 +132,7 @@
                 @guest
                     @if(!$page_lists['login']['inMaintenance'])
                         <li id="profile" class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+                            <a href="#" class="dropdown-toggle nav" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                                 <i class="fa fa-user-circle-o" aria-hidden="true"></i> My profile <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu">
