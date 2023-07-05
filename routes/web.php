@@ -12,6 +12,14 @@ use Illuminate\Http\Request;
 | contains the "web" middleware group. Now create something great!
 |
 */
+    // API ROUTES
+    
+    Route::get('/api/minecraft/points/{user}', 'API\PointsController@getMinecraftPoints');
+    Route::post('/api/minecraft/points/{user}/{apiKey}', 'API\PointsController@addMinecraftPoints');
+
+
+
+
     Route::get('/company/kiosk/{id}', 'NGST\KioskController@index');
     //Route::get('/company/kiosk/{id}/refresh', 'NGST\KioskController@refreshData');
     Route::post('/mail/receive', 'Mails\MailController@receive');
