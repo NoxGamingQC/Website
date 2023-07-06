@@ -95,6 +95,13 @@ class User extends Authenticatable
         }
     }
 
+    public static function getDiscordInfo($user) {
+        if($user->discord_id) {
+            return DiscordUsers::getUser($user->discord_id);
+        }
+        return null;
+    }
+
     public static function getMinecraftInfo($user) {
         if ($user->minecraft_uuid) {
             $json = file_get_contents('https://crafthead.net/profile/' . $user->minecraft_uuid);
