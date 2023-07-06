@@ -91,7 +91,8 @@ class UserProfileController extends Controller
             'pointCount' => $pointCount,
             'points' => $points,
             'state' => $state,
-            'isCurrentUser' => $isCurrentUser
+            'isCurrentUser' => $isCurrentUser,
+            'socials' => User::getSocialsLinks($user)
         ]);
     }
 

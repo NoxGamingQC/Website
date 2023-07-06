@@ -62,4 +62,19 @@ class User extends Authenticatable
         }
         return $isExist;
     }
+
+    public static function getSocialsLinks($user) {
+        return [
+            'github' =>  $user->github ? 'https://github.com/' . $user->github : '',
+            'instagram' => $user->instagram ? 'https://instagram.com/' . $user->instagram : '',
+            'reddit' => $user->reddit ? 'https://reddit.com/user/' . $user->reddit : '',
+            'snapchat' => $user->snapchat ? 'https://snapchat.com/add/' . $user->snapchat : '',
+            'spotify' => $user->spotify ? 'https://open.spotify.com/' . $user->spotify : '',
+            'steam' => $user->steam ? 'https://steamcommunity.com/' . $user->steam : '',
+            'tiktok' => $user->tiktok ? 'https://tiktok.com/@' . $user->tiktok : '',
+            'twitch' => $user->twitch ? 'https://twitch.tv/' . $user->twitch : '',
+            'twitter' => $user->twitter ? 'https://twitter.com/' . $user->twitter : '',
+            'youtube' => $user->github ? 'https://youtube.com/' . $user->github : '',
+        ];
+    }
 }
