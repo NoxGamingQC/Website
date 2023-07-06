@@ -92,7 +92,8 @@ class UserProfileController extends Controller
             'points' => $points,
             'state' => $state,
             'isCurrentUser' => $isCurrentUser,
-            'socials' => User::getSocialsLinks($user)
+            'socials' => User::getSocialsLinks($user),
+            'minecraft' => User::getMinecraftInfo($user)
         ]);
     }
 

@@ -81,6 +81,32 @@
                 <p>{{trans('profile.no_points')}}</p>
                 @endif
             </div>
+            @if($minecraft)
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>Minecraft</h3>
+                    <hr />
+                </div>
+                <div class="col-md-6">
+                    <ul>
+                        <li>{{trans('general.username')}}: {{$minecraft['name']}}</li>
+                        <li>UUID: {{$minecraft['uuid']}}</li>
+                        <li>Shorten UUID: {{$minecraft['shorten_uuid']}}</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    @if(!empty($minecraft['avatar']))
+                        <img src="{{$minecraft['avatar']}}" width="100" alt="avatar" title="avatar" style="margin-right:5px">
+                    @endif
+                    @if(!empty($minecraft['cape']))
+                    <img src="{{$minecraft['cape']}}" width="75" alt="cape" title="cape" style="margin-right:5px">
+                    @endif
+                    @if(!empty($minecraft['full_skin']))
+                    <img src="{{$minecraft['full_skin']}}" width="100" alt="full skin" title="full skin" style="margin-right:5px">
+                    @endif
+                </div>
+            </div>
+            @endif
         </div>
     </div>
 </div>
