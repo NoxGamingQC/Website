@@ -2,6 +2,8 @@
 @section('title', $username . '\'s profile')
 @section('content')
 
+
+<input type="hidden" id="userId" value="{{$id}}">
 <div class="row" style="margin-top:5%">
     <div class="col-md-12">
         <div class="panel panel-block-primary" style="margin:0">
@@ -29,9 +31,9 @@
                 @endif
                 <div class="col-md-12 text-center">
                     @if($avatarURL)
-                        <img class="img img-circle {{$isCurrentUser ? 'user-status' : ''}} status-{{$state}}" src="{{$avatarURL}}" alt="{{$username}}" title="{{$username}}" width="250px" />
+                        <img class="img img-circle {{$isCurrentUser ? 'user-status img-own-avatar' : 'img-user-avatar'}} status-{{$state}}" src="{{$avatarURL}}" alt="{{$username}}" title="{{$username}}" width="250px" />
                     @else
-                        <img class="img img-circle {{$isCurrentUser ? 'user-status' : ''}} status-{{$state}}" src="/img/no-avatar.jpg" alt="{{$username}}" title="{{$username}}" width="250px" />
+                        <img class="img img-circle {{$isCurrentUser ? 'user-status img-own-avatar' : 'img-user-avatar'}} status-{{$state}}" src="/img/no-avatar.jpg" alt="{{$username}}" title="{{$username}}" width="250px" />
                     @endif
                     <h1>
                         {{$username}}

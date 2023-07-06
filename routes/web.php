@@ -14,6 +14,8 @@ use Illuminate\Http\Request;
 */
     // API ROUTES
     
+    Route::get('/api/check_state', 'API\UserController@checkState');
+    Route::get('/api/check_state/{id}', 'API\UserController@checkStateWithID');
     Route::get('/api/minecraft/points/{user}', 'API\PointsController@getMinecraftPoints');
     Route::post('/api/minecraft/points/{user}/{apiKey}', 'API\PointsController@addMinecraftPoints');
 

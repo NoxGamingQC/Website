@@ -70,6 +70,7 @@ class UserProfileController extends Controller
         }
 
         return view('view.profile.show', [
+            "id" => $user->id,
             "username" => $user->name,
             "discordID" => $user->DiscordID,
             "grade" => $grade,
