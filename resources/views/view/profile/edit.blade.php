@@ -20,7 +20,7 @@
                         <input class="form-control" id="selectAvatar" type="file" />
                     </div>
                     <div class="col-md-6 text-center">
-                        <img class="img img-circle user-status status-{{$state}}" id="avatar" src="{{$avatarURL}}" width="100px"/>
+                        <img class="img img-circle img-own-avatar user-status status-{{$state}}" id="avatar" src="{{$avatarURL}}" width="100px"/>
                     </div>
                 </div>
             </div>

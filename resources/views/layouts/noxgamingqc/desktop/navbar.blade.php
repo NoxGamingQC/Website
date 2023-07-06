@@ -112,9 +112,9 @@
                     <li id="profile" class="dropdown">
                         <a href="#" class="dropdown-toggle nav" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                              @if(Auth::user()->AvatarURL)
-                                <img class="img img-circle status-{{Auth::user()->status}}" src="{{Auth::user()->AvatarURL}}" width="24px" style="border-width: 2px;" />
+                                <img class="img img-circle img-own-avatar status-{{(Auth::user()->lockStatus == 'online') ? Auth::user()->status : Auth::user()->lockStatus}}" src="{{Auth::user()->AvatarURL}}" width="24px" style="border-width: 2px;" />
                             @else
-                                <img class="img img-circle status-{{Auth::user()->status}}" src="/img/no-avatar.jpg" width="24px" style="border-width: 2px;" />
+                                <img class="img img-circle status-{{(Auth::user()->lockStatus == 'online') ? Auth::user()->status : Auth::user()->lockStatus}}" src="/img/no-avatar.jpg" width="24px" style="border-width: 2px;" />
                             @endif
                             {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
@@ -171,6 +171,46 @@
     if('#' + window.location.pathname.split('/' + language + '/')[1].split('/')[0] == 'login' || '#' + window.location.pathname.split('/' + language + '/')[1].split('/')[0] == "register") {
         $('#profile').addClass('current-page')
     }
+
+    function checkState() {
+        $.ajax({
+            url: '/api/check_state',
+            type: 'GET',
+            success: function (response) {
+                $('.img-own-avatar').each(function(key, value) {
+                    $(value).removeClass('status-online');
+                    $(value).removeClass('status-idle');
+                    $(value).removeClass('status-dnd');
+                    $(value).removeClass('status-offline');
+                    $(value).addClass('status-' + response);
+                    checkState();
+                })
+            }
+        })
+    }
+
+    function checkUserState() {
+        if($('#userId').length > 0) {
+            $.ajax({
+                url: '/api/check_state/' + $('#userId').val(),
+                type: 'GET',
+                success: function (response) {
+                    $('.img-own-avatar').each(function(key, value) {
+                        $(value).removeClass('status-online');
+                        $(value).removeClass('status-idle');
+                        $(value).removeClass('status-dnd');
+                        $(value).removeClass('status-offline');
+                        $(value).addClass('status-' + response);
+                        checkUserState();
+                    })
+                }
+            })
+        }
+    }
+
+    checkState();
+    checkUserState();
+
     var typingTimer;                //timer identifier
     var doneTypingInterval = 1000;  //time in ms, 5 seconds for example
     var $input = $('#navSearch');
