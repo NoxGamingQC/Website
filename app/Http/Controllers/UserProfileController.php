@@ -72,16 +72,12 @@ class UserProfileController extends Controller
         return view('view.profile.show', [
             "id" => $user->id,
             "username" => $user->name,
-            "discordID" => $user->DiscordID,
             "grade" => $grade,
             "isPremium" => $user->isPremium,
-            "discordName" => $user->DiscordName,
             "language" => $user->Language,
             "badges" => $badges,
             "premiumTime" => $premiumTime,
             "avatarURL" => User::getPicture($user),
-            "discriminator" => $user->Discriminator,
-            "discordEmail" => $user->DiscordEmail,
             "firstname" => $firstname,
             "lastname" => $lastname,
             "age" => $age,
@@ -93,7 +89,8 @@ class UserProfileController extends Controller
             'state' => $state,
             'isCurrentUser' => $isCurrentUser,
             'socials' => User::getSocialsLinks($user),
-            'minecraft' => User::getMinecraftInfo($user)
+            'minecraft' => User::getMinecraftInfo($user),
+            'discordUser' => User::getDiscordInfo($user)
         ]);
     }
 

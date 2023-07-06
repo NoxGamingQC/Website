@@ -45,6 +45,9 @@
                     <img src="/img/Badges/{{$badge}}.png" alt="{{ucfirst($badge)}}" title="{{ucfirst($badge)}}" width="100px" style="padding: 7px 14px" />
                 @endforeach
                 <br />
+                @if($discordUser)
+                    <img src="/img/Socials/discord.svg" alt="Discord" title="Discord" width="80px" style="padding: 7px 14px" />
+                @endif
                 @foreach ($socials as $key => $social)
                     @if(!empty($social))
                         <a href="{{$social}}" class="no-decoration"><img src="/img/Socials/{{$key}}.svg" alt="{{ucfirst($key)}}" title="{{ucfirst($key)}}" width="75px" style="padding: 7px 14px" /></a>
