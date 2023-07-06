@@ -94,4 +94,25 @@ class User extends Authenticatable
             return '/img/no-avatar.jpg';
         }
     }
+
+    public static function getMinecraftInfo($user) {
+        if ($user->minecraft_uuid) {
+            $json = file_get_contents('https://crafthead.net/profile/' . $user->minecraft_uuid);
+            if (!empty($json)) {
+                $data = json_decode($json, true);
+                return [
+                    'uuid' => $user->minecraft_uuid,
+                    'shorten_uuid' => str_replace('-', '', $user->minecraft_uuid),
+                    'name' => $data['name'],
+                    'full_skin' => 'https://crafthead.net/armor/body/' . $user->minecraft_uuid,
+                    'avatar' => 'https://crafthead.net/avatar/'. $user->minecraft_uuid,
+                    'cape' => 'https://crafthead.net/cape/' . $user->minecraft_uuid,
+                    'bust' => 'https://crafthead.net/bust/' . $user->minecraft_uuid,
+                    'cube' => 'https://crafthead.net/cube/' . $user->minecraft_uuid,
+                ];
+            }
+        }
+        return null;
+        
+    }
 }
