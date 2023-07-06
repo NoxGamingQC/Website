@@ -79,7 +79,7 @@ class UserProfileController extends Controller
             "language" => $user->Language,
             "badges" => $badges,
             "premiumTime" => $premiumTime,
-            "avatarURL" => $user->AvatarURL,
+            "avatarURL" => User::getPicture($user),
             "discriminator" => $user->Discriminator,
             "discordEmail" => $user->DiscordEmail,
             "firstname" => $firstname,

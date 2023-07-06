@@ -77,4 +77,21 @@ class User extends Authenticatable
             'youtube' => $user->github ? 'https://youtube.com/' . $user->github : '',
         ];
     }
+
+    public static function getPicture($user) {
+        if($user->AvatarURL && $user->minecraft_uuid) {
+            if($user->avatar_preference == 'minecraft') {
+                return 'https://crafthead.net/avatar/' . $user->minecraft_uuid;
+            } else {
+                return $user->AvatarURL;
+            }
+        }
+        if($user->AvatarURL) {
+            return $user->AvatarURL;
+        } else if($user->minecraft_uuid) {
+            return 'https://crafthead.net/avatar/' . $user->minecraft_uuid;
+        } else {
+            return '/img/no-avatar.jpg';
+        }
+    }
 }
