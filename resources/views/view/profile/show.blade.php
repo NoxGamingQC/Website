@@ -4,48 +4,52 @@
 
 
 <input type="hidden" id="userId" value="{{$id}}">
-<div class="row" style="margin-top:5%">
+<div class="row">
     <div class="col-md-12">
-        <div class="panel panel-block-primary" style="margin:0">
-            <div class="panel-body" style="padding: 5%; padding-top: 2% !important;">
-                <div class="col-md-12">
-                    <h3>Points: {{$pointCount}}</h3>
-                </div>
-                @if ($country)
-                    @if($isPremium)
-                    <div class="col-md-6 text-left">
-                    @else
-                    <div class="col-md-12 text-left">
-                    @endif
-                        <img class="img img-circle" src="https://cdn.countryflags.com/thumbs/{{str_replace(' ', '-', strtolower($country))}}/flag-square-500.png" alt="{{$country}}" title="{{$country}}" width="40px" />
-                    </div>
-                @endif
+        <div class="header" style="margin-top:8%;position:relative; width: 100vw; height:105vh !important;">
+            <div class="col-md-12">
+                <h3>Points: {{$pointCount}}</h3>
+            </div>
+            @if ($country)
                 @if($isPremium)
-                    @if($country)
-                    <div class="col-md-6 text-right">
-                    @else
-                    <div class="col-md-12 text-right">
-                    @endif
-                        <img src="/img/Badges/premium.png" alt="{{trans('profile.premium')}}" title="{{trans('profile.premium')}}" width="60px" />
-                    </div>
+                <div class="col-md-6 text-left">
+                @else
+                <div class="col-md-12 text-left">
                 @endif
-                <div class="col-md-12 text-center">
-                    @if($avatarURL)
-                        <img class="img img-circle {{$isCurrentUser ? 'user-status img-own-avatar' : 'img-user-avatar'}} status-{{$state}}" src="{{$avatarURL}}" alt="{{$username}}" title="{{$username}}" width="250px" />
-                    @else
-                        <img class="img img-circle {{$isCurrentUser ? 'user-status img-own-avatar' : 'img-user-avatar'}} status-{{$state}}" src="/img/no-avatar.jpg" alt="{{$username}}" title="{{$username}}" width="250px" />
-                    @endif
-                    <h1>
-                        {{$username}}
-                        <br />
-                        <small style="color: #BBBBBB;">{{$firstname}} {{$lastname}}</small>
-                    </h1>
-                    <h3>{{ trans('profile.' . $grade) }}</h3>
-                    @foreach ($badges as $badge)
-                        <img src="/img/Badges/{{$badge}}.png" alt="{{ucfirst($badge)}}" title="{{ucfirst($badge)}}" width="100px" style="padding: 7px 14px" />
-                    @endforeach
-                    <br />
+                    <img class="img img-circle" src="https://cdn.countryflags.com/thumbs/{{str_replace(' ', '-', strtolower($country))}}/flag-square-500.png" alt="{{$country}}" title="{{$country}}" width="40px" />
                 </div>
+            @endif
+            @if($isPremium)
+                @if($country)
+                <div class="col-md-6 text-right">
+                @else
+                <div class="col-md-12 text-right">
+                @endif
+                    <img src="/img/Badges/premium.png" alt="{{trans('profile.premium')}}" title="{{trans('profile.premium')}}" width="60px" />
+                </div>
+            @endif
+            <div class="col-md-12 text-center">
+                @if($avatarURL)
+                    <img class="img img-circle {{$isCurrentUser ? 'user-status img-own-avatar' : 'img-user-avatar'}} status-{{$state}}" src="{{$avatarURL}}" alt="{{$username}}" title="{{$username}}" width="250px" />
+                @else
+                    <img class="img img-circle {{$isCurrentUser ? 'user-status img-own-avatar' : 'img-user-avatar'}} status-{{$state}}" src="/img/no-avatar.jpg" alt="{{$username}}" title="{{$username}}" width="250px" />
+                @endif
+                <h1>
+                    <br />
+                    {{$username}}
+                    <br />
+                    <small style="color: #BBBBBB;">{{$firstname}} {{$lastname}}</small>
+                </h1>
+                <h3>{{ trans('profile.' . $grade) }}</h3>
+                @foreach ($badges as $badge)
+                    <img src="/img/Badges/{{$badge}}.png" alt="{{ucfirst($badge)}}" title="{{ucfirst($badge)}}" width="100px" style="padding: 7px 14px" />
+                @endforeach
+                <br />
+                @foreach ($socials as $key => $social)
+                    @if(!empty($social))
+                        <a href="{{$social}}" class="no-decoration"><img src="/img/Socials/{{$key}}.svg" alt="{{ucfirst($key)}}" title="{{ucfirst($key)}}" width="75px" style="padding: 7px 14px" /></a>
+                    @endif
+                @endforeach
             </div>
         </div>
     </div>
