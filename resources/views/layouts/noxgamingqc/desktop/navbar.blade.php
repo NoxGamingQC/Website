@@ -111,11 +111,7 @@
                 @auth
                     <li id="profile" class="dropdown">
                         <a href="#" class="dropdown-toggle nav" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
-                             @if(Auth::user()->AvatarURL)
-                                <img class="img img-circle img-own-avatar status-{{(Auth::user()->lockStatus == 'online') ? Auth::user()->status : Auth::user()->lockStatus}}" src="{{Auth::user()->AvatarURL}}" width="24px" style="border-width: 2px;" />
-                            @else
-                                <img class="img img-circle status-{{(Auth::user()->lockStatus == 'online') ? Auth::user()->status : Auth::user()->lockStatus}}" src="/img/no-avatar.jpg" width="24px" style="border-width: 2px;" />
-                            @endif
+                             <img class="img img-circle status-{{(Auth::user()->lockStatus == 'online') ? Auth::user()->status : Auth::user()->lockStatus}}" src="{{App\User::getPicture(Auth::user())}}" width="24px" style="border-width: 2px;" />
                             {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
