@@ -74,7 +74,7 @@ class User extends Authenticatable
             'tiktok' => $user->tiktok ? 'https://tiktok.com/@' . $user->tiktok : '',
             'twitch' => $user->twitch ? 'https://twitch.tv/' . $user->twitch : '',
             'twitter' => $user->twitter ? 'https://twitter.com/' . $user->twitter : '',
-            'youtube' => $user->github ? 'https://youtube.com/' . $user->github : '',
+            'youtube' => $user->youtube ? 'https://youtube.com/' . $user->youtube : '',
         ];
     }
 
