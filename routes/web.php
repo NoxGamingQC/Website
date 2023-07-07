@@ -18,6 +18,16 @@ use Illuminate\Http\Request;
     Route::get('/api/check_state/{id}', 'API\UserController@checkStateWithID');
     Route::get('/api/minecraft/points/{user}', 'API\PointsController@getMinecraftPoints');
     Route::post('/api/minecraft/points/{user}/{apiKey}', 'API\PointsController@addMinecraftPoints');
+    
+
+    // NoxBOT routes
+    Route::get('/api/noxbot/activities', 'NoxBOT\BotActivitiesController@getActivities');
+    Route::post('/api/noxbot/points/add', 'NoxBOT\PointSystemController@addPoints');
+    Route::get('/api/noxbot/modules', 'NoxBOT\BotModulesController@getModules');
+    Route::get('/api/noxbot/json/subs_modules', 'NoxBOT\BotModulesController@getSubsModules');
+    Route::get('/api/noxbot/roles_reactions', 'NoxBOT\BotRolesReactionsController@getRolesReactions');
+    Route::get('/api/noxbot/twitch_lives', 'NoxBOT\BotTwitchLivesController@getTwitchLives');
+    Route::post('/api/noxbot/twitch_lives/{id}', 'NoxBOT\BotTwitchLivesController@postTwitchLives');
 
 
 
@@ -97,15 +107,6 @@ use Illuminate\Http\Request;
     Route::get('/projects/minecraft', function () {
         return redirect(app()->getLocale() . '/projects/minecraft');
     });
-
-    // NoxBOT routes
-    Route::get('/noxbot/data/json/activities', 'NoxBOT\BotActivitiesController@getActivities');
-    Route::post('/noxbot/data/points/add', 'NoxBOT\PointSystemController@addPoints');
-    Route::get('/noxbot/data/json/modules', 'NoxBOT\BotModulesController@getModules');
-    Route::get('/noxbot/data/json/subs_modules', 'NoxBOT\BotModulesController@getSubsModules');
-    Route::get('/noxbot/data/json/roles_reactions', 'NoxBOT\BotRolesReactionsController@getRolesReactions');
-    Route::get('/noxbot/data/json/twitch_lives', 'NoxBOT\BotTwitchLivesController@getTwitchLives');
-    Route::post('/noxbot/data/json/twitch_lives/{id}', 'NoxBOT\BotTwitchLivesController@postTwitchLives');
 
     //Post routes
     Route::post('/profile/edit', 'UserProfileController@edit');
