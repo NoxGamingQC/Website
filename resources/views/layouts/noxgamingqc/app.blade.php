@@ -62,7 +62,7 @@
                 @include('layouts.noxgamingqc.desktop.header')
             </div>
             <div class="desktop-hidden">
-                @include('layouts.noxgamingqc.mobile.header')
+                @include('layouts.noxgamingqc.desktop.header')
             </div>
         @endif
         <div class="content">
@@ -73,7 +73,7 @@
             @include('layouts.noxgamingqc.desktop.navbar')
         </div>
         <div class="desktop-hidden">
-            @include('layouts.noxgamingqc.mobile.navbar')
+            @include('layouts.noxgamingqc.desktop.navbar')
         </div>
         @include('alert.alert')
         @if(isset($header) && $header === 'false')
@@ -82,7 +82,7 @@
                 @include('layouts.noxgamingqc.desktop.header')
             </div>
             <div class="desktop-hidden">
-                @include('layouts.noxgamingqc.mobile.header')
+                @include('layouts.noxgamingqc.desktop.header')
             </div>
         @endif
         <div class="content">
@@ -92,7 +92,7 @@
             @include('layouts.noxgamingqc.desktop.footer')
         </div>
         <div class="desktop-hidden">
-            @include('layouts.noxgamingqc.mobile.footer')
+            @include('layouts.noxgamingqc.desktop.footer')
         </div>
     @endif
         
