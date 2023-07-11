@@ -45,10 +45,10 @@
         @include('layouts.noxgamingqc.desktop.footer')
     </div>
     <div class="desktop-hidden">
-        @include('layouts.noxgamingqc.mobile.navbar')
+        @include('layouts.noxgamingqc.desktop.navbar')
         @include('alert.alert')
         @yield('content')
-        @include('layouts.noxgamingqc.mobile.footer')
+        @include('layouts.noxgamingqc.desktop.footer')
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
