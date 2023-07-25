@@ -5,9 +5,9 @@ Our website [noxgamingqc.ca](https://www.noxgamingqc.ca).
 [![Type](https://img.shields.io/badge/project%20type-website-red?style=for-the-badge)](#)
 [![Website](https://img.shields.io/website?url=https%3A%2F%2Fnoxgamingqc.ca&style=for-the-badge)](#)
 [![License](https://img.shields.io/badge/license-mit-green?style=for-the-badge)](#)
-[![PHP version](https://img.shields.io/badge/laravel-9.38.0-blue?style=for-the-badge)](#)
+[![Laravel version](https://img.shields.io/badge/laravel-9.38.0-blue?style=for-the-badge)](#)
 [![PHP version](https://img.shields.io/badge/php-%5E8.0.2-blue?style=for-the-badge)](#)
-[![PHP version](https://img.shields.io/badge/npm-%5E6.13.6-blue?style=for-the-badge)](#)
+[![NPM version](https://img.shields.io/badge/npm-%5E6.13.6-blue?style=for-the-badge)](#)
 <img alt="Discord" src="https://img.shields.io/discord/938558244924829756?style=for-the-badge&logo=discord&logoColor=%23ffffff&label=%20&labelColor=%23697EC4&color=%237289DA&link=https%3A%2F%2Fnoxgamingqc.ca%2Fdiscord">
 
 ## Travis Build status
