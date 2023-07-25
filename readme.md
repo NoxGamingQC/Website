@@ -4,7 +4,7 @@ Our website [noxgamingqc.ca](https://www.noxgamingqc.ca).
 
 [![Type](https://img.shields.io/badge/project%20type-website-red?style=for-the-badge)](#)
 [![Website](https://img.shields.io/website?url=https%3A%2F%2Fnoxgamingqc.ca&style=for-the-badge)](#)
-[![License](https://img.shields.io/badge/license-mit-green?style=for-the-badge)](#)
+[![License](https://img.shields.io/github/license/NoxGamingQC/Website?style=for-the-badge)](#)
 [![Laravel version](https://img.shields.io/badge/laravel-9.38.0-blue?style=for-the-badge)](#)
 [![PHP version](https://img.shields.io/badge/php-%5E8.0.2-blue?style=for-the-badge)](#)
 [![NPM version](https://img.shields.io/badge/npm-%5E6.13.6-blue?style=for-the-badge)](#)
@@ -58,6 +58,10 @@ docker-compose up -d --build
 ```
 
 Navigate to `localhost:8000`
+
+## Acknowledgements
+
+- Many thanks to all the people who contributed to the Laravel project.
 
 ## Credits
 
