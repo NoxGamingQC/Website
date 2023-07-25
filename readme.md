@@ -2,6 +2,7 @@
 
 Our website [noxgamingqc.ca](https://www.noxgamingqc.ca).
 
+![Website](https://img.shields.io/website?url=https%3A%2F%2Fnoxgamingqc.ca&style=for-the-badge)
 [![License](https://img.shields.io/badge/license-mit-green?style=for-the-badge)](#)
 [![PHP version](https://img.shields.io/badge/laravel-9.38.0-blue?style=for-the-badge)](#)
 [![PHP version](https://img.shields.io/badge/php-%5E8.0.2-blue?style=for-the-badge)](#)
