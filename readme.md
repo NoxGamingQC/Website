@@ -7,9 +7,9 @@ Our website [noxgamingqc.ca](https://www.noxgamingqc.ca).
 [![Repo size](https://img.shields.io/github/repo-size/NoxGamingQC/Website?style=for-the-badge&logo=github&logoColor=%23ffffff)](#)
 [![License](https://img.shields.io/github/license/NoxGamingQC/Website?style=for-the-badge)](#)
 [![Website](https://img.shields.io/website?url=https%3A%2F%2Fnoxgamingqc.ca&style=for-the-badge)](#)
-
-## Travis Build status
-[![Build Status](https://api.travis-ci.com/NoxGamingQC/Website.svg?token=8xPnyZAhxFTwCpTJsxsG&branch=master)](https://travis-ci.com/NoxGamingQC/Website)
+[![Travis build](https://img.shields.io/travis/com/NoxGamingQC/NoxBOT?style=for-the-badge&label=Travis%20build&logo=travis&logoColor=%23ffffff)](#)
+[![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability/NoxGamingQC/NoxBOT?style=for-the-badge&logo=codeclimate&logoColor=%23ffffff)](#)
+[![Code Climate issues](https://img.shields.io/codeclimate/issues/NoxGamingQC/NoxBOT?style=for-the-badge&logo=codeclimate&logoColor=%23ffffff)](#)
 
 ## Installation
 
