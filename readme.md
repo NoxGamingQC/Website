@@ -25,6 +25,10 @@ Our website [noxgamingqc.ca](https://www.noxgamingqc.ca).
 - posgresql
 - php 8.0.2 or higher
 
+## Technologies used
+
+![Laravel](https://img.shields.io/badge/laravel-9.38.0-%23FF2D20.svg?style=for-the-badge&logo=laravel&labelColor=333333&logoColor=white)
+
 ### Steps
 
 - Create a new repository
