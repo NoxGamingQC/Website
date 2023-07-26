@@ -7,7 +7,7 @@ Our website [noxgamingqc.ca](https://www.noxgamingqc.ca).
 [![State](https://img.shields.io/badge/state-maintained-green?style=for-the-badge)](#)
 [![License](https://img.shields.io/github/license/NoxGamingQC/Website?style=for-the-badge)](#)
 <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/NoxGamingQC/Website?style=for-the-badge&logo=github&logoColor=%23ffffff">
-<img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/NoxGamingQC/Website?logo=github">
+<img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/NoxGamingQC/Website?logo=github&style=for-the-badge">
 
 ## Travis Build status
 [![Build Status](https://api.travis-ci.com/NoxGamingQC/Website.svg?token=8xPnyZAhxFTwCpTJsxsG&branch=master)](https://travis-ci.com/NoxGamingQC/Website)
