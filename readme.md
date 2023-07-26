@@ -21,6 +21,7 @@ Our website [noxgamingqc.ca](https://www.noxgamingqc.ca).
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 ![PHP](https://img.shields.io/badge/php-%5E8.0.2-%23777BB4.svg?style=for-the-badge&labelColor=333333&logo=php&logoColor=white)
 ![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
+[![Heroku](https://img.shields.io/badge/heroku-%23430098.svg?style=for-the-badge&logo=heroku&logoColor=white)](#)
 
 ### Steps
 
