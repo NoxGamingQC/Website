@@ -5,10 +5,6 @@ Our website [noxgamingqc.ca](https://www.noxgamingqc.ca).
 [![Type](https://img.shields.io/badge/project%20type-website-red?style=for-the-badge)](#)
 [![Website](https://img.shields.io/website?url=https%3A%2F%2Fnoxgamingqc.ca&style=for-the-badge)](#)
 [![License](https://img.shields.io/github/license/NoxGamingQC/Website?style=for-the-badge)](#)
-[![Laravel version](https://img.shields.io/badge/laravel-9.38.0-blue?style=for-the-badge)](#)
-[![PHP version](https://img.shields.io/badge/php-%5E8.0.2-blue?style=for-the-badge)](#)
-[![NPM version](https://img.shields.io/badge/npm-%5E6.13.6-blue?style=for-the-badge)](#)
-<img alt="Discord" src="https://img.shields.io/discord/938558244924829756?style=for-the-badge&logo=discord&logoColor=%23ffffff&label=%20&labelColor=%23697EC4&color=%237289DA&link=https%3A%2F%2Fnoxgamingqc.ca%2Fdiscord">
 <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/NoxGamingQC/Website?style=for-the-badge&logo=github&logoColor=%23ffffff">
 
 ## Travis Build status
@@ -18,16 +14,12 @@ Our website [noxgamingqc.ca](https://www.noxgamingqc.ca).
 
 ### Prerequirement
 
-- npm
-- nodejs
-- Docker
-- docker-compose
-- posgresql
-- php 8.0.2 or higher
-
-## Technologies used
-
+![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
 ![Laravel](https://img.shields.io/badge/laravel-9.38.0-%23FF2D20.svg?style=for-the-badge&logo=laravel&labelColor=333333&logoColor=white)
+![NPM](https://img.shields.io/badge/NPM-%5E6.13.6-%23CB3837.svg?style=for-the-badge&labelColor=333333&logo=npm&logoColor=white)
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+![PHP](https://img.shields.io/badge/php-%5E8.0.2-%23777BB4.svg?style=for-the-badge&labelColor=333333&logo=php&logoColor=white)
+![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
 
 ### Steps
 
