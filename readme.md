@@ -9,6 +9,7 @@ Our website [noxgamingqc.ca](https://www.noxgamingqc.ca).
 [![Website](https://img.shields.io/website?url=https%3A%2F%2Fnoxgamingqc.ca&style=for-the-badge&labelColor=333333)](https://www.noxgamingqc.ca)
 [![Travis build](https://img.shields.io/travis/com/NoxGamingQC/Website?style=for-the-badge&label=Travis%20build&logo=travis&logoColor=%23ffffff&labelColor=333333)](#)
 [![Snyk security](https://img.shields.io/badge/Snyk%20security-monitored-8E48BF?style=for-the-badge&labelColor=333333)](#)
+[![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability/NoxGamingQC/Website?style=for-the-badge&logo=codeclimate&logoColor=%23ffffff&labelColor=333333)](https://codeclimate.com/github/NoxGamingQC/Website)
 
 ## Installation
 
