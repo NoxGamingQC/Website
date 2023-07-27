@@ -47,7 +47,7 @@
     "node-gyp": "^9.0.0",
     "postcss-loader": "^7.0.1",
     "querystring": "^0.2.0",
-    "toastr": "^2.1.4",
+    "toastr": "2.1.2",
     "unset-value": "^2.0.1"
   },
   "name": "website",
