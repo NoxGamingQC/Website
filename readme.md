@@ -66,3 +66,6 @@ Navigate to `localhost:8000`
 - [NoxGamingQC](https://github.com/noxgamingqc)
 - [All Contributors](../../contributors)
 
+### Before editing .gitignore
+
+Do not remove `composer.lock` from the file list. Heroku require that file to build the website.
