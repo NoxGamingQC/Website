@@ -3,6 +3,8 @@ node_modules/
 npm-debug.log
 yarn-error.log
 composer.lock
+yarn.lock
+composer.lock
 /.idea
 
 # Laravel 4 specific
