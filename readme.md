@@ -7,7 +7,7 @@ Our website [noxgamingqc.ca](https://www.noxgamingqc.ca).
 [![Repo size](https://img.shields.io/github/repo-size/NoxGamingQC/Website?style=for-the-badge&logo=github&logoColor=%23ffffff&labelColor=333333)](#)
 [![License](https://img.shields.io/github/license/NoxGamingQC/Website?style=for-the-badge&labelColor=333333)](LICENSE.md)
 [![Website](https://img.shields.io/website?url=https%3A%2F%2Fnoxgamingqc.ca&style=for-the-badge&labelColor=333333)](https://www.noxgamingqc.ca)
-[![Travis build](https://img.shields.io/travis/com/NoxGamingQC/NoxBOT?style=for-the-badge&label=Travis%20build&logo=travis&logoColor=%23ffffff&labelColor=333333)](#)
+[![Travis build](https://img.shields.io/travis/com/NoxGamingQC/Website?style=for-the-badge&label=Travis%20build&logo=travis&logoColor=%23ffffff&labelColor=333333)](#)
 
 ## Installation
 
