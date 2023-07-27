@@ -5,6 +5,7 @@ yarn-error.log
 composer.lock
 yarn.lock
 composer.lock
+package-lock.json
 /.idea
 
 # Laravel 4 specific
