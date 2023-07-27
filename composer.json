@@ -2,7 +2,7 @@
     "name": "website/noxgamingqc",
     "description": "Nox's website.",
     "keywords": ["NoxGamingQC", "Website"],
-    "license": "Apache License 2.0",
+    "license": "MIT",
     "type": "project",
     "require": {
         "php": "^8.1.0",
@@ -19,7 +19,6 @@
         "nunomaduro/collision": "^6.1",
         "phpunit/phpunit": "^9.0",
         "spatie/laravel-ignition": "^1.0",
-        "square/square": "21.1.0.20220823",
         "symfony/http-client": "^6.1",
         "symfony/mailgun-mailer": "^6.1",
         "webklex/laravel-imap": "^4.1",
