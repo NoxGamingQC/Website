@@ -21,7 +21,7 @@
         "spatie/laravel-ignition": "^1.0",
         "symfony/http-client": "^6.1",
         "symfony/mailgun-mailer": "^6.1",
-        "webklex/laravel-imap": "^4.1",
+        "webklex/laravel-imap": "^5.3",
         "wohali/oauth2-discord-new": "^1.0",
         "zbateson/mail-mime-parser": "^2.2"
     },
