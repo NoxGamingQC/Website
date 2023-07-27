@@ -5,8 +5,8 @@ Our website [noxgamingqc.ca](https://www.noxgamingqc.ca).
 [![Type](https://img.shields.io/badge/project%20type-website-blue?style=for-the-badge&labelColor=333333)](#)
 [![State](https://img.shields.io/badge/state-maintained-228C22?style=for-the-badge&labelColor=333333)](#)
 [![Repo size](https://img.shields.io/github/repo-size/NoxGamingQC/Website?style=for-the-badge&logo=github&logoColor=%23ffffff&labelColor=333333)](#)
-[![License](https://img.shields.io/github/license/NoxGamingQC/Website?style=for-the-badge&labelColor=333333)](#)
-[![Website](https://img.shields.io/website?url=https%3A%2F%2Fnoxgamingqc.ca&style=for-the-badge&labelColor=333333)](#)
+[![License](https://img.shields.io/github/license/NoxGamingQC/Website?style=for-the-badge&labelColor=333333)](License.md)
+[![Website](https://img.shields.io/website?url=https%3A%2F%2Fnoxgamingqc.ca&style=for-the-badge&labelColor=333333)](https://www.noxgamingqc.ca)
 [![Travis build](https://img.shields.io/travis/com/NoxGamingQC/NoxBOT?style=for-the-badge&label=Travis%20build&logo=travis&logoColor=%23ffffff&labelColor=333333)](#)
 
 ## Installation
@@ -65,10 +65,3 @@ Navigate to `localhost:8000`
 - [NoxGamingQC](https://github.com/noxgamingqc)
 - [All Contributors](../../contributors)
 
-## License
-
-The MIT License (MIT). Please see the [license file](LICENSE.md) for more information.
-
-## Known errors
-
-- If you receive the error `Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 7.2.5".`, you can do `composer install --ignore-platform-reqs` until the issue is fixed.
