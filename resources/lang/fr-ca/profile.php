@@ -44,5 +44,8 @@ return [
     'premium_time' => "Date d'expiration de l'abonnement premium",
     'lifetime' => "Abonnement à vie",
     'points' => "points",
-    'points_log' => "Journeaux de point"
+    'points_log' => "Journeaux de point",
+    'discord_id' => "ID Discord",
+    'discord_name' => "Nom Discord",
+    'shorten_uuid' => "UUID abrégé"
 ];
