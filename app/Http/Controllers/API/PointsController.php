@@ -17,18 +17,21 @@ class PointsController extends Controller
     public function addPoints(Request $request) {
         $getApp = ApiKey::where('key', '=', $request->website_token)->first();
         if($getApp) {
-            $lastEntry = Points::where('key_id', '=', $getApp->id)->orderBy('created_at', 'DESC')->first();
-            $canReceivePoints = true;
-            if ($lastEntry) {
-                $now = Carbon::now()->subMinutes(1);
-                if(!Carbon::parse($lastEntry->created_at)->gt($now)) {
-                    $canReceivePoints = false;
-                }
-            }
             if($request->discord_id) {
+                $lastEntry = Points::where('key_id', '=', $getApp->id)->orderBy('created_at', 'DESC')->first();
+                $canReceivePoints = false;
+                if ($lastEntry) {
+                    $now = Carbon::now()->addMinutes(1);
+                    if(Carbon::parse($lastEntry->created_at)->gt($now)) {
+                        $canReceivePoints = true;
+                    }
+                } else {
+                    $canReceivePoints = true;
+                }
                 $userDiscordID = DiscordUsers::where('discord_id', '=', $request->discord_id)->first();
                 $user = User::where('discord_id', '=', $userDiscordID->id)->first();
             } else {
+                $canReceivePoints = true;
                 $user = User::findOrFail($request->user_id);
             }
             
