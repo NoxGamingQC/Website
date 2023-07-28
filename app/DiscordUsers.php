@@ -15,4 +15,14 @@ class DiscordUsers extends Model
         $user = DiscordUsers::findOrFail($userID);
         return $user;
     }
+
+    static public function getUserByDiscordID($discordID) {
+        $user = DiscordUsers::where('discord_id','=', $discordID)->first();
+        return $user;
+    }
+
+    static public function getUserByID($id) {
+        $user = DiscordUsers::where('id','=', $id)->first();
+        return $user;
+    }
 }

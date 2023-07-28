@@ -44,5 +44,8 @@ return [
     'premium_time' => "Premium expiration date",
     'lifetime' => "Lifetime subscription",
     'points' => "points",
-    'points_log' => "Points logs"
+    'points_log' => "Points logs",
+    'discord_id' => "Discord ID",
+    'discord_name' => "Discord name",
+    'shorten_uuid' => "Shorten UUID"
 ];

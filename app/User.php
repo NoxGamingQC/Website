@@ -97,7 +97,7 @@ class User extends Authenticatable
 
     public static function getDiscordInfo($user) {
         if($user->discord_id) {
-            return DiscordUsers::getUser($user->discord_id);
+            return DiscordUsers::getUserById($user->discord_id);
         }
         return null;
     }

@@ -8,24 +8,29 @@
     <div class="col-md-12">
         <div class="header" style="margin-top:8%;position:relative; width: 100vw; height:105vh !important;">
             <div class="col-md-12">
+                <br />
+            </div>
+            <div class="col-md-10 col-md-offset-1">
                 <h3>Points: {{$pointCount}}</h3>
             </div>
             @if ($country)
                 @if($isPremium)
-                <div class="col-md-6 text-left">
+                <div class="col-md-5 col-md-offset-1 text-left">
                 @else
-                <div class="col-md-12 text-left">
+                <div class="col-md-11 col-md-offset-1 text-left">
                 @endif
                     <img class="img img-circle" src="https://cdn.countryflags.com/thumbs/{{str_replace(' ', '-', strtolower($country))}}/flag-square-500.png" alt="{{$country}}" title="{{$country}}" width="40px" />
                 </div>
             @endif
             @if($isPremium)
                 @if($country)
-                <div class="col-md-6 text-right">
+                <div class="col-md-5 text-right">
                 @else
-                <div class="col-md-12 text-right">
+                <div class="col-md-11 text-right">
                 @endif
                     <img src="/img/Badges/premium.png" alt="{{trans('profile.premium')}}" title="{{trans('profile.premium')}}" width="60px" />
+                </div>
+                <div class="col-md-1">
                 </div>
             @endif
             <div class="col-md-12 text-center">
@@ -58,8 +63,8 @@
     </div>
 </div>
 <div class="row bg-dark">
-    <div class="col-md-12 content-item">
-        <div class="container">
+    <div class="col-md-10 col-md-offset-1 content-item">
+        <div class="container-fluid">
             <div class="col-md-6">
                 <h3>{{ trans('profile.user_acknowledgement') }}</h3>
                 <br />
@@ -69,6 +74,8 @@
                     @if($gender)<li><b>{{ trans('profile.gender') }}:</b> {{trans('profile.' . strtolower($gender))}}</li>@endif
                     @if($birthdate)<li><b>{{ trans('profile.birthdate') }}:</b> {{$birthdate}}</li>@endif
                     @if($age)<li><b>{{ trans('profile.age') }}:</b> {{$age}}</li>@endif
+                    @if($discordUser)<li><b>{{ trans('profile.discord_id') }}:</b> {{$discordUser->discord_id}}</li>@endif
+                    @if($discordUser)<li><b>{{ trans('profile.discord_name') }}:</b> {{$discordUser->name}}</li>@endif
                 </ul>
             </div>
             <div class="col-md-6">
@@ -94,7 +101,7 @@
                     <ul>
                         <li>{{trans('general.username')}}: {{$minecraft['name']}}</li>
                         <li>UUID: {{$minecraft['uuid']}}</li>
-                        <li>Shorten UUID: {{$minecraft['shorten_uuid']}}</li>
+                        <li>{{trans('profile.shorten_uuid')}}: {{$minecraft['shorten_uuid']}}</li>
                     </ul>
                 </div>
                 <div class="col-md-6">
@@ -111,6 +118,8 @@
             </div>
             @endif
         </div>
+    </div>
+    <div class="col-md-1">
     </div>
 </div>
 @stop
