@@ -21,8 +21,9 @@ class PointsController extends Controller
                 $lastEntry = Points::where('key_id', '=', $getApp->id)->orderBy('created_at', 'DESC')->first();
                 $canReceivePoints = false;
                 if ($lastEntry) {
-                    $now = Carbon::now()->addMinutes(1);
-                    if(Carbon::parse($lastEntry->created_at)->lt($now)) {
+                    $now = Carbon::now();
+                    $messageDate = Carbon::parse($lastEntry->created_at)->addMinutes(1);
+                    if($messageDate->gt($now)) {
                         $canReceivePoints = true;
                     }
                 } else {
