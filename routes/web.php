@@ -16,7 +16,7 @@ use Illuminate\Http\Request;
 Route::middleware(['cors'])->group(function () {
     // API ROUTES
         
-    Route::post('/api/points/add', 'API\PointsController@addPoints');
+    Route::get('/api/points/add', 'API\PointsController@addPoints');
     Route::get('/api/check_state', 'API\UserController@checkState');
     Route::get('/api/check_state/{id}', 'API\UserController@checkStateWithID');
     Route::get('/api/minecraft/points/{user}', 'API\PointsController@getMinecraftPoints');
