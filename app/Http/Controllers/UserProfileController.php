@@ -6,6 +6,7 @@ use Auth;
 use DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\DiscordUsers;
 use App\User;
 use Carbon\Carbon;
 use App\PageLists;
@@ -134,8 +135,9 @@ class UserProfileController extends Controller
                 "isBirthdateShowned"=>$user->isBirthdateShowned,
                 "isAgeShowned"=>$user->isAgeShowned,
                 "country"=>$user->Country,
-                'state' => $state,
-                'avatarPreference' => $user->avatar_preference
+                "state" => $state,
+                "avatarPreference" => $user->avatar_preference,
+                "aboutMe" => $user->about_me
             ]);
         } else {
             abort(403);
@@ -180,6 +182,20 @@ class UserProfileController extends Controller
                 return false;
             } else {
                 return true;
+            }
+        }
+    }
+
+    public function link(Request $request) {
+        if(isset($isNew) && Auth::check()) {
+            if($isNew == false) {
+                if($request->platform === 'discord') {
+                    $account = DiscordUsers::where('linking_token', '=', $request->link_token)->first();
+                    $user = Auth::user();
+                    $user->discord_id = $account->id;
+                    $user->save();
+                    return;
+                }
             }
         }
     }

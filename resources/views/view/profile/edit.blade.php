@@ -81,8 +81,15 @@
         </div>
     </div>
 </div>
-
-
+<div class="row">
+    <div class="col-md-12">
+        <div class="container">
+            <h3>{{trans('profile.about_me')}}</h3>
+            <hr />
+            <textarea class="form-control" placeholder="{{trans('profile.about_me_placeholder')}}" rows="6" disabled>{{$aboutMe}}</textarea>
+        </div>
+    </div>
+</div>
 <div class="row bg-dark">
     <div class="col-md-12 content-item">
         <div class="container">
@@ -110,7 +117,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="avatar-preference">{{trans('profile.avatar_preference')}}</label>
-                    <select class="selectpicker" id="avatarPreference" title="Default">
+                    <select class="selectpicker" id="avatarPreference" title="Default" disabled>
                         <option value="picture" {{(!isset($avatarPreference)) ? 'selected' : ''}}>{{(trans('profile.picture'))}}</option>
                         <option value="minecraft" {{$avatarPreference === "minecraft" ? 'selected' : ''}}>{{(trans('profile.minecraft_avatar'))}}</option>
                     </select>
@@ -152,11 +159,31 @@
         </div>
     </div>
 </div>
+
+<div class="row bg-dark">
+    <div class="col-md-12 content-item">
+        <div class="container">
+            <h3>{{trans('profile.linking_code')}}</h3>
+            <div class="row">
+                <div class="col-md-8">
+                    <input type="text" id="accountLinkToken" class="form-control" placeholder="{{trans('profile.linking_token')}}">
+                </div>
+                <div class="col-md-4">
+                    <select class="selectpicker" id="accountLink" title="{{trans('profile.choose_account_to_link')}}">
+                        <option value="discord">Discord</option>
+                    </select>
+                </div>
+                <div class="col-md-12 text-right">
+                    <br />
+                    <button type="submit" id="submitLinking" class="btn btn-primary">{{trans('profile.submit_linking')}}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <script type="text/javascript">
 
 $(document).ready(function() {
-    
-
     $('#submit').click(function() {
         $.ajax({
             headers: {
@@ -191,9 +218,40 @@ $(document).ready(function() {
                 window.location.reload();
             },
             error: function (error) {
-                toastr.error('An error occured', 'An error occured while trying to edit your profil try again later.')
+                toastr.error('An error occured', 'An error occured while trying to edit your profile try again later.')
                 $('#submit').removeClass('disabled');
                 $('#submit').removeAttr('disabled', '');
+                console.log(error);
+            }
+        })
+    });
+
+    $('#submitLinking').click(function() {
+        $.ajax({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            url: '/profile/link',
+            method: 'POST',
+            data: {
+                platform: $('#accountLink').val(),
+                link_token: $('accountLinkToken').val(),
+                isNew: false
+            },
+            beforeSend: function() {
+                $('#submitLinking').addClass('disabled');
+                $('#submitLinking').attr('disabled', '');
+            },
+            success: function() {
+                toastr.success('Editing success', 'You\'re profile have been linked successfuly. Please wait while we reload the page.')
+                $('#submitLinking').removeClass('disabled');
+                $('#submitLinking').removeAttr('disabled', '');
+                window.location.reload();
+            },
+            error: function (error) {
+                toastr.error('An error occured', 'An error occured while trying to link your profile try again later.')
+                $('#submitLinking').removeClass('disabled');
+                $('#submitLinking').removeAttr('disabled', '');
                 console.log(error);
             }
         })

@@ -111,6 +111,7 @@ Route::middleware(['cors'])->group(function () {
     });
 
     //Post routes
+    Route::post('/profile/link', 'UserProfileController@link');
     Route::post('/profile/edit', 'UserProfileController@edit');
 
     Route::group(
