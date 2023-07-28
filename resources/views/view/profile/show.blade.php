@@ -63,6 +63,13 @@
     </div>
 </div>
 <div class="row bg-dark">
+    @if($aboutMe)
+        <div class="col-md-10 col-md-offset-1">
+            {!! $aboutMe !!}
+            <br />
+        </div>
+        <div class="col-md-1"></div>
+    @endif
     <div class="col-md-10 col-md-offset-1 content-item">
         <div class="container-fluid">
             <div class="col-md-6">
