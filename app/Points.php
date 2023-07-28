@@ -16,13 +16,21 @@ class Points extends Model
         return $points;
     }
 
-    static public function getPointsLogs($userID) {
+    static public function getPointsLogs($userID, $quantity = null) {
+        if($quantity) {
+            $points = User::join('points', 'users.id', '=', 'points.UserID')
+                ->where('points.UserID', '=', $userID)
+                ->orderBy('points.id', 'desc')
+                ->take($quantity)
+                ->get(['points.UserID', 'users.name', 'points.Quantity', 'points.Comment']);
+            return $points;
+        }
         $points = User::join('points', 'users.id', '=', 'points.UserID')
-        ->where('points.UserID', '=', $userID)
-        ->orderBy('points.id', 'desc')
-        ->take(20)
-        ->get(['points.UserID', 'users.name', 'points.Quantity', 'points.Comment']);
-        return $points;
+                ->where('points.UserID', '=', $userID)
+                ->orderBy('points.id', 'desc')
+                ->get(['points.UserID', 'users.name', 'points.Quantity', 'points.Comment']);
+            return $points;
+        
     }
 
     static public function getTotalPoints($userID) {
