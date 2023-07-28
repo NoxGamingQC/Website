@@ -12,9 +12,11 @@ class UserController extends Controller
 {
     public function checkState()
     {
-        $user = (Auth::user()->lockStatus == 'online') ? Auth::user()->status : Auth::user()->lockStatus;
+        if(Auth::check()) {
+            $user = (Auth::user()->lockStatus == 'online') ? Auth::user()->status : Auth::user()->lockStatus;
+            return response()->json($user);
+        }
 
-        return response()->json($user);
     }
 
     public function checkStateWithID($id)
