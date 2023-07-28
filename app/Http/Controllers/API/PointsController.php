@@ -4,6 +4,8 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\DiscordUsers;
+use Carbon\Carbon;
 use App\ApiKey;
 use App\Points;
 use App\User;
@@ -12,6 +14,36 @@ use App;
 
 class PointsController extends Controller
 {
+    public function addPoints(Request $request) {
+        $getApp = ApiKey::where($request->website_token, '=', 'key')->first();
+        if($getApp) {
+            $lastEntry = Points::where($getApp->id, '=', 'key_id')->sortBy('created_at', 'DESC')->first();
+            $canReceivePoints = true;
+            if (count($lastEntry) > 0) {
+                $now = Carbon::now()->subMinutes(1);
+                if(!Carbon::parse($lastEntry->created_at)->gt($now)) {
+                    $canReceivePoints = false;
+                }
+            }
+            if($request->discord_id) {
+                $userDiscordID = DiscordUsers::where('discord_id', '=', $request->discord_id)->first();
+                $user = User::where('discord_id', '=', $userDiscordID->id)->first();
+            } else {
+                $user = User::findOrFail($request->user_id);
+            }
+            
+            if($user && $canReceivePoints) {
+                $points = new Points;
+                $points->UserID = $user->id;
+                $points->Quantity = $request->multiplier ? ($request->points * $request->multiplier) : $request->points;
+                $points->Comment = $request->comment;
+                $points->key_id = $getApp->id;
+                $points->save();
+
+            }
+        }
+    }
+
     public function getMinecraftPoints($userUUID)
     {
         $user = User::where('minecraft_uuid', '=', $userUUID)->first();
