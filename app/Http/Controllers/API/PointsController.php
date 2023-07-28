@@ -22,7 +22,7 @@ class PointsController extends Controller
                 $canReceivePoints = false;
                 if ($lastEntry) {
                     $now = Carbon::now()->addMinutes(1);
-                    if(Carbon::parse($lastEntry->created_at)->gt($now)) {
+                    if(Carbon::parse($lastEntry->created_at)->lt($now)) {
                         $canReceivePoints = true;
                     }
                 } else {
