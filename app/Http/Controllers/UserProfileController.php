@@ -206,13 +206,15 @@ class UserProfileController extends Controller
     public function newLink(Request $request) {
         $getApp = ApiKey::where('key', '=', $request->website_token)->first();
         if($getApp) {
+            $key = str_random(128);
             if($request->platform == 'discord') {
                 $discordUser = DiscordUsers::where('discord_id', '=', $request->discord_id)->first();
                 if($discordUser) {
-                    $discordUser->linking_token = $request->link_token;
+                    $discordUser->linking_token = $key;
                     $discordUser->save();
                 }
             }
+            return $key;
         }
     }
 }
