@@ -88,7 +88,7 @@
         <div class="container">
             <h3>{{trans('profile.preferences')}}</h3>
             <hr />
-            <div class="col-md-12">
+            <div class="col-md-6">
                 <div class="form-group">
                     <label for="theme">{{trans('profile.theme')}}</label>
                     <select class="selectpicker" id="theme" title="Default" {{$mainTheme['force'] === "true" ? 'disabled' : ''}}>
@@ -105,6 +105,15 @@
                             and can't be changed at this moment. Please try again later.
                         </span>
                     @endif
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="avatar-preference">{{trans('profile.avatar_preference')}}</label>
+                    <select class="selectpicker" id="avatarPreference" title="Default">
+                        <option value="picture" {{(!isset($avatarPreference)) ? 'selected' : ''}}>{{(trans('profile.picture'))}}</option>
+                        <option value="minecraft" {{$avatarPreference === "minecraft" ? 'selected' : ''}}>{{(trans('profile.minecraft_avatar'))}}</option>
+                    </select>
                 </div>
             </div>
             <div class="col-md-6">

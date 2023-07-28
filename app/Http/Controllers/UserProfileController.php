@@ -134,7 +134,8 @@ class UserProfileController extends Controller
                 "isBirthdateShowned"=>$user->isBirthdateShowned,
                 "isAgeShowned"=>$user->isAgeShowned,
                 "country"=>$user->Country,
-                'state' => $state
+                'state' => $state,
+                'avatarPreference' => $user->avatar_preference
             ]);
         } else {
             abort(403);
