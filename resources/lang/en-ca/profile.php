@@ -48,9 +48,12 @@ return [
     'discord_id' => "Discord ID",
     'discord_name' => "Discord name",
     'shorten_uuid' => "Shorten UUID",
-
     'linking_code' => "Account linking",
     'linking_token' => "Insert the token you receive to link your account here. All changes above will be lost.",
     'choose_account_to_link' => "Choose a platform",
-    'submit_linking' => "Link"
+    'submit_linking' => "Link",
+    'picture' => "Picture",
+    'avatar_preference' => "Avatar preference",
+    'about_me' => "About me",
+    'about_me_placeholder' => "Who are you? You can start typing here and it will show on your profile. Markdown is allowed."
 ];
