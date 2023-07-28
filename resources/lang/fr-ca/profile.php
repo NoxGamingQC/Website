@@ -47,5 +47,13 @@ return [
     'points_log' => "Journeaux de point",
     'discord_id' => "ID Discord",
     'discord_name' => "Nom Discord",
-    'shorten_uuid' => "UUID abrégé"
+    'shorten_uuid' => "UUID abrégé",
+    'linking_code' => "Lier un compte",
+    'linking_token' => "Inseré ici, le code que vous avez reçu pour lier votre compte. Tous les changements que vous avez effectué plus haut seront perdu.",
+    'choose_account_to_link' => "Choisissez une platforme",
+    'submit_linking' => "Lier",
+    'picture' => "Photo",
+    'avatar_preference' => "Préférence d'avatar",
+    'about_me' => "À propos de moi",
+    'about_me_placeholder' => "Qui êtes vous? Vous pouvez commencer à écrire ici, le tout sera affiché sur votre profile. Le Markdown est autorisé."
 ];
