@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Http\Controllers\Controller;
+use Illuminate\Foundation\Bus\DispatchesJobs;
+use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Http\Request;
 use App\DiscordUsers;
 use Carbon\Carbon;
@@ -12,8 +15,9 @@ use App\User;
 use Auth;
 use App;
 
-class PointsController extends Controller
+class PointsController extends BaseController
 {
+    use DispatchesJobs, ValidatesRequests;
     public function addPoints(Request $request) {
         $getApp = ApiKey::where($request->website_token, '=', 'key')->first();
         if($getApp) {
