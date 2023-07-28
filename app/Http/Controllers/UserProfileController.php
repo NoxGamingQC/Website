@@ -10,6 +10,7 @@ use App\User;
 use Carbon\Carbon;
 use App\PageLists;
 use App\Points;
+use cebe\markdown;
 
 class UserProfileController extends Controller
 {
@@ -68,7 +69,7 @@ class UserProfileController extends Controller
         } else {
             $state = $user->lockStatus;
         }
-
+        $markdownParser = new markdown\GithubMarkdown();
         return view('view.profile.show', [
             "id" => $user->id,
             "username" => $user->name,
@@ -88,6 +89,7 @@ class UserProfileController extends Controller
             'points' => $points,
             'state' => $state,
             'isCurrentUser' => $isCurrentUser,
+            'aboutMe' => $markdownParser->parse($user->about_me),
             'socials' => User::getSocialsLinks($user),
             'minecraft' => User::getMinecraftInfo($user),
             'discordUser' => User::getDiscordInfo($user)
