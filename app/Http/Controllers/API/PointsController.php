@@ -15,9 +15,9 @@ use App;
 class PointsController extends Controller
 {
     public function addPoints(Request $request) {
-        $getApp = ApiKey::where($request->website_token, '=', 'key')->first();
+        $getApp = ApiKey::where('key', '=', $request->website_token)->first();
         if($getApp) {
-            $lastEntry = Points::where($getApp->id, '=', 'key_id')->sortBy('created_at', 'DESC')->first();
+            $lastEntry = Points::where('key_id', '=', $getApp->id)->sortBy('created_at', 'DESC')->first();
             $canReceivePoints = true;
             if (count($lastEntry) > 0) {
                 $now = Carbon::now()->subMinutes(1);
