@@ -39,7 +39,6 @@ class PointsController extends Controller
                 $points->Comment = $request->comment;
                 $points->key_id = $getApp->id;
                 $points->save();
-
             }
         }
     }
