@@ -12,6 +12,7 @@ use Carbon\Carbon;
 use App\PageLists;
 use App\Points;
 use cebe\markdown;
+use App\ApiKey;
 
 class UserProfileController extends Controller
 {
@@ -187,14 +188,29 @@ class UserProfileController extends Controller
     }
 
     public function link(Request $request) {
-        if(isset($isNew) && Auth::check()) {
-            if($isNew == false) {
-                if($request->platform === 'discord') {
-                    $account = DiscordUsers::where('linking_token', '=', $request->link_token)->first();
-                    $user = Auth::user();
+        if(Auth::check()) {
+            if($request->platform === 'discord') {
+                $account = DiscordUsers::where('linking_token', '=', $request->link_token)->first();
+                $user = Auth::user();
+                if($account && $user) {
                     $user->discord_id = $account->id;
                     $user->save();
-                    return;
+                    $account->link_token = null;
+                    $account->save();
+                }
+            }
+        }
+        abort(403);
+    }
+
+    public function newLink(Request $request) {
+        $getApp = ApiKey::where('key', '=', $request->website_token)->first();
+        if($getApp) {
+            if($request->platform == 'discord') {
+                $discordUser = DiscordUsers::where('discord_id', '=', $request->discord_id)->first();
+                if($discordUser) {
+                    $discordUser->linking_token = $request->link_token;
+                    $discordUser->save();
                 }
             }
         }
