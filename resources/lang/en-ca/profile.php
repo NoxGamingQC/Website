@@ -47,5 +47,10 @@ return [
     'points_log' => "Points logs",
     'discord_id' => "Discord ID",
     'discord_name' => "Discord name",
-    'shorten_uuid' => "Shorten UUID"
+    'shorten_uuid' => "Shorten UUID",
+
+    'linking_code' => "Account linking",
+    'linking_token' => "Insert the token you receive to link your account here. All changes above will be lost.",
+    'choose_account_to_link' => "Choose a platform",
+    'submit_linking' => "Link"
 ];
