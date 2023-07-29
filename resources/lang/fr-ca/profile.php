@@ -55,5 +55,6 @@ return [
     'picture' => "Photo",
     'avatar_preference' => "Préférence d'avatar",
     'about_me' => "À propos de moi",
-    'about_me_placeholder' => "Qui êtes vous? Vous pouvez commencer à écrire ici, le tout sera affiché sur votre profile. Le Markdown est autorisé."
+    'about_me_placeholder' => "Qui êtes vous? Vous pouvez commencer à écrire ici, le tout sera affiché sur votre profile. Le Markdown est autorisé.",
+    'badges'=>"Badges",
 ];

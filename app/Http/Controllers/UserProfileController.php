@@ -94,7 +94,8 @@ class UserProfileController extends Controller
             'aboutMe' => $markdownParser->parse($user->about_me),
             'socials' => User::getSocialsLinks($user),
             'minecraft' => User::getMinecraftInfo($user),
-            'discordUser' => User::getDiscordInfo($user)
+            'discordUser' => User::getDiscordInfo($user),
+            'pronouns' => $user->pronouns
         ]);
     }
 
