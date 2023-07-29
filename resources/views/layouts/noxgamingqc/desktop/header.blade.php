@@ -11,7 +11,7 @@
                 <h3 class="raleway-font text-highlight" style="margin-left:5%;max-width:90%">@yield('slogan')</h3>
                 @if($isRecipe == true)
                     @if(!isset($add_mode))
-                        <h4 class="raleway-font text-highlight" style="margin-left:5%;max-width:90%">{{ trans('cookbook.by'). ' ' }}@yield('author')</h4>
+                        <h4 class="raleway-font text-highlight headline" style="margin-left:5%;max-width:90%">{{ trans('cookbook.by'). ' ' }}@yield('author')</h4>
                     @endif
                 @endif
                 <br />
@@ -45,7 +45,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            <h2 class="text-center raleway-font print" style="display:none">@yield('name')<small> {{trans('cookbook.by')}} @yield('author')</small></h2>
+                            <h2 class="text-center raleway-font print headline" style="display:none">@yield('name')<small> {{trans('cookbook.by')}} @yield('author')</small></h2>
                             <hr class="print" style="display:none;border-color:black" />
                             <hr style="border-color:white" />
                             @if(!isset($add_mode))
@@ -126,7 +126,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             @if(!isset($add_mode))
-                                <h4 class="raleway-font">@yield('description')</h4>
+                                <h4 class="raleway-font headline">@yield('description')</h4>
                             @else
                                 <textarea id="descriptionFR" type="text" class="form-control" rows="4" placeholder="{{trans('cookbook.add_description')}} (FR)">{{isset($recipe) && $recipe !== true ? $recipe->description_fr : ''}}</textarea>
                                 <br />
@@ -142,9 +142,9 @@
     @else
         <div class="header" style="height:480px !important;">
             <div class="row text-center">
-                <h1 class="text-highlight">@yield('title')</h1>
+                <h1 class="text-highlight headline">@yield('title')</h1>
                 <br />
-                <h3 class="raleway-font text-highlight" style="margin-left:5%;max-width:90%">@yield('slogan')</h3>
+                <h3 class="raleway-font text-highlight headline" style="margin-left:5%;max-width:90%">@yield('slogan')</h3>
                 <br />
             </div>
         </div>
@@ -152,9 +152,9 @@
 @else
 <div class="header">
     <div class="row text-center">
-        <h1 class="text-highlight">@yield('title')</h1>
+        <h1 class="text-highlight headline">@yield('title')</h1>
         <br />
-        <h3 class="raleway-font text-highlight" style="margin-left:5%;max-width:90%">@yield('slogan')</h3>
+        <h3 class="raleway-font text-highlight headline" style="margin-left:5%;max-width:90%">@yield('slogan')</h3>
         <br />
     </div>
 </div>

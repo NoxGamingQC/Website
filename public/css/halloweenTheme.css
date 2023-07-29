@@ -4295,21 +4295,27 @@ a[type=button]:disabled {
   }
 }
 h1 {
-  font-size: 75px;
-}
-@media not all and (min-width: 1200px) {
-  h1 {
-    font-size: 50px;
-  }
+  font-size: 24px;
 }
 
 h2 {
-  font-size: 50px;
+  font-size: 18px;
 }
-@media not all and (min-width: 1200px) {
-  h2 {
-    font-size: 36px;
-  }
+
+h3 {
+  font-size: 16px;
+}
+
+h4 {
+  font-size: 14px;
+}
+
+h1.headline {
+  font-size: 75px;
+}
+
+h2.headline {
+  font-size: 50px;
 }
 
 p.stroke {
@@ -4761,10 +4767,6 @@ html, body {
     margin: 0px !important;
     padding: 0px !important;
   }
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Rochester", cursive !important;
 }
 
 vr {

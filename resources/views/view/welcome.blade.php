@@ -5,11 +5,11 @@
 <div class="header" style="position:relative; width: 100vw; height:100vh !important;">
     <div class="row" style="padding-top: 40vh">
         <div class="col-md-12 text-center">
-            <h1 class="raleway-font text-highlight"><img src="/img/NoxGamingQC.png" height="140vh" /><b> NoxGamingQC</b></h1>
+            <h1 class="raleway-font text-highlight headline"><img src="/img/NoxGamingQC.png" height="140vh" /><b> NoxGamingQC</b></h1>
         </div>
         <div class="col-md-12 text-center">
             <br />
-            <h2 class="raleway-font">{{trans('welcome.slogan')}}</h2>
+            <h2 class="raleway-font headline">{{trans('welcome.slogan')}}</h2>
             <br />
         </div>
     </div>
