@@ -12,7 +12,7 @@
                 @else
                     <img class="img img-circle {{$isCurrentUser ? 'user-status img-own-avatar' : 'img-user-avatar'}} status-{{$state}}" src="/img/no-avatar.jpg" alt="{{$username}}" title="{{$username}}" width="100%" />
                 @endif
-                <h1 class="raleway-font" style="font-size:24px">{{$firstname}} {{$lastname}}</h1>
+                <h1 class="raleway-font" style="font-size:24px"><b>{{$firstname}} {{$lastname}}</b></h1>
                 <h2 class="raleway-font text-muted" style="font-size:18px">{{$username}} {{$pronouns ? '· ' .  $pronouns : ''}}</h2>
                 <h3 class="raleway-font" style="font-size:16px">{{ trans('profile.' . $grade) }}</h3>
                 @if($badges)
@@ -22,13 +22,14 @@
                         <img src="/img/Badges/{{$badge}}.png" alt="{{ucfirst($badge)}}" title="{{ucfirst($badge)}}" width="75px" style="padding: 7px 14px" />
                     @endforeach
                 @endif
-                @if($gender || $birthdate || $age || $discordUser || $country || $isPremium)
+                @if($gender || $birthdate || $age || $discordUser || $country || $isPremium || $pointCount)
                 <br />
                 <h4><b>{{ trans('profile.user_acknowledgement') }}</b></h4>
                 <br />
                     @if($gender)<p><b>&nbsp&nbsp{{ trans('profile.gender') }}:</b> {{trans('profile.' . strtolower($gender))}}</p>@endif
                     @if($birthdate)<p><b>&nbsp&nbsp{{ trans('profile.birthdate') }}:</b> {{$birthdate}}</p>@endif
                     @if($age)<p><b>&nbsp&nbsp{{ trans('profile.age') }}:</b> {{$age}}</p>@endif
+                    @if($pointCount)<p><b>&nbsp&nbspPoints:</b> {{$pointCount}}</p>@endif
                     @if($discordUser)<p><b>&nbsp&nbsp{{ trans('profile.discord_id') }}:</b> {{$discordUser->discord_id}}</p>@endif
                     @if($discordUser)<p><b>&nbsp&nbsp{{ trans('profile.discord_name') }}:</b> {{$discordUser->name}}</p>@endif
                     @if($country || $isPremium)
