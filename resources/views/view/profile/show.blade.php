@@ -54,7 +54,6 @@
             <div class="row">
                 <div class="col-md-12">
                     <h3>Minecraft</h3>
-                    <hr />
                 </div>
                 <div class="col-md-6">
                     <ul>
@@ -65,16 +64,29 @@
                 </div>
                 <div class="col-md-6">
                     @if(!empty($minecraft['avatar']))
-                        <img src="{{$minecraft['avatar']}}" width="100" alt="avatar" title="avatar" style="margin-right:5px">
+                        <img src="{{$minecraft['avatar']}}" height="75" alt="avatar" title="avatar" style="margin-right:5px">
                     @endif
                     @if(!empty($minecraft['cape']))
-                    <img src="{{$minecraft['cape']}}" width="75" alt="cape" title="cape" style="margin-right:5px">
+                    <img src="{{$minecraft['cape']}}" height="75" alt="cape" title="cape" style="margin-right:5px">
                     @endif
                     @if(!empty($minecraft['full_skin']))
-                    <img src="{{$minecraft['full_skin']}}" width="100" alt="full skin" title="full skin" style="margin-right:5px">
+                    <img src="{{$minecraft['full_skin']}}" height="75" alt="full skin" title="full skin" style="margin-right:5px">
                     @endif
                 </div>
             </div>
+            @endif
+            @if($points)
+                <h3>{{ trans('profile.points_log') }}</h3>
+                <br />
+                @if($points)
+                    <ul>
+                        @foreach ($points as $key => $point)
+                            <li>{{$point->Quantity . ' ' . trans('profile.points')}} - {{$point->Comment}}</li>
+                        @endforeach
+                    </ul>
+                @else
+                <p>{{trans('profile.no_points')}}</p>
+                @endif
             @endif
         </div>
         <div class="col-md-1"></div>
