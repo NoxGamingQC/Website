@@ -119,6 +119,7 @@
                     <label for="avatar-preference">{{trans('profile.avatar_preference')}}</label>
                     <select class="selectpicker" id="avatarPreference" title="Default" disabled>
                         <option value="picture" {{(!isset($avatarPreference)) ? 'selected' : ''}}>{{(trans('profile.picture'))}}</option>
+                        <option value="discord" {{$avatarPreference === "discord" ? 'selected' : ''}}>{{(trans('profile.discord_avatar'))}}</option>
                         <option value="minecraft" {{$avatarPreference === "minecraft" ? 'selected' : ''}}>{{(trans('profile.minecraft_avatar'))}}</option>
                     </select>
                 </div>
