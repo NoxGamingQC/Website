@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\DiscordServerConfig;
 use App\DiscordUsers;
 use Carbon\Carbon;
 use App\ApiKey;
@@ -33,6 +34,35 @@ class DiscordController extends Controller
                         $newDiscordUser->name = $discordUser['username'];
                         $newDiscordUser->avatar_url = $discordUser->avatar_url;
                         $newDiscordUser->save();
+                        return;
+                    }
+                }
+            }
+        }
+        abort(403);
+    }
+
+    public function updateServer(Request $request) {
+        $getApp = ApiKey::where('key', '=', $request->website_token)->first();
+        if($getApp) {
+            if($request->servers) {
+                foreach($request->servers as $discordID => $discordServer) {
+                    $existingServer = DiscordServerConfig::where('discord_id', '=', $discordID);
+                    if($existingServer) {
+                        if($existingServer->name !== $discordServer['username']) {
+                            $existingServer->name = $discordServer['username'];
+                            $existingServer->save();
+                        }
+                        if($existingServer->avatar_url !== $discordServer['avatar_url']) {
+                            $existingServer->avatar_url = $discordServer['avatar_url'];
+                            $existingServer->save();
+                        }
+                    } else {
+                        $newDiscordServer = new DiscordServerConfig();
+                        $newDiscordServer->discord_id = $discordID;
+                        $newDiscordServer->name = $discordServer['username'];
+                        $newDiscordServer->avatar_url = $discordServer->avatar_url;
+                        $newDiscordServer->save();
                         return;
                     }
                 }
