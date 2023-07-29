@@ -17,7 +17,7 @@ Route::middleware(['cors'])->group(function () {
     // API ROUTES
         
     Route::post('/api/points/add', 'API\PointsController@addPoints');
-    Route::post('/link/new', 'UserProfileController@newLink');
+    Route::post('/api/link/new', 'UserProfileController@newLink');
     Route::get('/api/check_state', 'API\UserController@checkState');
     Route::get('/api/check_state/{id}', 'API\UserController@checkStateWithID');
     Route::get('/api/minecraft/points/{user}', 'API\PointsController@getMinecraftPoints');
