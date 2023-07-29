@@ -30,13 +30,15 @@ class PointsController extends Controller
                     $canReceivePoints = true;
                 }
                 $userDiscordID = DiscordUsers::where('discord_id', '=', $request->discord_id)->first();
-                $user = User::where('discord_id', '=', $userDiscordID->id)->first();
+                if($userDiscordID) {
+                    $user = User::where('discord_id', '=', $userDiscordID->id)->first();
+                }
             } else {
                 $canReceivePoints = true;
                 $user = User::findOrFail($request->user_id);
             }
             
-            if($user && $canReceivePoints) {
+            if(isset($user) && $canReceivePoints) {
                 $points = new Points;
                 $points->UserID = $user->id;
                 $points->Quantity = $request->multiplier ? ($request->points * $request->multiplier) : $request->points;
