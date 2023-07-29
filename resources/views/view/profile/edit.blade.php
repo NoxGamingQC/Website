@@ -235,7 +235,7 @@ $(document).ready(function() {
             method: 'POST',
             data: {
                 platform: $('#accountLink').val(),
-                link_token: $('accountLinkToken').val()
+                link_token: $('#accountLinkToken').val()
             },
             beforeSend: function() {
                 $('#submitLinking').addClass('disabled');
