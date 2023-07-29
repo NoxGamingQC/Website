@@ -47,7 +47,7 @@ class DiscordController extends Controller
         if($getApp) {
             if($request->servers) {
                 foreach($request->servers as $discordID => $discordServer) {
-                    $existingServer = DiscordServerConfig::where('discord_id', '=', $discordID);
+                    $existingServer = DiscordServerConfig::where('discord_id', '=', $discordID)->first();
                     if($existingServer) {
                         if($existingServer->name !== $discordServer['name']) {
                             $existingServer->name = $discordServer['name'];
