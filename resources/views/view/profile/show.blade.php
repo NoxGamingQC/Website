@@ -23,6 +23,7 @@
                     @endforeach
                 @endif
                 @if($gender || $birthdate || $age || $discordUser || $country || $isPremium)
+                <br />
                 <h4><b>{{ trans('profile.user_acknowledgement') }}</b></h4>
                 <br />
                     @if($gender)<p><b>&nbsp&nbsp{{ trans('profile.gender') }}:</b> {{trans('profile.' . strtolower($gender))}}</p>@endif
