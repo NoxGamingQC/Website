@@ -49,8 +49,8 @@ class DiscordController extends Controller
                 foreach($request->servers as $discordID => $discordServer) {
                     $existingServer = DiscordServerConfig::where('discord_id', '=', $discordID);
                     if($existingServer) {
-                        if($existingServer->name !== $discordServer['username']) {
-                            $existingServer->name = $discordServer['username'];
+                        if($existingServer->name !== $discordServer['name']) {
+                            $existingServer->name = $discordServer['name'];
                             $existingServer->save();
                         }
                         if($existingServer->avatar_url !== $discordServer['avatar_url']) {
@@ -60,7 +60,7 @@ class DiscordController extends Controller
                     } else {
                         $newDiscordServer = new DiscordServerConfig();
                         $newDiscordServer->discord_id = $discordID;
-                        $newDiscordServer->name = $discordServer['username'];
+                        $newDiscordServer->name = $discordServer['name'];
                         $newDiscordServer->avatar_url = $discordServer->avatar_url;
                         $newDiscordServer->save();
                         return;
