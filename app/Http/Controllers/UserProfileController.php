@@ -195,7 +195,7 @@ class UserProfileController extends Controller
                 if($account && $user) {
                     $user->discord_id = $account->id;
                     $user->save();
-                    $account->link_token = null;
+                    $account->linking_token = null;
                     $account->save();
                 }
             }
