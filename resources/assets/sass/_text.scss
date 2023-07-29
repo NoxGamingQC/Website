@@ -1,15 +1,25 @@
 h1 {
-    font-size: 75px;
-    @media not all and (min-width: $screen-md-min) {
-        font-size: 50px;
-    }
+    font-size: 24px;
 }
 
 h2 {
+    font-size: 18px;
+}
+
+h3 {
+    font-size: 16px;
+}
+
+h4 {
+    font-size: 14px;
+}
+
+h1.headline {
+    font-size: 75px;
+}
+
+h2.headline {
     font-size: 50px;
-    @media not all and (min-width: $screen-md-min) {
-        font-size: 36px;
-    }
 }
 
 p.stroke {
