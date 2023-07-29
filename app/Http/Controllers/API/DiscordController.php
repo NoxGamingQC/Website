@@ -70,4 +70,18 @@ class DiscordController extends Controller
         }
         abort(403);
     }
+
+    public function getServerConfig($id) {
+        $server = DiscordServerConfig::where('discord_id', '=', $id);
+        if($server) {
+            return  response()->json([
+                'id' => $server->discord_id,
+                'avatar_url' => $server->avatar_url,
+                'prefix' => $server->prefix,
+                'can_receive_points' => $server->can_receive_points,
+                'name' => $server->name
+            ]);
+        }
+        abort(404);
+    }
 }

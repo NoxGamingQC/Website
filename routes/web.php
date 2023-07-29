@@ -20,6 +20,7 @@ Route::middleware(['cors'])->group(function () {
     Route::post('/api/link/new', 'UserProfileController@newLink');
     Route::post('/api/discord/update', 'API\DiscordController@update');
     Route::post('/api/discord/server/update', 'API\DiscordController@updateServer');
+    Route::get('/api/discord/config/get/{id}', 'API\DiscordController@getServerConfig');
     Route::get('/api/check_state', 'API\UserController@checkState');
     Route::get('/api/check_state/{id}', 'API\UserController@checkStateWithID');
     Route::get('/api/minecraft/points/{user}', 'API\PointsController@getMinecraftPoints');
