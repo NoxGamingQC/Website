@@ -61,7 +61,7 @@ class DiscordController extends Controller
                         $newDiscordServer = new DiscordServerConfig();
                         $newDiscordServer->discord_id = $discordID;
                         $newDiscordServer->name = $discordServer['name'];
-                        $newDiscordServer->avatar_url = $discordServer->avatar_url;
+                        $newDiscordServer->avatar_url = $discordServer['avatar_url'];
                         $newDiscordServer->save();
                         return;
                     }
