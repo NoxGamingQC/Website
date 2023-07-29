@@ -17,22 +17,26 @@
                 <h3 class="raleway-font" style="font-size:16px">{{ trans('profile.' . $grade) }}</h3>
                 @if($badges)
                 <hr />
-                    <h4 class="raleway-font" style="font-size:14px">{{trans('profile.badges')}}</h4>
+                    <h4 class="raleway-font" style="font-size:14px"><b>{{trans('profile.badges')}}</b></h4>
                     @foreach ($badges as $badge)
                         <img src="/img/Badges/{{$badge}}.png" alt="{{ucfirst($badge)}}" title="{{ucfirst($badge)}}" width="75px" style="padding: 7px 14px" />
                     @endforeach
                 @endif
-                <h3>{{ trans('profile.user_acknowledgement') }}</h3>
+                <h4><b>{{ trans('profile.user_acknowledgement') }}</b></h4>
                 <br />
-                <ul>
-                    @if($premiumTime === 'lifetime')<li><b>{{ trans('profile.premium_time') }}:</b> {{trans('profile.lifetime')}}</li>@endif
-                    @if($premiumTime && $premiumTime !== 'lifetime')<li><b>{{ trans('profile.premium_time') }}:</b> {{$premiumTime}}</li>@endif
-                    @if($gender)<li><b>{{ trans('profile.gender') }}:</b> {{trans('profile.' . strtolower($gender))}}</li>@endif
-                    @if($birthdate)<li><b>{{ trans('profile.birthdate') }}:</b> {{$birthdate}}</li>@endif
-                    @if($age)<li><b>{{ trans('profile.age') }}:</b> {{$age}}</li>@endif
-                    @if($discordUser)<li><b>{{ trans('profile.discord_id') }}:</b> {{$discordUser->discord_id}}</li>@endif
-                    @if($discordUser)<li><b>{{ trans('profile.discord_name') }}:</b> {{$discordUser->name}}</li>@endif
-                </ul>
+                @if($gender)<p><b>&nbsp&nbsp{{ trans('profile.gender') }}:</b> {{trans('profile.' . strtolower($gender))}}</p>@endif
+                @if($birthdate)<p><b>&nbsp&nbsp{{ trans('profile.birthdate') }}:</b> {{$birthdate}}</p>@endif
+                @if($age)<p><b>&nbsp&nbsp{{ trans('profile.age') }}:</b> {{$age}}</p>@endif
+                @if($discordUser)<p><b>&nbsp&nbsp{{ trans('profile.discord_id') }}:</b> {{$discordUser->discord_id}}</p>@endif
+                @if($discordUser)<p><b>&nbsp&nbsp{{ trans('profile.discord_name') }}:</b> {{$discordUser->name}}</p>@endif
+                @if($country || $isPremium)
+                    @if($country)
+                        <img class="img img-circle" src="https://cdn.countryflags.com/thumbs/{{str_replace(' ', '-', strtolower($country))}}/flag-square-500.png" alt="{{$country}}" title="{{$country}}" width="25px" />
+                    @endif
+                    @if($isPremium)
+                        <img src="/img/Badges/premium.png" alt="{{trans('profile.premium')}}" title="{{trans('profile.premium')}}" width="30px" />
+                    @endif
+                @endif
         </div>
         <div class="col-md-7" style="margin-top:10%;position:relative;">
             @if($aboutMe)
