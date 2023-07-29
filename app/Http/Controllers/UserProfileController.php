@@ -194,9 +194,10 @@ class UserProfileController extends Controller
                 $user = Auth::user();
                 if($discordUser && $user) {
                     $user->discord_id = $discordUser->id;
-                    $user->save();
                     $discordUser->linking_token = null;
+                    $user->save();
                     $discordUser->save();
+                    return;
                 }
             }
         }
@@ -216,5 +217,6 @@ class UserProfileController extends Controller
             }
             return $key;
         }
+        abort(403);
     }
 }
