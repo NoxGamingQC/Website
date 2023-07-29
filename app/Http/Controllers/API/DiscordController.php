@@ -72,7 +72,7 @@ class DiscordController extends Controller
     }
 
     public function getServerConfig($id) {
-        $server = DiscordServerConfig::where('discord_id', '=', $id);
+        $server = DiscordServerConfig::where('discord_id', '=', $id)->first();
         if($server) {
             return  response()->json([
                 'id' => $server->discord_id,
