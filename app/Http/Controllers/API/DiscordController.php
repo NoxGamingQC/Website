@@ -15,19 +15,24 @@ class DiscordController extends Controller
         $getApp = ApiKey::where('key', '=', $request->website_token)->first();
         if($getApp) {
             if($request->users) {
-                foreach($request->users as $discordID => $discordUsername) {
+                foreach($request->users as $discordID => $discordUser) {
                     $existingDiscordUser = DiscordUsers::where('discord_id', '=', $discordID)->first();
                     if($existingDiscordUser) {
-                        if($existingDiscordUser->name !== $discordUsername) {
-                            $existingDiscordUser->name = $discordUsername;
+                        if($existingDiscordUser->name !== $discordUser->username) {
+                            $existingDiscordUser->name = $discordUser->username;
                             $existingDiscordUser->save();
-                            return;
                         }
+                        if($existingDiscordUser->avatar_url !== $discordUser->avatar_url) {
+                            $existingDiscordUser->avatar_url = $discordUser->avatar_url;
+                            $existingDiscordUser->save();
+                        }
+                        return;
                     } else {
-                        $discordUser = new DiscordUsers;
-                        $discordUser->discord_id = $discordID;
-                        $discordUser->name = $discordUsername;
-                        $discordUser->save();
+                        $newDiscordUser = new DiscordUsers;
+                        $newDiscordUser->discord_id = $discordID;
+                        $newDiscordUser->name = $discordUser->username;
+                        $newDiscordUser->avatar_url = $discordUser->avatar_url;
+                        $newDiscordUser->save();
                         return;
                     }
                 }
