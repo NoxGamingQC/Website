@@ -190,13 +190,13 @@ class UserProfileController extends Controller
     public function link(Request $request) {
         if(Auth::check()) {
             if($request->platform === 'discord') {
-                $account = DiscordUsers::where('linking_token', '=', $request->link_token)->first();
+                $discordUser = DiscordUsers::where('linking_token', '=', trim($request->link_token))->first();
                 $user = Auth::user();
-                if($account && $user) {
-                    $user->discord_id = $account->id;
+                if($discordUser && $user) {
+                    $user->discord_id = $discordUser->id;
                     $user->save();
-                    $account->linking_token = null;
-                    $account->save();
+                    $discordUser->linking_token = null;
+                    $discordUser->save();
                 }
             }
         }
@@ -208,7 +208,7 @@ class UserProfileController extends Controller
         if($getApp) {
             $key = str_random(128);
             if($request->platform == 'discord') {
-                $discordUser = DiscordUsers::where('discord_id', '=', $request->discord_id)->first();
+                $discordUser = DiscordUsers::where('discord_id', '=', trim($request->discord_id))->first();
                 if($discordUser) {
                     $discordUser->linking_token = $key;
                     $discordUser->save();
