@@ -16,7 +16,7 @@
                         <li id="home" class="nav-home"><a href="/{{app()->getLocale()}}/home"><i class="fa fa-home" aria-hidden="true"></i></a></li>
                     </div>
                     <div class="col-xs-2">
-                        <li id="about_us" class="nav-about_us"><i class="fa fa-user" aria-hidden="true"></i></li>
+                        <li id="about_us" class="nav-about_us"><a class="text-color" onclick="openNavMenu('#aboutMeMenu')"><i class="fa fa-user" aria-hidden="true"></i></a></li>
                     </div>
                     @auth
                     <div class="col-xs-2">
@@ -92,16 +92,14 @@ $(document).ready(function () {
     openMenuOnClick('#about_us', '#aboutMeMenu');
 });
 
-function openMenuOnClick(buttonSelector, menuContainerSelector) {
-    $(buttonSelector).click(function() {
-        if($(menuContainerSelector).hasClass('hidden')) {
-            $(menuContainerSelector).removeAttr('hidden');
-            $(menuContainerSelector).removeClass('hidden');
-        } else {
-            $(menuContainerSelector).attr('hidden', true);
-            $(menuContainerSelector).addClass('hidden');
-        }
-    })
+function openNavMenu(menuContainerSelector) {
+    if($(menuContainerSelector).hasClass('hidden')) {
+        $(menuContainerSelector).removeAttr('hidden');
+        $(menuContainerSelector).removeClass('hidden');
+    } else {
+        $(menuContainerSelector).attr('hidden', true);
+        $(menuContainerSelector).addClass('hidden');
+    }
 }
     
 
