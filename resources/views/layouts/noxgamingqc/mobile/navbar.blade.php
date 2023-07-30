@@ -94,6 +94,9 @@ $(document).ready(function () {
 
 function openNavMenu(menuContainerSelector) {
     if($(menuContainerSelector).hasClass('hidden')) {
+        $('#aboutMeMenu').attr('hidden', true);
+        $('#languageMenu').attr('hidden', true);
+        $('#profileMenu').attr('hidden', true);
         $(menuContainerSelector).removeAttr('hidden');
         $(menuContainerSelector).removeClass('hidden');
     } else {
