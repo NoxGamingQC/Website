@@ -20,7 +20,7 @@
                     </div>
                     @auth
                     <div class="col-xs-2">
-                        <li id="miscs" class="nav-miscs text-center" style="padding:5%"><a class="text-color" onclick=""><i class="fa fa-briefcase" aria-hidden="true"></i></a></li>
+                        <li id="premium" class="nav-premium text-center" style="padding:5%"><a class="text-color" onclick="openNavMenu('#premiumMenu')"><i class="fa fa-star" aria-hidden="true"></i></a></li>
                     </div>
                     @endauth
                     <div class="col-xs-2">
@@ -60,6 +60,9 @@
                     <li class="no-decoration" style="padding:5%;margin:2%;border:2px solid white"><a class="text-color" href="/{{app()->getLocale()}}/about_us/twitch" class="{{($page_lists['twitch']['inMaintenance']) ? 'hidden' : ''}}" style="font-size:14px"><i class="fa fa-twitch" aria-hidden="true"></i> {{ trans('general.twitch') }}</a></li>
                     <li class="no-decoration" style="padding:5%;margin:2%;border:2px solid white"><a class="text-color" href="/{{app()->getLocale()}}/about_us/youtube" class="{{($page_lists['youtube']['inMaintenance']) ? 'hidden' : ''}}" style="font-size:14px"><i class="fa fa-youtube-play" aria-hidden="true"></i> {{ trans('general.youtube') }}</a></li>
                 </ul>
+                <ul id="premiumMenu" class="text-center hidden" hidden>
+                    <li class="no-decoration" style="padding:5%;margin:2%;border:2px solid white"><a class="text-color" href="/{{app()->getLocale()}}/kiosk/cookbook" style="font-size:14px">{{trans('general.cookbook')}}</a></li>
+                </ul>
                 <ul id="languageMenu" class="text-center hidden" hidden>
                     <li class="no-decoration" style="padding:5%;margin:2%;border:2px solid white"><a class="text-color" href="/language/set/en-ca" style="font-size:14px"><img class="img img-circle" src="https://cdn.countryflags.com/thumbs/canada/flag-square-500.png" width="15px" /> English (Canada)</a></li>
                     <li class="no-decoration" style="padding:5%;margin:2%;border:2px solid white"><a class="text-color" href="/language/set/fr-ca" style="font-size:14px"><img class="img img-circle" src="https://cdn.countryflags.com/thumbs/canada/flag-square-500.png" width="15px" /> Français (Canada)</a></li>
@@ -97,6 +100,7 @@ function openNavMenu(menuContainerSelector) {
         $('#aboutMeMenu').attr('hidden', true);
         $('#languageMenu').attr('hidden', true);
         $('#profileMenu').attr('hidden', true);
+        $('#premiumMenu').attr('hidden', true);
         $(menuContainerSelector).removeAttr('hidden');
         $(menuContainerSelector).removeClass('hidden');
     } else {
