@@ -36,7 +36,8 @@ Docker image for PHP7 with MSSQL drivers running on a CentOS host.
 
 The official folder serviced by Apache is `/app/public`.
 The setup is primarily build for Laravel deployment.
-If it's your case, mount your app to `/app` so the Laravel's public folder will serviced as sepected
+If it's your case,
+mount your app to `/app` so the Laravel's public folder will serviced as sepected
 
 ### Laravel case
 
