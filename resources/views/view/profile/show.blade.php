@@ -6,7 +6,7 @@
 
 <div class="row">
     <div class="container-fluid">
-        <div class="col-md-3 col-md-offset-1" style="margin-top:10%;position:relative;">
+        <div class="col-md-3 col-md-offset-1" style="margin-top:12%;position:relative;">
                 @if($avatarURL)
                     <img class="img img-circle {{$isCurrentUser ? 'user-status img-own-avatar' : 'img-user-avatar'}} status-{{$state}}" src="{{$avatarURL}}" alt="{{$username}}" title="{{$username}}" width="100%" />
                 @else
@@ -42,7 +42,7 @@
                     @endif
                 @endif
         </div>
-        <div class="col-md-7" style="margin-top:10%;position:relative;">
+        <div class="col-md-7" style="margin-top:12%;position:relative;">
             @if($aboutMe)
                 <div class="panel panel-primary">
                     <div class="panel-body">
