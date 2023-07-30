@@ -20,14 +20,14 @@
                     </div>
                     @auth
                     <div class="col-xs-2">
-                        <li id="miscs" class="nav-miscs"><i class="fa fa-briefcase" aria-hidden="true"></i></li>
+                        <li id="miscs" class="nav-miscs"><a class="text-color" onclick=""><i class="fa fa-briefcase" aria-hidden="true"></i></a></li>
                     </div>
                     @endauth
                     <div class="col-xs-2">
-                        <li id="language" class="nav-language"><i class="fa fa-language" aria-hidden="true"></i></li>
+                        <li id="language" class="nav-language"><a class="text-color" onclick="openNavMenu('#languageMenu')"><i class="fa fa-language" aria-hidden="true"></i></a></li>
                     </div>
                     <div class="col-xs-2">
-                        <li id="profile" class="nav-profile">
+                        <li id="profile" class="nav-profile"><a class="text-color" onclick="openNavMenu('#profileMenu')">
                             @auth
                                 @if(Auth::user()->AvatarURL)
                                     <img class="img img-circle status-{{Auth::user()->status}}" src="{{Auth::user()->AvatarURL}}" width="36px" style="border-width: 2px;" />
@@ -38,7 +38,7 @@
                             @guest
                                 <i class="fa fa-user-circle-o" aria-hidden="true"></i>
                             @endguest
-                        </li>
+                        </a></li>
                     </div>
                     @auth
                         <div class="col-xs-1">
