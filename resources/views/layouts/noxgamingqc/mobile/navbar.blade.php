@@ -61,7 +61,7 @@
                     <li class="no-decoration" style="padding:5%;margin:2%;border:2px solid white"><a class="text-color" href="/{{app()->getLocale()}}/about_us/youtube" class="{{($page_lists['youtube']['inMaintenance']) ? 'hidden' : ''}}" style="font-size:14px"><i class="fa fa-youtube-play" aria-hidden="true"></i> {{ trans('general.youtube') }}</a></li>
                 </ul>
                 <ul id="premiumMenu" class="text-center hidden" hidden>
-                    <li class="no-decoration" style="padding:5%;margin:2%;border:2px solid white"><a class="text-color" href="/{{app()->getLocale()}}/kiosk/cookbook" style="font-size:14px">{{trans('general.cookbook')}}</a></li>
+                    <li class="no-decoration" style="padding:5%;margin:2%;border:2px solid white"><a class="text-color" href="/{{app()->getLocale()}}/cookbook" style="font-size:14px">{{trans('cookbook.cookbook')}}</a></li>
                 </ul>
                 <ul id="languageMenu" class="text-center hidden" hidden>
                     <li class="no-decoration" style="padding:5%;margin:2%;border:2px solid white"><a class="text-color" href="/language/set/en-ca" style="font-size:14px"><img class="img img-circle" src="https://cdn.countryflags.com/thumbs/canada/flag-square-500.png" width="15px" /> English (Canada)</a></li>
