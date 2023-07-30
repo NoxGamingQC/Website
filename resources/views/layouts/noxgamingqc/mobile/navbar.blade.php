@@ -16,85 +16,27 @@
                         <li id="home" class="nav-home"><a href="/{{app()->getLocale()}}/home"><i class="fa fa-home" aria-hidden="true"></i></a></li>
                     </div>
                     <div class="col-xs-2">
-                        <li id="about_us" class="nav-about_us">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
-                                <i class="fa fa-user" aria-hidden="true"></i>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="/{{app()->getLocale()}}/about_us/contact" class="{{($page_lists['contact_us']['inMaintenance']) ? 'hidden' : ''}}"><i class="fa fa-address-book " aria-hidden="true"></i> {{trans('general.contact_us')}}</a>
-                                    <a href="/{{app()->getLocale()}}/about_us/games" class="{{($page_lists['games']['inMaintenance']) ? 'hidden' : ''}}"><i class="fa fa-gamepad" aria-hidden="true"></i> {{ trans('general.games_list') }}</a>
-                                    <a href="/{{app()->getLocale()}}/about_us/partners" class=""><i class="fa fa-handshake-o" aria-hidden="true"></i> {{ trans('general.partners') }}</a>
-                                    <a href="/{{app()->getLocale()}}/about_us/projects" class="{{($page_lists['projects']['inMaintenance']) ? 'hidden' : ''}}"><i class="fa fa-heart" aria-hidden="true"></i> {{ trans('general.projects') }}</a>
-                                    <a href="/{{app()->getLocale()}}/about_us/teams" class=""><i class="fa fa-users" aria-hidden="true"></i> {{ trans('general.teams') }}</a>
-                                    <a href="/{{app()->getLocale()}}/about_us/twitch" class="{{($page_lists['twitch']['inMaintenance']) ? 'hidden' : ''}}"><i class="fa fa-twitch" aria-hidden="true"></i> {{ trans('general.twitch') }}</a>
-                                    <a href="/{{app()->getLocale()}}/about_us/youtube" class="{{($page_lists['youtube']['inMaintenance']) ? 'hidden' : ''}}"><i class="fa fa-youtube-play" aria-hidden="true"></i> {{ trans('general.youtube') }}</a>
-                                </li>
-                            </ul>
-                        </li>
+                        <li id="about_us" class="nav-about_us"><i class="fa fa-user" aria-hidden="true"></i></li>
                     </div>
                     @auth
                     <div class="col-xs-2">
-                        <li id="miscs" class="nav-miscs">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
-                                <i class="fa fa-briefcase" aria-hidden="true"></i>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    @auth
-                                    @if(Auth::user()->isPremium)
-                                        <a href="/{{app()->getLocale()}}/cookbook" class=""><i class="fa fa-book" aria-hidden="true"></i> {{ trans('cookbook.title') }}</a>
-                                    @endif
-                                    @endauth
-                                    <!--<a href="/{app()->getLocale()}}/store" class=""><i class="fa fa-shopping-cart" aria-hidden="true"></i> { trans('general.store') }}</a>-->
-                                </li>
-                            </ul>
-                        </li>
+                        <li id="miscs" class="nav-miscs"><i class="fa fa-briefcase" aria-hidden="true"></i></li>
                     </div>
                     @endauth
                     <div class="col-xs-2">
-                        <li id="language" class="nav-language">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
-                                <i class="fa fa-language" aria-hidden="true"></i>
-                            </a>
-                            <ul class="dropdown-menu">
-                        <li>
-                            <a href="/language/set/en-ca"><i class="fa fa-language" aria-hidden="true"></i> English (Canada)</a>
-                            <a href="/language/set/fr-ca"><i class="fa fa-language" aria-hidden="true"></i> Français (Canada)</a>
-                        </li>
-                    </ul>
-                        </li>
+                        <li id="language" class="nav-language"><i class="fa fa-language" aria-hidden="true"></i></li>
                     </div>
                     <div class="col-xs-2">
                         <li id="profile" class="nav-profile">
                             @auth
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                                 @if(Auth::user()->AvatarURL)
                                     <img class="img img-circle status-{{Auth::user()->status}}" src="{{Auth::user()->AvatarURL}}" width="36px" style="border-width: 2px;" />
                                 @else
                                     <img class="img img-circle status-{{Auth::user()->status}}" src="/img/no-avatar.jpg" width="36px" style="border-width: 2px;" />
                                 @endif
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    @if(Auth::user()->local_mail)
-                                        <a href="/{{app()->getLocale()}}/profile/mail"><i class="fa fa-envelope" aria-hidden="true"></i> {{trans('general.mails')}}</a>
-                                    @endif
-                                    <a href="/{{app()->getLocale()}}/profile/edit"  class="{{($page_lists['profile_edit']['inMaintenance']) ? 'hidden' : ''}}"><i class="fa fa-wrench" aria-hidden="true"></i> {{trans('general.edit_profile')}}</a>
-                                    <a href="/logout"><i class="fa fa-sign-out" aria-hidden="true"></i> {{trans('general.logout')}}</a>
-                                </li>
-                            </ul>
                             @endauth
                             @guest
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                                 <i class="fa fa-user-circle-o" aria-hidden="true"></i>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="{{ route('login', app()->getLocale()) }}"><i class="fa fa-sign-in" aria-hidden="true"></i> {{trans("general.login")}}</a>
-                                    <a href="{{ route('register', app()->getLocale()) }}"><i class="fa fa-user-plus" aria-hidden="true"></i> {{trans("general.register")}}</a>
-                                </li>
-                            </ul>
                             @endguest
                         </li>
                     </div>
@@ -108,6 +50,34 @@
                     @endguest
                 </div>
             </ul>
+            <div class="col-md-12">
+                <ul id="aboutMeMenu" class="text-center hidden" hidden>
+                    <li class="no-decoration" style="padding:3%;margin:2%;border:2px solid white"><a class="text-color" href="/{{app()->getLocale()}}/about_us/contact" class="{{($page_lists['contact_us']['inMaintenance']) ? 'hidden' : ''}}"><i class="fa fa-address-book " aria-hidden="true"></i> {{trans('general.contact_us')}}</a></li>
+                    <li class="no-decoration" style="padding:3%;margin:2%;border:2px solid white"><a class="text-color" href="/{{app()->getLocale()}}/about_us/games" class="{{($page_lists['games']['inMaintenance']) ? 'hidden' : ''}}"><i class="fa fa-gamepad" aria-hidden="true"></i> {{ trans('general.games_list') }}</a></li>
+                    <li class="no-decoration" style="padding:3%;margin:2%;border:2px solid white"><a class="text-color" href="/{{app()->getLocale()}}/about_us/partners" class=""><i class="fa fa-handshake-o" aria-hidden="true"></i> {{ trans('general.partners') }}</a></li>
+                    <li class="no-decoration" style="padding:3%;margin:2%;border:2px solid white"><a class="text-color" href="/{{app()->getLocale()}}/about_us/projects" class="{{($page_lists['projects']['inMaintenance']) ? 'hidden' : ''}}"><i class="fa fa-heart" aria-hidden="true"></i> {{ trans('general.projects') }}</a></li>
+                    <li class="no-decoration" style="padding:3%;margin:2%;border:2px solid white"><a class="text-color" href="/{{app()->getLocale()}}/about_us/teams" class=""><i class="fa fa-users" aria-hidden="true"></i> {{ trans('general.teams') }}</a></li>
+                    <li class="no-decoration" style="padding:3%;margin:2%;border:2px solid white"><a class="text-color" href="/{{app()->getLocale()}}/about_us/twitch" class="{{($page_lists['twitch']['inMaintenance']) ? 'hidden' : ''}}"><i class="fa fa-twitch" aria-hidden="true"></i> {{ trans('general.twitch') }}</a></li>
+                    <li class="no-decoration" style="padding:3%;margin:2%;border:2px solid white"><a class="text-color" href="/{{app()->getLocale()}}/about_us/youtube" class="{{($page_lists['youtube']['inMaintenance']) ? 'hidden' : ''}}"><i class="fa fa-youtube-play" aria-hidden="true"></i> {{ trans('general.youtube') }}</a></li>
+                </ul>
+                <ul id="languageMenu" class="text-center hidden" hidden>
+                    <li class="no-decoration" style="padding:3%;margin:2%;border:2px solid white"><a class="text-color" href="/language/set/en-ca"><img class="img img-circle" src="https://cdn.countryflags.com/thumbs/canada/flag-square-500.png" width="15px" /> English (Canada)</a></li>
+                    <li class="no-decoration" style="padding:3%;margin:2%;border:2px solid white"><a class="text-color" href="/language/set/fr-ca"><img class="img img-circle" src="https://cdn.countryflags.com/thumbs/canada/flag-square-500.png" width="15px" /> Français (Canada)</a></li>
+                </ul>
+                <ul id="profileMenu" class="text-center hidden" hidden>
+                    @auth
+                        @if(Auth::user()->local_mail)
+                            <li class="no-decoration" style="padding:3%;margin:2%;border:2px solid white"><a class="text-color" href="/{{app()->getLocale()}}/profile/mail"><i class="fa fa-envelope" aria-hidden="true"></i> {{trans('general.mails')}}</a></li>
+                        @endif
+                        <li class="no-decoration" style="padding:3%;margin:2%;border:2px solid white"><a class="text-color" href="/{{app()->getLocale()}}/profile/edit"  class="{{($page_lists['profile_edit']['inMaintenance']) ? 'hidden' : ''}}"><i class="fa fa-wrench" aria-hidden="true"></i> {{trans('general.edit_profile')}}</a></li>
+                        <li class="no-decoration" style="padding:3%;margin:2%;border:2px solid white"><a class="text-color" href="/logout"><i class="fa fa-sign-out" aria-hidden="true"></i> {{trans('general.logout')}}</a></li>
+                    @endauth
+                    @guest
+                        <li class="no-decoration" style="padding:3%;margin:2%;border:2px solid white"><a class="text-color" href="{{ route('login', app()->getLocale()) }}"><i class="fa fa-sign-in" aria-hidden="true"></i> {{trans("general.login")}}</a></li>
+                        <li class="no-decoration" style="padding:3%;margin:2%;border:2px solid white"><a class="text-color" href="{{ route('register', app()->getLocale()) }}"><i class="fa fa-user-plus" aria-hidden="true"></i> {{trans("general.register")}}</a></li>
+                    @endguest
+                </ul>
+            </div>
         </div>
     </div>
 </nav>
@@ -117,6 +87,26 @@
     if('#' + window.location.pathname.split('/' + language + '/')[1].split('/')[0] == 'login' || '#' + window.location.pathname.split('/' + language + '/')[1].split('/')[0] == "register") {
         $('#profile').addClass('current-page')
     }
+
+$(document).ready(function () {
+    openMenuOnClick('#about_us', '#aboutMeMenu');
+});
+
+function openMenuOnClick(buttonSelector, menuContainerSelector) {
+    $(buttonSelector).click(function() {
+        if($(menuContainerSelector).hasClass('hidden')) {
+            $(menuContainerSelector).removeAttr('hidden');
+            $(menuContainerSelector).removeClass('hidden');
+        } else {
+            $(menuContainerSelector).attr('hidden', true);
+            $(menuContainerSelector).addClass('hidden');
+        }
+    })
+}
+    
+
+
+
     var typingTimer;                //timer identifier
     var doneTypingInterval = 1000;  //time in ms, 5 seconds for example
     var $input = $('#navSearch');
