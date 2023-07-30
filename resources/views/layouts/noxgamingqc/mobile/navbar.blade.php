@@ -6,28 +6,28 @@
                 <h3 class="raleway-font" style="display: inline; margin: 5px;">NoxGamingQC</h3>
             </a> 
             <ul class="nav navbar-nav navbar-center" style="font-size:30px">
-                <div class="row">
+                <div class="row" style="margin-top:-5%;">
                 @auth
                     <div class="col-xs-2 col-xs-offset-1">
                 @endauth
                 @guest
                     <div class="col-xs-2 col-xs-offset-2">
                 @endguest
-                        <li id="home" class="nav-home"><a href="/{{app()->getLocale()}}/home"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+                        <li id="home" class="nav-home text-center" style="padding:5%"><a href="/{{app()->getLocale()}}/home"><i class="fa fa-home" aria-hidden="true"></i></a></li>
                     </div>
                     <div class="col-xs-2">
-                        <li id="about_us" class="nav-about_us"><a class="text-color" onclick="openNavMenu('#aboutMeMenu')"><i class="fa fa-user" aria-hidden="true"></i></a></li>
+                        <li id="about_us" class="nav-about_us text-center" style="padding:5%"><a class="text-color" onclick="openNavMenu('#aboutMeMenu')"><i class="fa fa-user" aria-hidden="true"></i></a></li>
                     </div>
                     @auth
                     <div class="col-xs-2">
-                        <li id="miscs" class="nav-miscs"><a class="text-color" onclick=""><i class="fa fa-briefcase" aria-hidden="true"></i></a></li>
+                        <li id="miscs" class="nav-miscs text-center" style="padding:5%"><a class="text-color" onclick=""><i class="fa fa-briefcase" aria-hidden="true"></i></a></li>
                     </div>
                     @endauth
                     <div class="col-xs-2">
-                        <li id="language" class="nav-language"><a class="text-color" onclick="openNavMenu('#languageMenu')"><i class="fa fa-language" aria-hidden="true"></i></a></li>
+                        <li id="language" class="nav-language text-center" style="padding:5%"><a class="text-color" onclick="openNavMenu('#languageMenu')"><i class="fa fa-language" aria-hidden="true"></i></a></li>
                     </div>
                     <div class="col-xs-2">
-                        <li id="profile" class="nav-profile"><a class="text-color" onclick="openNavMenu('#profileMenu')">
+                        <li id="profile" class="nav-profile text-center" style="padding:5%"><a class="text-color" onclick="openNavMenu('#profileMenu')">
                             @auth
                                 @if(Auth::user()->AvatarURL)
                                     <img class="img img-circle status-{{Auth::user()->status}}" src="{{Auth::user()->AvatarURL}}" width="36px" style="border-width: 2px;" />
