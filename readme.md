@@ -70,4 +70,5 @@ Navigate to `localhost:8000`
 
 ### Before editing .gitignore
 
-Do not remove `composer.lock` from the file list. Heroku require that file to build the website.
+Do not remove `composer.lock` from the file list
+Heroku require that file to build the website.
