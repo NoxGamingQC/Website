@@ -88,5 +88,6 @@ return [
     'need_login_slogan' => "Authentification requise",
     'need_login_description' => "Désolé, pour accéder à cette ressource, vous devez être connecté.",
     'hi' => "Bonjour",
-    'miscs' => "Divers"
+    'miscs' => "Divers",
+    'premium' => "Premium"
 ];

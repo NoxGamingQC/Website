@@ -40,18 +40,13 @@
                 </li>
                 @auth
                     @if(Auth::user()->isPremium)
-                        <li id="miscs" class="dropdown">
+                        <li id="premium" class="dropdown">
                             <a href="#" class="dropdown-toggle nav" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
-                                <i class="fa fa-briefcase" aria-hidden="true"></i> {{trans('general.miscs')}} <span class="caret"></span>
+                                <i class="fa fa-star" aria-hidden="true"></i> {{trans('general.premium')}} <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    @auth
-                                    @if(Auth::user()->isPremium)
-                                        <a href="/{{app()->getLocale()}}/cookbook" class=""><i class="fa fa-book" aria-hidden="true"></i> {{ trans('cookbook.title') }}</a>
-                                    @endif
-                                    @endauth
-                                    <!--<a href="/{app()->getLocale()}}/store" class=""><i class="fa fa-shopping-cart" aria-hidden="true"></i> { trans('general.store') }}</a>-->
+                                    <a href="/{{app()->getLocale()}}/cookbook" class=""><i class="fa fa-book" aria-hidden="true"></i> {{ trans('cookbook.title') }}</a>
                                 </li>
                             </ul>
                         </li>
