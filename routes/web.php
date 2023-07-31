@@ -15,7 +15,6 @@ use Illuminate\Http\Request;
 
 Route::middleware(['cors'])->group(function () {
     // API ROUTES
-        
     Route::post('/api/points/add', 'API\PointsController@addPoints');
     Route::post('/api/link/new', 'UserProfileController@newLink');
     Route::post('/api/discord/update', 'API\DiscordController@update');
@@ -194,6 +193,15 @@ Route::middleware(['cors'])->group(function () {
             Route::get('/noxbot/dashboard/{serverID}', 'NoxBotDashboardController@serverDashboard');
 
             Route::post('/noxbot/data/user/store', 'NoxBotDashboardController@linkDiscord');
+
+
+            /*
+              
+                DISCORDS ROUTES
+              
+            */
+
+            Route::get('/discord/server/manage/{id}', 'Views\Profile\DiscordController@manageServer');
 
             /*
               

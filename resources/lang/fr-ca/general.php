@@ -89,5 +89,9 @@ return [
     'need_login_description' => "Désolé, pour accéder à cette ressource, vous devez être connecté.",
     'hi' => "Bonjour",
     'miscs' => "Divers",
-    'premium' => "Premium"
+    'premium' => "Premium",
+    'by' => "Par",
+    'enter_description_here' => "Entrer votre description ici...",
+    'joined_on' => "Rejoind le",
+    'last_updated_on' => "Dernière Màj le",
 ];

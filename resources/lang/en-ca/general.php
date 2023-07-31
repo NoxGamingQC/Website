@@ -89,5 +89,9 @@ return [
     'need_login_description' => "Sorry, this ressource requires you to be logged in.",
     'hi' => "Hi",
     'miscs' => "Miscs",
-    'premium' => "Premium"
+    'premium' => "Premium",
+    'by' => "By",
+    'enter_description_here' => "Enter your description here...",
+    'joined_on' => "Joined on",
+    'last_updated_on' => "Last updated on",
 ];
