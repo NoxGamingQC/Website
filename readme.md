@@ -59,6 +59,19 @@ docker-compose up -d --build
 
 Navigate to `localhost:8000`
 
+## WEBSITE
+
+- [ ] Add new routes
+- - [ ] https://www.noxgamingqc.ca/privacy
+- -  [ ] https://www.noxgamingqc.ca/profile/delete
+- - [ ] https://www.noxgamingqc.ca/profile/devices
+- - [ ] https://www.noxgamingqc.ca/profile/devices/logoff
+- [ ] Server page will all info
+- - [ ] Minecraft
+- - - [ ] Player online count
+- - - [ ] Player list
+- [ ] Fix view on mobile devices
+
 ## Acknowledgements
 
 - Many thanks to all the people who contributed to the Laravel project.
