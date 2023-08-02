@@ -59,7 +59,7 @@ docker-compose up -d --build
 
 Navigate to `localhost:8000`
 
-## WEBSITE
+## To do
 
 - [ ] Add new routes
 - - [ ] https://www.noxgamingqc.ca/privacy
