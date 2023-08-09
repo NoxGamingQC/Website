@@ -61,6 +61,7 @@ Navigate to `localhost:8000`
 
 ## To do
 
+- [ ] Add an upcoming event section on the welcome page
 - [ ] Add new routes
 - - [ ] https://www.noxgamingqc.ca/privacy
 - -  [ ] https://www.noxgamingqc.ca/profile/delete
