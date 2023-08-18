@@ -2,7 +2,7 @@
 @section('title', $name . '\'s management')
 @section('content')
 
-<input type="hidden" id="userId" value="{{$id}}">
+<input type="hidden" id="serverID" value="{{$id}}">
 
 <div class="row">
     <div class="container-fluid">
