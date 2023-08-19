@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Resources\WarframeResource;
 use App\Http\Resources\PokemonResource;
 use App\Http\Resources\UserResource;
 use App\Http\Resources\Minecraft;
@@ -21,6 +22,17 @@ Route::get('/user/{username}', function (string $username) {
     return new UserResource($username);
 });
 
+Route::get('/pokemon/{id}', function (string $id) {
+    return new PokemonResource($id);
+});
+
+Route::get('/warframe/{type}/{name}', function (string $type, string $name) {
+    return new WarframeResource([
+        'type' => $type,
+        'name' => $name
+    ]);
+});
+
 // NoxBOT routes
 
 Route::get('/noxbot/activities', function () {
@@ -30,12 +42,6 @@ Route::get('/noxbot/activities', function () {
 Route::get('/noxbot/activity', function () {
     return new NoxBOT\ActivityResource(null);
 });
-
-
-Route::get('/pokemon/{id}', function (string $id) {
-    return new PokemonResource($id);
-});
-
 
 // Minecraft routes
 Route::get('/minecraft/user/{id}', function (string $id) {
