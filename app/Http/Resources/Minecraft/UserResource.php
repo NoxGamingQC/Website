@@ -27,10 +27,11 @@ class UserResource extends JsonResource
                 'body' => $apiUrl . 'body/' . $userData->id,
                 'bust' => $apiUrl . 'bust/' . $userData->id,
                 'cube' => $apiUrl . 'cube/' . $userData->id,
-                'cape' => $apiUrl . 'cape/' . $userData->id
+                'cape' => $apiUrl . 'cape/' . $userData->id,
+                'source' => 'This request uses data from: ' . $apiUrl
             ];
         } catch (\Exception $exception) {
-            abort(404, 'Minecraft user not found');
+            abort(404, 'Minecraft user not found. There can also be an issue with the api, if so have you try using the user uuid instead?');
         }
     }
 }

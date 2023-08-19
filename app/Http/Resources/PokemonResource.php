@@ -40,7 +40,8 @@ class PokemonResource extends JsonResource
                 'capture_rate' => $pokemonSpeciesData->capture_rate,
                 'growth_rate' => $pokemonSpeciesData->growth_rate->name,
                 'sprite' => $pokemonData->sprites->front_default,
-                'sprite_shiny' => $pokemonData->sprites->front_shiny
+                'sprite_shiny' => $pokemonData->sprites->front_shiny,
+                'source' => 'This request uses data from: ' . $apiUrl
             ];
         } catch (\Exception $exception) {
             abort(404, 'Pokemon not found');
