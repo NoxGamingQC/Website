@@ -3,7 +3,7 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
-use App\DiscordUser;
+use App\DiscordUsers;
 use App\User;
 
 class UserResource extends JsonResource
