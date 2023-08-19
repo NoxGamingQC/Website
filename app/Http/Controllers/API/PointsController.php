@@ -49,17 +49,6 @@ class PointsController extends Controller
         }
     }
 
-    public function getMinecraftPoints($userUUID)
-    {
-        $user = User::where('minecraft_uuid', '=', $userUUID)->first();
-        if($user) {
-            $points = Points::getTotalPoints($user->id);
-
-            return response()->json($points);
-        }
-        abort(403);
-    }
-
     public function addMinecraftPoints(Request $request, $userUUID, $ApiKey)
     {
         $user = User::where('minecraft_uuid', '=', $userUUID)->first();

@@ -22,12 +22,9 @@ Route::middleware(['cors'])->group(function () {
     Route::get('/api/discord/config/get/{id}', 'API\DiscordController@getServerConfig');
     Route::get('/api/check_state', 'API\UserController@checkState');
     Route::get('/api/check_state/{id}', 'API\UserController@checkStateWithID');
-    Route::get('/api/minecraft/points/{user}', 'API\PointsController@getMinecraftPoints');
-    Route::post('/api/minecraft/points/{user}/{apiKey}', 'API\PointsController@addMinecraftPoints');
 
 
     // NoxBOT routes
-    Route::get('/api/noxbot/activities', 'NoxBOT\BotActivitiesController@getActivities');
     Route::post('/api/noxbot/points/add', 'NoxBOT\PointSystemController@addPoints');
     Route::get('/api/noxbot/modules', 'NoxBOT\BotModulesController@getModules');
     Route::get('/api/noxbot/json/subs_modules', 'NoxBOT\BotModulesController@getSubsModules');
