@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use App\Http\Resources\UserResource;
+use App\Http\Resources\Minecraft;
+use App\Http\Resources\NoxBOT;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,4 +18,15 @@ use App\Http\Resources\UserResource;
 
 Route::get('/user/{username}', function (string $username) {
     return new UserResource($username);
+});
+
+// NoxBOT routes
+Route::get('/noxbot/activities', function () {
+    return new NoxBOT\ActivityResource(null);
+});
+
+
+// Minecraft routes
+Route::get('/minecraft/points/{uuid}', function (string $uuid) {
+    return new Minecraft\GetPointResource($uuid);
 });
