@@ -25,6 +25,6 @@ class GetPointResource extends JsonResource
                 'points' => $points
             ];
         }
-        abort(403);
+        abort(404);
     }
 }
