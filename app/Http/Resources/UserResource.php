@@ -21,10 +21,19 @@ class UserResource extends JsonResource
             return [
                 'id' => $user->id,
                 'username' => $user->name,
+                'pronouns' => $user->pronouns,
                 'firstname' => $user->isFirstnameShowned ? $user->Firstname : null,
                 'lastname' => $user->isLastnameShowned ? $user->Lastname : null,
+                'language' => $user->Language,
+                'emails' => explode(';', $user->local_mail),
+                'isPremium' => $user->isPremium,
+                'country' => $user->Country,
+                'isManager' => ($user->isAdmin || $user->isModerator || $user->isDev),
                 'created_at' => $user->created_at,
                 'updated_at' => $user->updated_at,
+                'minecraft' => [
+                    'uuid' => $user->minecraft_uuid
+                ]
             ];
         } else {
             $users = User::all();
@@ -33,10 +42,19 @@ class UserResource extends JsonResource
                     return [
                         'id' => $user->id,
                         'username' => $user->name,
+                        'pronouns' => $user->pronouns,
                         'firstname' => $user->isFirstnameShowned ? $user->Firstname : null,
                         'lastname' => $user->isLastnameShowned ? $user->Lastname : null,
+                        'language' => $user->Language,
+                        'emails' => explode(';', $user->local_mail),
+                        'isPremium' => $user->isPremium,
+                        'country' => $user->Country,
+                        'isManager' => ($user->isAdmin || $user->isModerator || $user->isDev),
                         'created_at' => $user->created_at,
                         'updated_at' => $user->updated_at,
+                        'minecraft' => [
+                            'uuid' => $user->minecraft_uuid
+                        ]
                     ];
                 }
             }
