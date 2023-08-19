@@ -1,9 +1,10 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Resources\PokemonResource;
 use App\Http\Resources\UserResource;
 use App\Http\Resources\Minecraft;
 use App\Http\Resources\NoxBOT;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,7 @@ Route::get('/user/{username}', function (string $username) {
 });
 
 // NoxBOT routes
+
 Route::get('/noxbot/activities', function () {
     return new NoxBOT\ActivityListResource(null);
 });
@@ -30,7 +32,13 @@ Route::get('/noxbot/activity', function () {
 });
 
 
+Route::get('/pokemon/{id}', function (string $id) {
+    return new PokemonResource($id);
+});
+
+
 // Minecraft routes
+
 Route::get('/minecraft/points/{uuid}', function (string $uuid) {
     return new Minecraft\GetPointResource($uuid);
 });
