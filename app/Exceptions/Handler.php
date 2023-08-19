@@ -51,34 +51,37 @@ class Handler extends ExceptionHandler
     {
         if ($request->is('api/*')) {
             if($exception) {
-                if ($exception->getStatusCode() == 401) {
-                    return response()->json([
-                        'code' => 401,
-                        'message' => $exception->getMessage() ? $exception->getMessage() : 'Unauthorized.'
-                    ], 401);
+                if(method_exists($exception, 'getStatusCode')) {
+                    if ($exception->getStatusCode() == 401) {
+                        return response()->json([
+                            'code' => 401,
+                            'message' => $exception->getMessage() ? $exception->getMessage() : 'Unauthorized.'
+                        ], 401);
+                    }
+                    if ($exception->getStatusCode() == 403) {
+                        return response()->json([
+                            'code' => 403,
+                            'message' => $exception->getMessage() ? $exception->getMessage() : 'Access forbidden.'
+                        ], 403);
+                    }
+                    if ($exception->getStatusCode() == 404) {
+                        return response()->json([
+                            'code' => 404,
+                            'message' => $exception->getMessage() ? $exception->getMessage() : 'Not found.'
+                        ], 404);
+                    }
+                    if ($exception->getStatusCode() == 405) {
+                        return response()->json([
+                            'code' => 405,
+                            'message' => $exception->getMessage() ? $exception->getMessage() : 'Method not allowed'
+                        ], 405);
+                    }
                 }
-                if ($exception->getStatusCode() == 403) {
-                    return response()->json([
-                        'code' => 403,
-                        'message' => $exception->getMessage() ? $exception->getMessage() : 'Access forbidden.'
-                    ], 403);
-                }
-                if ($exception->getStatusCode() == 404) {
-                    return response()->json([
-                        'code' => 404,
-                        'message' => $exception->getMessage() ? $exception->getMessage() : 'Not found.'
-                    ], 404);
-                }
-                if ($exception->getStatusCode() == 405) {
-                    return response()->json([
-                        'code' => 405,
-                        'message' => $exception->getMessage() ? $exception->getMessage() : 'Method not allowed'
-                    ], 405);
-                }
-                if ($exception->getStatusCode() == 500) {
+
+                if($exception->getCode() == 0) {
                     return response()->json([
                         'code' => 500,
-                        'message' => $exception->getMessage() ? $exception->getMessage() : 'Internal Server Error'
+                        'message' => (env('APP_DEBUG') == true && $exception->getMessage()) ? $exception->getMessage() : 'Internal Server Error'
                     ], 500);
                 }
             }
