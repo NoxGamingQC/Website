@@ -17,9 +17,13 @@ class PokemonResource extends JsonResource
         $apiUrl = "https://pokeapi.co/api/v2/pokemon/";
         $pokemonData = json_decode(file_get_contents($apiUrl . $this->resource));
         $pokemonSpeciesData = json_decode(file_get_contents($pokemonData->species->url));
+        $pokemonAbilities = [];
         $pokemonTypes = [];
         foreach($pokemonData->types as $type) {
             array_push($pokemonTypes, $type->type->name);
+        }
+        foreach($pokemonData->abilities as $ability) {
+            array_push($pokemonAbilities, $ability->ability->name);
         }
         return [
             'id' => $pokemonData->id,
@@ -31,6 +35,7 @@ class PokemonResource extends JsonResource
             'is_legendary' => $pokemonSpeciesData->is_legendary,
             'is_mythical' => $pokemonSpeciesData->is_mythical,
             'types' => $pokemonTypes,
+            'abilities' => $pokemonAbilities,
             'capture_rate' => $pokemonSpeciesData->capture_rate,
             'growth_rate' => $pokemonSpeciesData->growth_rate->name,
             'sprite' => $pokemonData->sprites->front_default,
