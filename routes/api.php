@@ -22,6 +22,10 @@ Route::get('/user/{username}', function (string $username) {
 
 // NoxBOT routes
 Route::get('/noxbot/activities', function () {
+    return new NoxBOT\ActivityListResource(null);
+});
+
+Route::get('/noxbot/activity', function () {
     return new NoxBOT\ActivityResource(null);
 });
 

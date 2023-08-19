@@ -6,7 +6,7 @@ use Illuminate\Http\Resources\Json\JsonResource;
 
 use App\BotActivities;
 
-class ActivityResource extends JsonResource
+class ActivityListResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -20,9 +20,6 @@ class ActivityResource extends JsonResource
         foreach (BotActivities::orderBy('ID')->get() as $key => $activity) {
             array_push($activities, $activity->Activity);
         }
-        $activityKey = array_rand($activities, 1);
-        return [
-            $activities[$activityKey]
-        ];
+        return $activities;
     }
 }
