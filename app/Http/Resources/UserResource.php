@@ -3,6 +3,7 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
+use App\DiscordUser;
 use App\User;
 
 class UserResource extends JsonResource
@@ -18,6 +19,7 @@ class UserResource extends JsonResource
         $username = $this->resource;
         $user = User::where('name', '=', $username)->first();
         if($user) {
+            $discordUser = DiscordUsers::getUserByID($user->discord_id);
             return [
                 'id' => $user->id,
                 'username' => $user->name,
