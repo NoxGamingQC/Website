@@ -38,6 +38,9 @@ Route::get('/pokemon/{id}', function (string $id) {
 
 
 // Minecraft routes
+Route::get('/minecraft/user/{id}', function (string $id) {
+    return new Minecraft\UserResource($id);
+});
 
 Route::get('/minecraft/points/{uuid}', function (string $uuid) {
     return new Minecraft\GetPointResource($uuid);

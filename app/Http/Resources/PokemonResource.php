@@ -42,7 +42,7 @@ class PokemonResource extends JsonResource
                 'sprite' => $pokemonData->sprites->front_default,
                 'sprite_shiny' => $pokemonData->sprites->front_shiny
             ];
-        } catch (\Exception $exeption) {
+        } catch (\Exception $exception) {
             abort(404, 'Pokemon not found');
         }
     }
