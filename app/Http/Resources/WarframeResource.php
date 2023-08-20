@@ -34,7 +34,7 @@ class WarframeResource extends JsonResource
                 return [
                     'name' => $warframeData->name,
                     'description' => $warframeData->description,
-                    'sex' => $warframeData->sex,
+                    'gender' => $warframeData->sex,
                     'power' => $warframeData->power,
                     'armor' => $warframeData->armor,
                     'shield' => $warframeData->shield,
