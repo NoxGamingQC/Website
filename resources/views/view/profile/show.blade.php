@@ -66,12 +66,8 @@
                         @if($xbox_profile->data->watermarks)
                             <li>{{trans('general.watermarks')}}</li>
                             <ul>
-                                @foreach($xbox_profile->data->watermarks as $watermark_name => $watermark_level)
-                                    @if(!is_null($watermark_level))
-                                        <li>{{$watermark_name}}: {{$watermark_level}}</li>
-                                    @else
-                                        <li>{{$watermark_name}}</li>
-                                    @endif
+                                @foreach($xbox_profile->data->watermarks as $watermark_name => $watermark_img)
+                                        <img src="{{$watermark_img}}" alt="{{$watermark_name}}" width="50px" />
                                 @endforeach
                             </ul>
                         @endif
