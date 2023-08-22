@@ -37,7 +37,7 @@ class UserProfileController extends Controller
             $grade = "developper";
         }
         if($user->xbox_gamertag) {
-            $xboxProfile = json_decode(file_get_contents(env('APP_URL') . '/api/xbox/'. $user->xbox_gamertag));
+            $xboxProfile = json_decode(file_get_contents((env('APP_PROD_URL') ? env('APP_PROD_URL') : env('APP_URL')) . '/api/xbox/'. $user->xbox_gamertag));
         }
 
         $badges = $user->Badges ? explode(';', $user->Badges) : [];

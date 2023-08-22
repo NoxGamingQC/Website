@@ -25,12 +25,11 @@ class XboxResource extends JsonResource
             $xboxWatermarks = explode('|', $result->data->player->meta->watermarks);
             $watermarks = [];
             foreach($xboxWatermarks as $watermark) {
-                if(explode('l', $watermark)[0] == 'ambassador') {
-                    $watermarks[explode('l', $watermark)[0]] = explode('l', $watermark)[1];
+                if($watermark !== 'ambassadorl0') {
+                    $watermarks[$watermark] = 'https://statics-xbc-neu.xbox.com/_h/0/xbox.modules/images/social/' . $watermark . '.png';
                 } else {
-                    if($watermark) {
-                        $watermarks[$watermark] = null;
-                    }
+                    // Need to find the official static one...
+                    $watermarks[$watermark] = 'https://compass-ssl.microsoft.com/assets/3a/26/3a268d11-03f9-4a8b-a65a-8512f16e4ea4.png?n=LVL1.png';
                 }
             }
             return [
@@ -39,7 +38,10 @@ class XboxResource extends JsonResource
                 'account_tier' => $result->data->player->meta->accountTier,
                 'xbox_one_rep' => $result->data->player->meta->xboxOneRep,
                 'bio' => $result->data->player->meta->bio ? $result->data->player->meta->bio : null,
-                'tenure_level' => $result->data->player->meta->tenureLevel,
+                'tenure_level' => [
+                    'level' => $result->data->player->meta->tenureLevel,
+                    'img' => $result->data->player->meta->tenureLevel !== "0" ? 'https://statics-xbc-neu.xbox.com/_h/0/xbox.modules/images/social/xboxtenure' . $result->data->player->meta->tenureLevel . '.png' : null,
+                ],
                 'watermarks' => $watermarks ? $watermarks : null,
                 'username' => $result->data->player->username,
                 'avatar' => $result->data->player->avatar,
