@@ -27,6 +27,7 @@ class UserProfileController extends Controller
         $age = $user->isAgeShowned ? Carbon::parse($user->Birthdate)->age : null;
         $birthdate = $user->isBirthdateShowned ? $user->Birthdate : null;
         $grade = "member";
+        $xboxProfile = null;
 
         if ($user->isAdmin) {
             $grade = "administrator";
@@ -34,6 +35,9 @@ class UserProfileController extends Controller
             $grade = "moderator";
         } elseif ($user->isDev) {
             $grade = "developper";
+        }
+        if($user->xbox_gamertag) {
+            $xboxProfile = json_decode(file_get_contents(env('APP_URL') . '/api/xbox/'. $user->xbox_gamertag));
         }
 
         $badges = $user->Badges ? explode(';', $user->Badges) : [];
@@ -95,7 +99,8 @@ class UserProfileController extends Controller
             'socials' => User::getSocialsLinks($user),
             'minecraft' => User::getMinecraftInfo($user),
             'discordUser' => User::getDiscordInfo($user),
-            'pronouns' => $user->pronouns
+            'pronouns' => $user->pronouns,
+            'xbox_profile' => $xboxProfile
         ]);
     }
 
