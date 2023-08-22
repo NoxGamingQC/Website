@@ -41,6 +41,23 @@
                         @endif
                     @endif
                 @endif
+                @if($xbox_profile->data->tenure_level->img)
+                    <h4><b>{{ trans('profile.xbox_badge') }}</b></h4>
+                    <img src="{{$xbox_profile->data->tenure_level->img}}" alt="{{$xbox_profile->data->tenure_level->level}}" width="50px" style="margin:5px" />
+                    @if(!$xbox_profile->data->watermarks)
+                        <br />
+                    @endif
+                @endif
+                @if($xbox_profile->data->watermarks)
+                    @if(!$xbox_profile->data->tenure_level->img)
+                        <h4><b>{{ trans('profile.xbox_badge') }}</b></h4>
+                        <br />
+                    @endif
+                    @foreach($xbox_profile->data->watermarks as $watermark_name => $watermark_img)
+                            <img src="{{$watermark_img}}" alt="{{$watermark_name}}" width="50px" style="margin:5px" />
+                    @endforeach
+                    <br />
+                @endif
         </div>
         <div class="col-md-7" style="margin-top:12%;position:relative;">
             @if($aboutMe)
@@ -62,11 +79,19 @@
                         <li>{{trans('general.gamerscore')}}: {{$xbox_profile->data->gamerscore}}</li>
                         <li>{{trans('general.xbox_one_rep')}}: {{$xbox_profile->data->xbox_one_rep}}</li>
                         <li>{{trans('general.account_tier')}}: {{$xbox_profile->data->account_tier}}</li>
-                        <li>{{trans('general.tenure_level')}}: {{$xbox_profile->data->tenure_level}}</li>
-                        @if($xbox_profile->data->watermarks)
+                        @if($xbox_profile->data->tenure_level->img)
                             <br />
+                            <img src="{{$xbox_profile->data->tenure_level->img}}" alt="{{$xbox_profile->data->tenure_level->level}}" width="50px" style="margin:5px" />
+                            @if(!$xbox_profile->data->watermarks)
+                                <br />
+                            @endif
+                        @endif
+                        @if($xbox_profile->data->watermarks)
+                            @if(!$xbox_profile->data->tenure_level)
+                                <br />
+                            @endif
                             @foreach($xbox_profile->data->watermarks as $watermark_name => $watermark_img)
-                                    <img src="{{$watermark_img}}" alt="{{$watermark_name}}" width="50px" />
+                                    <img src="{{$watermark_img}}" alt="{{$watermark_name}}" width="50px" style="margin:5px" />
                             @endforeach
                             <br />
                         @endif
