@@ -5,6 +5,7 @@ use App\Http\Resources\PokemonResource;
 use App\Http\Resources\UserResource;
 use App\Http\Resources\Minecraft;
 use App\Http\Resources\NoxBOT;
+use App\Http\Resources\XboxResource;
 use Illuminate\Http\Request;
 
 /*
@@ -24,6 +25,10 @@ Route::get('/user/{username}', function (string $username) {
 
 Route::get('/pokemon/{id}', function (string $id) {
     return new PokemonResource($id);
+});
+
+Route::get('/xbox/{id}', function (string $id) {
+    return new XboxResource($id);
 });
 
 Route::get('/warframe/{type}/{name}', function (string $type, string $name) {

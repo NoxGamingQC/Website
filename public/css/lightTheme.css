@@ -4722,6 +4722,39 @@ td.disabled.day {
   background-color: #555555;
 }
 
+.fa.non-hover {
+  margin: 5px;
+  padding: 3px 6px 3px 6px;
+  display: contents;
+  visibility: visible;
+}
+
+.fa.hover {
+  margin: 5px;
+  padding: 3px 6px 3px 6px;
+  display: none;
+  visibility: hidden;
+}
+
+.fa-container:hover .fa.non-hover {
+  display: none;
+  visibility: hidden;
+}
+.fa-container:hover .fa.hover {
+  display: contents;
+  visibility: visible;
+}
+
+.custom-shadow {
+  border: 1px solid #bfbfbf;
+  background-color: #bfbfbf;
+}
+
+.custom-shadow:hover {
+  box-shadow: -0.5px -0.5px 3px 3px rgba(194, 34, 34, 0.5019607843);
+  border: 1px solid rgba(194, 34, 34, 0.5019607843);
+}
+
 @media print {
   .no-print {
     display: none !important;
