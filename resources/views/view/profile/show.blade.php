@@ -67,9 +67,9 @@
                         <ul>
                             @foreach($xbox_profile->data->watermarks as $watermark_name => $watermark_level)
                                 @if($watermark_level)
-                                    <li>{{$watermark}}: {{$watermark_level}}</li>
+                                    <li>{{$watermark_name}}: {{$watermark_level}}</li>
                                 @endif
-                                <li>{{$watermark}}</li>
+                                <li>{{$watermark_name}}</li>
                             @endforeach
                         </ul>
                     </ul>
