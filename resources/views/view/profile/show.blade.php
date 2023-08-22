@@ -64,12 +64,11 @@
                         <li>{{trans('general.account_tier')}}: {{$xbox_profile->data->account_tier}}</li>
                         <li>{{trans('general.tenure_level')}}: {{$xbox_profile->data->tenure_level}}</li>
                         @if($xbox_profile->data->watermarks)
-                            <li>{{trans('general.watermarks')}}</li>
-                            <ul>
-                                @foreach($xbox_profile->data->watermarks as $watermark_name => $watermark_img)
-                                        <img src="{{$watermark_img}}" alt="{{$watermark_name}}" width="50px" />
-                                @endforeach
-                            </ul>
+                            <br />
+                            @foreach($xbox_profile->data->watermarks as $watermark_name => $watermark_img)
+                                    <img src="{{$watermark_img}}" alt="{{$watermark_name}}" width="50px" />
+                            @endforeach
+                            <br />
                         @endif
                     </ul>
                 </div>
