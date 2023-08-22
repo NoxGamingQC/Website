@@ -63,15 +63,17 @@
                         <li>{{trans('general.xbox_one_rep')}}: {{$xbox_profile->data->xbox_one_rep}}</li>
                         <li>{{trans('general.account_tier')}}: {{$xbox_profile->data->account_tier}}</li>
                         <li>{{trans('general.tenure_level')}}: {{$xbox_profile->data->tenure_level}}</li>
-                        <li>{{trans('general.watermarks')}}</li>
-                        <ul>
-                            @foreach($xbox_profile->data->watermarks as $watermark_name => $watermark_level)
-                                @if($watermark_level)
-                                    <li>{{$watermark_name}}: {{$watermark_level}}</li>
-                                @endif
-                                <li>{{$watermark_name}}</li>
-                            @endforeach
-                        </ul>
+                        @if($xbox_profile->data->watermarks)
+                            <li>{{trans('general.watermarks')}}</li>
+                            <ul>
+                                @foreach($xbox_profile->data->watermarks as $watermark_name => $watermark_level)
+                                    @if($watermark_level)
+                                        <li>{{$watermark_name}}: {{$watermark_level}}</li>
+                                    @endif
+                                    <li>{{$watermark_name}}</li>
+                                @endforeach
+                            </ul>
+                        @endif
                     </ul>
                 </div>
             @endif
