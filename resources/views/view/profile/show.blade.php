@@ -57,19 +57,19 @@
                 </div>
                 <div class="col-md-6">
                     <ul>
-                        <li>ID: {{$xbox_profile['id']}}</li>
-                        <li>{{trans('general.username')}}: {{$xbox_profile['username']}}</li>
-                        <li>{{trans('general.gamerscore')}}: {{$xbox_profile['gamerscore']}}</li>
-                        <li>{{trans('general.xbox_one_rep')}}: {{$xbox_profile['xbox_one_rep']}}</li>
-                        <li>{{trans('general.account_tier')}}: {{$xbox_profile['account_tier']}}</li>
-                        <li>{{trans('general.tenure_level')}}: {{$xbox_profile['tenure_level']}}</li>
+                        <li>ID: {{$xbox_profile->data->id}}</li>
+                        <li>{{trans('general.username')}}: {{$xbox_profile->data->username}}</li>
+                        <li>{{trans('general.gamerscore')}}: {{$xbox_profile->data->gamerscore}}</li>
+                        <li>{{trans('general.xbox_one_rep')}}: {{$xbox_profile->data->xbox_one_rep}}</li>
+                        <li>{{trans('general.account_tier')}}: {{$xbox_profile->data->account_tier}}</li>
+                        <li>{{trans('general.tenure_level')}}: {{$xbox_profile->data->tenure_level}}</li>
                         <li>{{trans('general.watermarks')}}</li>
                         <ul>
-                            @foreach($xbox_profile['watermarks'] as $watermark_name => $watermark_level)
+                            @foreach($xbox_profile->data->watermarks as $watermark_name => $watermark_level)
                                 @if($watermark_level)
-                                    <li>{{$watermark_name}}: {{$watermark_level}}</li>
+                                    <li>{{$watermark}}: {{$watermark_level}}</li>
                                 @endif
-                                <li>{{$watermark_name}}</li>
+                                <li>{{$watermark}}</li>
                             @endforeach
                         </ul>
                     </ul>
