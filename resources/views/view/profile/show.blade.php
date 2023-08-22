@@ -75,10 +75,10 @@
                 <div class="col-md-6">
                     <ul>
                         <li>ID: {{$xbox_profile->data->id}}</li>
-                        <li>{{trans('general.username')}}: {{$xbox_profile->data->username}}</li>
-                        <li>{{trans('general.gamerscore')}}: {{$xbox_profile->data->gamerscore}}</li>
-                        <li>{{trans('general.xbox_one_rep')}}: {{$xbox_profile->data->xbox_one_rep}}</li>
-                        <li>{{trans('general.account_tier')}}: {{$xbox_profile->data->account_tier}}</li>
+                        <li>{{trans('profile.username')}}: {{$xbox_profile->data->username}}</li>
+                        <li>{{trans('profile.gamerscore')}}: {{$xbox_profile->data->gamerscore}}</li>
+                        <li>{{trans('profile.xbox_one_rep')}}: {{$xbox_profile->data->xbox_one_rep}}</li>
+                        <li>{{trans('profile.account_tier')}}: {{$xbox_profile->data->account_tier}}</li>
                         @if($xbox_profile->data->tenure_level->img)
                             <br />
                             <img src="{{$xbox_profile->data->tenure_level->img}}" alt="{{$xbox_profile->data->tenure_level->level}}" width="50px" style="margin:5px" />
