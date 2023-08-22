@@ -57,4 +57,9 @@ return [
     'about_me' => "About me",
     'about_me_placeholder' => "Who are you? You can start typing here and it will show on your profile. Markdown is allowed.",
     'badges'=>"Badges",
+    'xbox' => "Xbox",
+    'xbox_badge' => "Xbox badges",
+    'gamerscore' => "Gamerscore",
+    'xbox_one_rep' => "Xbox reputation",
+    'account_tier' => "Account tier",
 ];
