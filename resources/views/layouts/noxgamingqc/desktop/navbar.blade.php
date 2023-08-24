@@ -39,7 +39,7 @@
                     </ul>
                 </li>
                 @auth
-                    @if(Auth::user()->isPremium)
+                    @if(Auth::user()->has_premium)
                         <li id="premium" class="dropdown">
                             <a href="#" class="dropdown-toggle nav" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                                 <i class="fa fa-star" aria-hidden="true"></i> {{trans('general.premium')}} <span class="caret"></span>

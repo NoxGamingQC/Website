@@ -60,11 +60,13 @@
                     <a class="text-color" href="/{{app()->getLocale()}}/about_us/twitch" class="{{($page_lists['twitch']['inMaintenance']) ? 'hidden' : ''}}" style="font-size:14px"><li class="no-decoration" style="padding:5%;margin:2%;border:2px solid white"><i class="fa fa-twitch" aria-hidden="true"></i> {{ trans('general.twitch') }}</li></a>
                     <a class="text-color" href="/{{app()->getLocale()}}/about_us/youtube" class="{{($page_lists['youtube']['inMaintenance']) ? 'hidden' : ''}}" style="font-size:14px"><li class="no-decoration" style="padding:5%;margin:2%;border:2px solid white"><i class="fa fa-youtube-play" aria-hidden="true"></i> {{ trans('general.youtube') }}</li></a>
                 </ul>
-                @if(Auth::user()->has_premium)
-                    <ul id="premiumMenu" class="text-center hidden" hidden>
-                        <a class="text-color" href="/{{app()->getLocale()}}/cookbook" style="font-size:14px"><li class="no-decoration" style="padding:5%;margin:2%;border:2px solid white">{{trans('cookbook.title')}}</li></a>
-                    </ul>
-                @endif
+                @auth
+                    @if(Auth::user()->has_premium)
+                        <ul id="premiumMenu" class="text-center hidden" hidden>
+                            <a class="text-color" href="/{{app()->getLocale()}}/cookbook" style="font-size:14px"><li class="no-decoration" style="padding:5%;margin:2%;border:2px solid white">{{trans('cookbook.title')}}</li></a>
+                        </ul>
+                    @endif
+                @endauth
                 <ul id="languageMenu" class="text-center hidden" hidden>
                     <a class="text-color" href="/language/set/en-ca" style="font-size:14px"><li class="no-decoration" style="padding:5%;margin:2%;border:2px solid white"><img class="img img-circle" src="https://cdn.countryflags.com/thumbs/canada/flag-square-500.png" width="15px" /> English (Canada)</li></a>
                     <a class="text-color" href="/language/set/fr-ca" style="font-size:14px"><li class="no-decoration" style="padding:5%;margin:2%;border:2px solid white"><img class="img img-circle" src="https://cdn.countryflags.com/thumbs/canada/flag-square-500.png" width="15px" /> Français (Canada)</li></a>

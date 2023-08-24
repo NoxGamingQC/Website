@@ -4,6 +4,7 @@ return [
     'administrator' => "Administrateur",
     'moderator' => "Modérateur",
     'developper' => "Développeur",
+    'management_team' => "Équipe de gestion",
     'member' => "Membre",
     'user_acknowledgement' => "Profil de l'utilisateur",
     'discord_user_acknowledgement' => "Profil de l'utilisateur Discord",

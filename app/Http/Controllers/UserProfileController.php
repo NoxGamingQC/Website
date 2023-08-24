@@ -21,7 +21,7 @@ class UserProfileController extends Controller
         if(PageLists::where('slug', 'profile_show')->first()->inMaintenance && env('APP_ENV') == 'production') {
             abort(503);
         }
-        
+
         $user = null;
         $users = User::all();
         foreach($users as $userResource) {
@@ -39,7 +39,7 @@ class UserProfileController extends Controller
         $lastname = $user->show_lastname ? $user->lastname : null;
         $age = $user->show_age ? Carbon::parse($user->birthdate)->age : null;
         $birthdate = $user->show_birthdate ? $user->birthdate : null;
-        $grade = $user->isManagement ? "management_team" : "member";
+        $grade = $user->is_management ? "management_team" : "member";
         $xboxProfile = null;
 
         if($user->xbox_gamertag) {
