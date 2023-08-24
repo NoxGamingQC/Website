@@ -91,7 +91,9 @@ class UserProfileController extends Controller
                 $markdownParser = new markdown\GithubMarkdown();
                 $rawAboutMe = file_get_contents($user->about_me);
                 $aboutMeContent = $markdownParser->parse($rawAboutMe);
-            } catch (\Exception $exception) {}
+            } catch (\Exception $exception) {
+                $aboutMeContent = $user->about_me;
+            }
         }
         return view('view.profile.profile', [
             "id" => $user->id,
