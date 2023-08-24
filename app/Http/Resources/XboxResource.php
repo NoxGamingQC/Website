@@ -25,11 +25,13 @@ class XboxResource extends JsonResource
             $xboxWatermarks = explode('|', $result->data->player->meta->watermarks);
             $watermarks = [];
             foreach($xboxWatermarks as $watermark) {
-                if($watermark !== 'ambassadorl0') {
-                    $watermarks[$watermark] = 'https://statics-xbc-neu.xbox.com/_h/0/xbox.modules/images/social/' . $watermark . '.png';
-                } else {
-                    // Need to find the official static one...
-                    $watermarks[$watermark] = 'https://compass-ssl.microsoft.com/assets/3a/26/3a268d11-03f9-4a8b-a65a-8512f16e4ea4.png?n=LVL1.png';
+                if($watermark) {
+                    if($watermark !== 'ambassadorl0') {
+                        $watermarks[$watermark] = 'https://statics-xbc-neu.xbox.com/_h/0/xbox.modules/images/social/' . $watermark . '.png';
+                    } else {
+                        // Need to find the official static one...
+                        $watermarks[$watermark] = 'https://compass-ssl.microsoft.com/assets/3a/26/3a268d11-03f9-4a8b-a65a-8512f16e4ea4.png?n=LVL1.png';
+                    }
                 }
             }
             return [
