@@ -29,8 +29,8 @@
                     <div class="col-xs-2">
                         <a class="text-color" onclick="openNavMenu('#profileMenu')"><li id="profile" class="nav-profile text-center" style="padding:5%">
                             @auth
-                                @if(Auth::user()->AvatarURL)
-                                    <img class="img img-circle status-{{Auth::user()->status}}" src="{{Auth::user()->AvatarURL}}" width="36px" style="border-width: 2px;" />
+                                @if(Auth::user()->avatar_url)
+                                    <img class="img img-circle status-{{Auth::user()->status}}" src="{{Auth::user()->avatar_url}}" width="36px" style="border-width: 2px;" />
                                 @else
                                     <img class="img img-circle status-{{Auth::user()->status}}" src="/img/no-avatar.jpg" width="36px" style="border-width: 2px;" />
                                 @endif
@@ -60,9 +60,11 @@
                     <a class="text-color" href="/{{app()->getLocale()}}/about_us/twitch" class="{{($page_lists['twitch']['inMaintenance']) ? 'hidden' : ''}}" style="font-size:14px"><li class="no-decoration" style="padding:5%;margin:2%;border:2px solid white"><i class="fa fa-twitch" aria-hidden="true"></i> {{ trans('general.twitch') }}</li></a>
                     <a class="text-color" href="/{{app()->getLocale()}}/about_us/youtube" class="{{($page_lists['youtube']['inMaintenance']) ? 'hidden' : ''}}" style="font-size:14px"><li class="no-decoration" style="padding:5%;margin:2%;border:2px solid white"><i class="fa fa-youtube-play" aria-hidden="true"></i> {{ trans('general.youtube') }}</li></a>
                 </ul>
-                <ul id="premiumMenu" class="text-center hidden" hidden>
-                    <a class="text-color" href="/{{app()->getLocale()}}/cookbook" style="font-size:14px"><li class="no-decoration" style="padding:5%;margin:2%;border:2px solid white">{{trans('cookbook.title')}}</li></a>
-                </ul>
+                @if(Auth::user()->has_premium)
+                    <ul id="premiumMenu" class="text-center hidden" hidden>
+                        <a class="text-color" href="/{{app()->getLocale()}}/cookbook" style="font-size:14px"><li class="no-decoration" style="padding:5%;margin:2%;border:2px solid white">{{trans('cookbook.title')}}</li></a>
+                    </ul>
+                @endif
                 <ul id="languageMenu" class="text-center hidden" hidden>
                     <a class="text-color" href="/language/set/en-ca" style="font-size:14px"><li class="no-decoration" style="padding:5%;margin:2%;border:2px solid white"><img class="img img-circle" src="https://cdn.countryflags.com/thumbs/canada/flag-square-500.png" width="15px" /> English (Canada)</li></a>
                     <a class="text-color" href="/language/set/fr-ca" style="font-size:14px"><li class="no-decoration" style="padding:5%;margin:2%;border:2px solid white"><img class="img img-circle" src="https://cdn.countryflags.com/thumbs/canada/flag-square-500.png" width="15px" /> Français (Canada)</li></a>
@@ -70,9 +72,9 @@
                 <ul id="profileMenu" class="text-center hidden" hidden>
                     @auth
                         @if(Auth::user()->local_mail)
-                            <a class="text-color" href="/{{app()->getLocale()}}/profile/mail" style="font-size:14px"><li class="no-decoration" style="padding:5%;margin:2%;border:2px solid white"><i class="fa fa-envelope" aria-hidden="true"></i> {{trans('general.mails')}}</li></a>
+                            <a class="text-color" href="/{{app()->getLocale()}}/mail" style="font-size:14px"><li class="no-decoration" style="padding:5%;margin:2%;border:2px solid white"><i class="fa fa-envelope" aria-hidden="true"></i> {{trans('general.mails')}}</li></a>
                         @endif
-                        <a class="text-color" href="/{{app()->getLocale()}}/profile/edit" class="{{($page_lists['profile_edit']['inMaintenance']) ? 'hidden' : ''}}" style="font-size:14px"><li class="no-decoration" style="padding:5%;margin:2%;border:2px solid white"><i class="fa fa-wrench" aria-hidden="true"></i> {{trans('general.edit_profile')}}</li></a>
+                        <a class="text-color" href="/{{app()->getLocale()}}/user/{{Auth::user()->id}}" style="font-size:14px"><li class="no-decoration" style="padding:5%;margin:2%;border:2px solid white"><i class="fa fa-wrench" aria-hidden="true"></i> {{trans('general.my_profile')}}</li></a>
                         <a class="text-color" href="/logout" style="font-size:14px"><li class="no-decoration" style="padding:5%;margin:2%;border:2px solid white"><i class="fa fa-sign-out" aria-hidden="true"></i> {{trans('general.logout')}}</li></a>
                     @endauth
                     @guest

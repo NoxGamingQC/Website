@@ -94,4 +94,5 @@ return [
     'enter_description_here' => "Entrer votre description ici...",
     'joined_on' => "Rejoind le",
     'last_updated_on' => "Dernière Màj le",
+    'my_profile' => "Mon profile",
 ];

@@ -21,44 +21,54 @@ class UserProfileController extends Controller
         if(PageLists::where('slug', 'profile_show')->first()->inMaintenance && env('APP_ENV') == 'production') {
             abort(503);
         }
-        $user = User::findOrFail($id);
-        $firstname = $user->isFirstnameShowned ? $user->Firstname : null;
-        $lastname = $user->isLastnameShowned ? $user->Lastname : null;
-        $age = $user->isAgeShowned ? Carbon::parse($user->Birthdate)->age : null;
-        $birthdate = $user->isBirthdateShowned ? $user->Birthdate : null;
-        $grade = "member";
+        
+        $user = null;
+        $users = User::all();
+        foreach($users as $userResource) {
+            if(strtolower($userResource->name) == strtolower($id)) {
+                $user = $userResource;
+            }
+        }
+        if(!$user) {
+            $user = User::find($id);
+        }
+        if(!$user) {
+            abort(404);
+        }
+        $firstname = $user->show_firstname ? $user->firstname : null;
+        $lastname = $user->show_lastname ? $user->lastname : null;
+        $age = $user->show_age ? Carbon::parse($user->birthdate)->age : null;
+        $birthdate = $user->show_birthdate ? $user->birthdate : null;
+        $grade = $user->isManagement ? "management_team" : "member";
         $xboxProfile = null;
 
-        if ($user->isAdmin) {
-            $grade = "administrator";
-        } elseif ($user->isModerator) {
-            $grade = "moderator";
-        } elseif ($user->isDev) {
-            $grade = "developper";
-        }
         if($user->xbox_gamertag) {
-            $xboxProfile = json_decode(file_get_contents((env('APP_PROD_URL') ? env('APP_PROD_URL') : env('APP_URL')) . '/api/xbox/'. $user->xbox_gamertag));
+            try {
+                $xboxProfile = json_decode(file_get_contents((env('APP_PROD_URL') ? env('APP_PROD_URL') : env('APP_URL')) . '/api/xbox/'. $user->xbox_gamertag));
+            } catch (\Exception $exception) {
+                $xboxProfile = null;
+            }
         }
 
-        $badges = $user->Badges ? explode(';', $user->Badges) : [];
+        $badges = $user->badges ? explode(';', $user->badges) : [];
 
         $points = Points::getPointsLogs($user->id, 10);
         $pointCount = Points::getTotalPoints($user->id);
 
-        if($user->PremiumDuration === 'lifetime') {
+        if($user->premium_expiration === 'lifetime') {
             $premiumTime = 'lifetime';
-        } elseif($user->PremiumDuration == null) {
+        } elseif($user->premium_expiration == null) {
             $premiumTime = null;
         } else {
-            $premiumTime = $user->PremiumDuration;
+            $premiumTime = $user->premium_expiration;
         }
         
-        if ($user->isGenderShowned && $user->Gender !== null) {
-            if($user->Gender == 0) {
+        if ($user->show_gender && $user->gender !== null) {
+            if($user->gender == 0) {
                 $gender = 'Other';
-            } elseif($user->Gender == 1) {
+            } elseif($user->gender == 1) {
                 $gender = 'Male';
-            } else if($user->Gender == 2) {
+            } else if($user->gender == 2) {
                 $gender = 'Female';
             }
         } else {
@@ -70,18 +80,18 @@ class UserProfileController extends Controller
             $isCurrentUser = false;
         }
 
-        if ($user->lockStatus === 'online' || $user->status === 'offline') {
+        if ($user->lock_status === 'online' || $user->status === 'offline') {
             $state = $user->status;
         } else {
-            $state = $user->lockStatus;
+            $state = $user->lock_status;
         }
-        $markdownParser = new markdown\GithubMarkdown();
-        return view('view.profile.show', [
+        //$markdownParser = new markdown\GithubMarkdown();
+        return view('view.profile.profile', [
             "id" => $user->id,
             "username" => $user->name,
             "grade" => $grade,
-            "isPremium" => $user->isPremium,
-            "language" => $user->Language,
+            "isPremium" => $user->has_premium,
+            "language" => $user->language,
             "badges" => $badges,
             "premiumTime" => $premiumTime,
             "avatarURL" => User::getPicture($user),
@@ -90,88 +100,17 @@ class UserProfileController extends Controller
             "age" => $age,
             "gender" => $gender,
             "birthdate" => $birthdate,
-            "country" => $user->Country,
+            "country" => $user->country,
             'pointCount' => $pointCount,
             'points' => $points,
             'state' => $state,
             'isCurrentUser' => $isCurrentUser,
-            'aboutMe' => $markdownParser->parse($user->about_me),
-            'socials' => User::getSocialsLinks($user),
+            'aboutMe' => null,//$markdownParser->parse($user->about_me),
             'minecraft' => User::getMinecraftInfo($user),
             'discordUser' => User::getDiscordInfo($user),
             'pronouns' => $user->pronouns,
             'xbox_profile' => $xboxProfile
         ]);
-    }
-
-    public function getEditPage()
-    {
-        if(PageLists::where('slug', 'profile_edit')->first()->inMaintenance && env('APP_ENV') == 'production') {
-            abort(503);
-        }
-        if (Auth::user()) {
-            $user = User::findOrFail(Auth::user()->id);
-
-            if ($user->lockStatus === 'online' || $user->status === 'offline') {
-                $state = $user->status;
-            } else {
-                $state = $user->lockStatus;
-            }
-
-            return view('view.profile.edit', [
-                "id" => $user->id,
-                "email"=>$user->email,
-                "username"=>$user->name,
-                "discordID"=>$user->DiscordID,
-                "isAdmin"=>$user->isAdmin,
-                "isMod"=>$user->isModerator,
-                "isDev"=>$user->isDev,
-                "isPremium"=>$user->isPremium,
-                "discordName"=>$user->DiscordName,
-                "language"=>$user->Language,
-                "avatarURL" => $user->AvatarURL,
-                "discriminator"=>$user->Discriminator,
-                "firstname"=>$user->Firstname,
-                "lastname"=>$user->Lastname,
-                "birthdate"=>$user->Birthdate,
-                "gender"=>$user->Gender,
-                "theme"=>$user->theme,
-                "isFirstnameShowned"=>$user->isFirstnameShowned,
-                "isLastnameShowned"=>$user->isLastnameShowned,
-                "isGenderShowned"=>$user->isGenderShowned,
-                "isBirthdateShowned"=>$user->isBirthdateShowned,
-                "isAgeShowned"=>$user->isAgeShowned,
-                "country"=>$user->Country,
-                "state" => $state,
-                "avatarPreference" => $user->avatar_preference,
-                "aboutMe" => $user->about_me
-            ]);
-        } else {
-            abort(403);
-        }
-    }
-
-    public function edit(Request $request) {
-        if (Auth::user()) {
-            $user = User::findOrFail(Auth::user()->id);
-            $user->name = $request->username;
-            $user->email = $request->email;
-            $user->Firstname = $request->firstname;
-            $user->Lastname = $request->lastname;
-            $user->Birthdate = $request->birthdate;
-            $user->Gender = $request->gender;
-            $user->Country = $request->country;
-            $user->theme = $request->theme;
-            $user->AvatarURL = $request->avatar;
-            $user->isFirstnameShowned = $request->showFirstname;
-            $user->isLastnameShowned = $request->showLastname;
-            $user->isGenderShowned = $request->showGender;
-            $user->isBirthdateShowned = $request->showBirthdate;
-            $user->isAgeShowned = $request->showAge;
-            $user->save();
-        } else {
-            abort(403);
-        }
     }
 
     public function updateState(Request $request) {
@@ -182,10 +121,10 @@ class UserProfileController extends Controller
             $user = User::findOrFail(Auth::user()->id);
             if($user->Status != $request->state) {
                 $user->status = $request->state;
-                $user->statusTimeCheck = Carbon::now();
+                $user->last_status_time = Carbon::now();
                 $user->save();
             }
-            if($user->lockStatus === 'online') {
+            if($user->lock_status === 'online') {
                 return false;
             } else {
                 return true;
