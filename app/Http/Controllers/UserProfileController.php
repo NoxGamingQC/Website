@@ -118,7 +118,8 @@ class UserProfileController extends Controller
             'minecraft' => User::getMinecraftInfo($user),
             'discordUser' => User::getDiscordInfo($user),
             'pronouns' => $user->pronouns,
-            'xbox_profile' => $xboxProfile
+            'xbox_profile' => $xboxProfile,
+            'header' => 'false',
         ]);
     }
 
