@@ -85,14 +85,13 @@ class UserProfileController extends Controller
         } else {
             $state = $user->lock_status;
         }
+        $aboutMeContent = null;
         if($user->about_me) {
             try{
                 $markdownParser = new markdown\GithubMarkdown();
                 $rawAboutMe = file_get_contents($user->about_me);
                 $aboutMeContent = $markdownParser->parse($rawAboutMe);
-            } catch (\Exception $exception) {
-                $aboutMeContent = null;
-            }
+            } catch (\Exception $exception) {}
         }
         return view('view.profile.profile', [
             "id" => $user->id,
