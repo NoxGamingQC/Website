@@ -6,7 +6,13 @@
     <meta name="facebook-domain-verification" content="uki484ngemqhks0g9endzi9hb1nobp" />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="NoxGamingQC's Website">
+    <meta property='og:title' content='NoxGamingQC - @yield('title')' />
+    <meta property='og:image' content='@yield('thumbnail', env('APP_URL') . '/img/NoxGamingQC.png')' />
+    <meta property='og:url' content='{{URL::current()}}' />
+    <meta name="description" property='og:description' content="@yield('description', 'NoxGamingQC\'s official website. You can learn about us here and much more.')">
+    <meta property='og:image:width' content='500' />
+    <meta property='og:image:height' content='500' />
+    <meta property="og:type" content='website' />
     <meta name="author" content="NoxGamingQC">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">

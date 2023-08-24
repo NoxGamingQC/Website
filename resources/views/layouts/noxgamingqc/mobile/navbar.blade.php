@@ -76,7 +76,7 @@
                         @if(Auth::user()->local_mail)
                             <a class="text-color" href="/{{app()->getLocale()}}/mail" style="font-size:14px"><li class="no-decoration" style="padding:5%;margin:2%;border:2px solid white"><i class="fa fa-envelope" aria-hidden="true"></i> {{trans('general.mails')}}</li></a>
                         @endif
-                        <a class="text-color" href="/{{app()->getLocale()}}/user/{{Auth::user()->id}}" style="font-size:14px"><li class="no-decoration" style="padding:5%;margin:2%;border:2px solid white"><i class="fa fa-wrench" aria-hidden="true"></i> {{trans('general.my_profile')}}</li></a>
+                        <a class="text-color" href="/{{app()->getLocale()}}/user/{{Auth::user()->name}}" style="font-size:14px"><li class="no-decoration" style="padding:5%;margin:2%;border:2px solid white"><i class="fa fa-wrench" aria-hidden="true"></i> {{trans('general.my_profile')}}</li></a>
                         <a class="text-color" href="/logout" style="font-size:14px"><li class="no-decoration" style="padding:5%;margin:2%;border:2px solid white"><i class="fa fa-sign-out" aria-hidden="true"></i> {{trans('general.logout')}}</li></a>
                     @endauth
                     @guest

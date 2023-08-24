@@ -85,7 +85,7 @@ class UserProfileController extends Controller
         } else {
             $state = $user->lock_status;
         }
-        //$markdownParser = new markdown\GithubMarkdown();
+        $markdownParser = new markdown\GithubMarkdown();
         return view('view.profile.profile', [
             "id" => $user->id,
             "username" => $user->name,
@@ -105,7 +105,7 @@ class UserProfileController extends Controller
             'points' => $points,
             'state' => $state,
             'isCurrentUser' => $isCurrentUser,
-            'aboutMe' => null,//$markdownParser->parse($user->about_me),
+            'aboutMe' => $markdownParser->parse($user->about_me),
             'minecraft' => User::getMinecraftInfo($user),
             'discordUser' => User::getDiscordInfo($user),
             'pronouns' => $user->pronouns,

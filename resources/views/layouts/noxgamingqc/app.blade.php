@@ -6,7 +6,6 @@
     <meta name="facebook-domain-verification" content="uki484ngemqhks0g9endzi9hb1nobp" />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="NoxGamingQC's Website">
     <meta name="author" content="NoxGamingQC">
     <meta property='og:title' content='NoxGamingQC - @yield('title')' />
     <meta property='og:image' content='@yield('thumbnail', env('APP_URL') . '/img/NoxGamingQC.png')' />
