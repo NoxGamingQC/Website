@@ -29,21 +29,6 @@ class User extends Authenticatable
 
     protected $table = 'users';
 
-    public function isDev()
-    {
-        $this->isDev;
-    }
-
-    public function isModerator()
-    {
-        $this->isModerator;
-    }
-
-    public function isAdmin()
-    {
-        $this->isAdmin;
-    }
-
     public static function isMailExist($email) 
     {
         $isExist = false;
@@ -63,31 +48,16 @@ class User extends Authenticatable
         return $isExist;
     }
 
-    public static function getSocialsLinks($user) {
-        return [
-            'github' =>  $user->github ? 'https://github.com/' . $user->github : '',
-            'instagram' => $user->instagram ? 'https://instagram.com/' . $user->instagram : '',
-            'reddit' => $user->reddit ? 'https://reddit.com/user/' . $user->reddit : '',
-            'snapchat' => $user->snapchat ? 'https://snapchat.com/add/' . $user->snapchat : '',
-            'spotify' => $user->spotify ? 'https://open.spotify.com/' . $user->spotify : '',
-            'steam' => $user->steam ? 'https://steamcommunity.com/' . $user->steam : '',
-            'tiktok' => $user->tiktok ? 'https://tiktok.com/@' . $user->tiktok : '',
-            'twitch' => $user->twitch ? 'https://twitch.tv/' . $user->twitch : '',
-            'twitter' => $user->twitter ? 'https://twitter.com/' . $user->twitter : '',
-            'youtube' => $user->youtube ? 'https://youtube.com/' . $user->youtube : '',
-        ];
-    }
-
     public static function getPicture($user) {
-        if($user->AvatarURL && $user->minecraft_uuid) {
+        if($user->avatar_url && $user->minecraft_uuid) {
             if($user->avatar_preference == 'minecraft') {
                 return 'https://crafthead.net/avatar/' . $user->minecraft_uuid;
             } else {
-                return $user->AvatarURL;
+                return $user->avatar_url;
             }
         }
-        if($user->AvatarURL) {
-            return $user->AvatarURL;
+        if($user->avatar_url) {
+            return $user->avatar_url;
         } else if($user->minecraft_uuid) {
             return 'https://crafthead.net/avatar/' . $user->minecraft_uuid;
         } else {

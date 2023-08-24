@@ -1,5 +1,7 @@
 @extends('layouts.app')
 @section('title', $username . '\'s profile')
+@section('thumbnail', $avatarURL)
+@section('description', $aboutMe ? $aboutMe : '')
 @section('content')
 
 <input type="hidden" id="userId" value="{{$id}}">

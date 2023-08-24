@@ -53,7 +53,7 @@
                     @endif
                 @endauth
                 @auth
-                    @if(Auth::user()->isDev || Auth::user()->isAdmin || Auth::user()->isModerator)
+                    @if(Auth::user()->is_management)
                         <li id="management" class="dropdown">
                         @if(!$page_lists['management']['inMaintenance'])
                             <a href="#" class="dropdown-toggle nav" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
@@ -106,15 +106,15 @@
                 @auth
                     <li id="profile" class="dropdown">
                         <a href="#" class="dropdown-toggle nav" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
-                             <img class="img img-circle status-{{(Auth::user()->lockStatus == 'online') ? Auth::user()->status : Auth::user()->lockStatus}}" src="{{App\User::getPicture(Auth::user())}}" width="24px" style="border-width: 2px;" />
+                             <img class="img img-circle status-{{(Auth::user()->lock_status == 'online') ? Auth::user()->status : Auth::user()->lock_status}}" src="{{App\User::getPicture(Auth::user())}}" width="24px" style="border-width: 2px;" />
                             {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
                             <li>
                                 @if(Auth::user()->local_mail)
-                                    <a href="/{{app()->getLocale()}}/profile/mail"><i class="fa fa-envelope" aria-hidden="true"></i> {{trans('general.mails')}}</a>
+                                    <a href="/{{app()->getLocale()}}/mail"><i class="fa fa-envelope" aria-hidden="true"></i> {{trans('general.mails')}}</a>
                                 @endif
-                                <a href="/{{app()->getLocale()}}/profile/edit"  class="{{($page_lists['profile_edit']['inMaintenance']) ? 'hidden' : ''}}"><i class="fa fa-wrench" aria-hidden="true"></i> {{trans('general.edit_profile')}}</a>
+                                <a href="/{{app()->getLocale()}}/user/{{Auth::user()->id}}"><i class="fa fa-wrench" aria-hidden="true"></i> {{trans('general.my_profile')}}</a>
                                 <a href="/logout"><i class="fa fa-sign-out" aria-hidden="true"></i> {{trans('general.logout')}}</a>
                             </li>
                         </ul>

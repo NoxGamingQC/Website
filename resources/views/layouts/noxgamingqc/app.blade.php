@@ -8,6 +8,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="NoxGamingQC's Website">
     <meta name="author" content="NoxGamingQC">
+    <meta property='og:title' content='NoxGamingQC - @yield('title')' />
+    <meta property='og:image' content='@yield('thumbnail', env('APP_URL') . '/img/NoxGamingQC.png')' />
+    <meta property='og:url' content='{{URL::current()}}' />
+    <meta name="description" property='og:description' content="@yield('description', 'NoxGamingQC\'s official website. You can learn about us here and much more.')">
+    <meta property='og:image:width' content='500' />
+    <meta property='og:image:height' content='500' />
+    <meta property="og:type" content='website' />
     @if(isset($kiosk) && $kiosk == true)
         <meta name="viewport" content="width=800, height=480, initial-scale=1, user-scalable=1">
         <meta http-equiv="refresh" content="36000">

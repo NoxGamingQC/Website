@@ -53,6 +53,10 @@ Route::middleware(['cors'])->group(function () {
     Route::get('/company/kiosk/refresh', 'NGST\KioskController@refreshData');
 
 
+    Route::get('/user/{id}', function ($id) {
+        return redirect()->to('/' . app()->getLocale() . '/user/' . $id);
+    });
+
     Route::group([
         'prefix' => '{locale}',
         'where' => ['locale' => '[a-z]{2}-[a-z]{2}'],
@@ -178,13 +182,11 @@ Route::middleware(['cors'])->group(function () {
                 PROFILES ROUTES
               
             */
-            Route::get('/profile/show/{id}', 'UserProfileController@index');
-
-            Route::get('/profile/edit', 'UserProfileController@getEditPage');
-            Route::get('/profile/mail', 'Mails\MailController@index');
-            Route::get('/profile/mail/{id}', 'Mails\MailController@show');
-            Route::get('/profile/mail/{id}/content', 'Mails\MailController@showContent');
-            Route::get('/profile/mail/{id}/delete', 'Mails\MailController@delete');
+            Route::get('/user/{id}', 'UserProfileController@index');
+            Route::get('/mail', 'Mails\MailController@index');
+            Route::get('/mail/{id}', 'Mails\MailController@show');
+            Route::get('/mail/{id}/content', 'Mails\MailController@showContent');
+            Route::get('/mail/{id}/delete', 'Mails\MailController@delete');
 
 
             Route::get('/noxbot/dashboard/{serverID}', 'NoxBotDashboardController@serverDashboard');
