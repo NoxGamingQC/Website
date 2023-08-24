@@ -35,6 +35,15 @@ class UserProfileController extends Controller
         if(!$user) {
             abort(404);
         }
+        if($user->private) {
+            if(Auth::check()) {
+                if(!(Auth::user()->id == $user->id || Auth::user()->is_management)) {
+                    abort(404);
+                }
+            } else {
+                abort(404);
+            }
+        }
         $firstname = $user->show_firstname ? $user->firstname : null;
         $lastname = $user->show_lastname ? $user->lastname : null;
         $age = $user->show_age ? Carbon::parse($user->birthdate)->age : null;
