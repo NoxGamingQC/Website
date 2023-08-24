@@ -114,7 +114,7 @@ class UserProfileController extends Controller
             'points' => $points,
             'state' => $state,
             'isCurrentUser' => $isCurrentUser,
-            'aboutMe' => $aboutMeContent,
+            'aboutMe' => $aboutMeContent ? $aboutMeContent : ($xboxProfile ? '<h1>About me</h1><hr /><p>' . $xboxProfile->data->bio . '</p>' : null),
             'minecraft' => User::getMinecraftInfo($user),
             'discordUser' => User::getDiscordInfo($user),
             'pronouns' => $user->pronouns,
