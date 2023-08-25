@@ -53,6 +53,18 @@
                     @endif
                 @endauth
                 @auth
+                    <li id="noxbot" class="dropdown">
+                        <a href="#" class="dropdown-toggle nav" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+                            <i class="fa fa-star" aria-hidden="true"></i> {{trans('noxbot.noxbot')}} <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="/{{app()->getLocale()}}/noxbot/dashboard" class=""><i class="fa fa-book" aria-hidden="true"></i> {{ trans('noxbot.dashboard') }}</a>
+                            </li>
+                        </ul>
+                    </li>
+                @endauth
+                @auth
                     @if(Auth::user()->is_management)
                         <li id="management" class="dropdown">
                         @if(!$page_lists['management']['inMaintenance'])

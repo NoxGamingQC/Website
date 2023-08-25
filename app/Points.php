@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Points extends Model
 {
-    protected $table = 'points';
+    protected $table = 'users_points';
 
     static public function getPoints($userID) {
         $points = User::join('points', 'users.id', '=', 'points.UserID')
