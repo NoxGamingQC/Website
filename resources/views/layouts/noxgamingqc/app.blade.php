@@ -82,7 +82,7 @@
             @include('layouts.noxgamingqc.mobile.navbar')
         </div>
         @include('alert.alert')
-        @if(isset($header) && $header === 'false')
+        @if(isset($header) && $header === false)
         @else
             <div class="mobile-hidden">
                 @include('layouts.noxgamingqc.desktop.header')
