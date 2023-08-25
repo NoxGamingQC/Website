@@ -189,18 +189,8 @@ Route::middleware(['cors'])->group(function () {
             Route::get('/mail/{id}/delete', 'Mails\MailController@delete');
 
 
-            Route::get('/noxbot/dashboard/{serverID}', 'NoxBotDashboardController@serverDashboard');
-
-            Route::post('/noxbot/data/user/store', 'NoxBotDashboardController@linkDiscord');
-
-
-            /*
-              
-                DISCORDS ROUTES
-              
-            */
-
-            Route::get('/discord/server/manage/{id}', 'Views\Profile\DiscordController@manageServer');
+            Route::get('/noxbot/dashboard', 'Website\NoxBotController@index');
+            Route::get('/noxbot/dashboard/{id}', 'Website\NoxBotController@getDashboard');
 
             /*
               
@@ -225,18 +215,9 @@ Route::middleware(['cors'])->group(function () {
             Route::get('/search', 'SearchController@index');
             Route::get('/search', 'SearchController@search');
 
-            Route::get('/noxbot', 'NoxBotDashboardController@index');
-            Route::post('/noxbot', 'NoxBotDashboardController@post');
-
-            Route::get('/noxbot/dashboard', function () {
-                return view('noxbot_dashboard');
-            });
-
             Route::get('/guilded/subscription', function () {
                 return view('guilded.subscription');
             });
-
-            Route::get('/noxbot/dashboard', 'NoxBotDashboardController@getDashboard');
 
 
         });

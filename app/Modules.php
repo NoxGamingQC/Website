@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Modules extends Model
 {
-    protected $table = 'modules_lists';
+    protected $table = 'bot_modules_lists';
 }
