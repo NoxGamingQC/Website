@@ -48,7 +48,9 @@ class RegisterController extends Controller
             session(['url.intended' => url()->previous()]);
         }
 
-        return view('auth.register');
+        return view('auth.register')->with([
+            'header' => false,
+        ]);
     }
 
 

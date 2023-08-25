@@ -59,6 +59,21 @@ class UserProfileController extends Controller
             }
         }
 
+        if($user->roblox) {
+            try {
+                $client = new \GuzzleHttp\Client();
+                $robloxResponse = $client->request('POST', '/upload.php', [
+                    'usernames' => [
+                        $user->roblox
+                      ],
+                      "excludeBannedUsers" => true
+                ]);
+                $robloxProfile = json_decode('https://users.roblox.com/v1/users/' . json_decode($robloxResponse->id));
+            } catch (\Exception $exception) {
+                $robloxProfile = null;
+            }
+        }
+
         $badges = $user->badges ? explode(';', $user->badges) : [];
 
         $points = Points::getPointsLogs($user->id, 10);
@@ -128,7 +143,7 @@ class UserProfileController extends Controller
             'discordUser' => User::getDiscordInfo($user),
             'pronouns' => $user->pronouns,
             'xbox_profile' => $xboxProfile,
-            'header' => 'false',
+            'header' => false,
         ]);
     }
 
