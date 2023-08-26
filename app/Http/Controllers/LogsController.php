@@ -2,22 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use Auth;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+use Illuminate\Http\Request;
 use Carbon\Carbon;
 use App\PageLists;
+use Auth;
 
 class LogsController extends Controller
 {
     public function index(Request $request)
     {
-        if(PageLists::where('slug', 'logs')->first()->inMaintenance && env('APP_ENV') == 'production') {
+        if(PageLists::where('slug', 'logs')->first()->in_maintenance && env('APP_ENV') == 'production') {
             abort(503);
         }
         if (Auth::user()) {
-            if (Auth::user()->isAdmin || Auth::user()->isMod || Auth::user()->isDev) {
+            if (Auth::user()->is_management) {
                 if($request->date) {
                     $date = new Carbon($request->date);
                 } else {
@@ -106,7 +106,7 @@ class LogsController extends Controller
             abort(503);
         }
         if (Auth::user()) {
-            if (Auth::user()->isAdmin || Auth::user()->isMod || Auth::user()->isDev) {
+            if (Auth::user()->is_management) {
                 if($request->date) {
                     $date = new Carbon($request->date);
                 } else {

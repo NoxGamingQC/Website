@@ -4,13 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Auth;
-use App\User;
-use DB;
-use App\GamesList;
 use App\ConsolesList;
-use Carbon\Carbon;
+use App\GamesList;
 use App\PageLists;
+use Auth;
 
 class GamesListController extends Controller
 {
@@ -18,7 +15,7 @@ class GamesListController extends Controller
     {
         if(PageLists::where('slug', 'games')->first()->inMaintenance  && env('APP_ENV') === 'production') {
             if(Auth::check()) {
-                if(!Auth::user()->isAdmin && !Auth::user()->isModerator && !Auth::user()->isDev) {
+                if(!Auth::user()->is_management) {
                     abort(503);
                 }
             } else {
@@ -38,7 +35,7 @@ class GamesListController extends Controller
                 }
             } else {
                 foreach($consoles as $key => $console) {
-                    $gamesList[$console->id] = GamesList::where('Console', $console->id)->get();
+                    $gamesList[$console->id] = GamesList::where('console', $console->id)->get();
                 }
             }    
         }
@@ -52,17 +49,17 @@ class GamesListController extends Controller
     }
 
     public function addGame(Request $request) {
-        if (Auth::user()->isAdmin) {
-            $game = GamesList::where('Game', $request->game)->get();
+        if (Auth::user()->is_management) {
+            $game = GamesList::where('game', $request->game)->get();
             if($game->isEmpty()) {
                 $newGame = new GamesList;
                 
-                $newGame->Game = $request->game;
-                $newGame->Console = implode(',', $request->console);
-                $newGame->Date = $request->date;
-                $newGame->CoverURL = $request->coverURL;
-                $newGame->Format = implode(',', $request->format);
-                $game->Playlist = $request->playlist;
+                $newGame->game = $request->game;
+                $newGame->console = implode(',', $request->console);
+                $newGame->date = $request->date;
+                $newGame->cover_url = $request->coverURL;
+                $newGame->format = implode(',', $request->format);
+                $game->playlist = $request->playlist;
 
                 $newGame->save();
 
@@ -76,14 +73,14 @@ class GamesListController extends Controller
     }
 
     public function editGame(Request $request) {
-        if (Auth::user()->isAdmin) {
+        if (Auth::user()->is_management) {
             $game = GamesList::findOrFail($request->id);
-            $game->Game = $request->game;
-            $game->Console = implode(',', $request->console);
-            $game->Date = $request->date;
-            $game->CoverURL = $request->coverURL;
-            $game->Format = implode(',', $request->format);
-            $game->Playlist = $request->playlist;
+            $game->game = $request->game;
+            $game->console = implode(',', $request->console);
+            $game->date = $request->date;
+            $game->cover_url = $request->coverURL;
+            $game->format = implode(',', $request->format);
+            $game->playlist = $request->playlist;
 
             $game->save();
 
@@ -95,7 +92,7 @@ class GamesListController extends Controller
     }
 
     public function removeGame(Request $request) {
-        if (Auth::user()->isAdmin) {
+        if (Auth::user()->is_management) {
             $game = GamesList::findOrFail($request->id);
             $game->delete();
         } else {
@@ -104,15 +101,15 @@ class GamesListController extends Controller
     }
 
     public function addConsole(Request $request) {
-        if (Auth::user()->isAdmin) {
-            $console = ConsolesList::where('Console', $request->console)->get();
+        if (Auth::user()->is_management) {
+            $console = ConsolesList::where('console', $request->console)->get();
             
             if($console->isEmpty()) {
                 $newConsole = new ConsolesList;
-                $newConsole->Console = $request->console;
-                $newConsole->Description = $request->description;
-                $newConsole->Date = $request->date;
-                $newConsole->Picture = $request->picture;
+                $newConsole->console = $request->console;
+                $newConsole->description = $request->description;
+                $newConsole->date = $request->date;
+                $newConsole->picture = $request->picture;
 
                 $newConsole->save();
 
@@ -125,7 +122,7 @@ class GamesListController extends Controller
     }
 
     public function removeConsole(Request $request) {
-        if (Auth::user()->isAdmin) {
+        if (Auth::user()->is_management) {
             $console = ConsolesList::findOrFail($request->id);
             $console->delete();
         } else {

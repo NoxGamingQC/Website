@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Auth;
-use DB;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\PageLists;
+use Auth;
 
 class BotCommandsController extends Controller
 {

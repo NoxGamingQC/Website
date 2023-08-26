@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Auth;
-use DB;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\PageLists;
+use Auth;
 
 class ProjectsController extends Controller
 {
@@ -14,8 +12,8 @@ class ProjectsController extends Controller
     {
         if(PageLists::where('slug', 'projects')->first()->inMaintenance && env('APP_ENV') === 'production') {
             if(Auth::check()) {
-                if(Auth::user()->isAdmin || Auth::user()->isModerator || Auth::user()->isDev) {
-                    return view('noxgamingqc.about_me.projects');
+                if(Auth::user()->is_management) {
+                    return view('view.about_us.projects');
                 }
             }
             abort(503);
