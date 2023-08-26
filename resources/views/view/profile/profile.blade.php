@@ -133,7 +133,7 @@
                 @if($points)
                     <ul>
                         @foreach ($points as $key => $point)
-                            <li>{{$point->Quantity . ' ' . trans('profile.points')}} - {{$point->Comment}}</li>
+                            <li>{{$point->quantity . ' ' . trans('profile.points')}} - {{$point->comment}}</li>
                         @endforeach
                     </ul>
                 @else
