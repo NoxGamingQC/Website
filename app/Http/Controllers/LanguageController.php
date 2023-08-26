@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use Carbon\Carbon;
 
 class LanguageController extends Controller
 {
@@ -16,6 +14,6 @@ class LanguageController extends Controller
             abort(403);
         }
 
-        return redirect(app()->getLocale() . '/home');
+        return redirect(app()->getLocale() . '/');
     }
 }

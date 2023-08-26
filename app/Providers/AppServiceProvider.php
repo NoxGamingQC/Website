@@ -24,26 +24,26 @@ class AppServiceProvider extends ServiceProvider
 
         $mainConfig = MainConfig::all();
         foreach($mainConfig as $key => $value) {
-            if($value->Slug == 'theme') {
-                $themeName = $value->Value;
+            if($value->slug == 'theme') {
+                $themeName = $value->value;
             }
-            if($value->Slug == 'maintenance') {
-                $maintenance = $value->Value;
+            if($value->slug == 'maintenance') {
+                $maintenance = $value->value;
             }
-            if($value->Slug == 'force_theme') {
-                $forceTheme = $value->Value;
+            if($value->slug == 'force_theme') {
+                $forceTheme = $value->value;
             }
-            if($value->Slug == 'headline_hr') {
-                $headlineHr = $value->Value;
+            if($value->slug == 'headline_hr') {
+                $headlineHr = $value->value;
             }
-            if($value->Slug == 'headline_01') {
-                $headline01 = $value->Value;
+            if($value->slug == 'headline_01') {
+                $headline01 = $value->value;
             }
-            if($value->Slug == 'headline_02') {
-                $headline02 = $value->Value;
+            if($value->slug == 'headline_02') {
+                $headline02 = $value->value;
             }
-            if($value->Slug == 'headline_socials') {
-                $headlineSocials = $value->Value;
+            if($value->slug == 'headline_socials') {
+                $headlineSocials = $value->value;
             }
         }
         

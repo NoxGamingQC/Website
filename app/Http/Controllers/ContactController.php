@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App;
-use Auth;
-use DB;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
 use App\PageLists;
-use Illuminate\Support\Facades\Mail;
+use Auth;
+use App;
 
 class ContactController extends Controller
 {

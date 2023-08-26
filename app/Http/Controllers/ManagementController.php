@@ -2,15 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
+use App\BotActivities;
+use App\PageLists;
+use App\Modules;
+use App\User;
 use Auth;
 use DB;
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use App\User;
-use App\Modules;
-use Carbon\Carbon;
-use App\PageLists;
-use App\BotActivities;
 
 class ManagementController extends Controller
 {
@@ -20,14 +18,13 @@ class ManagementController extends Controller
             abort(503);
         }
         if (Auth::user()) {
-            if (Auth::user()->isAdmin || Auth::user()->isMod || Auth::user()->isDev) {
+            if (Auth::user()->is_management) {
                 $modules = [];
-                foreach (Modules::orderBy('Slug')->get() as $key => $module) {
+                foreach (Modules::orderBy('slug')->get() as $key => $module) {
                     array_push($modules, [
                         'slug' => str_replace('_', ' ', $module->Slug),
-                        'isInMaintenance' => $module->Maintenance,
-                        'isActiveDefault' => $module->isActiveDefault,
-                        'icon' => $module->ModuleIcon
+                        'isInMaintenance' => $module->in_maintenance,
+                        'icon' => $module->module_icon
                     ]);
                 }
                 return view('view.management.modules', ['modules' => $modules]);
@@ -42,23 +39,15 @@ class ManagementController extends Controller
             abort(503);
         }
         if (Auth::user()) {
-            if (Auth::user()->isAdmin || Auth::user()->isMod || Auth::user()->isDev) {
+            if (Auth::user()->is_management) {
                 $users = [];
                 foreach (User::orderBy('name')->get() as $key => $user) {
                     $grade = 'member';
-                    if ($user->isDev) {
-                        $grade = 'developper';
+                    if ($user->is_management) {
+                        $grade = 'management';
                     }
 
-                    if ($user->isModerator) {
-                        $grade = 'moderator';
-                    }
-
-                    if ($user->isAdmin) {
-                        $grade = 'administrator';
-                    }
-
-                    $badges = $user->Badges ? explode(';', $user->Badges) : [];
+                    $badges = $user->badges ? explode(';', $user->badges) : [];
 
                     if(Auth::check()) {
                         $isCurrentUser = ($user->id == Auth::user()->id);
@@ -66,25 +55,22 @@ class ManagementController extends Controller
                         $isCurrentUser = false;
                     }
 
-                    if ($user->lockStatus === 'online' || $user->status === 'offline') {
+                    if ($user->lock_status === 'online' || $user->status === 'offline') {
                         $state = $user->status;
                     } else {
-                        $state = $user->lockStatus;
+                        $state = $user->lock_status;
                     }
                     
                     array_push($users, [
                         'id' => $user->id,
                         'username' => $user->name,
-                        'avatarURL' => $user->AvatarURL,
-                        'isBOT' => $user->isBOT,
+                        'avatarURL' => $user->avatar_url,
                         'grade' => $grade,
-                        'isPremium' => $user->isPremium,
-                        'isVerified' => $user->isVerified,
-                        'isEmailSubscriber' => $user->isEmailSubscriber,
-                        'country' => $user->Country,
-                        'discordID' => $user->DiscordID,
-                        'discordName' => $user->DiscordName,
-                        'discriminator' => $user->Discriminator,
+                        'isPremium' => $user->has_premium,
+                        'isVerified' => $user->is_verified,
+                        'isEmailSubscriber' => $user->is_email_subscriber,
+                        'country' => $user->country,
+                        'discordID' => $user->discord_id,
                         'badges' => $badges,
                         'state' => $state,
                         'isCurrentUser' => $isCurrentUser
@@ -100,15 +86,15 @@ class ManagementController extends Controller
 
     public function getBotActivities()
     {
-        if(PageLists::where('slug', 'bot_activities')->first()->inMaintenance && env('APP_ENV') == 'production') {
+        if(PageLists::where('slug', 'bot_activities')->first()->in_maintenance && env('APP_ENV') == 'production') {
             abort(503);
         }
         if (Auth::user()) {
-            if (Auth::user()->isAdmin || Auth::user()->isMod || Auth::user()->isDev) {
+            if (Auth::user()->is_management) {
                 $activities = [];
-                foreach (BotActivities::orderBy('ID')->get() as $key => $activity) {
+                foreach (BotActivities::orderBy('id')->get() as $key => $activity) {
                     array_push($activities, [
-                        'name' => str_replace('help |', ' ', $activity->Activity),
+                        'name' => $activity->activity,
                     ]);
                 }
                 return view('view.management.bot_activities', [
