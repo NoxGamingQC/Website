@@ -59,11 +59,11 @@
                 <ul style="font-size:18px">
                 @if(app()->getLocale() === 'fr-ca')
                         @foreach($recipe->steps as $key => $step)
-                            <li class="text-justify {{$step->isWarning ? 'text-warning' : ''}} {{$step->isDanger ? 'text-danger' : ''}}">{{$step->text_fr}}</li>
+                            <li class="text-justify {{$step->is_warning ? 'text-warning' : ''}} {{$step->is_danger ? 'text-danger' : ''}}">{{$step->text_fr}}</li>
                         @endforeach
                     @else
                         @foreach($recipe->steps as $key => $step)
-                            <li class="text-justify {{$step->isWarning ? 'text-warning' : ''}} {{$step->isDanger ? 'text-danger' : ''}}">{{$step->text_en}}</li>
+                            <li class="text-justify {{$step->is_warning ? 'text-warning' : ''}} {{$step->is_danger ? 'text-danger' : ''}}">{{$step->text_en}}</li>
                         @endforeach
                     @endif
                 </ul>
