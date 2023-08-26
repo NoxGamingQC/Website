@@ -16,7 +16,7 @@ class RecipeController extends Controller
 {
     public function cookbook(Request $request) {
         if(Auth::check()) {
-            if(Auth::user()->isPremium) {
+            if(Auth::user()->has_premium) {
                 $categories = Categories::where('is_shown', true)->orderBy('name_' . (app()->getLocale() == 'fr-ca' ? 'fr' : 'en'))->get();
 
                 return view('ngst.kiosk.cookbook.cookbook')->with([
@@ -62,7 +62,7 @@ class RecipeController extends Controller
 
     public function category(Request $request, $language, $id) {
         if(Auth::check()) {
-            if(Auth::user()->isPremium) {
+            if(Auth::user()->has_premium) {
                 $category = Categories::findOrFail($id);
                 $recipes = Recipe::where('category_id', $id)->orderBy('name_' . (app()->getLocale() == 'fr-ca' ? 'fr' : 'en'))->get();
 
@@ -112,7 +112,7 @@ class RecipeController extends Controller
     public function recipe(Request $request, $language, $id) {
         
         if(Auth::check()) {
-            if(Auth::user()->isPremium) {
+            if(Auth::user()->has_premium) {
                 $recipe = Recipe::findOrFail($id);
                 $recipe->category = $recipe->getCategory();
                 $recipe->ingredients = $recipe->getIngredients();
