@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use App\BotActivities;
 use App\PageLists;
 use App\Modules;
 use App\User;
-use Auth;
 use DB;
 
 class ManagementController extends Controller

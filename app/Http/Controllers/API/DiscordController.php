@@ -6,9 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\DiscordServerConfig;
 use App\DiscordUsers;
-use Carbon\Carbon;
 use App\ApiKey;
-use App;
 
 class DiscordController extends Controller
 {
