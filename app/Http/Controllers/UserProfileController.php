@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\DiscordUsers;
 use Carbon\Carbon;
@@ -11,7 +12,6 @@ use cebe\markdown;
 use App\Points;
 use App\ApiKey;
 use App\User;
-use Auth;
 
 class UserProfileController extends Controller
 {
@@ -169,7 +169,7 @@ class UserProfileController extends Controller
         if(Auth::check()) {
             if($request->platform === 'discord') {
                 $discordUser = DiscordUsers::where('linking_token', '=', trim($request->link_token))->first();
-                $user = Auth::user();
+                $user = User::findOrFail(Auth::user()->id);
                 if($discordUser && $user) {
                     $user->discord_id = $discordUser->id;
                     $discordUser->linking_token = null;

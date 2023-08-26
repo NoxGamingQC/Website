@@ -9,8 +9,6 @@ use Carbon\Carbon;
 use App\ApiKey;
 use App\Points;
 use App\User;
-use Auth;
-use App;
 
 class PointsController extends Controller
 {

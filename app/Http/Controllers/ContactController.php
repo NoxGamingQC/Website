@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\App;
 use Illuminate\Http\Request;
 use App\PageLists;
-use Auth;
-use App;
 
 class ContactController extends Controller
 {
