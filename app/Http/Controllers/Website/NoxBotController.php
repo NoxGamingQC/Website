@@ -3,12 +3,10 @@
 namespace App\Http\Controllers\Website;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\DiscordServerConfig;
 use App\DiscordUsers;
 use \Carbon\Carbon;
 use Auth;
-use App;
 
 class NoxBotController extends Controller
 {
