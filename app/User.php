@@ -4,6 +4,8 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\DiscordServerConfig;
+use App\DiscordUsers;
 
 class User extends Authenticatable
 {
@@ -91,5 +93,13 @@ class User extends Authenticatable
         }
         return null;
         
+    }
+
+    public function scopeHasDiscordServer() {
+        $discordUser = DiscordUsers::find($this->discord_id);
+        if($discordUser) {
+            return count(DiscordServerConfig::where('owner_id', '=', $discordUser->discord_id)->get()) ? true : false;
+        }
+        return false;
     }
 }
