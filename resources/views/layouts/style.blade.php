@@ -99,8 +99,19 @@
         background-size: cover;
         .navbar-nav {
             > .current-page {
-            background-color: #{{$theme->primary}};
+                background-color: #{{$theme->primary}};
             }
+            li:hover, li:focus, li:active {
+                background-color: #{{$theme->primary}} !important;
+                color: #{{$theme->primary_text}} !important;
+            }
+            li {
+                > a:hover, > a:focus, > a:active {
+                    background-color: #{{$theme->primary}} !important;
+                    color: #{{$theme->primary_text}} !important;
+                }
+            }
+            
         }
     }
 
