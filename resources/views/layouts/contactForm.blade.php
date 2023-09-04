@@ -32,7 +32,7 @@
                         <textarea id="contactMessage" type="text" class="form-control" rows="4" placeholder="{{trans('contact.enter_message')}}"></textarea>
                     </div>
                     <div>
-                        {{trans('contact.required')}}<i class="text-danger">*</i>
+                        <label>{{trans('contact.required')}}<i class="text-danger">*</i></label>
                     </div>
                     <div class="text-center">
                         <button type="button" id="submitContactForm" class="btn btn-success">{{trans('general.send')}}</button>

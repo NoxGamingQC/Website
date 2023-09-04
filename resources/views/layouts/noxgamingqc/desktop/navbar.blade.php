@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default" style="position:fixed;padding-top:3vh; width:99vw;">
+<nav class="navbar navbar-default" style="position:fixed;padding-top:3vh; width:99vw;background: linear-gradient(#{{$theme->primary}}ef, #{{$theme->background}}ef), url('/img/NoxGamingQC.png'), linear-gradient(#{{$theme->background}}, #{{$theme->background}});background-position: 50% 35%;background-repeat: no-repeat;background-size: cover;">
     <div class="container-fluid">
         <div class="navbar-header" style="margin: 16px;">
             <a href="/{{app()->getLocale()}}" class="text-color" style="text-decoration:none;">
@@ -16,24 +16,18 @@
             <ul class="nav navbar-nav navbar-left">
                 <li id="home" class="nav-home"><a href="/{{app()->getLocale()}}/home" class="nav"><i class="fa fa-home" aria-hidden="true"></i> {{ trans('general.welcome') }} <span class="sr-only">current</span></a></li>
                 <li id="about_us" class="dropdown">
-                    @if(!$page_lists['about_me']['inMaintenance'])
                     <a href="#" class="dropdown-toggle nav" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                         <i class="fa fa-user" aria-hidden="true"></i> {{trans("general.about_us")}} <span class="caret"></span>
                     </a>
-                    @else
-                    <a class="disabled">
-                        <i class="fa fa-wrench" aria-hidden="true"></i> {{trans("general.about_us")}} <span class="caret"></span>
-                    </a>
-                    @endif
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="/{{app()->getLocale()}}/about_us/contact" class="{{($page_lists['contact_us']['inMaintenance']) ? 'hidden' : ''}}"><i class="fa fa-address-book " aria-hidden="true"></i> {{trans('general.contact_us')}}</a>
-                            <a href="/{{app()->getLocale()}}/about_us/games" class="{{($page_lists['games']['inMaintenance']) ? 'hidden' : ''}}"><i class="fa fa-gamepad" aria-hidden="true"></i> {{ trans('general.games_list') }}</a>
+                            <a href="/{{app()->getLocale()}}/about_us/contact"><i class="fa fa-address-book " aria-hidden="true"></i> {{trans('general.contact_us')}}</a>
+                            <a href="/{{app()->getLocale()}}/about_us/games"><i class="fa fa-gamepad" aria-hidden="true"></i> {{ trans('general.games_list') }}</a>
                             <a href="/{{app()->getLocale()}}/about_us/partners" class=""><i class="fa fa-handshake-o" aria-hidden="true"></i> {{ trans('general.partners') }}</a>
-                            <a href="/{{app()->getLocale()}}/about_us/projects" class="{{($page_lists['projects']['inMaintenance']) ? 'hidden' : ''}}"><i class="fa fa-heart" aria-hidden="true"></i> {{ trans('general.projects') }}</a>
+                            <a href="/{{app()->getLocale()}}/about_us/projects"><i class="fa fa-heart" aria-hidden="true"></i> {{ trans('general.projects') }}</a>
                             <a href="/{{app()->getLocale()}}/about_us/teams" class=""><i class="fa fa-users" aria-hidden="true"></i> {{ trans('general.teams') }}</a>
-                            <a href="/{{app()->getLocale()}}/about_us/twitch" class="{{($page_lists['twitch']['inMaintenance']) ? 'hidden' : ''}}"><i class="fa fa-twitch" aria-hidden="true"></i> {{ trans('general.twitch') }}</a>
-                            <a href="/{{app()->getLocale()}}/about_us/youtube" class="{{($page_lists['youtube']['inMaintenance']) ? 'hidden' : ''}}"><i class="fa fa-youtube-play" aria-hidden="true"></i> {{ trans('general.youtube') }}</a>
+                            <a href="/{{app()->getLocale()}}/about_us/twitch"><i class="fa fa-twitch" aria-hidden="true"></i> {{ trans('general.twitch') }}</a>
+                            <a href="/{{app()->getLocale()}}/about_us/youtube"><i class="fa fa-youtube-play" aria-hidden="true"></i> {{ trans('general.youtube') }}</a>
                         
                         </li>
                     </ul>
@@ -69,24 +63,18 @@
                 @auth
                     @if(Auth::user()->is_management)
                         <li id="management" class="dropdown">
-                        @if(!$page_lists['management']['inMaintenance'])
                             <a href="#" class="dropdown-toggle nav" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                                 <i class="fa fa-dashboard" aria-hidden="true"></i> {{trans("general.management")}} <span class="caret"></span>
                             </a>
-                        @else
-                            <a class="disabled">
-                                <i class="fa fa-wrench" aria-hidden="true"></i> {{trans("general.management")}} <span class="caret"></span>
-                            </a>
-                        @endif
                             <ul class="dropdown-menu">
                                 <li>
                                     <!--<a href="/app()->getLocale()}}/management/pages" class="$page_lists['pages']['inMaintenance']) ? 'hidden' : ''}}"><i class="fa fa-cogs" aria-hidden="true"></i> trans("general.pages")}}</a>-->
                                     <a href="/{{app()->getLocale()}}/management/settings" class=""><i class="fa fa-cogs" aria-hidden="true"></i> {{trans("general.settings")}}</a>
-                                    <a href="/{{app()->getLocale()}}/management/modules" class="{{($page_lists['modules']['inMaintenance']) ? 'hidden' : ''}}"><i class="fa fa-cogs" aria-hidden="true"></i> {{trans("general.modules")}}</a>
-                                    <a href="/{{app()->getLocale()}}/management/users" class="{{($page_lists['users']['inMaintenance']) ? 'hidden' : ''}}"><i class="fa fa-user-circle" aria-hidden="true"></i> {{trans("general.users")}}</a>
-                                    <a href="/{{app()->getLocale()}}/management/activities" class="{{($page_lists['bot_activities']['inMaintenance']) ? 'hidden' : ''}}"><i class="fa fa-bullseye" aria-hidden="true"></i> {{trans("general.bot_status")}}</a>
-                                    <a href="/{{app()->getLocale()}}/management/tasks" class="{{($page_lists['todolist']['inMaintenance']) ? 'hidden' : ''}}"><i class="fa fa-tasks" aria-hidden="true"></i> {{trans("general.tasks")}}</a>
-                                    <a href="/{{app()->getLocale()}}/management/logs" class="{{($page_lists['logs']['inMaintenance']) ? 'hidden' : ''}}"><i class="fa fa-tasks" aria-hidden="true"></i> {{trans("general.logs")}}</a>
+                                    <a href="/{{app()->getLocale()}}/management/modules" ><i class="fa fa-cogs" aria-hidden="true"></i> {{trans("general.modules")}}</a>
+                                    <a href="/{{app()->getLocale()}}/management/users"><i class="fa fa-user-circle" aria-hidden="true"></i> {{trans("general.users")}}</a>
+                                    <a href="/{{app()->getLocale()}}/management/activities"><i class="fa fa-bullseye" aria-hidden="true"></i> {{trans("general.bot_status")}}</a>
+                                    <a href="/{{app()->getLocale()}}/management/tasks"><i class="fa fa-tasks" aria-hidden="true"></i> {{trans("general.tasks")}}</a>
+                                    <a href="/{{app()->getLocale()}}/management/logs"><i class="fa fa-tasks" aria-hidden="true"></i> {{trans("general.logs")}}</a>
                                 </li>
                             </ul>
                         </li>
@@ -135,25 +123,17 @@
                     </li>
                 @endauth
                 @guest
-                    @if(!$page_lists['login']['inMaintenance'])
-                        <li id="profile" class="dropdown">
-                            <a href="#" class="dropdown-toggle nav" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
-                                <i class="fa fa-user-circle-o" aria-hidden="true"></i> My profile <span class="caret"></span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="{{ route('login', app()->getLocale()) }}"><i class="fa fa-sign-in" aria-hidden="true"></i> {{trans("general.login")}}</a>
-                                    <a href="{{ route('register', app()->getLocale()) }}"><i class="fa fa-user-plus" aria-hidden="true"></i> {{trans("general.register")}}</a>
-                                </li>
-                            </ul>
-                        </li>
-                    @else
-                    <li class="dropdown">
-                            <a class="disabled">
-                                <i class="fa fa-wrench" aria-hidden="true"></i> My profile <span class="caret"></span>
-                            </a>
-                        </li>
-                    @endif
+                    <li id="profile" class="dropdown">
+                        <a href="#" class="dropdown-toggle nav" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+                            <i class="fa fa-user-circle-o" aria-hidden="true"></i> My profile <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="{{ route('login', app()->getLocale()) }}"><i class="fa fa-sign-in" aria-hidden="true"></i> {{trans("general.login")}}</a>
+                                <a href="{{ route('register', app()->getLocale()) }}"><i class="fa fa-user-plus" aria-hidden="true"></i> {{trans("general.register")}}</a>
+                            </li>
+                        </ul>
+                    </li>
                 @endguest
             </ul>
             <div class="col-md-12 mobile-hidden">

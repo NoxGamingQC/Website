@@ -1,6 +1,6 @@
 @if(isset($kiosk) && $kiosk == true)
     @if($recipe == true)
-        <div class="header no-print" style="height:480px !important;">
+        <div class="header no-print" style="height:480px !important;background-color:#{{$theme->primary}};background: linear-gradient(220deg, #{{$theme->primary}}, #{{$theme->background}});">
             <div class="text-right" style="margin-right:5%;">
                 <br />
                 <h2 id="currentTime"></h2>
@@ -140,7 +140,7 @@
             @endif
         @endif
     @else
-        <div class="header" style="height:480px !important;">
+        <div class="header" style="height:480px !important;background-color:#{{$theme->primary}};background: linear-gradient(220deg, #{{$theme->primary}}, #{{$theme->background}});">
             <div class="row text-center">
                 <h1 class="text-highlight headline">@yield('title')</h1>
                 <br />
@@ -150,7 +150,7 @@
         </div>
     @endif
 @else
-<div class="header">
+<div class="header" style="background-color:#{{$theme->primary}};background: linear-gradient(220deg, #{{$theme->primary}}, #{{$theme->background}});">
     <div class="row text-center">
         <h1 class="text-highlight headline">@yield('title')</h1>
         <br />

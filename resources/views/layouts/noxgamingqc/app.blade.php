@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ app()->getLocale() }}">
+<html lang="{{ app()->getLocale() }}" style="background-color:#{{$theme->background}}">
 
 <head>
     <meta name="google-site-verification" content="D30gPHSCahf2lVeDo0Ndgc8vI1cQvv8d1gXIZa3B2ds" />
@@ -29,25 +29,11 @@
     <link rel="icon" href="/img/NoxGamingQC.png" type="image/png">
     <link href="{{mix('css/app.css')}}" rel="stylesheet" type="text/css">
     <link href="{{mix('css/bootstrap.css')}}" rel="stylesheet" type="text/css">
-    @if($mainTheme['force'] === "true")
-        <link href="{{mix('css/'. $mainTheme['themeName'] . 'Theme.css')}}" rel="stylesheet" type="text/css">
-    @else
-        @guest
-            <link href="{{mix('css/'. $mainTheme['themeName'] . 'Theme.css')}}" rel="stylesheet" type="text/css">
-        @endguest
-        @auth
-             @if(Auth::user()->theme)
-                <link href="{{mix('css/'. Auth::user()->theme . 'Theme.css')}}" rel="stylesheet" type="text/css">
-            @else
-                <link href="{{mix('css/'. $mainTheme['themeName'] . 'Theme.css')}}" rel="stylesheet" type="text/css">
-            @endif
-        @endauth
-    @endif
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
     <script src="{{mix('js/app.js')}}"></script>
 </head>
 
-<body>
+<body style="background-color:#{{$theme->background}}">
 <input id="websiteLocationID" type="hidden">
     @if(isset($kiosk) && $kiosk == true)
         <style>
@@ -102,6 +88,7 @@
         </div>
     @endif
         
+    @include('layouts.style')
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>

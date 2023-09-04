@@ -21,7 +21,6 @@
  }
 
 html, body {
-    background-color: $background-color;
     color: $text-color;
     margin: 0;
     padding: 0;
@@ -31,10 +30,6 @@ html, body {
 }
 
 .footer {
-    background:linear-gradient($background-color, $background-highlight),url('/img/NoxGamingQC.png'), linear-gradient($background-color, $background-color);
-    background-position: 50% 65%;
-    background-repeat: no-repeat;
-    background-size: cover;
     padding: 5%;
     padding-top:3%;
     padding-bottom:3%;
@@ -128,8 +123,6 @@ a:hover.text-color, a:active.text-color {
 .header {
     z-index: 1;
     background-image: none;
-    background-color: $brand-primary;
-    background: linear-gradient(220deg, $background-color, darken($brand-primary, 15%));
     color: $text-color;
     border: 0 solid transparent;
     border-radius: 0;
@@ -152,11 +145,11 @@ a:hover.text-color, a:active.text-color {
 }
 
 a.text-color:link, a.text-color:visited {
-    color: $text-color !important;
+    color: $text-color;
 }
 
 a.text-color:hover, a.text-color:active {
-    color: $text-color !important;
+    color: $text-color;
     .row {
         background-color: darken($background-color, 10%);
         border-radius: 10px;

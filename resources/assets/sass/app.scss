@@ -1,3 +1,74 @@
+
+/* TO REMOVE*/
+
+
+// Body
+$background-color: #050505;
+$background-highlight: rgba(20, 5, 5, 0.9);
+
+// Borders
+$border-color: darken($background-color, 25%);
+$hr: #000000;
+$hr-highlight: #ffffff;
+
+// Brands
+$brand-primary: #c22222;
+$brand-info: #bed5dc;
+$brand-success: #3AA55D;
+$brand-warning: #F9A61A;
+$brand-danger: #EC4145;
+$brand-orange: #E56F1F;
+$brand-offline: #737F8C;
+$brand-primary-50: #c2222280;
+
+// Typography
+$icon-font-path: "~/bootstrap-sass/assets/fonts/bootstrap/";
+
+//Font
+$raleway-font: "Raleway", sans-serif;
+$rochester-font: "Rochester", cursive;
+$vesper-font: 'Vesper Libre', serif;
+
+$font-size-base: 14px;
+$line-height-base: 1.6;
+
+//Font color
+$text-color: #ffffff;
+$text-hover: #CCCCCC;
+$text-disabled: #888888;
+$text-bg-color: #00000088;
+
+$text-highlight-color: #ffffff;
+$text-highlight-hover: #CCCCCC;
+$text-highlight-disabled: #888888;
+
+// Navbar
+$navbar-bg: #050505;
+
+// Buttons
+$btn-background-color: $background-color;
+
+// Inputs
+$input-border: lighten($text-color, 40%);
+$input-border-focus: lighten($brand-primary, 25%);
+$input-color-placeholder: lighten($text-color, 30%);
+$input-disabled: #444444;
+
+// Panels
+$panel-default-heading-bg: #222222;
+
+/* DO NOT REMOVE */
+
+
+@import "main";
+
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
 @import url('https://fonts.googleapis.com/css?family=Rochester:400');
 @import url('https://fonts.googleapis.com/css2?family=Vesper+Libre&display=swap');
+
+@import "font-awesome";
+
+.extra-life-logo {
+    background-image: url('/img/Affiliates/Extra Life.png') !important;
+    background-size: cover !important;
+}
