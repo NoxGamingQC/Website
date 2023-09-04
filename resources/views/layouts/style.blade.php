@@ -87,6 +87,10 @@
     .text-success {
         color: #{{$theme->green}} !important;
     }
+    
+    .text-muted {
+        color: #{{$theme->gray}} !important;
+    }
 
     .navbar-default {
         background: linear-gradient(#{{((strlen(dechex(hexdec(substr($theme->primary, 0, 2)) * 0.50)) == 1) ? ('0' . dechex(hexdec(substr($theme->primary, 0, 2)) * 0.50)) : (dechex(hexdec(substr($theme->primary, 0, 2)) * 0.50))) . ((strlen(dechex(hexdec(substr($theme->primary, 2, 2)) * 0.50)) == 1) ? ('0' . dechex(hexdec(substr($theme->primary, 2, 2)) * 0.50)) : (dechex(hexdec(substr($theme->primary, 2, 2)) * 0.50))) .  ((strlen(dechex(hexdec(substr($theme->primary, 4, 2)) * 0.50)) == 1) ? ('0' . dechex(hexdec(substr($theme->primary, 4, 2)) * 0.50)) : (dechex(hexdec(substr($theme->primary, 4, 2)) * 0.50)))}}ef, #{{$theme->background}}ef), url('/img/NoxGamingQC.png'), linear-gradient(#{{$theme->background}}, #{{$theme->background}});
