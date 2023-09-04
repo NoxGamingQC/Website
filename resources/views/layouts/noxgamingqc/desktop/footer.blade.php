@@ -1,4 +1,4 @@
-<div class="row footer">
+<div class="row footer" style="background: linear-gradient(#{{$theme->background}}ef, #{{$theme->primary}}ef), url('/img/NoxGamingQC.png'), linear-gradient(#{{$theme->background}}, #{{$theme->background}});background-position: 50% 65%;background-repeat: no-repeat;background-size: cover;">
     <div class="col-md-12 text-center">
         <p>
             @include('layouts.socials')

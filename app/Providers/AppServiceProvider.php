@@ -3,11 +3,13 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Auth;
-use App\PageLists;
-use App\MainConfig;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\App;
-use URL;
+use Illuminate\Support\Facades\URL;
+use App\CustomTheme;
+use App\MainConfig;
+use App\PageLists;
+use App\Theme;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -21,7 +23,6 @@ class AppServiceProvider extends ServiceProvider
        if (env('APP_ENV') == 'production') {
             URL::forceScheme('https');
         }
-
         $mainConfig = MainConfig::all();
         foreach($mainConfig as $key => $value) {
             if($value->slug == 'theme') {
@@ -46,11 +47,6 @@ class AppServiceProvider extends ServiceProvider
                 $headlineSocials = $value->value;
             }
         }
-        
-        $theme = [
-            'themeName' => $themeName,
-            'force' => $forceTheme
-        ];
 
         $headline = [
             'headline01' => $headline01,
@@ -59,54 +55,91 @@ class AppServiceProvider extends ServiceProvider
             'headlineSocials' => $headlineSocials
         ];
 
-        $pageLists = PageLists::all();
-        $pageListsArray = [];
-        if(env('APP_ENV') === 'production') {
-            foreach($pageLists as $key => $value) {
-                $inMaintenance = false;
-                if($maintenance === true) {
-                    $inMaintenance = true;
-                } else {
-                    $inMaintenance = $value->inMaintenance;
-                }
-
-                $pageListsArray [$value->slug] = [
-                    'inMaintenance' => $inMaintenance,
-                    'description' => $value->Description
-                ];
-            }
-            if(Auth::check()) {
-                if(Auth::user()->isAdmin || Auth::user()->isModerator || Auth::user()->isDev) {
-                    foreach($pageLists as $key => $value) {
-                        $pageListsArray [$value->slug] = [
-                            'inMaintenance' => false,
-                            'description' => $value->Description
-                        ];
-                    }
-                }
-            }
-        } else {
-            foreach($pageLists as $key => $value) {
-                $pageListsArray [$value->slug] = [
-                    'inMaintenance' => false,
-                    'description' => $value->Description
-                ];
-            }
-        }
         if(env('GIT_SHA')) {
             $sourceVersion = env('GIT_SHA');
         } else {
             $sourceVersion = 'undefined';
         }
 
-        view()->share('headline', $headline);
-        view()->share('mainTheme', $theme);
-        view()->share('sourceVersion', $sourceVersion);
-        if($pageListsArray) {
-            view()->share('page_lists', $pageListsArray);
+
+        if(!$forceTheme) {
+            $officialtheme = Theme::where('name', '=', $themeName)->first();
+            if($officialtheme) {
+                $theme =  collect([
+                    'name' => $themeName,
+                    'force' => $forceTheme,
+                    'custom' => Auth::check() ? (count(CustomTheme::where('owner_id', '=', Auth::user()->id)->first()) ? true : false) : false,
+                    'primary_text' => (hexdec(substr($officialtheme->primary, 0, 2)) * 0.266 + hexdec(substr($officialtheme->primary, 2, 2)) * 0.587 + hexdec(substr($officialtheme->primary, 4, 2)) * 0.114) > 186 ? '000000' : 'FFFFFF',
+                    'background_text' => (hexdec(substr($officialtheme->background, 0, 2)) * 0.266 + hexdec(substr($officialtheme->background, 2, 2)) * 0.587 + hexdec(substr($officialtheme->background, 4, 2)) * 0.114) > 186 ? '000000' : 'FFFFFF',
+                    'background' => $officialtheme->background,
+                    'primary' => $officialtheme->primary,
+                    'blue' => $officialtheme->blue,
+                    'green' => $officialtheme->green,
+                    'yellow' => $officialtheme->yellow,
+                    'red' => $officialtheme->red,
+                    'gray' => $officialtheme->gray
+                ]);
+            }
         } else {
-            return view();
+            if(Auth::check()) {
+                if(count(CustomTheme::where('owner_id', '=', Auth::user()->id)->first())) {
+                    $customTheme = CustomTheme::where('owner_id', '=', Auth::user()->id)->first();
+                    $theme =  collect([
+                        'name' => 'custom',
+                        'force' => false,
+                        'background' => $customTheme->background,
+                        'primary' => $customTheme->primary,
+                        'primary_text' => (hexdec(substr($customTheme->primary, 0, 2)) * 0.266 + hexdec(substr($customTheme->primary, 2, 2)) * 0.587 + hexdec(substr($customTheme->primary, 4, 2)) * 0.114) > 186 ? '000000' : 'FFFFFF',
+                        'background_text' => (hexdec(substr($customTheme->background, 0, 2)) * 0.266 + hexdec(substr($customTheme->background, 2, 2)) * 0.587 + hexdec(substr($customTheme->background, 4, 2)) * 0.114) > 186 ? '000000' : 'FFFFFF',
+                        'blue' => $customTheme->blue,
+                        'green' => $customTheme->green,
+                        'yellow' => $customTheme->yellow,
+                        'red' => $customTheme->red,
+                        'gray' => $customTheme->gray
+                    ]);
+                }
+            }
         }
+        if(!isset($theme)) {
+            $officialtheme = Theme::where('name', '=', $themeName)->first();
+            if($officialtheme) {
+                $theme =  collect([
+                    'name' => $themeName,
+                    'force' => $forceTheme,
+                    'custom' => Auth::check() ? (count(CustomTheme::where('owner_id', '=', Auth::user()->id)->first()) ? true : false) : false,
+                    'background' => $officialtheme->background,
+                    'primary' => $officialtheme->primary,
+                    'primary_text' => (hexdec(substr($officialtheme->primary, 0, 2)) * 0.266 + hexdec(substr($officialtheme->primary, 2, 2)) * 0.587 + hexdec(substr($officialtheme->primary, 4, 2)) * 0.114) > 186 ? '000000' : 'FFFFFF',
+                    'background_text' => (hexdec(substr($officialtheme->background, 0, 2)) * 0.266 + hexdec(substr($officialtheme->background, 2, 2)) * 0.587 + hexdec(substr($officialtheme->background, 4, 2)) * 0.114) > 186 ? '000000' : 'FFFFFF',
+                    'blue' => $officialtheme->blue,
+                    'green' => $officialtheme->green,
+                    'yellow' => $officialtheme->yellow,
+                    'red' => $officialtheme->red,
+                    'gray' => $officialtheme->gray
+                ]);
+            }
+        }
+        
+        /*$theme = collect([
+            'name' => $themeName,
+            'force' => $forceTheme,
+            'custom' => Auth::check() ? (count(CustomTheme::where('owner_id', '=', Auth::user()->id)->first()) ? true : false) : false,
+            'background' => '555555',
+            'primary' => 'ff8800',
+            'primary_text' => (hexdec(substr('ff8800', 0, 2)) * 0.266 + hexdec(substr('ff8800', 2, 2)) * 0.587 + hexdec(substr('ff8800', 4, 2)) * 0.114) > 186 ? '000000' : 'FFFFFF',
+            'background_text' => (hexdec(substr('555555', 0, 2)) * 0.266 + hexdec(substr('555555', 2, 2)) * 0.587 + hexdec(substr('555555', 4, 2)) * 0.114) > 186 ? '000000' : 'FFFFFF',
+            'blue' => '0000FF',
+            'green' => '00FF00',
+            'yellow' => 'FFFF00',
+            'red' => 'FFFF00',
+            'gray' => 'aaaaaa'
+        ]);*/
+
+        return view()->share([
+            'theme' => json_decode($theme->toJson()),
+            'headline' => $headline,
+            'sourceVersion' => $sourceVersion
+        ]);
     }
 
     /**

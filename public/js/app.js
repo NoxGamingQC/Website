@@ -32745,58 +32745,6 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
 
 /***/ }),
 
-/***/ "./resources/assets/sass/themes/halloweenTheme.scss":
-/*!**********************************************************!*\
-  !*** ./resources/assets/sass/themes/halloweenTheme.scss ***!
-  \**********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
-/***/ "./resources/assets/sass/themes/unicornTheme.scss":
-/*!********************************************************!*\
-  !*** ./resources/assets/sass/themes/unicornTheme.scss ***!
-  \********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
-/***/ "./resources/assets/sass/themes/christmasTheme.scss":
-/*!**********************************************************!*\
-  !*** ./resources/assets/sass/themes/christmasTheme.scss ***!
-  \**********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
-/***/ "./resources/assets/sass/app.scss":
-/*!****************************************!*\
-  !*** ./resources/assets/sass/app.scss ***!
-  \****************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
 /***/ "./resources/assets/sass/bootstrap.less":
 /*!**********************************************!*\
   !*** ./resources/assets/sass/bootstrap.less ***!
@@ -32810,49 +32758,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/assets/sass/themes/darkTheme.scss":
-/*!*****************************************************!*\
-  !*** ./resources/assets/sass/themes/darkTheme.scss ***!
-  \*****************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
-/***/ "./resources/assets/sass/themes/draculaTheme.scss":
-/*!********************************************************!*\
-  !*** ./resources/assets/sass/themes/draculaTheme.scss ***!
-  \********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
-/***/ "./resources/assets/sass/themes/lightTheme.scss":
-/*!******************************************************!*\
-  !*** ./resources/assets/sass/themes/lightTheme.scss ***!
-  \******************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
-/***/ "./resources/assets/sass/themes/grayscaleTheme.scss":
-/*!**********************************************************!*\
-  !*** ./resources/assets/sass/themes/grayscaleTheme.scss ***!
-  \**********************************************************/
+/***/ "./resources/assets/sass/app.scss":
+/*!****************************************!*\
+  !*** ./resources/assets/sass/app.scss ***!
+  \****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -33667,14 +33576,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		var installedChunks = {
 /******/ 			"/js/app": 0,
 /******/ 			"css/app": 0,
-/******/ 			"css/grayscaleTheme": 0,
-/******/ 			"css/lightTheme": 0,
-/******/ 			"css/draculaTheme": 0,
-/******/ 			"css/darkTheme": 0,
-/******/ 			"css/bootstrap": 0,
-/******/ 			"css/christmasTheme": 0,
-/******/ 			"css/unicornTheme": 0,
-/******/ 			"css/halloweenTheme": 0
+/******/ 			"css/bootstrap": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -33724,16 +33626,9 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/grayscaleTheme","css/lightTheme","css/draculaTheme","css/darkTheme","css/bootstrap","css/christmasTheme","css/unicornTheme","css/halloweenTheme"], () => (__webpack_require__("./resources/assets/js/app.js")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/grayscaleTheme","css/lightTheme","css/draculaTheme","css/darkTheme","css/bootstrap","css/christmasTheme","css/unicornTheme","css/halloweenTheme"], () => (__webpack_require__("./resources/assets/sass/bootstrap.less")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/grayscaleTheme","css/lightTheme","css/draculaTheme","css/darkTheme","css/bootstrap","css/christmasTheme","css/unicornTheme","css/halloweenTheme"], () => (__webpack_require__("./resources/assets/sass/themes/darkTheme.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/grayscaleTheme","css/lightTheme","css/draculaTheme","css/darkTheme","css/bootstrap","css/christmasTheme","css/unicornTheme","css/halloweenTheme"], () => (__webpack_require__("./resources/assets/sass/themes/draculaTheme.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/grayscaleTheme","css/lightTheme","css/draculaTheme","css/darkTheme","css/bootstrap","css/christmasTheme","css/unicornTheme","css/halloweenTheme"], () => (__webpack_require__("./resources/assets/sass/themes/lightTheme.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/grayscaleTheme","css/lightTheme","css/draculaTheme","css/darkTheme","css/bootstrap","css/christmasTheme","css/unicornTheme","css/halloweenTheme"], () => (__webpack_require__("./resources/assets/sass/themes/grayscaleTheme.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/grayscaleTheme","css/lightTheme","css/draculaTheme","css/darkTheme","css/bootstrap","css/christmasTheme","css/unicornTheme","css/halloweenTheme"], () => (__webpack_require__("./resources/assets/sass/themes/halloweenTheme.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/grayscaleTheme","css/lightTheme","css/draculaTheme","css/darkTheme","css/bootstrap","css/christmasTheme","css/unicornTheme","css/halloweenTheme"], () => (__webpack_require__("./resources/assets/sass/themes/unicornTheme.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/grayscaleTheme","css/lightTheme","css/draculaTheme","css/darkTheme","css/bootstrap","css/christmasTheme","css/unicornTheme","css/halloweenTheme"], () => (__webpack_require__("./resources/assets/sass/themes/christmasTheme.scss")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app","css/grayscaleTheme","css/lightTheme","css/draculaTheme","css/darkTheme","css/bootstrap","css/christmasTheme","css/unicornTheme","css/halloweenTheme"], () => (__webpack_require__("./resources/assets/sass/app.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/bootstrap"], () => (__webpack_require__("./resources/assets/js/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/bootstrap"], () => (__webpack_require__("./resources/assets/sass/bootstrap.less")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app","css/bootstrap"], () => (__webpack_require__("./resources/assets/sass/app.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
