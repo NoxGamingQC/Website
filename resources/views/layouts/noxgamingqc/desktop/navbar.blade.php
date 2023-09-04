@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default" style="position:fixed;padding-top:3vh; width:99vw;background: linear-gradient(#{{$theme->primary}}ef, #{{$theme->background}}ef), url('/img/NoxGamingQC.png'), linear-gradient(#{{$theme->background}}, #{{$theme->background}});background-position: 50% 35%;background-repeat: no-repeat;background-size: cover;">
+<nav class="navbar navbar-default" style="position:fixed;padding-top:3vh; width:99vw;">
     <div class="container-fluid">
         <div class="navbar-header" style="margin: 16px;">
             <a href="/{{app()->getLocale()}}" class="text-color" style="text-decoration:none;">
