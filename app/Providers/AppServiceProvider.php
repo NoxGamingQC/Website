@@ -21,7 +21,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        if (env('APP_ENV') == 'production') {
+        if (env('APP_URL') !== 'http://localhost:8000') {
             URL::forceScheme('https');
         }
         $mainConfig = MainConfig::all();
