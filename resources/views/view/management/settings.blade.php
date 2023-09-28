@@ -44,19 +44,19 @@
                 <div class="form-group">
                     <label>{{trans('config.theme')}}</label>
                     <select class="selectpicker" id="theme" title="Default">
-                        <option value="dark" {{$mainTheme['themeName'] === "dark" ? 'selected' : ''}}>{{(trans('config.theme_dark'))}}</option>
-                        <option value="dracula" {{$mainTheme['themeName'] === "dracula" ? 'selected' : ''}}>{{(trans('config.theme_dracula'))}}</option>
-                        <option value="light" {{$mainTheme['themeName'] === "light" ? 'selected' : ''}}>{{(trans('config.theme_light'))}}</option>
-                        <option value="grayscale" {{$mainTheme['themeName'] === "grayscale" ? 'selected' : ''}}>{{(trans('config.theme_grayscale'))}}</option>
-                        <option value="halloween" {{$mainTheme['themeName'] === "halloween" ? 'selected' : ''}}>{{(trans('config.theme_halloween'))}}</option>
-                        <option value="christmas" {{$mainTheme['themeName'] === "christmas" ? 'selected' : ''}}>{{(trans('config.theme_christmas'))}}</option>
+                        <option value="dark" {{$theme->name === "dark" ? 'selected' : ''}}>{{(trans('config.theme_dark'))}}</option>
+                        <option value="dracula" {{$theme->name === "dracula" ? 'selected' : ''}}>{{(trans('config.theme_dracula'))}}</option>
+                        <option value="light" {{$theme->name === "light" ? 'selected' : ''}}>{{(trans('config.theme_light'))}}</option>
+                        <option value="grayscale" {{$theme->name === "grayscale" ? 'selected' : ''}}>{{(trans('config.theme_grayscale'))}}</option>
+                        <option value="halloween" {{$theme->name === "halloween" ? 'selected' : ''}}>{{(trans('config.theme_halloween'))}}</option>
+                        <option value="christmas" {{$theme->name === "christmas" ? 'selected' : ''}}>{{(trans('config.theme_christmas'))}}</option>
                     </select>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
                     <label>{{trans('config.force_theme')}}</label>
-                    <input type="checkbox" id="forceTheme" {{$mainTheme['force'] === "true" ? 'checked' : ''}}>
+                    <input type="checkbox" id="forceTheme" {{/*$theme['force_theme'] === "true" ? 'checked' :*/ ''}}>
                 </div>
             </div>
         </div>
