@@ -176,6 +176,7 @@ Route::middleware(['cors'])->group(function () {
             Route::get('/recipe/add', 'NGST\RecipeController@addRecipe');
             Route::get('/recipe/edit/{id}', 'NGST\RecipeController@editRecipe');
             Route::get('/company/kiosk/refresh', 'NGST\KioskController@refreshData');
+            Route::get('/fun/pokemon/{slug}', 'Website\Fun\PokemonViewController@index');
 
             /*
               
