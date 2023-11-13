@@ -1,14 +1,15 @@
-@extends('layouts.noxgamingqc.app')
-@section('title', 'Error 500')
-@section('slogan', 'Hey congratulations, you found a special page. Make sure to tell us the steps you took to get over here we are curious. Pssst. yep something went wrong. Thanks for helping us.')
+@extends('layouts.error')
+@section('title', 'ERROR 500')
 @section('content')
 
-
 <div class="row">
-    <div class="col-md-12 bg-dark content-item">
-        <div class="container">
-            <h3 class="raleway-font text-danger">INTERNAL SERVER ERROR - ERROR 500</h3>
-            <p class="raleway-font text-danger">Something wrong happen.</p>
+        <div class="container text-center">
+            <img src="/img/logo.svg" width="300">
+            <h3 class="raleway-font">ERROR 500 | Internal server error.</h3>
+            <br />
+            <hr />
+            <br />
+            <h3 class="raleway-font">ERREUR 500 | Erreur interne du serveur.</h3>
         </div>
     </div>
 </div>
