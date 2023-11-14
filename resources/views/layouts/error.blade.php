@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="error-background" lang="{{ app()->getLocale() }}">
+<html class="{{app('request')->input('app_type') !== 'mobile_app' ? 'error-background' : ''}}" lang="{{ app()->getLocale() }}">
 <head>
     <meta name="google-site-verification" content="D30gPHSCahf2lVeDo0Ndgc8vI1cQvv8d1gXIZa3B2ds" />
     <meta name="facebook-domain-verification" content="uki484ngemqhks0g9endzi9hb1nobp" />
@@ -32,7 +32,7 @@
     <script src="{{mix('js/app.js')}}"></script>
 </head>
 
-<body class="error-background"> 
+<body class="{{app('request')->input('app_type') !== 'mobile_app' ? 'error-background' : ''}}"> 
     @include('layouts.style')
     @yield('content')
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
