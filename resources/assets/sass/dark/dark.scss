@@ -1,0 +1,21 @@
+@import 'dark_variables';
+@import '../variables';
+@import '../main';
+
+.error-background {
+    background-color:$background-color;
+    opacity: 1;
+    background-image:  linear-gradient(135deg, #ef444450 25%, transparent 25%), linear-gradient(225deg, #ef444450 25%, transparent 25%), linear-gradient(45deg, #ef444450 25%, transparent 25%), linear-gradient(315deg, #ef444450 25%, $background-color 25%);
+    background-position:  4px 0, 4px 0, 0 0, 0 0;
+    background-size: 4px 4px;
+    background-repeat: repeat;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    color: $text-color !important;
+}
+
+hr {
+    border-color: darken($text-color, 50%) !important;
+    margin: 5%;
+}

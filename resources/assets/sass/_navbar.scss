@@ -57,9 +57,6 @@ $dropdown: true;
         @media (min-width: 768px) {
             margin-top: 5%;
         }
-        &:hover,  &:focus, &:active {
-            color: $text-highlight-color;
-        }
     }
     .navbar-text {
         color: $text-color;
@@ -95,14 +92,14 @@ $dropdown: true;
                 background-color: $brand-primary;
             }
             .disabled {
-                color: $text-disabled;
+                color: $brand-disabled;
                 font-size: 100%;
                 @media (min-width: 768px) {
                     padding-top: 10px;
                     padding-bottom:10px;
                 }
                 &:hover,  &:focus, &:active {
-                    color: $text-disabled;
+                    color: $brand-disabled;
                     background-color: $background-color;
                 }
             }
@@ -116,14 +113,13 @@ $dropdown: true;
                         > a {
                             color: $text-color;
                             &:hover,  &:focus, &:active {
-                                color: $text-highlight-color;
                                 border-color: $brand-primary;
                                 background-color: $brand-primary;
                             }
                             .disabled {
-                                color: $text-disabled !important;
+                                color: $brand-disabled !important;
                                 &:hover, &:focus, &:active {
-                                    color: $text-disabled !important;
+                                    color: $brand-disabled !important;
                                     border-color: $background-color !important;
                                     background-color: $background-color !important;
                                 }
@@ -144,25 +140,23 @@ $dropdown: true;
                 color: $text-color;
                 background-color: $brand-primary;
             .disabled {
-                color: $text-disabled !important;
+                color: $brand-disabled !important;
                 > &:hover, &:focus, &:active {
-                    color: $text-disabled !important;
+                    color: $brand-disabled !important;
                     border-color: $background-color !important;
                     background-color: $background-color !important;
                 }
             }
         }
         > .open {
-            color: $text-highlight-color;
             background-color: $brand-primary;
             > a, > a:hover, > a:focus, a:active {
-                color: $text-highlight-color;
                 background-color: $brand-primary;
             }
             > a.disabled {
-                color: $text-disabled !important;
+                color: $brand-disabled !important;
                 &:hover, &:focus, &:active {
-                    color: $text-disabled !important;
+                    color: $brand-disabled !important;
                     border-color: $background-color !important;
                     background-color: $background-color !important;
                 }
@@ -187,7 +181,6 @@ $dropdown: true;
     .navbar-link {
         color: $text-color;
         &:hover {
-        color: $text-highlight-color; 
         }
     }
     .nav-searchbar {
@@ -200,7 +193,6 @@ $dropdown: true;
         li > a {
             color: $text-color;
             &:hover, &:focus, &:active {
-                color: $text-highlight-color;
             }
         }
         > .active {
