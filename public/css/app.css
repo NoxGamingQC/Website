@@ -3235,7 +3235,7 @@
     background-position: -1px -1px, -1px -1px, -1px -1px, -1px -1px;
   }
   html, body {
-    background-color: #F0F0F0;
+    background-color: #F0F0F0 !important;
   }
   h1, h2, h3, h4, h5, h6, p {
     color: #262626 !important;
