@@ -1605,6 +1605,9 @@
     background-size: 4px 4px;
     background-repeat: repeat;
   }
+  html, body, .row {
+    background-color: #050505;
+  }
   h1, h2, h3, h4, h5, h6, p {
     color: #e5e5e5 !important;
   }
@@ -3216,6 +3219,9 @@
     background-position: 4px 0, 4px 0, 0 0, 0 0;
     background-size: 4px 4px;
     background-repeat: repeat;
+  }
+  html, body, .row {
+    background-color: #FFFFFF;
   }
   h1, h2, h3, h4, h5, h6, p {
     color: #262626 !important;
