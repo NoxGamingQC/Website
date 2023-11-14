@@ -14,12 +14,12 @@
 .maintenance-background {
     background-color: $background-color;
     opacity: 1;
-    background-image:  linear-gradient($brand-disabled 2px, transparent 2px), linear-gradient(90deg, $brand-disabled 2px, transparent 2px), linear-gradient($brand-disabled 1px, transparent 1px), linear-gradient(90deg, $brand-disabled 1px, $background-color 1px);
+    background-image:  linear-gradient(lighten($brand-disabled,50%) 1px, transparent 1px), linear-gradient(90deg, lighten($brand-disabled,50%) 1px, transparent 1px), linear-gradient(lighten($brand-disabled,50%) 1px, transparent 1px), linear-gradient(90deg, lighten($brand-disabled,50%) 1px, $background-color 1px);
     background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
-    background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
+    background-position: -1px -1px, -1px -1px, -1px -1px, -1px -1px;
 }
 
-html, body, .row {
+html, body {
     background-color:$background-color ;
 }
 
