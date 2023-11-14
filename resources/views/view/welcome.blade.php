@@ -5,7 +5,7 @@
 <div style="position:relative; width: 100vw; height:100vh !important;background-color:#{{$theme->primary}};background: linear-gradient(220deg, #{{$theme->primary}}, #{{$theme->background}});">
     <div class="row" style="padding-top: 40vh">
         <div class="col-md-12 text-center">
-            <h1 class="raleway-font headline" style="color:#{{$theme->primary_text}} !important;"><img src="/img/NoxGamingQC.png" height="140vh" /><b> NoxGamingQC</b></h1>
+            <h1 class="raleway-font headline" style="color:#{{$theme->primary_text}} !important;"><img src="/img/logo.svg" height="140vh" /><b> NoxGamingQC</b></h1>
         </div>
         <div class="col-md-12 text-center">
             <br />
@@ -26,7 +26,7 @@
                 <div class="col-md-6 text-center" style="padding-top: 5%">
                     <h3>{{trans('stream.stream_description_title')}}</h3>
                     <p>{!!trans('stream.stream_description_text')!!}</a>.</p>
-                    <a class="btn btn-primary" href="https://discord.com/invite/PryKE2Xvrh">{{trans('stream.join_server')}}</a>
+                    <a class="btn btn-primary" href="/discord">{{trans('stream.join_server')}}</a>
                 </div>
             </div>
         </div>
