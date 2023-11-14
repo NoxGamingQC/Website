@@ -10,8 +10,20 @@
             <hr />
             <br />
             <h3 class="raleway-font">ERREUR 503 | En maintenance.</h3>
+            @if(app('request')->input('app_type') == 'mobile_app')
+                <br />
+                <br />
+                <br />
+                <input id="reloadPage" type="button" class="btn btn-info" value="reload">
+            @endif
         </div>
     </div>
 </div>
-
+@if(app('request')->input('app_type') == 'mobile_app')
+<script>
+$('#reloadPage').on('click', function() {
+    window.location.reload();
+})
+</script>
+@endif
 @endsection
