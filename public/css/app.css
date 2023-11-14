@@ -1613,7 +1613,7 @@
     background-position: -1px -1px, -1px -1px, -1px -1px, -1px -1px;
   }
   html, body {
-    background-color: #101010;
+    background-color: #101010 !important;
   }
   h1, h2, h3, h4, h5, h6, p {
     color: #e5e5e5 !important;
