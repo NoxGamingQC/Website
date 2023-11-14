@@ -1,4 +1,3 @@
-@import 'variables';
 @import "buttons";
 @import "pannels";
 @import 'inputs';
@@ -117,7 +116,7 @@ a:hover.text-color, a:active.text-color {
 }
 
 .status-offline {
-    border: 5px solid $brand-offline;
+    border: 5px solid $brand-disabled;
 }
 
 .header {

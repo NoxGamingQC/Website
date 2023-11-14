@@ -1,3 +1,40 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+@import url('https://fonts.googleapis.com/css?family=Rochester:400');
+@import url('https://fonts.googleapis.com/css2?family=Vesper+Libre&display=swap');
+
+//Screen size
+
 $screen-sm-min: 1100px;
 $screen-md-min: 1200px;
 $screen-lg-min: 1500px;
+
+//Brand colors
+
+$brand-primary: #c22222;
+$brand-primary-50: #c2222280;
+$brand-info: #67e8f9;
+$brand-success: #22c55e;
+$brand-warning: #facc15;
+$brand-danger: #ef4444;
+$brand-orange: #E56F1F;
+$brand-disabled: #525252;
+
+// Text color
+
+$text-on-primary: #FFFFFF;
+$text-on-info: #FFFFFF;
+$text-on-success: #FFFFFF;
+$text-on-warning: #FFFFFF;
+$text-on-danger: #FFFFFF;
+$text-on-orange: #FFFFFF;
+$text-on-disabled: #000000;
+
+// Font
+$icon-font-path: "~/bootstrap-sass/assets/fonts/bootstrap/";
+
+$raleway-font: "Raleway", sans-serif;
+$rochester-font: "Rochester", cursive;
+$vesper-font: 'Vesper Libre', serif;
+$font-size-base: 14px;
+$line-height-base: 1.6;
+

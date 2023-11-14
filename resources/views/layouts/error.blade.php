@@ -1,10 +1,5 @@
 <!doctype html>
-<html lang="{{ app()->getLocale() }}" style="background-color:#{{$theme->background}};
-    opacity: 1;
-    background-image:  linear-gradient(135deg, #ef444450 25%, transparent 25%), linear-gradient(225deg, #ef444450 25%, transparent 25%), linear-gradient(45deg, #ef444450 25%, transparent 25%), linear-gradient(315deg, #ef444450 25%, #{{$theme->background}} 25%);
-    background-position:  4px 0, 4px 0, 0 0, 0 0;
-    background-size: 4px 4px;
-    background-repeat: repeat;">
+<html class="error-background" lang="{{ app()->getLocale() }}">
 <head>
     <meta name="google-site-verification" content="D30gPHSCahf2lVeDo0Ndgc8vI1cQvv8d1gXIZa3B2ds" />
     <meta name="facebook-domain-verification" content="uki484ngemqhks0g9endzi9hb1nobp" />
@@ -37,12 +32,7 @@
     <script src="{{mix('js/app.js')}}"></script>
 </head>
 
-<body style="background-color:#{{$theme->background}};
-    opacity: 1;
-    background-image:  linear-gradient(135deg, #ef444450 25%, transparent 25%), linear-gradient(225deg, #ef444450 25%, transparent 25%), linear-gradient(45deg, #ef444450 25%, transparent 25%), linear-gradient(315deg, #ef444450 25%, #{{$theme->background}} 25%);
-    background-position:  4px 0, 4px 0, 0 0, 0 0;
-    background-size: 4px 4px;
-    background-repeat: repeat;"> 
+<body class="error-background"> 
     @include('layouts.style')
     @yield('content')
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
