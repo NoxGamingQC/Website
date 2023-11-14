@@ -11,7 +11,15 @@
     background-repeat: repeat;
 }
 
-html, body, .row {
+.maintenance-background {
+    background-color: $background-color;
+    opacity: 1;
+    background-image:  linear-gradient(darken($brand-disabled,15%) 1px, transparent 1px), linear-gradient(90deg, darken($brand-disabled,15%) 1px, transparent 1px), linear-gradient(darken($brand-disabled,15%) 1px, transparent 1px), linear-gradient(90deg, darken($brand-disabled,15%) 1px, $background-color 1px);
+    background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
+    background-position: -1px -1px, -1px -1px, -1px -1px, -1px -1px;
+}
+
+html, body {
     background-color:$background-color;
 }
 
