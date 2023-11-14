@@ -8,7 +8,7 @@
                     <h5 class="raleway-font"><a class="text-color" href="tel:819-852-8705">819-852-8705</a></h5>
                     <br />
                     <p>
-                        @include('layouts.socials')
+                        @include('layouts.components.socials')
                     </p>
                 </div>
             </div>

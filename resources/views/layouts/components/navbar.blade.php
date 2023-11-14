@@ -1,11 +1,11 @@
-<nav class="navbar navbar-default" style="position:fixed;padding-top:3vh; width:99vw;">
+<nav class="navbar navbar-default">
     <div class="container-fluid">
-        <div class="navbar-header" style="margin: 16px;">
-            <a href="/{{app()->getLocale()}}" class="text-color" style="text-decoration:none;">
+        <div class="navbar-header">
+            <a href="/{{app()->getLocale()}}" class="text-color">
                 <img class="img" src="/img/logo.svg" width="50" height="50" />
-                <h3 class="raleway-font" style="display: inline; margin: 5px;">NoxGamingQC</h3>
+                <!--<h3 class="raleway-font" style="display: inline; margin: 5px;">NoxGamingQC</h3>-->
             </a>
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-collapse" aria-expanded="false" style="margin-top:-5px;margin-bottom:20px;padding:12px;border-radius:10px;">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-collapse" aria-expanded="false">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -88,15 +88,15 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="/language/set/en-ca"><img src="https://cdn.countryflags.com/thumbs/canada/flag-400.png" width="25px" style="margin-top:-2px" /> English (Canada)</a>
-                            <a href="/language/set/fr-ca"><img src="https://cdn.countryflags.com/thumbs/canada/flag-400.png" width="25px" style="margin-top:-2px" /> Français (Canada)</a>
+                            <a href="/language/set/en-ca"><img src="https://cdn.countryflags.com/thumbs/canada/flag-400.png" width="25px" /> English (Canada)</a>
+                            <a href="/language/set/fr-ca"><img src="https://cdn.countryflags.com/thumbs/canada/flag-400.png" width="25px" /> Français (Canada)</a>
                         </li>
                     </ul>
                 </li>
 
                 <li class="dropdown mobile-hidden">
                     <a href="#" class="dropdown-toggle nav" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
-                        <i class="fa fa-bell" aria-hidden="true"><span class="badge-danger raleway-font" style="display: block;position:absolute;padding:2px 4px;border-radius: 50%;margin-left:8px;margin-top:-8px;font-size: 11px;">0</span></i>
+                        <i class="fa fa-bell" aria-hidden="true"><span class="badge-danger raleway-font">0</span></i>
                     </a>
                     <ul id="notificationDropdown" class="dropdown-menu">
                         <li id="NoNotificationText">
@@ -108,7 +108,7 @@
                 @auth
                     <li id="profile" class="dropdown">
                         <a href="#" class="dropdown-toggle nav" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
-                             <img class="img img-circle status-{{(Auth::user()->lock_status == 'online') ? Auth::user()->status : Auth::user()->lock_status}}" src="{{App\User::getPicture(Auth::user())}}" width="24px" style="border-width: 2px;" />
+                             <img class="img img-circle status-{{(Auth::user()->lock_status == 'online') ? Auth::user()->status : Auth::user()->lock_status}}" src="{{App\User::getPicture(Auth::user())}}" width="24px" />
                             {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
@@ -136,17 +136,6 @@
                     </li>
                 @endguest
             </ul>
-            <div class="col-md-12 mobile-hidden">
-                <div class="form-group">
-                    <div class="input-group">
-                        <div class="input-group-addon"><i class="fa fa-search" aria-hidden="true"></i></div>
-                        <input id="navSearch" type="text" class="form-control disabled" placeholder="{{trans('general.search')}} ..." disabled />
-                        <div class="input-group-addon btn-primary pointer-cursor hidden" hidden><a class="text-color no-decoration pointer-cursor hidden" hidden>{{trans('general.search')}}</a></div>
-                        <div id="navSearchResult" style="margin-top: 30px">
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </nav>

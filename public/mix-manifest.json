@@ -1,6 +1,8 @@
 {
     "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css",
+    "/css/light.css": "/css/light.css",
+    "/css/dark.css": "/css/dark.css",
+    "/css/system.css": "/css/system.css",
     "/css/bootstrap.css": "/css/bootstrap.css",
     "/fonts/bootstrap/bootstrap/glyphicons-halflings-regular.eot": "/fonts/bootstrap/bootstrap/glyphicons-halflings-regular.eot",
     "/fonts/bootstrap/bootstrap/glyphicons-halflings-regular.svg": "/fonts/bootstrap/bootstrap/glyphicons-halflings-regular.svg",
