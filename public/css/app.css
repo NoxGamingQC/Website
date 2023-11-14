@@ -1605,7 +1605,14 @@
     background-size: 4px 4px;
     background-repeat: repeat;
   }
-  html, body, .row {
+  .maintenance-background {
+    background-color: #101010;
+    opacity: 1;
+    background-image: linear-gradient(#2c2c2c 1px, transparent 1px), linear-gradient(90deg, #2c2c2c 1px, transparent 1px), linear-gradient(#2c2c2c 1px, transparent 1px), linear-gradient(90deg, #2c2c2c 1px, #101010 1px);
+    background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
+    background-position: -1px -1px, -1px -1px, -1px -1px, -1px -1px;
+  }
+  html, body {
     background-color: #101010;
   }
   h1, h2, h3, h4, h5, h6, p {
@@ -3219,6 +3226,13 @@
     background-position: 4px 0, 4px 0, 0 0, 0 0;
     background-size: 4px 4px;
     background-repeat: repeat;
+  }
+  .maintenance-background {
+    background-color: #F0F0F0;
+    opacity: 1;
+    background-image: linear-gradient(#525252 2px, transparent 2px), linear-gradient(90deg, #525252 2px, transparent 2px), linear-gradient(#525252 1px, transparent 1px), linear-gradient(90deg, #525252 1px, #F0F0F0 1px);
+    background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
+    background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
   }
   html, body, .row {
     background-color: #F0F0F0;
