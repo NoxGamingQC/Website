@@ -1,12 +1,7 @@
 @import 'font-awesome';
-
-@media (prefers-color-scheme: dark) {
-    @import "./dark/dark";
-}
-@media (prefers-color-scheme: light) {
-    @import "./light/light";
-
-}
+@import 'variables';
+@import 'components/components';
+@import 'bootstrap/bootstrap';
 
 .extra-life-logo {
     background-image: url('/img/Affiliates/Extra Life.png') !important;

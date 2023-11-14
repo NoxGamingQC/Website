@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.pages.app')
 @section('title', 'Welcome')
 @section('content')
 
@@ -20,7 +20,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="video-player embed-responsive-item" src="https://player.twitch.tv/?channel=noxgamingqc&parent={{env('APP_URL') == 'http://localhost:8000'? str_replace("http://","",env('APP_URL')) : str_replace("https://","",env('APP_URL'))}}&enableExtensions=true&muted=true&autoplay=true" frameBorder="0" allowFullScreen="true" scrolling="no"></iframe>
+                        <iframe class="video-player embed-responsive-item" src="https://player.twitch.tv/?channel=noxgamingqc&parent={{env('APP_URL') === 'http://localhost:8000' ? 'localhost' : str_replace("https://","",env('APP_URL'))}}&enableExtensions=true&muted=true&autoplay=true" frameBorder="0" allowFullScreen="true" scrolling="no"></iframe>
                     </div>
                 </div>
                 <div class="col-md-6 text-center" style="padding-top: 5%">
@@ -33,7 +33,7 @@
     </div>
     <div class="col-md-12 content-item">
         <div class="container-fluid">
-            @include('layouts.contactForm')
+            @include('layouts.components.contactForm')
         </div>
     </div>
 </div>

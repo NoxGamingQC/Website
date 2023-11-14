@@ -32770,10 +32770,36 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/assets/sass/app.scss":
-/*!****************************************!*\
-  !*** ./resources/assets/sass/app.scss ***!
-  \****************************************/
+/***/ "./resources/assets/sass/system.scss":
+/*!*******************************************!*\
+  !*** ./resources/assets/sass/system.scss ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./resources/assets/sass/dark/dark.scss":
+/*!**********************************************!*\
+  !*** ./resources/assets/sass/dark/dark.scss ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./resources/assets/sass/light/light.scss":
+/*!************************************************!*\
+  !*** ./resources/assets/sass/light/light.scss ***!
+  \************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -33587,7 +33613,9 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
 /******/ 			"/js/app": 0,
-/******/ 			"css/app": 0,
+/******/ 			"css/light": 0,
+/******/ 			"css/dark": 0,
+/******/ 			"css/system": 0,
 /******/ 			"css/bootstrap": 0
 /******/ 		};
 /******/ 		
@@ -33638,9 +33666,11 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/bootstrap"], () => (__webpack_require__("./resources/assets/js/app.js")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/bootstrap"], () => (__webpack_require__("./resources/assets/sass/bootstrap.less")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app","css/bootstrap"], () => (__webpack_require__("./resources/assets/sass/app.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/light","css/dark","css/system","css/bootstrap"], () => (__webpack_require__("./resources/assets/js/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/light","css/dark","css/system","css/bootstrap"], () => (__webpack_require__("./resources/assets/sass/bootstrap.less")))
+/******/ 	__webpack_require__.O(undefined, ["css/light","css/dark","css/system","css/bootstrap"], () => (__webpack_require__("./resources/assets/sass/system.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/light","css/dark","css/system","css/bootstrap"], () => (__webpack_require__("./resources/assets/sass/dark/dark.scss")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/light","css/dark","css/system","css/bootstrap"], () => (__webpack_require__("./resources/assets/sass/light/light.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
