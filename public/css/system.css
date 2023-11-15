@@ -2315,8 +2315,50 @@
   @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
   @import url("https://fonts.googleapis.com/css?family=Rochester:400");
   @import url("https://fonts.googleapis.com/css2?family=Vesper+Libre&display=swap");
-  .row {
-    margin-right: 0 !important;
+  h1 {
+    font-size: 44px !important;
+  }
+  h2 {
+    font-size: 34px !important;
+  }
+  h3 {
+    font-size: 26px !important;
+  }
+  h4 {
+    font-size: 20px !important;
+  }
+  h5 {
+    font-size: 16px !important;
+  }
+  h6 {
+    font-size: 14px !important;
+  }
+  p, a, li, label {
+    font-size: 16px !important;
+  }
+  a, label {
+    color: #e5e5e5 !important;
+  }
+  a:hover, a:active, a:focus {
+    color: #c22222 !important;
+  }
+  .text-muted {
+    color: #525252 !important;
+  }
+  .text-primary {
+    color: #c22222 !important;
+  }
+  .text-success {
+    color: #22c55e !important;
+  }
+  .text-info {
+    color: #67e8f9 !important;
+  }
+  .text-warning {
+    color: #facc15 !important;
+  }
+  .text-danger {
+    color: #ef4444 !important;
   }
   .navbar-default {
     background-color: #101010 !important;
@@ -2367,56 +2409,44 @@
   .navbar-toggle:hover .icon-bar, .navbar-toggle:active .icon-bar, .navbar-toggle:focus .icon-bar, .navbar-toggle:not(.collapsed) .icon-bar {
     background-color: #FFFFFF !important;
   }
+  ::-webkit-input-placeholder {
+    color: #525252 !important;
+  }
+  ::-moz-placeholder {
+    color: #525252 !important;
+  }
+  ::-ms-placeholder {
+    color: #525252 !important;
+  }
+  ::-moz-placeholder {
+    color: #525252 !important;
+  }
+  ::placeholder {
+    color: #525252 !important;
+  }
+  input[type=text], textarea, input.form-control, textarea.form-control {
+    background-color: #101010 !important;
+    border: 0px solid transparent !important;
+    border-bottom: 1px solid #e5e5e5 !important;
+    border-radius: 0px !important;
+    box-shadow: inset 0px 0px 0px 0px transparent;
+  }
+  input[type=text]:focus, textarea:focus, input.form-control:focus, textarea.form-control:focus {
+    background-color: #101010 !important;
+    border: 0px solid transparent !important;
+    border-bottom: 1px solid #c22222 !important;
+    border-radius: 0px !important;
+    box-shadow: 0px 0px 0px 0px transparent;
+    caret-color: #c22222 !important;
+  }
   .modal-backdrop {
     z-index: 100000 !important;
   }
   .modal {
     z-index: 100001 !important;
   }
-  h1 {
-    font-size: 44px !important;
-  }
-  h2 {
-    font-size: 34px !important;
-  }
-  h3 {
-    font-size: 26px !important;
-  }
-  h4 {
-    font-size: 20px !important;
-  }
-  h5 {
-    font-size: 16px !important;
-  }
-  h6 {
-    font-size: 14px !important;
-  }
-  p, a, li, label {
-    font-size: 16px !important;
-  }
-  a, label {
-    color: #e5e5e5 !important;
-  }
-  a:hover, a:active, a:focus {
-    color: #c22222 !important;
-  }
-  .text-muted {
-    color: #525252 !important;
-  }
-  .text-primary {
-    color: #c22222 !important;
-  }
-  .text-success {
-    color: #22c55e !important;
-  }
-  .text-info {
-    color: #67e8f9 !important;
-  }
-  .text-warning {
-    color: #facc15 !important;
-  }
-  .text-danger {
-    color: #ef4444 !important;
+  .row {
+    margin-right: 0 !important;
   }
   #content {
     margin-top: 120px;
@@ -4914,8 +4944,50 @@
   @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
   @import url("https://fonts.googleapis.com/css?family=Rochester:400");
   @import url("https://fonts.googleapis.com/css2?family=Vesper+Libre&display=swap");
-  .row {
-    margin-right: 0 !important;
+  h1 {
+    font-size: 44px !important;
+  }
+  h2 {
+    font-size: 34px !important;
+  }
+  h3 {
+    font-size: 26px !important;
+  }
+  h4 {
+    font-size: 20px !important;
+  }
+  h5 {
+    font-size: 16px !important;
+  }
+  h6 {
+    font-size: 14px !important;
+  }
+  p, a, li, label {
+    font-size: 16px !important;
+  }
+  a, label {
+    color: #262626 !important;
+  }
+  a:hover, a:active, a:focus {
+    color: #c22222 !important;
+  }
+  .text-muted {
+    color: #525252 !important;
+  }
+  .text-primary {
+    color: #c22222 !important;
+  }
+  .text-success {
+    color: #22c55e !important;
+  }
+  .text-info {
+    color: #67e8f9 !important;
+  }
+  .text-warning {
+    color: #facc15 !important;
+  }
+  .text-danger {
+    color: #ef4444 !important;
   }
   .navbar-default {
     background-color: #F0F0F0 !important;
@@ -4966,56 +5038,44 @@
   .navbar-toggle:hover .icon-bar, .navbar-toggle:active .icon-bar, .navbar-toggle:focus .icon-bar, .navbar-toggle:not(.collapsed) .icon-bar {
     background-color: #FFFFFF !important;
   }
+  ::-webkit-input-placeholder {
+    color: #525252 !important;
+  }
+  ::-moz-placeholder {
+    color: #525252 !important;
+  }
+  ::-ms-placeholder {
+    color: #525252 !important;
+  }
+  ::-moz-placeholder {
+    color: #525252 !important;
+  }
+  ::placeholder {
+    color: #525252 !important;
+  }
+  input[type=text], textarea, input.form-control, textarea.form-control {
+    background-color: #F0F0F0 !important;
+    border: 0px solid transparent !important;
+    border-bottom: 1px solid #262626 !important;
+    border-radius: 0px !important;
+    box-shadow: inset 0px 0px 0px 0px transparent;
+  }
+  input[type=text]:focus, textarea:focus, input.form-control:focus, textarea.form-control:focus {
+    background-color: #F0F0F0 !important;
+    border: 0px solid transparent !important;
+    border-bottom: 1px solid #c22222 !important;
+    border-radius: 0px !important;
+    box-shadow: 0px 0px 0px 0px transparent;
+    caret-color: #c22222 !important;
+  }
   .modal-backdrop {
     z-index: 100000 !important;
   }
   .modal {
     z-index: 100001 !important;
   }
-  h1 {
-    font-size: 44px !important;
-  }
-  h2 {
-    font-size: 34px !important;
-  }
-  h3 {
-    font-size: 26px !important;
-  }
-  h4 {
-    font-size: 20px !important;
-  }
-  h5 {
-    font-size: 16px !important;
-  }
-  h6 {
-    font-size: 14px !important;
-  }
-  p, a, li, label {
-    font-size: 16px !important;
-  }
-  a, label {
-    color: #262626 !important;
-  }
-  a:hover, a:active, a:focus {
-    color: #c22222 !important;
-  }
-  .text-muted {
-    color: #525252 !important;
-  }
-  .text-primary {
-    color: #c22222 !important;
-  }
-  .text-success {
-    color: #22c55e !important;
-  }
-  .text-info {
-    color: #67e8f9 !important;
-  }
-  .text-warning {
-    color: #facc15 !important;
-  }
-  .text-danger {
-    color: #ef4444 !important;
+  .row {
+    margin-right: 0 !important;
   }
   #content {
     margin-top: 120px;
