@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.pages.app')
 @section('title', trans('noxbot.select_server'))
 @section('content')
 

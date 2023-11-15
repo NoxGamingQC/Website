@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.pages.app')
 @section('title', $name . '\'s management')
 @section('content')
 
