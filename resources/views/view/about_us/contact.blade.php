@@ -4,9 +4,9 @@
 @section('header', false)
 @section('content')
 
-<div class="row">
-    <div class="col-md-12 content-item" id="socialNetwork">
-        <div class="container">
+<div class="container section">
+    <div class="row">
+        <div class="col-md-12 section" id="socialNetwork">
             <h3><i class="fa fa-globe" aria-hidden="true"></i> {{trans('general.social_network')}}</h3>
             <br />
             <div class="row text-center">
@@ -65,9 +65,9 @@
         </div>
     </div>
 </div>
-<div class="row">
-    <div class="col-md-12 content-item bg-dark" id="businessInquiries">
-        <div class="container">
+<div class="container section">
+    <div class="row">
+        <div class="col-md-12 content-item bg-dark" id="businessInquiries">
             <h3><i class="fa fa-briefcase" aria-hidden="true"></i> {{trans('general.business_inquiries')}}</h3>
             <br />
             <p>{{trans('general.business_inquiries_text')}} <a href="mailto:jbedard@noxgamingqc.ca">jbedard@noxgamingqc.ca</a>.</p>

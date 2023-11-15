@@ -1,11 +1,11 @@
-@extends('layouts.noxgamingqc.app')
+@extends('layouts.pages.app')
 @section('title', trans('teams.teams'))
 @section('slogan', trans('teams.description'))
 @section('content')
 
-<div class="row">
-    <div class="col-md-12 content-item">
-        <div class="container">
+<div class="container section">
+    <div class="row">
+        <div class="col-md-12 content-item">
             <div class="row">
             <div class="col-md-4">
                     <div class="panel panel-primary text-center">
@@ -35,9 +35,9 @@
         </div>
     </div>
 </div>
-<div class="row">
-    <div class="col-md-12 bg-dark content-item">
-        <div class="container">
+<div class="container section">
+    <div class="row">
+        <div class="col-md-12 bg-dark content-item">
             <div class="row">
                 <div class="col-md-4 col-md-offset-4">
                     <div class="panel panel-primary text-center">
