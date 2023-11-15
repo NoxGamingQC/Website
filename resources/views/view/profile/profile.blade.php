@@ -6,22 +6,22 @@
 
 <input type="hidden" id="userId" value="{{$id}}">
 
-<div class="row">
-    <div class="container-fluid">
+<div class="container-fluid">
+    <div class="row">
         <div class="col-md-3 col-md-offset-1" style="margin-top:12%;position:relative;">
                 @if($avatarURL)
                     <img class="img img-circle {{$isCurrentUser ? 'user-status img-own-avatar' : 'img-user-avatar'}} status-{{$state}}" src="{{$avatarURL}}" alt="{{$username}}" title="{{$username}}" width="100%" />
                 @else
                     <img class="img img-circle {{$isCurrentUser ? 'user-status img-own-avatar' : 'img-user-avatar'}} status-{{$state}}" src="/img/no-avatar.jpg" alt="{{$username}}" title="{{$username}}" width="100%" />
                 @endif
-                <h1 class="raleway-font" style="font-size:24px"><b>{{$firstname}} {{$lastname}}</b></h1>
-                <h2 class="raleway-font text-muted" style="font-size:18px">{{$username}} {{$pronouns ? '· ' .  $pronouns : ''}}</h2>
-                <h3 class="raleway-font" style="font-size:16px">{{ trans('profile.' . $grade) }}</h3>
+                <h1 class="raleway-font"><b>{{$firstname}} {{$lastname}}</b></h1>
+                <h2 class="raleway-font text-muted">{{$username}} {{$pronouns ? '· ' .  $pronouns : ''}}</h2>
+                <h3 class="raleway-font">{{ trans('profile.' . $grade) }}</h3>
                 @if($badges)
                 <hr />
-                    <h4 class="raleway-font" style="font-size:14px"><b>{{trans('profile.badges')}}</b></h4>
+                    <h4 class="raleway-font"><b>{{trans('profile.badges')}}</b></h4>
                     @foreach ($badges as $badge)
-                        <img src="/img/Badges/{{$badge}}.png" alt="{{ucfirst($badge)}}" title="{{ucfirst($badge)}}" width="75px" style="padding: 7px 14px" />
+                        <img src="/img/Badges/{{$badge}}.png" alt="{{ucfirst($badge)}}" title="{{ucfirst($badge)}}" width="75px" />
                     @endforeach
                 @endif
                 @if($gender || $birthdate || $age || $discordUser || $country || $isPremium || $pointCount)
@@ -39,14 +39,14 @@
                             <img class="img img-circle" src="https://cdn.countryflags.com/thumbs/{{str_replace(' ', '-', strtolower($country))}}/flag-square-500.png" alt="{{$country}}" title="{{$country}}" width="60px"  style="padding: 7px 14px" />
                         @endif
                         @if($isPremium)
-                            <img src="/img/Badges/premium.png" alt="{{trans('profile.premium')}}" title="{{trans('profile.premium')}}" width="75px" style="padding: 7px 14px"/>
+                            <img src="/img/Badges/premium.png" alt="{{trans('profile.premium')}}" title="{{trans('profile.premium')}}" width="75px" />
                         @endif
                     @endif
                 @endif
                 @if($xbox_profile)
                     @if($xbox_profile->data->tenure_level->img)
                         <h4><b>{{ trans('profile.xbox_badge') }}</b></h4>
-                        <img src="{{$xbox_profile->data->tenure_level->img}}" alt="{{$xbox_profile->data->tenure_level->level}}" width="50px" style="margin:5px" />
+                        <img src="{{$xbox_profile->data->tenure_level->img}}" alt="{{$xbox_profile->data->tenure_level->level}}" width="50px" />
                         @if(!$xbox_profile->data->watermarks)
                             <br />
                         @endif
@@ -57,13 +57,13 @@
                             <br />
                         @endif
                         @foreach($xbox_profile->data->watermarks as $watermark_name => $watermark_img)
-                                <img src="{{$watermark_img}}" alt="{{$watermark_name}}" width="50px" style="margin:5px" />
+                                <img src="{{$watermark_img}}" alt="{{$watermark_name}}" width="50px" />
                         @endforeach
                         <br />
                     @endif
                 @endif
         </div>
-        <div class="col-md-7" style="margin-top:12%;position:relative;">
+        <div class="col-md-7">
             @if($aboutMe)
                 <div class="panel panel-primary">
                     <div class="panel-body">
