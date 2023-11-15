@@ -3023,13 +3023,6 @@
   clip: auto;
 }
 
-.btn-success:hover, .btn-success:active {
-  background-color: #F0F0F0;
-  border-color: #22c55e !important;
-  color: #262626;
-  box-shadow: 0 0 0.1rem #22c55e, 0 0 0.1rem #22c55e, 0 0 1rem #22c55e, 0 0 0.1rem #22c55e, inset 0 0 1.1rem #22c55e;
-}
-
 .row {
   margin-right: 0 !important;
 }
@@ -3173,6 +3166,22 @@ a:hover, a:active, a:focus {
 .extra-life-logo {
   background-image: url("/img/Affiliates/Extra Life.png") !important;
   background-size: cover !important;
+}
+
+.btn-success {
+  background-color: #e3e3e3 !important;
+  border: 3px solid transparent !important;
+  color: #262626 !important;
+  padding: 20px 42px !important;
+  box-shadow: 0 0 1px transparent, 0 0 15px transparent, 0 0 1px transparent, 0 0 0.1px transparent, inset 0 0 1px 3px transparent;
+}
+
+.btn-success:hover, .btn-success:active {
+  background-color: white !important;
+  border: 3px solid #22c55e !important;
+  color: #262626 !important;
+  padding: 20px 42px !important;
+  box-shadow: 0 0 1px #22c55e, 0 0 15px #22c55e, 0 0 1px #22c55e, 0 0 0.1px #22c55e, inset 0 0 1px 3px #7ee9a5;
 }
 
 .error-background {

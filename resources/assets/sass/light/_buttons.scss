@@ -1,0 +1,24 @@
+
+.btn-success {
+    background-color: darken($background-color, 5%) !important;
+    border: 3px solid transparent !important;
+    color: $text-color !important;
+    padding: 20px 42px !important;
+    box-shadow: 0 0 1px transparent,
+        0 0 15px transparent,
+        0 0 1px transparent ,
+        0 0 0.1px transparent ,
+        inset 0 0 1px 3px transparent;
+}
+
+.btn-success:hover, .btn-success:active {
+    background-color: lighten($background-color, 25%) !important;
+    border: 3px solid $brand_success !important;
+    color: $text_color !important;
+    padding: 20px 42px !important;
+    box-shadow: 0 0 1px $brand_success,
+        0 0 15px $brand_success,
+        0 0 1px $brand_success ,
+        0 0 0.1px $brand_success ,
+        inset 0 0 1px 3px lighten($brand_success, 25px);
+}
