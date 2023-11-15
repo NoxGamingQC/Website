@@ -3129,28 +3129,36 @@ p, a, li {
   font-size: 16px !important;
 }
 
+a {
+  color: #e5e5e5 !important;
+}
+
+a:hover, a:active, a:focus {
+  color: #c22222 !important;
+}
+
 .text-muted {
-  color: #525252;
+  color: #525252 !important;
 }
 
 .text-primary {
-  color: #c22222;
+  color: #c22222 !important;
 }
 
 .text-success {
-  color: #22c55e;
+  color: #22c55e !important;
 }
 
 .text-info {
-  color: #67e8f9;
+  color: #67e8f9 !important;
 }
 
 .text-warning {
-  color: #facc15;
+  color: #facc15 !important;
 }
 
 .text-danger {
-  color: #ef4444;
+  color: #ef4444 !important;
 }
 
 #content {
