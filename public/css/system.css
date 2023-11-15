@@ -2453,6 +2453,9 @@
     box-shadow: 0px 0px 0px 0px transparent;
     caret-color: #c22222 !important;
   }
+  input[type=checkbox] {
+    accent-color: #c22222;
+  }
   .modal-backdrop {
     z-index: 100000 !important;
   }
@@ -5158,6 +5161,9 @@
     border-radius: 0px !important;
     box-shadow: 0px 0px 0px 0px transparent;
     caret-color: #c22222 !important;
+  }
+  input[type=checkbox] {
+    accent-color: #c22222;
   }
   .modal-backdrop {
     z-index: 100000 !important;

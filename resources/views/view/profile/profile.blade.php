@@ -1,4 +1,4 @@
-@extends('layouts.noxgamingqc.app')
+@extends('layouts.pages.app')
 @section('title', $username . '\'s profile')
 @section('thumbnail', $avatarURL)
 @section('description', $aboutMe ? $aboutMe : '')

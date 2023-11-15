@@ -30,3 +30,7 @@ input[type=text]:focus, textarea:focus, input.form-control:focus, textarea.form-
     box-shadow: 0px 0px 0px 0px transparent;
     caret-color: $brand-primary !important;
 }
+
+input[type=checkbox] {
+    accent-color: $brand-primary;
+}
