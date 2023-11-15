@@ -1,5 +1,5 @@
-@extends('layouts.noxgamingqc.app')
-@section('name', trans('cookbook.edit_recipe'))
+@extends('layouts.pages.app')
+@section('name', trans('cookbook.add_recipe'))
 @section('content')
 
 <div class="container">
@@ -8,33 +8,6 @@
             <h2>{{trans('cookbook.ingredients')}}</h2>
             <br />
             <div id="ingredientList">
-                @foreach($recipe->ingredients as $ingredient)
-                <div class="row row-container ingredient">
-                    <div class="col-md-2">
-                        <h4 class="raleway-font"><input type="text" class="form-control text-center quantity" placeholder="0" value="{{$ingredient->quantity}}"></h4>
-                    </div>
-                    <div class="col-md-3">
-                        <select class="selectpicker" title="Type">
-                            <option class="type" value="" {{isset($ingredient->type) ? 'selected' : ''}}>N/A</option>
-                            <option class="type" value="cup" {{$ingredient->type == 'cup' ? 'selected' : ''}}>{{trans('cookbook.cup')}}</option>
-                            <option class="type" value="tablespoon" {{$ingredient->type == 'tablespoon' ? 'selected' : ''}}>{{trans('cookbook.tablespoon')}}</option>
-                            <option class="type" value="teaspoon" {{$ingredient->type == 'teaspoon' ? 'selected' : ''}}>{{trans('cookbook.teaspoon')}}</option>
-                            <option class="type" value="oz" {{$ingredient->type == 'oz' ? 'selected' : ''}}>{{trans('cookbook.oz')}}</option>
-                            <option class="type" value="pinch" {{$ingredient->type == 'pinch' ? 'selected' : ''}}>{{trans('cookbook.pinch')}}</option>
-                        </select>
-                    </div>
-                    <div class="col-md-3">
-                        <h4 class="raleway-font"><input type="text" class="form-control name-fr" placeholder="{{trans('cookbook.ingredient')}} (FR)" value="{{$ingredient->name_fr}}"></h4>
-                    </div>
-                    <div class="col-md-3">
-                        <h4 class="raleway-font"><input type="text" class="form-control name-en" placeholder="{{trans('cookbook.ingredient')}} (EN)" value="{{$ingredient->name_en}}"></h4>
-                    </div>
-                    <div class="col-md-1">
-                        <h4 class="raleway-font"><button class="remove btn btn-danger" value="ingredient" type="button"><i class="fa fa-times" aria-hidden="true"></i></button></h4>
-                    </div>
-                </div>
-                <br />
-                @endforeach
             </div>
             <button id="addIngredient" type="button" class="btn btn-success"><i class="fa fa-plus" aria-hidden="true"></i></button>
         </div>
@@ -52,27 +25,6 @@
             <h2>{{trans('cookbook.steps')}}</h2>
             <br />
             <div id="stepsList">
-                @foreach($recipe->steps as $key => $step)
-                    <div class="row row-container step">
-                        <div class="col-md-4">
-                            <textarea type="text" class="form-control description-fr" placeholder="{{trans('cookbook.add_step')}} (FR)" rows="4">{{$step->text_fr}}</textarea>
-                        </div>
-                        <div class="col-md-4">
-                            <textarea type="text" class="form-control description-en" placeholder="{{trans('cookbook.add_step')}} (EN)" rows="4">{{$step->text_en}}</textarea>
-                        </div>
-                        <div class="col-md-3">
-                            <select class="selectpicker level">
-                                <option class="level" value="normal" {{(!$step->isWarning && !$step->isDanger) ? 'selected' : ''}}>{{trans('cookbook.normal')}}</option>
-                                <option class="text-warning level" value="warning" {{$step->isWarning ? 'selected' : ''}}>{{trans('cookbook.warning')}}</option>
-                                <option class="text-danger level" value="danger" {{$step->isDanger ? 'selected' : ''}}>{{trans('cookbook.critical')}}</option>
-                            </select>
-                        </div>
-                        <div class="col-md-1">
-                            <h4 class="raleway-font"><button class="remove btn btn-danger" value="step" type="button"><i class="fa fa-times" aria-hidden="true"></i></button></h4>
-                        </div>
-                    </div>
-                    <br />
-                @endforeach
             </div>
             <button id="addStep" type="button" class="btn btn-success"><i class="fa fa-plus" aria-hidden="true"></i></button>
         </div>
@@ -184,7 +136,7 @@
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
-            url: '/recipe/edit',
+            url: '/recipe/add',
             method: 'POST',
             data: {
                 'name_fr': $('#recipeNameFR').val(),

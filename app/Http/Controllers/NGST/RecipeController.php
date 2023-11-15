@@ -19,7 +19,7 @@ class RecipeController extends Controller
             if(Auth::user()->has_premium) {
                 $categories = Categories::where('is_shown', true)->orderBy('name_' . (app()->getLocale() == 'fr-ca' ? 'fr' : 'en'))->get();
 
-                return view('ngst.kiosk.cookbook.cookbook')->with([
+                return view('view.premium.cookbook.cookbook')->with([
                     'kiosk' => 'true',
                     'categories' => $categories,
                     'recipe' => true,
@@ -38,7 +38,7 @@ class RecipeController extends Controller
             $isRealKey = KioskKey::where('key', $request->kiosk_key)->first();
             if($isRealKey) {
                 $categories = Categories::where('is_shown', true)->orderBy('name_' . (app()->getLocale() == 'fr-ca' ? 'fr' : 'en'))->get();
-                return view('ngst.kiosk.cookbook.cookbook')->with([
+                return view('view.premium.cookbook.cookbook')->with([
                     'kiosk' => 'true',
                     'categories' => $categories,
                     'recipe' => true,
@@ -66,7 +66,7 @@ class RecipeController extends Controller
                 $category = Categories::findOrFail($id);
                 $recipes = Recipe::where('category_id', $id)->orderBy('name_' . (app()->getLocale() == 'fr-ca' ? 'fr' : 'en'))->get();
 
-                return view('ngst.kiosk.cookbook.categories')->with([
+                return view('view.premium.cookbook.categories')->with([
                     'kiosk' => 'true',
                     'category' => $category,
                     'recipes' => $recipes,
@@ -87,7 +87,7 @@ class RecipeController extends Controller
                 $category = Categories::findOrFail($id);
                 $recipes = Recipe::where('category_id', $id)->orderBy('name_' . (app()->getLocale() == 'fr-ca' ? 'fr' : 'en'))->get();
         
-                return view('ngst.kiosk.cookbook.categories')->with([
+                return view('view.premium.cookbook.categories')->with([
                     'kiosk' => 'true',
                     'category' => $category,
                     'recipes' => $recipes,
@@ -118,7 +118,7 @@ class RecipeController extends Controller
                 $recipe->ingredients = $recipe->getIngredients();
                 $recipe->steps = $recipe->getSteps();
 
-                return view('ngst.kiosk.cookbook.recipe')->with([
+                return view('view.premium.cookbook.recipe')->with([
                     'kiosk' => 'true',
                     'isRecipe' => true,
                     'recipe' => $recipe,
@@ -139,7 +139,7 @@ class RecipeController extends Controller
                 $recipe->ingredients = $recipe->getIngredients();
                 $recipe->steps = $recipe->getSteps();
 
-                return view('ngst.kiosk.cookbook.recipe')->with([
+                return view('view.premium.cookbook.recipe')->with([
                     'kiosk' => 'true',
                     'isRecipe' => true,
                     'recipe' => $recipe,
@@ -163,7 +163,7 @@ class RecipeController extends Controller
         if (Auth::user()) {
             if (Auth::user()->isAdmin || Auth::user()->isMod || Auth::user()->isDev) {
                 $categories = Categories::all();
-                return view('ngst.kiosk.cookbook.add_recipe')->with([
+                return view('view.premium.cookbook.add_recipe')->with([
                     'kiosk' => 'true',
                     'categories' => $categories,
                     'isRecipe' => true,
@@ -184,7 +184,7 @@ class RecipeController extends Controller
                 $recipe->category = $recipe->getCategory();
                 $recipe->ingredients = $recipe->getIngredients();
                 $recipe->steps = $recipe->getSteps();
-                return view('ngst.kiosk.cookbook.edit_recipe')->with([
+                return view('view.premium.cookbook.edit_recipe')->with([
                     'kiosk' => 'true',
                     'categories' => $categories,
                     'isRecipe' => true,

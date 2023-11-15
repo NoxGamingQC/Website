@@ -21,30 +21,32 @@
                     <ul class="dropdown-menu">
                         <li>
                             <a href="/{{app()->getLocale()}}/about_us/contact"><i class="fa fa-address-book " aria-hidden="true"></i> {{trans('general.contact_us')}}</a>
-                            <a href="/{{app()->getLocale()}}/about_us/games"><i class="fa fa-gamepad" aria-hidden="true"></i> {{ trans('general.games_list') }}</a>
+                            <!--<a href="/{app()->getLocale()}}/about_us/games"><i class="fa fa-gamepad" aria-hidden="true"></i> { trans('general.games_list') }}</a>-->
                             <a href="/{{app()->getLocale()}}/about_us/partners" class=""><i class="fa fa-handshake-o" aria-hidden="true"></i> {{ trans('general.partners') }}</a>
                             <a href="/{{app()->getLocale()}}/about_us/projects"><i class="fa fa-heart" aria-hidden="true"></i> {{ trans('general.projects') }}</a>
                             <a href="/{{app()->getLocale()}}/about_us/teams" class=""><i class="fa fa-users" aria-hidden="true"></i> {{ trans('general.teams') }}</a>
                             <a href="/{{app()->getLocale()}}/about_us/twitch"><i class="fa fa-twitch" aria-hidden="true"></i> {{ trans('general.twitch') }}</a>
-                            <a href="/{{app()->getLocale()}}/about_us/youtube"><i class="fa fa-youtube-play" aria-hidden="true"></i> {{ trans('general.youtube') }}</a>
+                            <!--<a href="/{app()->getLocale()}}/about_us/youtube"><i class="fa fa-youtube-play" aria-hidden="true"></i> { trans('general.youtube') }}</a>-->
                         
                         </li>
                     </ul>
                 </li>
-                @auth
-                    @if(Auth::user()->has_premium)
-                        <li id="premium" class="dropdown">
-                            <a href="#" class="nav-item dropdown-toggle nav" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
-                                <i class="fa fa-star" aria-hidden="true"></i> {{trans('general.premium')}} <span class="caret"></span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="/{{app()->getLocale()}}/cookbook" class=""><i class="fa fa-book" aria-hidden="true"></i> {{ trans('cookbook.title') }}</a>
-                                </li>
-                            </ul>
-                        </li>
-                    @endif
-                @endauth
+                @if(true == false)
+                    @auth
+                        @if(Auth::user()->has_premium)
+                            <li id="premium" class="dropdown">
+                                <a href="#" class="nav-item dropdown-toggle nav" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+                                    <i class="fa fa-star" aria-hidden="true"></i> {{trans('general.premium')}} <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="/{{app()->getLocale()}}/cookbook" class=""><i class="fa fa-book" aria-hidden="true"></i> {{ trans('cookbook.title') }}</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        @endif
+                    @endauth
+                @endif
                 @auth
                     @if(Auth::user()->hasDiscordServer() || Auth::user()->is_management)
                         <li id="noxbot" class="dropdown">
