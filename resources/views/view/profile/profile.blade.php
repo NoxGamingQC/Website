@@ -8,7 +8,7 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-3 col-md-offset-1" style="margin-top:12%;position:relative;">
+        <div class="col-md-3 col-md-offset-1">
                 @if($avatarURL)
                     <img class="img img-circle {{$isCurrentUser ? 'user-status img-own-avatar' : 'img-user-avatar'}} status-{{$state}}" src="{{$avatarURL}}" alt="{{$username}}" title="{{$username}}" width="100%" />
                 @else
@@ -65,82 +65,89 @@
         </div>
         <div class="col-md-7">
             @if($aboutMe)
-                <div class="panel panel-primary">
-                    <div class="panel-body">
-                        {!! $aboutMe !!}
-                    </div>
+                <div class="section markdown">
+                    {!! $aboutMe !!}
                 </div>
             @endif
             @if($xbox_profile)
-                <div class="row">
-                <div class="col-md-12">
-                    <h3>Xbox</h3>
-                </div>
-                <div class="col-md-6">
-                    <ul>
-                        <li>ID: {{$xbox_profile->data->id}}</li>
-                        <li>{{trans('profile.username')}}: {{$xbox_profile->data->username}}</li>
-                        <li>{{trans('profile.gamerscore')}}: {{$xbox_profile->data->gamerscore}}</li>
-                        <li>{{trans('profile.xbox_one_rep')}}: {{$xbox_profile->data->xbox_one_rep}}</li>
-                        <li>{{trans('profile.account_tier')}}: {{$xbox_profile->data->account_tier}}</li>
-                        @if($xbox_profile->data->tenure_level->img)
-                            <br />
-                            <img src="{{$xbox_profile->data->tenure_level->img}}" alt="{{$xbox_profile->data->tenure_level->level}}" width="50px" style="margin:5px" />
-                            @if(!$xbox_profile->data->watermarks)
-                                <br />
-                            @endif
-                        @endif
-                        @if($xbox_profile->data->watermarks)
-                            @if(!$xbox_profile->data->tenure_level)
-                                <br />
-                            @endif
-                            @foreach($xbox_profile->data->watermarks as $watermark_name => $watermark_img)
-                                    <img src="{{$watermark_img}}" alt="{{$watermark_name}}" width="50px" style="margin:5px" />
-                            @endforeach
-                            <br />
-                        @endif
-                    </ul>
+                <div class="section">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3>Xbox</h3>
+                        </div>
+                        <div class="col-md-6">
+                            <ul>
+                                <li>ID: {{$xbox_profile->data->id}}</li>
+                                <li>{{trans('profile.username')}}: {{$xbox_profile->data->username}}</li>
+                                <li>{{trans('profile.gamerscore')}}: {{$xbox_profile->data->gamerscore}}</li>
+                                <li>{{trans('profile.xbox_one_rep')}}: {{$xbox_profile->data->xbox_one_rep}}</li>
+                                <li>{{trans('profile.account_tier')}}: {{$xbox_profile->data->account_tier}}</li>
+                                @if($xbox_profile->data->tenure_level->img)
+                                    <br />
+                                    <img src="{{$xbox_profile->data->tenure_level->img}}" alt="{{$xbox_profile->data->tenure_level->level}}" width="50px" style="margin:5px" />
+                                    @if(!$xbox_profile->data->watermarks)
+                                        <br />
+                                    @endif
+                                @endif
+                                @if($xbox_profile->data->watermarks)
+                                    @if(!$xbox_profile->data->tenure_level)
+                                        <br />
+                                    @endif
+                                    @foreach($xbox_profile->data->watermarks as $watermark_name => $watermark_img)
+                                            <img src="{{$watermark_img}}" alt="{{$watermark_name}}" width="50px" style="margin:5px" />
+                                    @endforeach
+                                    <br />
+                                @endif
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             @endif
             @if($minecraft)
-            <div class="row">
-                <div class="col-md-12">
-                    <h3>Minecraft</h3>
+                <div class="section">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3>Minecraft</h3>
+                        </div>
+                        <div class="col-md-6">
+                            <ul>
+                                <li>{{trans('general.username')}}: {{$minecraft['name']}}</li>
+                                <li>UUID: {{$minecraft['uuid']}}</li>
+                                <li>{{trans('profile.shorten_uuid')}}: {{$minecraft['shorten_uuid']}}</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            @if(!empty($minecraft['avatar']))
+                                <img src="{{$minecraft['avatar']}}" height="75" alt="avatar" title="avatar" style="margin-right:5px">
+                            @endif
+                            @if(!empty($minecraft['cape']))
+                            <img src="{{$minecraft['cape']}}" height="75" alt="cape" title="cape" style="margin-right:5px">
+                            @endif
+                            @if(!empty($minecraft['full_skin']))
+                            <img src="{{$minecraft['full_skin']}}" height="75" alt="full skin" title="full skin" style="margin-right:5px">
+                            @endif
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    <ul>
-                        <li>{{trans('general.username')}}: {{$minecraft['name']}}</li>
-                        <li>UUID: {{$minecraft['uuid']}}</li>
-                        <li>{{trans('profile.shorten_uuid')}}: {{$minecraft['shorten_uuid']}}</li>
-                    </ul>
-                </div>
-                <div class="col-md-6">
-                    @if(!empty($minecraft['avatar']))
-                        <img src="{{$minecraft['avatar']}}" height="75" alt="avatar" title="avatar" style="margin-right:5px">
-                    @endif
-                    @if(!empty($minecraft['cape']))
-                    <img src="{{$minecraft['cape']}}" height="75" alt="cape" title="cape" style="margin-right:5px">
-                    @endif
-                    @if(!empty($minecraft['full_skin']))
-                    <img src="{{$minecraft['full_skin']}}" height="75" alt="full skin" title="full skin" style="margin-right:5px">
-                    @endif
-                </div>
-            </div>
             @endif
             @if($points)
-                <h3>{{ trans('profile.points_log') }}</h3>
-                <br />
-                @if($points)
-                    <ul>
-                        @foreach ($points as $key => $point)
-                            <li>{{$point->quantity . ' ' . trans('profile.points')}} - {{$point->comment}}</li>
-                        @endforeach
-                    </ul>
-                @else
-                <p>{{trans('profile.no_points')}}</p>
-                @endif
+                <div class="section">
+                    <div class="row">
+                        <h3>{{ trans('profile.points_log') }}</h3>
+                        <br />
+                        @if($points)
+                            <ul>
+                                @foreach ($points as $key => $point)
+                                    <li>{{$point->quantity . ' ' . trans('profile.points')}} - {{$point->comment}}</li>
+                                @endforeach
+                            </ul>
+                        @else
+                            <p>{{trans('profile.no_points')}}</p>
+                        @endif
+                    </div>
+                </div>
             @endif
-        </div>
+            </div>
         <div class="col-md-1"></div>
     </div>
 </div>

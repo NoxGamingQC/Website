@@ -32,6 +32,10 @@ p, a, li, label {
     font-size: 16px !important;
 }
 
+p, li {
+    color: $text-color !important;
+}
+
 a, label {
     color: $text-color !important;
 }

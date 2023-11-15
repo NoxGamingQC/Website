@@ -3057,6 +3057,10 @@ p, a, li, label {
   font-size: 16px !important;
 }
 
+p, li {
+  color: #e5e5e5 !important;
+}
+
 a, label {
   color: #e5e5e5 !important;
 }
@@ -3209,6 +3213,14 @@ input[type=checkbox] {
 
 .row {
   margin-right: 0 !important;
+}
+
+.markdown {
+  background-color: #101010;
+  color: #e5e5e5;
+  border: 1px solid #e5e5e5;
+  border-radius: 5%;
+  padding: 15px !important;
 }
 
 #content {

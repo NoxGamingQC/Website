@@ -2342,6 +2342,9 @@
   p, a, li, label {
     font-size: 16px !important;
   }
+  p, li {
+    color: #e5e5e5 !important;
+  }
   a, label {
     color: #e5e5e5 !important;
   }
@@ -2464,6 +2467,13 @@
   }
   .row {
     margin-right: 0 !important;
+  }
+  .markdown {
+    background-color: #101010;
+    color: #e5e5e5;
+    border: 1px solid #e5e5e5;
+    border-radius: 5%;
+    padding: 15px !important;
   }
   #content {
     margin-top: 120px;
@@ -5051,6 +5061,9 @@
   p, a, li, label {
     font-size: 16px !important;
   }
+  p, li {
+    color: #262626 !important;
+  }
   a, label {
     color: #262626 !important;
   }
@@ -5173,6 +5186,13 @@
   }
   .row {
     margin-right: 0 !important;
+  }
+  .markdown {
+    background-color: #F0F0F0;
+    color: #262626;
+    border: 1px solid #262626;
+    border-radius: 5%;
+    padding: 15px !important;
   }
   #content {
     margin-top: 120px;
