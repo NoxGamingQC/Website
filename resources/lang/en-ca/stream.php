@@ -3,7 +3,7 @@
 return [
     'stream' => "Stream",
     'stream_description_title' => "NoxGamingQC's Twitch Stream",
-    'stream_description_text' => "Hey! I'm NoxGamingQC. But call me Nox it's shorter. Me an my community streams a variety of games on Twitch. You can join us on stream at <a href=\"twitch.tv/noxgamingqc\">twitch.tv/noxgamingqc</a>",
+    'stream_description_text' => "Hey! I'm NoxGamingQC. But call me Nox it's shorter. Me an my community streams a variety of games on Twitch. You can join us on stream at <a href=\"https://twitch.tv/noxgamingqc\">twitch.tv/noxgamingqc</a>",
     'twitch_goal' => "Twitch goal",
     'first_stream' => "First stream",
     'twitch_affiliate' => "Twitch affiliate",

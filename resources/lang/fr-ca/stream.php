@@ -3,7 +3,7 @@
 return [
     'stream' => "Diffusions",
     'stream_description_title' => "Diffusion Twitch de NoxGamingQC",
-    'stream_description_text' => "Hey! Je suis NoxGamingQC, mais appelle moi, Nox, c'est plus court. Moi et ma communauté diffusons une variété de jeux en direct sur Twitch. Vous pouvez vous joindre à nous au <a href=\"twitch.tv/noxgamingqc\">twitch.tv/noxgamingqc</a>",
+    'stream_description_text' => "Hey! Je suis NoxGamingQC, mais appelle moi, Nox, c'est plus court. Moi et ma communauté diffusons une variété de jeux en direct sur Twitch. Vous pouvez vous joindre à nous au <a href=\"https://twitch.tv/noxgamingqc\">twitch.tv/noxgamingqc</a>",
     'twitch_goal' => "But Twitch",
     'first_stream' => "Première diffusion",
     'twitch_affiliate' => "Twitch affiliate",
