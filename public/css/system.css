@@ -2324,6 +2324,50 @@
   .row {
     margin-right: 0 !important;
   }
+  .navbar-default {
+    background-color: #101010 !important;
+    border: 0px solid transparent !important;
+    border-bottom: 1px solid #e5e5e5 !important;
+  }
+  .navbar-header {
+    padding: 20px 25px !important;
+  }
+  .nav > li > a {
+    padding: 35px 25px !important;
+    color: #e5e5e5 !important;
+  }
+  .nav > li > a:hover, .nav > li > a:active, .nav > li > a:focus, .nav > li > a:target {
+    background-color: #c22222 !important;
+    color: #FFFFFF !important;
+  }
+  .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+    background-color: #c22222 !important;
+    color: #FFFFFF !important;
+  }
+  .dropdown-menu {
+    background-color: #101010 !important;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    border: 1px solid #e5e5e5 !important;
+    border-top: 0px solid transparent !important;
+  }
+  .dropdown-menu > li > a {
+    padding: 15px 25px !important;
+    color: #e5e5e5 !important;
+  }
+  .dropdown-menu > li > a:hover, .dropdown-menu > li > a:active, .dropdown-menu > li > a:focus, .dropdown-menu > li > a:target {
+    background-color: #c22222 !important;
+    color: #FFFFFF !important;
+  }
+  .modal-backdrop {
+    z-index: 100000 !important;
+  }
+  .modal {
+    z-index: 100001 !important;
+  }
+  #content {
+    margin-top: 120px;
+  }
   .extra-life-logo {
     background-image: url("/img/Affiliates/Extra Life.png") !important;
     background-size: cover !important;
@@ -4679,6 +4723,50 @@
   }
   .row {
     margin-right: 0 !important;
+  }
+  .navbar-default {
+    background-color: #F0F0F0 !important;
+    border: 0px solid transparent !important;
+    border-bottom: 1px solid #262626 !important;
+  }
+  .navbar-header {
+    padding: 20px 25px !important;
+  }
+  .nav > li > a {
+    padding: 35px 25px !important;
+    color: #262626 !important;
+  }
+  .nav > li > a:hover, .nav > li > a:active, .nav > li > a:focus, .nav > li > a:target {
+    background-color: #c22222 !important;
+    color: #FFFFFF !important;
+  }
+  .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+    background-color: #c22222 !important;
+    color: #FFFFFF !important;
+  }
+  .dropdown-menu {
+    background-color: #F0F0F0 !important;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    border: 1px solid #262626 !important;
+    border-top: 0px solid transparent !important;
+  }
+  .dropdown-menu > li > a {
+    padding: 15px 25px !important;
+    color: #262626 !important;
+  }
+  .dropdown-menu > li > a:hover, .dropdown-menu > li > a:active, .dropdown-menu > li > a:focus, .dropdown-menu > li > a:target {
+    background-color: #c22222 !important;
+    color: #FFFFFF !important;
+  }
+  .modal-backdrop {
+    z-index: 100000 !important;
+  }
+  .modal {
+    z-index: 100001 !important;
+  }
+  #content {
+    margin-top: 120px;
   }
   .extra-life-logo {
     background-image: url("/img/Affiliates/Extra Life.png") !important;
