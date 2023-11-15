@@ -17,6 +17,7 @@ class UserProfileController extends Controller
 {
     public function index($locale, $id)
     {
+        abort(503);
         if(PageLists::where('slug', 'profile_show')->first()->inMaintenance && env('APP_ENV') == 'production') {
             abort(503);
         }
