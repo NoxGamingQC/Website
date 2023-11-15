@@ -3205,6 +3205,23 @@ input[type=text]:focus, textarea:focus, input.form-control:focus, textarea.form-
   background-size: cover !important;
 }
 
+.btn-circle {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 100% !important;
+}
+
+.btn-small {
+  height: 45px !important;
+  width: 45px !important;
+}
+
+.btn-lg {
+  height: 175px !important;
+  width: 175px !important;
+}
+
 .btn-default {
   background-color: #080808 !important;
   border: 3px solid transparent !important;
@@ -3357,16 +3374,74 @@ input[type=text]:focus, textarea:focus, input.form-control:focus, textarea.form-
   box-shadow: 0 0 1px #E1306C, 0 0 10px #E1306C, 0 0 1px #E1306C, 0 0 0.1px #E1306C, inset 0 0 1px 1px #7f1237;
 }
 
-.btn-circle {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  border-radius: 100% !important;
+.btn-steam {
+  background-color: #080808 !important;
+  border: 1px solid transparent !important;
+  color: #e5e5e5 !important;
+  box-shadow: 0 0 1px transparent, 0 0 10px transparent, 0 0 1px transparent, 0 0 0.1px transparent, inset 0 0 1px 1px transparent;
 }
 
-.btn-small {
-  height: 45px !important;
-  width: 45px !important;
+.btn-steam:hover, .btn-steam:active {
+  background-color: black !important;
+  border: 1px solid #2A475E !important;
+  color: #e5e5e5 !important;
+  box-shadow: 0 0 1px #2A475E, 0 0 10px #2A475E, 0 0 1px #2A475E, 0 0 0.1px #2A475E, inset 0 0 1px 1px #030406;
+}
+
+.btn-github {
+  background-color: #080808 !important;
+  border: 1px solid transparent !important;
+  color: #e5e5e5 !important;
+  box-shadow: 0 0 1px transparent, 0 0 10px transparent, 0 0 1px transparent, 0 0 0.1px transparent, inset 0 0 1px 1px transparent;
+}
+
+.btn-github:hover, .btn-github:active {
+  background-color: black !important;
+  border: 1px solid #e5e5e5 !important;
+  color: #e5e5e5 !important;
+  box-shadow: 0 0 1px #e5e5e5, 0 0 10px #e5e5e5, 0 0 1px #e5e5e5, 0 0 0.1px #e5e5e5, inset 0 0 1px 1px #a5a5a5;
+}
+
+.btn-snapchat {
+  background-color: #080808 !important;
+  border: 1px solid transparent !important;
+  color: #e5e5e5 !important;
+  box-shadow: 0 0 1px transparent, 0 0 10px transparent, 0 0 1px transparent, 0 0 0.1px transparent, inset 0 0 1px 1px transparent;
+}
+
+.btn-snapchat:hover, .btn-snapchat:active {
+  background-color: black !important;
+  border: 1px solid #FFFC00 !important;
+  color: #e5e5e5 !important;
+  box-shadow: 0 0 1px #FFFC00, 0 0 10px #FFFC00, 0 0 1px #FFFC00, 0 0 0.1px #FFFC00, inset 0 0 1px 1px #807e00;
+}
+
+.btn-spotify {
+  background-color: #080808 !important;
+  border: 1px solid transparent !important;
+  color: #e5e5e5 !important;
+  box-shadow: 0 0 1px transparent, 0 0 10px transparent, 0 0 1px transparent, 0 0 0.1px transparent, inset 0 0 1px 1px transparent;
+}
+
+.btn-spotify:hover, .btn-spotify:active {
+  background-color: black !important;
+  border: 1px solid #1DB954 !important;
+  color: #e5e5e5 !important;
+  box-shadow: 0 0 1px #1DB954, 0 0 10px #1DB954, 0 0 1px #1DB954, 0 0 0.1px #1DB954, inset 0 0 1px 1px #0c4b22;
+}
+
+.btn-reddit {
+  background-color: #080808 !important;
+  border: 1px solid transparent !important;
+  color: #e5e5e5 !important;
+  box-shadow: 0 0 1px transparent, 0 0 10px transparent, 0 0 1px transparent, 0 0 0.1px transparent, inset 0 0 1px 1px transparent;
+}
+
+.btn-reddit:hover, .btn-reddit:active {
+  background-color: black !important;
+  border: 1px solid #FF5700 !important;
+  color: #e5e5e5 !important;
+  box-shadow: 0 0 1px #FF5700, 0 0 10px #FF5700, 0 0 1px #FF5700, 0 0 0.1px #FF5700, inset 0 0 1px 1px #802c00;
 }
 
 .error-background {
