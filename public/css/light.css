@@ -3118,11 +3118,11 @@ h6 {
   font-size: 14px !important;
 }
 
-p, a, li {
+p, a, li, label {
   font-size: 16px !important;
 }
 
-a {
+a, label {
   color: #262626 !important;
 }
 
@@ -3168,8 +3168,40 @@ a:hover, a:active, a:focus {
   background-size: cover !important;
 }
 
+.btn-default {
+  background-color: #e8e8e8 !important;
+  border: 3px solid transparent !important;
+  color: #262626 !important;
+  padding: 20px 42px !important;
+  box-shadow: 0 0 1px transparent, 0 0 15px transparent, 0 0 1px transparent, 0 0 0.1px transparent, inset 0 0 1px 3px transparent;
+}
+
+.btn-default:hover, .btn-default:active {
+  background-color: #fdfdfd !important;
+  border: 3px solid #262626 !important;
+  color: #262626 !important;
+  padding: 20px 42px !important;
+  box-shadow: 0 0 1px #262626, 0 0 15px #262626, 0 0 1px #262626, 0 0 0.1px #262626, inset 0 0 1px 3px #666666;
+}
+
+.btn-primary {
+  background-color: #e8e8e8 !important;
+  border: 3px solid transparent !important;
+  color: #262626 !important;
+  padding: 20px 42px !important;
+  box-shadow: 0 0 1px transparent, 0 0 15px transparent, 0 0 1px transparent, 0 0 0.1px transparent, inset 0 0 1px 3px transparent;
+}
+
+.btn-primary:hover, .btn-primary:active {
+  background-color: #fdfdfd !important;
+  border: 3px solid #c22222 !important;
+  color: #262626 !important;
+  padding: 20px 42px !important;
+  box-shadow: 0 0 1px #c22222, 0 0 15px #c22222, 0 0 1px #c22222, 0 0 0.1px #c22222, inset 0 0 1px 3px #e87c7c;
+}
+
 .btn-success {
-  background-color: #e3e3e3 !important;
+  background-color: #e8e8e8 !important;
   border: 3px solid transparent !important;
   color: #262626 !important;
   padding: 20px 42px !important;
@@ -3177,11 +3209,127 @@ a:hover, a:active, a:focus {
 }
 
 .btn-success:hover, .btn-success:active {
-  background-color: white !important;
+  background-color: #fdfdfd !important;
   border: 3px solid #22c55e !important;
   color: #262626 !important;
   padding: 20px 42px !important;
   box-shadow: 0 0 1px #22c55e, 0 0 15px #22c55e, 0 0 1px #22c55e, 0 0 0.1px #22c55e, inset 0 0 1px 3px #7ee9a5;
+}
+
+.btn-info {
+  background-color: #e8e8e8 !important;
+  border: 3px solid transparent !important;
+  color: #262626 !important;
+  padding: 20px 42px !important;
+  box-shadow: 0 0 1px transparent, 0 0 15px transparent, 0 0 1px transparent, 0 0 0.1px transparent, inset 0 0 1px 3px transparent;
+}
+
+.btn-info:hover, .btn-info:active {
+  background-color: #fdfdfd !important;
+  border: 3px solid #67e8f9 !important;
+  color: #262626 !important;
+  padding: 20px 42px !important;
+  box-shadow: 0 0 1px #67e8f9, 0 0 15px #67e8f9, 0 0 1px #67e8f9, 0 0 0.1px #67e8f9, inset 0 0 1px 3px #e2fbfe;
+}
+
+.btn-warning {
+  background-color: #e8e8e8 !important;
+  border: 3px solid transparent !important;
+  color: #262626 !important;
+  padding: 20px 42px !important;
+  box-shadow: 0 0 1px transparent, 0 0 15px transparent, 0 0 1px transparent, 0 0 0.1px transparent, inset 0 0 1px 3px transparent;
+}
+
+.btn-warning:hover, .btn-warning:active {
+  background-color: #fdfdfd !important;
+  border: 3px solid #facc15 !important;
+  color: #262626 !important;
+  padding: 20px 42px !important;
+  box-shadow: 0 0 1px #facc15, 0 0 15px #facc15, 0 0 1px #facc15, 0 0 0.1px #facc15, inset 0 0 1px 3px #fde792;
+}
+
+.btn-danger {
+  background-color: #e8e8e8 !important;
+  border: 3px solid transparent !important;
+  color: #262626 !important;
+  padding: 20px 42px !important;
+  box-shadow: 0 0 1px transparent, 0 0 15px transparent, 0 0 1px transparent, 0 0 0.1px transparent, inset 0 0 1px 3px transparent;
+}
+
+.btn-danger:hover, .btn-danger:active {
+  background-color: #fdfdfd !important;
+  border: 3px solid #ef4444 !important;
+  color: #262626 !important;
+  padding: 20px 42px !important;
+  box-shadow: 0 0 1px #ef4444, 0 0 15px #ef4444, 0 0 1px #ef4444, 0 0 0.1px #ef4444, inset 0 0 1px 3px #f9b9b9;
+}
+
+.btn-twitch {
+  background-color: #e8e8e8 !important;
+  border: 1px solid transparent !important;
+  color: #262626 !important;
+  box-shadow: 0 0 1px transparent, 0 0 10px transparent, 0 0 1px transparent, 0 0 0.1px transparent, inset 0 0 1px 1px transparent;
+}
+
+.btn-twitch:hover, .btn-twitch:active {
+  background-color: #fdfdfd !important;
+  border: 1px solid #6441A5 !important;
+  color: #262626 !important;
+  box-shadow: 0 0 1px #6441A5, 0 0 10px #6441A5, 0 0 1px #6441A5, 0 0 0.1px #6441A5, inset 0 0 1px 1px #2d1d4a;
+}
+
+.btn-youtube {
+  background-color: #e8e8e8 !important;
+  border: 1px solid transparent !important;
+  color: #262626 !important;
+  box-shadow: 0 0 1px transparent, 0 0 10px transparent, 0 0 1px transparent, 0 0 0.1px transparent, inset 0 0 1px 1px transparent;
+}
+
+.btn-youtube:hover, .btn-youtube:active {
+  background-color: #fdfdfd !important;
+  border: 1px solid #FF0000 !important;
+  color: #262626 !important;
+  box-shadow: 0 0 1px #FF0000, 0 0 10px #FF0000, 0 0 1px #FF0000, 0 0 0.1px #FF0000, inset 0 0 1px 1px maroon;
+}
+
+.btn-twitter {
+  background-color: #e8e8e8 !important;
+  border: 1px solid transparent !important;
+  color: #262626 !important;
+  box-shadow: 0 0 1px transparent, 0 0 10px transparent, 0 0 1px transparent, 0 0 0.1px transparent, inset 0 0 1px 1px transparent;
+}
+
+.btn-twitter:hover, .btn-twitter:active {
+  background-color: #fdfdfd !important;
+  border: 1px solid #1DA1F2 !important;
+  color: #262626 !important;
+  box-shadow: 0 0 1px #1DA1F2, 0 0 10px #1DA1F2, 0 0 1px #1DA1F2, 0 0 0.1px #1DA1F2, inset 0 0 1px 1px #085788;
+}
+
+.btn-instagram {
+  background-color: #e8e8e8 !important;
+  border: 1px solid transparent !important;
+  color: #262626 !important;
+  box-shadow: 0 0 1px transparent, 0 0 10px transparent, 0 0 1px transparent, 0 0 0.1px transparent, inset 0 0 1px 1px transparent;
+}
+
+.btn-instagram:hover, .btn-instagram:active {
+  background-color: #fdfdfd !important;
+  border: 1px solid #E1306C !important;
+  color: #262626 !important;
+  box-shadow: 0 0 1px #E1306C, 0 0 10px #E1306C, 0 0 1px #E1306C, 0 0 0.1px #E1306C, inset 0 0 1px 1px #7f1237;
+}
+
+.btn-circle {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 100% !important;
+}
+
+.btn-small {
+  height: 45px !important;
+  width: 45px !important;
 }
 
 .error-background {
