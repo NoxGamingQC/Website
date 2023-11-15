@@ -1,4 +1,4 @@
-@extends('layouts.noxgamingqc.app')
+@extends('layouts.pages.app')
 @section('title', trans('general.register'))
 @section('header', false)
 @section('content')
@@ -11,7 +11,7 @@
                     <br />
                     <br />
                     <div class="col-md-3 text-center">
-                        <img class="img" src="/img/NoxGamingQC.png" width="40%" />
+                        <img class="img" src="/img/logo.svg" width="40%" />
                         <h4 class="raleway-font">{{trans('auth.welcome')}}</h4>
                         <p class="raleway-font">{{trans('auth.welcome_info')}}</p>
                     </div>

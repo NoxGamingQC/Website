@@ -1,4 +1,4 @@
-@extends('layouts.noxgamingqc.app')
+@extends('layouts.pages.app')
 @section('title', trans('general.mail'))
 @section('content')
 
