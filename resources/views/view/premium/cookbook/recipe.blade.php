@@ -1,4 +1,4 @@
-@extends('layouts.noxgamingqc.app')
+@extends('layouts.pages.app')
 @section('kiosk-button')
 @auth
     @if(Auth::user()->isAdmin || Auth::user()->isModerator || Auth::user()->isDev)

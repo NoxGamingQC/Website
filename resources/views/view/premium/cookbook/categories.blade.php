@@ -1,4 +1,4 @@
-@extends('layouts.noxgamingqc.app')
+@extends('layouts.pages.app')
 @section('content')
 
 @if(app()->getLocale() === 'fr-ca')

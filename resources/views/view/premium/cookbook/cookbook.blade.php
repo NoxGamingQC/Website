@@ -1,4 +1,4 @@
-@extends('layouts.noxgamingqc.app')
+@extends('layouts.pages.app')
 @section('content')
 @section('name', trans('cookbook.title'))
 @section('slogan', trans('general.hi') . ', ' . $name)
