@@ -47,3 +47,21 @@
     background-color: $brand-primary !important;
     color: $text-on-primary !important;
 }
+
+//Navigation bar toggle
+.navbar-toggle {
+    background-color: $background-color !important;
+    border: 1px solid $text-color !important;
+    .icon-bar {
+        background-color: $text-color !important;
+    }
+}
+
+//Navigation bar toggle on action
+.navbar-toggle:hover, .navbar-toggle:active, .navbar-toggle:focus, .navbar-toggle:not(.collapsed) {
+    background-color: $brand-primary !important;
+    border: 1px solid $text-on-primary !important;
+    .icon-bar {
+        background-color: $text-on-primary !important;
+    }
+}

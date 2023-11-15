@@ -3077,6 +3077,22 @@
   color: #FFFFFF !important;
 }
 
+.navbar-toggle {
+  background-color: #101010 !important;
+  border: 1px solid #e5e5e5 !important;
+}
+.navbar-toggle .icon-bar {
+  background-color: #e5e5e5 !important;
+}
+
+.navbar-toggle:hover, .navbar-toggle:active, .navbar-toggle:focus, .navbar-toggle:not(.collapsed) {
+  background-color: #c22222 !important;
+  border: 1px solid #FFFFFF !important;
+}
+.navbar-toggle:hover .icon-bar, .navbar-toggle:active .icon-bar, .navbar-toggle:focus .icon-bar, .navbar-toggle:not(.collapsed) .icon-bar {
+  background-color: #FFFFFF !important;
+}
+
 .modal-backdrop {
   z-index: 100000 !important;
 }
