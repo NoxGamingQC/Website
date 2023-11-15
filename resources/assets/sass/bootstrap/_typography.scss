@@ -1,0 +1,51 @@
+h1 {
+    font-size: 44px !important;
+}
+
+h2 {
+    font-size: 34px !important;
+}
+
+h3 {
+    font-size: 26px !important;
+}
+
+h4 {
+    font-size: 20px !important;
+}
+
+h5 {
+    font-size: 16px !important;
+}
+
+h6 {
+    font-size: 14px !important;
+}
+
+p, a, li {
+    font-size: 16px !important;
+}
+
+.text-muted {
+    color: $brand-disabled;
+}
+
+.text-primary {
+    color: $brand-primary;
+}
+
+.text-success {
+    color: $brand-success;
+}
+
+.text-info {
+    color: $brand-info;
+}
+
+.text-warning {
+    color: $brand-warning;
+}
+
+.text-danger {
+    color: $brand-danger;
+}
