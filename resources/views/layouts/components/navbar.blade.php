@@ -1,9 +1,8 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
             <a href="/{{app()->getLocale()}}" class="text-color">
                 <img class="img" src="/img/logo.svg" width="50" height="50" />
-                <!--<h3 class="raleway-font" style="display: inline; margin: 5px;">NoxGamingQC</h3>-->
             </a>
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-collapse" aria-expanded="false">
                 <span class="sr-only">Toggle navigation</span>
@@ -14,9 +13,9 @@
         </div>
         <div class="collapse navbar-collapse" id="bs-navbar-collapse">
             <ul class="nav navbar-nav navbar-left">
-                <li id="home" class="nav-home"><a href="/{{app()->getLocale()}}/home" class="nav"><i class="fa fa-home" aria-hidden="true"></i> {{ trans('general.welcome') }} <span class="sr-only">current</span></a></li>
+                <li id="home" class="nav-home"><a class="nav-item" href="/{{app()->getLocale()}}/home"><i class="fa fa-home" aria-hidden="true"></i> {{ trans('general.welcome') }} <span class="sr-only">current</span></a></li>
                 <li id="about_us" class="dropdown">
-                    <a href="#" class="dropdown-toggle nav" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+                    <a href="#" class="nav-item dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                         <i class="fa fa-user" aria-hidden="true"></i> {{trans("general.about_us")}} <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
@@ -35,7 +34,7 @@
                 @auth
                     @if(Auth::user()->has_premium)
                         <li id="premium" class="dropdown">
-                            <a href="#" class="dropdown-toggle nav" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+                            <a href="#" class="nav-item dropdown-toggle nav" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                                 <i class="fa fa-star" aria-hidden="true"></i> {{trans('general.premium')}} <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu">
@@ -49,7 +48,7 @@
                 @auth
                     @if(Auth::user()->hasDiscordServer() || Auth::user()->is_management)
                         <li id="noxbot" class="dropdown">
-                            <a href="#" class="dropdown-toggle nav" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+                            <a href="#" class="nav-item dropdown-toggle nav" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                                 <i class="fa fa-star" aria-hidden="true"></i> {{trans('noxbot.noxbot')}} <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu">
@@ -63,7 +62,7 @@
                 @auth
                     @if(Auth::user()->is_management)
                         <li id="management" class="dropdown">
-                            <a href="#" class="dropdown-toggle nav" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+                            <a href="#" class="nav-item dropdown-toggle nav" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                                 <i class="fa fa-dashboard" aria-hidden="true"></i> {{trans("general.management")}} <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu">
@@ -83,7 +82,7 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle nav" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+                    <a href="#" class="nav-item dropdown-toggle nav" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                         <i class="fa fa-language" aria-hidden="true"></i> {{trans("general.language")}} <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
@@ -95,7 +94,7 @@
                 </li>
 
                 <li class="dropdown mobile-hidden">
-                    <a href="#" class="dropdown-toggle nav" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+                    <a href="#" class="nav-item dropdown-toggle nav" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                         <i class="fa fa-bell" aria-hidden="true"><span class="badge-danger raleway-font">0</span></i>
                     </a>
                     <ul id="notificationDropdown" class="dropdown-menu">
@@ -107,7 +106,7 @@
 
                 @auth
                     <li id="profile" class="dropdown">
-                        <a href="#" class="dropdown-toggle nav" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+                        <a href="#" class="nav-item dropdown-toggle nav" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                              <img class="img img-circle status-{{(Auth::user()->lock_status == 'online') ? Auth::user()->status : Auth::user()->lock_status}}" src="{{App\User::getPicture(Auth::user())}}" width="24px" />
                             {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
@@ -124,7 +123,7 @@
                 @endauth
                 @guest
                     <li id="profile" class="dropdown">
-                        <a href="#" class="dropdown-toggle nav" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+                        <a href="#" class="nav-item dropdown-toggle nav" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                             <i class="fa fa-user-circle-o" aria-hidden="true"></i> My profile <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">

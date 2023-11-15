@@ -1,0 +1,49 @@
+// Navigation bar
+.navbar-default {
+    background-color: $background-color !important;
+    border: 0px solid transparent !important;
+    border-bottom: 1px solid $text-color !important;
+}
+
+//Navigation bar header
+.navbar-header {
+    padding: 20px 25px !important;
+}
+
+// Navigation bar items
+.nav > li > a {
+    padding: 35px 25px !important;
+    color: $text-color !important;
+}
+
+// Navigation bar items on action
+.nav > li > a:hover, .nav > li > a:active, .nav > li > a:focus, .nav > li > a:target {
+    background-color: $brand-primary !important;
+    color: $text-on-primary !important;
+}
+
+// Navigation bar if dropdown is open
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+    background-color: $brand-primary !important;
+    color: $text-on-primary !important;
+}
+
+.dropdown-menu {
+    background-color: $background-color !important;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    border: 1px solid $text-color !important;
+    border-top: 0px solid transparent !important;
+}
+
+// Dropdown items
+.dropdown-menu > li > a {
+    padding: 15px 25px !important;
+    color: $text-color !important;
+}
+
+// Dropdown items on action
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:active, .dropdown-menu > li > a:focus, .dropdown-menu > li > a:target {
+    background-color: $brand-primary !important;
+    color: $text-on-primary !important;
+}
