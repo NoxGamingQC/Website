@@ -94,7 +94,8 @@
                         </li>
                     </ul>
                 </li>
-
+                
+                @if(true == false)
                 <li class="dropdown mobile-hidden">
                     <a href="#" class="nav-item dropdown-toggle nav" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                         <i class="fa fa-bell" aria-hidden="true"><span class="badge-danger raleway-font">0</span></i>
@@ -105,7 +106,7 @@
                         </li>
                     </ul>
                 </li>
-
+                @endif
                 @auth
                     <li id="profile" class="dropdown">
                         <a href="#" class="nav-item dropdown-toggle nav" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
