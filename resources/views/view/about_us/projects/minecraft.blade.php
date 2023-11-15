@@ -1,4 +1,4 @@
-@extends('layouts.noxgamingqc.app')
+@extends('layouts.pages.app')
 @section('title', trans('projects.minecraft'))
 @section('slogan', trans('projects.minecraft_description'))
 @section('content')

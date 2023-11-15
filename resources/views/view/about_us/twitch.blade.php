@@ -1,10 +1,10 @@
-@extends('layouts.noxgamingqc.app')
+@extends('layouts.pages.app')
 @section('title', 'Stream')
 @section('content')
 
-<div class="row">
-    <div class="col-md-12 content-item bg-dark" id="content">
-        <div class="container">
+<div class="container section">
+    <div class="row">
+        <div class="col-md-12 content-item bg-dark" id="content">
             <div class="col-md-6" id="founders">
                 <h3>A big thanks to all our founders</h3>
                 <hr />
@@ -36,9 +36,9 @@
         </div>
     </div>
 </div>
-<div class="row">
-    <div class="col-md-12 content-item" id="content">
-        <div class="container">
+<div class="container section">
+    <div class="row">
+        <div class="col-md-12 content-item" id="content">
             <div class="row">
                 <div class="col-md-12">
                     <h3><i class="fa fa-dot-circle-o" aria-hidden="true"></i> {{trans('stream.twitch_goal')}}</h3>
@@ -63,13 +63,9 @@
         </div>
     </div>
 </div>
-
-
-
-
-<div class="row">
-    <div class="col-md-12 content-item bg-dark" id="content">
-        <div class="container">    
+<div class="container section">    
+    <div class="row">
+        <div class="col-md-12 content-item bg-dark" id="content">
             <div class="row">            
                 <div class="col-md-6" id="equipement">
                     <h3><i class="fa fa-laptop" aria-hidden="true"></i> {{trans('stream.equipement')}}</h3>

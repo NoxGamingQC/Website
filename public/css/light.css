@@ -3024,26 +3024,32 @@
 }
 
 h1 {
+  color: #262626 !important;
   font-size: 44px !important;
 }
 
 h2 {
+  color: #262626 !important;
   font-size: 34px !important;
 }
 
 h3 {
+  color: #262626 !important;
   font-size: 26px !important;
 }
 
 h4 {
+  color: #262626 !important;
   font-size: 20px !important;
 }
 
 h5 {
+  color: #262626 !important;
   font-size: 16px !important;
 }
 
 h6 {
+  color: #262626 !important;
   font-size: 14px !important;
 }
 
@@ -3081,6 +3087,16 @@ a:hover, a:active, a:focus {
 
 .text-danger {
   color: #ef4444 !important;
+}
+
+::-moz-selection {
+  color: #FFFFFF;
+  background: #c22222;
+}
+
+::selection {
+  color: #FFFFFF;
+  background: #c22222;
 }
 
 .navbar-default {
@@ -3196,7 +3212,6 @@ input[type=text]:focus, textarea:focus, input.form-control:focus, textarea.form-
 }
 
 .section {
-  padding-top: 5% !important;
   padding-bottom: 5% !important;
 }
 
