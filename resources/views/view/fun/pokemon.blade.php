@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.pages.app')
 @section('title', $pokemon->name_en)
 @section('thumbnail', $pokemon->sprite_old)
 @section('description', $pokemon->description_en)
