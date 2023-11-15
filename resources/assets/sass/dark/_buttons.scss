@@ -1,3 +1,20 @@
+.btn-circle {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 100% !important;
+}
+
+.btn-small {
+    height: 45px !important;
+	width: 45px !important;
+}
+
+.btn-lg {
+    height: 175px !important;
+	width: 175px !important;
+}
+
 .btn-default {
     background-color: darken($background-color, 3%) !important;
     border: 3px solid transparent !important;
@@ -230,14 +247,112 @@
         inset 0 0 1px 1px darken(#E1306C, 25px);
 }
 
-.btn-circle {
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    border-radius: 100% !important;
+.btn-steam {
+    background-color: darken($background-color, 3%) !important;
+    border: 1px solid transparent !important;
+    color: $text-color !important;
+    box-shadow: 0 0 1px transparent,
+        0 0 10px transparent,
+        0 0 1px transparent,
+        0 0 0.1px transparent,
+        inset 0 0 1px 1px transparent;
 }
 
-.btn-small {
-    height: 45px !important;
-	width: 45px !important;
+.btn-steam:hover, .btn-steam:active {
+    background-color: darken($background-color, 25%) !important;
+    border: 1px solid #2A475E !important;
+    color: $text_color !important;
+    box-shadow: 0 0 1px #2A475E,
+        0 0 10px #2A475E,
+        0 0 1px #2A475E,
+        0 0 0.1px #2A475E,
+        inset 0 0 1px 1px darken(#2A475E, 25px);
+}
+
+.btn-github {
+    background-color: darken($background-color, 3%) !important;
+    border: 1px solid transparent !important;
+    color: $text-color !important;
+    box-shadow: 0 0 1px transparent,
+        0 0 10px transparent,
+        0 0 1px transparent,
+        0 0 0.1px transparent,
+        inset 0 0 1px 1px transparent;
+}
+
+.btn-github:hover, .btn-github:active {
+    background-color: darken($background-color, 25%) !important;
+    border: 1px solid $text-color !important;
+    color: $text_color !important;
+    box-shadow: 0 0 1px $text-color,
+        0 0 10px $text-color,
+        0 0 1px $text-color,
+        0 0 0.1px $text-color,
+        inset 0 0 1px 1px darken($text-color, 25px);
+}
+
+.btn-snapchat {
+    background-color: darken($background-color, 3%) !important;
+    border: 1px solid transparent !important;
+    color: $text-color !important;
+    box-shadow: 0 0 1px transparent,
+        0 0 10px transparent,
+        0 0 1px transparent,
+        0 0 0.1px transparent,
+        inset 0 0 1px 1px transparent;
+}
+
+.btn-snapchat:hover, .btn-snapchat:active {
+    background-color: darken($background-color, 25%) !important;
+    border: 1px solid #FFFC00 !important;
+    color: $text_color !important;
+    box-shadow: 0 0 1px #FFFC00,
+        0 0 10px #FFFC00,
+        0 0 1px #FFFC00,
+        0 0 0.1px #FFFC00,
+        inset 0 0 1px 1px darken(#FFFC00, 25px);
+}
+
+.btn-spotify {
+    background-color: darken($background-color, 3%) !important;
+    border: 1px solid transparent !important;
+    color: $text-color !important;
+    box-shadow: 0 0 1px transparent,
+        0 0 10px transparent,
+        0 0 1px transparent,
+        0 0 0.1px transparent,
+        inset 0 0 1px 1px transparent;
+}
+
+.btn-spotify:hover, .btn-spotify:active {
+    background-color: darken($background-color, 25%) !important;
+    border: 1px solid #1DB954 !important;
+    color: $text_color !important;
+    box-shadow: 0 0 1px #1DB954,
+        0 0 10px #1DB954,
+        0 0 1px #1DB954,
+        0 0 0.1px #1DB954,
+        inset 0 0 1px 1px darken(#1DB954, 25px);
+}
+
+.btn-reddit {
+    background-color: darken($background-color, 3%) !important;
+    border: 1px solid transparent !important;
+    color: $text-color !important;
+    box-shadow: 0 0 1px transparent,
+        0 0 10px transparent,
+        0 0 1px transparent,
+        0 0 0.1px transparent,
+        inset 0 0 1px 1px transparent;
+}
+
+.btn-reddit:hover, .btn-reddit:active {
+    background-color: darken($background-color, 25%) !important;
+    border: 1px solid #FF5700 !important;
+    color: $text_color !important;
+    box-shadow: 0 0 1px #FF5700,
+        0 0 10px #FF5700,
+        0 0 1px #FF5700,
+        0 0 0.1px #FF5700,
+        inset 0 0 1px 1px darken(#FF5700, 25px);
 }

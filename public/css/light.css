@@ -3205,6 +3205,23 @@ input[type=text]:focus, textarea:focus, input.form-control:focus, textarea.form-
   background-size: cover !important;
 }
 
+.btn-circle {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 100% !important;
+}
+
+.btn-small {
+  height: 45px !important;
+  width: 45px !important;
+}
+
+.btn-lg {
+  height: 175px !important;
+  width: 175px !important;
+}
+
 .btn-default {
   background-color: #e8e8e8 !important;
   border: 3px solid transparent !important;
@@ -3214,7 +3231,7 @@ input[type=text]:focus, textarea:focus, input.form-control:focus, textarea.form-
 }
 
 .btn-default:hover, .btn-default:active {
-  background-color: #fdfdfd !important;
+  background-color: #e8e8e8 !important;
   border: 3px solid #262626 !important;
   color: #262626 !important;
   padding: 20px 42px !important;
@@ -3312,7 +3329,7 @@ input[type=text]:focus, textarea:focus, input.form-control:focus, textarea.form-
   background-color: #fdfdfd !important;
   border: 1px solid #6441A5 !important;
   color: #262626 !important;
-  box-shadow: 0 0 1px #6441A5, 0 0 10px #6441A5, 0 0 1px #6441A5, 0 0 0.1px #6441A5, inset 0 0 1px 1px #2d1d4a;
+  box-shadow: 0 0 1px #6441A5, 0 0 10px #6441A5, 0 0 1px #6441A5, 0 0 0.1px #6441A5, inset 0 0 1px 1px #a992d4;
 }
 
 .btn-youtube {
@@ -3326,7 +3343,7 @@ input[type=text]:focus, textarea:focus, input.form-control:focus, textarea.form-
   background-color: #fdfdfd !important;
   border: 1px solid #FF0000 !important;
   color: #262626 !important;
-  box-shadow: 0 0 1px #FF0000, 0 0 10px #FF0000, 0 0 1px #FF0000, 0 0 0.1px #FF0000, inset 0 0 1px 1px maroon;
+  box-shadow: 0 0 1px #FF0000, 0 0 10px #FF0000, 0 0 1px #FF0000, 0 0 0.1px #FF0000, inset 0 0 1px 1px #ff8080;
 }
 
 .btn-twitter {
@@ -3340,7 +3357,7 @@ input[type=text]:focus, textarea:focus, input.form-control:focus, textarea.form-
   background-color: #fdfdfd !important;
   border: 1px solid #1DA1F2 !important;
   color: #262626 !important;
-  box-shadow: 0 0 1px #1DA1F2, 0 0 10px #1DA1F2, 0 0 1px #1DA1F2, 0 0 0.1px #1DA1F2, inset 0 0 1px 1px #085788;
+  box-shadow: 0 0 1px #1DA1F2, 0 0 10px #1DA1F2, 0 0 1px #1DA1F2, 0 0 0.1px #1DA1F2, inset 0 0 1px 1px #96d3f9;
 }
 
 .btn-instagram {
@@ -3354,19 +3371,77 @@ input[type=text]:focus, textarea:focus, input.form-control:focus, textarea.form-
   background-color: #fdfdfd !important;
   border: 1px solid #E1306C !important;
   color: #262626 !important;
-  box-shadow: 0 0 1px #E1306C, 0 0 10px #E1306C, 0 0 1px #E1306C, 0 0 0.1px #E1306C, inset 0 0 1px 1px #7f1237;
+  box-shadow: 0 0 1px #E1306C, 0 0 10px #E1306C, 0 0 1px #E1306C, 0 0 0.1px #E1306C, inset 0 0 1px 1px #f19fbb;
 }
 
-.btn-circle {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  border-radius: 100% !important;
+.btn-steam {
+  background-color: #e8e8e8 !important;
+  border: 1px solid transparent !important;
+  color: #262626 !important;
+  box-shadow: 0 0 1px transparent, 0 0 10px transparent, 0 0 1px transparent, 0 0 0.1px transparent, inset 0 0 1px 1px transparent;
 }
 
-.btn-small {
-  height: 45px !important;
-  width: 45px !important;
+.btn-steam:hover, .btn-steam:active {
+  background-color: #fdfdfd !important;
+  border: 1px solid #2A475E !important;
+  color: #262626 !important;
+  box-shadow: 0 0 1px #2A475E, 0 0 10px #2A475E, 0 0 1px #2A475E, 0 0 0.1px #2A475E, inset 0 0 1px 1px #5589b3;
+}
+
+.btn-github {
+  background-color: #e8e8e8 !important;
+  border: 1px solid transparent !important;
+  color: #262626 !important;
+  box-shadow: 0 0 1px transparent, 0 0 10px transparent, 0 0 1px transparent, 0 0 0.1px transparent, inset 0 0 1px 1px transparent;
+}
+
+.btn-github:hover, .btn-github:active {
+  background-color: #fdfdfd !important;
+  border: 1px solid #262626 !important;
+  color: #262626 !important;
+  box-shadow: 0 0 1px #262626, 0 0 10px #262626, 0 0 1px #262626, 0 0 0.1px #262626, inset 0 0 1px 1px black;
+}
+
+.btn-snapchat {
+  background-color: #e8e8e8 !important;
+  border: 1px solid transparent !important;
+  color: #262626 !important;
+  box-shadow: 0 0 1px transparent, 0 0 10px transparent, 0 0 1px transparent, 0 0 0.1px transparent, inset 0 0 1px 1px transparent;
+}
+
+.btn-snapchat:hover, .btn-snapchat:active {
+  background-color: #fdfdfd !important;
+  border: 1px solid #FFFC00 !important;
+  color: #262626 !important;
+  box-shadow: 0 0 1px #FFFC00, 0 0 10px #FFFC00, 0 0 1px #FFFC00, 0 0 0.1px #FFFC00, inset 0 0 1px 1px #fffe80;
+}
+
+.btn-spotify {
+  background-color: #e8e8e8 !important;
+  border: 1px solid transparent !important;
+  color: #262626 !important;
+  box-shadow: 0 0 1px transparent, 0 0 10px transparent, 0 0 1px transparent, 0 0 0.1px transparent, inset 0 0 1px 1px transparent;
+}
+
+.btn-spotify:hover, .btn-spotify:active {
+  background-color: #fdfdfd !important;
+  border: 1px solid #1DB954 !important;
+  color: #262626 !important;
+  box-shadow: 0 0 1px #1DB954, 0 0 10px #1DB954, 0 0 1px #1DB954, 0 0 0.1px #1DB954, inset 0 0 1px 1px #6de899;
+}
+
+.btn-reddit {
+  background-color: #e8e8e8 !important;
+  border: 1px solid transparent !important;
+  color: #262626 !important;
+  box-shadow: 0 0 1px transparent, 0 0 10px transparent, 0 0 1px transparent, 0 0 0.1px transparent, inset 0 0 1px 1px transparent;
+}
+
+.btn-reddit:hover, .btn-reddit:active {
+  background-color: #fdfdfd !important;
+  border: 1px solid #FF5700 !important;
+  color: #262626 !important;
+  box-shadow: 0 0 1px #FF5700, 0 0 10px #FF5700, 0 0 1px #FF5700, 0 0 0.1px #FF5700, inset 0 0 1px 1px #ffab80;
 }
 
 .error-background {
