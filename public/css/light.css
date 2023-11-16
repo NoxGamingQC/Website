@@ -3225,6 +3225,10 @@ input[type=checkbox] {
   margin-top: -30px;
 }
 
+.header h1, .header h2 {
+  color: #FFFFFF !important;
+}
+
 .markdown {
   background-color: #F0F0F0 !important;
   color: #262626 !important;
