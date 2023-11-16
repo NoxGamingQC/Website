@@ -20,7 +20,6 @@
                                         @if($user['isPremium'])
                                             <i class="fa fa-star text-warning" aria-hidden="true"></i>
                                         @endif   
-                                        {{$user['username']}}{{ $user['isBOT'] ? ' [BOT]' : ''}}
                                         @if($user['isVerified'])
                                         <i class="fa fa-check-circle-o text-success" aria-hidden="true"></i>
                                         @endif
@@ -43,31 +42,20 @@
                                             <input type="text" class="form-control" id="country-{{$user['id']}}" placeholder="Country" value="{{$user['country']}}" />
                                     </div>
                                     <div class="col-md-6">
-                                        <label>Bot: </label><input type="checkbox" id="isBOT-{{$user['id']}}" value="{{$user['isBOT'] }}" {{ $user['isBOT'] ? 'checked' : '' }} />
-                                    </div>
-                                    <div class="col-md-6">
                                         <label>Email subs: </label> <input type="checkbox" id="isEmailSubs-{{$user['id']}}" value="{{$user['isEmailSubscriber'] }}" {{ $user['isEmailSubscriber'] ? 'checked' : '' }} />
                                     </div>
                                     <div class="col-md-4">
                                         <label for="country">Discord ID: </label>
                                     </div>
                                     <div class="col-md-8">
-                                            <input type="text" class="form-control" id="discordID-{{$user['id']}}" placeholder="Discord ID" value="{{$user['discordID']}}" />
+                                            <input type="text" class="form-control" id="discordID-{{$user['id']}}" placeholder="Discord ID" value="N/A" />
                                     </div>
                                     <div class="col-md-12">
                                         <div class="col-md-12">
                                             <label>Discord Name: </label>
                                         </div>
                                         <div class="col-md-12">
-                                            <div class="col-md-6">
-                                                <input type="text" class="form-control" id="discordName-{{$user['id']}}" placeholder="Discord name" value="{{$user['discordName']}}" />
-                                            </div>
-                                            <div class="col-md-1">
-                                                <p>#</p>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <input type="text" class="form-control" id="discriminator-{{$user['id']}}" placeholder="0000" value="{{$user['discriminator']}}" />
-                                            </div>
+                                            <input type="text" class="form-control" id="discordName-{{$user['id']}}" placeholder="Discord name" value="N/A" />
                                         </div>
                                     </div>
                                 </div>
