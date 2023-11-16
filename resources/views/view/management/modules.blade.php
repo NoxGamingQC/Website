@@ -23,17 +23,6 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-md-12">
-                            <div class="col-md-2">
-                                <label>Default Status</label>
-                            </div>
-                            <div class="col-md-1">
-                                <select class="selectpicker">
-                                    <option {{ $module['isActiveDefault'] ? 'selected' : '' }}>Active</option>
-                                    <option {{ !$module['isActiveDefault'] ? 'selected' : '' }}>Disable</option>
-                                </select>
-                            </div>
-                        </div>
                     </div>
                 </div>
             @endforeach
