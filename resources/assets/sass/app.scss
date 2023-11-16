@@ -14,3 +14,10 @@
     background-image: url('/img/Affiliates/Extra Life.png') !important;
     background-size: cover !important;
 }
+
+.text-badge {
+    background-color: $background-color;
+    color: $text-color;
+    border-radius: 5px;
+    opacity: 0.98;
+}

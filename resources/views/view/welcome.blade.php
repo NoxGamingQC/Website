@@ -2,7 +2,7 @@
 @section('title', 'Welcome')
 @section('content')
 
-<div class="container section">
+<div class="container-fluid section header">
     <div class="row">
         <div class="col-md-12 text-center">
             <h1 class="raleway-font headline"><img src="/img/logo.svg" height="140vh" /><b> NoxGamingQC</b></h1>
