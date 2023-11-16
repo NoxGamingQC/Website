@@ -3233,6 +3233,71 @@ input[type=checkbox] {
   padding: 15px !important;
 }
 
+.panel {
+  background-color: #0b0b0b !important;
+  color: #e5e5e5 !important;
+}
+
+.panel-default {
+  border: 1px solid #e5e5e5 !important;
+}
+
+.panel-default > .panel-heading {
+  background-color: #e5e5e5 !important;
+  border: 1px solid #e5e5e5 !important;
+  color: #101010 !important;
+}
+
+.panel-primary {
+  border: 1px solid #c22222 !important;
+}
+
+.panel-primary > .panel-heading {
+  background-color: #c22222 !important;
+  border: 1px solid #c22222 !important;
+  color: #FFFFFF !important;
+}
+
+.panel-success {
+  border: 1px solid #22c55e !important;
+}
+
+.panel-success > .panel-heading {
+  background-color: #22c55e !important;
+  border: 1px solid #22c55e !important;
+  color: #FFFFFF !important;
+}
+
+.panel-info {
+  border: 1px solid #67e8f9 !important;
+}
+
+.panel-info > .panel-heading {
+  background-color: #67e8f9 !important;
+  border: 1px solid #67e8f9 !important;
+  color: #FFFFFF !important;
+}
+
+.panel-warning {
+  border: 1px solid #facc15 !important;
+}
+
+.panel-warning > .panel-heading {
+  background-color: #facc15 !important;
+  border: 1px solid #facc15 !important;
+  color: #FFFFFF !important;
+}
+
+.panel-danger {
+  border: 1px solid #ef4444 !important;
+}
+
+.panel-danger > .panel-heading {
+  background-color: #ef4444 !important;
+  border: 1px solid #ef4444 !important;
+  color: #FFFFFF !important;
+}
+
 #content {
   margin-top: 120px;
 }

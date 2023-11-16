@@ -1,0 +1,64 @@
+.panel {
+    background-color: darken($background-color, 2%) !important;
+    color: $text-color !important;
+}
+
+.panel-default {
+    border: 1px solid $text-color !important;
+}
+
+.panel-default > .panel-heading {
+    background-color: $text-color !important;
+    border: 1px solid $text-color !important;
+    color: $background-color !important;
+}
+
+.panel-primary {
+    border: 1px solid $brand-primary !important;
+}
+
+.panel-primary > .panel-heading {
+    background-color: $brand-primary !important;
+    border: 1px solid $brand-primary !important;
+    color: $text-on-primary !important;
+}
+
+.panel-success {
+    border: 1px solid $brand-success !important;
+}
+
+.panel-success > .panel-heading {
+    background-color: $brand-success !important;
+    border: 1px solid $brand-success !important;
+    color: $text-on-success !important;
+}
+
+.panel-info {
+    border: 1px solid $brand-info !important;
+}
+
+.panel-info > .panel-heading {
+    background-color: $brand-info !important;
+    border: 1px solid $brand-info !important;
+    color: $text-on-info !important;
+}
+
+.panel-warning {
+    border: 1px solid $brand-warning !important;
+}
+
+.panel-warning > .panel-heading {
+    background-color: $brand-warning !important;
+    border: 1px solid $brand-warning !important;
+    color: $text-on-warning !important;
+}
+
+.panel-danger {
+    border: 1px solid $brand-danger !important;
+}
+
+.panel-danger > .panel-heading {
+    background-color: $brand-danger !important;
+    border: 1px solid $brand-danger !important;
+    color: $text-on-danger !important;
+}
