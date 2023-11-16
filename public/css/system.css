@@ -2468,6 +2468,15 @@
   .row {
     margin-right: 0 !important;
   }
+  .header {
+    background-color: #c22222 !important;
+    color: #FFFFFF !important;
+    border: 0px solid transparent !important;
+    border-radius: 0px;
+    padding: 100px !important;
+    margin-bottom: 5% !important;
+    margin-top: -30px;
+  }
   .markdown {
     background-color: #101010 !important;
     color: #e5e5e5 !important;
@@ -2484,6 +2493,12 @@
   .extra-life-logo {
     background-image: url("/img/Affiliates/Extra Life.png") !important;
     background-size: cover !important;
+  }
+  .text-badge {
+    background-color: #101010;
+    color: #e5e5e5;
+    border-radius: 5px;
+    opacity: 0.98;
   }
   .btn-circle {
     display: inline-flex !important;
@@ -5187,6 +5202,15 @@
   .row {
     margin-right: 0 !important;
   }
+  .header {
+    background-color: #c22222 !important;
+    color: #FFFFFF !important;
+    border: 0px solid transparent !important;
+    border-radius: 0px;
+    padding: 100px !important;
+    margin-bottom: 5% !important;
+    margin-top: -30px;
+  }
   .markdown {
     background-color: #F0F0F0 !important;
     color: #262626 !important;
@@ -5203,6 +5227,12 @@
   .extra-life-logo {
     background-image: url("/img/Affiliates/Extra Life.png") !important;
     background-size: cover !important;
+  }
+  .text-badge {
+    background-color: #F0F0F0;
+    color: #262626;
+    border-radius: 5px;
+    opacity: 0.98;
   }
   .btn-circle {
     display: inline-flex !important;
