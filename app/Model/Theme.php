@@ -1,12 +1,12 @@
 <?php
 
-namespace App;
+namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class MailIndex extends Model
+class Theme extends Model
 {
-    protected $table = 'mail_index';
+    protected $table = 'theme';
 
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';

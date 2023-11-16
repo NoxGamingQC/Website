@@ -1,12 +1,12 @@
 <?php
 
-namespace App;
+namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class GamesList extends Model
+class KioskKey extends Model
 {
-    protected $table = 'web_games_list';
+    protected $table = 'kiosk_key';
 
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';

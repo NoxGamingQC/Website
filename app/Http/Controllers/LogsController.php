@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
-use App\PageLists;
+use App\Model\PageLists;
 
 class LogsController extends Controller
 {

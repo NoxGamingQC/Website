@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-use App\BotActivities;
-use App\PageLists;
-use App\Modules;
-use App\User;
+use App\Model\NoxBOT\BotActivities;
+use App\Model\PageLists;
+use App\Model\NoxBOT\Modules;
+use App\Model\User;
 use DB;
 
 class ManagementController extends Controller

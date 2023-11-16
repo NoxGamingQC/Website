@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Recipe;
+namespace App\Model\API;
 
 use Illuminate\Database\Eloquent\Model;
 
-class RecipeSteps extends Model
+class Pokemon extends Model
 {
-    protected $table = 'recipe_steps';
+    protected $table = 'pokemon';
 
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';

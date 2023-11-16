@@ -1,12 +1,12 @@
 <?php
 
-namespace App;
+namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Pokemon extends Model
+class Mails extends Model
 {
-    protected $table = 'pokemon';
+    protected $table = 'mails';
 
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';

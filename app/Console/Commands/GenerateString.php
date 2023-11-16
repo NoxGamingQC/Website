@@ -18,7 +18,7 @@ class GenerateString extends Command
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'Generate a random string of 64 character. Can be use as a key.';
 
     /**
      * Execute the console command.

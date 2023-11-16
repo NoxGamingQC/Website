@@ -1,12 +1,12 @@
 <?php
 
-namespace App;
+namespace App\Model\Recipe;
 
 use Illuminate\Database\Eloquent\Model;
 
-class CustomTheme extends Model
+class Categories extends Model
 {
-    protected $table = 'custom_theme';
+    protected $table = 'recipe_categories';
 
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';

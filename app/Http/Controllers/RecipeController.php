@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\NGST;
 
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use App\Recipe\IngredientList;
 use Illuminate\Http\Request;
@@ -9,9 +10,7 @@ use App\Recipe\RecipeSteps;
 use App\Recipe\Categories;
 use App\Recipe\Recipe;
 use Carbon\Carbon;
-use App\KioskKey;
-use Auth;
-
+use App\Model\KioskKey;
 class RecipeController extends Controller
 {
     public function cookbook(Request $request) {

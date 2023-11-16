@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Recipe;
+namespace App\Model\API;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Categories extends Model
+class ApiKey extends Model
 {
-    protected $table = 'recipe_categories';
+    protected $table = 'api_key';
 
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';

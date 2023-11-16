@@ -6,7 +6,7 @@ use Auth;
 use DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\BotActivities;
+use App\Model\NoxBOT\BotActivities;
 
 class BotActivitiesController extends Controller
 {

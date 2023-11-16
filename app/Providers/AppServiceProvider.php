@@ -7,10 +7,10 @@ use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\URL;
-use App\CustomTheme;
-use App\MainConfig;
-use App\PageLists;
-use App\Theme;
+use App\Model\CustomTheme;
+use App\Model\MainConfig;
+use App\Model\PageLists;
+use App\Model\Theme;
 
 class AppServiceProvider extends ServiceProvider
 {

@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Mails;
 
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
-use App\Mails;
-use App\MailIndex;
-use Auth;
-use App\User;
+use App\Model\Mails;
+use App\Model\MailIndex;
+use App\Model\User;
 
 class MailController extends Controller
 {

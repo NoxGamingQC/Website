@@ -4,9 +4,9 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\DiscordServerConfig;
-use App\DiscordUsers;
-use App\ApiKey;
+use App\Model\DiscordServerConfig;
+use App\Model\DiscordUsers;
+use App\Model\API\ApiKey;
 
 class DiscordController extends Controller
 {

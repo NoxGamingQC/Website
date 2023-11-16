@@ -110,7 +110,7 @@
                 @auth
                     <li id="profile" class="dropdown">
                         <a href="#" class="nav-item dropdown-toggle nav" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
-                             <img class="img img-circle status-{{(Auth::user()->lock_status == 'online') ? Auth::user()->status : Auth::user()->lock_status}}" src="{{App\User::getPicture(Auth::user())}}" width="24px" />
+                             <img class="img img-circle status-{{(Auth::user()->lock_status == 'online') ? Auth::user()->status : Auth::user()->lock_status}}" src="{{App\Model\User::getPicture(Auth::user())}}" width="24px" />
                             {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">

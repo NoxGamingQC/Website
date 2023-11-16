@@ -6,7 +6,7 @@ use Auth;
 use DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\RolesReactions;
+use App\Model\NoxBOT\RolesReactions;
 
 class BotRolesReactionsController extends Controller
 {

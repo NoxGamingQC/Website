@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\PageLists;
+use App\Model\PageLists;
 
 class TwitchController extends Controller
 {
