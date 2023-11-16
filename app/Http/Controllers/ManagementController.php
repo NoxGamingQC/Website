@@ -70,7 +70,6 @@ class ManagementController extends Controller
                         'isVerified' => $user->is_verified,
                         'isEmailSubscriber' => $user->is_email_subscriber,
                         'country' => $user->country,
-                        'discordID' => $user->discord_id,
                         'badges' => $badges,
                         'state' => $state,
                         'isCurrentUser' => $isCurrentUser
