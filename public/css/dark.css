@@ -3216,10 +3216,10 @@ input[type=checkbox] {
 }
 
 .markdown {
-  background-color: #101010;
-  color: #e5e5e5;
-  border: 1px solid #e5e5e5;
-  border-radius: 5%;
+  background-color: #101010 !important;
+  color: #e5e5e5 !important;
+  border: 1px solid #e5e5e5 !important;
+  border-radius: 10px;
   padding: 15px !important;
 }
 
