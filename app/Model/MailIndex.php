@@ -1,12 +1,12 @@
 <?php
 
-namespace App;
+namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ApiKey extends Model
+class MailIndex extends Model
 {
-    protected $table = 'api_key';
+    protected $table = 'mail_index';
 
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';

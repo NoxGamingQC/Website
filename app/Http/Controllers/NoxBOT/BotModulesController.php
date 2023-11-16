@@ -6,8 +6,7 @@ use Auth;
 use DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Modules;
-use App\SubsModules;
+use App\Model\NoxBOT\Modules;
 
 class BotModulesController extends Controller
 {
@@ -30,7 +29,7 @@ class BotModulesController extends Controller
     public function getSubsModules()
     {
         $subModuleList = [];
-        foreach (SubsModules::orderBy('Slug')->get() as $key => $subModule) {
+        /*foreach (SubsModules::orderBy('Slug')->get() as $key => $subModule) {
             $module = Modules::where('ID', $subModule->ModuleID)->first();
             array_push($subModuleList, [
                 'slug' => $subModule->Slug,
@@ -39,7 +38,7 @@ class BotModulesController extends Controller
                 'module_slug'=> $module->Slug,
                 'isInMaintenance' => $module->Maintenance,
             ]);
-        }
+        }*/
         return response()->json($subModuleList);
     }
 }

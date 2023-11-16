@@ -5,9 +5,9 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
-use App\ConsolesList;
-use App\GamesList;
-use App\PageLists;
+use App\Model\ConsolesList;
+use App\Model\GamesList;
+use App\Model\PageLists;
 
 class GamesListController extends Controller
 {

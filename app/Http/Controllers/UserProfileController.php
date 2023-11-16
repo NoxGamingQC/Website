@@ -5,13 +5,13 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
-use App\DiscordUsers;
+use App\Model\DiscordUsers;
 use Carbon\Carbon;
-use App\PageLists;
+use App\Model\PageLists;
 use cebe\markdown;
-use App\Points;
-use App\ApiKey;
-use App\User;
+use App\Model\Points;
+use App\Model\API\ApiKey;
+use App\Model\User;
 
 class UserProfileController extends Controller
 {

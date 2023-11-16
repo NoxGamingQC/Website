@@ -1,11 +1,11 @@
 <?php
 
-namespace App;
+namespace App\Model;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use App\DiscordServerConfig;
-use App\DiscordUsers;
+use App\Model\DiscordServerConfig;
+use App\Model\DiscordUsers;
 
 class User extends Authenticatable
 {

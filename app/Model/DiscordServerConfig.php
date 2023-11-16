@@ -1,13 +1,14 @@
 <?php
 
-namespace App\Recipe;
+namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class IngredientList extends Model
+class DiscordServerConfig extends Model
 {
-    protected $table = 'recipe_ingredient_list';
+    protected $table = 'discord_server_config';
 
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
+
 }

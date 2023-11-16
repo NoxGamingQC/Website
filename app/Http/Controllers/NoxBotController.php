@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Website;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-use App\DiscordServerConfig;
-use App\DiscordUsers;
+use App\Model\DiscordServerConfig;
+use App\Model\DiscordUsers;
 use \Carbon\Carbon;
 
 class NoxBotController extends Controller

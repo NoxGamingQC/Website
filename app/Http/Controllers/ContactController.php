@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\App;
 use Illuminate\Http\Request;
-use App\PageLists;
+use App\Model\PageLists;
 
 class ContactController extends Controller
 {
