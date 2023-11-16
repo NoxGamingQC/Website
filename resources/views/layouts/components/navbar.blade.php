@@ -118,7 +118,7 @@
                                 @if(Auth::user()->local_mail)
                                     <a href="/{{app()->getLocale()}}/mail"><i class="fa fa-envelope" aria-hidden="true"></i> {{trans('general.mails')}}</a>
                                 @endif
-                                <a href="/{{app()->getLocale()}}/user/{{Auth::user()->name}}"><i class="fa fa-wrench" aria-hidden="true"></i> {{trans('general.my_profile')}}</a>
+                                <a href="/{{app()->getLocale()}}/user/{{Auth::user()->name}}"><i class="fa fa-user-circle-o" aria-hidden="true"></i> {{trans('general.my_profile')}}</a>
                                 <a href="/logout"><i class="fa fa-sign-out" aria-hidden="true"></i> {{trans('general.logout')}}</a>
                             </li>
                         </ul>
