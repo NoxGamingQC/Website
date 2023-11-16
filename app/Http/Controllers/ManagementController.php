@@ -22,7 +22,7 @@ class ManagementController extends Controller
                 $modules = [];
                 foreach (Modules::orderBy('slug')->get() as $key => $module) {
                     array_push($modules, [
-                        'slug' => str_replace('_', ' ', $module->Slug),
+                        'slug' => str_replace('_', ' ', $module->slug),
                         'isInMaintenance' => $module->in_maintenance,
                         'icon' => $module->module_icon
                     ]);
