@@ -5,11 +5,11 @@
 <div class="container-fluid section header">
     <div class="row">
         <div class="col-md-12 text-center">
-            <h1 class="raleway-font headline"><img src="/img/logo.svg" height="140vh" /><b> NoxGamingQC</b></h1>
+            <h1 class="raleway-font"><img src="/img/logo.svg" height="140vh" /><b> NoxGamingQC</b></h1>
         </div>
         <div class="col-md-12 text-center">
             <br />
-            <h2 class="raleway-font headline">{{trans('welcome.slogan')}}</h2>
+            <h2 class="raleway-font">{{trans('welcome.slogan')}}</h2>
             <br />
         </div>
     </div>

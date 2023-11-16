@@ -8,6 +8,10 @@
     margin-top: -30px;
 }
 
+.header h1, .header h2 {
+    color: $text-on-primary !important;
+}
+
 .markdown {
     background-color: $background-color !important;
     color: $text-color !important;
