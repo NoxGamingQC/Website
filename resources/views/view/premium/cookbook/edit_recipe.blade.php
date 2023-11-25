@@ -5,7 +5,7 @@
 
 <div class="container cookbook">
     <div class="row">
-        <input type="hidden" value="{{$id}}">
+        <input id="recipeID" type="hidden" value="{{$id}}">
         <div class="col-md-12 text-left">
             <h2>{{trans('cookbook.ingredients')}}</h2>
             <br />
@@ -18,7 +18,7 @@
                     </div>
                     <div class="col-md-3">
                         <select class="selectpicker" title="Type">
-                            <option class="type" value="" {{isset($ingredient->type) ? 'selected' : ''}}>N/A</option>
+                            <option class="type" value="" {{!isset($ingredient->type) && isset($ingredient->id) ? 'selected' : ''}}>N/A</option>
                             <option class="type" value="cup" {{$ingredient->type == 'cup' ? 'selected' : ''}}>{{trans('cookbook.cup')}}</option>
                             <option class="type" value="tablespoon" {{$ingredient->type == 'tablespoon' ? 'selected' : ''}}>{{trans('cookbook.tablespoon')}}</option>
                             <option class="type" value="teaspoon" {{$ingredient->type == 'teaspoon' ? 'selected' : ''}}>{{trans('cookbook.teaspoon')}}</option>

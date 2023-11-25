@@ -46,6 +46,7 @@ Route::middleware(['cors'])->group(function () {
         }
     });
     Route::post('/recipe/add', 'RecipeController@saveRecipe');
+    Route::post('/recipe/edit', 'RecipeController@saveEditedRecipe');
 
     Route::get('/user/{id}', function ($id) {
         return redirect()->to('/' . app()->getLocale() . '/user/' . $id);
@@ -167,7 +168,6 @@ Route::middleware(['cors'])->group(function () {
             Route::get('/cookbook', 'RecipeController@cookbook');
             Route::get('/cookbook/{category}', 'RecipeController@category');
             Route::get('/recipe/add', 'RecipeController@addRecipe');
-            Route::post('/recipe/edit', 'RecipeController@saveEditedRecipe');
             Route::get('/recipe/{id}', 'RecipeController@recipe');
             Route::get('/recipe/edit/{id}', 'RecipeController@editRecipe');
             Route::get('/company/kiosk/refresh', 'KioskController@refreshData');
