@@ -1,6 +1,7 @@
 @extends('layouts.pages.cookbook')
 @section('content')
 @section('name', trans('cookbook.title'))
+@section('title', trans('cookbook.title'))
 @section('slogan', trans('general.hi') . ', ' . $name)
 
 <div class="container cookbook">

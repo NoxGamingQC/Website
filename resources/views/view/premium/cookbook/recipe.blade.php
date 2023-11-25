@@ -1,4 +1,5 @@
 @extends('layouts.pages.cookbook')
+@section('title', trans('cookbook.title'))
 @section('kiosk-button')
 @auth
     @if(Auth::user()->isAdmin || Auth::user()->isModerator || Auth::user()->isDev)

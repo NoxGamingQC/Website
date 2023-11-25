@@ -1,5 +1,6 @@
 @extends('layouts.pages.cookbook')
 @section('name', trans('cookbook.edit_recipe'))
+@section('title', trans('cookbook.edit_recipe'))
 @section('content')
 
 <div class="container cookbook">
