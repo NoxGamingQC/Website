@@ -1,4 +1,4 @@
-@extends('layouts.pages.app')
+@extends('layouts.pages.cookbook')
 @section('content')
 
 @if(app()->getLocale() === 'fr-ca')
@@ -9,7 +9,7 @@
     @section('slogan', $category->description_en ? $category->description_en : '')
 @endif
 
-<div class="container">
+<div class="container cookbook">
     @auth
         @if(Auth::user()->isAdmin || Auth::user()->isModerator || Auth::user()->isDev)
             <div class="row">

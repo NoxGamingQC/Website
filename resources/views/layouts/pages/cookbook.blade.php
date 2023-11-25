@@ -29,9 +29,8 @@
     <body style="background-color:#{{$theme->background}}">
         <input id="websiteLocationID" type="hidden">
         @include('alert.alert')
-        <div id="content">
-            @yield('content')
-        </div>
+        @include('layouts.components.cookbook.header')
+        @yield('content')
         @include('layouts.components.footer')
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>

@@ -24,7 +24,7 @@ class RecipeController extends Controller
                     'categories' => $categories,
                     'recipe' => true,
                     'isRecipe' => false,
-                    'lastLink' => '/' . app()->getLocale() . '/kiosk/cookbook',
+                    'lastLink' => '/' . app()->getLocale() . '/cookbook',
                     'name' => Auth::user()->name
                 ]);
             } else {
@@ -44,7 +44,7 @@ class RecipeController extends Controller
                     'recipe' => true,
                     'isRecipe' => false,
                     'kiosk_key' => $request->kiosk_key,
-                    'lastLink' => '/' . app()->getLocale() . '/kiosk/cookbook?kiosk_key=' . $request->kiosk_key,
+                    'lastLink' => '/' . app()->getLocale() . '/cookbook?kiosk_key=' . $request->kiosk_key,
                     'name' => $isRealKey->name
                 ]);
             } else {
@@ -72,7 +72,7 @@ class RecipeController extends Controller
                     'recipes' => $recipes,
                     'recipe' => true,
                     'isRecipe' => false,
-                    'lastLink' => '/' . app()->getLocale() . '/kiosk/cookbook',
+                    'lastLink' => '/' . app()->getLocale() . '/cookbook',
                 ]);
             } else {
                 return view('errors.custom')->with([
@@ -94,7 +94,7 @@ class RecipeController extends Controller
                     'recipe' => true,
                     'isRecipe' => false,
                     'kiosk_key' => $request->kiosk_key,
-                    'lastLink' => '/' . app()->getLocale() . '/kiosk/cookbook?kiosk_key='. $request->kiosk_key,
+                    'lastLink' => '/' . app()->getLocale() . '/cookbook?kiosk_key='. $request->kiosk_key,
                 ]);
             } else {
                 abort(403);
@@ -122,7 +122,7 @@ class RecipeController extends Controller
                     'kiosk' => 'true',
                     'isRecipe' => true,
                     'recipe' => $recipe,
-                    'lastLink' => '/' . app()->getLocale() . '/kiosk/cookbook/' . $recipe->category->id,
+                    'lastLink' => '/' . app()->getLocale() . '/cookbook/' . $recipe->category->id,
                 ]);
             } else {
                 return view('errors.custom')->with([
@@ -144,7 +144,7 @@ class RecipeController extends Controller
                     'isRecipe' => true,
                     'recipe' => $recipe,
                     'kiosk_key' => $request->kiosk_key,
-                    'lastLink' => '/' . app()->getLocale() . '/kiosk/cookbook/'. $recipe->category->id . '?kiosk_key='. $request->kiosk_key,
+                    'lastLink' => '/' . app()->getLocale() . '/cookbook/'. $recipe->category->id . '?kiosk_key='. $request->kiosk_key,
                 ]);
             } else {
                 abort(403);
@@ -169,7 +169,7 @@ class RecipeController extends Controller
                     'isRecipe' => true,
                     'recipe' => true,
                     'add_mode' => true,
-                    'lastLink' => '/' . app()->getLocale() . '/kiosk/cookbook/',
+                    'lastLink' => '/' . app()->getLocale() . '/cookbook/',
                 ]);
             }
         }
@@ -190,7 +190,7 @@ class RecipeController extends Controller
                     'isRecipe' => true,
                     'recipe' => $recipe,
                     'add_mode' => true,
-                    'lastLink' => '/' . app()->getLocale() . '/kiosk/cookbook/',
+                    'lastLink' => '/' . app()->getLocale() . '/cookbook/',
                 ]);
             }
         }
