@@ -166,8 +166,8 @@ Route::middleware(['cors'])->group(function () {
             //Cookbook routes
             Route::get('/cookbook', 'RecipeController@cookbook');
             Route::get('/cookbook/{category}', 'RecipeController@category');
-            Route::get('/recipe/{id}', 'RecipeController@recipe');
             Route::get('/recipe/add', 'RecipeController@addRecipe');
+            Route::get('/recipe/{id}', 'RecipeController@recipe');
             Route::get('/recipe/edit/{id}', 'RecipeController@editRecipe');
             Route::get('/company/kiosk/refresh', 'KioskController@refreshData');
             Route::get('/fun/pokemon/{slug}', 'Website\Fun\PokemonViewController@index');

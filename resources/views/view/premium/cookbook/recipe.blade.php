@@ -2,7 +2,7 @@
 @section('title', trans('cookbook.title'))
 @section('kiosk-button')
 @auth
-    @if(Auth::user()->isAdmin || Auth::user()->isModerator || Auth::user()->isDev)
+    @if(Auth::user()->hasPermission('edit_recipe'))
         <div class="row">
             <div class="col-md-12">
                     <a href="/{{app()->getLocale()}}/recipe/edit/{{$recipe->id}}"><input class="btn btn-warning form-control" style="font-size:24px;padding:5%" value="{{trans('cookbook.edit_recipe')}}" readonly></a>
