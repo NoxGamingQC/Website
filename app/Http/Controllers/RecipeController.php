@@ -214,7 +214,7 @@ class RecipeController extends Controller
                 $recipe->save();
 
                 foreach($request->ingredients as $key => $value) {
-                    $ingredient = IngredientList::find($value->id);
+                    $ingredient = IngredientList::find($value->ingredientID);
                     if(!$ingredient) {
                         $ingredient = new IngredientList();
                     }
@@ -228,7 +228,7 @@ class RecipeController extends Controller
                 }
                 if($request->steps) {
                     foreach($request->steps as $key => $value) {
-                        $step = RecipeSteps::find($value->id);
+                        $step = RecipeSteps::find($value->stepID);
                         if(!$step) {
                             $step = new RecipeSteps();
                         }
