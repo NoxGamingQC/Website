@@ -3302,6 +3302,96 @@ input[type=checkbox] {
   color: #FFFFFF !important;
 }
 
+.cookbook .btn-primary {
+  background-color: #e8e8e8 !important;
+  border: 3px solid transparent !important;
+  color: #262626 !important;
+  padding: 54px 42px !important;
+  border-radius: 25px !important;
+  box-shadow: 0 0 1px transparent, 0 0 15px transparent, 0 0 1px transparent, 0 0 0.1px transparent, inset 0 0 1px 3px transparent;
+}
+
+.cookbook .btn-primary:hover, .cookbook .btn-primary:active {
+  background-color: #b0b0b0 !important;
+  border: 3px solid #c22222 !important;
+  color: #262626 !important;
+  padding: 54px 42px !important;
+  border-radius: 25px !important;
+  box-shadow: 0 0 1px #c22222, 0 0 15px #c22222, 0 0 1px #c22222, 0 0 0.1px #c22222, inset 0 0 1px 3px #560f0f;
+}
+
+.cookbook .btn-success {
+  background-color: #e8e8e8 !important;
+  border: 3px solid transparent !important;
+  color: #262626 !important;
+  padding: 54px 42px !important;
+  border-radius: 25px !important;
+  box-shadow: 0 0 1px transparent, 0 0 15px transparent, 0 0 1px transparent, 0 0 0.1px transparent, inset 0 0 1px 3px transparent;
+}
+
+.cookbook .btn-success:hover, .cookbook .btn-success:active {
+  background-color: #b0b0b0 !important;
+  border: 3px solid #22c55e !important;
+  color: #262626 !important;
+  padding: 54px 42px !important;
+  border-radius: 25px !important;
+  box-shadow: 0 0 1px #22c55e, 0 0 15px #22c55e, 0 0 1px #22c55e, 0 0 0.1px #22c55e, inset 0 0 1px 3px #0f582a;
+}
+
+.cookbook .btn-info {
+  background-color: #e8e8e8 !important;
+  border: 3px solid transparent !important;
+  color: #262626 !important;
+  padding: 54px 42px !important;
+  border-radius: 25px !important;
+  box-shadow: 0 0 1px transparent, 0 0 15px transparent, 0 0 1px transparent, 0 0 0.1px transparent, inset 0 0 1px 3px transparent;
+}
+
+.cookbook .btn-info:hover, .cookbook .btn-info:active {
+  background-color: #b0b0b0 !important;
+  border: 3px solid #67e8f9 !important;
+  color: #262626 !important;
+  padding: 54px 42px !important;
+  border-radius: 25px !important;
+  box-shadow: 0 0 1px #67e8f9, 0 0 15px #67e8f9, 0 0 1px #67e8f9, 0 0 0.1px #67e8f9, inset 0 0 1px 3px #09c0d8;
+}
+
+.cookbook .btn-warning {
+  background-color: #e8e8e8 !important;
+  border: 3px solid transparent !important;
+  color: #262626 !important;
+  padding: 54px 42px !important;
+  border-radius: 25px !important;
+  box-shadow: 0 0 1px transparent, 0 0 15px transparent, 0 0 1px transparent, 0 0 0.1px transparent, inset 0 0 1px 3px transparent;
+}
+
+.cookbook .btn-warning:hover, .cookbook .btn-warning:active {
+  background-color: #b0b0b0 !important;
+  border: 3px solid #facc15 !important;
+  color: #262626 !important;
+  padding: 54px 42px !important;
+  border-radius: 25px !important;
+  box-shadow: 0 0 1px #facc15, 0 0 15px #facc15, 0 0 1px #facc15, 0 0 0.1px #facc15, inset 0 0 1px 3px #8c7103;
+}
+
+.cookbook .btn-danger {
+  background-color: #e8e8e8 !important;
+  border: 3px solid transparent !important;
+  color: #262626 !important;
+  padding: 54px 42px !important;
+  border-radius: 25px !important;
+  box-shadow: 0 0 1px transparent, 0 0 15px transparent, 0 0 1px transparent, 0 0 0.1px transparent, inset 0 0 1px 3px transparent;
+}
+
+.cookbook .btn-danger:hover, .cookbook .btn-danger:active {
+  background-color: #b0b0b0 !important;
+  border: 3px solid #ef4444 !important;
+  color: #262626 !important;
+  padding: 54px 42px !important;
+  border-radius: 25px !important;
+  box-shadow: 0 0 1px #ef4444, 0 0 15px #ef4444, 0 0 1px #ef4444, 0 0 0.1px #ef4444, inset 0 0 1px 3px #a50e0e;
+}
+
 #content {
   margin-top: 120px;
 }

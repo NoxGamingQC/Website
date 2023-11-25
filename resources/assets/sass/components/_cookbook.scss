@@ -1,0 +1,129 @@
+.cookbook .btn-primary {
+    background-color: darken($background-color, 3%) !important;
+    border: 3px solid transparent !important;
+    color: $text-color !important;
+    padding: 54px 42px !important;
+    border-radius: 25px !important;
+    box-shadow: 0 0 1px transparent,
+        0 0 15px transparent,
+        0 0 1px transparent,
+        0 0 0.1px transparent,
+        inset 0 0 1px 3px transparent;
+}
+
+.cookbook .btn-primary:hover, .cookbook .btn-primary:active {
+    background-color: darken($background-color, 25%) !important;
+    border: 3px solid $brand-primary !important;
+    color: $text_color !important;
+    padding: 54px 42px !important;
+    border-radius: 25px !important;
+    box-shadow: 0 0 1px $brand-primary,
+        0 0 15px $brand-primary,
+        0 0 1px $brand-primary,
+        0 0 0.1px $brand-primary,
+        inset 0 0 1px 3px darken($brand-primary, 25px);
+}
+
+.cookbook .btn-success {
+    background-color: darken($background-color, 3%) !important;
+    border: 3px solid transparent !important;
+    color: $text-color !important;
+    padding: 54px 42px !important;
+    border-radius: 25px !important;
+    box-shadow: 0 0 1px transparent,
+        0 0 15px transparent,
+        0 0 1px transparent,
+        0 0 0.1px transparent,
+        inset 0 0 1px 3px transparent;
+}
+
+.cookbook .btn-success:hover, .cookbook .btn-success:active {
+    background-color: darken($background-color, 25%) !important;
+    border: 3px solid $brand_success !important;
+    color: $text_color !important;
+    padding: 54px 42px !important;
+    border-radius: 25px !important;
+    box-shadow: 0 0 1px $brand_success,
+        0 0 15px $brand_success,
+        0 0 1px $brand_success,
+        0 0 0.1px $brand_success,
+        inset 0 0 1px 3px darken($brand-success, 25px);
+}
+
+.cookbook .btn-info {
+    background-color: darken($background-color, 3%) !important;
+    border: 3px solid transparent !important;
+    color: $text-color !important;
+    padding: 54px 42px !important;
+    border-radius: 25px !important;
+    box-shadow: 0 0 1px transparent,
+        0 0 15px transparent,
+        0 0 1px transparent,
+        0 0 0.1px transparent,
+        inset 0 0 1px 3px transparent;
+}
+
+.cookbook .btn-info:hover, .cookbook .btn-info:active {
+    background-color: darken($background-color, 25%) !important;
+    border: 3px solid $brand-info !important;
+    color: $text_color !important;
+    padding: 54px 42px !important;
+    border-radius: 25px !important;
+    box-shadow: 0 0 1px $brand-info,
+        0 0 15px $brand-info,
+        0 0 1px $brand-info,
+        0 0 0.1px $brand-info,
+        inset 0 0 1px 3px darken($brand-info, 25px);
+}
+
+.cookbook .btn-warning {
+    background-color: darken($background-color, 3%) !important;
+    border: 3px solid transparent !important;
+    color: $text-color !important;
+    padding: 54px 42px !important;
+    border-radius: 25px !important;
+    box-shadow: 0 0 1px transparent,
+        0 0 15px transparent,
+        0 0 1px transparent,
+        0 0 0.1px transparent,
+        inset 0 0 1px 3px transparent;
+}
+
+.cookbook .btn-warning:hover, .cookbook .btn-warning:active {
+    background-color: darken($background-color, 25%) !important;
+    border: 3px solid $brand-warning !important;
+    color: $text_color !important;
+    padding: 54px 42px !important;
+    border-radius: 25px !important;
+    box-shadow: 0 0 1px $brand-warning,
+        0 0 15px $brand-warning,
+        0 0 1px $brand-warning,
+        0 0 0.1px $brand-warning,
+        inset 0 0 1px 3px darken($brand-warning, 25px);
+}
+
+.cookbook .btn-danger {
+    background-color: darken($background-color, 3%) !important;
+    border: 3px solid transparent !important;
+    color: $text-color !important;
+    padding: 54px 42px !important;
+    border-radius: 25px !important;
+    box-shadow: 0 0 1px transparent,
+        0 0 15px transparent,
+        0 0 1px transparent,
+        0 0 0.1px transparent,
+        inset 0 0 1px 3px transparent;
+}
+
+.cookbook .btn-danger:hover, .cookbook .btn-danger:active {
+    background-color: darken($background-color, 25%) !important;
+    border: 3px solid $brand-danger !important;
+    color: $text_color !important;
+    padding: 54px 42px !important;
+    border-radius: 25px !important;
+    box-shadow: 0 0 1px $brand-danger,
+        0 0 15px $brand-danger,
+        0 0 1px $brand-danger,
+        0 0 0.1px $brand-danger,
+        inset 0 0 1px 3px darken($brand-danger, 25px);
+}

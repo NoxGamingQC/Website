@@ -20,7 +20,7 @@
         @else
         <title>{{env('APP_NAME')}} - @yield('title')</title>
         @endif
-        <link rel="icon" href="/img/NoxGamingQC.png" type="image/png">
+        <link rel="icon" href="/img/logo.png" type="image/png">
         <link href="{{mix('css/system.css')}}" rel="stylesheet" type="text/css">
         <link href="{{mix('css/bootstrap.css')}}" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
