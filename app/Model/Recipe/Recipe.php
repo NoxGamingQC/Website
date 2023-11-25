@@ -12,11 +12,11 @@ class Recipe extends Model
     const UPDATED_AT = 'updated_at';
 
     public function getIngredients() {
-        return $this->hasMany(IngredientList::class, 'recipe_id')->orderBy('LENGTH(order)', 'asc')->orderBy('order', 'ASC')->get();
+        return $this->hasMany(IngredientList::class, 'recipe_id')->orderByRaw('LENGTH(order)', 'asc')->orderBy('order', 'ASC')->get();
     }
 
     public function getSteps () {
-        return $this->hasMany(RecipeSteps::class, 'recipe_id')->orderBy('LENGTH(order)', 'asc')->orderBy('order', 'ASC')->get();
+        return $this->hasMany(RecipeSteps::class, 'recipe_id')->orderByRaw('LENGTH(order)', 'asc')->orderBy('order', 'ASC')->get();
     }
 
     public function getCategory() {
