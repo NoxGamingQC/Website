@@ -1,4 +1,4 @@
-@extends('layouts.noxgamingqc.app')
+@extends('layouts.pages.error')
 @section('title', $title)
 @section('slogan', (isset($slogan) ? $slogan : ''))
 @section('content')
