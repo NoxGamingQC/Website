@@ -170,7 +170,7 @@
         var steps = [];
         $('.ingredient').each(function(key, value) {
             ingredients.push({
-                'id': $(value).find('.ingredient-id')[0].value,
+                'ingredientID': $(value).find('.ingredient-id')[0].value,
                 'quantity': $(value).find('.quantity')[0].value,
                 'type': $(value).find('.type:selected')[0].value,
                 'order': key + 1,
@@ -180,7 +180,7 @@
         });
         $('.step').each(function(key, value) {
             steps.push({
-                'id': $(value).find('.step-id')[0].value,
+                'stepID': $(value).find('.step-id')[0].value,
                 'level': $(value).find('.level:selected')[0].value,
                 'description_fr': $(value).find('.description-fr')[0].value,
                 'description_en': $(value).find('.description-en')[0].value,
