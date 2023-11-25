@@ -102,4 +102,12 @@ class User extends Authenticatable
         }
         return false;
     }
+
+    public function scopeHasPermission($user, $slug) {
+        if(!is_null($this->permission)) {
+            $permissions = explode(';', $this->permission);
+            return in_array($slug, $permissions);
+        }
+        return false;
+    }
 }
