@@ -38,11 +38,11 @@ Route::middleware(['cors'])->group(function () {
     /*Route::get('/mail/test', function() {
         return view('emails.newsletter');
     });*/
-    Route::get('/kiosk/cookbook', function (Request $request) {
+    Route::get('/cookbook', function (Request $request) {
         if($request->kiosk_key) {
-            return redirect()->to('/fr-ca/kiosk/cookbook?kiosk_key='. $request->kiosk_key);
+            return redirect()->to('/' . app()->getLocale() . '/cookbook?kiosk_key='. $request->kiosk_key);
         } else {
-            return redirect()->to('/fr-ca/kiosk/cookbook');
+            return redirect()->to('/' . app()->getLocale() . '/cookbook');
         }
     });
     Route::post('/recipe/add', 'RecipeController@saveRecipe');
@@ -169,6 +169,7 @@ Route::middleware(['cors'])->group(function () {
             Route::get('/recipe/add', 'RecipeController@addRecipe');
             Route::get('/recipe/{id}', 'RecipeController@recipe');
             Route::get('/recipe/edit/{id}', 'RecipeController@editRecipe');
+            Route::post('/recipe/edit/{id}', 'RecipeController@saveEditedRecipe');
             Route::get('/company/kiosk/refresh', 'KioskController@refreshData');
             Route::get('/fun/pokemon/{slug}', 'Website\Fun\PokemonViewController@index');
 

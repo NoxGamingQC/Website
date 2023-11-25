@@ -5,12 +5,14 @@
 
 <div class="container cookbook">
     <div class="row">
+        <input type="hidden" value="{{$id}}">
         <div class="col-md-12 text-left">
             <h2>{{trans('cookbook.ingredients')}}</h2>
             <br />
             <div id="ingredientList">
                 @foreach($recipe->ingredients as $ingredient)
                 <div class="row row-container ingredient">
+                    <input type="hidden" class="ingredient-id" value="{{$ingredient->id}}">
                     <div class="col-md-2">
                         <h4 class="raleway-font"><input type="text" class="form-control text-center quantity" placeholder="0" value="{{$ingredient->quantity}}"></h4>
                     </div>
@@ -55,6 +57,7 @@
             <div id="stepsList">
                 @foreach($recipe->steps as $key => $step)
                     <div class="row row-container step">
+                        <input type="hidden" class="step-id" value="{{$step->id}}">
                         <div class="col-md-4">
                             <textarea type="text" class="form-control description-fr" placeholder="{{trans('cookbook.add_step')}} (FR)" rows="4">{{$step->text_fr}}</textarea>
                         </div>
@@ -102,6 +105,7 @@
     $('#addIngredient').on('click', function() {
         $('#ingredientList').append(
             '<div class="row row-container ingredient">'+
+                '<input type="hidden" class="ingredient-id" value="new">'+
                 '<div class="col-md-2">'+
                     '<h4 class="raleway-font"><input type="text" class="form-control text-center quantity" placeholder="0"></h4>'+
                 '</div>'+
@@ -133,6 +137,7 @@
     $('#addStep').on('click', function() {
         $('#stepsList').append(
             '<div class="row row-container step">'+
+                '<input type="hidden" class="step-id" value="new">'+
                 '<div class="col-md-4">'+
                     '<textarea type="text" class="form-control description-fr" placeholder="{{trans('cookbook.add_step')}} (FR)" rows="4"></textarea>'+
                 '</div>'+
@@ -165,6 +170,7 @@
         var steps = [];
         $('.ingredient').each(function(key, value) {
             ingredients.push({
+                'id': $(value).find('.ingredient-id')[0].value,
                 'quantity': $(value).find('.quantity')[0].value,
                 'type': $(value).find('.type:selected')[0].value,
                 'order': key + 1,
@@ -174,6 +180,7 @@
         });
         $('.step').each(function(key, value) {
             steps.push({
+                'id': $(value).find('.step-id')[0].value,
                 'level': $(value).find('.level:selected')[0].value,
                 'description_fr': $(value).find('.description-fr')[0].value,
                 'description_en': $(value).find('.description-en')[0].value,
@@ -188,6 +195,7 @@
             url: '/recipe/edit',
             method: 'POST',
             data: {
+                'id': $('#recipeID').val().
                 'name_fr': $('#recipeNameFR').val(),
                 'name_en': $('#recipeNameEN').val(),
                 'author': $('#author').val(),
