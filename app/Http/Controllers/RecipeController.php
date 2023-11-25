@@ -277,8 +277,8 @@ class RecipeController extends Controller
                         $step = new RecipeSteps();
                         $step->text_fr = $value['description_fr'];
                         $step->text_en = $value['description_en'];
-                        $step->isDanger = (($value['level'] === 'danger')? true : false);
-                        $step->isWarning = (($value['level'] === 'warning') ? true : false);
+                        $step->is_danger = (($value['level'] === 'danger')? true : false);
+                        $step->is_warning = (($value['level'] === 'warning') ? true : false);
                         $step->recipe_id = $recipe->id;
                         $step->order = $value['order'];
                         $step->save();
