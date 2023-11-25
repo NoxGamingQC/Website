@@ -33,9 +33,6 @@ Route::middleware(['cors'])->group(function () {
     Route::post('/api/noxbot/twitch_lives/{id}', 'NoxBOT\BotTwitchLivesController@postTwitchLives');
 });
 
-
-    Route::get('/company/kiosk/{id}', 'NGST\KioskController@index');
-    //Route::get('/company/kiosk/{id}/refresh', 'NGST\KioskController@refreshData');
     Route::post('/mail/receive', 'Mails\MailController@receive');
     Route::post('/mail/send', 'Mails\MailController@sendMail');
     /*Route::get('/mail/test', function() {
@@ -48,10 +45,7 @@ Route::middleware(['cors'])->group(function () {
             return redirect()->to('/fr-ca/kiosk/cookbook');
         }
     });
-    Route::post('/recipe/add', 'NGST\RecipeController@saveRecipe');
-
-    Route::get('/company/kiosk/refresh', 'NGST\KioskController@refreshData');
-
+    Route::post('/recipe/add', 'RecipeController@saveRecipe');
 
     Route::get('/user/{id}', function ($id) {
         return redirect()->to('/' . app()->getLocale() . '/user/' . $id);
@@ -170,12 +164,12 @@ Route::middleware(['cors'])->group(function () {
               
             */
             //Cookbook routes
-            Route::get('/cookbook', 'NGST\RecipeController@cookbook');
-            Route::get('/cookbook/{category}', 'NGST\RecipeController@category');
-            Route::get('/recipe/{id}', 'NGST\RecipeController@recipe');
-            Route::get('/recipe/add', 'NGST\RecipeController@addRecipe');
-            Route::get('/recipe/edit/{id}', 'NGST\RecipeController@editRecipe');
-            Route::get('/company/kiosk/refresh', 'NGST\KioskController@refreshData');
+            Route::get('/cookbook', 'RecipeController@cookbook');
+            Route::get('/cookbook/{category}', 'RecipeController@category');
+            Route::get('/recipe/{id}', 'RecipeController@recipe');
+            Route::get('/recipe/add', 'RecipeController@addRecipe');
+            Route::get('/recipe/edit/{id}', 'RecipeController@editRecipe');
+            Route::get('/company/kiosk/refresh', 'KioskController@refreshData');
             Route::get('/fun/pokemon/{slug}', 'Website\Fun\PokemonViewController@index');
 
             /*

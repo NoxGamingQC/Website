@@ -8,7 +8,7 @@
     <meta name="description" property='og:description' content="@yield('description', 'NoxGamingQC\'s official website. You can learn about us here and much more.')">
     <meta name="author" content="NoxGamingQC">
     <meta property='og:title' content='NoxGamingQC - @yield('title')' />
-    <meta property='og:image' content='@yield('thumbnail', env('APP_URL') . '/img/NoxGamingQC.png')' />
+    <meta property='og:image' content='@yield('thumbnail', env('APP_URL') . '/img/logo.png')' />
     <meta property='og:url' content='{{URL::current()}}' />
     <meta property='og:image:width' content='500' />
     <meta property='og:image:height' content='500' />
@@ -25,7 +25,7 @@
     @else
     <title>{{env('APP_NAME')}} - @yield('title') @yield('name')</title>
     @endif
-    <link rel="icon" href="/img/NoxGamingQC.png" type="image/png">
+    <link rel="icon" href="/img/logo.png" type="image/png">
     <link href="{{mix('css/system.css')}}" rel="stylesheet" type="text/css">
     <link href="{{mix('css/bootstrap.css')}}" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">

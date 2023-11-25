@@ -1,9 +1,9 @@
-@extends('layouts.pages.app')
+@extends('layouts.pages.cookbook')
 @section('content')
 @section('name', trans('cookbook.title'))
 @section('slogan', trans('general.hi') . ', ' . $name)
 
-<div class="container">
+<div class="container cookbook">
     <div class="row">
         <div class="col-md-12">
             <br />
