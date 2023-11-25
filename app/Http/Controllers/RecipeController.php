@@ -214,9 +214,10 @@ class RecipeController extends Controller
                 $recipe->save();
 
                 foreach($request->ingredients as $key => $value) {
-                    $ingredient = IngredientList::find($value->ingredientID);
-                    if(!$ingredient) {
+                    if($value['id'] === 'new') {
                         $ingredient = new IngredientList();
+                    } else {
+                        $ingredient = IngredientList::findOrFail($value['id']);
                     }
                     $ingredient->name_fr = $value['name_fr'];
                     $ingredient->name_en = $value['name_en'];
@@ -228,9 +229,10 @@ class RecipeController extends Controller
                 }
                 if($request->steps) {
                     foreach($request->steps as $key => $value) {
-                        $step = RecipeSteps::find($value->stepID);
-                        if(!$step) {
+                        if($value['id'] === 'new') {
                             $step = new RecipeSteps();
+                        } else {
+                            $step = RecipeSteps::findOrFail($value['id']);
                         }
                         $step->text_fr = $value['description_fr'];
                         $step->text_en = $value['description_en'];
