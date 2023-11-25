@@ -195,7 +195,7 @@
             url: '/recipe/edit',
             method: 'POST',
             data: {
-                'id': $('#recipeID').val().
+                'id': $('#recipeID').val(),
                 'name_fr': $('#recipeNameFR').val(),
                 'name_en': $('#recipeNameEN').val(),
                 'author': $('#author').val(),

@@ -167,9 +167,9 @@ Route::middleware(['cors'])->group(function () {
             Route::get('/cookbook', 'RecipeController@cookbook');
             Route::get('/cookbook/{category}', 'RecipeController@category');
             Route::get('/recipe/add', 'RecipeController@addRecipe');
+            Route::post('/recipe/edit', 'RecipeController@saveEditedRecipe');
             Route::get('/recipe/{id}', 'RecipeController@recipe');
             Route::get('/recipe/edit/{id}', 'RecipeController@editRecipe');
-            Route::post('/recipe/edit/{id}', 'RecipeController@saveEditedRecipe');
             Route::get('/company/kiosk/refresh', 'KioskController@refreshData');
             Route::get('/fun/pokemon/{slug}', 'Website\Fun\PokemonViewController@index');
 
