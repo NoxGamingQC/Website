@@ -161,7 +161,7 @@ class RecipeController extends Controller
 
     public function addRecipe() {
         if (Auth::user()) {
-            if (Auth::user()->isAdmin || Auth::user()->isMod || Auth::user()->isDev) {
+            if (Auth::user()->hasPermission('create_recipe')) {
                 $categories = Categories::all();
                 return view('view.premium.cookbook.add_recipe')->with([
                     'kiosk' => 'true',
@@ -178,7 +178,7 @@ class RecipeController extends Controller
 
     public function editRecipe($language, $id) {
         if (Auth::user()) {
-            if (Auth::user()->isAdmin || Auth::user()->isMod || Auth::user()->isDev) {
+            if (Auth::user()->hasPermission('edit_recipe')) {
                 $categories = Categories::all();
                 $recipe = Recipe::findOrFail($id);
                 $recipe->category = $recipe->getCategory();
@@ -199,7 +199,7 @@ class RecipeController extends Controller
 
     public function saveRecipe(Request $request) {
         if (Auth::user()) {
-            if (Auth::user()->isAdmin || Auth::user()->isMod || Auth::user()->isDev) {
+            if (Auth::user()->hasPermission('create_recipe') || Auth::user()->hasPermission('edit_recipe') ) {
                 $recipe = new Recipe();
                 $recipe->name_fr = $request->name_fr;
                 $recipe->name_en = $request->name_en;

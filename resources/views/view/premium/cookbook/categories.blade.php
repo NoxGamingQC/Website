@@ -12,7 +12,7 @@
 
 <div class="container cookbook">
     @auth
-        @if(Auth::user()->isAdmin || Auth::user()->isModerator || Auth::user()->isDev)
+        @if(Auth::user()->hasPermission('create_recipe'))
             <div class="row">
                 <div class="col-md-12">
                      <a href="/{{app()->getLocale()}}/recipe/add"><input class="btn btn-success form-control" style="font-size:24px;padding:5%" value="{{trans('cookbook.add_recipe')}}" readonly></a>
