@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
-use App\Recipe\IngredientList;
+use App\Model\Recipe\IngredientList;
 use Illuminate\Http\Request;
 use App\Model\Recipe\RecipeSteps;
 use App\Model\Recipe\Categories;
