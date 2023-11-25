@@ -1,4 +1,4 @@
-@extends('layouts.pages.app')
+@extends('layouts.pages.cookbook')
 @section('kiosk-button')
 @auth
     @if(Auth::user()->isAdmin || Auth::user()->isModerator || Auth::user()->isDev)
@@ -25,7 +25,7 @@
     @section('description',  $recipe->description_en ? $recipe->description_en : trans('cookbook.not_available'))
 @endif
 
-<div class="container">
+<div class="container cookbook">
     <div class="row">
         <div class="col-md-12 text-left">
             <h2>{{trans('cookbook.ingredients')}}</h2>
