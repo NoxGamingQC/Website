@@ -185,6 +185,7 @@ class RecipeController extends Controller
                 $recipe->ingredients = $recipe->getIngredients();
                 $recipe->steps = $recipe->getSteps();
                 return view('view.premium.cookbook.edit_recipe')->with([
+                    'id' => $id,
                     'kiosk' => 'true',
                     'categories' => $categories,
                     'isRecipe' => true,
@@ -197,9 +198,58 @@ class RecipeController extends Controller
         abort(403);
     }
 
+    public function saveEditedRecipe(Request $request) {
+        if (Auth::user()) {
+            if(Auth::user()->hasPermission('edit_recipe')) {
+                $recipe = Recipe::findOrFail($request->id);
+                $recipe->name_fr = $request->name_fr;
+                $recipe->name_en = $request->name_en;
+                $recipe->prep_time = $request->prep_time;
+                $recipe->cook_time = $request->cook_time;
+                $recipe->description_fr = $request->description_fr;
+                $recipe->description_en = $request->description_en;
+                $recipe->created_by = $request->author;
+                $recipe->result = $request->result;
+                $recipe->category_id = $request->category;
+                $recipe->save();
+
+                foreach($request->ingredients as $key => $value) {
+                    if($value->id === 'new') {
+                        $ingredient = new IngredientList();
+                    } else {
+                        $ingredient = IngredientList::findOrFail($value->id);
+                    }
+                    $ingredient->name_fr = $value['name_fr'];
+                    $ingredient->name_en = $value['name_en'];
+                    $ingredient->recipe_id = $recipe->id;
+                    $ingredient->quantity = $value['quantity'];
+                    $ingredient->type = $value['type'] ? $value['type'] : null;
+                    $ingredient->order = $value['order'];
+                    $ingredient->save();
+                }
+                if($request->steps) {
+                    foreach($request->steps as $key => $value) {
+                        if($value->id === 'new') {
+                            $step = new RecipeSteps();
+                        } else {
+                            $step = RecipeSteps::findOrFail($value->id);
+                        }
+                        $step->text_fr = $value['description_fr'];
+                        $step->text_en = $value['description_en'];
+                        $step->isDanger = (($value['level'] === 'danger')? true : false);
+                        $step->isWarning = (($value['level'] === 'warning') ? true : false);
+                        $step->recipe_id = $recipe->id;
+                        $step->order = $value['order'];
+                        $step->save();
+                    }
+                }
+            }
+        }
+    }
+
     public function saveRecipe(Request $request) {
         if (Auth::user()) {
-            if (Auth::user()->hasPermission('create_recipe') || Auth::user()->hasPermission('edit_recipe') ) {
+            if (Auth::user()->hasPermission('create_recipe')) {
                 $recipe = new Recipe();
                 $recipe->name_fr = $request->name_fr;
                 $recipe->name_en = $request->name_en;
