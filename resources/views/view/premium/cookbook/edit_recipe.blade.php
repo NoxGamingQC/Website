@@ -49,7 +49,7 @@
         </div>
     </div>
 </div>
-<div class="container">
+<div class="container cookbook">
     <div class="row">
         <div class="col-md-12 text-left">
             <h2>{{trans('cookbook.steps')}}</h2>
