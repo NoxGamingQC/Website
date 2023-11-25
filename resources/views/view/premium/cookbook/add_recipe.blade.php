@@ -1,5 +1,6 @@
 @extends('layouts.pages.app')
 @section('name', trans('cookbook.add_recipe'))
+@section('title', trans('cookbook.add_recipe'))
 @section('content')
 
 <div class="container">

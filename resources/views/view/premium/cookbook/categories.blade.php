@@ -1,4 +1,5 @@
 @extends('layouts.pages.cookbook')
+@section('title', trans('cookbook.title'))
 @section('content')
 
 @if(app()->getLocale() === 'fr-ca')
