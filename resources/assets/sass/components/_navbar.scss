@@ -19,12 +19,14 @@
 // Navigation bar items on action
 .nav > li > a:hover, .nav > li > a:active, .nav > li > a:focus, .nav > li > a:target {
     background-color: $brand-primary !important;
+    background-clip: border-box !important;
     color: $text-on-primary !important;
 }
 
 // Navigation bar if dropdown is open
 .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
     background-color: $brand-primary !important;
+    background-clip: border-box !important;
     color: $text-on-primary !important;
 }
 
@@ -45,6 +47,7 @@
 // Dropdown items on action
 .dropdown-menu > li > a:hover, .dropdown-menu > li > a:active, .dropdown-menu > li > a:focus, .dropdown-menu > li > a:target {
     background-color: $brand-primary !important;
+    background-clip: border-box !important;
     color: $text-on-primary !important;
 }
 
