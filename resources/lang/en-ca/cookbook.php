@@ -28,10 +28,8 @@ return [
     'no_recipe_available' => "Sorry, no recipes are available in this category at this moment.",
     'oz' => "oz",
     'alcoholic' => "Alcoholic",
-
-
-
-
+    'blw' => "BLW",
+    'is_blw' => "Is it food approuved for the BLW (6 month +)",
     'breakfast' => "Breakfast",
     'lunch' => "Lunch",
     'dessert' => "Dessert",
