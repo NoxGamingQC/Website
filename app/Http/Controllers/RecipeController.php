@@ -206,6 +206,8 @@ class RecipeController extends Controller
                 $recipe->name_en = $request->name_en;
                 $recipe->prep_time = $request->prep_time;
                 $recipe->cook_time = $request->cook_time;
+                $recipe->is_blw = $request->is_blw;
+                $recipe->has_alcohol = $request->has_alcohol;
                 $recipe->description_fr = $request->description_fr;
                 $recipe->description_en = $request->description_en;
                 $recipe->created_by = $request->author;
@@ -255,6 +257,8 @@ class RecipeController extends Controller
                 $recipe->name_en = $request->name_en;
                 $recipe->prep_time = $request->prep_time;
                 $recipe->cook_time = $request->cook_time;
+                $recipe->is_blw = $request->is_blw;
+                $recipe->has_alcohol = $request->has_alcohol;
                 $recipe->description_fr = $request->description_fr;
                 $recipe->description_en = $request->description_en;
                 $recipe->created_by = $request->author;

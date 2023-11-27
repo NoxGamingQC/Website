@@ -30,6 +30,7 @@ return [
     'alcoholic' => "Alcoolisée",
     'blw' => "DME",
     'is_blw' => "Est-ce une recette approuvé pour la DME (6 mois +)",
+    'has_alcohol' => "Est-ce une recette qui contient de l'alcool",
     'breakfast' => "Déjeuner",
     'lunch' => "Repas",
     'dessert' => "Dessert",

@@ -118,6 +118,22 @@
                                             @endif
                                         </select>
                                     </div>
+                                    <div class="col-md-6">
+                                        <div class="col-md-9">
+                                            <h5 class="raleway-font text-right"><span>{{trans('cookbook.is_blw')}}:</span></h5>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <h5 class="raleway-font"><input id="isBLW" type="checkbox" class="form-control" {{ isset($recipe) && $recipe !== true ? ($recipe->is_blw ? 'checked' : '') : ''}}></h5>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="col-md-9">
+                                            <h5 class="raleway-font text-right"><span>{{trans('cookbook.has_alcohol')}}:</span></h5>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <h5 class="raleway-font"><input id="hasAlcohol" type="checkbox" class="form-control" {{ isset($recipe) && $recipe !== true ? ($recipe->has_alcohol  ? 'checked' : '') : ''}}></h5>
+                                        </div>
+                                    </div>
                                 </div>
                             @endif
                             <hr style="border-color:white" />
