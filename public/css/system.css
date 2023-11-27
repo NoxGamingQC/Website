@@ -5848,6 +5848,9 @@
     color: #262626 !important;
     box-shadow: 0 0 1px #FF5700, 0 0 10px #FF5700, 0 0 1px #FF5700, 0 0 0.1px #FF5700, inset 0 0 1px 1px #ffab80;
   }
+  .profile-badge {
+    filter: invert(75%) !important;
+  }
   .error-background {
     background-color: #F0F0F0;
     opacity: 1;

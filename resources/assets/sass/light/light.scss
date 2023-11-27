@@ -2,6 +2,10 @@
 @import '../app';
 @import '_buttons';
 
+.profile-badge {
+    filter: invert(75%) !important;
+}
+
 .error-background {
     background-color:$background-color;
     opacity: 1;
