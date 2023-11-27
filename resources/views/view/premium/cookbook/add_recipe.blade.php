@@ -145,6 +145,8 @@
                 'author': $('#author').val(),
                 'prep_time': $('#prepTime').val(),
                 'cook_time': $('#cookTime').val(),
+                'is_blw': $('#isBLW').is(':checked'),
+                'has_alcohol': $('#hasAlcohol').is(':checked'),
                 'result': $('#result').val(),
                 'description_fr': $('#descriptionFR').val(),
                 'description_en': $('#descriptionEN').val(),
