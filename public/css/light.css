@@ -3279,7 +3279,7 @@ input[type=checkbox] {
 .panel-info > .panel-heading {
   background-color: #67e8f9 !important;
   border: 1px solid #67e8f9 !important;
-  color: #FFFFFF !important;
+  color: #262626 !important;
 }
 
 .panel-warning {
@@ -3289,7 +3289,7 @@ input[type=checkbox] {
 .panel-warning > .panel-heading {
   background-color: #facc15 !important;
   border: 1px solid #facc15 !important;
-  color: #FFFFFF !important;
+  color: #262626 !important;
 }
 
 .panel-danger {
@@ -3422,7 +3422,7 @@ input[type=checkbox] {
 .badge-info {
   background-color: #67e8f9 !important;
   border: 1px solid #4ee4f8 !important;
-  color: #FFFFFF !important;
+  color: #262626 !important;
   padding: 5px 10px !important;
   border-radius: 25px !important;
   font-size: 10px;
@@ -3431,7 +3431,7 @@ input[type=checkbox] {
 .badge-warning {
   background-color: #facc15 !important;
   border: 1px solid #f0c105 !important;
-  color: #FFFFFF !important;
+  color: #262626 !important;
   padding: 5px 10px !important;
   border-radius: 25px !important;
   font-size: 10px;
@@ -3464,6 +3464,15 @@ input[type=checkbox] {
   color: #262626;
   border-radius: 5px;
   opacity: 0.98;
+}
+
+.header {
+  height: 480px !important;
+  background-color: #c22222 !important;
+}
+
+.header h1, .header h2, .header h3, .header h4, .header h5, .header h6, .header p, .header span {
+  color: #FFFFFF !important;
 }
 
 .btn-circle {

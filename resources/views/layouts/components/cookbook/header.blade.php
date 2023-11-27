@@ -1,17 +1,17 @@
 <div class="cookbook">
     @if($recipe == true)
-        <div class="header no-print" style="height:480px !important;background-color:#{{$theme->primary}};background: linear-gradient(220deg, #{{$theme->primary}}, #{{$theme->background}});">
+        <div class="header no-print">
             <div class="text-right" style="margin-right:5%;">
                 <br />
                 <h2 id="currentTime"></h2>
             </div>
             <div class="row text-center" style="padding-top: 100px;">
-                <h1 class="text-highlight" style="font-size:65px">@yield('name')</h1>
+                <h1 style="font-size:65px">@yield('name')</h1>
                 <br />
-                <h3 class="raleway-font text-highlight" style="margin-left:5%;max-width:90%">@yield('slogan')</h3>
+                <h3 style="margin-left:5%;max-width:90%">@yield('slogan')</h3>
                 @if($isRecipe == true)
                     @if(!isset($add_mode))
-                        <h4 class="raleway-font text-highlight headline" style="margin-left:5%;max-width:90%">{{ trans('cookbook.by'). ' ' }}@yield('author')</h4>
+                        <h4 style="margin-left:5%;max-width:90%">{{ trans('cookbook.by'). ' ' }}@yield('author')</h4>
                     @endif
                 @endif
                 <br />

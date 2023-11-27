@@ -21,3 +21,12 @@
     border-radius: 5px;
     opacity: 0.98;
 }
+
+.header {
+    height:480px !important;
+    background-color:$brand-primary !important;
+}
+
+.header h1, .header h2, .header h3, .header h4, .header h5, .header h6, .header p, .header span {
+    color: $text-on-primary !important;
+}
