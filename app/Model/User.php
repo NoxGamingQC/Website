@@ -76,7 +76,7 @@ class User extends Authenticatable
 
     public static function getMinecraftInfo($user) {
         if ($user->minecraft_uuid) {
-            $json = file_get_contents('https://crafthead.net/profile/' . $user->minecraft_uuid);
+            $json = @file_get_contents('https://crafthead.net/profile/' . $user->minecraft_uuid);
             if (!empty($json)) {
                 $data = json_decode($json, true);
                 return [
