@@ -1,0 +1,53 @@
+.badge-default {
+    background-color: darken($background-color, 5%) !important;
+    border: 1px solid darken($background-color, 10%) !important;
+    color: $text-color !important;
+    padding: 5px 10px !important;
+    border-radius: 25px !important;
+    font-size: 10px;
+}
+
+.badge-primary {
+    background-color: $brand-primary !important;
+    border: 1px solid darken($brand-primary, 5%) !important;
+    color: $text-on-primary !important;
+    padding: 5px 10px !important;
+    border-radius: 25px !important;
+    font-size: 10px;
+}
+
+.badge-success {
+    background-color: $brand-success !important;
+    border: 1px solid darken($brand-success, 5%) !important;
+    color: $text-on-success !important;
+    padding: 5px 10px !important;
+    border-radius: 25px !important;
+    font-size: 10px;
+}
+
+.badge-info {
+    background-color: $brand-info !important;
+    border: 1px solid darken($brand-info, 5%) !important;
+    color: $text-on-info !important;
+    padding: 5px 10px !important;
+    border-radius: 25px !important;
+    font-size: 10px;
+}
+
+.badge-warning {
+    background-color: $brand-warning !important;
+    border: 1px solid darken($brand-warning, 5%) !important;
+    color: $text-on-warning !important;
+    padding: 5px 10px !important;
+    border-radius: 25px !important;
+    font-size: 10px;
+}
+
+.badge-danger {
+    background-color: $brand-danger !important;
+    border: 1px solid darken($brand-danger, 5%) !important;
+    color: $text-on-danger !important;
+    padding: 5px 10px !important;
+    border-radius: 25px !important;
+    font-size: 10px;
+}
