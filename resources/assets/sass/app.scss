@@ -25,6 +25,7 @@
 .header {
     height:480px !important;
     background-color:$brand-primary !important;
+    background: linear-gradient(30deg, $brand-primary 0%, $brand-orange 100%);
 }
 
 .header h1, .header h2, .header h3, .header h4, .header h5, .header h6, .header p, .header span {

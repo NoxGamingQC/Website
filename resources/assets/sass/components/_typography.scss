@@ -41,7 +41,10 @@ a, label {
 }
 
 a:hover, a:active, a:focus {
-    color: $brand-primary !important;
+    background-color: $brand-primary;
+    background: linear-gradient(30deg, $brand-primary, $brand-orange) !important;
+    background-clip: text !important;
+    color: transparent !important;
 }
 
 .text-muted {
@@ -49,7 +52,10 @@ a:hover, a:active, a:focus {
 }
 
 .text-primary {
-    color: $brand-primary !important;
+    background-color: $brand-primary;
+    background: linear-gradient(30deg, $brand-primary, $brand-orange) !important;
+    background-clip: text !important;
+    color: transparent !important;
 }
 
 .text-success {
@@ -70,10 +76,12 @@ a:hover, a:active, a:focus {
 
 ::-moz-selection {
     color: $text-on-primary;
-    background: $brand-primary;
+    background-color: $brand-primary;
+    background: linear-gradient(30deg, $brand-primary 0%, $brand-orange 100%);
 }
   
 ::selection {
     color: $text-on-primary;
-    background: $brand-primary;
+    background-color: $brand-primary;
+    background: linear-gradient(30deg, $brand-primary 0%, $brand-orange 100%);
 }
