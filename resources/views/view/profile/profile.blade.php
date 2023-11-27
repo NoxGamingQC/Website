@@ -21,7 +21,7 @@
                 <hr />
                     <h4 class="raleway-font"><b>{{trans('profile.badges')}}</b></h4>
                     @foreach ($badges as $badge)
-                        <img src="/img/Badges/{{$badge}}.png" alt="{{ucfirst($badge)}}" title="{{ucfirst($badge)}}" width="75px" />
+                        <img src="/img/Badges/{{$badge}}.png" class="profile-badge" alt="{{ucfirst($badge)}}" title="{{ucfirst($badge)}}" width="75px" />
                     @endforeach
                 @endif
                 @if($gender || $birthdate || $age || $discordUser || $country || $isPremium || $pointCount)
@@ -39,7 +39,7 @@
                             <img class="img img-circle" src="https://cdn.countryflags.com/thumbs/{{str_replace(' ', '-', strtolower($country))}}/flag-square-500.png" alt="{{$country}}" title="{{$country}}" width="60px"  style="padding: 7px 14px" />
                         @endif
                         @if($isPremium)
-                            <img src="/img/Badges/premium.png" alt="{{trans('profile.premium')}}" title="{{trans('profile.premium')}}" width="75px" />
+                            <img src="/img/Badges/premium.png" class="profile-badge" alt="{{trans('profile.premium')}}" title="{{trans('profile.premium')}}" width="75px" />
                         @endif
                     @endif
                 @endif
