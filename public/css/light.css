@@ -3392,6 +3392,60 @@ input[type=checkbox] {
   box-shadow: 0 0 1px #ef4444, 0 0 15px #ef4444, 0 0 1px #ef4444, 0 0 0.1px #ef4444, inset 0 0 1px 3px #a50e0e;
 }
 
+.badge-default {
+  background-color: #e3e3e3 !important;
+  border: 1px solid #d7d7d7 !important;
+  color: #262626 !important;
+  padding: 5px 10px !important;
+  border-radius: 25px !important;
+  font-size: 10px;
+}
+
+.badge-primary {
+  background-color: #c22222 !important;
+  border: 1px solid #ac1e1e !important;
+  color: #FFFFFF !important;
+  padding: 5px 10px !important;
+  border-radius: 25px !important;
+  font-size: 10px;
+}
+
+.badge-success {
+  background-color: #22c55e !important;
+  border: 1px solid #1eaf54 !important;
+  color: #FFFFFF !important;
+  padding: 5px 10px !important;
+  border-radius: 25px !important;
+  font-size: 10px;
+}
+
+.badge-info {
+  background-color: #67e8f9 !important;
+  border: 1px solid #4ee4f8 !important;
+  color: #FFFFFF !important;
+  padding: 5px 10px !important;
+  border-radius: 25px !important;
+  font-size: 10px;
+}
+
+.badge-warning {
+  background-color: #facc15 !important;
+  border: 1px solid #f0c105 !important;
+  color: #FFFFFF !important;
+  padding: 5px 10px !important;
+  border-radius: 25px !important;
+  font-size: 10px;
+}
+
+.badge-danger {
+  background-color: #ef4444 !important;
+  border: 1px solid #ed2d2d !important;
+  color: #FFFFFF !important;
+  padding: 5px 10px !important;
+  border-radius: 25px !important;
+  font-size: 10px;
+}
+
 #content {
   margin-top: 120px;
 }
