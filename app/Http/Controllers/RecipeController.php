@@ -24,7 +24,7 @@ class RecipeController extends Controller
                     'categories' => $categories,
                     'recipe' => true,
                     'isRecipe' => false,
-                    'lastLink' => '/' . app()->getLocale() . '/cookbook',
+                    'lastLink' => '/' . app()->getLocale(),
                     'name' => Auth::user()->name
                 ]);
             } else {
