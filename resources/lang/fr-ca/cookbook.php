@@ -28,7 +28,8 @@ return [
     'no_recipe_available' => "Désolé, aucune recette n'est disponible dans cette catégorie pour le moment.",
     'oz' => "once",
     'alcoholic' => "Alcoolisée",
-
+    'blw' => "DME",
+    'is_blw' => "Est-ce une recette approuvé pour la DME (6 mois +)",
     'breakfast' => "Déjeuner",
     'lunch' => "Repas",
     'dessert' => "Dessert",
