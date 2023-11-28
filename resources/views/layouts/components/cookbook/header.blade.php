@@ -56,7 +56,7 @@
                                     @if($recipe->cook_time)
                                         <h4 class="raleway-font">{{trans('cookbook.cook_time')}}: @yield('cook_time')</h4>
                                     @endif
-                                    @if($recipe->yields)
+                                    @if($recipe->yield)
                                         <h4 class="raleway-font">{{trans('cookbook.yields')}}:  @yield('yields')</h4>
                                     @endif
                                 @endif
@@ -145,7 +145,7 @@
                                 </div>
                             @endif
                             @if(isset($recipe) && $recipe !== true)
-                                @if($recipe->prep_time || $recipe->cook_time || $recipe->yields)
+                                @if($recipe->prep_time || $recipe->cook_time || $recipe->yield)
                                     <hr style="border-color:white" />
                                 @endif
                             @endif
