@@ -5,7 +5,15 @@
 <div class="container-fluid section header">
     <div class="row">
         <div class="col-md-12 text-center">
-            <h1 class="raleway-font"><img src="/img/logo.svg" height="140vh" /><b> NoxGamingQC</b></h1>
+            <div class="row">
+                <div class="col-md-2 col-md-offset-3">
+                    <img src="/img/logo.svg" height="140vh" />
+                </div>
+                <div class="col-md-3">
+                    <br />
+                    <h1 class="raleway-font"><b>NoxGamingQC</b></h1>
+                </div>
+            </div>
         </div>
         <div class="col-md-12 text-center">
             <br />

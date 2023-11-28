@@ -3484,9 +3484,20 @@ input[type=checkbox] {
   background-color: #991b1b !important;
   background: linear-gradient(30deg, #991b1b 0%, #c2410c 100%);
 }
+@media (max-width: 1200px) {
+  .header {
+    padding-top: 0px !important;
+  }
+}
 
 .header h1, .header h2, .header h3, .header h4, .header h5, .header h6, .header p, .header span {
   color: #FFFFFF !important;
+}
+@media (max-width: 1200px) {
+  .header h1, .header h2, .header h3, .header h4, .header h5, .header h6, .header p, .header span {
+    margin-left: -50% !important;
+    margin-right: -50% !important;
+  }
 }
 
 .btn-circle {
