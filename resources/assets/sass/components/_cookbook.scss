@@ -129,5 +129,7 @@
 }
 
 .recipe-spacer {
-    margin-top: 25%;
+    @media (max-width: $screen-md-min) {
+        margin-top: 25%;
+    }
 }
