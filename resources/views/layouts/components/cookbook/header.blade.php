@@ -49,9 +49,17 @@
                             <hr class="print" style="display:none;border-color:black" />
                             <hr style="border-color:white" />
                             @if(!isset($add_mode))
-                                <h4 class="raleway-font">{{trans('cookbook.prep_time')}}: @yield('prep_time')</h4>
-                                <h4 class="raleway-font">{{trans('cookbook.cook_time')}}: @yield('cook_time')</h4>
-                                <h4 class="raleway-font">{{trans('cookbook.yields')}}:  @yield('yields')</h4>
+                                @if(isset($recipe) && $recipe !== true)
+                                    @if($recipe->prep_time)
+                                        <h4 class="raleway-font">{{trans('cookbook.prep_time')}}: @yield('prep_time')</h4>
+                                    @endif
+                                    @if($recipe->cook_time)
+                                        <h4 class="raleway-font">{{trans('cookbook.cook_time')}}: @yield('cook_time')</h4>
+                                    @endif
+                                    @if($recipe->yields)
+                                        <h4 class="raleway-font">{{trans('cookbook.yields')}}:  @yield('yields')</h4>
+                                    @endif
+                                @endif
                             @else
                                 <div class="row">
                                     <div class="col-md-3">
@@ -136,20 +144,29 @@
                                     </div>
                                 </div>
                             @endif
-                            <hr style="border-color:white" />
+                            @if(isset($recipe) && $recipe !== true)
+                                @if($recipe->prep_time || $recipe->cook_time || $recipe->yields)
+                                    <hr style="border-color:white" />
+                                @endif
+                            @endif
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12">
                             @if(!isset($add_mode))
-                                <h4 class="raleway-font headline">@yield('description')</h4>
+                                @if(isset($recipe) && $recipe !== true)
+                                    @if($recipe->description)
+                                        <h4 class="raleway-font headline">@yield('description')</h4>
+                                        <hr style="border-bottom: solid 3px" />
+                                    @endif
+                                @endif
                             @else
                                 <textarea id="descriptionFR" type="text" class="form-control" rows="4" placeholder="{{trans('cookbook.add_description')}} (FR)">{{isset($recipe) && $recipe !== true ? $recipe->description_fr : ''}}</textarea>
                                 <br />
                                 <br />
                                 <textarea id="descriptionEN" type="text" class="form-control" rows="4" placeholder="{{trans('cookbook.add_description')}} (EN)">{{isset($recipe) && $recipe !== true ? $recipe->description_en : ''}}</textarea>
+                                <hr style="border-bottom: solid 3px" />
                             @endif
-                            <hr style="border-bottom: solid 3px" />
                         </div>
                     </div>
                 </div>
