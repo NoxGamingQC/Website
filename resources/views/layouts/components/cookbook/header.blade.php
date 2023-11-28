@@ -5,7 +5,7 @@
                 <br />
                 <h2 id="currentTime"></h2>
             </div>
-            <div class="row text-center">
+            <div class="row text-center recipe-spacer">
                 <h1 style="font-size:65px">@yield('name')</h1>
                 <br />
                 <h3 style="margin-left:5%;max-width:90%">@yield('slogan')</h3>

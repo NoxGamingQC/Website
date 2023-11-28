@@ -2580,6 +2580,9 @@
     border-radius: 25px !important;
     box-shadow: 0 0 1px #ef4444, 0 0 15px #ef4444, 0 0 1px #ef4444, 0 0 0.1px #ef4444, inset 0 0 1px 3px #a50e0e;
   }
+  .recipe-spacer {
+    margin-top: 25%;
+  }
   .badge-default {
     background-color: #030303 !important;
     border: 1px solid black !important;
@@ -5534,6 +5537,9 @@
     padding: 54px 42px !important;
     border-radius: 25px !important;
     box-shadow: 0 0 1px #ef4444, 0 0 15px #ef4444, 0 0 1px #ef4444, 0 0 0.1px #ef4444, inset 0 0 1px 3px #a50e0e;
+  }
+  .recipe-spacer {
+    margin-top: 25%;
   }
   .badge-default {
     background-color: #e3e3e3 !important;
