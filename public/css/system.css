@@ -2580,9 +2580,13 @@
     border-radius: 25px !important;
     box-shadow: 0 0 1px #ef4444, 0 0 15px #ef4444, 0 0 1px #ef4444, 0 0 0.1px #ef4444, inset 0 0 1px 3px #a50e0e;
   }
+}
+@media (prefers-color-scheme: dark) and (max-width: 1200px) {
   .recipe-spacer {
     margin-top: 25%;
   }
+}
+@media (prefers-color-scheme: dark) {
   .badge-default {
     background-color: #030303 !important;
     border: 1px solid black !important;
@@ -5538,9 +5542,13 @@
     border-radius: 25px !important;
     box-shadow: 0 0 1px #ef4444, 0 0 15px #ef4444, 0 0 1px #ef4444, 0 0 0.1px #ef4444, inset 0 0 1px 3px #a50e0e;
   }
+}
+@media (prefers-color-scheme: light) and (max-width: 1200px) {
   .recipe-spacer {
     margin-top: 25%;
   }
+}
+@media (prefers-color-scheme: light) {
   .badge-default {
     background-color: #e3e3e3 !important;
     border: 1px solid #d7d7d7 !important;
