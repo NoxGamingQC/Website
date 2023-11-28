@@ -1,5 +1,6 @@
 <?php
 
 return [
-    'prefix' => "Préfix"
+    'noxbot' => "NoxBOT",
+    'prefix' => "Préfix",
 ];
