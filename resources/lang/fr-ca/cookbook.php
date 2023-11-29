@@ -65,5 +65,6 @@ return [
     'yields' => "Résultat",
     'macaroni_salad' => "Salade de macaroni",
     'crema_di_caffe' => "Crema di Caffè",
-    'side_dish' => "Plat d'accompagnement"
+    'side_dish' => "Plat d'accompagnement",
+    'unknown' => "Inconnu"
 ];
