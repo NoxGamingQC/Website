@@ -66,5 +66,8 @@ return [
     'macaroni_salad' => "Salade de macaroni",
     'crema_di_caffe' => "Crema di Caffè",
     'side_dish' => "Plat d'accompagnement",
-    'unknown' => "Inconnu"
+    'unknown' => "Inconnu",
+    'created_by' => "Créer par",
+    'on' => "le",
+    'updated_by' => "Mis à jour par"
 ];
