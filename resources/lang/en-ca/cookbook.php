@@ -66,5 +66,8 @@ return [
     'macaroni_salad' => "Macaroni salad",
     'crema_di_caffe' => "Crema di Caffè",
     'side_dish' => "Side dish",
-    'unknown' => "Unknown"
+    'unknown' => "Unknown",
+    'created_by' => "Created by",
+    'on' => "on",
+    'updated_by' => "Updated by"
 ];
