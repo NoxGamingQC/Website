@@ -210,9 +210,10 @@ class RecipeController extends Controller
                 $recipe->has_alcohol = $request->has_alcohol;
                 $recipe->description_fr = $request->description_fr;
                 $recipe->description_en = $request->description_en;
-                $recipe->created_by = $request->author;
+                $recipe->author = $request->author;
                 $recipe->result = $request->result;
                 $recipe->category_id = $request->category;
+                $recipe->updated_by = Auth::user()->id;
                 $recipe->save();
 
                 foreach($request->ingredients as $key => $value) {
@@ -261,9 +262,11 @@ class RecipeController extends Controller
                 $recipe->has_alcohol = $request->has_alcohol;
                 $recipe->description_fr = $request->description_fr;
                 $recipe->description_en = $request->description_en;
-                $recipe->created_by = $request->author;
+                $recipe->author = $request->author;
                 $recipe->result = $request->result;
                 $recipe->category_id = $request->category;
+                $recipe->created_by = Auth::user()->id;
+                $recipe->updated_by = Auth::user()->id;
                 $recipe->save();
 
                 foreach($request->ingredients as $key => $value) {

@@ -14,7 +14,7 @@
 @endauth
 @endsection
 @section('content')
-@section('author',  $recipe->created_by ?  $recipe->created_by : trans('cookbook.not_available'))
+@section('author',  $recipe->created_by ?  $recipe->author : trans('cookbook.unknown'))
 @section('prep_time', $recipe->prep_time ? $recipe->prep_time : trans('cookbook.not_available'))
 @section('cook_time', $recipe->cook_time ? $recipe->cook_time : trans('cookbook.not_available'))
 @section('yields', $recipe->result ? $recipe->result : trans('cookbook.not_available'))
