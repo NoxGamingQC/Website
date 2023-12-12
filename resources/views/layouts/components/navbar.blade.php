@@ -31,7 +31,7 @@
                         </li>
                     </ul>
                 </li>
-                <li><a href="https://noxgamingqc.square.site" class=""><i class="fa fa-cart" aria-hidden="true"></i> {{ trans('store.store') }}</a></li>
+                <li><a href="https://noxgamingqc.square.site" class=""><i class="fa fa-shopping-cart" aria-hidden="true"></i> {{ trans('store.store') }}</a></li>
                 @auth
                     @if(Auth::user()->hasPermission('view_recipe'))
                         <li><a href="/{{app()->getLocale()}}/cookbook" class=""><i class="fa fa-book" aria-hidden="true"></i> {{ trans('cookbook.title') }}</a></li>
