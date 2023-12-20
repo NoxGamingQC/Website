@@ -39,8 +39,8 @@ Route::middleware(['cors'])->group(function () {
         return view('emails.newsletter');
     });*/
     Route::get('/cookbook', function (Request $request) {
-        if($request->kiosk_key) {
-            return redirect()->to('/' . app()->getLocale() . '/cookbook?kiosk_key='. $request->kiosk_key);
+        if($request->key) {
+            return redirect()->to('/' . app()->getLocale() . '/cookbook?key='. $request->key);
         } else {
             return redirect()->to('/' . app()->getLocale() . '/cookbook');
         }
