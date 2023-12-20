@@ -35,7 +35,7 @@ class RecipeController extends Controller
                 ]);
             }
         } elseif ($request->key !== null) {
-            $isRealKey = KioskKey::where('key', $request->key)->first();
+            $isRealKey = KioskKey::where('kiosk_key', $request->key)->first();
             if($isRealKey) {
                 $categories = Categories::where('is_shown', true)->orderBy('name_' . (app()->getLocale() == 'fr-ca' ? 'fr' : 'en'))->get();
                 return view('view.premium.cookbook.cookbook')->with([
@@ -82,7 +82,7 @@ class RecipeController extends Controller
                 ]);
             }
         } elseif ($request->key !== null) {
-            $isRealKey = KioskKey::where('key', $request->key)->first();
+            $isRealKey = KioskKey::where('kiosk_key', $request->key)->first();
             if($isRealKey) {
                 $category = Categories::findOrFail($id);
                 $recipes = Recipe::where('category_id', $id)->orderBy('name_' . (app()->getLocale() == 'fr-ca' ? 'fr' : 'en'))->get();
@@ -132,7 +132,7 @@ class RecipeController extends Controller
                 ]);
             }
         } elseif ($request->key !== null) {
-            $isRealKey = KioskKey::where('key', $request->key)->first();
+            $isRealKey = KioskKey::where('kiosk_key', $request->key)->first();
             if($isRealKey) {
                 $recipe = Recipe::findOrFail($id);
                 $recipe->category = $recipe->getCategory();
