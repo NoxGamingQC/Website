@@ -27,13 +27,13 @@
             @if(app()->getLocale() === 'fr-ca')
                 @foreach($recipes as $key => $recipe)
                     <div class="col-sm-4 text-center" style="margin-bottom:3%">
-                        <a href="/{{app()->getLocale()}}/recipe/{{$recipe->id}}{{isset($key) ? '?key=' . $key : ''}}"><button class="btn btn-primary form-control" style="font-size:18px;padding:10% 15% 20% 15%; overflow:hidden" readonly>{{$recipe->name_fr}} @if($recipe->has_alcohol)<input type="button" class="badge-danger" value="{{trans('cookbook.alcoholic')}}" style="padding: 5px 5px !important;pointer-events: none;" readonly/>@endif @if($recipe->is_blw)<input type="button" class="badge-info" value="{{trans('cookbook.blw')}}" style="padding: 5px 5px !important;pointer-events: none;" readonly/>@endif</button></a>
+                        <a href="/{{app()->getLocale()}}/recipe/{{$recipe->id}}{{isset($kiosk_key) ? '?key=' . $kiosk_key : ''}}"><button class="btn btn-primary form-control" style="font-size:18px;padding:10% 15% 20% 15%; overflow:hidden" readonly>{{$recipe->name_fr}} @if($recipe->has_alcohol)<input type="button" class="badge-danger" value="{{trans('cookbook.alcoholic')}}" style="padding: 5px 5px !important;pointer-events: none;" readonly/>@endif @if($recipe->is_blw)<input type="button" class="badge-info" value="{{trans('cookbook.blw')}}" style="padding: 5px 5px !important;pointer-events: none;" readonly/>@endif</button></a>
                     </div>
                 @endforeach
             @else
                 @foreach($recipes as $key => $recipe)
                     <div class="col-sm-4 text-center" style="margin-bottom:3%">
-                        <a href="/{{app()->getLocale()}}/recipe/{{$recipe->id}}{{isset($key) ? '?key=' . $key : ''}}"><button class="btn btn-primary form-control" style="font-size:18px;padding:10% 15% 20% 15%; overflow:hidden" readonly>{{$recipe->name_en}} @if($recipe->has_alcohol)<input type="button" class="badge-danger" value="{{trans('cookbook.alcoholic')}}" style="padding: 5px 5px !important;pointer-events: none;" readonly/>@endif @if($recipe->is_blw)<input type="button" class="badge-info" value="{{trans('cookbook.blw')}}" style="padding: 5px 5px !important;pointer-events: none;" readonly/>@endif</button></a>
+                        <a href="/{{app()->getLocale()}}/recipe/{{$recipe->id}}{{isset($kiosk_key) ? '?key=' . $kiosk_key : ''}}"><button class="btn btn-primary form-control" style="font-size:18px;padding:10% 15% 20% 15%; overflow:hidden" readonly>{{$recipe->name_en}} @if($recipe->has_alcohol)<input type="button" class="badge-danger" value="{{trans('cookbook.alcoholic')}}" style="padding: 5px 5px !important;pointer-events: none;" readonly/>@endif @if($recipe->is_blw)<input type="button" class="badge-info" value="{{trans('cookbook.blw')}}" style="padding: 5px 5px !important;pointer-events: none;" readonly/>@endif</button></a>
                     </div>
                 @endforeach
             @endif

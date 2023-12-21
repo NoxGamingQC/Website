@@ -11,13 +11,14 @@ use App\Model\Recipe\Categories;
 use App\Model\Recipe\Recipe;
 use Carbon\Carbon;
 use App\Model\KioskKey;
+use App\Model\User;
 
 class RecipeController extends Controller
 {
     public function cookbook(Request $request) {
         if(Auth::check()) {
             if(Auth::user()->has_premium) {
-                $categories = Categories::where('is_shown', true)->orderBy('name_' . (app()->getLocale() == 'fr-ca' ? 'fr' : 'en'))->get();
+                $categories = Categories::where('is_shown', true)->orderBy('name_' . (app()->gkiosk_keyetLocale() == 'fr-ca' ? 'fr' : 'en'))->get();
 
                 return view('view.premium.cookbook.cookbook')->with([
                     'kiosk' => 'true',
@@ -43,7 +44,7 @@ class RecipeController extends Controller
                     'categories' => $categories,
                     'recipe' => true,
                     'isRecipe' => false,
-                    'key' => $request->key,
+                    'kiosk_key' => $request->key,
                     'lastLink' => '/' . app()->getLocale() . '/cookbook?key=' . $request->key,
                     'name' => $isRealKey->name
                 ]);
@@ -86,14 +87,14 @@ class RecipeController extends Controller
             if($isRealKey) {
                 $category = Categories::findOrFail($id);
                 $recipes = Recipe::where('category_id', $id)->orderBy('name_' . (app()->getLocale() == 'fr-ca' ? 'fr' : 'en'))->get();
-        
+                
                 return view('view.premium.cookbook.categories')->with([
                     'kiosk' => 'true',
                     'category' => $category,
                     'recipes' => $recipes,
                     'recipe' => true,
                     'isRecipe' => false,
-                    'key' => $request->key,
+                    'kiosk_key' => $request->key,
                     'lastLink' => '/' . app()->getLocale() . '/cookbook?key='. $request->key,
                 ]);
             } else {
@@ -122,6 +123,8 @@ class RecipeController extends Controller
                     'kiosk' => 'true',
                     'isRecipe' => true,
                     'recipe' => $recipe,
+                    'created_by' => User::find($recipe->created_by)->name,
+                    'updated_by' => User::find($recipe->updated_by)->name,
                     'lastLink' => '/' . app()->getLocale() . '/cookbook/' . $recipe->category->id,
                 ]);
             } else {
@@ -143,7 +146,9 @@ class RecipeController extends Controller
                     'kiosk' => 'true',
                     'isRecipe' => true,
                     'recipe' => $recipe,
-                    'key' => $request->key,
+                    'kiosk_key' => $request->key,
+                    'created_by' => User::find($recipe->created_by)->name,
+                    'updated_by' => User::find($recipe->updated_by)->name,
                     'lastLink' => '/' . app()->getLocale() . '/cookbook/'. $recipe->category->id . '?key='. $request->key,
                 ]);
             } else {
