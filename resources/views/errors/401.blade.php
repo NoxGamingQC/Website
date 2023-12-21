@@ -4,7 +4,7 @@
 
 <div class="container">
     <div class="row text-center">
-        <img src="/img/logo.svg" width="300">
+        <img src="/img/logo.png" width="300">
         <h3 class="raleway-font">ERROR 401 | Access not authorised.</h3>
         <br />
         <hr />
