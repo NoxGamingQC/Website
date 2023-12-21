@@ -82,8 +82,8 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2 text-center">
             <br /><br />
-            <p>{{trans('cookbook.created_by') . ' '}}<a href="/user/{{ app\Model\User::find($recipe->created_by)->name}}">{{ app\Model\User::find($recipe->created_by)->name}}</a> {{' ' . trans('cookbook.on') . ' ' . Carbon\Carbon::parse($recipe->created_at)->format('Y-m-d H:i:s')}}</p>
-            <p>{{trans('cookbook.updated_by') . ' '}}<a href="/user/{{ app\Model\User::find($recipe->updated_by)->name}}">{{ app\Model\User::find($recipe->updated_by)->name}}</a>{{' ' . trans('cookbook.on') . ' ' . Carbon\Carbon::parse($recipe->updated_at)->format('Y-m-d H:i:s')}}</p>
+            <p>{{trans('cookbook.created_by') . ' '}}<a href="/user/{{$created_by}}">{{ $created_by }}</a> {{' ' . trans('cookbook.on') . ' ' . Carbon\Carbon::parse($recipe->created_at)->format('Y-m-d H:i:s')}}</p>
+            <p>{{trans('cookbook.updated_by') . ' '}}<a href="/user/{{$updated_by}}">{{ $updated_by }}</a>{{' ' . trans('cookbook.on') . ' ' . Carbon\Carbon::parse($recipe->updated_at)->format('Y-m-d H:i:s')}}</p>
             <br /><br />
         </div>
     </div>
