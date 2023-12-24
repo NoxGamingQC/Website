@@ -3,7 +3,7 @@
         <div class="header no-print">
             <div class="text-right" style="margin-right:5%;">
                 <br />
-                <h2 id="currentTime"></h2>
+                <h2 class="current-time"></h2>
             </div>
             <div class="row text-center recipe-spacer">
                 <h1 style="font-size:65px">@yield('name')</h1>
@@ -17,18 +17,6 @@
                 <br />
             </div>
         </div>
-        <script>
-            $(document).ready(function() {
-                updateClock()
-            });
-
-            function updateClock() {
-                var time = new Date();
-                $('#currentTime').html(('0' + time.getHours()).slice(-2) + ':' + ('0' + time.getMinutes()).slice(-2) + ':' + ('0' + time.getSeconds()).slice(-2))
-                setTimeout(updateClock, 1000);
-            }
-            
-        </script>
         @if(!isset($isButtonLastPage) || $isButtonLastPage === 'true')
             <div class="container no-print">
                 <div class="row">
