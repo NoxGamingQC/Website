@@ -28,7 +28,7 @@
     </head>
     <body style="background-color:#{{$theme->background}};">
         <div class="idle-screen hidden" style="position:absolute; width:100%;height:100%;top:0px;bottom:0px;background-color:#000;z-index:98;overflow:hidden">
-            <h1 class="current-time" style="position:absolute;color: #333333 !important;z-index:99 !important;font-size:96px !important;margin:25%;"></h1>
+            <h1 class="current-time" style="position:absolute;color: #202020 !important;z-index:99 !important;font-size:96px !important;margin:25%;"></h1>
         </div>
         <div class="active-screen">
         <input id="websiteLocationID" type="hidden">
