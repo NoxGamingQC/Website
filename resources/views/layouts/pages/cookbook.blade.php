@@ -49,6 +49,7 @@
 
             var idleTime = 0;
             $(document).ready(function () {
+                idleTime = 0;
                 updateClock();
                 var idleInterval = setInterval(timerIncrement, 60000);
                 $(this).mousemove(function (e) {
