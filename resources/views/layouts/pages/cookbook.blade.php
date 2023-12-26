@@ -30,7 +30,9 @@
         <div class="idle-screen hidden" style="position:absolute; width:100%;height:100%;top:0px;bottom:0px;background-color:#000;z-index:98;overflow:hidden">
             <h1 class="current-weekday" style="position:absolute;color: #202020 !important;z-index:99 !important;font-size:60px !important;margin-left:15% !important;margin:5%;"></h1>
             <h1 class="current-date" style="position:absolute;color: #202020 !important;z-index:99 !important;font-size:60px !important;margin:10%;margin-left:15%;margin-top:15%;"></h1>
-            <h1 class="current-time" style="position:absolute;color: #202020 !important;z-index:99 !important;font-size:96px !important;margin:10%;margin-left:15%;margin-top:30%;font-weight:bold;margin-right:5%"></h1>
+            <hr style="margin-top:30%" />
+            <h1 class="current-time" style="position:absolute;color: #202020 !important;z-index:99 !important;font-size:84px !important;margin:10%;margin-left:15%;margin-top:5%;font-weight:bold;margin-right:5%"></h1>
+            <img src="/img/logo.png" width=100px style="position:absolute;bottom: 5%; right: 5%; opacity:25%">
         </div>
         <div class="active-screen">
         <input id="websiteLocationID" type="hidden">
