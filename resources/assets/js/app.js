@@ -8,4 +8,5 @@
 require('./bootstrap');
 //require('./facebook');
 require('./userState');
+window.moment = require('moment');
 window.toastr = require('toastr');

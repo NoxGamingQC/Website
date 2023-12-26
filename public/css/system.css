@@ -2583,7 +2583,7 @@
 }
 @media (prefers-color-scheme: dark) and (max-width: 1200px) {
   .recipe-spacer {
-    margin-top: 25%;
+    margin-top: 15%;
   }
 }
 @media (prefers-color-scheme: dark) {
@@ -5545,7 +5545,7 @@
 }
 @media (prefers-color-scheme: light) and (max-width: 1200px) {
   .recipe-spacer {
-    margin-top: 25%;
+    margin-top: 15%;
   }
 }
 @media (prefers-color-scheme: light) {

@@ -28,7 +28,9 @@
     </head>
     <body style="background-color:#{{$theme->background}};">
         <div class="idle-screen hidden" style="position:absolute; width:100%;height:100%;top:0px;bottom:0px;background-color:#000;z-index:98;overflow:hidden">
-            <h1 class="current-time" style="position:absolute;color: #202020 !important;z-index:99 !important;font-size:96px !important;margin:25%;"></h1>
+            <h1 class="current-weekday" style="position:absolute;color: #202020 !important;z-index:99 !important;font-size:60px !important;margin-left:15% !important;margin:5%;"></h1>
+            <h1 class="current-date" style="position:absolute;color: #202020 !important;z-index:99 !important;font-size:60px !important;margin:10%;margin-left:15%;margin-top:15%;"></h1>
+            <h1 class="current-time" style="position:absolute;color: #202020 !important;z-index:99 !important;font-size:96px !important;margin:10%;margin-left:15%;margin-top:30%;font-weight:bold"></h1>
         </div>
         <div class="active-screen">
         <input id="websiteLocationID" type="hidden">
@@ -66,13 +68,15 @@
 
             function updateClock() {
                 var currentTime = new Date();
-                $('.current-time').html(('0' + currentTime.getHours()).slice(-2) + ':' + ('0' + currentTime.getMinutes()).slice(-2) + ':' + ('0' + currentTime.getSeconds()).slice(-2));
+                $('.current-weekday').html(moment(currentTime).locale('fr').format('dddd')[0].toUpperCase() + moment(currentTime).locale('fr').format('dddd').substring(1));
+                $('.current-date').html(moment(currentTime).locale('fr').format('D MMMM YYYY'));
+                $('.current-time').html(moment(currentTime).format('h:mm:ss a'));
                 setTimeout(updateClock, 1000);
             }
 
             function timerIncrement() {
                 idleTime = idleTime + 1;
-                if (idleTime > 29) {
+                if (idleTime > 9) {
                     $('.idle-screen').removeClass('hidden');
                     $('.active-screen').addClass('hidden');
                 }
