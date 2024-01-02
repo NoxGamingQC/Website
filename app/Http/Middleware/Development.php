@@ -18,7 +18,7 @@ class Development
     public function handle($request, Closure $next)
     {
         $isDev = false;
-        if(env('APP_URL') !== 'http://localhost:8000') {
+        if(env('APP_URL') !== 'http://127.0.0.1') {
             \URL::forceScheme('https');
         } else {
             $isDev = true;
