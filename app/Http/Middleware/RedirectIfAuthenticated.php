@@ -17,7 +17,7 @@ class RedirectIfAuthenticated
      */
     public function handle($request, Closure $next, $guard = null)
     {
-        if(env('APP_URL') !== 'http://localhost:8000') {
+        if(env('APP_URL') !== 'http://127.0.0.1') {
             \URL::forceScheme('https');
         }
         if (Auth::guard($guard)->check()) {
