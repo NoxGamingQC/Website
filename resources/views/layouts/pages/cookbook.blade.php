@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ app()->getLocale() }}" style="background-color:#{{$theme->background}};">
+<html lang="{{ app()->getLocale() }}">
     <head>
         <meta name="google-site-verification" content="D30gPHSCahf2lVeDo0Ndgc8vI1cQvv8d1gXIZa3B2ds" />
         <meta name="facebook-domain-verification" content="uki484ngemqhks0g9endzi9hb1nobp" />
@@ -26,7 +26,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
         <script src="{{mix('js/app.js')}}"></script>
     </head>
-    <body style="background-color:#{{$theme->background}};">
+    <body>
         <div class="idle-screen hidden" style="position:absolute; width:100%;height:100%;top:0px;bottom:0px;background-color:#000;z-index:98;overflow:hidden">
             <h1 class="current-weekday" style="position:absolute;color: #202020 !important;z-index:99 !important;font-size:60px !important;margin-left:15% !important;margin:5%;"></h1>
             <h1 class="current-date" style="position:absolute;color: #202020 !important;z-index:99 !important;font-size:60px !important;margin:10%;margin-left:15%;margin-top:15%;"></h1>
