@@ -41,6 +41,7 @@ class CreateUsersTable extends Migration
                 $table->string('discord_email')->nullable(true);
                 $table->string('country')->nullable(true);
                 $table->string('theme')->nullable(true);
+                $table->string('preferred_theme')->nullable(false)->default('system');
                 $table->timestamps();
             });
         }
