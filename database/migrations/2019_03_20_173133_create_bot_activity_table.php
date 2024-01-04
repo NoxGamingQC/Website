@@ -15,8 +15,8 @@ class CreateBotActivityTable extends Migration
     {
         if (!Schema::hasTable('bot_activity')) {
             Schema::create('bot_activity', function (Blueprint $table) {
-                $table->increments('ID');
-                $table->string('Activity')->nullable(false);
+                $table->increments('id');
+                $table->string('activity')->nullable(false);
                 $table->timestamps();
             });
         }

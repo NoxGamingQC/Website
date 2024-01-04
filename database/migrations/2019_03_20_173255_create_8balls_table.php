@@ -15,8 +15,8 @@ class Create8ballsTable extends Migration
     {
         if (!Schema::hasTable('8balls')) {
             Schema::create('8balls', function (Blueprint $table) {
-                $table->increments('ID');
-                $table->string('Text')->nullable(false);
+                $table->increments('id');
+                $table->string('text')->nullable(false);
                 $table->timestamps();
             });
         }

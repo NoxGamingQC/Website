@@ -15,12 +15,12 @@ class CreateBotListsTable extends Migration
     {
         if (!Schema::hasTable('bot_lists')) {
             Schema::create('bot_lists', function (Blueprint $table) {
-                $table->increments('ID');
-                $table->string('BotID')->nullable(false);
-                $table->boolean('isDev')->nullable(false);
-                $table->string('DefaultPrefix')->nullable(false);
-                $table->string('OauthToken')->nullable(false);
-                $table->string('YouTubeToken');
+                $table->increments('id');
+                $table->string('bot_id')->nullable(false);
+                $table->boolean('is_dev')->nullable(false);
+                $table->string('default_prefix')->nullable(false);
+                $table->string('oauth_token')->nullable(false);
+                $table->string('youtube_token');
                 $table->string('website_token');
                 $table->timestamps();
             });

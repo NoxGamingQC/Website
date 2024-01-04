@@ -15,11 +15,11 @@ class CreateModulesListsTable extends Migration
     {
         if (!Schema::hasTable('modules_lists')) {
             Schema::create('modules_lists', function (Blueprint $table) {
-                $table->increments('ID');
-                $table->string('Slug')->nullable(false);
-                $table->boolean('Maintenance')->nullable(false)->default(false);
-                $table->boolean('isActiveDefault')->nullable(false)->default(true);
-                $table->boolean('ModuleIcon')->nullable(true);
+                $table->increments('id');
+                $table->string('slug')->nullable(false);
+                $table->boolean('is_maintenance')->nullable(false)->default(false);
+                $table->boolean('is_active_default')->nullable(false)->default(true);
+                $table->boolean('module_icon')->nullable(true);
                 $table->timestamps();
             });
         }
