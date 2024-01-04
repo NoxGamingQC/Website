@@ -15,12 +15,12 @@ class CreateReactionsRolesTable extends Migration
     {
         if (!Schema::hasTable('reactions_roles')) {
             Schema::create('reactions_roles', function (Blueprint $table) {
-                $table->increments('ID');
-                $table->string('ServerID')->nullable(false);
-                $table->string('ChannelID')->nullable(false);
-                $table->string('MessageID')->nullable(false);
-                $table->string('RoleID')->nullable(false);
-                $table->string('Emoji')->nullable(false);
+                $table->increments('id');
+                $table->string('server_id')->nullable(false);
+                $table->string('channel_id')->nullable(false);
+                $table->string('message_id')->nullable(false);
+                $table->string('role_id')->nullable(false);
+                $table->string('emoji')->nullable(false);
                 $table->timestamps();
             });
         }

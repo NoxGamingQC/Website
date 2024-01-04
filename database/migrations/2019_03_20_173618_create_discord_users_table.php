@@ -15,11 +15,11 @@ class CreateDiscordUsersTable extends Migration
     {
         if (!Schema::hasTable('discord_users')) {
             Schema::create('discord_users', function (Blueprint $table) {
-                $table->increments('ID');
-                $table->string('ServerID')->nullable(false);
-                $table->string('DiscordID')->nullable(false);
-                $table->integer('Experiences')->nullable(false)->default(false);
-                $table->boolean('isActive')->nullable(false)->default(true);
+                $table->increments('id');
+                $table->string('server_id')->nullable(false);
+                $table->string('discord_id')->nullable(false);
+                $table->integer('experiences')->nullable(false)->default(false);
+                $table->boolean('is_active')->nullable(false)->default(true);
                 $table->timestamps();
             });
         }
