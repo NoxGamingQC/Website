@@ -18,7 +18,7 @@ class RecipeController extends Controller
     public function cookbook(Request $request) {
         if(Auth::check()) {
             if(Auth::user()->has_premium) {
-                $categories = Categories::where('is_shown', true)->orderBy('name_' . (app()->gkiosk_keyetLocale() == 'fr-ca' ? 'fr' : 'en'))->get();
+                $categories = Categories::where('is_shown', true)->orderBy('name_' . (app()->getLocale() == 'fr-ca' ? 'fr' : 'en'))->get();
 
                 return view('view.premium.cookbook.cookbook')->with([
                     'kiosk' => 'true',
