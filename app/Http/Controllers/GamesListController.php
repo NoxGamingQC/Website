@@ -13,15 +13,6 @@ class GamesListController extends Controller
 {
     public function index()
     {
-        if(PageLists::where('slug', 'games')->first()->inMaintenance  && env('APP_ENV') === 'production') {
-            if(Auth::check()) {
-                if(!Auth::user()->is_management) {
-                    abort(503);
-                }
-            } else {
-                abort(503);
-            }
-        }
         $gamesDB = GamesList::all();
         $consoles = ConsolesList::all();
         $gamesList = [];

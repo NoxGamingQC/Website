@@ -14,9 +14,6 @@ class ManagementController extends Controller
 {
     public function getModules()
     {
-        if(PageLists::where('slug', 'modules')->first()->inMaintenance && env('APP_ENV') == 'production') {
-            abort(503);
-        }
         if (Auth::user()) {
             if (Auth::user()->is_management) {
                 $modules = [];
@@ -35,9 +32,6 @@ class ManagementController extends Controller
 
     public function getUsers()
     {
-        if(PageLists::where('slug', 'users')->first()->inMaintenance && env('APP_ENV') == 'production') {
-            abort(503);
-        }
         if (Auth::user()) {
             if (Auth::user()->is_management) {
                 $users = [];
@@ -85,9 +79,6 @@ class ManagementController extends Controller
 
     public function getBotActivities()
     {
-        if(PageLists::where('slug', 'bot_activities')->first()->in_maintenance && env('APP_ENV') == 'production') {
-            abort(503);
-        }
         if (Auth::user()) {
             if (Auth::user()->is_management) {
                 $activities = [];
