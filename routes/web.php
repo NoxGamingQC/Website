@@ -179,6 +179,7 @@ Route::middleware(['cors'])->group(function () {
               
             */
             Route::get('/user/{id}', 'UserProfileController@index');
+            Route::get('/user/me/edit', 'UserProfileController@edit');
             Route::get('/mail', 'Mails\MailController@index');
             Route::get('/mail/{id}', 'Mails\MailController@show');
             Route::get('/mail/{id}/content', 'Mails\MailController@showContent');
