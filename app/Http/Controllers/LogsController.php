@@ -13,9 +13,6 @@ class LogsController extends Controller
 {
     public function index(Request $request)
     {
-        if(PageLists::where('slug', 'logs')->first()->in_maintenance && env('APP_ENV') == 'production') {
-            abort(503);
-        }
         if (Auth::user()) {
             if (Auth::user()->is_management) {
                 if($request->date) {
@@ -102,9 +99,6 @@ class LogsController extends Controller
 
     public function download(Request $request)
     {
-        if(PageLists::where('slug', 'logs')->first()->inMaintenance && env('APP_ENV') == 'production') {
-            abort(503);
-        }
         if (Auth::user()) {
             if (Auth::user()->is_management) {
                 if($request->date) {
