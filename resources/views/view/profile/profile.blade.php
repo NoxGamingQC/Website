@@ -64,9 +64,18 @@
                 @endif
         </div>
         <div class="col-md-7">
+            @auth
+                @if(Auth::user()->id == $id)
+                <div class="col-md-3 col-md-offset-9" class="text-right">
+                    <a type="button" href="/{{app()->getLocale()}}/user/me/edit" class="btn btn-warning disabled" disabled>{{trans('general.edit_profile');}}</a>
+                </div>
+                @endif
+            @endauth
             @if($aboutMe)
                 <div class="section markdown">
-                    {!! $aboutMe !!}
+                    <div class="col-md-12" class="text-right">
+                        {!! $aboutMe !!}
+                    </div>
                 </div>
             @endif
             @if($xbox_profile)
