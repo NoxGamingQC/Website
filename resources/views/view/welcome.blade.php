@@ -26,7 +26,7 @@
     <div class="row">
         <div class="col-md-6">
             <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="video-player embed-responsive-item" src="https://player.twitch.tv/?channel=noxgamingqc&parent={{env('APP_URL') === 'http://localhost:8000' ? 'localhost' : str_replace("https://","",env('APP_URL'))}}&enableExtensions=true&muted=true&autoplay=true" frameBorder="0" allowFullScreen="true" scrolling="no"></iframe>
+                <iframe class="video-player embed-responsive-item" src="https://player.twitch.tv/?channel=noxgamingqc&parent={{env('APP_URL') === 'http://127.0.0.1' ? '127.0.0.1' : str_replace("https://","",env('APP_URL'))}}&enableExtensions=true&muted=true&autoplay=true" frameBorder="0" allowFullScreen="true" scrolling="no"></iframe>
             </div>
         </div>
         <div class="col-md-6 text-center" style="padding-top: 5%">
