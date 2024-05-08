@@ -75,10 +75,10 @@ class LogsController extends Controller
                         } else {
                             $logStatusColor = "default";
                         }
+                        array_push($dataDate, $logDate);
+                        array_push($dataStatusColor, $logStatusColor);
+                        array_push($dataStatus, $logStatus);
                 }
-                    array_push($dataDate, $logDate);
-                    array_push($dataStatusColor, $logStatusColor);
-                    array_push($dataStatus, $logStatus);
                 }
                 if(File::exists($filePath)) {
                     $data = [
@@ -89,7 +89,7 @@ class LogsController extends Controller
                         'elementsDates' => $dataDate,
                         'elementsStatus' => $dataStatus,
                         'elementsStatusColor' => $dataStatusColor
-                    ];
+                    ];  
                 }
                 return view('view.management.logs', compact('date', 'data'));
             }

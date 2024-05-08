@@ -14,7 +14,7 @@
                     </div>
                 </div>
             </form>
-            <span class="warning-text">{{trans('general.logs_limit')}}</span>
+            <span class="text-warning">{{trans('general.logs_limit')}}</span>
         </div>
     </div>
 </div>
@@ -41,17 +41,17 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th scope="col">date</th>
-                                <th scope="col">status</th>
-                                <th scope="col">data</th>
+                                <th scope="col">Date</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Data</th>
                             </tr>
                         </thead>
                         <tbody>
                         @foreach($data['file'] as $key => $value)
                             <tr>
-                                <th scope="row">{{array_key_exists($key, $data['elementsDates']) ? $data['elementsDates'][$key] : ''}}</th>
+                                <th scope="row"><p>{{array_key_exists($key, $data['elementsDates']) ? $data['elementsDates'][$key] : ''}}</p></th>
                                 <td><p class="badge-{{array_key_exists($key, $data['elementsStatusColor']) ? $data['elementsStatusColor'][$key] : ''}}">{{array_key_exists($key, $data['elementsStatus']) ? $data['elementsStatus'][$key] : ''}}</p></td>
-                                <td>{!!$value!!}</td>
+                                <td><p>{{$value}}</p></td>
                             </tr>
                         @endforeach
                         </tbody>
