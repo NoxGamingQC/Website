@@ -49,28 +49,28 @@ class LogsController extends Controller
                         $logDate = str_replace("[", "", explode("]", $value)[0]) ? Carbon::parse(str_replace("[", "", explode("]", $value)[0]))->format('Y-m-d H:i:s') : '';
                         $logStatus = "undefined";
                         if(str_contains($value, 'developement.ERROR') || str_contains($value, 'production.ERROR')) {
-                            $logStatus = "error";
+                            $logStatus = "Error";
                             $logStatusColor = "danger";
                         } elseif(str_contains($value, 'developement.WARNING') || str_contains($value, 'production.WARNING')) {
-                            $logStatus = "warning";
+                            $logStatus = "Warning";
                             $logStatusColor = "warning";
                         } elseif(str_contains($value, 'developement.INFO') || str_contains($value, 'production.INFO')) {
-                            $logStatus = "info";
+                            $logStatus = "Info";
                             $logStatusColor = "info";
                         } elseif(str_contains($value, 'developement.ALERT') || str_contains($value, 'production.ALERT')) {
-                            $logStatus = "alert";
-                            $logStatusColor = "danger";
+                            $logStatus = "Alert";
+                            $logStatusColor = "warning";
                         } elseif(str_contains($value, 'developement.EMERGENCY') || str_contains($value, 'production.EMERGENCY')) {
-                            $logStatus = "emergency";
+                            $logStatus = "Emergency";
                             $logStatusColor = "danger";
                         } elseif(str_contains($value, 'developement.CRITICAL') || str_contains($value, 'production.CRITICAL')) {
-                            $logStatus = "critical";
+                            $logStatus = "Critical";
                             $logStatusColor = "danger";
                         } elseif(str_contains($value, 'developement.NOTICE') || str_contains($value, 'production.NOTICE')) {
-                            $logStatus = "notice";
+                            $logStatus = "Notice";
                             $logStatusColor = "warning";
                         } elseif(str_contains($value, 'developement.DEBUG') || str_contains($value, 'production.DEBUG')) {
-                            $logStatus = "debug";
+                            $logStatus = "Debug";
                             $logStatusColor = "primary";
                         } else {
                             $logStatusColor = "default";

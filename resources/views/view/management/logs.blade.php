@@ -41,16 +41,16 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th scope="col">Date</th>
-                                <th scope="col">Status</th>
-                                <th scope="col">Data</th>
+                                <th scope="col" class="col-md-3">Date</th>
+                                <th scope="col" class="col-md-3">Status</th>
+                                <th scope="col" class="col-md-6">Data</th>
                             </tr>
                         </thead>
                         <tbody>
                         @foreach($data['file'] as $key => $value)
                             <tr>
                                 <th scope="row"><p>{{array_key_exists($key, $data['elementsDates']) ? $data['elementsDates'][$key] : ''}}</p></th>
-                                <td><p class="badge-{{array_key_exists($key, $data['elementsStatusColor']) ? $data['elementsStatusColor'][$key] : ''}}">{{array_key_exists($key, $data['elementsStatus']) ? $data['elementsStatus'][$key] : ''}}</p></td>
+                                <td><p class="badge-{{array_key_exists($key, $data['elementsStatusColor']) ? $data['elementsStatusColor'][$key] : ''}}" style="padding-top:10% !important; padding-bottom:10% !important;border-radius:5px !important;">{{array_key_exists($key, $data['elementsStatus']) ? $data['elementsStatus'][$key] : ''}}</p></td>
                                 <td><p>{{$value}}</p></td>
                             </tr>
                         @endforeach
