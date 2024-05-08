@@ -18,7 +18,7 @@ class Development
     public function handle($request, Closure $next)
     {
         $isDev = false;
-        if(env('APP_URL') !== 'http://127.0.0.1') {
+        if(env('APP_FORCE_HTTPS')) {
             \URL::forceScheme('https');
         } else {
             $isDev = true;
@@ -29,7 +29,7 @@ class Development
             }
         }
         if (env('APP_ENV') !== 'production' && $isDev == false) {
-            return redirect('/'. app()->getLocale() . '/maintenance');
+            return redirect('/'. app()->getLocale() . '/login');
         }
         return $next($request);
     }
