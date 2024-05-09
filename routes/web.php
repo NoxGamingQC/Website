@@ -186,8 +186,8 @@ Route::middleware(['cors'])->group(function () {
             Route::get('/mail/{id}/delete', 'Mails\MailController@delete');
 
 
-            Route::get('/noxbot/dashboard', 'Website\NoxBotController@index');
-            Route::get('/noxbot/dashboard/{id}', 'Website\NoxBotController@getDashboard');
+            Route::get('/noxbot/dashboard', 'NoxBotController@index');
+            Route::get('/noxbot/dashboard/{id}', 'NoxBotController@getDashboard');
 
             /*
               

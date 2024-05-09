@@ -13,6 +13,7 @@ class SettingsController extends Controller
     {
         if (Auth::user()) {
             if (Auth::user()->is_management) {
+                abort(503);
                 return view('view.management.settings');
             }
         }

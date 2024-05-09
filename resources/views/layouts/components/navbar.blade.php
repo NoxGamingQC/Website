@@ -26,7 +26,7 @@
                             <a href="/{{app()->getLocale()}}/about_us/projects"><i class="fa fa-heart" aria-hidden="true"></i> {{ trans('general.projects') }}</a>
                             <a href="/{{app()->getLocale()}}/about_us/teams" class=""><i class="fa fa-users" aria-hidden="true"></i> {{ trans('general.teams') }}</a>
                             <a href="/{{app()->getLocale()}}/about_us/twitch"><i class="fa fa-twitch" aria-hidden="true"></i> {{ trans('general.twitch') }}</a>
-                            <!--<a href="/{app()->getLocale()}}/about_us/youtube"><i class="fa fa-youtube-play" aria-hidden="true"></i> { trans('general.youtube') }}</a>-->
+                            <a href="/{{app()->getLocale()}}/about_us/youtube"><i class="fa fa-youtube-play" aria-hidden="true"></i> {{ trans('general.youtube') }}</a>
                         
                         </li>
                     </ul>
