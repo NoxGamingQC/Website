@@ -21,7 +21,7 @@
                     <ul class="dropdown-menu">
                         <li>
                             <a href="/{{app()->getLocale()}}/about_us/contact"><i class="fa fa-address-book " aria-hidden="true"></i> {{trans('general.contact_us')}}</a>
-                            <!--<a href="/{app()->getLocale()}}/about_us/games"><i class="fa fa-gamepad" aria-hidden="true"></i> { trans('general.games_list') }}</a>-->
+                            <a href="/{{app()->getLocale()}}/about_us/games"><i class="fa fa-gamepad" aria-hidden="true"></i> {{ trans('general.games_list') }}</a>
                             <a href="/{{app()->getLocale()}}/about_us/partners" class=""><i class="fa fa-handshake-o" aria-hidden="true"></i> {{ trans('general.partners') }}</a>
                             <a href="/{{app()->getLocale()}}/about_us/projects"><i class="fa fa-heart" aria-hidden="true"></i> {{ trans('general.projects') }}</a>
                             <a href="/{{app()->getLocale()}}/about_us/teams" class=""><i class="fa fa-users" aria-hidden="true"></i> {{ trans('general.teams') }}</a>
