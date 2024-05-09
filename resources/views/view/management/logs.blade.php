@@ -37,8 +37,8 @@
                         <button class="btn btn-primary text-right" type="submit"><i id="navSearchButton" class="fa fa-download"></i> {{trans('general.download')}}</button>
                     </form>
                 </div>
-                <div class="col-md-12 table-responsive">
-                    <table class="table">
+                <div class="col-md-12 table-responsive" style="padding-top:3%; padding-bottom:5%">
+                    <table class="table" style="border: 1px solid #CCC">
                         <thead>
                             <tr>
                                 <th scope="col" class="col-md-3"><p>Date</p></th>
