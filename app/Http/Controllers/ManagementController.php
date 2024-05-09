@@ -36,9 +36,9 @@ class ManagementController extends Controller
             if (Auth::user()->is_management) {
                 $users = [];
                 foreach (User::orderBy('name')->get() as $key => $user) {
-                    $grade = 'member';
+                    $grade = 'Member';
                     if ($user->is_management) {
-                        $grade = 'management';
+                        $grade = 'Management';
                     }
 
                     $badges = $user->badges ? explode(';', $user->badges) : [];
