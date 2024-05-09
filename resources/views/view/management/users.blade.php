@@ -27,7 +27,7 @@
                             <td><p>{{$user['grade']}}</p></td>
                             <td><a class="btn btn-warning" href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
                             <td></td>
-                            <td><a class="btn btn-danger" href="#"><i class="fa fa-times" aria-hidden="true"></i></a></td>
+                            <td><a class="btn btn-danger" href="#"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
                         </tr>
                     @endforeach
                     </tbody>
