@@ -31,7 +31,8 @@
     @endif
         <div class="col-md-12">
             <div class="container">
-                <h2>{{$console->Console}} ({{count($gamesList[$console->id])}})</h2>
+                <h2>{{$console->console}} ({{count($gamesList[$console->id])}})</h2>
+                <h4 class="text-justify">{{$console->description}}</h4>
                 <br />
                 <br />
                 <div class="row">
@@ -41,27 +42,27 @@
                             <div class="col-md-3">
                                 @if(is_int($game))
                                     <div class="panel panel-primary text-center" style="border-radius: 10px;">
-                                        <div class="panel-body img" style="background-image: url({{"\""}}https://static-cdn.jtvnw.net/ttv-boxart/{{$games[$gameID]->Game}}-285x380.jpg{{"\""}})  !important; background-size: cover !important; background-position: center center; min-height: 200px !important; height: 200px !important;border-radius: 10px;border: 3px solid white;">
-                                            <h3 class="img-text"><b>{{preg_replace('/\\\\/', '', $games[$game]->Game)}}</b></h3>
-                                            <input id="gameName-{{$game}}" type="hidden" value="{{$games[$game]->Game}}">
-                                            <input id="gameConsole-{{$game}}" type="hidden" value="{{$games[$game]->Console}}">
-                                            <input id="gameDate-{{$game}}" type="hidden" value="{{$games[$game]->Date}}">
-                                            <input id="gameCoverURL-{{$game}}" type="hidden" value="{{$games[$game]->CoverURL}}">
-                                            <input id="gamePlaylist-{{$game}}" type="hidden" value="{{$games[$game]->Playlist}}">
-                                            <input id="gameFormat-{{$game}}" type="hidden" value="{{$games[$game]->Format}}">
+                                        <div class="panel-body img" style="background-image: url({{"\""}}https://static-cdn.jtvnw.net/ttv-boxart/{{$games[$gameID]->game}}-285x380.jpg{{"\""}})  !important; background-size: cover !important; background-position: center center; min-height: 200px !important; height: 200px !important;border-radius: 10px;border: 3px solid white;">
+                                            <h3 class="text-badge"><b>{{preg_replace('/\\\\/', '', $games[$game]->game)}}</b></h3>
+                                            <input id="gameName-{{$game}}" type="hidden" value="{{$games[$game]->game}}">
+                                            <input id="gameConsole-{{$game}}" type="hidden" value="{{$games[$game]->console}}">
+                                            <input id="gameDate-{{$game}}" type="hidden" value="{{$games[$game]->date}}">
+                                            <input id="gameCoverURL-{{$game}}" type="hidden" value="{{$games[$game]->cover_url}}">
+                                            <input id="gamePlaylist-{{$game}}" type="hidden" value="{{$games[$game]->playlist}}">
+                                            <input id="gameFormat-{{$game}}" type="hidden" value="{{$games[$game]->format}}">
                                             <button id="{{$game}}" class="edit-game-button btn btn-info hidden" type="button" data-toggle="modal" data-target="#editGameModal">{{trans('general.see_more')}}</button>
                                         </div>
                                     </div>
                                 @else
                                     <div class="panel panel-primary text-center" style="border-radius: 10px;">
-                                        <div class="panel-body img" style="background-image: url({{"\""}}https://static-cdn.jtvnw.net/ttv-boxart/{{$game->Game}}-285x380.jpg{{"\""}}) !important; background-size: cover !important; background-position: center center; min-height: 200px !important; height: 200px !important;border-radius: 10px;border: 3px solid white;">
-                                            <h3 class="img-text"><b>{{preg_replace('/\\\\/', '', $game->Game)}}</b></h3>
-                                            <input id="gameName-{{$game->id}}" type="hidden" value="{{$game->Game}}">
-                                            <input id="gameConsole-{{$game->id}}" type="hidden" value="{{$game->Console}}">
-                                            <input id="gameDate-{{$game->id}}" type="hidden" value="{{$game->Date}}">
-                                            <input id="gameCoverURL-{{$game->id}}" type="hidden" value="{{$game->CoverURL}}">
-                                            <input id="gamePlaylist-{{$game->id}}" type="hidden" value="{{$game->Playlist}}">
-                                            <input id="gameFormat-{{$game->id}}" type="hidden" value="{{$game->Format}}">
+                                        <div class="panel-body img" style="background-image: url({{"\""}}https://static-cdn.jtvnw.net/ttv-boxart/{{$game->game}}-285x380.jpg{{"\""}}) !important; background-size: cover !important; background-position: center center; min-height: 200px !important; height: 200px !important;border-radius: 10px;border: 3px solid white;">
+                                            <h3 class="text-badge"><b>{{preg_replace('/\\\\/', '', $game->game)}}</b></h3>
+                                            <input id="gameName-{{$game->id}}" type="hidden" value="{{$game->game}}">
+                                            <input id="gameConsole-{{$game->id}}" type="hidden" value="{{$game->console}}">
+                                            <input id="gameDate-{{$game->id}}" type="hidden" value="{{$game->date}}">
+                                            <input id="gameCoverURL-{{$game->id}}" type="hidden" value="{{$game->cover_url}}">
+                                            <input id="gamePlaylist-{{$game->id}}" type="hidden" value="{{$game->playlist}}">
+                                            <input id="gameFormat-{{$game->id}}" type="hidden" value="{{$game->format}}">
                                             <button id="{{$game->id}}" class="edit-game-button btn btn-info hidden" type="button" data-toggle="modal" data-target="#editGameModal">{{trans('general.see_more')}}</button>
                                         </div>
                                     </div>
