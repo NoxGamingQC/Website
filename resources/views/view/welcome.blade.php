@@ -2,27 +2,39 @@
 @section('title', 'Welcome')
 @section('content')
 
-<div class="container-fluid section header">
-    <div class="row">
-        <div class="col-md-12 text-center">
+<div class="container-fluid section" style="width: 100%;height:100% !important;text-align: center;overflow: hidden;z-index: 2;">
+    <video autoplay muted loop src="/videos/soldier_static.mp4" style="position: absolute;top: 10%;left: 0;width: 100%;height: 100%;min-width: 100%;min-height: 100%;z-index: 0;object-position: center;object-fit: cover;"></video>
+    <div class="row" style="z-index: 1;">
+        <div class="col-md-12">
             <div class="row">
-                <div class="col-md-2 col-md-offset-3">
-                    <img src="/img/logo.svg" height="140vh" />
-                </div>
-                <div class="col-md-3">
+                <div class="col-md-5 col-md-offset-1">
                     <br />
-                    <h1 class="raleway-font"><b>NoxGamingQC</b></h1>
+                    <h2 class="raleway-font text-left" style="font-size:20px !important">{{trans('welcome.slogan')}}</h2>
+                    <h1 class="raleway-font text-left" style="font-size:135px !important"><b>NoxGamingQC</b></h1>
+                    <h3  class="raleway-font text-justify" style="font-size:20px !important">{{trans('welcome.about_me_text')}}</h3>
                 </div>
             </div>
         </div>
-        <div class="col-md-12 text-center">
-            <br />
-            <h2 class="raleway-font">{{trans('welcome.slogan')}}</h2>
-            <br />
+        <div class="col-md-12">
+            <div class="col-md-3  col-md-offset-1">
+                <img class="img-rounded" src="/img/no-image.png" width="340px">
+            </div>
+            <div class="col-md-3">
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <h4 class="text-left">Projets récents</h4>
+                <p class="text-left">The Elder Quests | PC | In development</p>
+                <br />
+                <br />
+                <p class="text-left">Découvrir le projet &nbsp&nbsp&nbsp <button class="btn btn-default disabled" style="padding-top:15px !important;padding-bottom:15px !important;padding-left:20px !important;padding-right:20px !important; border-radius:5000px" disabled><i class="fa fa-arrow-right" aria-hidden="true"></i></button></p>
+            </div>
         </div>
     </div>
 </div>
-<div class="container section">
+<div class="container section" style="margin:10%">
     <div class="row">
         <div class="col-md-6">
             <div class="embed-responsive embed-responsive-16by9">
