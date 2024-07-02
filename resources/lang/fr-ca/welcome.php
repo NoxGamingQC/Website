@@ -3,7 +3,7 @@
 return [
     'slogan' => "Un Québécois qui fait des vidéos sur Twitch et YouTube",
     'about_me' => "À propos",
-    'about_me_text' => "Mon nom est Jimmy. J'habite au Québec, Canada. J'aime la musique, la programmation, les jeux vidéo et les films. J'aime rencontrer de nouvelles personne, alors si vous me voyez en ligne hésitez pas a me mp 😉. La meilleur façon de me contacter est sur Guilded",
+    'about_me_text' => "Mon nom est Jimmy. J'habite au Québec, Canada. J'aime la musique, la programmation, les jeux vidéo et les films. J'aime rencontrer de nouvelles personne, alors si vous me voyez en ligne hésitez pas a me mp 😉. La meilleur façon de me contacter est sur Discord",
     'guilded_join_here' => "Vous pouvez nous rejoindre sur guilded en cliquant ici",
     'donation' => "Donations",
     'donation_text' => "Vous êtes en aucun cas obligez de faire une donnation. Toutes donation sont grandement appréciez et permettre de supporter la chaine. Pour faire une donation",
