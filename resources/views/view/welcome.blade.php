@@ -42,6 +42,7 @@
             </div>
         </div>
         <div class="col-md-6 text-center" style="padding-top: 5%">
+        
             <h3>{{trans('stream.stream_description_title')}}</h3>
             <p>{!!trans('stream.stream_description_text')!!}</a>.</p>
             <a class="btn btn-primary" href="/discord">{{trans('stream.join_server')}}</a>
