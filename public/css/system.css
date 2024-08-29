@@ -2703,6 +2703,11 @@
     border-radius: 5px;
     opacity: 0.98;
   }
+  .footer {
+    padding: 10% !important;
+    background-color: #991b1b !important;
+    background: linear-gradient(0deg, #991b1b 0%, #991b1b 80%, #101010 100%);
+  }
   .header {
     height: 480px !important;
     background-color: #991b1b !important;
@@ -5664,6 +5669,11 @@
     color: #262626;
     border-radius: 5px;
     opacity: 0.98;
+  }
+  .footer {
+    padding: 10% !important;
+    background-color: #991b1b !important;
+    background: linear-gradient(0deg, #991b1b 0%, #991b1b 80%, #F0F0F0 100%);
   }
   .header {
     height: 480px !important;
