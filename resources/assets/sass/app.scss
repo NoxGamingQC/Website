@@ -23,19 +23,29 @@
 }
 
 .footer {
-    padding: 10% !important;
+    > div {
+        padding: 20% !important;
+    }
     background-color:$brand-primary !important;
-    background: linear-gradient(0deg, $brand-primary 0%,$brand-primary 80%, $background-color 100%);
+    background: linear-gradient(0deg, $brand-primary 0%,$brand-primary 88%, $background-color 100%);
+    h1, h2, h3, h4, h5 ,h6, p {
+        color: $text-on-primary !important;
+    }
 
 }
 
 .header {
-    @media (max-width: $screen-md-min) {
-        padding: 0px !important;
+    h1,h2,h3,h4,h5,h6,p {
+        color: $text-on-primary !important;
     }
-    height:480px !important;
-    background-color:$brand-primary !important;
-    background: linear-gradient(30deg, $brand-primary 0%, $brand-orange 100%);
+    h1 {
+        font-size:135px !important
+    }
+    @media (max-width: $screen-md-min) {
+        h1 {
+            font-size:60px !important
+        }
+    }
 }
 
 .header h1, .header h2 {
