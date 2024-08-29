@@ -12,3 +12,11 @@
         <h3 class="raleway-font">ERREUR 404 | Non trouvé.</h3>
     </div>
 </div>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+@include('layouts.components.footer')

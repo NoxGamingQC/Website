@@ -18,6 +18,14 @@
         @endif
     </div>
 </div>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+@include('layouts.components.footer')
 @if(app('request')->input('app_type') == 'mobile_app')
 <script>
 $('#reloadPage').on('click', function() {

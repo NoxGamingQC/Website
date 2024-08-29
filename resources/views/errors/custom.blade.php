@@ -12,6 +12,14 @@
         </div>
     </div>
 </div>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+@include('layouts.components.footer')
 
 @if(isset($redirect))
     <script type="text/javascript">
