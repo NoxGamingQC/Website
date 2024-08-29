@@ -5,11 +5,13 @@
 <div class="container">
     <div class="row text-center">
         <img src="/img/logo.png" width="300">
-        <h3 class="raleway-font">ERROR 405 | Method not allowed.</h3>
+        <h1 class="text-danger">ERROR 405</h1>
+        <h3 class="raleway-font">Method not allowed.</h3>
         <br />
         <hr />
         <br />
-        <h3 class="raleway-font">ERREUR 405 | Méthode non authorisé.</h3>
+        <h1 class="text-danger">ERREUR 405</h1>
+        <h3 class="raleway-font">Méthode non authorisé.</h3>
     </div>
 </div>
 <br />

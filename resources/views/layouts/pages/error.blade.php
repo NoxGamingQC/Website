@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="{{app('request')->input('app_type') !== 'mobile_app' ? 'error-background' : ''}}" lang="{{ app()->getLocale() }}">
+<html lang="{{ app()->getLocale() }}">
 <head>
     <meta name="google-site-verification" content="D30gPHSCahf2lVeDo0Ndgc8vI1cQvv8d1gXIZa3B2ds" />
     <meta name="facebook-domain-verification" content="uki484ngemqhks0g9endzi9hb1nobp" />
@@ -37,7 +37,7 @@
     <script src="{{mix('js/app.js')}}"></script>
 </head>
 
-<body class="{{app('request')->input('app_type') !== 'mobile_app' ? 'error-background' : ''}}">
+<body>
     @yield('content')
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>

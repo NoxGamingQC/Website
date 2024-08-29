@@ -5,11 +5,13 @@
 <div class="container">
     <div class="row text-center">
         <img src="/img/logo.png" width="300">
-        <h3 class="raleway-font">ERROR 419 | Page expired.</h3>
+        <h1 class="text-danger">ERROR 419</h1>
+        <h3 class="raleway-font">Page expired.</h3>
         <br />
         <hr />
         <br />
-        <h3 class="raleway-font">ERREUR 419 | Page expiré.</h3>
+        <h1 class="text-danger">ERREUR 419</h1>
+        <h3 class="raleway-font">Page expiré.</h3>
     </div>
 </div>
 <br />
