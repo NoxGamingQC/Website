@@ -38,12 +38,12 @@
     h1,h2,h3,h4,h5,h6,p {
         color: $text-on-primary !important;
     }
-    h1 {
-        font-size:135px !important
-    }
-    @media (max-width: $screen-md-min) {
+    @media (min-width: $screen-md-min) {
         h1 {
-            font-size:60px !important
+            font-size:135px !important
+        }
+        h2, h3 {
+            font-size:20px !important
         }
     }
 }
