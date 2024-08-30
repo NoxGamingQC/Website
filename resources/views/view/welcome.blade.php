@@ -3,12 +3,11 @@
 @section('content')
 
 <div class="container-fluid section header" style="width: 100%;height:100% !important;text-align: center;overflow: hidden;z-index: 2;">
-    <video autoplay muted loop src="/videos/soldier_static.mp4" style="position: absolute;top: 10%;left: 0;height: 100%;min-width: 100%;min-height: 100%;z-index: 0;object-position: center;object-fit: cover;overflow:hidden"></video>
+    <video autoplay muted loop src="/videos/soldier_static.mp4" style="position: absolute;top: 10%;left: 0;height: 100% !important;min-width: 100%;min-height: 100%;z-index: 0;object-position: center;object-fit: cover;overflow:hidden"></video>
     <div class="row" style="z-index: 1;">
         <div class="col-md-12">
             <div class="row">
                 <div class="col-md-5 col-md-offset-1">
-                    <br />
                     <h2 class="raleway-font text-left">{{trans('welcome.slogan')}}</h2>
                     <h1 class="raleway-font text-left"><b>NoxGamingQC</b></h1>
                     <h3  class="raleway-font text-justify">{{trans('welcome.about_me_text')}}</h3>
@@ -19,16 +18,9 @@
             <div class="col-md-3  col-md-offset-1">
                 <img class="img-rounded" src="/img/no-image.png" width="340px">
             </div>
-            <div class="col-md-3">
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
+            <div class="col-md-3 text-img-align">
                 <h4 class="text-left">Projets récents</h4>
                 <p class="text-left">The Elder Quests | PC | In development</p>
-                <br />
-                <br />
                 <p class="text-left">Découvrir le projet &nbsp&nbsp&nbsp <button class="btn btn-default disabled" style="padding-top:15px !important;padding-bottom:15px !important;padding-left:20px !important;padding-right:20px !important; border-radius:5000px" disabled><i class="fa fa-arrow-right" aria-hidden="true"></i></button></p>
             </div>
         </div>

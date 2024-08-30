@@ -2765,6 +2765,11 @@
     margin-left: 0px !important;
   }
 }
+@media (prefers-color-scheme: dark) and (min-width: 1200px) {
+  .text-img-align {
+    margin-top: 100px;
+  }
+}
 @media (prefers-color-scheme: dark) {
   .btn-circle {
     display: inline-flex !important;
@@ -5763,6 +5768,11 @@
 @media (prefers-color-scheme: light) and (max-width: 1200px) {
   .row {
     margin-left: 0px !important;
+  }
+}
+@media (prefers-color-scheme: light) and (min-width: 1200px) {
+  .text-img-align {
+    margin-top: 100px;
   }
 }
 @media (prefers-color-scheme: light) {

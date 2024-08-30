@@ -3536,6 +3536,12 @@ input[type=checkbox] {
   }
 }
 
+@media (min-width: 1200px) {
+  .text-img-align {
+    margin-top: 100px;
+  }
+}
+
 .btn-circle {
   display: inline-flex !important;
   align-items: center !important;
