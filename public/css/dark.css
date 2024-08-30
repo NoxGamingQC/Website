@@ -3501,15 +3501,27 @@ input[type=checkbox] {
 
 .footer {
   background-color: #991b1b !important;
-  background: linear-gradient(0deg, #991b1b 0%, #991b1b 88%, #101010 100%);
+  border-top: 1px solid #e5e5e5;
 }
-.footer > div {
-  padding: 20% !important;
+@media (max-width: 1200px) {
+  .footer > div {
+    padding-top: 20% !important;
+    padding-bottom: 5% !important;
+  }
+}
+@media (min-width: 1200px) {
+  .footer > div {
+    padding-top: 10% !important;
+    padding-bottom: 10% !important;
+  }
 }
 .footer h1, .footer h2, .footer h3, .footer h4, .footer h5, .footer h6, .footer p {
   color: #FFFFFF !important;
 }
 
+.header {
+  overflow-x: hidden !important;
+}
 .header h1, .header h2, .header h3, .header h4, .header h5, .header h6, .header p {
   color: #FFFFFF !important;
 }

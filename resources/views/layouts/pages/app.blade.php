@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ app()->getLocale() }}">
+<html lang="{{ app()->getLocale() }}" style="overflow-x:hidden">
     <head>
         <meta name="google-site-verification" content="D30gPHSCahf2lVeDo0Ndgc8vI1cQvv8d1gXIZa3B2ds" />
         <meta name="facebook-domain-verification" content="uki484ngemqhks0g9endzi9hb1nobp" />
@@ -31,7 +31,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
         <script src="{{mix('js/app.js')}}"></script>
     </head>
-    <body>
+    <body style="overflow-x:hidden">
         <input id="websiteLocationID" type="hidden">
         @include('layouts.components.navbar')
         @include('alert.alert')
