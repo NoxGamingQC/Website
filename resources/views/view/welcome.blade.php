@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container-fluid section header" style="width: 100%;height:100% !important;text-align: center;overflow: hidden;z-index: 2;">
-    <video autoplay muted loop src="/videos/soldier_static.mp4" style="position: absolute;top: 10%;left: 0;height: 100% !important;min-width: 100%;min-height: 100%;z-index: 0;object-position: center;object-fit: cover;overflow:hidden"></video>
+    <video autoplay muted loop src="/videos/soldier_static.mp4" style="position: absolute;top: 10%;left: 0;height: 110% !important;min-width: 100%;min-height: 100%;z-index: 0;object-position: center;object-fit: cover;overflow:hidden"></video>
     <div class="row" style="z-index: 1;">
         <div class="col-md-12">
             <div class="row">
@@ -26,7 +26,7 @@
         </div>
     </div>
 </div>
-<div class="container section" style="margin:10%">
+<div class="container section" style="margin:20%">
     <div class="row">
         <div class="col-md-6">
             <div class="embed-responsive embed-responsive-16by9">
