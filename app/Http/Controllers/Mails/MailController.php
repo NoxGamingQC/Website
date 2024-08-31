@@ -128,4 +128,21 @@ class MailController extends Controller
         //$mail->request = $request;
         $mail->save();
     }
+
+    public function testMail() {
+        $data = [
+            'sender' => 'noreply@noxgamingqc.ca',
+            'recipient' => '',
+            'object' => 'website test',
+            'messageContent' => 'test successful'
+        ];
+
+        Mail::send('emails.standard', $data, function($message) use ($data) {
+            $message->from($data['sender'], 'noxgamingqc');
+            $message->to($data['recipient']);
+            $message->subject($data['object']);
+        });
+        dd('email sent successfuly');
+        return view('view.welcome');
+    }
 }

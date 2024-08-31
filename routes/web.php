@@ -35,9 +35,7 @@ Route::middleware(['cors'])->group(function () {
 
     Route::post('/mail/receive', 'Mails\MailController@receive');
     Route::post('/mail/send', 'Mails\MailController@sendMail');
-    /*Route::get('/mail/test', function() {
-        return view('emails.newsletter');
-    });*/
+    //Route::get('/mail/test', 'Mails\MailController@testMail');
     Route::get('/cookbook', function (Request $request) {
         if($request->key) {
             return redirect()->to('/' . app()->getLocale() . '/cookbook?key='. $request->key);
@@ -120,6 +118,7 @@ Route::middleware(['cors'])->group(function () {
         'middleware' => 'setlocale'],
         function () {
             //Route that require language
+
             Route::get('/', function () {
                 return redirect(app()->getLocale() . '/home');
             });
