@@ -33,6 +33,9 @@ Route::middleware(['cors'])->group(function () {
     Route::post('/api/noxbot/twitch_lives/{id}', 'NoxBOT\BotTwitchLivesController@postTwitchLives');
 });
 
+    Route::get('/mail', function () {
+        return redirect()->to('https://noxgamingqc.ca:8443');           
+    });
     Route::post('/mail/receive', 'Mails\MailController@receive');
     Route::post('/mail/send', 'Mails\MailController@sendMail');
     //Route::get('/mail/test', 'Mails\MailController@testMail');
@@ -86,10 +89,6 @@ Route::middleware(['cors'])->group(function () {
 
     Route::get('/pst/discord', function () {
         return redirect()->to('https://discord.com/invite/SAXsDwaR');
-    });
-
-    Route::get('/mail', function () {
-        return redirect()->to('https://noxgamingqc.ca:8443');           
     });
 
     // Gouliram routes
