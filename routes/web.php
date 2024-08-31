@@ -33,7 +33,7 @@ Route::middleware(['cors'])->group(function () {
     Route::post('/api/noxbot/twitch_lives/{id}', 'NoxBOT\BotTwitchLivesController@postTwitchLives');
 });
 
-    Route::get('/mail', function () {
+    Route::get('/mailbox', function () {
         return redirect()->to('https://noxgamingqc.ca:8443');           
     });
     Route::post('/mail/receive', 'Mails\MailController@receive');
