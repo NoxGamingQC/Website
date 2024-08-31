@@ -88,6 +88,10 @@ Route::middleware(['cors'])->group(function () {
         return redirect()->to('https://discord.com/invite/SAXsDwaR');
     });
 
+    Route::get('/mail', function () {
+        return redirect()->to('https://noxgamingqc.ca:8443');           
+    });
+
     // Gouliram routes
     Route::post('/gouliram/contact', 'Gouliram\ContactController@contactUsEmail');
     
@@ -179,11 +183,6 @@ Route::middleware(['cors'])->group(function () {
             */
             Route::get('/user/{id}', 'UserProfileController@index');
             Route::get('/user/me/edit', 'UserProfileController@edit');
-            Route::get('/mail', 'Mails\MailController@index');
-            Route::get('/mail/{id}', 'Mails\MailController@show');
-            Route::get('/mail/{id}/content', 'Mails\MailController@showContent');
-            Route::get('/mail/{id}/delete', 'Mails\MailController@delete');
-
 
             Route::get('/noxbot/dashboard', 'NoxBotController@index');
             Route::get('/noxbot/dashboard/{id}', 'NoxBotController@getDashboard');
