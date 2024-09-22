@@ -6,4 +6,4 @@ A list of file that is public.
 - RCL: Royal Canadian legion documents (mostly for me to be able to find them quickly, available on [their website](https://legion.ca). Use of those documents without proper authorisation is stricky forbidden)
 - Wallpapers: Wallpapers for phone and desktops
 
-**Warning - Our logo is under copyrights and cannot be use without authorization.**
+**Warning - Our logo and any other logo that is under copyrights cannot be use without authorization.**
