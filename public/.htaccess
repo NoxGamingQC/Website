@@ -24,6 +24,6 @@
     RewriteRule ^ index.php [L]
 </IfModule>
 <Directory /public/shared>
-    DirectoryIndex enabled
+    DirectoryIndex disabled
     Options +Indexes
 </Directory>
