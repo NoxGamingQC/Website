@@ -1,0 +1,8 @@
+#Tue Dec 22 00:45:32 EST 2020
+Adaptive_sharpening=true
+Depth_of_Field=true
+Distance_Blur=true
+Godrays=true
+Lens_Flares=true
+Moonlight=0.006
+WeatherAngle=true
