@@ -25,5 +25,4 @@
 </IfModule>
 <Directory /public/shared>
     Options +Indexes
-    DirectoryIndex disabled 
 </Directory>
