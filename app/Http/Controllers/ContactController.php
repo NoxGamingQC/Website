@@ -33,7 +33,8 @@ class ContactController extends Controller
             'contactMessage' => $message,
             'language' => $language,
             'to'=> 'NoxGamingQC',
-            'to_name' => 'Jimmy Bédard'
+            'to_name' => $toName,
+            'to_mail' => $toEmail
         ];
         if($name !== "" && preg_match($email_regex,$email) && $message !== "") {
             Mail::send('emails.contact_us', $data, function($message) {

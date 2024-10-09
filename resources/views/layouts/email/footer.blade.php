@@ -27,6 +27,9 @@
                                             <br />
                                             <br />
                                             ©2018-2024 @yield('brand').
+                                            <br />
+                                            <br />
+                                            <a href="https://www.noxgamingqc.ca/unsubscribe?email={{$to_mail}}">Unsubscribe</a>
                                         </td>
                                     </tr>
                                 </table>

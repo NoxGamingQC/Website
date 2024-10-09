@@ -15,7 +15,7 @@
             <tr>
                 <td align="center" valign="top">
                     <a href="https://www.noxgamingqc.ca" target="_blank" style="text-decoration:none;">
-                        <img src="https://www.noxgamingqc.ca/img/logo.svg" width="150"  alt="NoxGamingQC" border="0" style="display:block; font-family:Arial, sans-serif; font-size:18px; line-height:25px; text-align:center; color:#fff; font-weight:bold; max-width:208px;" class="em_w150" />
+                        <img src="https://www.noxgamingqc.ca/img/logo.png" width="150"  alt="NoxGamingQC" border="0" style="display:block; font-family:Arial, sans-serif; font-size:18px; line-height:25px; text-align:center; color:#fff; font-weight:bold; max-width:208px;" class="em_w150" />
                     </a>
                 </td>
             </tr>
