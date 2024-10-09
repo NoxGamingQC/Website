@@ -4,7 +4,7 @@
         <div class="container-fluid">
             <div class="col-md-6 text-center">
                 <div style="margin:5%;margin-top: 15%">
-                    <h5 class="raleway-font"><a class="text-color" href="mailto:nox@noxgamingqc.ca">jbedard@noxgamingqc.ca</a></h5>
+                    <h5 class="raleway-font"><a class="text-color" href="mailto:jbedard@noxgamingqc.ca">jbedard@noxgamingqc.ca</a></h5>
                     <h5 class="raleway-font"><a class="text-color" href="tel:819-852-8705">819-852-8705</a></h5>
                     <br />
                     <p>

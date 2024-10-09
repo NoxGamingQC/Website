@@ -26,7 +26,7 @@
                                             If you have a question, go to the <u class="link">contact us</u> section.
                                             <br />
                                             <br />
-                                            ©2018-2022 @yield('brand').
+                                            ©2018-2024 @yield('brand').
                                         </td>
                                     </tr>
                                 </table>

@@ -39,12 +39,7 @@ class ContactController extends Controller
             Mail::send('emails.contact_us', $data, function($message) {
                 $message->from('noreply@noxgamingqc.ca', 'NoxGamingQC');
                 $message->to('jbedard@noxgamingqc.ca');
-                $message->subject('You received a new message');
-            });
-            Mail::send('emails.contact_us', $data, function($message) {
-                $message->from('noreply@noxgamingqc.ca', 'NoxGamingQC');
-                $message->to('noxgamingqc@gmail.com');
-                $message->subject('You received a new message');
+                $message->subject('You receive a new message');
             });
 
             $text = 'Hey, you received mail from your website.';
