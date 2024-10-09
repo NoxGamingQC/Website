@@ -32,7 +32,14 @@
                         <div class="col-md-6">
                             <input id="pronouns" class="form-control" type="text" placeholder="Pronouns" value="{{$pronouns ? $pronouns : ''}}" />
                         </div>
+                     <div class="col-md-12">
+                            <input id="email" class="form-control" type="text" placeholder="e-mail" value="{{Auth::user()->email ? Auth::user()->email : null}}" />
+                    </div>
                     </b>
+                    <div class="col-md-12">
+                        <br />
+                        <p>Receive our email updates &nbsp&nbsp<input type="checkbox" {{Auth::user()->is_email_subscriber ? 'checked' : ''}} /> </p>
+                    </div>
                 </h2>
                 <div class="col-md-12">
                     <br />
@@ -85,20 +92,16 @@
                 @endif
         </div>
         <div class="col-md-7">
-            @if($aboutMe)
-                <div class="section markdown">
-                    <div class="col-md-12" class="text-right">
-                        {!! $aboutMe !!}
-                    </div>
-                </div>
-            @endif
+            <div class="col-md-12 section markdown" class="text-right">
+                {{Auth::user()->about_me}}
+            </div>
             <div class="section">
                 <div class="row">
                     <div class="col-md-12">
                         <h3>Xbox</h3>
                     </div>
-                    <div class="col-md-6">
-                        <input type="text" class="form-control" placeholder="Xbox username">
+                    <div class="col-md-12">
+                        <input type="text" class="form-control" placeholder="Xbox username" value="{{Auth::user()->xbox_gamertag ? Auth::user()->xbox_gamertag : null}}" />
                         <br />
                         <span class="text-danger">Using another xbox account then the one that you own, is identity theft. Make sure you write your account actual username. Make sure to check your profile in case you did a typo. If no modification is made and you get reported, it is punishable by our management team.</span>
                     </div>
