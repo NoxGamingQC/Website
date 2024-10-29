@@ -1,3 +1,3 @@
 #EXTM3U
-#EXTINF:-1 tvg-id="qc-ca" tvg-logo="https://raw.githubusercontent.com/hampusborgos/country-flags/refs/heads/main/png250px/ca.png" group-title="Québec",QC Québec
-https://www.noxgamingqc.ca/shared/IPTV/Québec.m3u
+#EXTINF:-1 tvg-id="LCN.ca" tvg-logo="https://i.imgur.com/iKDLgOG.png" group-title="News",LCN [Geo-blocked]
+https://tvalive.akamaized.net/hls/live/2014213/tvan01/tvan01.m3u8
