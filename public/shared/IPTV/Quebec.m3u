@@ -9,7 +9,7 @@ https://
 https://
 #EXTINF:-1 tvg-id="" tvg-logo="" group-title="",Noovo (Disabled)
 https://
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="News",TVA [Geo-Blocked]
+#EXTINF:-1 tvg-id="tva" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/TVA_logo_2020.svg/512px-TVA_logo_2020.svg.png" group-title="News",TVA [Geo-Blocked]
 https://tvalive-dai01.akamaized.net/Content/HLS/Live/channel(575b93c5-be31-ee34-6285-14620fd14048)/index.m3u8
 #EXTINF:-1 tvg-id="" tvg-logo="" group-title="",Télé-Québec (Disabled)
 https://
@@ -65,8 +65,8 @@ https://
 https://
 #EXTINF:-1 tvg-id="" tvg-logo="" group-title="",Museum TV (Disabled)
 https://
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="",Assemblée Nationale du Québec (Disabled)
-https://
+#EXTINF:-1 tvg-id="assembleduquebec" tvg-logo="https://i.imgur.com/jAtq0U8.png" group-title="Politics",Assemblée Nationale du Québec (Disabled)
+https://cdn3.wowza.com/5/SVEySlNEQ0FOWXlS/diffusion/canal17/playlist.m3u8
 #EXTINF:-1 tvg-id="" tvg-logo="" group-title="",CPAC (Disabled)
 https://
 #EXTINF:-1 tvg-id="" tvg-logo="" group-title="",TFO (Disabled)
