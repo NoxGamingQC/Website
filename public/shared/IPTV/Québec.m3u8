@@ -1,0 +1,3 @@
+#EXTM3U
+#EXTINF:0 tvg-name="noovo" tvg-language="French" tvg-country="CA" tvg-id="noovo" tvg-logo="https://i.imgur.com/K1AUUrO.png" group-title="Entertainment",Noovo (V-Télé)
+https://bcsecurelivehls-i.akamaihd.net/hls/live/551061/618566855001/master.m3u8
