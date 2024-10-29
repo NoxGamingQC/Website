@@ -8,7 +8,7 @@ https://
 #EXTINF:-1 tvg-id="" tvg-logo="" group-title="",AmiTélé (Disabled)
 https://
 #EXTINF:-1 tvg-id="" tvg-logo="https://i.imgur.com/K1AUUrO.png" group-title="Entertainment",Noovo
-https://bcsecurelivehls-i.akamaihd.net/hls/live/551061/618566855001/master.m3u8
+https://pe-fa-lp03a.9c9media.com/live/NOOVO/p/hls/00000201/716cf4c845225692/manifest.m3u8
 #EXTINF:-1 tvg-id="tva" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/TVA_logo_2020.svg/512px-TVA_logo_2020.svg.png" group-title="News",TVA [Geo-Blocked]
 https://tvalive-dai01.akamaized.net/Content/HLS/Live/channel(575b93c5-be31-ee34-6285-14620fd14048)/index.m3u8
 #EXTINF:-1 tvg-id="" tvg-logo="" group-title="",Télé-Québec (Disabled)
