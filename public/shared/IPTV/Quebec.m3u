@@ -9,8 +9,8 @@ https://
 https://
 #EXTINF:-1 tvg-id="" tvg-logo="" group-title="",Noovo (Disabled)
 https://
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="News",TVA (Disabled)
-https://
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="News",TVA [Geo-Blocked]
+https://tvalive-dai01.akamaized.net/Content/HLS/Live/channel(575b93c5-be31-ee34-6285-14620fd14048)/index.m3u8
 #EXTINF:-1 tvg-id="" tvg-logo="" group-title="",Télé-Québec (Disabled)
 https://
 #EXTINF:-1 tvg-id="" tvg-logo="" group-title="News",Météo Média (Disabled)
