@@ -1,95 +1,96 @@
 #EXTM3U
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="",Canal M (Disabled)
+===========Québec==========
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Québec",Canal M (Disabled)
 https://
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="",AmiTV (Disabled)
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Québec",AmiTV (Disabled)
 https://
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="",Ami Audio (Disabled)
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Québec",Ami Audio (Disabled)
 https://
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="",AmiTélé (Disabled)
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Québec",AmiTélé (Disabled)
 https://
-#EXTINF:-1 tvg-id="" tvg-logo="https://i.imgur.com/K1AUUrO.png" group-title="Entertainment",Noovo
+#EXTINF:-1 tvg-id="" tvg-logo="https://i.imgur.com/K1AUUrO.png" group-title="Québec",Noovo (Broken)
 https://pe-fa-lp03a.9c9media.com/live/NOOVO/p/hls/00000201/716cf4c845225692/manifest.m3u8
 #EXTINF:-1 tvg-id="tva" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/TVA_logo_2020.svg/512px-TVA_logo_2020.svg.png" group-title="News",TVA [Geo-Blocked]
 https://tvalive-dai01.akamaized.net/Content/HLS/Live/channel(575b93c5-be31-ee34-6285-14620fd14048)/index.m3u8
 #EXTINF:-1 tvg-id="telequebec" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/T%C3%A9l%C3%A9-Qu%C3%A9bec_logo.svg/512px-T%C3%A9l%C3%A9-Qu%C3%A9bec_logo.svg.png" group-title="Education",Télé-Québec
 https://bcovlive-a.akamaihd.net/575d86160eb143458d51f7ab187a4e68/us-east-1/6101674910001/playlist.m3u8
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="News",Météo Média (Disabled)
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Québec",Météo Média (Disabled)
 https://
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Sports",RDS (Disabled)
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Québec",RDS (Disabled)
 https://
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Sports",RDS 2 (Disabled)
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Québec",RDS 2 (Disabled)
 https://
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Sports",TVA Sports (Disabled)
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Québec",TVA Sports (Disabled)
 https://
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Sports",TVA Sports 2 (Disabled)
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Québec",TVA Sports 2 (Disabled)
 https://
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="",France 24 (Disabled)
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Québec",France 24 (Disabled)
 https://
-#EXTINF:-1 tvg-id="LCN.ca" tvg-logo="https://i.imgur.com/iKDLgOG.png" group-title="News",LCN [Geo-blocked]
+#EXTINF:-1 tvg-id="LCN.ca" tvg-logo="https://i.imgur.com/iKDLgOG.png" group-title="Québec",LCN [Geo-blocked]
 https://tvalive.akamaized.net/hls/live/2014213/tvan01/tvan01.m3u8
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="",Euro News FR (Disabled)
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Québec",Euro News FR (Disabled)
 https://
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="",Addik (Disabled)
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Québec",Addik (Disabled)
 https://
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="",Z Télé (Disabled)
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Québec",Z Télé (Disabled)
 https://
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="",Série Plus (Disabled)
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Québec",Série Plus (Disabled)
 https://
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="",Évasion (Disabled)
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Québec",Évasion (Disabled)
 https://
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="",Historia (Disabled)
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Québec",Historia (Disabled)
 https://
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="",Canal D (Disabled)
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Québec",Canal D (Disabled)
 https://
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="",Investigation (Disabled)
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Québec",Investigation (Disabled)
 https://
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="",Planete + (Disabled)
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Québec",Planete + (Disabled)
 https://
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="",Elle Fictions (Disabled)
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Québec",Elle Fictions (Disabled)
 https://
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="",Max (Disabled)
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Québec",Max (Disabled)
 https://
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="",TV5 (Disabled)
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Québec",TV5 (Disabled)
 https://
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="",Casa (Disabled)
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Québec",Casa (Disabled)
 https://
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="",Zeste (Disabled)
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Québec",Zeste (Disabled)
 https://
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="",Canal Vie (Disabled)
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Québec",Canal Vie (Disabled)
 https://
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="",Témoin (Disabled)
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Québec",Témoin (Disabled)
 https://
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="",Prise 2 (Disabled)
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Québec",Prise 2 (Disabled)
 https://
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="",Unis TV (Disabled)
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Québec",Unis TV (Disabled)
 https://
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="",Museum TV (Disabled)
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Québec",Museum TV (Disabled)
 https://
-#EXTINF:-1 tvg-id="assembleduquebec" tvg-logo="https://i.imgur.com/jAtq0U8.png" group-title="Politics",Assemblée Nationale du Québec
+#EXTINF:-1 tvg-id="assembleduquebec" tvg-logo="https://i.imgur.com/jAtq0U8.png" group-title="Québec",Assemblée Nationale du Québec
 https://cdn3.wowza.com/5/SVEySlNEQ0FOWXlS/diffusion/canal17/playlist.m3u8
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="",CPAC (Disabled)
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Québec",CPAC (Disabled)
 https://
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="",TFO (Disabled)
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Québec",TFO (Disabled)
 https://
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="",Savoir Média (Disabled)
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Québec",Savoir Média (Disabled)
 https://
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="",Télémagino (Disabled)
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Québec",Télémagino (Disabled)
 https://
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="",Télétoon (Disabled)
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Québec",Télétoon (Disabled)
 https://
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="",Disney (Disabled)
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Québec",Disney (Disabled)
 https://
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="",Super Écran 1 (Disabled)
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Québec",Super Écran 1 (Disabled)
 https://
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="",Super Écran 2 (Disabled)
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Québec",Super Écran 2 (Disabled)
 https://
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="",Super Écran 3 (Disabled)
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Québec",Super Écran 3 (Disabled)
 https://
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="",Super Écran 4 (Disabled)
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Québec",Super Écran 4 (Disabled)
 https://
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="",Ciné Pop (Disabled)
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Québec",Ciné Pop (Disabled)
 https://
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="",Frissons TV (Disabled)
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Québec",Frissons TV (Disabled)
 https://
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="",Z Télé (Disabled)
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Québec",Z Télé (Disabled)
 https://
