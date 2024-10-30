@@ -16,7 +16,7 @@ https://tvalive-dai01.akamaized.net/Content/HLS/Live/channel(575b93c5-be31-ee34-
 https://bcovlive-a.akamaihd.net/575d86160eb143458d51f7ab187a4e68/us-east-1/6101674910001/playlist.m3u8
 #EXTINF:-1 tvg-id="" tvg-logo="" group-title="Québec",Météo Média (Disabled)
 https://
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Québec",RDS (Disabled)
+#EXTINF:-1 tvg-id="" tvg-logo="https://rdsimages.cookieless.ca/polopoly_fs/1.7375273!/img/httpImage/image.png" group-title="Québec",RDS (Disabled)
 https://
 #EXTINF:-1 tvg-id="" tvg-logo="" group-title="Québec",RDS 2 (Disabled)
 https://
