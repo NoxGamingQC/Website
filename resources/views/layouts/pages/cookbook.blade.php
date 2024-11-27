@@ -25,7 +25,11 @@
             <link href="{{mix('css/'. Auth::user()->preferred_theme . '.css')}}" rel="stylesheet" type="text/css">
         @endauth
         @guest
-            <link href="{{mix('css/system.css')}}" rel="stylesheet" type="text/css">
+            @if(!is_null($theme))
+                <link href="{{mix('css/' . $theme .'.css')}}" rel="stylesheet" type="text/css">
+            @else
+                <link href="{{mix('css/system.css')}}" rel="stylesheet" type="text/css">
+            @endif
         @endguest
         <link href="{{mix('css/bootstrap.css')}}" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">

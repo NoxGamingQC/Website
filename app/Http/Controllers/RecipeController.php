@@ -22,6 +22,7 @@ class RecipeController extends Controller
 
                 return view('view.premium.cookbook.cookbook')->with([
                     'kiosk' => 'true',
+                    'theme' => null,
                     'categories' => $categories,
                     'recipe' => true,
                     'isRecipe' => false,
@@ -43,6 +44,7 @@ class RecipeController extends Controller
                     'kiosk' => 'true',
                     'categories' => $categories,
                     'recipe' => true,
+                    'theme' => $isRealKey->theme,
                     'isRecipe' => false,
                     'kiosk_key' => $request->key,
                     'lastLink' => '/' . app()->getLocale() . '/cookbook?key=' . $request->key,
@@ -69,6 +71,7 @@ class RecipeController extends Controller
 
                 return view('view.premium.cookbook.categories')->with([
                     'kiosk' => 'true',
+                    'theme' => null,
                     'category' => $category,
                     'recipes' => $recipes,
                     'recipe' => true,
@@ -90,6 +93,7 @@ class RecipeController extends Controller
                 
                 return view('view.premium.cookbook.categories')->with([
                     'kiosk' => 'true',
+                    'theme' => $isRealKey->theme,
                     'category' => $category,
                     'recipes' => $recipes,
                     'recipe' => true,
@@ -121,6 +125,7 @@ class RecipeController extends Controller
 
                 return view('view.premium.cookbook.recipe')->with([
                     'kiosk' => 'true',
+                    'theme' => null,
                     'isRecipe' => true,
                     'recipe' => $recipe,
                     'created_by' => User::find($recipe->created_by)->name,
@@ -144,6 +149,7 @@ class RecipeController extends Controller
 
                 return view('view.premium.cookbook.recipe')->with([
                     'kiosk' => 'true',
+                    'theme' => $isRealKey->theme,
                     'isRecipe' => true,
                     'recipe' => $recipe,
                     'kiosk_key' => $request->key,
@@ -170,6 +176,7 @@ class RecipeController extends Controller
                 $categories = Categories::all();
                 return view('view.premium.cookbook.add_recipe')->with([
                     'kiosk' => 'true',
+                    'theme' => null,
                     'categories' => $categories,
                     'isRecipe' => true,
                     'recipe' => true,
@@ -191,6 +198,7 @@ class RecipeController extends Controller
                 $recipe->steps = $recipe->getSteps();
                 return view('view.premium.cookbook.edit_recipe')->with([
                     'id' => $id,
+                    'theme' => null,
                     'kiosk' => 'true',
                     'categories' => $categories,
                     'isRecipe' => true,
