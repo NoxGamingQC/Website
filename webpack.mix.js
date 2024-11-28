@@ -12,7 +12,6 @@ var mix = require('laravel-mix');
  */
 
 mix.js('resources/assets/js/app.js', 'public/js');
-mix.copy('node_modules/Font-Awesome/fonts', 'public/fonts');
 mix.sass('resources/assets/sass/system.scss', 'public/css');
 mix.sass('resources/assets/sass/dark/dark.scss', 'public/css');
 mix.sass('resources/assets/sass/light/light.scss', 'public/css');

@@ -47,29 +47,6 @@ html, body {
 
 }
 
-.header {
-    overflow-x: hidden !important;
-    h1,h2,h3,h4,h5,h6,p {
-        color: $text-on-primary !important;
-    }
-    @media (min-width: $screen-md-min) {
-        h1 {
-            font-size:135px !important
-        }
-        h2, h3 {
-            font-size:20px !important
-        }
-    }
-}
-
-.header h1, .header h2 {
-    color: $text-on-primary !important;
-}
-
-.header h3, .header h4, .header h5, .header h6, .header p, .header span {
-    color: $text-on-primary !important;
-}
-
 .row {
     @media (max-width: $screen-md-min) {
         margin-left: 0px !important;

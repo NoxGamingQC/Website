@@ -3524,29 +3524,6 @@ html, body {
   color: #FFFFFF !important;
 }
 
-.header {
-  overflow-x: hidden !important;
-}
-.header h1, .header h2, .header h3, .header h4, .header h5, .header h6, .header p {
-  color: #FFFFFF !important;
-}
-@media (min-width: 1200px) {
-  .header h1 {
-    font-size: 135px !important;
-  }
-  .header h2, .header h3 {
-    font-size: 20px !important;
-  }
-}
-
-.header h1, .header h2 {
-  color: #FFFFFF !important;
-}
-
-.header h3, .header h4, .header h5, .header h6, .header p, .header span {
-  color: #FFFFFF !important;
-}
-
 @media (max-width: 1200px) {
   .row {
     margin-left: 0px !important;
@@ -3826,4 +3803,27 @@ h1, h2, h3, h4, h5, h6, p {
 hr {
   border-color: #666666 !important;
   margin: 5%;
+}
+
+.header {
+  overflow-x: hidden !important;
+}
+.header h1, .header h2, .header h3, .header h4, .header h5, .header h6, .header p {
+  color: #e5e5e5 !important;
+}
+@media (min-width: 1200px) {
+  .header h1 {
+    font-size: 135px !important;
+  }
+  .header h2, .header h3 {
+    font-size: 20px !important;
+  }
+}
+
+.header h1, .header h2 {
+  color: #e5e5e5 !important;
+}
+
+.header h3, .header h4, .header h5, .header h6, .header p, .header span {
+  color: #e5e5e5 !important;
 }
