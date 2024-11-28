@@ -14,22 +14,11 @@
                 <br />
             </div>
             @if(count($mails) > 0)
-                @foreach($mails as $key => $mail)
+                @foreach($mails as $key => $message)
                     <div class="col-md-12">
-                        <a href="/{{app()->getLocale()}}/profile/mail/{{$mail->id}}" class="mail-container text-color">
-                            <div class="row" style="padding-top: 3%;padding-bottom: 3%">
-                                <div class="col-md-6" style="text-overflow:ellipsis;overflow:hidden;white-space:nowrap;max-width:70%">
-                                    <span>{{explode(';', $mail->participants)[0]}}</span>
-                                </div>
-                                <div class="col-md-6 text-right">
-                                    <span>{{Carbon\Carbon::parse($mail->created_at)->format('M d')}}</span>
-                                </div>
-                                <div class="col-md-12">
-                                    <p style="text-overflow:ellipsis;overflow:hidden;white-space:nowrap;max-width:80%;margin-bottom:1px;">{{ isset($mailContent[$mail->id]) ? $mailContent[$mail->id]->object : 'No object'}}</p>
-                                    <p style="text-overflow:ellipsis;overflow:hidden;white-space:nowrap;max-width:80%;margin-bottom:1px;">{{  isset($mailContent[$mail->id]) ? $mailContent[$mail->id]->text : 'No message'}}</p>
-                                </div>
-                            </div>
-                        </a>
+                        <h4>{{$message['from']}}</h4>
+                        <h5>{{$message['subject']}}<h5>
+                        <p>{{substr($message['text_message'],0, 20)}}</p>
                     </div>
                     @endforeach
                 @else

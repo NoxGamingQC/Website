@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Mails;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Mail;
+use Webklex\PHPIMAP\ClientManager;
+use Webklex\PHPIMAP\Client;
 use Illuminate\Http\Request;
 use App\Model\Mails;
 use App\Model\MailIndex;
@@ -24,10 +26,45 @@ class MailController extends Controller
             foreach($mails as $key => $value) {
                 $mail[$value->id] =  Mails::where('message_id', $value->id)->whereIn('recipient', $emailList)->get()->first();
             }
-                
+
+            $cm = new ClientManager($options = []);
+            $client = $cm->make([
+                'host'          => 'www.noxgamingqc.ca',
+                'port'          => 993,
+                'encryption'    => 'ssl',
+                'validate_cert' => true,
+                'username'      => '',
+                'password'      => '',
+                'protocol'      => 'imap'
+            ]);
+
+            $client->connect();
+
+            /** @var \Webklex\PHPIMAP\Support\FolderCollection $folders */
+            $folders = $client->getFolders();
+            foreach($folders as $folder){
+                /** @var \Webklex\PHPIMAP\Support\MessageCollection $messages */
+                $messages = $folder->messages()->all()->get();
+                foreach($messages as $key => $message){
+                    $mails[$key] =  [
+                        'uid' => $message->getUid(),
+                        'subject' => $message->getSubject()->first(),
+                        'html_message' => $message->getHTMLBody(),
+                        'text_message' => $message->getTextBody(),
+                        'from' => $message->getFrom()[0]->mail,
+                        'attachement_count' => $message->getAttachments()->count()
+                    ];
+            
+                    //Move the current Message to 'INBOX.read'
+                    if($message->move('INBOX.read') == true){
+                        echo 'Message has ben moved';
+                    }else{
+                        echo 'Message could not be moved';
+                    }
+                }
+            }
             return view('view.profile.mails')->with([
                     'mails' => $mails,
-                    'mailContent' => $mail,
                     'emailList' => $emailList
             ]);
         }

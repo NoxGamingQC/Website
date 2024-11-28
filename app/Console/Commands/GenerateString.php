@@ -11,7 +11,7 @@ class GenerateString extends Command
      *
      * @var string
      */
-    protected $signature = 'generatestring';
+    protected $signature = 'string:generate';
 
     /**
      * The console command description.
