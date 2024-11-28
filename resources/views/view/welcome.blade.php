@@ -2,9 +2,8 @@
 @section('title', 'Welcome')
 @section('content')
 
-<div class="container-fluid section header" style="width: 100%;height:100% !important;text-align: center;overflow: hidden;z-index: 2;">
-    <video autoplay muted loop src="/videos/soldier_static.mp4" style="position: absolute;top: 10%;left: 0;height: 110% !important;min-width: 100%;min-height: 100%;z-index: 0;object-position: center;object-fit: cover;overflow:hidden !important"></video>
-    <div class="row" style="z-index: 1;">
+<div class="container-fluid section header" style="z-index: 1; background-image: url('/img/welcome.jpg');background-repeat: no-repeat;background-size: cover;margin:0px; text-shadow: 1px  1px 2px #000, 1px -1px 2px #000, -1px  1px 2px #000, -1px -1px 2px #000;">
+    <div class="row" >
         <div class="col-md-12">
             <div class="row">
                 <div class="col-md-5 col-md-offset-1">

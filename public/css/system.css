@@ -2714,6 +2714,10 @@
   .navbar-toggle:hover .icon-bar, .navbar-toggle:active .icon-bar, .navbar-toggle:focus .icon-bar, .navbar-toggle:not(.collapsed) .icon-bar {
     background-color: #FFFFFF !important;
   }
+  html, body {
+    overflow-x: hidden !important;
+    max-width: 100%;
+  }
   #content {
     margin-top: 120px;
   }
@@ -5732,6 +5736,10 @@
   }
   .navbar-toggle:hover .icon-bar, .navbar-toggle:active .icon-bar, .navbar-toggle:focus .icon-bar, .navbar-toggle:not(.collapsed) .icon-bar {
     background-color: #FFFFFF !important;
+  }
+  html, body {
+    overflow-x: hidden !important;
+    max-width: 100%;
   }
   #content {
     margin-top: 120px;
