@@ -34,7 +34,7 @@ Route::middleware(['cors'])->group(function () {
 });
 
     Route::get('/mailbox', function () {
-        return redirect()->to('https://noxgamingqc.ca:8443');           
+        return redirect()->to('/' . app()->getLocale() . '/mailbox');           
     });
     Route::post('/mail/receive', 'Mails\MailController@receive');
     Route::post('/mail/send', 'Mails\MailController@sendMail');
@@ -199,6 +199,12 @@ Route::middleware(['cors'])->group(function () {
             Route::get('/management/logs/download', 'LogsController@download');
             Route::get('/management/settings', 'SettingsController@index');
             
+            /*
+              
+                MAILING ROUTES
+              
+            */
+            Route::get('/mailbox', 'Mails\MailController@index');
             /*
               
                 OTHER ROUTES
