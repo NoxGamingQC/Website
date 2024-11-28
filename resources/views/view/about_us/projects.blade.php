@@ -14,7 +14,7 @@
                 <p>{{trans('projects.website_description')}} <a class="btn btn-primary" href="https://www.noxgamingqc.ca">Visit</a></p>
             </div>
             <div class="col-md-6">
-                <img class="text-center" src="/img/no-image.png" width="250px" />
+                <img class="text-center" src="/img/Projects/website.png" width="250px" />
             </div>
         </div>
     </div>
@@ -23,7 +23,7 @@
     <div class="row">
         <div class="col-md-12 bg-dark content-item">
             <div class="col-md-6">
-                <img class="text-center" src="/img/no-image.png" width="250px" />
+                <img class="text-center" src="/img/Projects/NoxBOT.png" width="250px" />
             </div>
             <div class="col-md-6 text-right">
                 <br />
