@@ -7,6 +7,9 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Webklex\PHPIMAP\ClientManager;
+use Webklex\PHPIMAP\Client;
+use Illuminate\Support\Facades\Session;
 
 class LoginController extends Controller
 {
@@ -60,7 +63,7 @@ class LoginController extends Controller
         ]);
 
         $credentials = $request->only('email', 'password');
-        
+
         if ($this->attemptLogin($request)) {
             return $this->sendLoginResponse($request);
         }
@@ -68,6 +71,24 @@ class LoginController extends Controller
         if (Auth::attempt($credentials)) {
 
             return redirect(session()->get('url.intended'));
+        }
+
+        $userEmailsList = explode(';', Auth::user()->local_mail);
+        if($userEmailsList) {
+            $cm = new ClientManager($options = []);
+                $emailClient = $cm->make([
+                    'host'          => 'www.noxgamingqc.ca',
+                    'port'          => 993,
+                    'encryption'    => 'ssl',
+                    'validate_cert' => true,
+                    'username'      => $userEmailsList[0],
+                    'password'      => $request->password,
+                    'protocol'      => 'imap'
+                ]);
+            $emailClient->connect();
+            Session::put(['email_client' => $emailClient]);
+            Session::save();
+            Session::regenerate();
         }
 
         return redirect("login")->withSuccess('Oppes! You have entered invalid credentials');

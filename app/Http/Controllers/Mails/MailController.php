@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use App\Model\Mails;
 use App\Model\MailIndex;
 use App\Model\User;
@@ -14,7 +15,7 @@ use Webklex\PHPIMAP\Client;
 
 class MailController extends Controller
 {
-    public function index() {
+    public function index(Request $request) {
         if(Auth::check()) {
             $mails = null;
             $mail = [];
@@ -27,39 +28,30 @@ class MailController extends Controller
                 $mail[$value->id] =  Mails::where('message_id', $value->id)->whereIn('recipient', $emailList)->get()->first();
             }
 
-            $userEmailsList = explode(';', Auth::user()->local_mail);
-
-        /*$cm = new ClientManager($options = []);
-            $client = $cm->make([
-                'host'          => 'www.noxgamingqc.ca',
-                'port'          => 993,
-                'encryption'    => 'ssl',
-                'validate_cert' => true,
-                'username'      => $userEmailsList[0],
-                'password'      => Auth::user()->getAuthPassword(),
-                'protocol'      => 'imap'
-            ]);
-            $client->connect();
-
-            /** @var \Webklex\PHPIMAP\Support\FolderCollection $folders */
-            /*$folders = $client->getFolders();
-            foreach($folders as $folder){
-                /** @var \Webklex\PHPIMAP\Support\MessageCollection $messages */
-                /*$messages = $folder->messages()->all()->get();
-                foreach($messages as $key => $message){
-                    $mails[$key] =  [
-                        'uid' => $message->getUid(),
-                        'subject' => $message->getSubject()->first(),
-                        'html_message' => $message->getHTMLBody(),
-                        'text_message' => $message->getTextBody(),
-                        'from' => $message->getFrom()[0]->mail,
-                        'attachement_count' => $message->getAttachments()->count()
-                    ];
+            $client = Session::get('email_client');
+            if($client) {
+                /** @var \Webklex\PHPIMAP\Support\FolderCollection $folders */
+                $folders = $client->getFolders();
+                foreach($folders as $folder){
+                    /** @var \Webklex\PHPIMAP\Support\MessageCollection $messages */
+                    $messages = $folder->messages()->all()->get();
+                    foreach($messages as $key => $message){
+                        $mails[$key] =  [
+                            'uid' => $message->getUid(),
+                            'subject' => $message->getSubject()->first(),
+                            'html_message' => $message->getHTMLBody(),
+                            'text_message' => $message->getTextBody(),
+                            'from' => $message->getFrom()[0]->mail,
+                            'attachement_count' => $message->getAttachments()->count()
+                        ];
+                    }
                 }
+            } else {
+                $mails = [];
             }
-            */
+            
             return view('view.profile.mails')->with([
-                    'mails' => /*$mails*/[],
+                    'mails' => $mails,
                     'emailList' => $emailList
             ]);
         }
