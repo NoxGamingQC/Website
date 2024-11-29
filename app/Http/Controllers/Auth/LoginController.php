@@ -63,32 +63,16 @@ class LoginController extends Controller
         ]);
 
         $credentials = $request->only('email', 'password');
+        
+        Session::put('email_client_password', $request->password);
+        Session::save();
 
         if ($this->attemptLogin($request)) {
             return $this->sendLoginResponse($request);
         }
 
         if (Auth::attempt($credentials)) {
-
             return redirect(session()->get('url.intended'));
-        }
-
-        $userEmailsList = explode(';', Auth::user()->local_mail);
-        if($userEmailsList) {
-            $cm = new ClientManager($options = []);
-                $emailClient = $cm->make([
-                    'host'          => 'www.noxgamingqc.ca',
-                    'port'          => 993,
-                    'encryption'    => 'ssl',
-                    'validate_cert' => true,
-                    'username'      => $userEmailsList[0],
-                    'password'      => $request->password,
-                    'protocol'      => 'imap'
-                ]);
-            $emailClient->connect();
-            Session::put(['email_client' => $emailClient]);
-            Session::save();
-            Session::regenerate();
         }
 
         return redirect("login")->withSuccess('Oppes! You have entered invalid credentials');
