@@ -39,13 +39,13 @@ class MailController extends Controller
                 'password'      => Auth::user()->getAuthPassword(),
                 'protocol'      => 'imap'
             ]);
-            $client->connect();*/
+            $client->connect();
 
             /** @var \Webklex\PHPIMAP\Support\FolderCollection $folders */
-            $folders = $client->getFolders();
+            /*$folders = $client->getFolders();
             foreach($folders as $folder){
                 /** @var \Webklex\PHPIMAP\Support\MessageCollection $messages */
-                $messages = $folder->messages()->all()->get();
+                /*$messages = $folder->messages()->all()->get();
                 foreach($messages as $key => $message){
                     $mails[$key] =  [
                         'uid' => $message->getUid(),
@@ -55,17 +55,11 @@ class MailController extends Controller
                         'from' => $message->getFrom()[0]->mail,
                         'attachement_count' => $message->getAttachments()->count()
                     ];
-            
-                    //Move the current Message to 'INBOX.read'
-                    if($message->move('INBOX.read') == true){
-                        echo 'Message has ben moved';
-                    }else{
-                        echo 'Message could not be moved';
-                    }
                 }
             }
+            */
             return view('view.profile.mails')->with([
-                    'mails' => $mails,
+                    'mails' => /*$mails*/[],
                     'emailList' => $emailList
             ]);
         }
