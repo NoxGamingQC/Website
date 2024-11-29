@@ -5,12 +5,12 @@ namespace App\Http\Controllers\Mails;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Mail;
-use Webklex\PHPIMAP\ClientManager;
-use Webklex\PHPIMAP\Client;
 use Illuminate\Http\Request;
 use App\Model\Mails;
 use App\Model\MailIndex;
 use App\Model\User;
+use Webklex\PHPIMAP\ClientManager;
+use Webklex\PHPIMAP\Client;
 
 class MailController extends Controller
 {
@@ -27,18 +27,19 @@ class MailController extends Controller
                 $mail[$value->id] =  Mails::where('message_id', $value->id)->whereIn('recipient', $emailList)->get()->first();
             }
 
-            $cm = new ClientManager($options = []);
+            $userEmailsList = explode(';', Auth::user()->local_mail);
+
+        /*$cm = new ClientManager($options = []);
             $client = $cm->make([
                 'host'          => 'www.noxgamingqc.ca',
                 'port'          => 993,
                 'encryption'    => 'ssl',
                 'validate_cert' => true,
-                'username'      => '',
-                'password'      => '',
+                'username'      => $userEmailsList[0],
+                'password'      => Auth::user()->getAuthPassword(),
                 'protocol'      => 'imap'
             ]);
-
-            $client->connect();
+            $client->connect();*/
 
             /** @var \Webklex\PHPIMAP\Support\FolderCollection $folders */
             $folders = $client->getFolders();
