@@ -6,7 +6,7 @@
 
 <div class="row">
     <div class="col-sm-12 content-item bg-dark">
-        <div class="container"> 
+        <div class="container-fluid"> 
             <div class="col-md-12 text-center">
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sendMailModal"><i class="fa fa-envelope-o" aria-hidden="true"></i> {{trans('mail.new_message')}}</button>
                 <button type="button" class="btn btn-primary disabled" disabled><i class="fa fa-pencil" aria-hidden="true"></i> {{trans('mail.edit_signature')}}</button>
@@ -14,10 +14,11 @@
                 <br />
             </div>
             @if(count($mails) > 0)
+                        <div class="col-md-4">
                 @foreach($mails as $key => $message)
                     @if(!isset($message['flags']['seen']))
                         <div class="col-md-12">
-                            <a class="btn btn-primary form-control" style="padding-top: 2% !important;padding-bottom: 115px !important;padding-left: 0px !important; padding-right:5% !important; margin: 10px !important;overflow:hidden !important">
+                            <a class="btn btn-primary form-control" id="{{$key}}" style="padding-top: 2% !important;padding-bottom: 115px !important;padding-left: 0px !important; padding-right:5% !important; margin: 10px !important;overflow:hidden !important">
                                 <ul>
                                     <li style="list-style-type: none;">
                                         <h5 class="text-left"  style="overflow:hidden !important"><b>{{$message['from']}}</b></h5>
@@ -41,6 +42,10 @@
                         </div>
                     @endif
                 @endforeach
+                </div>
+                <div class="col-md-8" style="isolation: isolate;">
+
+                </div>
             @else
                 <h2 class="text-center">You don't have mail</h2>
             @endif
