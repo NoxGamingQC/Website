@@ -16,11 +16,11 @@
             @if(count($mails) > 0)
                 @foreach($mails as $key => $message)
                     <div class="col-md-12">
-                        <a class="btn btn-primary form-control" style="padding-top: 2% !important;padding-bottom: 10% !important; margin: 10px !important;overflow:hidden !important">
+                        <a class="btn btn-primary form-control" style="padding-top: 2% !important;padding-bottom: 115px !important;padding-left: 0px !important; padding-right:5% !important; margin: 10px !important;overflow:hidden !important">
                         <ul>
                         <li style="list-style-type: none;">
-                            <h5 class="text-left"><b>{{$message['from']}}</b></h5>
-                            <p class="text-left">{{$message['subject']}}</p>
+                            <h5 class="text-left"  style="overflow:hidden !important"><b>{{$message['from']}}</b></h5>
+                            <p class="text-left"  style="overflow:hidden !important">{{$message['subject']}}</p>
                             <p class="text-left text-muted" style="overflow:hidden !important">{{substr($message['text_message'],0, 200)}}</p>
                         </li>
                         </ul>
