@@ -14,37 +14,41 @@
                 <br />
             </div>
             @if(count($mails) > 0)
-                        <div class="col-md-4">
-                @foreach($mails as $key => $message)
-                    @if(!isset($message['flags']['seen']))
-                        <div class="col-md-12">
-                            <a class="btn btn-primary form-control" id="{{$key}}" style="padding-top: 2% !important;padding-bottom: 115px !important;padding-left: 0px !important; padding-right:5% !important; margin: 10px !important;overflow:hidden !important">
-                                <ul>
-                                    <li style="list-style-type: none;">
-                                        <h5 class="text-left"  style="overflow:hidden !important"><b>{{$message['from']}}</b></h5>
-                                        <p class="text-left"  style="overflow:hidden !important">{{$message['subject']}}</p>
-                                        <p class="text-left text-muted" style="overflow:hidden !important">{{substr($message['text_message'],0, 200)}}</p>
-                                    </li>
-                                </ul>
-                            </a>
-                        </div>
-                    @else
-                        <div class="col-md-12">
-                            <a class="btn btn-primary form-control" style="padding-top: 2% !important;padding-bottom: 115px !important;padding-left: 0px !important; padding-right:5% !important; margin: 10px !important;overflow:hidden !important">
-                                <ul>
-                                    <li style="list-style-type: none;">
-                                        <h5 class="text-left text-muted"  style="overflow:hidden !important">{{$message['from']}}</h5>
-                                        <p class="text-left text-muted"  style="overflow:hidden !important">{{$message['subject']}}</p>
-                                        <p class="text-left text-muted" style="overflow:hidden !important">{{substr($message['text_message'],0, 200)}}</p>
-                                    </li>
-                                </ul>
-                            </a>
-                        </div>
-                    @endif
-                @endforeach
+                <div class="col-md-4">
+                    @foreach($mails as $key => $message)
+                        @if(!isset($message['flags']['seen']))
+                            <div class="col-md-12">
+                                <a class="btn btn-primary form-control mail-selector" id="{{$key}}" style="padding-top: 2% !important;padding-bottom: 115px !important;padding-left: 0px !important; padding-right:5% !important; margin: 10px !important;overflow:hidden !important">
+                                    <ul>
+                                        <li style="list-style-type: none;">
+                                            <h5 class="text-left"  style="overflow:hidden !important"><b>{{$message['from']}}</b></h5>
+                                            <p class="text-left"  style="overflow:hidden !important">{{$message['subject']}}</p>
+                                            <p class="text-left text-muted" style="overflow:hidden !important">{{substr($message['text_message'],0, 200)}}</p>
+                                        </li>
+                                    </ul>
+                                </a>
+                            </div>
+                        @else
+                            <div class="col-md-12">
+                                <a class="btn btn-primary form-control mail-selector" id="{{$key}}" style="padding-top: 2% !important;padding-bottom: 115px !important;padding-left: 0px !important; padding-right:5% !important; margin: 10px !important;overflow:hidden !important">
+                                    <ul>
+                                        <li style="list-style-type: none;">
+                                            <h5 class="text-left text-muted"  style="overflow:hidden !important">{{$message['from']}}</h5>
+                                            <p class="text-left text-muted"  style="overflow:hidden !important">{{$message['subject']}}</p>
+                                            <p class="text-left text-muted" style="overflow:hidden !important">{{substr($message['text_message'],0, 200)}}</p>
+                                        </li>
+                                    </ul>
+                                </a>
+                            </div>
+                        @endif
+                    @endforeach
                 </div>
-                <div class="col-md-8" style="isolation: isolate;">
-
+                <div class="col-md-8">
+                    @foreach($mails as $key => $message)
+                        <div class="row" id="mail-{{$key}}" style="isolation: isolate;">
+                            
+                        </div>
+                    @endforeach
                 </div>
             @else
                 <h2 class="text-center">You don't have mail</h2>
@@ -52,5 +56,11 @@
         </div>
     </div>
 </div>
-
+<script>
+$(document).ready(function() {
+    $('.mail-selector').on('click', function () {
+        $('mail-' + this.id).html('{{$mails[0]['html_message']}}');
+    });
+});
+</script>
 @endsection
