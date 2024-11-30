@@ -45,7 +45,8 @@ if ($userEmailsList){
             /** @var \Webklex\PHPIMAP\Support\FolderCollection $folders */
             $folders = $client->getFolders();
             foreach($folders as $folder){
-                /** @var \Webklex\PHPIMAP\Support\MessageCollection $messages */
+                /** @var \Webklex\PHPIMAP\Support\MessageCollection $messages */         
+                /** @var \Webklex\PHPIMAP\Support\FlagCollection $flags */
                 $messages = $folder->messages()->all()->get();
                 foreach($messages as $key => $message){
                     $mails[$key] =  [
@@ -54,6 +55,7 @@ if ($userEmailsList){
                         'html_message' => $message->getHTMLBody(),
                         'text_message' => $message->getTextBody(),
                         'from' => $message->getFrom()[0]->mail,
+                        'flags' => $message->getFlags(),
                         'attachement_count' => $message->getAttachments()->count()
                     ];
                 }
