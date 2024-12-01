@@ -45,8 +45,8 @@
                 </div>
                 <div class="col-md-8">
                     @foreach($mails as $key => $message)
-                        <div class="row" id="mail-{{$key}}" style="isolation: isolate;">
-                            
+                        <div class="row messages-content hidden" id="mail-{{$key}}" style="isolation: isolate;" >
+                            {{$mails[$key]['text_message']}}
                         </div>
                     @endforeach
                 </div>
@@ -59,7 +59,12 @@
 <script>
 $(document).ready(function() {
     $('.mail-selector').on('click', function () {
-        $('mail-' + this.id).html('{{$mails[0]['html_message']}}');
+        $('.messages-content').each(function(key, value) {
+            $(value).addClass('hidden');
+            //value.attr('hidden');
+        });
+        //$('mail-' + this.id).attr('hidden', false);
+        $('#mail-' + this.id).removeClass('hidden');
     });
 });
 </script>
