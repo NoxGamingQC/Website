@@ -148,11 +148,11 @@ if ($userEmailsList){
                     'sender' => $request->sender,
                     'recipient' => $request->recipient,
                     'object' => $request->object,
-                    'messageContent' => $request->message
+                    'messageContent' => $request->message . '<br /><br /><table><td><img width="150px" alt="NoxGamingQC" src="https://www.noxgamingqc.ca/img/logo.png"></td><td></td><br/><td style="line-height: 70%;"><h3>' . Auth::user()->firstname . ' ' . Auth::user()->lastname . '</h3><p>NoxGamingQC | ' . (Auth::user()->title) . '</p><p><a href="https://www.noxgamingqc.ca">noxgamingqc.ca</a> |</p><p><a href="mailto:' . $request->sender . '">' . $request->sender . '</a> |</p></td></table>'
                 ];
 
                 Mail::send('emails.standard', $data, function($message) use ($data) {
-                    $message->from($data['sender'], Auth::user()->name);
+                    $message->from($data['sender'], (Auth::user()->firstname && Auth::user()->lastname) ? (Auth::user()->firstname . ' ' . Auth::user()->lastname) : Auth::user()->name);
                     $message->to($data['recipient']);
                     $message->subject($data['object']);
                     $message->getHeaders()->addTextHeader('List-Unsubscribe', 'https://www.noxgamingqc.ca/unsubscribe?email=' . $data['recipient']);
