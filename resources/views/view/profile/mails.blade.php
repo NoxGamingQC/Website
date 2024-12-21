@@ -18,7 +18,7 @@
                     @foreach($mails as $key => $message)
                         @if(!isset($message['flags']['seen']))
                             <div class="col-md-12">
-                                <a class="btn btn-primary form-control mail-selector" id="{{$key}}" style="padding-top: 2% !important;padding-bottom: 115px !important;padding-left: 0px !important; padding-right:5% !important; margin: 10px !important;overflow:hidden !important">
+                                <a class="btn btn-primary form-control mail-selector" id="{{$message['uid']}}" style="padding-top: 2% !important;padding-bottom: 115px !important;padding-left: 0px !important; padding-right:5% !important; margin: 10px !important;overflow:hidden !important">
                                     <ul>
                                         <li style="list-style-type: none;">
                                             <h5 class="text-left"  style="overflow:hidden !important"><b>{{$message['from']}}</b></h5>
@@ -30,7 +30,7 @@
                             </div>
                         @else
                             <div class="col-md-12">
-                                <a class="btn btn-primary form-control mail-selector" id="{{$key}}" style="padding-top: 2% !important;padding-bottom: 115px !important;padding-left: 0px !important; padding-right:5% !important; margin: 10px !important;overflow:hidden !important">
+                                <a class="btn btn-primary form-control mail-selector" id="{{$message['uid']}}" style="padding-top: 2% !important;padding-bottom: 115px !important;padding-left: 0px !important; padding-right:5% !important; margin: 10px !important;overflow:hidden !important">
                                     <ul>
                                         <li style="list-style-type: none;">
                                             <h5 class="text-left text-muted"  style="overflow:hidden !important">{{$message['from']}}</h5>
@@ -45,8 +45,8 @@
                 </div>
                 <div class="col-md-8">
                     @foreach($mails as $key => $message)
-                        <div class="row messages-content hidden" id="mail-{{$key}}" style="isolation: isolate;" >
-                            {{$mails[$key]['text_message']}}
+                        <div class="row messages-content" id="mail-{{$key}}" style="isolation: isolate;" >
+                            <iframe id="mailFrame" class="hidden" src="" frameborder="0" scrolling="yes" style="background:#fff;display:block; width:100%;height:100vh;">
                         </div>
                     @endforeach
                 </div>
@@ -56,16 +56,12 @@
         </div>
     </div>
 </div>
-<script>
-$(document).ready(function() {
-    $('.mail-selector').on('click', function () {
-        $('.messages-content').each(function(key, value) {
-            $(value).addClass('hidden');
-            //value.attr('hidden');
-        });
-        //$('mail-' + this.id).attr('hidden', false);
-        $('#mail-' + this.id).removeClass('hidden');
-    });
+<script type="text/javascript">
+$('.mail-selector').on('click', function () {
+    var mailID = this.id;
+    $('#mailFrame').removeClass('hidden');
+    console.log('unhide');
+    $('#mailFrame').attr('src', '/mail/show/' + mailID);
 });
 </script>
 @endsection

@@ -14,6 +14,7 @@ use Illuminate\Http\Request;
 */
 
 Route::middleware(['cors'])->group(function () {
+    Route::get('/mail/show/{uid}', 'Mails\MailController@showContent');
     // API ROUTES
     Route::post('/api/points/add', 'API\PointsController@addPoints');
     Route::post('/api/link/new', 'UserProfileController@newLink');

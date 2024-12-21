@@ -89,16 +89,53 @@ if ($userEmailsList){
         abort(403);
     }
 
-    public function showContent($language, $id) {
+    public function showContent($uid) {
         if(Auth::check()) {
+            $mails = null;
+            $mail = [];
             $emailList = explode(';', Auth::user()->local_mail);
-            $mailContent =  Mails::where('id', $id)->whereIn('recipient', $emailList)->get()->first();
-            if(in_array($mailContent->recipient, $emailList)) {
-                return view('view.profile.mail_content')->with([
-                    'header' => 'false',
-                    'mailContent' => $mailContent
-                ]);
+            $mails = MailIndex::whereIn('owner', $emailList)
+                        ->orderBy('created_at', 'desc')
+                        ->get();
+
+            foreach($mails as $key => $value) {
+                $mail[$value->id] =  Mails::where('message_id', $value->id)->whereIn('recipient', $emailList)->get()->first();
             }
+
+            $userEmailsList = explode(';', Auth::user()->local_mail);
+            if ($userEmailsList){
+                $cm = new ClientManager($options = []);
+                    $client = $cm->make([
+                        'host'          => 'www.noxgamingqc.ca',
+                        'port'          => 993,
+                        'encryption'    => 'ssl',
+                        'validate_cert' => true,
+                        'username'      => $userEmailsList[0],
+                        'password'      => Session::get('email_client_password'),
+                        'protocol'      => 'imap'
+                    ]);
+                    $client->connect();
+
+                    /** @var \Webklex\PHPIMAP\Query\WhereQuery $query */
+                    /** @var \Webklex\PHPIMAP\Message $message */       
+                    /** @var \Webklex\PHPIMAP\Support\FlagCollection $flags */
+                    $message = $query->getMessageByUid($uid);
+                    $messageContent =  [
+                        'uid' => $message->getUid(),
+                        'subject' => $message->getSubject()->first(),
+                        'html_message' => $message->getHTMLBody(),
+                        'text_message' => $message->getTextBody(),
+                        'from' => $message->getFrom()[0]->mail,
+                        'flags' => $message->getFlags(),
+                        'attachement_count' => $message->getAttachments()->count()
+                    ];
+            } else {
+                $messageContent = [];
+            }
+            
+            return view('view.profile.mail')->with([
+                    'messageContent' => $messageContent,
+            ]);
         }
         abort(403);
     }
@@ -118,6 +155,7 @@ if ($userEmailsList){
                     $message->from($data['sender'], Auth::user()->name);
                     $message->to($data['recipient']);
                     $message->subject($data['object']);
+                    $message->getHeaders()->addTextHeader('List-Unsubscribe', 'https://www.noxgamingqc.ca/' . Auth::user()->id . '/unsubscribe');
                 });
             }
         }
@@ -179,6 +217,7 @@ if ($userEmailsList){
             $message->from($data['sender'], 'noxgamingqc');
             $message->to($data['recipient']);
             $message->subject($data['object']);
+            $message->getHeaders()->addTextHeader('List-Unsubscribe', 'https://www.noxgamingqc.ca/' . Auth::user()->id . '/unsubscribe');
         });
         dd('email sent successfuly');
         return view('view.welcome');
