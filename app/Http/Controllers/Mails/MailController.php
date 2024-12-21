@@ -217,7 +217,6 @@ if ($userEmailsList){
             $message->from($data['sender'], 'noxgamingqc');
             $message->to($data['recipient']);
             $message->subject($data['object']);
-            $message->getHeaders()->addTextHeader('List-Unsubscribe', 'https://www.noxgamingqc.ca/' . Auth::user()->id . '/unsubscribe');
         });
         dd('email sent successfuly');
         return view('view.welcome');
