@@ -4,7 +4,7 @@ namespace App\Http\Resources\NoxBOT;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-use App\BotActivities;
+use App\Model\NoxBOT\BotActivities;
 
 class ActivityListResource extends JsonResource
 {
@@ -17,8 +17,8 @@ class ActivityListResource extends JsonResource
     public function toArray($request): array
     {
         $activities = [];
-        foreach (BotActivities::orderBy('ID')->get() as $key => $activity) {
-            array_push($activities, $activity->Activity);
+        foreach (BotActivities::orderBy('id')->get() as $key => $activity) {
+            array_push($activities, $activity->activity);
         }
         return $activities;
     }
