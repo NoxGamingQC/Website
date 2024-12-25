@@ -18,6 +18,7 @@ return [
     'allowedHeaders' => ['*'],
     'allowedMethods' => ['*'],
     'exposedHeaders' => [],
+    'paths' => ['*'],
     'maxAge' => 0,
 
 ];
