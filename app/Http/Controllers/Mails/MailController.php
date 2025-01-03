@@ -155,7 +155,7 @@ if ($userEmailsList){
                     $message->from($data['sender'], (Auth::user()->firstname && Auth::user()->lastname) ? (Auth::user()->firstname . ' ' . Auth::user()->lastname) : Auth::user()->name);
                     $message->to($data['recipient']);
                     $message->subject($data['object']);
-                    $message->getHeaders()->addTextHeader('List-Unsubscribe', '<mailto:https://www.noxgamingqc.ca/unsubscribe?email=' . $data['recipient'] . '>');
+                    $message->getHeaders()->addTextHeader('List-Unsubscribe', '<mailto:unsubscribe@noxgamingqc.ca>');
                 });
             }
         }
