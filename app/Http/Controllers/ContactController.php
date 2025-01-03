@@ -41,8 +41,9 @@ class ContactController extends Controller
                 $message->from('noreply@noxgamingqc.ca', 'NoxGamingQC');
                 $message->to('jbedard@noxgamingqc.ca');
                 $message->subject('You receive a new message');
-                $message->getHeaders()->addTextHeader('List-Unsubscribe', '<mailto:unsubscribe@noxgamingqc.ca>');
-            });
+                $message->getHeaders()->addTextHeader('List-Unsubscribe-Post', 'List-Unsubscribe=One-Click');
+                    $message->getHeaders()->addTextHeader('List-Unsubscribe', '<mailto:unsubscribe@noxgamingqc.ca?subject=Unsubscribe>, <https://www.noxgamingqc.ca/unsubscribe?email=jbedard@noxgamingqc.ca>');
+                });
 
             $text = 'Hey, you received mail from your website.';
                 Mail::send('emails.text_message', ['text' => $text], function($message) {
