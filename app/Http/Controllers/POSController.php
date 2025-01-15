@@ -27,31 +27,15 @@ class POSController extends Controller
             
             try {
                 
-                $apiResponse = $client->getLocationsApi()->listLocations();
-        
+                $catalogApi = $client->getCatalogApi();
+                $apiResponse = $catalogApi->listCatalog(null, 'ITEM');
+                $apiImagesResponse = $catalogApi->listCatalog(null, 'IMAGE');
+
             if ($apiResponse->isSuccess()) {
-                $result = $apiResponse->getResult();
-                foreach ($result->getLocations() as $location) {
-                    printf(
-                        "%s: %s
-                        <p/>", 
-                        $location->getId(),
-                        $location->getName()
-                        //$location->getAddress()->getAddressLine1(),
-                        //$location->getAddress()->getLocality()
-                    );
-                }
-        
+                $catalog = $apiResponse->getResult();
+                $catalogImages = $apiImagesResponse->getResult();
             } else {
                 $errors = $apiResponse->getErrors();
-                foreach ($errors as $error) {
-                    printf(
-                        "%s<br/> %s<br/> %s<p/>", 
-                        $error->getCategory(),
-                        $error->getCode(),
-                        $error->getDetail()
-                    );
-                }
             }
         
         } catch (ApiException $e) {
@@ -62,7 +46,9 @@ class POSController extends Controller
         if($user) {
             return view('view.pos.menu')->with([
                 'name' => $user->name,
-                'image' => $user->image
+                'image' => $user->image,
+                'catalog' => $catalog->getObjects(),
+                'catalogImages' => $catalogImages->getObjects()
             ]);
         }
         abort(404);
