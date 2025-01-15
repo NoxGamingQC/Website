@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\URL;
 
 class RedirectIfAuthenticated
 {
@@ -17,9 +18,7 @@ class RedirectIfAuthenticated
      */
     public function handle($request, Closure $next, $guard = null)
     {
-        if(env('APP_FORCE_HTTPS')) {
-            \URL::forceScheme('https');
-        }
+        URL::forceScheme('https');
         if (Auth::guard($guard)->check()) {
             if(redirect()->intended()) {
                 return redirect()->intended();

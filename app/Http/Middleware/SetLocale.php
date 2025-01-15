@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Illuminate\Support\Facades\URL;
 
 class SetLocale
 {
@@ -15,9 +16,7 @@ class SetLocale
      */
     public function handle($request, Closure $next)
     {
-        if(env('APP_FORCE_HTTPS')) {
-            \URL::forceScheme('https');
-        }
+        URL::forceScheme('https');
         app()->setLocale($request->segment(1));
         return $next($request);
     }
