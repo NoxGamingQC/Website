@@ -33,7 +33,8 @@ class POSController extends Controller
                 $result = $apiResponse->getResult();
                 foreach ($result->getLocations() as $location) {
                     printf(
-                        "%s: %s,<p/>", 
+                        "%s: %s
+                        <p/>", 
                         $location->getId(),
                         $location->getName()
                         //$location->getAddress()->getAddressLine1(),
