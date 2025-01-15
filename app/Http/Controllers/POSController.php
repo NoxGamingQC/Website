@@ -35,7 +35,7 @@ class POSController extends Controller
                     printf(
                         "%s: %s, %s, %s<p/>", 
                         $location->getId(),
-                        $location->getName(),
+                        $location->getName()
                         //$location->getAddress()->getAddressLine1(),
                         //$location->getAddress()->getLocality()
                     );
