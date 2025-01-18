@@ -1,33 +1,109 @@
 @extends('layouts.pages.pos')
 @section('content')
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-12 text-center" style="margin-top:10px;">
-            <img src="{{$image}}" width="200px">
+<div class="row" style="margin:0px;padding:0px;">
+    <div class="col-md-12 text-center" style="min-height:50vh;max-height:50vh;overflow:hidden;margin:0px;padding:0px">
+        <img src="{{$image}}" width="200px">
+    </div>
+    <div id="items" class="col-md-7 text-center" style="min-height:50vh;max-height:50vh;overflow:hidden;margin:0px;padding:0px">
+        @foreach($catalog as $item)
+            @if(isset($item->getItemData()->getImageIds()[0]))
+                @foreach($catalogImages as $catalogImage)
+                    @if($catalogImage->getId() == $item->getItemData()->getImageIds()[0])
+                        <div class="col-md-2" style="margin:0px !important;padding:0px !important;border: 1px solid black">
+                            <a id="{{$item->getId()}}" class="btn btn-lg" style="background-image:url('{{$catalogImage->getImageData()->getUrl()}}');background-size: cover;background-position: center center;min-height:12.5vh;height:100%;width:100%; margin:0px !important;padding:0px !important;">
+                                <li style="padding-top:50px;list-style-type: none;overflow:hidden;">{{$item->getItemData()->getName()}}</li>
+                            </a>
+                        </div>
+                    @endif
+                @endforeach
+            @else
+                <div class="col-md-2" style="margin:0px !important;padding:0px !important;border: 1px solid black">
+                    <a id="{{$item->getId()}}" class="btn btn-lg" style="background-color:#EEE;min-height:12.5vh;height:100%;width:100%; margin:0px !important;padding:0px !important;">
+                        <li style="padding-top:50px;list-style-type: none;overflow:hidden;">{{$item->getItemData()->getName()}}</li>
+                    </a>
+                </div>
+            @endif
+        @endforeach
+        @for($i = 0; $i < 24; $i++)
+            <div class="col-md-2" style="margin:0px !important;padding:0px !important;border: 1px solid black">
+                <a class="btn btn-lg disabled" style="background-color:#EEE;min-height:12.5vh;height:100%;width:100%; margin:0px !important;padding:0px !important;">
+                    
+                </a>
+            </div>
+        @endfor
+    </div>
+    <div id="numpad">
+        <div class="col-md-3 text-center" style="min-height:50vh;max-height:50vh;overflow:hidden;margin:0px;padding:0px">
+            <div class="col-md-4" style="margin:0px !important;padding:0px !important;border: 1px solid black">
+                <a class="btn btn-lg disabled" style="background-color:#EEE;min-height:12.5vh;height:100%;width:100%; margin:0px !important;padding:0px !important;">
+                    7
+                </a>
+            </div>
+            <div class="col-md-4" style="margin:0px !important;padding:0px !important;border: 1px solid black">
+                <a class="btn btn-lg disabled" style="background-color:#EEE;min-height:12.5vh;height:100%;width:100%; margin:0px !important;padding:0px !important;">
+                    8
+                </a>
+            </div>
+            <div class="col-md-4" style="margin:0px !important;padding:0px !important;border: 1px solid black">
+                <a class="btn btn-lg disabled" style="background-color:#EEE;min-height:12.5vh;height:100%;width:100%; margin:0px !important;padding:0px !important;">
+                    9
+                </a>
+            </div>
+            <div class="col-md-4" style="margin:0px !important;padding:0px !important;border: 1px solid black">
+                <a class="btn btn-lg disabled" style="background-color:#EEE;min-height:12.5vh;height:100%;width:100%; margin:0px !important;padding:0px !important;">
+                    4
+                </a>
+            </div>
+            <div class="col-md-4" style="margin:0px !important;padding:0px !important;border: 1px solid black">
+                <a class="btn btn-lg disabled" style="background-color:#EEE;min-height:12.5vh;height:100%;width:100%; margin:0px !important;padding:0px !important;">
+                    5
+                </a>
+            </div>
+            <div class="col-md-4" style="margin:0px !important;padding:0px !important;border: 1px solid black">
+                <a class="btn btn-lg disabled" style="background-color:#EEE;min-height:12.5vh;height:100%;width:100%; margin:0px !important;padding:0px !important;">
+                    6
+                </a>
+            </div>
+            <div class="col-md-4" style="margin:0px !important;padding:0px !important;border: 1px solid black">
+                <a class="btn btn-lg disabled" style="background-color:#EEE;min-height:12.5vh;height:100%;width:100%; margin:0px !important;padding:0px !important;">
+                    1
+                </a>
+            </div>
+            <div class="col-md-4" style="margin:0px !important;padding:0px !important;border: 1px solid black">
+                <a class="btn btn-lg disabled" style="background-color:#EEE;min-height:12.5vh;height:100%;width:100%; margin:0px !important;padding:0px !important;">
+                    2
+                </a>
+            </div>
+            <div class="col-md-4" style="margin:0px !important;padding:0px !important;border: 1px solid black">
+                <a class="btn btn-lg disabled" style="background-color:#EEE;min-height:12.5vh;height:100%;width:100%; margin:0px !important;padding:0px !important;">
+                    3
+                </a>
+            </div>
+            <div class="col-md-8" style="margin:0px !important;padding:0px !important;border: 1px solid black">
+                <a class="btn btn-lg disabled" style="background-color:#EEE;min-height:12.5vh;height:100%;width:100%; margin:0px !important;padding:0px !important;">
+                    0
+                </a>
+            </div>
+            <div class="col-md-4" style="margin:0px !important;padding:0px !important;border: 1px solid black">
+                <a class="btn btn-lg disabled" style="background-color:#EEE;min-height:12.5vh;height:100%;width:100%; margin:0px !important;padding:0px !important;">
+                    DEL
+                </a>
+            </div>
         </div>
-        <div class="col-md-3" style="background-color:#EEE;min-height:500px !important; border:1px solid black; margin-left: 10px">
-        </div>
-        <div class="col-md-9 text-center" style="margin-right:-10px;">
-            @foreach($catalog as $item)
-                @if(isset($item->getItemData()->getImageIds()[0]))
-                    @foreach($catalogImages as $catalogImage)
-                        @if($catalogImage->getId() == $item->getItemData()->getImageIds()[0])
-                            <div class="col-md-2" style="margin-top:100px;">
-                                <a id="{{$item->getId()}}" class="btn btn-lg" style="background-image:url('{{$catalogImage->getImageData()->getUrl()}}');background-size: cover;background-position: center center;border: 1px solid black;min-width:150px;min-height:150px;max-width:150px;max-height:150px;">
-                                    <li style="padding-top:50px;list-style-type: none;overflow:hidden;">{{$item->getItemData()->getName()}}</li>
-                                </a>
-                            </div>
-                        @endif
-                    @endforeach
-                @else
-                    <div class="col-md-2" style="margin-top:100px;">
-                        <a id="{{$item->getId()}}" class="btn btn-lg" style="background-color:#EEE;border: 1px solid black;min-width:150px;min-height:150px;max-width:150px;max-height:150px;">
-                            <li style="padding-top:50px;list-style-type: none;overflow:hidden;">{{$item->getItemData()->getName()}}</li>
-                        </a>
-                    </div>
-                @endif
-            @endforeach
+    </div>
+    <div id="total">
+        <div class="col-md-2 text-center" style="min-height:50vh;max-height:50vh;overflow:hidden;margin:0px;padding:0px">
+        <div class="col-md-12" style="margin:0px !important;padding:0px !important;border: 1px solid black">
+                <a class="btn btn-lg disabled" style="background-color:#EEE;min-height:25vh;height:100%;width:100%; margin:0px !important;padding:0px !important;">
+                    Total
+                </a>
+            </div>
+            <div class="col-md-12" style="margin:0px !important;padding:0px !important;border: 1px solid black">
+                <a class="btn btn-lg disabled" style="background-color:#EEE;min-height:25vh;height:100%;width:100%; margin:0px !important;padding:0px !important;">
+                    Enter
+                </a>
+            </div>
         </div>
     </div>
 </div>
