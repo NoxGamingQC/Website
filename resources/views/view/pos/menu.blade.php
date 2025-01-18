@@ -2,12 +2,31 @@
 @section('content')
 
 <div class="row" style="margin:0px;padding:0px;">
-    <div class="col-md-12 text-center" style="min-height:49vh;max-height:49vh;overflow:hidden;margin:0px;padding:0px">
-        <div class="col-md-12" style="background-color:red;height:2vh">
+    <div class="col-md-12 text-center" style="min-height:49vh;max-height:49vh;overflow:hidden;margin:0px;padding:0px;">
+        <div class="col-md-12" style="background-color:red;height:3vh;color:#FFF;border: 1px solid black">
+            {{$name}}
+        </div>
+        <div class="col-md-7" style="min-height:49vh;">
+            <br />
+        </div>
+        <div class="col-md-5" style="min-height:43vh;background:#F8F8F8;">
+            <br />
+        </div>
+        <div class="col-md-5 text-left" style="min-height:2vh;">
+            <div class="row">
+                <div class="col-md-4 text-left">
+                    Total
+                </div>
+                <div class="col-md-4 text-center">
+                    
+                </div>
+                <div class="col-md-4">
+                </div>
+            </div>
         </div>
     </div>
-    <div class="col-md-12" style="min-height:49vh;max-height:49vh;overflow:hidden;margin:0px;padding:0px">
-        <div id="items" class="col-md-7 text-center">
+    <div class="col-md-12" style="min-height:48vh;max-height:48vh;overflow:hidden;margin:0px;padding:0px">
+        <div id="items" class="col-md-7 text-center" style="overflow:hidden;margin:0px;padding:0px">
             @foreach($catalog as $item)
                 @if(isset($item->getItemData()->getImageIds()[0]))
                     @foreach($catalogImages as $catalogImage)
@@ -21,7 +40,7 @@
                     @endforeach
                 @else
                     <div class="col-md-2" style="margin:0px !important;padding:0px !important;border: 1px solid black">
-                        <a id="{{$item->getId()}}" class="btn btn-lg" style="background-color:#EEE;min-height:12vh;height:100%;width:100%; margin:0px !important;padding:0px !important;">
+                        <a id="{{$item->getId()}}" class="btn btn-lg" style="min-height:12vh;height:100%;width:100%; margin:0px !important;padding:0px !important;">
                             <li style="padding-top:50px;list-style-type: none;overflow:hidden;">{{$item->getItemData()->getName()}}</li>
                         </a>
                     </div>
@@ -29,7 +48,7 @@
             @endforeach
             @for($i = 0; $i < 24; $i++)
                 <div class="col-md-2" style="margin:0px !important;padding:0px !important;border: 1px solid black">
-                    <a class="btn btn-lg disabled" style="background-color:#EEE;min-height:12vh;height:100%;width:100%; margin:0px !important;padding:0px !important;">
+                    <a class="btn btn-lg disabled" style="min-height:12vh;height:100%;width:100%; margin:0px !important;padding:0px !important;">
                         
                     </a>
                 </div>
@@ -38,57 +57,57 @@
         <div id="numpad">
             <div class="col-md-3 text-center" style="min-height:49vh;max-height:49vh;overflow:hidden;margin:0px;padding:0px">
                 <div class="col-md-4" style="margin:0px !important;padding:0px !important;border: 1px solid black">
-                    <a class="btn btn-lg disabled" style="background-color:#EEE;min-height:12vh;height:100%;width:100%; margin:0px !important;padding:0px !important;">
+                    <a class="btn btn-lg disabled" style="min-height:12vh;height:100%;width:100%; margin:0px !important;padding:0px !important;">
                         7
                     </a>
                 </div>
                 <div class="col-md-4" style="margin:0px !important;padding:0px !important;border: 1px solid black">
-                    <a class="btn btn-lg disabled" style="background-color:#EEE;min-height:12vh;height:100%;width:100%; margin:0px !important;padding:0px !important;">
+                    <a class="btn btn-lg disabled" style="min-height:12vh;height:100%;width:100%; margin:0px !important;padding:0px !important;">
                         8
                     </a>
                 </div>
                 <div class="col-md-4" style="margin:0px !important;padding:0px !important;border: 1px solid black">
-                    <a class="btn btn-lg disabled" style="background-color:#EEE;min-height:12vh;height:100%;width:100%; margin:0px !important;padding:0px !important;">
+                    <a class="btn btn-lg disabled" style="min-height:12vh;height:100%;width:100%; margin:0px !important;padding:0px !important;">
                         9
                     </a>
                 </div>
                 <div class="col-md-4" style="margin:0px !important;padding:0px !important;border: 1px solid black">
-                    <a class="btn btn-lg disabled" style="background-color:#EEE;min-height:12vh;height:100%;width:100%; margin:0px !important;padding:0px !important;">
+                    <a class="btn btn-lg disabled" style="min-height:12vh;height:100%;width:100%; margin:0px !important;padding:0px !important;">
                         4
                     </a>
                 </div>
                 <div class="col-md-4" style="margin:0px !important;padding:0px !important;border: 1px solid black">
-                    <a class="btn btn-lg disabled" style="background-color:#EEE;min-height:12vh;height:100%;width:100%; margin:0px !important;padding:0px !important;">
+                    <a class="btn btn-lg disabled" style="min-height:12vh;height:100%;width:100%; margin:0px !important;padding:0px !important;">
                         5
                     </a>
                 </div>
                 <div class="col-md-4" style="margin:0px !important;padding:0px !important;border: 1px solid black">
-                    <a class="btn btn-lg disabled" style="background-color:#EEE;min-height:12vh;height:100%;width:100%; margin:0px !important;padding:0px !important;">
+                    <a class="btn btn-lg disabled" style="min-height:12vh;height:100%;width:100%; margin:0px !important;padding:0px !important;">
                         6
                     </a>
                 </div>
                 <div class="col-md-4" style="margin:0px !important;padding:0px !important;border: 1px solid black">
-                    <a class="btn btn-lg disabled" style="background-color:#EEE;min-height:12vh;height:100%;width:100%; margin:0px !important;padding:0px !important;">
+                    <a class="btn btn-lg disabled" style="min-height:12vh;height:100%;width:100%; margin:0px !important;padding:0px !important;">
                         1
                     </a>
                 </div>
                 <div class="col-md-4" style="margin:0px !important;padding:0px !important;border: 1px solid black">
-                    <a class="btn btn-lg disabled" style="background-color:#EEE;min-height:12vh;height:100%;width:100%; margin:0px !important;padding:0px !important;">
+                    <a class="btn btn-lg disabled" style="min-height:12vh;height:100%;width:100%; margin:0px !important;padding:0px !important;">
                         2
                     </a>
                 </div>
                 <div class="col-md-4" style="margin:0px !important;padding:0px !important;border: 1px solid black">
-                    <a class="btn btn-lg disabled" style="background-color:#EEE;min-height:12vh;height:100%;width:100%; margin:0px !important;padding:0px !important;">
+                    <a class="btn btn-lg disabled" style="min-height:12vh;height:100%;width:100%; margin:0px !important;padding:0px !important;">
                         3
                     </a>
                 </div>
                 <div class="col-md-8" style="margin:0px !important;padding:0px !important;border: 1px solid black">
-                    <a class="btn btn-lg disabled" style="background-color:#EEE;min-height:12vh;height:100%;width:100%; margin:0px !important;padding:0px !important;">
+                    <a class="btn btn-lg disabled" style="min-height:12vh;height:100%;width:100%; margin:0px !important;padding:0px !important;">
                         0
                     </a>
                 </div>
                 <div class="col-md-4" style="margin:0px !important;padding:0px !important;border: 1px solid black">
-                    <a class="btn btn-lg disabled" style="background-color:#EEE;min-height:12vh;height:100%;width:100%; margin:0px !important;padding:0px !important;">
+                    <a class="btn btn-lg disabled" style="min-height:12vh;height:100%;width:100%; margin:0px !important;padding:0px !important;">
                         DEL
                     </a>
                 </div>
@@ -97,20 +116,20 @@
         <div id="total">
             <div class="col-md-2 text-center" style="min-height:49vh;max-height:49vh;overflow:hidden;margin:0px;padding:0px">
             <div class="col-md-12" style="margin:0px !important;padding:0px !important;border: 1px solid black">
-                    <a class="btn btn-lg disabled" style="background-color:#EEE;min-height:25vh;height:100%;width:100%; margin:0px !important;padding:0px !important;">
+                    <a class="btn btn-lg disabled" style="min-height:25vh;height:100%;width:100%; margin:0px !important;padding:0px !important;">
                         Total
                     </a>
                 </div>
                 <div class="col-md-12" style="margin:0px !important;padding:0px !important;border: 1px solid black">
-                    <a class="btn btn-lg disabled" style="background-color:#EEE;min-height:25vh;height:100%;width:100%; margin:0px !important;padding:0px !important;">
+                    <a class="btn btn-lg disabled" style="min-height:25vh;height:100%;width:100%; margin:0px !important;padding:0px !important;">
                         Enter
                     </a>
                 </div>
             </div>
         </div>
     </div>
-    <div class="col-md-12" style="background-color:red;height:2vh">
-        <br />
+    <div class="col-md-12 text-center" style="background-color:red;height:3vh;color:#FFF;border:1px solid black;">
+        Crée par Jimmy Béland-Bédard. Made by Jimmy Béland-Bédard
     </div>
 </div>
 
