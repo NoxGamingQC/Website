@@ -25,7 +25,7 @@
             </div>
         </div>
     </div>
-    <div class="col-md-12" style="min-height:48vh;max-height:48vh;overflow:hidden;margin:0px;padding:0px">
+    <div class="col-md-12" style="min-height:49vh;max-height:49vh;overflow:hidden;margin:0px;padding:0px">
         <div id="items" class="col-md-7 text-center" style="overflow:hidden;margin:0px;padding:0px">
             @foreach($catalog as $item)
                 @if(isset($item->getItemData()->getImageIds()[0]))
@@ -56,60 +56,62 @@
         </div>
         <div id="numpad">
             <div class="col-md-3 text-center" style="min-height:49vh;max-height:49vh;overflow:hidden;margin:0px;padding:0px">
-                <div class="col-md-4" style="margin:0px !important;padding:0px !important;border: 1px solid black;">
-                    <a class="btn btn-lg disabled" style="min-height:12vh;height:100%;width:100%; margin:0px !important;padding:4vh;height:12vh;">
-                        7
-                    </a>
-                </div>
-                <div class="col-md-4" style="margin:0px !important;padding:0px !important;border: 1px solid black">
-                    <a class="btn btn-lg disabled" style="min-height:12vh;height:100%;width:100%; margin:0px !important;padding:4vh;height:12vh;">
-                        8
-                    </a>
-                </div>
-                <div class="col-md-4" style="margin:0px !important;padding:0px !important;border: 1px solid black">
-                    <a class="btn btn-lg disabled" style="min-height:12vh;height:100%;width:100%; margin:0px !important;padding:4vh;height:12vh;">
-                        9
-                    </a>
-                </div>
-                <div class="col-md-4" style="margin:0px !important;padding:0px !important;border: 1px solid black">
-                    <a class="btn btn-lg disabled" style="min-height:12vh;height:100%;width:100%; margin:0px !important;padding:4vh;height:12vh;">
-                        4
-                    </a>
-                </div>
-                <div class="col-md-4" style="margin:0px !important;padding:0px !important;border: 1px solid black">
-                    <a class="btn btn-lg disabled" style="min-height:12vh;height:100%;width:100%; margin:0px !important;padding:4vh;height:12vh;">
-                        5
-                    </a>
-                </div>
-                <div class="col-md-4" style="margin:0px !important;padding:0px !important;border: 1px solid black">
-                    <a class="btn btn-lg disabled" style="min-height:12vh;height:100%;width:100%; margin:0px !important;padding:4vh;height:12vh;">
-                        6
-                    </a>
-                </div>
-                <div class="col-md-4" style="margin:0px !important;padding:0px !important;border: 1px solid black">
-                    <a class="btn btn-lg disabled" style="min-height:12vh;height:100%;width:100%; margin:0px !important;padding:4vh;height:12vh;">
-                        1
-                    </a>
-                </div>
-                <div class="col-md-4" style="margin:0px !important;padding:0px !important;border: 1px solid black">
-                    <a class="btn btn-lg disabled" style="min-height:12vh;height:100%;width:100%; margin:0px !important;padding:4vh;height:12vh;">
-                        2
-                    </a>
-                </div>
-                <div class="col-md-4" style="margin:0px !important;padding:0px !important;border: 1px solid black">
-                    <a class="btn btn-lg disabled" style="min-height:12vh;height:100%;width:100%; margin:0px !important;padding:4vh;height:12vh;">
-                        3
-                    </a>
-                </div>
-                <div class="col-md-8" style="margin:0px !important;padding:0px !important;border: 1px solid black">
-                    <a class="btn btn-lg disabled" style="min-height:12vh;height:100%;width:100%; margin:0px !important;padding:4vh;height:12vh;">
-                        0
-                    </a>
-                </div>
-                <div class="col-md-4" style="margin:0px !important;padding:0px !important;border: 1px solid black">
-                    <a class="btn btn-lg disabled" style="min-height:12vh;height:100%;width:100%; margin:0px !important;padding:4vh;height:12vh;">
-                        DEL
-                    </a>
+                <div class="row" style="margin:0px;padding:0px">
+                    <div class="col-md-4" style="margin:0px !important;padding:0px !important;border: 1px solid black;">
+                        <a class="btn btn-lg disabled" style="min-height:12vh;height:100%;width:100%; margin:0px !important;padding:4vh;height:12vh;">
+                            7
+                        </a>
+                    </div>
+                    <div class="col-md-4" style="margin:0px !important;padding:0px !important;border: 1px solid black">
+                        <a class="btn btn-lg disabled" style="min-height:12vh;height:100%;width:100%; margin:0px !important;padding:4vh;height:12vh;">
+                            8
+                        </a>
+                    </div>
+                    <div class="col-md-4" style="margin:0px !important;padding:0px !important;border: 1px solid black">
+                        <a class="btn btn-lg disabled" style="min-height:12vh;height:100%;width:100%; margin:0px !important;padding:4vh;height:12vh;">
+                            9
+                        </a>
+                    </div>
+                    <div class="col-md-4" style="margin:0px !important;padding:0px !important;border: 1px solid black">
+                        <a class="btn btn-lg disabled" style="min-height:12vh;height:100%;width:100%; margin:0px !important;padding:4vh;height:12vh;">
+                            4
+                        </a>
+                    </div>
+                    <div class="col-md-4" style="margin:0px !important;padding:0px !important;border: 1px solid black">
+                        <a class="btn btn-lg disabled" style="min-height:12vh;height:100%;width:100%; margin:0px !important;padding:4vh;height:12vh;">
+                            5
+                        </a>
+                    </div>
+                    <div class="col-md-4" style="margin:0px !important;padding:0px !important;border: 1px solid black">
+                        <a class="btn btn-lg disabled" style="min-height:12vh;height:100%;width:100%; margin:0px !important;padding:4vh;height:12vh;">
+                            6
+                        </a>
+                    </div>
+                    <div class="col-md-4" style="margin:0px !important;padding:0px !important;border: 1px solid black">
+                        <a class="btn btn-lg disabled" style="min-height:12vh;height:100%;width:100%; margin:0px !important;padding:4vh;height:12vh;">
+                            1
+                        </a>
+                    </div>
+                    <div class="col-md-4" style="margin:0px !important;padding:0px !important;border: 1px solid black">
+                        <a class="btn btn-lg disabled" style="min-height:12vh;height:100%;width:100%; margin:0px !important;padding:4vh;height:12vh;">
+                            2
+                        </a>
+                    </div>
+                    <div class="col-md-4" style="margin:0px !important;padding:0px !important;border: 1px solid black">
+                        <a class="btn btn-lg disabled" style="min-height:12vh;height:100%;width:100%; margin:0px !important;padding:4vh;height:12vh;">
+                            3
+                        </a>
+                    </div>
+                    <div class="col-md-8" style="margin:0px !important;padding:0px !important;border: 1px solid black">
+                        <a class="btn btn-lg disabled" style="min-height:12vh;height:100%;width:100%; margin:0px !important;padding:4vh;height:12vh;">
+                            0
+                        </a>
+                    </div>
+                    <div class="col-md-4" style="margin:0px !important;padding:0px !important;border: 1px solid black">
+                        <a class="btn btn-lg disabled" style="min-height:12vh;height:100%;width:100%; margin:0px !important;padding:4vh;height:12vh;">
+                            DEL
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
