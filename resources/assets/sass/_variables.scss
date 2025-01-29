@@ -10,22 +10,30 @@ $screen-lg-min: 1500px;
 
 //Brand colors
 
-$brand-primary: #991b1b;
+/*$brand-primary: #991b1b;
 $brand-info: #67e8f9;
 $brand-success: #22c55e;
 $brand-warning: #facc15;
 $brand-danger: #ef4444;
 $brand-orange: #c2410c;
-$brand-disabled: #525252;
+$brand-disabled: #525252;*/
+
+$brand-primary: #800020;
+$brand-info: #4285F4;
+$brand-success: #4CBB17;
+$brand-warning: #FFFC00;
+$brand-danger: #CD1C18;
+$brand-orange: #F28500;
+$brand-disabled: #807d84;
 
 // Text color
 
-$text-on-primary: #FFFFFF;
+$text-on-primary: #F5F5F5;
 $text-on-info: #262626;
-$text-on-success: #FFFFFF;
+$text-on-success: #F5F5F5;
 $text-on-warning: #262626;
-$text-on-danger: #FFFFFF;
-$text-on-orange: #FFFFFF;
+$text-on-danger: #F5F5F5;
+$text-on-orange: #F5F5F5;
 $text-on-disabled: #000000;
 
 // Font
