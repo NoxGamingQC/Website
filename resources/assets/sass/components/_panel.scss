@@ -24,7 +24,9 @@
 }
 
 .panel-success {
-    border: 1px solid $brand-success !important;
+    border: 1px solid $text-color !important;
+    background-color: $brand-success !important;
+    color: $text-on-success !important;
 }
 
 .panel-success > .panel-heading {
@@ -34,7 +36,9 @@
 }
 
 .panel-info {
-    border: 1px solid $brand-info !important;
+    background-color: $brand-info !important;
+    border: 1px solid $text-color !important;
+    color: $text-on-info !important;
 }
 
 .panel-info > .panel-heading {
@@ -44,7 +48,9 @@
 }
 
 .panel-warning {
-    border: 1px solid $brand-warning !important;
+    background-color: $brand-warning !important;
+    border: 1px solid $text-color !important;
+    color: $text-on-warning !important;
 }
 
 .panel-warning > .panel-heading {
@@ -54,7 +60,9 @@
 }
 
 .panel-danger {
-    border: 1px solid $brand-danger !important;
+    background-color: $brand-danger !important;
+    border: 1px solid $text-color !important;
+    color: $text-on-danger !important;
 }
 
 .panel-danger > .panel-heading {
