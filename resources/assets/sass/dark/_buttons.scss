@@ -54,7 +54,7 @@
 .btn-primary:hover, .btn-primary:active {
     background-color: darken($background-color, 25%) !important;
     border: 3px solid $brand-primary !important;
-    color: $text_color !important;
+    color: $text-color !important;
     padding: 20px 42px !important;
     box-shadow: 0 0 1px $brand-primary,
         0 0 15px $brand-primary,
@@ -64,9 +64,9 @@
 }
 
 .btn-success {
-    background-color: darken($background-color, 3%) !important;
-    border: 3px solid transparent !important;
-    color: $text-color !important;
+    background-color: $brand-success !important;
+    border: 3px solid $brand-success !important;
+    color: $text-on-success !important;
     padding: 20px 42px !important;
     box-shadow: 0 0 1px transparent,
         0 0 15px transparent,
@@ -76,21 +76,21 @@
 }
 
 .btn-success:hover, .btn-success:active {
-    background-color: darken($background-color, 25%) !important;
-    border: 3px solid $brand_success !important;
-    color: $text_color !important;
+    background-color: darken($brand-success, 20%) !important;
+    border: 3px solid $brand-success !important;
+    color: $text-on-success !important;
     padding: 20px 42px !important;
     box-shadow: 0 0 1px $brand_success,
         0 0 15px $brand_success,
         0 0 1px $brand_success,
         0 0 0.1px $brand_success,
-        inset 0 0 1px 3px darken($brand-success, 25px);
+        inset 0 0 1px 3px darken($brand-success, 20%);
 }
 
 .btn-info {
-    background-color: darken($background-color, 3%) !important;
-    border: 3px solid transparent !important;
-    color: $text-color !important;
+    background-color: $brand-info !important;
+    border: 3px solid $brand-info !important;
+    color: $text-on-info !important;
     padding: 20px 42px !important;
     box-shadow: 0 0 1px transparent,
         0 0 15px transparent,
@@ -100,15 +100,15 @@
 }
 
 .btn-info:hover, .btn-info:active {
-    background-color: darken($background-color, 25%) !important;
+    background-color: darken($brand-info, 10%) !important;
     border: 3px solid $brand-info !important;
-    color: $text_color !important;
+    color: $text-on-info !important;
     padding: 20px 42px !important;
     box-shadow: 0 0 1px $brand-info,
         0 0 15px $brand-info,
         0 0 1px $brand-info,
         0 0 0.1px $brand-info,
-        inset 0 0 1px 3px darken($brand-info, 25px);
+        inset 0 0 1px 3px darken($brand-info, 10%);
 }
 
 .btn-warning {
@@ -126,7 +126,7 @@
 .btn-warning:hover, .btn-warning:active {
     background-color: darken($background-color, 25%) !important;
     border: 3px solid $brand-warning !important;
-    color: $text_color !important;
+    color: $text-color !important;
     padding: 20px 42px !important;
     box-shadow: 0 0 1px $brand-warning,
         0 0 15px $brand-warning,
@@ -150,7 +150,7 @@
 .btn-danger:hover, .btn-danger:active {
     background-color: darken($background-color, 25%) !important;
     border: 3px solid $brand-danger !important;
-    color: $text_color !important;
+    color: $text-color !important;
     padding: 20px 42px !important;
     box-shadow: 0 0 1px $brand-danger,
         0 0 15px $brand-danger,
@@ -173,7 +173,7 @@
 .btn-twitch:hover, .btn-twitch:active {
     background-color: darken($background-color, 25%) !important;
     border: 1px solid #6441A5 !important;
-    color: $text_color !important;
+    color: $text-color !important;
     box-shadow: 0 0 1px #6441A5,
         0 0 10px #6441A5,
         0 0 1px #6441A5,
@@ -195,7 +195,7 @@
 .btn-youtube:hover, .btn-youtube:active {
     background-color: darken($background-color, 25%) !important;
     border: 1px solid #FF0000 !important;
-    color: $text_color !important;
+    color: $text-color !important;
     box-shadow: 0 0 1px #FF0000,
         0 0 10px #FF0000,
         0 0 1px #FF0000,
@@ -217,7 +217,7 @@
 .btn-twitter:hover, .btn-twitter:active {
     background-color: darken($background-color, 25%) !important;
     border: 1px solid #1DA1F2 !important;
-    color: $text_color !important;
+    color: $text-color !important;
     box-shadow: 0 0 1px #1DA1F2,
         0 0 10px #1DA1F2,
         0 0 1px #1DA1F2,
@@ -239,7 +239,7 @@
 .btn-instagram:hover, .btn-instagram:active {
     background-color: darken($background-color, 25%) !important;
     border: 1px solid #E1306C !important;
-    color: $text_color !important;
+    color: $text-color !important;
     box-shadow: 0 0 1px #E1306C,
         0 0 10px #E1306C,
         0 0 1px #E1306C,
@@ -261,7 +261,7 @@
 .btn-steam:hover, .btn-steam:active {
     background-color: darken($background-color, 25%) !important;
     border: 1px solid #2A475E !important;
-    color: $text_color !important;
+    color: $text-color !important;
     box-shadow: 0 0 1px #2A475E,
         0 0 10px #2A475E,
         0 0 1px #2A475E,
@@ -283,7 +283,7 @@
 .btn-github:hover, .btn-github:active {
     background-color: darken($background-color, 25%) !important;
     border: 1px solid $text-color !important;
-    color: $text_color !important;
+    color: $text-color !important;
     box-shadow: 0 0 1px $text-color,
         0 0 10px $text-color,
         0 0 1px $text-color,
@@ -305,7 +305,7 @@
 .btn-snapchat:hover, .btn-snapchat:active {
     background-color: darken($background-color, 25%) !important;
     border: 1px solid #FFFC00 !important;
-    color: $text_color !important;
+    color: $text-color !important;
     box-shadow: 0 0 1px #FFFC00,
         0 0 10px #FFFC00,
         0 0 1px #FFFC00,
@@ -327,7 +327,7 @@
 .btn-spotify:hover, .btn-spotify:active {
     background-color: darken($background-color, 25%) !important;
     border: 1px solid #1DB954 !important;
-    color: $text_color !important;
+    color: $text-color !important;
     box-shadow: 0 0 1px #1DB954,
         0 0 10px #1DB954,
         0 0 1px #1DB954,
@@ -349,7 +349,7 @@
 .btn-reddit:hover, .btn-reddit:active {
     background-color: darken($background-color, 25%) !important;
     border: 1px solid #FF5700 !important;
-    color: $text_color !important;
+    color: $text-color !important;
     box-shadow: 0 0 1px #FF5700,
         0 0 10px #FF5700,
         0 0 1px #FF5700,

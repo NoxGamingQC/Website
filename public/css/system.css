@@ -2818,32 +2818,32 @@
     box-shadow: 0 0 1px #800020, 0 0 15px #800020, 0 0 1px #800020, 0 0 0.1px #800020, inset 0 0 1px 3px #010000;
   }
   .btn-success {
-    background-color: #080808 !important;
-    border: 3px solid transparent !important;
-    color: #e5e5e5 !important;
+    background-color: #32CD32 !important;
+    border: 3px solid #32CD32 !important;
+    color: #252525 !important;
     padding: 20px 42px !important;
     box-shadow: 0 0 1px transparent, 0 0 15px transparent, 0 0 1px transparent, 0 0 0.1px transparent, inset 0 0 1px 3px transparent;
   }
   .btn-success:hover, .btn-success:active {
-    background-color: black !important;
+    background-color: #1e7b1e !important;
     border: 3px solid #32CD32 !important;
-    color: #e5e5e5 !important;
+    color: #252525 !important;
     padding: 20px 42px !important;
-    box-shadow: 0 0 1px #32CD32, 0 0 15px #32CD32, 0 0 1px #32CD32, 0 0 0.1px #32CD32, inset 0 0 1px 3px #196719;
+    box-shadow: 0 0 1px #32CD32, 0 0 15px #32CD32, 0 0 1px #32CD32, 0 0 0.1px #32CD32, inset 0 0 1px 3px #1e7b1e;
   }
   .btn-info {
-    background-color: #080808 !important;
-    border: 3px solid transparent !important;
-    color: #e5e5e5 !important;
+    background-color: #80DAEB !important;
+    border: 3px solid #80DAEB !important;
+    color: #252525 !important;
     padding: 20px 42px !important;
     box-shadow: 0 0 1px transparent, 0 0 15px transparent, 0 0 1px transparent, 0 0 0.1px transparent, inset 0 0 1px 3px transparent;
   }
   .btn-info:hover, .btn-info:active {
-    background-color: black !important;
+    background-color: #54cde4 !important;
     border: 3px solid #80DAEB !important;
-    color: #e5e5e5 !important;
+    color: #252525 !important;
     padding: 20px 42px !important;
-    box-shadow: 0 0 1px #80DAEB, 0 0 15px #80DAEB, 0 0 1px #80DAEB, 0 0 0.1px #80DAEB, inset 0 0 1px 3px #20b0cb;
+    box-shadow: 0 0 1px #80DAEB, 0 0 15px #80DAEB, 0 0 1px #80DAEB, 0 0 0.1px #80DAEB, inset 0 0 1px 3px #54cde4;
   }
   .btn-warning {
     background-color: #080808 !important;
