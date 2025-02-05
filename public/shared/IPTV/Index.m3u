@@ -1,6 +1,6 @@
 #EXTM3U
 #EXTINF:-1 tvg-id="" tvg-logo="" group-title="Québec",RDS 1
-https://www.noxgamingqc.ca/shared/IPTV/m3u8/RDS-1.m3u8
+https://hls.ustream.to/RDS-1.m3u8?token=88b-bbd-74e-15c-111-b17-a98-8ca-9d8-8b3-70f-90a-b5b-cc0-ac6-de0-d9f-604-1a3-7bd-eff-f-a5d-d1c-e8t-f6c
 #EXTINF:-1 tvg-id="CIVMDT.ca" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/T%C3%A9l%C3%A9-Qu%C3%A9bec_logo.svg/512px-T%C3%A9l%C3%A9-Qu%C3%A9bec_logo.svg.png" group-title="Québec",Télé-Québec (720p)
 https://bcovlive-a.akamaihd.net/4b1c462c86094bae93b65adc84e43afc/us-west-2/6101674910001/playlist.m3u8
 #EXTINF:-1 tvg-id="CFTMDT.ca" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/TVA_logo_2020.svg/512px-TVA_logo_2020.svg.png" group-title="Québec",TVA [Geo-blocked]
