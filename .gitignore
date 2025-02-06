@@ -5,6 +5,8 @@ yarn-error.log
 yarn.lock
 package-lock.json
 /.idea
+public/shared/Minecraft/Worlds/Singleplayer/
+public/shared/Minecraft/Worlds/Multiplayer/
 
 # Laravel 4 specific
 bootstrap/compiled.php
