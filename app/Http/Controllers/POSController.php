@@ -14,6 +14,10 @@ use Carbon\Carbon;
 
 class POSController extends Controller
 {
+    public function index($slug) {
+        return redirect('https://www.noxgamingqc.ca/pos/'. $slug .'/menu');
+    }
+
     public function menu($slug)
     {
         $user = ApiKey::where('key', $slug)->first();
@@ -35,9 +39,17 @@ class POSController extends Controller
                 $apiImagesResponse = $catalogApi->listCatalog(null, 'IMAGE');
                 
                 if ($apiResponse->isSuccess()) {
-                    $catalog = $apiResponse->getResult();
-                    $invoiceApiResponse = $invoiceApi->listInvoices($locationsApi->listLocations()->getResult()->getLocations()[0]->getID())->getResult()->getInvoices();
+                    $catalog = [];
+                    $catalogAPI = $apiResponse->getResult()->getObjects();
+                    $invoiceApiResponse = $invoiceApi->listInvoices($user->square_location_id)->getResult()->getInvoices();
                 $catalogImages = $apiImagesResponse->getResult();
+                foreach($catalogAPI as $item) {
+                    foreach($item->getPresentAtLocationIds() as $location) {
+                        if($location == $user->square_location_id) {
+                            array_push($catalog, $item);
+                        }
+                    }
+                }
             } else {
                 $errors = $apiResponse->getErrors();
             }
@@ -50,7 +62,7 @@ class POSController extends Controller
             return view('view.pos.menu')->with([
                 'name' => $user->name,
                 'image' => $user->image,
-                'catalog' => $catalog->getObjects(),
+                'catalog' => $catalog,
                 'catalogImages' => $catalogImages->getObjects(),
                 'invoices' => $invoiceApiResponse,
             ]);

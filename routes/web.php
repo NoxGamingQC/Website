@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 |
 */
 
+Route::get('/pos/{slug}', 'POSController@index');
 Route::get('/pos/{slug}/menu', 'POSController@menu');
 
 Route::middleware(['cors'])->group(function () {
