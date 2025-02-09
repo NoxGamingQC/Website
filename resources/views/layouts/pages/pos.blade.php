@@ -27,7 +27,6 @@
     </head>
     <body style="overflow:hidden">
         <input id="websiteLocationID" type="hidden">
-        @include('alert.alert')
         <div id="content">
             @yield('content')
         </div>

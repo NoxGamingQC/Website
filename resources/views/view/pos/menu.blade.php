@@ -7,14 +7,16 @@
             {{$name}}
         </div>
         <div class="col-md-7" style="min-height:49vh;overflow:hidden;margin:0px;padding:0px">
-            @foreach($invoices as $invoice)
-                <div class="col-md-3" style="{{Carbon\Carbon::create($invoice->getCreatedAt())->addWeeks(2)->greaterThan(Carbon\Carbon::create()) ? 'background:#c41d1d;color:#FFF !important;' : 'color:#000'}}margin:0px !important;padding:0px !important;border: 1px solid black">
-                <a id="{{$invoice->getId()}}" class="btn btn-lg" style="min-height:12vh;max-height:12vh;height:100%;width:100%; margin:0px !important;padding:0px !important;overflow:hidden;border-radius:0px;">
-                        <b><li style="{{Carbon\Carbon::create($invoice->getCreatedAt())->addWeeks(2)->greaterThan(Carbon\Carbon::create()) ? 'background:#c41d1d;color:#FFF !important;' : 'color:#000'}}margin-top:4vh;list-style-type: none;overflow:hidden;padding:2px;border-radius: 5px;opacity: 0.85;">{{$invoice->getPrimaryRecipient()->getGivenName() . ' ' . $invoice->getPrimaryRecipient()->getFamilyName()}}</li></b>
-                        <b><span style="{{Carbon\Carbon::create($invoice->getCreatedAt())->addWeeks(2)->greaterThan(Carbon\Carbon::create()) ? 'background:#c41d1d;color:#FFF !important;' : 'color:#000'}}border-radius: 5px;opacity: 0.85;">{{$invoice->getPaymentRequests()[0]->getComputedAmountMoney()->getAmount() ? substr($invoice->getPaymentRequests()[0]->getComputedAmountMoney()->getAmount(), 0, -2) .',' . substr($invoice->getPaymentRequests()[0]->getComputedAmountMoney()->getAmount(), -2) . '$' : 'variable'}}</span></b>
-                    </a>
-                </div>
-            @endforeach
+            @if($invoices)
+                @foreach($invoices as $invoice)
+                    <div class="col-md-3" style="{{Carbon\Carbon::create($invoice->getCreatedAt())->addWeeks(2)->greaterThan(Carbon\Carbon::create()) ? 'background:#c41d1d;color:#FFF !important;' : 'color:#000'}}margin:0px !important;padding:0px !important;border: 1px solid black">
+                    <a id="{{$invoice->getId()}}" class="btn btn-lg" style="min-height:12vh;max-height:12vh;height:100%;width:100%; margin:0px !important;padding:0px !important;overflow:hidden;border-radius:0px;">
+                            <b><li style="{{Carbon\Carbon::create($invoice->getCreatedAt())->addWeeks(2)->greaterThan(Carbon\Carbon::create()) ? 'background:#c41d1d;color:#FFF !important;' : 'color:#000'}}margin-top:4vh;list-style-type: none;overflow:hidden;padding:2px;border-radius: 5px;opacity: 0.85;">{{$invoice->getPrimaryRecipient()->getGivenName() . ' ' . $invoice->getPrimaryRecipient()->getFamilyName()}}</li></b>
+                            <b><span style="{{Carbon\Carbon::create($invoice->getCreatedAt())->addWeeks(2)->greaterThan(Carbon\Carbon::create()) ? 'background:#c41d1d;color:#FFF !important;' : 'color:#000'}}border-radius: 5px;opacity: 0.85;">{{$invoice->getPaymentRequests()[0]->getComputedAmountMoney()->getAmount() ? substr($invoice->getPaymentRequests()[0]->getComputedAmountMoney()->getAmount(), 0, -2) .',' . substr($invoice->getPaymentRequests()[0]->getComputedAmountMoney()->getAmount(), -2) . '$' : 'variable'}}</span></b>
+                        </a>
+                    </div>
+                @endforeach
+            @endif
         </div>
         <div class="col-md-5" style="min-height:43vh;background:#F8F8F8;">
             <br />
