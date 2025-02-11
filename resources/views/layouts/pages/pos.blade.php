@@ -13,7 +13,7 @@
         <meta property='og:image:height' content='500' />
         <meta property="og:type" content='website' />
         <meta name="author" content="NoxGamingQC">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         @if(env('APP_ENV', 'developement'))
         <title>{{env('APP_ENV') == 'developement' ? 'Dev - ' : ''}}{{$name}} - POS</title>
