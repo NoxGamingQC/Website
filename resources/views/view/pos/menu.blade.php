@@ -67,10 +67,10 @@
                                                                 @endif
                                                             @endforeach
                                                         @else
-                                                            <a id="{{$item->getId()}}" class="btn btn-lg" style="min-height:12vh;height:100%;width:100%; margin:0px !important;padding:0px !important;">
-                                                        @endif
+                                                            <a id="{{$item->getId()}}" class="btn btn-lg" style="min-height:12vh;height:100%;width:100%; margin:0px !important;padding:0px !important;min-height:20vh;max-height:20vh;">
                                                             <li style="margin:8vh;margin-bottom:2px;list-style-type: none;background-color: #000;color: #FFF;border-radius: 5px;opacity: 0.85;">{{$variation->getitemVariationData()->getName()}}</li>
                                                             <span style="margin-top:2px;padding:2px;background-color: #000;color: #FFF;border-radius: 5px;opacity: 0.85;">{{$variation->getItemVariationData()->getPriceMoney() ? substr($variation->getItemVariationData()->getPriceMoney()->getAmount(), 0, -2) .',' . substr($variation->getItemVariationData()->getPriceMoney()->getAmount(), -2) . '$' : 'variable'}}</span>
+                                                        @endif
                                                         </a>
                                                     </div>
                                                 @endforeach
@@ -87,7 +87,7 @@
                     @endforeach
                 @else
                     <div class="col-md-2" style="margin:0px !important;padding:0px !important;border: 1px solid black">
-                        <a id="{{$item->getId()}}" class="btn btn-lg" style="min-height:12vh;height:100%;width:100%; margin:0px !important;padding:0px !important;">
+                        <a id="{{$item->getId()}}" class="btn btn-lg" style="min-height:12vh;height:100%;width:100%; margin:0px !important;padding:0px !important;min-height:12vh;max-height:12vh;">
                             <li style="padding-top:50px;list-style-type: none;overflow:hidden;padding:4vh;height:12vh;">{{$item->getItemData()->getName()}}</li>
                         </a>
                     </div>
