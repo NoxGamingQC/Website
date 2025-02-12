@@ -38,14 +38,6 @@
             console.log('%c{!!trans('general.console_copy_paste01')!!}', 'color:#FFF; font-size:18px;');
             console.log('%c{{trans('general.console_copy_paste02')}}', 'color:#F00; font-size:18px;');
             console.log('%c{{trans('general.console_close_window')}}', 'color:#FFF; font-size:18px;');
-            $(document).ready(function(){
-                setInterval(function(){ reload_page(); },60*60000);
-            });
-
-            function reload_page()
-            {
-                window.location.reload(true);
-            }
         </script>
     </body>
 </html>

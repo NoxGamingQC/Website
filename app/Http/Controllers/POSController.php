@@ -16,10 +16,6 @@ use App\Model\PosCodes;
 class POSController extends Controller
 {
     public function index($slug) {
-        return redirect('https://www.noxgamingqc.ca/pos/'. $slug .'/maintenance');
-    }
-
-    public function lock($slug) {
         $user = ApiKey::where('key', $slug)->first();
         return view('view.pos.lock')->with([
             'id' => $user->id,
@@ -91,6 +87,7 @@ class POSController extends Controller
                     'name' => $user->name,
                     'image' => $user->image,
                     'phone_number'=>$user->phone_number,
+                    'slug' => $slug,
                     'catalog' => $catalog,
                     'catalogImages' => $catalogImages->getObjects(),
                     'invoices' => $invoiceApiResponse,
