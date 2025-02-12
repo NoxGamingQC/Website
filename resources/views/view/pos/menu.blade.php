@@ -54,7 +54,7 @@
                                     <div class="modal-dialog-lg" role="document">
                                         <div class="modal-content">
                                         <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="{{$item->getItemData()->getName()}}" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                             <h4 class="modal-title">{{$item->getItemData()->getName()}}</h4>
                                         </div>
                                         <div class="modal-body">
@@ -64,11 +64,11 @@
                                                         @if(isset($variation->getItemVariationData()->getImageIds()[0]))
                                                             @foreach($catalogImages as $catalogVariationImage)
                                                                 @if($catalogVariationImage->getId() == $variation->getItemVariationData()->getImageIds()[0])
-                                                                    <a id="{{$variation->getItemVariationData()->getItemId()}}" name="{{$variation->getItemVariationData()->getName()}}" price="{{$variation->getItemVariationData()->getPriceMoney() ? substr($variation->getItemVariationData()->getPriceMoney()->getAmount(), 0, -2) .',' . substr($variation->getItemVariationData()->getPriceMoney()->getAmount(), -2) : null}}" class="btn btn-lg" style="background-image:url('{{$catalogVariationImage->getImageData()->getUrl()}}');background-size: cover;background-position: center center;min-height:20vh;max-height:20vh;height:100%;width:100%; margin:0px !important;padding:0px !important;overflow:hidden;border-radius:0px;">
+                                                                    <a id="{{$variation->getItemVariationData()->getItemId()}}" data-dismiss="modal" name="{{$variation->getItemVariationData()->getName()}}" price="{{$variation->getItemVariationData()->getPriceMoney() ? substr($variation->getItemVariationData()->getPriceMoney()->getAmount(), 0, -2) .',' . substr($variation->getItemVariationData()->getPriceMoney()->getAmount(), -2) : null}}" class="btn btn-lg" style="background-image:url('{{$catalogVariationImage->getImageData()->getUrl()}}');background-size: cover;background-position: center center;min-height:20vh;max-height:20vh;height:100%;width:100%; margin:0px !important;padding:0px !important;overflow:hidden;border-radius:0px;">
                                                                 @endif
                                                             @endforeach
                                                         @else
-                                                            <a id="{{$item->getId()}}" class="btn btn-lg" style="min-height:12vh;height:100%;width:100%; margin:0px !important;padding:0px !important;min-height:20vh;max-height:20vh;">
+                                                            <a id="{{$item->getId()}}" class="btn btn-lg" data-dismiss="modal" style="min-height:12vh;height:100%;width:100%; margin:0px !important;padding:0px !important;min-height:20vh;max-height:20vh;">
                                                             <li style="margin:8vh;margin-bottom:2px;list-style-type: none;background-color: #000;color: #FFF;border-radius: 5px;opacity: 0.85;">{{$variation->getitemVariationData()->getName()}}</li>
                                                             <span style="margin-top:2px;padding:2px;background-color: #000;color: #FFF;border-radius: 5px;opacity: 0.85;">{{$variation->getItemVariationData()->getPriceMoney() ? substr($variation->getItemVariationData()->getPriceMoney()->getAmount(), 0, -2) .',' . substr($variation->getItemVariationData()->getPriceMoney()->getAmount(), -2) . '$' : 'variable'}}</span>
                                                         @endif
