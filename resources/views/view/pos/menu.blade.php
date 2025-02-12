@@ -18,16 +18,31 @@
                 @endforeach
             @endif
         </div>
-        <div class="col-md-5" style="min-height:43vh;background:#F8F8F8;">
-            <br />
-        </div>
-        <div class="col-md-5 text-left" style="min-height:2vh;">
-            <div class="row">
-                <div class="col-md-4 text-left">
-                    Total
+        <div class="col-md-5" style="min-height:42vh;max-height:42vh;background:#F8F8F8;padding:0px;overflow:hidden !important;">
+            <a class="btn btn-lg" style="width:100%;border:1px solid #CCC; min-height:3vh;max-height:5vh;border-radius:5px;padding:0px;color:#000;">
+                <div class="col-md-6 text-left">
+                    <h4><b>1 x Corona Extra</b></h4>
                 </div>
-                <div class="col-md-4 text-center">
-                    
+                <div class="col-md-6 text-right">
+                    <h4><b>3,50$</b></h4>
+                </div>
+            </a>
+            <a class="btn btn-lg" style="width:100%;border:1px solid #CCC; min-height:3vh;max-height:5vh;border-radius:5px;padding:0px;color:#000;">
+                <div class="col-md-6 text-left">
+                    <h4><b>1 x Coca-Cola</b></h4>
+                </div>
+                <div class="col-md-6 text-right">
+                    <h4><b>1,50$</b></h4>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-5 text-left" style="min-height:3vh;">
+            <div class="row">
+                <div class="col-md-6 text-left">
+                    <h4><b>Total</b></h4>
+                </div>
+                <div class="col-md-6 text-right">
+                    <h4 class="text-danger"><b>5,00$</b></h4>
                 </div>
                 <div class="col-md-4">
                 </div>
