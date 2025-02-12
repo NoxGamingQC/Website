@@ -4,7 +4,7 @@
 <div class="row" style="margin:0px;padding:0px;">
     <div class="col-md-12 text-center" style="min-height:49vh;max-height:49vh;overflow:hidden;margin:0px;padding:0px;">
         <div class="col-md-12" style="background-color:#E51937;height:3vh;color:#FFF;border: 1px solid black">
-            {{$name}}
+            {{$cashierName . ' - ' . $name . ' - ' . $phone_number}}
         </div>
         <div class="col-md-7" style="min-height:49vh;overflow:hidden;margin:0px;padding:0px">
             @if($invoices)
@@ -179,7 +179,7 @@
         </div>
     </div>
     <div class="col-md-12 text-center" style="background-color:#E51937;height:3vh;color:#FFF;border:1px solid black;">
-        Créé et maintenu par Jimmy Béland-Bédard - 819-852-8705
+        Créé et maintenu par Service Technologique J.Bédard - 819-852-8705
     </div>
 </div>
 
