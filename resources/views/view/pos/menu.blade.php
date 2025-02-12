@@ -179,7 +179,7 @@
         </div>
     </div>
     <div class="col-md-12 text-center" style="background-color:#E51937;height:3vh;color:#FFF;border:1px solid black;">
-        Crée par Jimmy Béland-Bédard. Made by Jimmy Béland-Bédard
+        Crée & maintenue par Jimmy Béland-Bédard - 819-852-8705
     </div>
 </div>
 
