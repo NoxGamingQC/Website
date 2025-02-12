@@ -27,17 +27,22 @@ class POSController extends Controller
         ]);
     }
 
-    public function validateCashier($pos, $pin) {
+    public function validateCashier($pos, $pin, $option) {
         $cashier = PosCodes::where('pin', '=', $pin)->where('pos', '=', $pos)->first();
         if(!isset($cashier)) {
             $cashier = PosCodes::where('pin', '=', $pin)->where('pos', '=', 'all')->first();
         }
         if($cashier) {
-            return response()->json([
-                'id' => $cashier->id,
-            ]);
+            if(in_array($option, explode(';', $cashier->access)) || $cashier->access == 'all') {
+                return response()->json([
+                    'id' => $cashier->id,
+                    'name' => isset($cashier->lastname) ? ($cashier->firstname . ' ' . $cashier->lastname[0] . '.') : $cashier->firstname,
+                ]);
+            } else {
+                abort(403, 'access_denied');
+            }
         }
-        abort(403);
+        abort(403, 'pin_error');
     }
 
     public function menu($slug, $cashierID)

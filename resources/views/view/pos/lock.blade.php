@@ -75,17 +75,24 @@ $('.pin-erase').on('click', function() {
 $('.menu-button').on('click', function() {
     var pin = $('#pin').attr('value');
     $.ajax({
-        url: "/pos/validate/" + {{ $id }} + "/" + pin,
+        url: "/pos/validate/" + {{ $id }} + "/" + pin + "/menu",
         type: "POST",
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         },
         success: function (result) {
+            $('#pin').html('<h3 class="text-success">Bonjour, ' + result.name + '</h3>');
             window.location.replace("/pos/{{$slug}}/menu/" + result.id);
         },
-        error: function () {
+        error: function (error) {
             $('#pin').attr('value', '')
-            $('#pin').html("");
+            if (error.responseJSON.message === 'pin_error') {
+                $('#pin').html('<h3 class="text-danger">NIP ERRONÉ</h3>');
+            } else if(error.responseJSON.message === 'access_denied') {
+                $('#pin').html('<h3 class="text-danger">ACCÈS REFUSÉ</h3>');
+            } else {
+                $('#pin').html('<h3 class="text-danger">ERREUR INCONNU</h3>');
+            }
         }
     });
 });

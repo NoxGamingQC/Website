@@ -14,7 +14,7 @@ use Illuminate\Http\Request;
 */
 
 Route::get('/pos/{slug}', 'POSController@index');
-Route::post('/pos/validate/{pos}/{pin}', 'POSController@validateCashier');
+Route::post('/pos/validate/{pos}/{pin}/{option}', 'POSController@validateCashier');
 Route::get('/pos/{slug}/menu/{cashier_id}', 'POSController@menu');
 
 Route::middleware(['cors'])->group(function () {
