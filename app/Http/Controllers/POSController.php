@@ -15,7 +15,7 @@ use Carbon\Carbon;
 class POSController extends Controller
 {
     public function index($slug) {
-        return redirect('https://www.noxgamingqc.ca/pos/'. $slug .'/menu');
+        return redirect('https://www.noxgamingqc.ca/pos/'. $slug .'/maintenance');
     }
 
     public function menu($slug)

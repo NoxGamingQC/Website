@@ -16,9 +16,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         @if(env('APP_ENV', 'developement'))
-        <title>{{env('APP_ENV') == 'developement' ? 'Dev - ' : ''}}{{$name}} - POS</title>
+        <title>{{env('APP_ENV') == 'developement' ? 'Dev - ' : ''}}{{isset($name) ? $name : ' '}} - POS</title>
         @else
-        <title>{{$name}} - POS</title>
+        <title>{{isset($name) ? $name : ' '}} - POS</title>
         @endif
         <link rel="icon" href="/img/logo.png" type="image/png">
         <link href="{{mix('css/bootstrap.css')}}" rel="stylesheet" type="text/css">

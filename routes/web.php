@@ -15,6 +15,9 @@ use Illuminate\Http\Request;
 
 Route::get('/pos/{slug}', 'POSController@index');
 Route::get('/pos/{slug}/menu', 'POSController@menu');
+Route::get('/pos/{slug}/maintenance', function() {
+    return view('view.pos.maintenance');
+});
 
 Route::middleware(['cors'])->group(function () {
     Route::get('/mail/show/{uid}', 'Mails\MailController@showContent');
