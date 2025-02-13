@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ app()->getLocale() }}" style="overflow:hidden;margin:-2px !important;padding:0px !important">
+<html lang="{{ app()->getLocale() }}" style="margin:-2px !important;padding:0px !important;background-color:#000">
     <head>
         <meta name="google-site-verification" content="D30gPHSCahf2lVeDo0Ndgc8vI1cQvv8d1gXIZa3B2ds" />
         <meta name="facebook-domain-verification" content="uki484ngemqhks0g9endzi9hb1nobp" />
@@ -25,7 +25,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
         <script src="{{mix('js/app.js')}}"></script>
     </head>
-    <body style="overflow:hidden;margin:0px !important;padding:0px !important">
+    <body style="background-color:#FFF;overflow:hidden;margin:0px !important;padding:0px !important;width:1024px !important;height:768px !important">
         <input id="websiteLocationID" type="hidden" style="margin:0px !important;padding:0px !important">
         <div id="content" style="margin:0px !important;padding:0px !important">
             @yield('content')

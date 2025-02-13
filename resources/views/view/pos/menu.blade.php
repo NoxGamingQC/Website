@@ -192,7 +192,7 @@
 <script>
 $(document).ready(function() {
     $('.items').on('click', function(){
-        var realAmount = Number($('#amount').attr('value'));
+        var realAmount = $('#amount').attr('value');
         var amount = (Number($('#amount').attr('value')) == 0) ? '1' : $('#amount').attr('value')
         $('#amount').html('');
         $('#amount').attr('value', '')
@@ -205,7 +205,7 @@ $(document).ready(function() {
                         '<h4><b>1 x ' + $(this).attr('name') + '</b></h4>'+
                     '</div>'+
                     '<div class="col-md-6 text-right">'+
-                        '<h4><b class="item-price" value="' + Number(realAmount) + '">' + Number(realAmount).toLocaleString('fr-CA', { style: 'currency', currency: 'CAD'}) + '</b></h4>'+
+                        '<h4><b class="item-price" value="' + Number(realAmount) + '">' + Number(realAmount.slice(0, realAmount.length-2) + '.' + realAmount.slice(realAmount.length -2, realAmount.length)).toLocaleString('fr-CA', { style: 'currency', currency: 'CAD'}) + '</b></h4>'+
                     '</div>'+
                 '</a>';
         } else {
@@ -238,14 +238,17 @@ $(document).ready(function() {
         var oldValue = $('#amount').attr('value');
         html = oldValue + $(this).attr('value')
         $('#amount').attr('value', oldValue + $(this).attr('value'));
-        console.log(html.substring(0, html.length-2) + '.' + html.substring(html.length-2,2))
-        $('#amount').html(html);
+        $('#amount').html(Number(html.slice(0, html.length-2) + '.' + html.slice(html.length -2, html.length)).toLocaleString('fr-CA', { style: 'currency', currency: 'CAD'}));
     }); 
     $('.numpad-backspace').on('click', function() {
         var value = 0;
         value = $('#amount').attr('value').substring(0, $('#amount').attr('value').length -1);
         $('#amount').attr('value', Number(value));
-        $('#amount').html(Number(value))
+        if(Number(value) == 0) {
+            $('#amount').html('')
+        } else {
+            $('#amount').html(Number(value.slice(0, value.length-2) + '.' + value.slice(value.length -2, value.length)).toLocaleString('fr-CA', { style: 'currency', currency: 'CAD'}));
+        }
     }); 
 });
 </script>
