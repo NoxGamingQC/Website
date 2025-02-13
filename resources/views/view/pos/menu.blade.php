@@ -1,6 +1,8 @@
 @extends('layouts.pages.pos')
 @section('content')
-
+<div style="position:absolute;margin:20vh;margin-left:30vh;z-index:99">
+    <h1 id="amount" class="text-success" value=""></h1>
+</div>
 <div class="row" style="margin:0px;padding:0px;">
     <div class="col-md-12 text-center" style="min-height:49vh;max-height:49vh;overflow:hidden;margin:0px;padding:0px;">
         <div class="col-md-12" style="background-color:#E51937;height:3vh;color:#FFF;border: 1px solid black">
@@ -19,7 +21,6 @@
             @endif
         </div>
         <div id="shoppingCart" class="col-md-5" style="min-height:42vh;max-height:42vh;background:#F8F8F8;padding:0px;overflow:hidden !important;">
-            <input id="nextQuantity" type="hidden" value="">
         </div>
         <div class="col-md-5 text-left" style="min-height:3vh;">
             <div class="row">
@@ -136,22 +137,22 @@
                         </a>
                     </div>
                     <div class="col-md-4" style="margin:0px !important;padding:0px !important;border: 1px solid black">
-                        <a class="btn btn-lg disabled" style="min-height:12vh;height:100%;width:100%; margin:0px !important;padding:4vh;height:12vh;">
+                        <a class="numpad btn btn-lg btn-default" style="min-height:12vh;height:100%;width:100%; margin:0px !important;padding:4vh;height:12vh;" value="1">
                             1
                         </a>
                     </div>
                     <div class="col-md-4" style="margin:0px !important;padding:0px !important;border: 1px solid black">
-                        <a class="btn btn-lg disabled" style="min-height:12vh;height:100%;width:100%; margin:0px !important;padding:4vh;height:12vh;">
+                        <a class="numpad btn btn-lg btn-default" style="min-height:12vh;height:100%;width:100%; margin:0px !important;padding:4vh;height:12vh;" value="2">
                             2
                         </a>
                     </div>
                     <div class="col-md-4" style="margin:0px !important;padding:0px !important;border: 1px solid black">
-                        <a class="btn btn-lg disabled" style="min-height:12vh;height:100%;width:100%; margin:0px !important;padding:4vh;height:12vh;">
+                        <a class="numpad btn btn-lg btn-default" style="min-height:12vh;height:100%;width:100%; margin:0px !important;padding:4vh;height:12vh;" value="3">
                             3
                         </a>
                     </div>
                     <div class="col-md-8" style="margin:0px !important;padding:0px !important;border: 1px solid black">
-                        <a class="btn btn-lg disabled" style="min-height:12vh;height:100%;width:100%; margin:0px !important;padding:4vh;height:12vh;">
+                        <a class="numpad btn btn-lg btn-default" style="min-height:12vh;height:100%;width:100%; margin:0px !important;padding:4vh;height:12vh;" value="0">
                             0
                         </a>
                     </div>
@@ -186,14 +187,17 @@
 <script>
 $(document).ready(function() {
     $('.items').on('click', function(){
+        var amount = $('#amount').attr('value') === '0' ? '1' : $('#amount').attr('value')
+        $('#amount').html('');
+        $('#amount').attr('value', '')
         var total = 0;
         var html = $('#shoppingCart').html();
         html += '<a class="cart-item btn btn-lg" style="width:100%;border:1px solid #CCC; min-height:3vh;max-height:5vh;border-radius:5px;padding:0px;color:#000;">'+
                 '<div class="col-md-6 text-left">'+
-                    '<h4><b>1 x ' + $(this).attr('name') + '</b></h4>'+
+                    '<h4><b>' + amount + ' x ' + $(this).attr('name') + '</b></h4>'+
                 '</div>'+
                 '<div class="col-md-6 text-right">'+
-                    '<h4><b class="item-price" value="' + $(this).attr('price') + '">' + Number($(this).attr('price')).toLocaleString('fr-CA', { style: 'currency', currency: 'CAD'}) + '</b></h4>'+
+                    '<h4><b class="item-price" value="' + Number($(this).attr('price')) * Number(amount) + '">' + (Number($(this).attr('price')) * Number(amount)).toLocaleString('fr-CA', { style: 'currency', currency: 'CAD'}) + '</b></h4>'+
                 '</div>'+
             '</a>';
         $('#shoppingCart').html(html);
@@ -211,6 +215,15 @@ $(document).ready(function() {
         $('#totalPrice').html(total.toLocaleString('fr-CA', { style: 'currency', currency: 'CAD'}));
     }); 
     }); 
-})
+});
+
+$('.numpad').on('click', function() {
+    var html = "";
+    var oldValue = $('#amount').attr('value');
+    html = oldValue + $(this).attr('value')
+    $('#amount').attr('value', oldValue + $(this).attr('value'));
+    console.log(html.substring(0, html.length-2) + '.' + html.substring(html.length-2,2))
+    $('#amount').html(html);
+}); 
 </script>
 @endsection
