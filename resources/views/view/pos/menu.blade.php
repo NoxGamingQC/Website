@@ -46,11 +46,11 @@
                 @if(isset($item->getItemData()->getImageIds()[0]))
                     @foreach($catalogImages as $catalogImage)
                         @if($catalogImage->getId() == $item->getItemData()->getImageIds()[0])
-                            <div class="col-md-2" style="margin:0px !important;padding:0px !important;border: 1px solid black">
-                                <a id="{{$item->getId()}}" class="btn btn-lg" data-toggle="modal" data-target="#{{$item->getItemData()->getName()}}Modal" style="background-image:url('{{$catalogImage->getImageData()->getUrl()}}');background-size: cover;background-position: center center;min-height:12vh;max-height:12vh;height:100%;width:100%; margin:0px !important;padding:0px !important;overflow:hidden;border-radius:0px;">
-                                </a>
-                            </div>
                             @if(count($item->getItemData()->getVariations()) > 1)
+                                <div class="col-md-2" style="margin:0px !important;padding:0px !important;border: 1px solid black">
+                                    <a id="{{$item->getId()}}" class="btn btn-lg" data-toggle="modal" data-target="#{{$item->getItemData()->getName()}}Modal" style="background-image:url('{{$catalogImage->getImageData()->getUrl()}}');background-size: cover;background-position: center center;min-height:12vh;max-height:12vh;height:100%;width:100%; margin:0px !important;padding:0px !important;overflow:hidden;border-radius:0px;">
+                                    </a>
+                                </div>
                                 <div id="{{$item->getItemData()->getName()}}Modal" class="modal fade" tabindex="-1" role="dialog"><!--Modal start-->
                                     <div class="modal-dialog-lg" role="document">
                                         <div class="modal-content">
@@ -84,6 +84,11 @@
                                         </div>
                                     </div>
                                 </div><!-- Modal end-->
+                            @else
+                            <div class="col-md-2" style="margin:0px !important;padding:0px !important;border: 1px solid black">
+                                <a id="{{$item->getId()}}" class="{{!$item->getItemData()->getVariations()[0]->getItemVariationData()->getPriceMoney() ? 'variable-price' : ''}} items btn btn-lg" name="{{$item->getItemData()->getName()}}" price="{{$item->getItemData()->getVariations()[0]->getItemVariationData()->getPriceMoney() ? substr($item->getItemData()->getVariations()[0]->getItemVariationData()->getPriceMoney()->getAmount(), 0, -2) .'.' . substr($item->getItemData()->getVariations()[0]->getItemVariationData()->getPriceMoney()->getAmount(), -2) : null}}" style="background-image:url('{{$catalogImage->getImageData()->getUrl()}}');background-size: cover;background-position: center center;min-height:12vh;max-height:12vh;height:100%;width:100%; margin:0px !important;padding:0px !important;overflow:hidden;border-radius:0px;">
+                                </a>
+                            </div>
                             @endif
                         @endif
                     @endforeach
@@ -187,19 +192,32 @@
 <script>
 $(document).ready(function() {
     $('.items').on('click', function(){
+        var realAmount = Number($('#amount').attr('value'));
         var amount = (Number($('#amount').attr('value')) == 0) ? '1' : $('#amount').attr('value')
         $('#amount').html('');
         $('#amount').attr('value', '')
         var total = 0;
         var html = $('#shoppingCart').html();
-        html += '<a class="cart-item btn btn-lg" style="width:100%;border:1px solid #CCC; min-height:3vh;max-height:5vh;border-radius:5px;padding:0px;color:#000;">'+
-                '<div class="col-md-6 text-left">'+
-                    '<h4><b>' + amount + ' x ' + $(this).attr('name') + '</b></h4>'+
-                '</div>'+
-                '<div class="col-md-6 text-right">'+
-                    '<h4><b class="item-price" value="' + Number($(this).attr('price')) * Number(amount) + '">' + (Number($(this).attr('price')) * Number(amount)).toLocaleString('fr-CA', { style: 'currency', currency: 'CAD'}) + '</b></h4>'+
-                '</div>'+
-            '</a>';
+        if($(this).hasClass('variable-price')) {
+            console.log(true)
+            html += '<a class="cart-item btn btn-lg" style="width:100%;border:1px solid #CCC; min-height:3vh;max-height:5vh;border-radius:5px;padding:0px;color:#000;">'+
+                    '<div class="col-md-6 text-left">'+
+                        '<h4><b>1 x ' + $(this).attr('name') + '</b></h4>'+
+                    '</div>'+
+                    '<div class="col-md-6 text-right">'+
+                        '<h4><b class="item-price" value="' + Number(realAmount) + '">' + Number(realAmount).toLocaleString('fr-CA', { style: 'currency', currency: 'CAD'}) + '</b></h4>'+
+                    '</div>'+
+                '</a>';
+        } else {
+            html += '<a class="cart-item btn btn-lg" style="width:100%;border:1px solid #CCC; min-height:3vh;max-height:5vh;border-radius:5px;padding:0px;color:#000;">'+
+                    '<div class="col-md-6 text-left">'+
+                        '<h4><b>' + Number(amount) + ' x ' + $(this).attr('name') + '</b></h4>'+
+                    '</div>'+
+                    '<div class="col-md-6 text-right">'+
+                        '<h4><b class="item-price" value="' + Number($(this).attr('price')) * Number(amount) + '">' + (Number($(this).attr('price')) * Number(amount)).toLocaleString('fr-CA', { style: 'currency', currency: 'CAD'}) + '</b></h4>'+
+                    '</div>'+
+                '</a>';
+        }
         $('#shoppingCart').html(html);
         $('.item-price').each(function(key, item) {
             total += Number(item.getAttribute('value'));
@@ -226,8 +244,8 @@ $(document).ready(function() {
     $('.numpad-backspace').on('click', function() {
         var value = 0;
         value = $('#amount').attr('value').substring(0, $('#amount').attr('value').length -1);
-        $('#amount').attr('value', value);
-        $('#amount').html(value)
+        $('#amount').attr('value', Number(value));
+        $('#amount').html(Number(value))
     }); 
 });
 </script>
