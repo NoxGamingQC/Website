@@ -1,7 +1,10 @@
 @extends('layouts.pages.pos')
 @section('content')
 <div style="position:absolute;margin:20vh;margin-left:30vh;z-index:99">
-    <h1 id="amount" class="text-success" value=""></h1>
+    <h1 id="amount" class="text-success" value="0"></h1>
+</div>
+<div style="position:absolute;margin:20vh;margin-left:97vh;z-index:99">
+    <h1 id="givenAmount" class="text-success" value=""></h1>
 </div>
 <div class="row" style="margin:0px;padding:0px;">
     <div class="col-md-12 text-center" style="min-height:49vh;max-height:49vh;overflow:hidden;margin:0px;padding:0px;">
@@ -28,7 +31,7 @@
                     <h4><b>Total</b></h4>
                 </div>
                 <div class="col-md-6 text-right">
-                    <h4 class="text-danger"><b id="totalPrice">0,00$</b></h4>
+                    <h4 class="text-danger"><b id="totalPrice" value="">0,00$</b></h4>
                 </div>
                 <div class="col-md-4">
                 </div>
@@ -172,7 +175,7 @@
         <div id="total">
             <div class="col-md-2 text-center" style="min-height:49vh;max-height:49vh;overflow:hidden;margin:0px;padding:0px">
                 <div class="col-md-12" style="margin:0px !important;padding:0px !important;border: 1px solid black">
-                        <a class="btn btn-lg btn-default disabled" style="min-height:25vh;max-height:25vh;height:100%;width:100%; margin:0px !important;padding:9vh;height:12vh;">
+                        <a id="total" class="btn btn-lg btn-default" style="min-height:25vh;max-height:25vh;height:100%;width:100%; margin:0px !important;padding:9vh;height:12vh;">
                             Total
                         </a>
                     </div>
@@ -192,6 +195,8 @@
 <script>
 $(document).ready(function() {
     $('.items').on('click', function(){
+        $('#givenAmount').html('');
+        $('#givenAmount').attr('value', '');
         var realAmount = $('#amount').attr('value');
         var amount = (Number($('#amount').attr('value')) == 0) ? '1' : $('#amount').attr('value')
         $('#amount').html('');
@@ -222,6 +227,7 @@ $(document).ready(function() {
         $('.item-price').each(function(key, item) {
             total += Number(item.getAttribute('value'));
         });
+        $('#totalPrice').attr('value',total);
         $('#totalPrice').html(total.toLocaleString('fr-CA', { style: 'currency', currency: 'CAD'}));
 
         $('.cart-item').on('click', function() {
@@ -230,6 +236,7 @@ $(document).ready(function() {
         $('.item-price').each(function(key, item) {
             total += Number(item.getAttribute('value'));
         });
+        $('#totalPrice').attr('value', total);
         $('#totalPrice').html(total.toLocaleString('fr-CA', { style: 'currency', currency: 'CAD'}));
     }); 
     });
@@ -250,6 +257,23 @@ $(document).ready(function() {
             $('#amount').html(Number(value.slice(0, value.length-2) + '.' + value.slice(value.length -2, value.length)).toLocaleString('fr-CA', { style: 'currency', currency: 'CAD'}));
         }
     }); 
+    $('#total').on('click', function() {
+        var value = 0;
+        var givenBack = 0;
+        value = $('#amount').attr('value')
+        givenBack = (Number(value.slice(0, value.length-2) + '.' + value.slice(value.length -2, value.length)) - Number($('#totalPrice').attr('value'))).toLocaleString('fr-CA', { style: 'currency', currency: 'CAD'});
+        if(givenBack < 0) {
+            $('#givenAmount').html('Remise invalide');
+            return 1;
+        } else {
+            $('#givenAmount').html('Remise: ' + givenBack);
+            $('#amount').attr('value', '0');
+            $('#amount').html('');
+            $('.cart-item').each(function() {
+                $(this).remove();
+            })
+        }
+    })
 });
 </script>
 @endsection
