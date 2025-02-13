@@ -18,23 +18,8 @@
                 @endforeach
             @endif
         </div>
-        <div class="col-md-5" style="min-height:42vh;max-height:42vh;background:#F8F8F8;padding:0px;overflow:hidden !important;">
-            <a class="btn btn-lg" style="width:100%;border:1px solid #CCC; min-height:3vh;max-height:5vh;border-radius:5px;padding:0px;color:#000;">
-                <div class="col-md-6 text-left">
-                    <h4><b>1 x Corona Extra</b></h4>
-                </div>
-                <div class="col-md-6 text-right">
-                    <h4><b>3,50$</b></h4>
-                </div>
-            </a>
-            <a class="btn btn-lg" style="width:100%;border:1px solid #CCC; min-height:3vh;max-height:5vh;border-radius:5px;padding:0px;color:#000;">
-                <div class="col-md-6 text-left">
-                    <h4><b>1 x Coca-Cola</b></h4>
-                </div>
-                <div class="col-md-6 text-right">
-                    <h4><b>1,50$</b></h4>
-                </div>
-            </a>
+        <div id="shoppingCart" class="col-md-5" style="min-height:42vh;max-height:42vh;background:#F8F8F8;padding:0px;overflow:hidden !important;">
+            <input id="nextQuantity" type="hidden" value="">
         </div>
         <div class="col-md-5 text-left" style="min-height:3vh;">
             <div class="row">
@@ -42,7 +27,7 @@
                     <h4><b>Total</b></h4>
                 </div>
                 <div class="col-md-6 text-right">
-                    <h4 class="text-danger"><b>5,00$</b></h4>
+                    <h4 class="text-danger"><b id="totalPrice">0,00$</b></h4>
                 </div>
                 <div class="col-md-4">
                 </div>
@@ -79,11 +64,11 @@
                                                         @if(isset($variation->getItemVariationData()->getImageIds()[0]))
                                                             @foreach($catalogImages as $catalogVariationImage)
                                                                 @if($catalogVariationImage->getId() == $variation->getItemVariationData()->getImageIds()[0])
-                                                                    <a id="{{$variation->getItemVariationData()->getItemId()}}" data-dismiss="modal" name="{{$variation->getItemVariationData()->getName()}}" price="{{$variation->getItemVariationData()->getPriceMoney() ? substr($variation->getItemVariationData()->getPriceMoney()->getAmount(), 0, -2) .',' . substr($variation->getItemVariationData()->getPriceMoney()->getAmount(), -2) : null}}" class="btn btn-lg" style="background-image:url('{{$catalogVariationImage->getImageData()->getUrl()}}');background-size: cover;background-position: center center;min-height:20vh;max-height:20vh;height:100%;width:100%; margin:0px !important;padding:0px !important;overflow:hidden;border-radius:0px;">
+                                                                    <a id="{{$variation->getItemVariationData()->getItemId()}}" data-dismiss="modal" name="{{$variation->getItemVariationData()->getName()}}" price="{{$variation->getItemVariationData()->getPriceMoney() ? substr($variation->getItemVariationData()->getPriceMoney()->getAmount(), 0, -2) .'.' . substr($variation->getItemVariationData()->getPriceMoney()->getAmount(), -2) : null}}" class="btn btn-lg items" style="background-image:url('{{$catalogVariationImage->getImageData()->getUrl()}}');background-size: cover;background-position: center center;min-height:20vh;max-height:20vh;height:100%;width:100%; margin:0px !important;padding:0px !important;overflow:hidden;border-radius:0px;">
                                                                 @endif
                                                             @endforeach
                                                         @else
-                                                            <a id="{{$item->getId()}}" class="btn btn-lg" data-dismiss="modal" style="min-height:12vh;height:100%;width:100%; margin:0px !important;padding:0px !important;min-height:20vh;max-height:20vh;">
+                                                            <a id="{{$item->getId()}}" class="items btn btn-lg" data-dismiss="modal" style="min-height:12vh;height:100%;width:100%; margin:0px !important;padding:0px !important;min-height:20vh;max-height:20vh;">
                                                             <li style="margin:8vh;margin-bottom:2px;list-style-type: none;background-color: #000;color: #FFF;border-radius: 5px;opacity: 0.85;">{{$variation->getitemVariationData()->getName()}}</li>
                                                             <span style="margin-top:2px;padding:2px;background-color: #000;color: #FFF;border-radius: 5px;opacity: 0.85;">{{$variation->getItemVariationData()->getPriceMoney() ? substr($variation->getItemVariationData()->getPriceMoney()->getAmount(), 0, -2) .',' . substr($variation->getItemVariationData()->getPriceMoney()->getAmount(), -2) . '$' : 'variable'}}</span>
                                                         @endif
@@ -198,5 +183,34 @@
         Créé et maintenu par Service Technologique J.Bédard - 819-852-8705
     </div>
 </div>
+<script>
+$(document).ready(function() {
+    $('.items').on('click', function(){
+        var total = 0;
+        var html = $('#shoppingCart').html();
+        html += '<a class="cart-item btn btn-lg" style="width:100%;border:1px solid #CCC; min-height:3vh;max-height:5vh;border-radius:5px;padding:0px;color:#000;">'+
+                '<div class="col-md-6 text-left">'+
+                    '<h4><b>1 x ' + $(this).attr('name') + '</b></h4>'+
+                '</div>'+
+                '<div class="col-md-6 text-right">'+
+                    '<h4><b class="item-price" value="' + $(this).attr('price') + '">' + Number($(this).attr('price')).toLocaleString('fr-CA', { style: 'currency', currency: 'CAD'}) + '</b></h4>'+
+                '</div>'+
+            '</a>';
+        $('#shoppingCart').html(html);
+        $('.item-price').each(function(key, item) {
+            total += Number(item.getAttribute('value'));
+        });
+        $('#totalPrice').html(total.toLocaleString('fr-CA', { style: 'currency', currency: 'CAD'}));
 
+        $('.cart-item').on('click', function() {
+        var total = 0;
+        $(this).remove();
+        $('.item-price').each(function(key, item) {
+            total += Number(item.getAttribute('value'));
+        });
+        $('#totalPrice').html(total.toLocaleString('fr-CA', { style: 'currency', currency: 'CAD'}));
+    }); 
+    }); 
+})
+</script>
 @endsection
