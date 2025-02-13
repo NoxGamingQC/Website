@@ -107,32 +107,32 @@
             <div class="col-md-3 text-center" style="min-height:49vh;max-height:49vh;overflow:hidden;margin:0px;padding:0px">
                 <div class="row" style="margin:0px;padding:0px">
                     <div class="col-md-4" style="margin:0px !important;padding:0px !important;border: 1px solid black;">
-                        <a class="btn btn-lg disabled" style="min-height:12vh;height:100%;width:100%; margin:0px !important;padding:4vh;height:12vh;">
+                        <a class="numpad btn btn-lg btn-default" style="min-height:12vh;height:100%;width:100%; margin:0px !important;padding:4vh;height:12vh;" value="7">
                             7
                         </a>
                     </div>
                     <div class="col-md-4" style="margin:0px !important;padding:0px !important;border: 1px solid black">
-                        <a class="btn btn-lg disabled" style="min-height:12vh;height:100%;width:100%; margin:0px !important;padding:4vh;height:12vh;">
+                        <a class="numpad btn btn-lg btn-default" style="min-height:12vh;height:100%;width:100%; margin:0px !important;padding:4vh;height:12vh;" value="8">
                             8
                         </a>
                     </div>
                     <div class="col-md-4" style="margin:0px !important;padding:0px !important;border: 1px solid black">
-                        <a class="btn btn-lg disabled" style="min-height:12vh;height:100%;width:100%; margin:0px !important;padding:4vh;height:12vh;">
+                        <a class="numpad btn btn-lg btn-default" style="min-height:12vh;height:100%;width:100%; margin:0px !important;padding:4vh;height:12vh;" value="9">
                             9
                         </a>
                     </div>
                     <div class="col-md-4" style="margin:0px !important;padding:0px !important;border: 1px solid black">
-                        <a class="btn btn-lg disabled" style="min-height:12vh;height:100%;width:100%; margin:0px !important;padding:4vh;height:12vh;">
+                        <a class="numpad btn btn-lg btn-default" style="min-height:12vh;height:100%;width:100%; margin:0px !important;padding:4vh;height:12vh;" value="4">
                             4
                         </a>
                     </div>
                     <div class="col-md-4" style="margin:0px !important;padding:0px !important;border: 1px solid black">
-                        <a class="btn btn-lg disabled" style="min-height:12vh;height:100%;width:100%; margin:0px !important;padding:4vh;height:12vh;">
+                        <a class="numpad btn btn-lg btn-default" style="min-height:12vh;height:100%;width:100%; margin:0px !important;padding:4vh;height:12vh;" value="5">
                             5
                         </a>
                     </div>
                     <div class="col-md-4" style="margin:0px !important;padding:0px !important;border: 1px solid black">
-                        <a class="btn btn-lg disabled" style="min-height:12vh;height:100%;width:100%; margin:0px !important;padding:4vh;height:12vh;">
+                        <a class="numpad btn btn-lg btn-default" style="min-height:12vh;height:100%;width:100%; margin:0px !important;padding:4vh;height:12vh;" value="6">
                             6
                         </a>
                     </div>
@@ -157,7 +157,7 @@
                         </a>
                     </div>
                     <div class="col-md-4" style="margin:0px !important;padding:0px !important;border: 1px solid black">
-                        <a class="btn btn-lg disabled" style="min-height:12vh;height:100%;width:100%; margin:0px !important;padding:4vh;height:12vh;">
+                        <a class="numpad-backspace btn btn-lg btn-default" style="min-height:12vh;height:100%;width:100%; margin:0px !important;padding:4vh;height:12vh;">
                             DEL
                         </a>
                     </div>
@@ -167,13 +167,13 @@
         <div id="total">
             <div class="col-md-2 text-center" style="min-height:49vh;max-height:49vh;overflow:hidden;margin:0px;padding:0px">
                 <div class="col-md-12" style="margin:0px !important;padding:0px !important;border: 1px solid black">
-                        <a class="btn btn-lg disabled" style="min-height:25vh;max-height:25vh;height:100%;width:100%; margin:0px !important;padding:9vh;height:12vh;">
+                        <a class="btn btn-lg btn-default disabled" style="min-height:25vh;max-height:25vh;height:100%;width:100%; margin:0px !important;padding:9vh;height:12vh;">
                             Total
                         </a>
                     </div>
                     <div class="col-md-12" style="margin:0px !important;padding:0px !important;border: 1px solid black">
-                        <a class="btn btn-lg disabled" style="min-height:25vh;max-height:25vh;height:100%;width:100%; margin:0px !important;padding:9vh;height:12vh;">
-                            Enter
+                        <a class="btn btn-lg btn-default disabled" style="min-height:25vh;max-height:25vh;height:100%;width:100%; margin:0px !important;padding:9vh;height:12vh;">
+                            Argent
                         </a>
                     </div>
                 </div>
@@ -187,7 +187,7 @@
 <script>
 $(document).ready(function() {
     $('.items').on('click', function(){
-        var amount = $('#amount').attr('value') === '0' ? '1' : $('#amount').attr('value')
+        var amount = (Number($('#amount').attr('value')) == 0) ? '1' : $('#amount').attr('value')
         $('#amount').html('');
         $('#amount').attr('value', '')
         var total = 0;
@@ -214,16 +214,21 @@ $(document).ready(function() {
         });
         $('#totalPrice').html(total.toLocaleString('fr-CA', { style: 'currency', currency: 'CAD'}));
     }); 
+    });
+    $('.numpad').on('click', function() {
+        var html = "";
+        var oldValue = $('#amount').attr('value');
+        html = oldValue + $(this).attr('value')
+        $('#amount').attr('value', oldValue + $(this).attr('value'));
+        console.log(html.substring(0, html.length-2) + '.' + html.substring(html.length-2,2))
+        $('#amount').html(html);
+    }); 
+    $('.numpad-backspace').on('click', function() {
+        var value = 0;
+        value = $('#amount').attr('value').substring(0, $('#amount').attr('value').length -1);
+        $('#amount').attr('value', value);
+        $('#amount').html(value)
     }); 
 });
-
-$('.numpad').on('click', function() {
-    var html = "";
-    var oldValue = $('#amount').attr('value');
-    html = oldValue + $(this).attr('value')
-    $('#amount').attr('value', oldValue + $(this).attr('value'));
-    console.log(html.substring(0, html.length-2) + '.' + html.substring(html.length-2,2))
-    $('#amount').html(html);
-}); 
 </script>
 @endsection
