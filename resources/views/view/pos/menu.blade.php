@@ -205,7 +205,7 @@ $(document).ready(function() {
                         '<h4><b>1 x ' + $(this).attr('name') + '</b></h4>'+
                     '</div>'+
                     '<div class="col-md-6 text-right">'+
-                        '<h4><b class="item-price" value="' + Number(realAmount) + '">' + Number(realAmount.slice(0, realAmount.length-2) + '.' + realAmount.slice(realAmount.length -2, realAmount.length)).toLocaleString('fr-CA', { style: 'currency', currency: 'CAD'}) + '</b></h4>'+
+                        '<h4><b class="item-price" value="' + Number(realAmount.slice(0, realAmount.length-2) + '.' + realAmount.slice(realAmount.length -2, realAmount.length)) + '">' + Number(realAmount.slice(0, realAmount.length-2) + '.' + realAmount.slice(realAmount.length -2, realAmount.length)).toLocaleString('fr-CA', { style: 'currency', currency: 'CAD'}) + '</b></h4>'+
                     '</div>'+
                 '</a>';
         } else {
