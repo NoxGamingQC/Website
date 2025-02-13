@@ -4,7 +4,7 @@
     <h1 id="amount" class="text-success" value="0"></h1>
 </div>
 <div style="position:absolute;margin:20vh;margin-left:97vh;z-index:99">
-    <h1 id="givenAmount" class="text-success" value=""></h1>
+    <h1 id="givenAmount" value=""></h1>
 </div>
 <div class="row" style="margin:0px;padding:0px;">
     <div class="col-md-12 text-center" style="min-height:49vh;max-height:49vh;overflow:hidden;margin:0px;padding:0px;">
@@ -260,15 +260,34 @@ $(document).ready(function() {
     $('#total').on('click', function() {
         var value = 0;
         var givenBack = 0;
+        var exactPrice = 0;
         value = $('#amount').attr('value')
-        givenBack = (Number(value.slice(0, value.length-2) + '.' + value.slice(value.length -2, value.length)) - Number($('#totalPrice').attr('value'))).toLocaleString('fr-CA', { style: 'currency', currency: 'CAD'});
-        if(givenBack < 0) {
-            $('#givenAmount').html('Remise invalide');
-            return 1;
-        } else {
-            $('#givenAmount').html('Remise: ' + givenBack);
+        givenBack = (Number(value.slice(0, value.length-2) + '.' + value.slice(value.length -2, value.length)) - Number($('#totalPrice').attr('value')));
+        if (isNaN(givenBack)) {
+            $('#givenAmount').html('Remise: ' + exactPrice.toLocaleString('fr-CA', { style: 'currency', currency: 'CAD'}));
+            $('#givenAmount').addClass('text-success');
+            $('#givenAmount').removeClass('text-danger');
             $('#amount').attr('value', '0');
             $('#amount').html('');
+            $('#totalPrice').attr('value', '0');
+            $('#totalPrice').html(exactPrice.toLocaleString('fr-CA', { style: 'currency', currency: 'CAD'}));
+            $('.cart-item').each(function() {
+                $(this).remove();
+            })
+        }else if(givenBack < 0) {
+            $('#givenAmount').html('Remise invalide');
+            $('#givenAmount').addClass('text-danger');
+            $('#givenAmount').removeClass('text-success');
+            $('#amount').attr('value', '0');
+            $('#amount').html('');
+        } else {
+            $('#givenAmount').html('Remise: ' + givenBack.toLocaleString('fr-CA', { style: 'currency', currency: 'CAD'}));
+            $('#givenAmount').addClass('text-success');
+            $('#givenAmount').removeClass('text-danger');
+            $('#amount').attr('value', '0');
+            $('#amount').html('');
+            $('#totalPrice').attr('value', '0');
+            $('#totalPrice').html(exactPrice.toLocaleString('fr-CA', { style: 'currency', currency: 'CAD'}));
             $('.cart-item').each(function() {
                 $(this).remove();
             })
