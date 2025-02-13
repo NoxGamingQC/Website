@@ -181,7 +181,7 @@
                     </div>
                     <div class="col-md-12" style="margin:0px !important;padding:0px !important;border: 1px solid black">
                         <a class="btn btn-lg btn-default disabled" style="min-height:25vh;max-height:25vh;height:100%;width:100%; margin:0px !important;padding:9vh;height:12vh;">
-                            Argent
+                            
                         </a>
                     </div>
                 </div>
