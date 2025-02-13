@@ -87,6 +87,10 @@ class POSController extends Controller
                 echo "ApiException occurred: <b/>";
                 echo $e->getMessage() . "<p/>";
             }
+            /*
+                Find location then find if sold out!!
+                    ->getItemData()->getVariations()[0]->getItemVariationData()->getLocationOverrides()
+            */
             if($user) {
                 return view('view.pos.menu')->with([
                     'name' => $user->name,
