@@ -115,24 +115,18 @@ class POSController extends Controller
                 ->build();
         $inventoryApi = $client->getInventoryApi();
         $locationID = $user->square_location_id;
-        $itemID = '2W4MWURUXXHM2VSMUHOFATLC';
-        $body = BatchRetrieveInventoryCountsRequestBuilder::init()
-            ->catalogObjectIds(
-                [
-                    $itemID
-                ]
-            )
-            ->locationIds(
-                [
-                    $locationID
-                ]
-            )
-    ->build();
 
-    $apiResponse = $inventoryApi->batchRetrieveInventoryCounts($body);
-
+    $apiResponse = $inventoryApi->retrieveInventoryCount($itemID);
     if ($apiResponse->isSuccess()) {
-        return response()->json($apiResponse->getResult()->getCounts()[0]->getQuantity());
+        $response = $apiResponse->getResult()->getCounts();
+        if($response) {
+            foreach ($response as $count) {
+                if ($count->getLocationId() == $locationID) {
+                    return response()->json($count->getQuantity());
+                }
+            }
+        }
+        return response()->json(null);
     } else {
         $errors = $apiResponse->getErrors();
     }

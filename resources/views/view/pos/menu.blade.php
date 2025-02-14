@@ -69,12 +69,14 @@
                                                             @foreach($catalogImages as $catalogVariationImage)
                                                                 @if($catalogVariationImage->getId() == $variation->getItemVariationData()->getImageIds()[0])
                                                                     <a id="{{$variation->getItemVariationData()->getItemId()}}" data-dismiss="modal" name="{{$variation->getItemVariationData()->getName()}}" price="{{$variation->getItemVariationData()->getPriceMoney() ? substr($variation->getItemVariationData()->getPriceMoney()->getAmount(), 0, -2) .'.' . substr($variation->getItemVariationData()->getPriceMoney()->getAmount(), -2) : null}}" class="btn btn-lg items" style="background-image:url('{{$catalogVariationImage->getImageData()->getUrl()}}');background-size: cover;background-position: center center;min-height:20vh;max-height:20vh;height:100%;width:100%; margin:0px !important;padding:0px !important;overflow:hidden;border-radius:0px;">
+                                                                        <span id="{{$variation->getId()}}" class="physical-count" style="background-color:black;color: white">0</span>
                                                                 @endif
                                                             @endforeach
                                                         @else
                                                             <a id="{{$item->getId()}}" class="items btn btn-lg" data-dismiss="modal" style="min-height:12vh;height:100%;width:100%; margin:0px !important;padding:0px !important;min-height:20vh;max-height:20vh;">
                                                             <li style="margin:8vh;margin-bottom:2px;list-style-type: none;background-color: #000;color: #FFF;border-radius: 5px;opacity: 0.85;">{{$variation->getitemVariationData()->getName()}}</li>
                                                             <span style="margin-top:2px;padding:2px;background-color: #000;color: #FFF;border-radius: 5px;opacity: 0.85;">{{$variation->getItemVariationData()->getPriceMoney() ? substr($variation->getItemVariationData()->getPriceMoney()->getAmount(), 0, -2) .',' . substr($variation->getItemVariationData()->getPriceMoney()->getAmount(), -2) . '$' : 'variable'}}</span>
+                                                            <span id="{{$item->getId()}}" class="physical-count" style="background-color:black;color: white">0</span>
                                                         @endif
                                                         </a>
                                                     </div>
@@ -90,6 +92,7 @@
                             @else
                             <div class="col-md-2" style="margin:0px !important;padding:0px !important;border: 1px solid black">
                                 <a id="{{$item->getId()}}" class="{{!$item->getItemData()->getVariations()[0]->getItemVariationData()->getPriceMoney() ? 'variable-price' : ''}} items btn btn-lg" name="{{$item->getItemData()->getName()}}" price="{{$item->getItemData()->getVariations()[0]->getItemVariationData()->getPriceMoney() ? substr($item->getItemData()->getVariations()[0]->getItemVariationData()->getPriceMoney()->getAmount(), 0, -2) .'.' . substr($item->getItemData()->getVariations()[0]->getItemVariationData()->getPriceMoney()->getAmount(), -2) : null}}" style="background-image:url('{{$catalogImage->getImageData()->getUrl()}}');background-size: cover;background-position: center center;min-height:12vh;max-height:12vh;height:100%;width:100%; margin:0px !important;padding:0px !important;overflow:hidden;border-radius:0px;">
+                                    <span id="{{$item->getItemData()->getVariations()[0]->getId()}}" class="physical-count" style="background-color:black;color: white">0</span>
                                 </a>
                             </div>
                             @endif
@@ -291,6 +294,20 @@ $(document).ready(function() {
             $('.cart-item').each(function() {
                 $(this).remove();
             })
+        }
+    })
+});
+
+$('.physical-count').each(function() {
+    var item = $(this);
+    $.ajax({
+        url: "/pos/{{$slug}}/getInventory/" + $(this).attr('id') + "/",
+        type: "GET",
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        success: function (result) {
+            item.html(result);
         }
     })
 });
