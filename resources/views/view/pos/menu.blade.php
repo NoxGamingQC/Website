@@ -70,11 +70,11 @@
                                                                 @if($catalogVariationImage->getId() == $variation->getItemVariationData()->getImageIds()[0])
                                                                     <a id="{{$variation->getItemVariationData()->getItemId()}}" data-dismiss="modal" name="{{$variation->getItemVariationData()->getName()}}" price="{{$variation->getItemVariationData()->getPriceMoney() ? substr($variation->getItemVariationData()->getPriceMoney()->getAmount(), 0, -2) .'.' . substr($variation->getItemVariationData()->getPriceMoney()->getAmount(), -2) : null}}" class="btn btn-lg items" style="background-image:url('{{$catalogVariationImage->getImageData()->getUrl()}}');background-size: cover;background-position: center center;min-height:20vh;max-height:20vh;height:100%;width:100%; margin:0px !important;padding:0px !important;overflow:hidden;border-radius:0px;">
                                                                         @if($variation->getItemVariationData()->getLocationOverrides() == null)
-                                                                            <span id="{{$variation->getId()}}" warning="{{$variation->getItemVariationData()->getInventoryAlertThreshold()}}" class="physical-count" style="background-color:black;color: white"></span>
+                                                                            <span id="{{$variation->getId()}}" warning="{{$variation->getItemVariationData()->getInventoryAlertThreshold()}}" class="physical-count"></span>
                                                                         @else
                                                                             @foreach($variation->getItemVariationData()->getLocationOverrides() as $locationOverride)
                                                                                 @if($locationOverride->getLocationId() == $id)
-                                                                                    <span id="{{$variation->getId()}}" warning="{{$locationOverride->getInventoryAlertThreshold()}}" class="physical-count" style="background-color:black;color: white"></span>
+                                                                                    <span id="{{$variation->getId()}}" warning="{{$locationOverride->getInventoryAlertThreshold()}}" class="physical-count"></span>
                                                                                 @endif
                                                                             @endforeach
                                                                         @endif
@@ -85,11 +85,11 @@
                                                             <li style="margin:8vh;margin-bottom:2px;list-style-type: none;background-color: #000;color: #FFF;border-radius: 5px;opacity: 0.85;">{{$variation->getitemVariationData()->getName()}}</li>
                                                             <span style="margin-top:2px;padding:2px;background-color: #000;color: #FFF;border-radius: 5px;opacity: 0.85;">{{$variation->getItemVariationData()->getPriceMoney() ? substr($variation->getItemVariationData()->getPriceMoney()->getAmount(), 0, -2) .',' . substr($variation->getItemVariationData()->getPriceMoney()->getAmount(), -2) . '$' : 'variable'}}</span>
                                                             @if($variation->getItemVariationData()->getLocationOverrides() == null)
-                                                                <span id="{{$variation->getId()}}" warning="{{$variation->getItemVariationData()->getInventoryAlertThreshold()}}" class="physical-count" style="background-color:black;color: white"></span>
+                                                                <span id="{{$variation->getId()}}" warning="{{$variation->getItemVariationData()->getInventoryAlertThreshold()}}" class="physical-count"></span>
                                                             @else
                                                                 @foreach($variation->getItemVariationData()->getLocationOverrides() as $locationOverride)
                                                                     @if($locationOverride->getLocationId() == $id)
-                                                                        <span id="{{$variation->getId()}}" warning="{{$locationOverride->getInventoryAlertThreshold()}}" class="physical-count" style="background-color:black;color: white"></span>
+                                                                        <span id="{{$variation->getId()}}" warning="{{$locationOverride->getInventoryAlertThreshold()}}" class="physical-count"></span>
                                                                     @endif
                                                                 @endforeach
                                                             @endif                                                        @endif
@@ -108,11 +108,11 @@
                             <div class="col-md-2" style="margin:0px !important;padding:0px !important;border: 1px solid black">
                                 <a id="{{$item->getId()}}" class="{{!$item->getItemData()->getVariations()[0]->getItemVariationData()->getPriceMoney() ? 'variable-price' : ''}} items btn btn-lg" name="{{$item->getItemData()->getName()}}" price="{{$item->getItemData()->getVariations()[0]->getItemVariationData()->getPriceMoney() ? substr($item->getItemData()->getVariations()[0]->getItemVariationData()->getPriceMoney()->getAmount(), 0, -2) .'.' . substr($item->getItemData()->getVariations()[0]->getItemVariationData()->getPriceMoney()->getAmount(), -2) : null}}" style="background-image:url('{{$catalogImage->getImageData()->getUrl()}}');background-size: cover;background-position: center center;min-height:12vh;max-height:12vh;height:100%;width:100%; margin:0px !important;padding:0px !important;overflow:hidden;border-radius:0px;">
                                     @if($item->getItemData()->getVariations()[0]->getItemVariationData()->getLocationOverrides() == null)
-                                        <span id="{{$item->getItemData()->getVariations()[0]->getId()}}" warning="{{$item->getItemData()->getVariations()[0]->getItemVariationData()->getInventoryAlertThreshold()}}" class="physical-count" style="background-color:black;color: white"></span>
+                                        <span id="{{$item->getItemData()->getVariations()[0]->getId()}}" warning="{{$item->getItemData()->getVariations()[0]->getItemVariationData()->getInventoryAlertThreshold()}}" class="physical-count"></span>
                                     @else
                                         @foreach($item->getItemData()->getVariations()[0]->getItemVariationData()->getLocationOverrides() as $locationOverride)
                                             @if($locationOverride->getLocationId() == $id)
-                                                <span id="{{$item->getItemData()->getVariations()[0]->getId()}}" warning="{{$locationOverride->getInventoryAlertThreshold()}}" class="physical-count" style="background-color:black;color: white"></span>
+                                                <span id="{{$item->getItemData()->getVariations()[0]->getId()}}" warning="{{$locationOverride->getInventoryAlertThreshold()}}" class="physical-count"></span>
                                             @endif
                                         @endforeach   
                                     @endif
@@ -331,9 +331,9 @@ $('.physical-count').each(function() {
         },
         success: function (result) {
              if(Number(result) == 0) {
-                item.html('X');
+                item.html('<h1 style="font-size: 70px;color:#f00;text-shadow:1px 1px 0 #000, -1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000;margin-top:5px;">X</h1>');
              } else if(Number(result) <= Number(item.attr('warning'))) {
-                item.html('!');
+                item.html('<h1 style="font-size: 70px;color:#fF0;text-shadow:1px 1px 0 #000, -1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000;margin-top:5px;">!</h1>');
             }
         }
     })
