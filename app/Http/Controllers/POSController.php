@@ -8,6 +8,7 @@ use App\Model\API\ApiKey;
 use Square\SquareClient;
 use Square\SquareClientBuilder;
 use Square\Authentication\BearerAuthCredentialsBuilder;
+use Square\Models\Builders\BatchRetrieveInventoryCountsRequestBuilder;
 use Square\Environment;
 use Square\Exceptions\ApiException;
 use Carbon\Carbon;
@@ -87,10 +88,6 @@ class POSController extends Controller
                 echo "ApiException occurred: <b/>";
                 echo $e->getMessage() . "<p/>";
             }
-            /*
-                Find location then find if sold out!!
-                    ->getItemData()->getVariations()[0]->getItemVariationData()->getLocationOverrides()
-            */
             if($user) {
                 return view('view.pos.menu')->with([
                     'name' => $user->name,
@@ -105,5 +102,43 @@ class POSController extends Controller
             }
         }
         return redirect('/pos/' . $slug . '/');
+    }
+    public function getInventoryCount($slug, $itemID) {
+        $user = ApiKey::where('key', $slug)->first();
+            $client = SquareClientBuilder::init()
+            ->bearerAuthCredentials(
+                BearerAuthCredentialsBuilder::init(
+                    $user->square_access_token
+                )
+            )
+                ->environment(Environment::PRODUCTION)
+                ->build();
+        $inventoryApi = $client->getInventoryApi();
+        $locationID = $user->square_location_id;
+        $itemID = '2W4MWURUXXHM2VSMUHOFATLC';
+        $body = BatchRetrieveInventoryCountsRequestBuilder::init()
+            ->catalogObjectIds(
+                [
+                    $itemID
+                ]
+            )
+            ->locationIds(
+                [
+                    $locationID
+                ]
+            )
+    ->build();
+
+    $apiResponse = $inventoryApi->batchRetrieveInventoryCounts($body);
+
+    if ($apiResponse->isSuccess()) {
+        return response()->json($apiResponse->getResult()->getCounts()[0]->getQuantity());
+    } else {
+        $errors = $apiResponse->getErrors();
+    }
+
+    // Getting more response information
+    var_dump($apiResponse->getStatusCode());
+    var_dump($apiResponse->getHeaders());
     }
 }
