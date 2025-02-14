@@ -3,8 +3,8 @@
 <div style="position:absolute;margin:20vh;margin-left:30vh;z-index:99">
     <h1 id="amount" class="text-success" value="0"></h1>
 </div>
-<div style="position:absolute;margin:20vh;margin-left:97vh;z-index:99">
-    <h1 id="givenAmount" value=""></h1>
+<div style="position:absolute;margin:20vh;margin-left:95vh;z-index:99;">
+    <h2 id="givenAmount" value="" style="width:50vh"></h2>
 </div>
 <div class="row" style="margin:0px;padding:0px;">
     <div class="col-md-12 text-center" style="min-height:49vh;max-height:49vh;overflow:hidden;margin:0px;padding:0px;">
