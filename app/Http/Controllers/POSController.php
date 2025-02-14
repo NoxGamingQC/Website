@@ -90,6 +90,7 @@ class POSController extends Controller
             }
             if($user) {
                 return view('view.pos.menu')->with([
+                    'id' => $user->square_location_id,
                     'name' => $user->name,
                     'image' => $user->image,
                     'phone_number'=>$user->phone_number,
