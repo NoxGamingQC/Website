@@ -1,15 +1,15 @@
 @extends('layouts.pages.error')
-@section('title', $title)
-@section('slogan', (isset($slogan) ? $slogan : ''))
+@section('title', 'ERROR 500')
 @section('content')
 
-
-<div class="row">
-    <div class="col-md-12 bg-dark content-item">
-        <div class="container">
-            <h1 class="raleway-font text-danger">{{$title}}</h3>
-            <h3 class="raleway-font">{{$description}}</h3>
-        </div>
+<div class="container">
+    <div class="row text-center">
+        <img src="{{$logo}}" width="300" style="margin-top:10%">
+        <h1>{{$name}}</h1>
+        <h3>819-852-8705</h3>
+        <hr />
+        <h2 class="text-danger">{{$title}}</h2>
+        <h3 class="raleway-font">{{$description}}</h3>
     </div>
 </div>
 <br />
@@ -20,12 +20,9 @@
 <br />
 <br />
 @include('layouts.components.footer')
-
-@if(isset($redirect))
-    <script type="text/javascript">
-        $(document).ready(function() {
-            window.location.href = "{{$redirect}}"
-        })
-    </script>
-@endif
+<script>  
+    setTimeout(function(){
+        window.location.reload();
+    }, 2000);
+</script>
 @endsection

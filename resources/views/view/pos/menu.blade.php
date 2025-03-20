@@ -17,7 +17,7 @@
                     <div class="col-md-3" style="{{Carbon\Carbon::create($invoice->getCreatedAt())->addWeeks(1)->lessThan(Carbon\Carbon::create()) ? 'background:#c41d1d;color:#FFF !important;' : 'color:#000 !important;'}}margin:0px !important;padding:0px !important;border: 1px solid black">
                     <a id="{{$invoice->getId()}}" class="btn btn-lg" style="min-height:12vh;max-height:12vh;height:100%;width:100%; margin:0px !important;padding:0px !important;overflow:hidden;border-radius:0px;">
                             <b><li style="{{Carbon\Carbon::create($invoice->getCreatedAt())->addWeeks(1)->lessThan(Carbon\Carbon::create()) ? 'background:#c41d1d;color:#FFF !important;' : 'color:#000 !important;'}}margin-top:1vh;list-style-type: none;overflow:hidden;padding:2px;border-radius: 5px;opacity: 0.85;">{{$invoice->getPrimaryRecipient()->getGivenName()}}<br />  {{$invoice->getPrimaryRecipient()->getFamilyName()}}</li></b>
-                            <b><span style="{{Carbon\Carbon::create($invoice->getCreatedAt())->addWeeks(1)->lessThan(Carbon\Carbon::create()) ? 'background:#c41d1d;color:#FFF !important;' : 'color:#000 !important;'}}border-radius: 5px;opacity: 0.85;">{{$invoice->getPaymentRequests()[0]->getComputedAmountMoney()->getAmount() ? substr($invoice->getPaymentRequests()[0]->getComputedAmountMoney()->getAmount(), 0, -2) .',' . substr($invoice->getPaymentRequests()[0]->getComputedAmountMoney()->getAmount(), -2) . '$' : 'variable'}}</span></b>
+                            <b><span style="{{Carbon\Carbon::create($invoice->getCreatedAt())->addWeeks(1)->lessThan(Carbon\Carbon::create()) ? 'background:#c41d1d;color:#FFF !important;' : 'color:#000 !important;'}}border-radius: 5px;opacity: 0.85;">{{$invoice->getPaymentRequests()[0]->getComputedAmountMoney()->getAmount() ? substr($invoice->getPaymentRequests()[0]->getComputedAmountMoney()->getAmount() - ($invoice->getPaymentRequests()[0]->getTotalCompletedAmountMoney()->getAmount() ? $invoice->getPaymentRequests()[0]->getTotalCompletedAmountMoney()->getAmount() : 0), 0, -2) .',' . substr($invoice->getPaymentRequests()[0]->getComputedAmountMoney()->getAmount() - ($invoice->getPaymentRequests()[0]->getTotalCompletedAmountMoney()->getAmount() ? $invoice->getPaymentRequests()[0]->getTotalCompletedAmountMoney()->getAmount() : 0), -2) . '$' : 'variable'}}</span></b>
                         </a>
                     </div>
                 @endforeach
@@ -290,6 +290,7 @@ $(document).ready(function() {
         value = $('#amount').attr('value')
         givenBack = (Number(value.slice(0, value.length-2) + '.' + value.slice(value.length -2, value.length)) - Number($('#totalPrice').attr('value')));
         if (isNaN(givenBack)) {
+            registerPayment(value);
             $('#givenAmount').html('Remise: ' + exactPrice.toLocaleString('fr-CA', { style: 'currency', currency: 'CAD'}));
             $('#givenAmount').addClass('text-success');
             $('#givenAmount').removeClass('text-danger');
@@ -307,6 +308,7 @@ $(document).ready(function() {
             $('#amount').attr('value', '0');
             $('#amount').html('');
         } else {
+            registerPayment(value);
             $('#givenAmount').html('Remise: ' + givenBack.toLocaleString('fr-CA', { style: 'currency', currency: 'CAD'}));
             $('#givenAmount').addClass('text-success');
             $('#givenAmount').removeClass('text-danger');
@@ -338,5 +340,24 @@ $('.physical-count').each(function() {
         }
     })
 });
+
+function registerPayment(amount) {
+    $.ajax({
+        url: "/pos/{{$slug}}/pay/",
+        type: "POST",
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        data: {
+            'amount': amount
+        },
+        success: function (result) {
+             console.log('success');
+        },
+        error: function (error) {
+            console.log(error);
+        }
+    })
+}
 </script>
 @endsection
