@@ -56,3 +56,7 @@ Route::get('/minecraft/user/{id}', function (string $id) {
 Route::get('/minecraft/points/{uuid}', function (string $uuid) {
     return new Minecraft\GetPointResource($uuid);
 });
+
+Route::get('/noxbot/twitch/setup/{token}', function (string $token) {
+    return new NoxBot\TwitchSetupResource(['token' => $token]);
+});
