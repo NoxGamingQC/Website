@@ -17,8 +17,7 @@ class HttpRedirect
      */
     public function handle(Request $request, Closure $next)
     {
-
-        if (!$request->secure()) {
+        if (!$request->secure() && $request->header('host') != 'localhost:8000') {
             return redirect()->secure($request->getRequestUri());
         }
         return $next($request);
