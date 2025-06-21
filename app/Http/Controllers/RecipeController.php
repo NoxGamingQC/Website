@@ -54,7 +54,7 @@ class RecipeController extends Controller
                 abort(403);
             }
         } else {
-            return redirect('/login');
+            return redirect('/'.app()->getLocale().'/login');
         }
     }
 
@@ -100,12 +100,7 @@ class RecipeController extends Controller
                 abort(403);
             }
         } else {
-            return view('errors.custom')->with([
-                'title' => trans('general.need_login_title'),
-                'slogan' => trans('general.need_login_slogan'),
-                'description' => trans('general.need_login_description'),
-                'redirect' => '/' . app()->getLocale() . '/login'
-            ]);
+            return redirect('/'.app()->getLocale().'/login');
         }
     }
 
@@ -156,12 +151,7 @@ class RecipeController extends Controller
                 abort(403);
             }
         } else {
-            return view('errors.custom')->with([
-                'title' => trans('general.need_login_title'),
-                'slogan' => trans('general.need_login_slogan'),
-                'description' => trans('general.need_login_description'),
-                'redirect' => '/' . app()->getLocale() . '/login'
-            ]);
+            return redirect('/'.app()->getLocale().'/login');
         }
     }
 
