@@ -4,7 +4,7 @@
 
 <div class="container">
     <div class="row text-center">
-        <img src="{{$logo}}" width="300" style="margin-top:10%">
+        <img src="/img/logo.png" width="300" style="margin-top:10%">
         <h1>{{$name}}</h1>
         <h3>819-852-8705</h3>
         <hr />
