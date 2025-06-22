@@ -18,7 +18,7 @@ class Development
     public function handle($request, Closure $next)
     {
         $isDev = false;
-        if(env('APP_FORCE_HTTPS')) {
+        if (!$request->secure() && $request->header('host') != 'localhost:8000') {
             \URL::forceScheme('https');
         } else {
             $isDev = true;

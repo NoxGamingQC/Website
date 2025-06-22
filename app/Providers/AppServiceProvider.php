@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\URL;
+use Illuminate\Http\Request;
 use App\Model\CustomTheme;
 use App\Model\MainConfig;
 use App\Model\PageLists;
@@ -19,9 +20,11 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(Request $request)
     {
-        URL::forceScheme('https');
+        if (!$request->secure() && $request->header('host') != 'localhost:8000') {
+            URL::forceScheme('https');
+        }
         
 
         if(env('GIT_SHA')) {

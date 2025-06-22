@@ -18,7 +18,7 @@ class RedirectIfAuthenticated
      */
     public function handle($request, Closure $next, $guard = null)
     {
-        if($request->header('host') != 'localhost:8000') {
+        if (!$request->secure() && $request->header('host') != 'localhost:8000') {
             URL::forceScheme('https');
         }
         if (Auth::guard($guard)->check()) {
