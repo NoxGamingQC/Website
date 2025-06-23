@@ -1,0 +1,8 @@
+/*@media (prefers-color-scheme: dark) {
+    @import "./dark/dark";
+}
+@media (prefers-color-scheme: light) {*/
+    @import "./light/light";
+/*}*/
+
+@import "../app";

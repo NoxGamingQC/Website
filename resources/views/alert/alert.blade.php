@@ -1,5 +1,5 @@
 
-<div class="col-md-12" style="padding-top:8%">
+<div class="col-md-12">
     @if (Session::has('success'))
         <div class="row alert alert-dismissible" role="alert">
             <div class="col-md-12">

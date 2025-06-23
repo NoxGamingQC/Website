@@ -22,29 +22,31 @@
         @endif
         <link rel="icon" href="/img/logo.png" type="image/png">
         @auth
-            <link href="{{mix('css/'. Auth::user()->preferred_theme . '.css')}}" rel="stylesheet" type="text/css">
+            <link href="{mix('css/'. Auth::user()->preferred_theme . '.css')}}" rel="stylesheet" type="text/css">
         @endauth
         @guest
             <link href="{{mix('css/system.css')}}" rel="stylesheet" type="text/css">
         @endguest
-        <link href="{{mix('css/bootstrap.css')}}" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
+        <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">-->
+        <!--<link href="{mix('css/bootstrap.css')}" rel="stylesheet" type="text/css">-->
+        <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">-->
         <script src="{{mix('js/app.js')}}"></script>
     </head>
     <body style="overflow-x:hidden">
         <input id="websiteLocationID" type="hidden">
         @include('layouts.components.navbar')
-        @include('alert.alert')
-        <div id="content">
+        <div id="content" class="my-5">
             @yield('content')
         </div>
         @include('layouts.components.footer')
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>-->
+        <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>-->
+        <!--<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>-->
         <script type="text/javascript">
-            $.fn.selectpicker.Constructor.BootstrapVersion = "3.3.7"
-            $.fn.datepicker.defaults.format = "yyyy-mm-dd";
+            //$.fn.selectpicker.Constructor.BootstrapVersion = "5.3.7"
+            //$.fn.datepicker.defaults.format = "yyyy-mm-dd";
             console.log('%c{{trans('general.console_wait')}}', 'color:#F80; font-size:60px; font-weight: bold; -webkit-text-stroke: 1px black;');
             console.log('%c{!!trans('general.console_copy_paste01')!!}', 'color:#FFF; font-size:18px;');
             console.log('%c{{trans('general.console_copy_paste02')}}', 'color:#F00; font-size:18px;');

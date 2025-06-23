@@ -1,0 +1,20 @@
+nav {
+    border-bottom: 2px solid $text-color;
+}
+
+.nav-link {
+    color: $text-color;
+    height: 78px !important;
+    border-radius: 0px !important;
+    padding: 25px;
+}
+
+.nav-item .active {
+    color: $brand-primary-text-emphasis !important;
+    background-color: $brand-primary !important;
+}
+
+.nav-item :hover, .nav-item.active:hover {
+    color: $brand-primary-text-emphasis !important;
+    background-color: lighten($brand-primary, 10%) !important;
+}

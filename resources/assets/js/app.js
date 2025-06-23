@@ -5,6 +5,7 @@
  * application frontend using useful Laravel and JavaScript libraries.
  */
 
+window.$ = window.jQuery = require('jquery');
 require('./bootstrap');
 //require('./facebook');
 require('./userState');

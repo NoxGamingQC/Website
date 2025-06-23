@@ -1,4 +1,4 @@
-var mix = require('laravel-mix');
+let mix = require('laravel-mix');
 
 /*
  |--------------------------------------------------------------------------
@@ -11,8 +11,8 @@ var mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/assets/js/app.js', 'public/js');
-mix.sass('resources/assets/sass/system.scss', 'public/css');
-mix.sass('resources/assets/sass/dark/dark.scss', 'public/css');
-mix.sass('resources/assets/sass/light/light.scss', 'public/css');
-mix.less('resources/assets/sass/bootstrap.less', 'public/css');
+mix.js('resources/assets/js/app.js', 'public/js')
+.sass('resources/assets/sass/themes/system.scss', 'public/css')
+.sass('resources/assets/sass/themes/dark/dark.scss', 'public/css')
+.sass('resources/assets/sass/themes/light/light.scss', 'public/css');
+//mix.less('resources/assets/sass/bootstrap.less', 'public/css');
