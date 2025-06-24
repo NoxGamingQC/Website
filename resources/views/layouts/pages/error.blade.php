@@ -32,7 +32,6 @@
     @guest
         <link href="{{mix('css/system.css')}}" rel="stylesheet" type="text/css">
     @endguest
-    <link href="{{mix('css/bootstrap.css')}}" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
     <script src="{{mix('js/app.js')}}"></script>
 </head>

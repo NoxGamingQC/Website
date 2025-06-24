@@ -2,23 +2,19 @@
 @section('title', 'ERROR 404')
 @section('content')
 
-<div class="container">
+<div class="container my-5">
     <div class="row text-center">
-        <img src="/img/logo.png" width="300">
-        <h1 class="text-danger">ERROR 404</h1>
-        <h3 class="raleway-font">Not found.</h3>
-        <br />
-        <hr />
-        <br />
-        <h1 class="text-danger">ERREUR 404</h1>
-        <h3 class="raleway-font">Non trouvé.</h3>
+        <div class="col-12 py-5">
+            <img src="/img/logo.png" width="300">
+        </div>
+        <div class="col-12 py-5 border-bottom">
+            <h1 class="text-danger">ERROR 404</h1>
+            <h3 class="raleway-font">Not found.</h3>
+        </div>
+        <div class="col-12 py-5">
+            <h1 class="text-danger">ERREUR 404</h1>
+            <h3 class="raleway-font">Non trouvé.</h3>
+        </div>
     </div>
 </div>
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
 @include('layouts.components.footer')

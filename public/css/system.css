@@ -3055,7 +3055,21 @@ nav {
   background-color: #880000 !important;
 }
 
+.nav-item .active .dropdown {
+  color: #252525 !important;
+  background-color: #F5F5F5 !important;
+}
+
 .nav-item :hover, .nav-item.active:hover {
+  color: #F5F5F5 !important;
+  background-color: #bb0000 !important;
+}
+
+.nav-item.dropdown :hover, .nav-item.dropdown.active:hover {
+  background-color: #F5F5F5 !important;
+  color: #252525 !important;
+}
+.nav-item.dropdown :hover .dropdown-item:hover, .nav-item.dropdown.active:hover .dropdown-item:hover {
   color: #F5F5F5 !important;
   background-color: #bb0000 !important;
 }
@@ -21530,7 +21544,21 @@ nav {
   background-color: #880000 !important;
 }
 
+.nav-item .active .dropdown {
+  color: #252525 !important;
+  background-color: #F5F5F5 !important;
+}
+
 .nav-item :hover, .nav-item.active:hover {
+  color: #F5F5F5 !important;
+  background-color: #bb0000 !important;
+}
+
+.nav-item.dropdown :hover, .nav-item.dropdown.active:hover {
+  background-color: #F5F5F5 !important;
+  color: #252525 !important;
+}
+.nav-item.dropdown :hover .dropdown-item:hover, .nav-item.dropdown.active:hover .dropdown-item:hover {
   color: #F5F5F5 !important;
   background-color: #bb0000 !important;
 }

@@ -9,20 +9,22 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <ul class="nav nav-pills">
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/"> {{trans('navigation.welcome')}}</a>
+                <a class="nav-link active" aria-current="page" href="/"><i class="fa fa-home" aria-hidden="true"></i> {{trans('navigation.welcome')}}</a>
             </li>
             <li class="nav-item dropdown disabled" aria-disabled="true">
-                <a class="nav-link dropdown-toggle disabled" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false" aria-disabled="true">{{trans('navigation.about_us')}}</a>
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-user" aria-hidden="true"></i> {{trans('navigation.about_us')}}</a>
                 <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Separated link</a></li>
+                    <li><a class="dropdown-item" href="/{{app()->getLocale()}}/about_us/contact_us"><i class="fa fa-address-card-o" aria-hidden="true"></i> {{trans('navigation.contact_us')}}</a></li>
+                    <li><a class="dropdown-item disabled" href="#" aria-disabled="true">{{trans('navigation.game_list')}}</a></li>
+                    <li><a class="dropdown-item disabled" href="#" aria-disabled="true">{{trans('navigation.partners')}}</a></li>
+                    <li><a class="dropdown-item disabled" href="#" aria-disabled="true">{{trans('navigation.projects')}}</a></li>
+                    <li><a class="dropdown-item disabled" href="#" aria-disabled="true">{{trans('navigation.teams')}}</a></li>
+                    <li><a class="dropdown-item disabled" href="#" aria-disabled="true">{{trans('navigation.twitch')}}</a></li>
+                    <li><a class="dropdown-item disabled" href="#" aria-disabled="true">{{trans('navigation.youtube')}}</a></li>
                 </ul>
             </li>
             <li class="nav-item">
-                <a class="nav-link disabled" href="#" aria-disabled="true">{{trans('navigation.store')}}</a>
+                <a class="nav-link disabled" href="#" aria-disabled="true"><i class="fa fa-shopping-cart" aria-hidden="true"></i> {{trans('navigation.store')}}</a>
             </li>
         </ul>
     </div>

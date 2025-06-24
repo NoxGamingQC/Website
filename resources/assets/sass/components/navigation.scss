@@ -13,8 +13,21 @@ nav {
     color: $brand-primary-text-emphasis !important;
     background-color: $brand-primary !important;
 }
+.nav-item .active .dropdown {
+    color: $text-color !important;
+    background-color: $background-color !important;
+}
 
 .nav-item :hover, .nav-item.active:hover {
     color: $brand-primary-text-emphasis !important;
     background-color: lighten($brand-primary, 10%) !important;
+}
+
+.nav-item.dropdown :hover, .nav-item.dropdown.active:hover {
+        background-color: $background-color !important;
+        color: $text-color !important;
+        .dropdown-item:hover {
+            color: $brand-primary-text-emphasis !important;
+            background-color: lighten($brand-primary, 10%) !important;
+        }
 }

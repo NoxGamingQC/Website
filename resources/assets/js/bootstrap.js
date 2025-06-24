@@ -1,10 +1,7 @@
 import axios from 'axios';
-import $ from 'jquery';
 import 'jquery-ui';
-import * as Popper from "@popperjs/core"
-
-window.$ = window.jQuery = $;
-
+import "@popperjs/core"
+import "bootstrap"
 import 'bootstrap-sass';
 
 window.axios = axios;
