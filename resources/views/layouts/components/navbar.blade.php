@@ -15,7 +15,7 @@
                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-user" aria-hidden="true"></i> {{trans('navigation.about_us')}}</a>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="/{{app()->getLocale()}}/about_us/contact_us"><i class="fa fa-address-card-o" aria-hidden="true"></i> {{trans('navigation.contact_us')}}</a></li>
-                    <li><a class="dropdown-item disabled" href="#" aria-disabled="true">{{trans('navigation.game_list')}}</a></li>
+                    <li><a class="dropdown-item" href="/{{app()->getLocale()}}/about_us/games"><i class="fa fa-gamepad" aria-hidden="true"></i> {{trans('navigation.game_list')}}</a></li>
                     <li><a class="dropdown-item disabled" href="#" aria-disabled="true">{{trans('navigation.partners')}}</a></li>
                     <li><a class="dropdown-item disabled" href="#" aria-disabled="true">{{trans('navigation.projects')}}</a></li>
                     <li><a class="dropdown-item disabled" href="#" aria-disabled="true">{{trans('navigation.teams')}}</a></li>
