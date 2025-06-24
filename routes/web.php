@@ -154,7 +154,7 @@ Route::middleware(['cors'])->group(function () {
                 return view('view.about_us.partners');
             });
 
-            Route::get('about_us/contact', 'ContactController@index');
+            Route::get('about_us/contact_us', 'ContactController@index');
             Route::post('/contact/form', 'ContactController@sendContactUsEmail');
 
             //Projects Routes
