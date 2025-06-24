@@ -17,7 +17,7 @@
                     <li><a class="dropdown-item" href="/{{app()->getLocale()}}/about_us/contact_us"><i class="fa fa-address-card-o" aria-hidden="true"></i> {{trans('navigation.contact_us')}}</a></li>
                     <li><a class="dropdown-item" href="/{{app()->getLocale()}}/about_us/games"><i class="fa fa-gamepad" aria-hidden="true"></i> {{trans('navigation.game_list')}}</a></li>
                     <li><a class="dropdown-item" href="/{{app()->getLocale()}}/about_us/partners"><i class="fa fa-handshake-o" aria-hidden="true"></i> {{trans('navigation.partners')}}</a></li>
-                    <li><a class="dropdown-item disabled" href="#" aria-disabled="true">{{trans('navigation.projects')}}</a></li>
+                    <li><a class="dropdown-item" href="/{{app()->getLocale()}}/about_us/projects"><i class="fa fa-bar-chart" aria-hidden="true"></i> {{trans('navigation.projects')}}</a></li>
                     <li><a class="dropdown-item disabled" href="#" aria-disabled="true"><i class="fa fa-group" aria-hidden="true"></i> {{trans('navigation.teams')}}</a></li>
                     <li><a class="dropdown-item disabled" href="#" aria-disabled="true">{{trans('navigation.twitch')}}</a></li>
                     <li><a class="dropdown-item disabled" href="#" aria-disabled="true">{{trans('navigation.youtube')}}</a></li>
