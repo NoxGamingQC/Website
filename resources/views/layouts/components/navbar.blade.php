@@ -12,7 +12,7 @@
                 <a class="nav-link active" aria-current="page" href="/"><i class="fa fa-home" aria-hidden="true"></i> {{trans('navigation.welcome')}}</a>
             </li>
             <li class="nav-item dropdown disabled" aria-disabled="true">
-                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-user" aria-hidden="true"></i> {{trans('navigation.about_us')}}</a>
+                <a class="nav-link dropdown-toggle disabled" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-disabled="true"><i class="fa fa-user" aria-hidden="true"></i> {{trans('navigation.about_us')}}</a>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="/{{app()->getLocale()}}/about_us/contact_us"><i class="fa fa-address-card-o" aria-hidden="true"></i> {{trans('navigation.contact_us')}}</a></li>
                     <li><a class="dropdown-item" href="/{{app()->getLocale()}}/about_us/games"><i class="fa fa-gamepad" aria-hidden="true"></i> {{trans('navigation.game_list')}}</a></li>
