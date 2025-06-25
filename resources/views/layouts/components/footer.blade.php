@@ -5,7 +5,6 @@
                 <span>Contact: <a class="text-white" href="mailto:jbedard@noxgamingqc.ca">jbedard@noxgamingqc.ca</a></span>
                 <span>Shawinigan, QC, Canada</span>
                 <a class="text-white" href="https://github.com/NoxGamingQC">GitHub</a>
-                <a class="text-white" href="https://github.com/NoxGamingQC/Website">Sources</a>
             </div>
             <div class="col-4 text-center row justify-content-center align-self-center">
                 <img src="/img/logo.png" alt="logo" style="width:150px">
