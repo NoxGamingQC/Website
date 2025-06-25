@@ -2,7 +2,7 @@
 
 return [
     'welcome' => "Home",
-    'about_us' => "About us",
+    'content' => "Content",
     'contact_us' => "Contact us",
     'game_list' => "Game list",
     'partners' => "Partners",

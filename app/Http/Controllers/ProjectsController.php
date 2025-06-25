@@ -10,6 +10,6 @@ class ProjectsController extends Controller
 {
     public function index()
     {
-        return view('view.about_us.projects');
+        return view('view.projects');
     }
 }

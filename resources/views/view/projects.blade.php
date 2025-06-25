@@ -3,9 +3,9 @@
 @section('slogan', trans('projects.description'))
 @section('content')
 
-<div class="container section py-5">
+<div class="container py-5">
     <div class="row">
-        <div class="col-12 content-item">
+        <div class="col-12">
             <div class="row">
                 <div class="col-6 text-left">
                     <br />
@@ -19,10 +19,6 @@
                 </div>
             </div>
         </div>
-    </div>
-</div>
-<div class="container section">
-    <div class="row">
         <div class="col-12 bg-dark content-item">
             <div class="row">
                 <div class="col-6">

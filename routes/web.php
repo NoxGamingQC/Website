@@ -158,7 +158,7 @@ Route::middleware(['cors'])->group(function () {
             Route::post('/contact/form', 'ContactController@sendContactUsEmail');
 
             //Projects Routes
-            Route::get('about_us/projects', 'ProjectsController@index');
+            Route::get('projects', 'ProjectsController@index');
             Route::get('about_us/projects/minecraft', 'Projects\MinecraftController@index');
             //Games Routes
             Route::get('about_us/games', 'GamesListController@index');
