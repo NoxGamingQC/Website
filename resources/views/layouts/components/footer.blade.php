@@ -9,9 +9,6 @@
             </div>
             <div class="col-4 text-center row justify-content-center align-self-center">
                 <img src="/img/logo.png" alt="logo" style="width:150px">
-                <br />
-                <h6 class="raleway-font">{{trans('general.copyright_noxgamingqc')}}</h6>
-                <br />
             </div>
             <div class="col-4 text-center row justify-content-center align-self-center">
                 <h4>{{trans('footer.build_using')}}</h4>
