@@ -7,6 +7,8 @@ package-lock.json
 /.idea
 public/shared/Minecraft/Worlds/Singleplayer/
 public/shared/Minecraft/Worlds/Multiplayer/
+public/css/
+public/js/
 
 # Laravel 4 specific
 bootstrap/compiled.php
