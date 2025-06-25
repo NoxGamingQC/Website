@@ -3,9 +3,9 @@
         <div class="row">
             <div class="col-4 text-center">
                 <a class="text-white" href="mailto:jbedard@noxgamingqc.ca">jbedard@noxgamingqc.ca</a>
-                <br/>
+                <br />
                 <span>Québec, Canada</span>
-                <br/>
+                <br />
                 <a class="text-white" href="https://github.com/NoxGamingQC">GitHub</a>
             </div>
             <div class="col-4 text-center">
@@ -14,6 +14,7 @@
             <div class="col-4 text-center">
                 <h4>{{trans('footer.build_using')}}</h4>
                 <a class="text-white" href="https://getbootstrap.com/">Bootstrap</a>
+                <br />
                 <a class="text-white" href="https://laravel.com/">Laravel</a>
             </div>
             <!--<div class="col-12">
