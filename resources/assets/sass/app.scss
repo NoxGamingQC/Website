@@ -21,3 +21,13 @@
 //@import "/node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker.css";
 
 @import "./components/navigation";
+
+
+.glass-panel {
+    background: rgba(255, 255, 255, 0.22);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.4px);
+    -webkit-backdrop-filter: blur(5.4px);
+    border: 1px solid rgba(255, 255, 255, 0.54);
+}
