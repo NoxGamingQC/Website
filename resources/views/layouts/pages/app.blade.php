@@ -35,7 +35,7 @@
     <body style="overflow-x:hidden">
         <input id="websiteLocationID" type="hidden">
         @include('layouts.components.navbar')
-        <div id="content" class="my-5">
+        <div id="content" class="my-5 d-flex" style="min-height:60vh;">
             @yield('content')
         </div>
         @include('layouts.components.footer')
