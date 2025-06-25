@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'welcome' => "Welcome",
+    'welcome' => "Home",
     'about_us' => "About us",
     'contact_us' => "Contact us",
     'game_list' => "Game list",
