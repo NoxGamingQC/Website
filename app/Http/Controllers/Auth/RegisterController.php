@@ -43,6 +43,7 @@ class RegisterController extends Controller
 
     public function showRegistrationForm()
     {
+        abort(503);
         if(!session()->has('url.intended'))
         {
             session(['url.intended' => url()->previous()]);

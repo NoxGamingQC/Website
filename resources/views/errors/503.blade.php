@@ -2,29 +2,26 @@
 @section('title', 'ERROR 503')
 @section('content')
 
-<div class="container">
-    <div class="row text-center">
-        <img src="/img/logo.png" width="300">
-        <h1 class="text-danger">ERROR 503</h1>
-        <h3 class="raleway-font">In maintenance.</h3>
-        <br />
-        <hr />
-        <br />
-        <h1 class="text-danger">ERREUR 503</h1>
-        <h3 class="raleway-font">En maintenance.</h3>
-        @if(app('request')->input('app_type') == 'mobile_app')
+<div class="container py-5">
+    <div class="row text-center py-5">
+        <div class="col-12">
+            <img src="/img/logo.png" style="max-width:300px;">
+            <h1 class="text-danger">Section under maintenance</h1>
+            <h4>This section is currently undergoing maintenance. It should be back shortly.</h4>
             <br />
+            <hr />
             <br />
-            <br />
-            <input id="reloadPage" type="button" class="btn btn-info" value="reload">
-        @endif
+            <h1 class="text-danger">Section en maintenance</h1>
+            <h4>Cette section est présentement en maintenance. Elle sera de retour bientôt.</h4>
+            @if(app('request')->input('app_type') == 'mobile_app')
+                <br />
+                <br />
+                <br />
+                <input id="reloadPage" type="button" class="btn btn-info" value="reload">
+            @endif
+        </div>
     </div>
 </div>
-<br />
-<br />
-<br />
-<br />
-<br />
 <br />
 <br />
 @include('layouts.components.footer')

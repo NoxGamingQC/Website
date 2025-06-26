@@ -46,6 +46,7 @@ class LoginController extends Controller
 
     public function showLoginForm()
     {  
+        abort(503);
         if(!session()->has('url.intended'))
         {
             session(['url.intended' => url()->previous()]);
