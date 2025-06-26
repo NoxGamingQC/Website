@@ -2,6 +2,8 @@
 
 return [
     'projects' => "Projects",
+    'website' => "Website",
+    'noxbot' => "NoxBOT",
     'description' => "We are currently working on the projects listed below. Feel free to look them up.",
     'noxbot_description' => "NoxBOT is a multitasking bot for Twitch and Discord.",
     'noxbot_dashboard' => "Go to his dashboard here",
