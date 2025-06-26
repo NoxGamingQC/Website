@@ -14,7 +14,7 @@
             <li class="nav-item">
                 <a class="nav-link" aria-current="page" href="/{{app()->getLocale()}}/projects"><i class="fa fa-code" aria-hidden="true"></i> {{trans('navigation.projects')}}</a>
             </li>
-            <li class="nav-item dropdown">
+            <li class="nav-item dropdown" hidden>
                 <a class="nav-link dropdown-toggle disabled" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-disabled="true"><i class="fa fa-video-camera" aria-hidden="true"></i> {{trans('navigation.content')}}</a>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="/{{app()->getLocale()}}/about_us/contact_us"><i class="fa fa-address-card-o" aria-hidden="true"></i> {{trans('navigation.contact_us')}}</a></li>
@@ -25,8 +25,8 @@
                     <li><a class="dropdown-item disabled" href="#" aria-disabled="true">{{trans('navigation.youtube')}}</a></li>
                 </ul>
             </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#" aria-disabled="true"><i class="fa fa-shopping-cart" aria-hidden="true"></i> {{trans('navigation.store')}}</a>
+            <li class="nav-item" hidden>
+                <a class="nav-link disabled hidden" href="#" aria-disabled="true"><i class="fa fa-shopping-cart" aria-hidden="true"></i> {{trans('navigation.store')}}</a>
             </li>
         </ul>
     </div>
