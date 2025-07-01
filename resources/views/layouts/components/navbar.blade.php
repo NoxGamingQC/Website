@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top p-0">
+<nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top p-0 no-print">
   <div class="container-fluid py-0">
      <a class="navbar-brand" href="/">
         <img src="/img/logo.svg" alt="NoxGamingQC" width="50" height="50">
@@ -28,6 +28,14 @@
             <li class="nav-item" hidden>
                 <a class="nav-link disabled hidden" href="#" aria-disabled="true"><i class="fa fa-shopping-cart" aria-hidden="true"></i> {{trans('navigation.store')}}</a>
             </li>
+            @auth
+                <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-disabled="true"><i class="fa fa-user" aria-hidden="true"></i> {{trans('navigation.tools')}}</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/{{app()->getLocale()}}/tools/mensual_budget"><i class="fa fa-line-chart" aria-hidden="true"></i> {{trans('navigation.mensual_budget')}}</a></li>
+                </ul>
+            </li>
+            @endauth
         </ul>
     </div>
   </div>

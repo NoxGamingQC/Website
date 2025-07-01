@@ -1,4 +1,4 @@
-<div class="footer bg-primary py-5 text-bg-primary my-auto" style="max-height:30vh">
+<div class="footer bg-primary py-5 text-bg-primary my-auto no-print" style="max-height:30vh">
     <div class="container my-auto">
         <div class="row text-center align-items-center">
             <div class="col-4">

@@ -169,6 +169,11 @@ Route::middleware(['cors'])->group(function () {
             Route::post('/console/remove', 'GamesListController@removeconsole');
 
 
+            // Tools routes
+
+
+            Route::get('tools/mensual_budget', 'Tools\BudgetController@index');
+
             /*
               
                 MISCS ROUTES

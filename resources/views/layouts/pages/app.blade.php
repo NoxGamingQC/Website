@@ -21,12 +21,7 @@
         <title>{{env('APP_NAME')}} - @yield('title')</title>
         @endif
         <link rel="icon" href="/img/logo.png" type="image/png">
-        @auth
-            <link href="{mix('css/'. Auth::user()->preferred_theme . '.css')}}" rel="stylesheet" type="text/css">
-        @endauth
-        @guest
-            <link href="{{mix('css/system.css')}}" rel="stylesheet" type="text/css">
-        @endguest
+        <link href="{{mix('css/system.css')}}" rel="stylesheet" type="text/css">
         <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">-->
         <!--<link href="{mix('css/bootstrap.css')}" rel="stylesheet" type="text/css">-->
         <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">-->
@@ -35,7 +30,7 @@
     <body style="overflow-x:hidden">
         <input id="websiteLocationID" type="hidden">
         @include('layouts.components.navbar')
-        <div id="content" class="my-5 d-flex" style="min-height:60vh;">
+        <div id="content" class="my-5 d-flex py-5" style="min-height:60vh;">
             @yield('content')
         </div>
         @include('layouts.components.footer')

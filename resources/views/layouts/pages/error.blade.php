@@ -27,7 +27,7 @@
     @endif
     <link rel="icon" href="/img/logo.png" type="image/png">
     @auth
-        <link href="{{mix('css/'. Auth::user()->preferred_theme . '.css')}}" rel="stylesheet" type="text/css">
+        <link href="{{mix('css/system.css')}}" rel="stylesheet" type="text/css">
     @endauth
     @guest
         <link href="{{mix('css/system.css')}}" rel="stylesheet" type="text/css">

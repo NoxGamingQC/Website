@@ -22,6 +22,14 @@
 
 @import "./components/navigation";
 
+@media print {
+    .no-print, .no-print * {
+        display: none !important;
+    }
+    @page {
+        margin-bottom: 0;
+    }
+}
 
 .glass-panel {
     background: rgba(255, 255, 255, 0.22);
