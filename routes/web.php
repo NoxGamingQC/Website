@@ -13,6 +13,10 @@ use Illuminate\Http\Request;
 |
 */
 
+Route::get('/startup', function() {
+    return redirect()->to('/' . app()->getLocale() . '/startup');
+});
+
 Route::get('/pos/{slug}', 'POSController@index');
 Route::post('/pos/validate/{pos}/{pin}/{option}', 'POSController@validateCashier');
 Route::get('/pos/{slug}/menu/{cashier_id}', 'POSController@menu');
@@ -41,6 +45,7 @@ Route::middleware(['cors'])->group(function () {
     Route::post('/api/noxbot/twitch_lives/{id}', 'NoxBOT\BotTwitchLivesController@postTwitchLives');
 });
 
+
     Route::get('/mailbox', function () {
         return redirect()->to('/' . app()->getLocale() . '/mailbox');           
     });
@@ -67,6 +72,12 @@ Route::middleware(['cors'])->group(function () {
         'middleware' => 'setlocale'
     ], function () {
         Auth::routes();
+
+
+        Route::get('/startup', function() {
+            return view('startup');
+        });
+
         if (env('APP_ENV') !== 'production') {
             Route::get('/maintenance', function () {
                 if(Auth::check()) {

@@ -139,7 +139,7 @@
 
         $('#totalIncome').html(totalIncome.toFixed(2) + ' $')
         $('#totalExpense').html(totalExpense.toFixed(2) + ' $')
-        $('#totalSaved').html(Number(totalIncome.toFixed(2) - totalExpense) + ' $')
+        $('#totalSaved').html(Number(totalIncome - totalExpense).toFixed(2) + ' $')
         
     }
 
