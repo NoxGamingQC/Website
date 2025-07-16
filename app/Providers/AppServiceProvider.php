@@ -30,7 +30,7 @@ class AppServiceProvider extends ServiceProvider
         } else if($request->header('host') == 'noxgamingqc.ca' || $request->header('host') == 'www.noxgamingqc.ca') {
             $appName = 'NoxGamingQC';
         } else {
-            if(explode('/',request()->server('REQUEST_URI'))[1]) {
+            if(explode('/',request()->server('REQUEST_URI'))[1] == 'fr-ca') {
                 $appName = 'Services Technologique J.Bédard';
             } else {
                 $appName = 'J.Bédard Tech Services';
