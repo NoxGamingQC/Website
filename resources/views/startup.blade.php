@@ -5,15 +5,13 @@
 <div class="container text-justify my-auto">
     <div class="row py-5 align-items-center">
         <div class="col">
-            <h2>
-                <b class="display-4">Bienvenue</b>
-                <br />
-                <small class="text-body-secondary">Que voulez vous rechercher sur le web aujourd'hui?</small>
+            <h2 class="text-center">
+                <b class="display-1 developper-font">{{$appName}}</b>
             </h2>
             
             <div class="input-group mb-3">
                 <input id="searchInput" type="text" class="form-control" />
-                <button id="submitSearch" class="btn btn-primary">Rechercher</button>
+                <button id="submitSearch" class="btn btn-primary"><i class="fa fa-search" aria-hidden="true"></i> </button>
             </div>
         </div>
     </div>
