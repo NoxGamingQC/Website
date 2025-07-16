@@ -25,13 +25,12 @@ class AppServiceProvider extends ServiceProvider
         if (!$request->secure() && $request->header('host') != 'localhost:8000') {
             URL::forceScheme('https');
         }
-        
         if($request->header('host') == 'localhost:8000') {
             $appName = 'Dev';
         } else if($request->header('host') == 'noxgamingqc.ca' || $request->header('host') == 'www.noxgamingqc.ca') {
             $appName = 'NoxGamingQC';
         } else {
-            if(app()->getLocale() == 'fr-ca') {
+            if(explode('/', $request->server('PATH_INFO'))[1] == 'fr-ca') {
                 $appName = 'Services Technologique J.Bédard';
             } else {
                 $appName = 'J.Bédard Tech Services';
