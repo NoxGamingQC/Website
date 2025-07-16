@@ -10,7 +10,7 @@
             </h2>
             
             <div class="input-group mb-3">
-                <input id="searchInput" type="text" class="form-control" />
+                <input id="searchInput" type="text" class="form-control form-control-lg" placeholder="{{trans('startup.search_placeholder')}}" />
                 <button id="submitSearch" class="btn btn-primary"><i class="fa fa-search" aria-hidden="true"></i> </button>
             </div>
         </div>
@@ -30,7 +30,24 @@
     }
 
     function submitSearch() {
-        window.location.href = ('https://www.google.com/search?q=' + $('#searchInput').val());
+        var searchString = $('#searchInput').val();
+        if(isValidHttpUrl(searchString)) {
+            window.location.href = searchString;
+        } else {
+            window.location.href = ('https://www.google.com/search?q=' + searchString);
+        }
+    }
+
+    function isValidHttpUrl(string) {
+        let url;
+        
+        try {
+            url = new URL(string);
+        } catch (_) {
+            return false;  
+        }
+
+        return url.protocol === "http:" || url.protocol === "https:";
     }
 </script>
 @endsection
