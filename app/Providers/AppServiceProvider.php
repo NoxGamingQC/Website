@@ -31,7 +31,11 @@ class AppServiceProvider extends ServiceProvider
         } else if($request->header('host') == 'noxgamingqc.ca' || $request->header('host') == 'www.noxgamingqc.ca') {
             $appName = 'NoxGamingQC';
         } else {
-            $appName = 'Jimmy Béland-Bédard';
+            if(app()->getLocale() == 'fr-ca') {
+                $appName = 'Services Technologique J.Bédard';
+            } else {
+                $appName = 'J.Bédard Tech Services';
+            }
         }
 
         if(env('GIT_SHA')) {
