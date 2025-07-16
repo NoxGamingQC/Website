@@ -26,6 +26,13 @@ class AppServiceProvider extends ServiceProvider
             URL::forceScheme('https');
         }
         
+        if($request->header('host') == 'localhost:8000') {
+            $appName = 'Dev';
+        } else if($request->header('host') == 'noxgamingqc.ca' || $request->header('host') == 'www.noxgamingqc.ca') {
+            $appName = 'NoxGamingQC';
+        } else {
+            $appName = 'Jimmy Béland-Bédard';
+        }
 
         if(env('GIT_SHA')) {
             $sourceVersion = env('GIT_SHA');
@@ -34,6 +41,7 @@ class AppServiceProvider extends ServiceProvider
         }
 
         return view()->share([
+            'appName' => $appName,
             'sourceVersion' => $sourceVersion
         ]);
     }

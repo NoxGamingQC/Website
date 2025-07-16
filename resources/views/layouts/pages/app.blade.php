@@ -15,11 +15,7 @@
         <meta name="author" content="NoxGamingQC">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        @if(env('APP_ENV', 'developement'))
-        <title>{{env('APP_ENV') == 'developement' ? 'Dev - ' : ''}}{{env('APP_NAME')}} - @yield('title')</title>
-        @else
-        <title>{{env('APP_NAME')}} - @yield('title')</title>
-        @endif
+        <title>{{$appName}} - @yield('title')</title>
         <link rel="icon" href="/img/logo.png" type="image/png">
         <link href="{{mix('css/system.css')}}" rel="stylesheet" type="text/css">
         <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">-->
