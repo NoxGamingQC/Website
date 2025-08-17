@@ -10,5 +10,8 @@ return [
     'teams' => "Teams",
     'twitch' => "Twitch",
     'youtube' => "YouTube",
-    'store' => "Store"
-];
+    'store' => "Store",
+    'login' => "Sign in",
+    'logout' => "Sign out",
+    'register' => "Sign up"
+];  

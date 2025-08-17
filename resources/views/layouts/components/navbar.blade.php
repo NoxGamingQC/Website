@@ -39,9 +39,12 @@
         </ul>
         <ul class="nav nav-pills ms-auto justify-content-end">
             @guest
-            <li class="nav-item">
-                <a class="nav-link" href="/{{app()->getLocale()}}/login">{{trans('navigation.login')}}</a>
-            </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/{{app()->getLocale()}}/login">{{trans('navigation.login')}}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/{{app()->getLocale()}}/register">{{trans('navigation.register')}}</a>
+                </li>
             @endguest
         </ul>
     </div>
