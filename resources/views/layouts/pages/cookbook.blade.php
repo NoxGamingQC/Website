@@ -15,28 +15,16 @@
         <meta name="author" content="NoxGamingQC">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        @if(env('APP_ENV', 'developement'))
-        <title>{{env('APP_ENV') == 'developement' ? 'Dev - ' : ''}}{{env('APP_NAME')}} - @yield('title')</title>
-        @else
-        <title>{{env('APP_NAME')}} - @yield('title')</title>
-        @endif
+        <title>{{$appName}} - @yield('title')</title>
         <link rel="icon" href="/img/logo.png" type="image/png">
-        @auth
-            <link href="{{mix('css/'. Auth::user()->preferred_theme . '.css')}}" rel="stylesheet" type="text/css">
-        @endauth
-        @guest
-            @if(!is_null($theme))
-                <link href="{{mix('css/' . $theme .'.css')}}" rel="stylesheet" type="text/css">
-            @else
-                <link href="{{mix('css/system.css')}}" rel="stylesheet" type="text/css">
-            @endif
-        @endguest
-        <link href="{{mix('css/bootstrap.css')}}" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
+        <link href="{{mix('css/system.css')}}" rel="stylesheet" type="text/css">
+        <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">-->
+        <!--<link href="{mix('css/bootstrap.css')}" rel="stylesheet" type="text/css">-->
+        <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">-->
         <script src="{{mix('js/app.js')}}"></script>
     </head>
     <body>
-        <div class="idle-screen hidden" style="position:absolute; width:100%;height:100%;top:0px;bottom:0px;background-color:#000;z-index:98;overflow:hidden">
+        <div class="idle-screen" style="position:absolute; width:100%;height:100%;top:0px;bottom:0px;background-color:#000;z-index:98;overflow:hidden" hidden>
             <h1 class="current-weekday" style="position:absolute;color: #202020 !important;z-index:99 !important;font-size:60px !important;margin-left:15% !important;margin:5%;"></h1>
             <h1 class="current-date" style="position:absolute;color: #202020 !important;z-index:99 !important;font-size:60px !important;margin:10%;margin-left:15%;margin-top:15%;"></h1>
             <hr style="margin-top:30%" />
@@ -67,13 +55,13 @@
                 var idleInterval = setInterval(timerIncrement, 60000);
                 $(this).mousemove(function (e) {
                     idleTime = 0;
-                    $('.idle-screen').addClass('hidden');
-                    $('.active-screen').removeClass('hidden');
+                    $('.idle-screen').attr('hidden', true);
+                    $('.active-screen').attr('hidden', false);
                 });
                 $(this).keypress(function (e) {
                     idleTime = 0;
-                    $('.idle-screen').addClass('hidden');
-                    $('.active-screen').removeClass('hidden');
+                    $('.idle-screen').attr('hidden', true);
+                    $('.active-screen').attr('hidden', false);
                 });
             });
 
@@ -88,8 +76,8 @@
             function timerIncrement() {
                 idleTime = idleTime + 1;
                 if (idleTime > 9) {
-                    $('.idle-screen').removeClass('hidden');
-                    $('.active-screen').addClass('hidden');
+                    $('.idle-screen').attr('hidden', false);
+                    $('.active-screen').attr('hidden', true);
                 }
             }
         </script>
