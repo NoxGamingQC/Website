@@ -1,5 +1,5 @@
 <?php
 
 return [
- 'build_using' => "Build using"
+ 'build_using' => "Build with 🤍 using"
 ];
