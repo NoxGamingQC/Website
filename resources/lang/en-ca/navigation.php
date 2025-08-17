@@ -16,5 +16,7 @@ return [
     'register' => "Sign up",
     'cookbook' => "My cookbook",
     'tools' => "Tools",
-    'mensual_budget' => "Mensual budget"
+    'mensual_budget' => "Mensual budget",
+    'my_profile' => "My profile",
+    'preferences' => "Preferences"
 ];  
