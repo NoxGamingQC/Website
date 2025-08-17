@@ -30,22 +30,30 @@
             </li>
             @auth
                 <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-disabled="true"><i class="fa fa-user" aria-hidden="true"></i> {{trans('navigation.tools')}}</a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="/{{app()->getLocale()}}/tools/mensual_budget"><i class="fa fa-line-chart" aria-hidden="true"></i> {{trans('navigation.mensual_budget')}}</a></li>
-                </ul>
-            </li>
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-disabled="true"><i class="fa fa-user" aria-hidden="true"></i> {{trans('navigation.tools')}}</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/{{app()->getLocale()}}/tools/mensual_budget"><i class="fa fa-line-chart" aria-hidden="true"></i> {{trans('navigation.mensual_budget')}}</a></li>
+                    </ul>
+                </li>
             @endauth
         </ul>
         <ul class="nav nav-pills ms-auto justify-content-end">
             @guest
                 <li class="nav-item">
-                    <a class="nav-link" href="/{{app()->getLocale()}}/login">{{trans('navigation.login')}}</a>
+                    <a class="nav-link" href="/{{app()->getLocale()}}/login"><i class="fa fa-sign-in" aria-hidden="true"></i> {{trans('navigation.login')}}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/{{app()->getLocale()}}/register">{{trans('navigation.register')}}</a>
+                    <a class="nav-link" href="/{{app()->getLocale()}}/register"><i class="fa fa-user-plus" aria-hidden="true"></i> {{trans('navigation.register')}}</a>
                 </li>
             @endguest
+            @auth
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-disabled="true"><img class="rounded-circle" src="{{Auth::user()->avatar_url}}" width="25px"> {{Auth::user()->name}}</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" method="post" href="/logout"><i class="fa fa-sign-out" aria-hidden="true"></i> {{trans('navigation.logout')}}</a></li>
+                    </ul>
+                </li>
+            @endauth
         </ul>
     </div>
   </div>
