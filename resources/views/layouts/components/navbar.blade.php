@@ -7,7 +7,7 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <ul class="nav nav-pills">
+        <ul class="nav nav-pills justify-content-start">
             <li class="nav-item">
                 <a class="nav-link" aria-current="page" href="/"><i class="fa fa-home" aria-hidden="true"></i> {{trans('navigation.welcome')}}</a>
             </li>
@@ -36,6 +36,13 @@
                 </ul>
             </li>
             @endauth
+        </ul>
+        <ul class="nav nav-pills ms-auto justify-content-end">
+            @guest
+            <li class="nav-item">
+                <a class="nav-link" href="/{{app()->getLocale()}}/login">{{trans('navigation.login')}}</a>
+            </li>
+            @endguest
         </ul>
     </div>
   </div>
