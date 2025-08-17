@@ -13,5 +13,8 @@ return [
     'store' => "Store",
     'login' => "Sign in",
     'logout' => "Sign out",
-    'register' => "Sign up"
+    'register' => "Sign up",
+    'cookbook' => "My cookbook",
+    'tools' => "Tools",
+    'mensual_budget' => "Mensual budget"
 ];  

@@ -29,6 +29,11 @@
                 <a class="nav-link disabled hidden" href="#" aria-disabled="true"><i class="fa fa-shopping-cart" aria-hidden="true"></i> {{trans('navigation.store')}}</a>
             </li>
             @auth
+                @if(Auth::user()->has_premium)
+                    <li class="nav-item">
+                        <a class="nav-link" href="/{{app()->getLocale()}}/cookbook"><i class="fa fa-cutlery" aria-hidden="true"></i> {{trans('navigation.cookbook')}}</a>
+                    </li>
+                @endif
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-disabled="true"><i class="fa fa-user" aria-hidden="true"></i> {{trans('navigation.tools')}}</a>
                     <ul class="dropdown-menu">
