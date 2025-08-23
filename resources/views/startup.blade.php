@@ -17,6 +17,10 @@
     </div>
 </div>
 <script type="text/javascript">
+    $(document).ready(function() {
+        $('#searchInput').focus();
+    })
+
     $('#submitSearch').on('click', function() {
         submitSearch();
     });
