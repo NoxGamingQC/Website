@@ -53,7 +53,7 @@
             @endguest
             @auth
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle {{$currentTab == 'user' ? 'active' : ''}}" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-disabled="true"><img class="rounded-circle" src="{{Auth::user()->avatar_url}}" width="25px" height="25px"> {{Auth::user()->name}}</a>
+                    <a class="nav-link dropdown-toggle {{isset($currentTab) ? ($currentTab == 'user' ? 'active' : '') : ''}}" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-disabled="true"><img class="rounded-circle" src="{{Auth::user()->avatar_url}}" width="25px" height="25px"> {{Auth::user()->name}}</a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item {{$currentPage == 'my-profile' ? 'active' : ''}}" href="/{{app()->getLocale()}}/user/{{strtolower(Auth::user()->name)}}"><i class="fa fa-user" aria-hidden="true"></i> {{trans('navigation.my_profile')}}</a></li>
                         <li><a class="dropdown-item" href="/logout"><i class="fa fa-sign-out" aria-hidden="true"></i> {{trans('navigation.logout')}}</a></li>
