@@ -5,6 +5,7 @@
 @import "node_modules/bootstrap/scss/variables";
 @import "node_modules/bootstrap/scss/bootstrap";
 @import "node_modules/bootstrap/scss/variables-dark";
+
 @import "node_modules/bootstrap/scss/maps";
 @import "node_modules/bootstrap/scss/mixins";
 @import "node_modules/bootstrap/scss/root";
@@ -38,4 +39,9 @@
     backdrop-filter: blur(5.4px);
     -webkit-backdrop-filter: blur(5.4px);
     border: 1px solid rgba(255, 255, 255, 0.54);
+}
+
+.form-control:focus {
+    border-color: $brand-primary;
+    box-shadow: 0 0 0 0.25rem transparentize($brand-primary, 0.75);
 }
