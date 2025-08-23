@@ -19,7 +19,7 @@
 <script type="text/javascript">
     $(document).ready(function() {
         setTimeout(() => {
-            $('#searchInput').focus();
+            $('#searchInput').trigger('focus');
         }, "500");
     })
 
