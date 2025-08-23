@@ -1,5 +1,5 @@
 <!doctype html>
-<html data-bs-theme="{{!is_null(request('theme')) ? request('theme') : (Auth::check() ? (is_null(Auth::user()->theme) ? 'light' : Auth::user()->theme) : 'light')}}" lang="{{ app()->getLocale() }}" style="overflow-x:hidden">
+<html data-bs-theme="{{!is_null(request('theme')) ? request('theme') : (Auth::check() ? (is_null(Auth::user()->theme) ? 'default' : Auth::user()->theme) : 'default')}}" lang="{{ app()->getLocale() }}" style="overflow-x:hidden">
     <head>
         <meta name="google-site-verification" content="D30gPHSCahf2lVeDo0Ndgc8vI1cQvv8d1gXIZa3B2ds" />
         <meta name="facebook-domain-verification" content="uki484ngemqhks0g9endzi9hb1nobp" />
@@ -42,6 +42,14 @@
             console.log('%c{!!trans('general.console_copy_paste01')!!}', 'color:#FFF; font-size:18px;');
             console.log('%c{{trans('general.console_copy_paste02')}}', 'color:#F00; font-size:18px;');
             console.log('%c{{trans('general.console_close_window')}}', 'color:#FFF; font-size:18px;');
+            const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
+            if($('html').attr('data-bs-theme') === 'default') {
+                if (darkThemeMq.matches) {
+                    $('html').attr('data-bs-theme', 'dark');
+                } else {
+                    $('html').attr('data-bs-theme', 'light');
+                }
+            }
         </script>
     </body>
 </html>
