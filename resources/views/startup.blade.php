@@ -18,7 +18,9 @@
 </div>
 <script type="text/javascript">
     $(document).ready(function() {
-        $('#searchInput').focus();
+        setTimeout(() => {
+            $('#searchInput').focus();
+        }, "1000");
     })
 
     $('#submitSearch').on('click', function() {
