@@ -19,15 +19,15 @@ nav {
 }
 
 .nav-item :hover, .nav-item.active:hover {
-    color: $brand-primary-text-emphasis !important;
-    background-color: lighten($brand-primary, 10%) !important;
+    color: $text-color !important;
+    background-color: $hover-bg !important;
 }
 
 .nav-item.dropdown :hover, .nav-item.dropdown.active:hover {
         background-color: $background-color !important;
         color: $text-color !important;
         .dropdown-item:hover {
-            color: $brand-primary-text-emphasis !important;
-            background-color: lighten($brand-primary, 10%) !important;
+            color: $text-color !important;
+            background-color: $hover-bg !important;
         }
 }
