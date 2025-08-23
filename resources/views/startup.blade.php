@@ -20,7 +20,7 @@
     $(document).ready(function() {
         setTimeout(() => {
             $('#searchInput').focus();
-        }, "1000");
+        }, "500");
     })
 
     $('#submitSearch').on('click', function() {
