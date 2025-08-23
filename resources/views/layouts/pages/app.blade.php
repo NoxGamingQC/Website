@@ -1,5 +1,5 @@
 <!doctype html>
-<html data-bs-theme="{{Auth::check() ? (is_null(Auth::user()->theme) ? 'light' : Auth::user()->theme) : 'light'}}" lang="{{ app()->getLocale() }}" style="overflow-x:hidden">
+<html data-bs-theme="{{!is_null(request('theme')) ? request('theme') : (Auth::check() ? (is_null(Auth::user()->theme) ? 'light' : Auth::user()->theme) : 'light')}}" lang="{{ app()->getLocale() }}" style="overflow-x:hidden">
     <head>
         <meta name="google-site-verification" content="D30gPHSCahf2lVeDo0Ndgc8vI1cQvv8d1gXIZa3B2ds" />
         <meta name="facebook-domain-verification" content="uki484ngemqhks0g9endzi9hb1nobp" />
