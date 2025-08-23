@@ -52,6 +52,7 @@ class LoginController extends Controller
         }
         return view("auth.login")->with([
             'header' => false,
+            'currentPage' => 'login'
         ]);
     }  
 

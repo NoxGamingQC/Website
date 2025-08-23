@@ -51,6 +51,7 @@ class RegisterController extends Controller
 
         return view('auth.register')->with([
             'header' => false,
+            'currentPage' => 'register'
         ]);
     }
 

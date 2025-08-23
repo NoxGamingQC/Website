@@ -9,10 +9,10 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <ul class="nav nav-pills justify-content-start">
             <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="/"><i class="fa fa-home" aria-hidden="true"></i> {{trans('navigation.welcome')}}</a>
+                <a class="nav-link {{$currentPage == 'home' ? 'active' : ''}}" href="/"><i class="fa fa-home" aria-hidden="true"></i> {{trans('navigation.welcome')}}</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="/{{app()->getLocale()}}/projects"><i class="fa fa-code" aria-hidden="true"></i> {{trans('navigation.projects')}}</a>
+                <a class="nav-link {{$currentPage == 'projects' ? 'active' : ''}}"  href="/{{app()->getLocale()}}/projects"><i class="fa fa-code" aria-hidden="true"></i> {{trans('navigation.projects')}}</a>
             </li>
             <li class="nav-item dropdown" hidden>
                 <a class="nav-link dropdown-toggle disabled" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-disabled="true"><i class="fa fa-video-camera" aria-hidden="true"></i> {{trans('navigation.content')}}</a>
@@ -35,9 +35,9 @@
                     </li>
                 @endif
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-disabled="true"><i class="fa fa-user" aria-hidden="true"></i> {{trans('navigation.tools')}}</a>
+                    <a class="nav-link dropdown-toggle {{isset($currentTab) ? ($currentTab == 'tools' ? 'active' : '') : ''}}" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-disabled="true"><i class="fa fa-user" aria-hidden="true"></i> {{trans('navigation.tools')}}</a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="/{{app()->getLocale()}}/tools/mensual_budget"><i class="fa fa-line-chart" aria-hidden="true"></i> {{trans('navigation.mensual_budget')}}</a></li>
+                        <li><a class="dropdown-item {{$currentPage == 'mensual-budget' ? 'active' : ''}}" href="/{{app()->getLocale()}}/tools/mensual_budget"><i class="fa fa-line-chart" aria-hidden="true"></i> {{trans('navigation.mensual_budget')}}</a></li>
                     </ul>
                 </li>
             @endauth
@@ -45,17 +45,17 @@
         <ul class="nav nav-pills ms-auto justify-content-end">
             @guest
                 <li class="nav-item">
-                    <a class="nav-link" href="/{{app()->getLocale()}}/login"><i class="fa fa-sign-in" aria-hidden="true"></i> {{trans('navigation.login')}}</a>
+                    <a class="nav-link {{$currentPage == 'login' ? 'active' : ''}}" href="/{{app()->getLocale()}}/login"><i class="fa fa-sign-in" aria-hidden="true"></i> {{trans('navigation.login')}}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/{{app()->getLocale()}}/register"><i class="fa fa-user-plus" aria-hidden="true"></i> {{trans('navigation.register')}}</a>
+                    <a class="nav-link {{$currentPage == 'register' ? 'active' : ''}}" href="/{{app()->getLocale()}}/register"><i class="fa fa-user-plus" aria-hidden="true"></i> {{trans('navigation.register')}}</a>
                 </li>
             @endguest
             @auth
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-disabled="true"><img class="rounded-circle" src="{{Auth::user()->avatar_url}}" width="25px" height="25px"> {{Auth::user()->name}}</a>
+                    <a class="nav-link dropdown-toggle {{$currentTab == 'user' ? 'active' : ''}}" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-disabled="true"><img class="rounded-circle" src="{{Auth::user()->avatar_url}}" width="25px" height="25px"> {{Auth::user()->name}}</a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="/{{app()->getLocale()}}/user/{{strtolower(Auth::user()->name)}}"><i class="fa fa-user" aria-hidden="true"></i> {{trans('navigation.my_profile')}}</a></li>
+                        <li><a class="dropdown-item {{$currentPage == 'my-profile' ? 'active' : ''}}" href="/{{app()->getLocale()}}/user/{{strtolower(Auth::user()->name)}}"><i class="fa fa-user" aria-hidden="true"></i> {{trans('navigation.my_profile')}}</a></li>
                         <li><a class="dropdown-item" href="/logout"><i class="fa fa-sign-out" aria-hidden="true"></i> {{trans('navigation.logout')}}</a></li>
                     </ul>
                 </li>

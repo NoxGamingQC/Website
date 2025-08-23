@@ -146,7 +146,7 @@ Route::middleware(['cors'])->group(function () {
             });
 
             Route::get('/home', function () {
-                return view('view.welcome');
+                return view('view.welcome')->with(['currentPage' => "home"]);
             });
 
             /*
