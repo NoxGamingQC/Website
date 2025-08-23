@@ -10,7 +10,7 @@
             </h2>
             
             <div class="input-group mb-3">
-                <input id="searchInput" type="search" inputmode="search" class="form-control form-control-lg" placeholder="{{trans('startup.search_placeholder')}}" style="box-shadow: 0 0 0 0.25rem transparent" />
+                <input id="searchInput" type="search" inputmode="search" class="form-control form-control-lg" placeholder="{{trans('startup.search_placeholder')}}" style="box-shadow: 0 0 0 0.25rem transparent" autofocus />
                 <button id="submitSearch" class="btn btn-primary"><i class="fa fa-search" aria-hidden="true"></i> </button>
             </div>
         </div>
@@ -18,10 +18,8 @@
 </div>
 <script type="text/javascript">
     $(document).ready(function() {
-        setTimeout(() => {
-            $('#searchInput').trigger('focus');
-        }, "500");
-    })
+        $('#searchInput').trigger('focus');
+    });
 
     $('#submitSearch').on('click', function() {
         submitSearch();
