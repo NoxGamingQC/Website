@@ -184,6 +184,7 @@ Route::middleware(['cors'])->group(function () {
 
 
             Route::get('tools/mensual_budget', 'Tools\BudgetController@index');
+            Route::get('tools/demo_unit', 'Tools\TechnologyController@demounit');
 
             /*
               
