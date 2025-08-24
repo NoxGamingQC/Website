@@ -10,7 +10,7 @@
             </h2>
             
             <div class="input-group mb-3">
-                <input id="searchInput" type="search" inputmode="search" class="form-control form-control-lg" placeholder="{{trans('startup.search_placeholder')}}" style="box-shadow: 0 0 0 0.25rem transparent" autofocus />
+                <input id="searchInput" type="search" inputmode="search" class="form-control form-control-lg" style="box-shadow: 0 0 0 0.25rem transparent" autofocus />
                 <button id="submitSearch" class="btn btn-primary"><i class="fa fa-search" aria-hidden="true"></i> </button>
             </div>
         </div>
@@ -18,6 +18,15 @@
 </div>
 <script type="text/javascript">
     $(document).ready(function() {
+        var urlParams = new URLSearchParams(window.location.search);
+        var searchEngine = urlParams.get('engine');
+        if(searchEngine == 'bing') {
+            $('#searchInput').attr('placeholder', '{{trans('startup.bing_search_placeholder')}}')
+        } else if(searchEngine == 'google') {
+            $('#searchInput').attr('placeholder', '{{trans('startup.google_search_placeholder')}}')
+        } else {
+            $('#searchInput').attr('placeholder', '{{trans('startup.default_search_placeholder')}}')
+        }
         $('#searchInput').trigger('focus');
     });
 
@@ -38,7 +47,18 @@
         if(isValidHttpUrl(searchString)) {
             window.location.href = searchString;
         } else {
-            window.location.href = ('https://www.google.com/search?q=' + searchString);
+            var urlParams = new URLSearchParams(window.location.search);
+            var searchEngine = urlParams.get('engine');
+            if(searchEngine == 'bing') {
+                window.location.href = ('https://www.bing.com/search?q=' + searchString);
+                $('#searchInput').attr('placeholder', '{{trans('startup.bing_search_placeholder')}}')
+            } else if(searchEngine == 'google') {
+                window.location.href = ('https://www.google.com/search?q=' + searchString);
+                $('#searchInput').attr('placeholder', '{{trans('startup.google_search_placeholder')}}')
+            } else {
+                window.location.href = ('https://www.google.com/search?q=' + searchString);
+                $('#searchInput').attr('placeholder', '{{trans('startup.default_search_placeholder')}}')
+            }
         }
     }
 
