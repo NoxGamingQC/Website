@@ -75,7 +75,7 @@ Route::middleware(['cors'])->group(function () {
 
 
         Route::get('/startup', function() {
-            return view('startup');
+            return view('startup')->with(['currentPage' => 'startup']);
         });
 
         if (env('APP_ENV') !== 'production') {
