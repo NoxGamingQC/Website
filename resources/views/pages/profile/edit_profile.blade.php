@@ -211,7 +211,7 @@
                 </div>
             </div>
             <div class="pull-right">
-                <input type="button" class="btn btn-success" value="{{trans('general.save')}}" />
+                <input type="button" class="btn btn-success disabled" value="{{trans('general.save')}}" disabled />
             </div>
         </div>
         <div class="col-md-1"></div>
