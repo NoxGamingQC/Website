@@ -33,8 +33,6 @@ Route::get('/user/{id}', function ($id) {
     return redirect()->to('/' . app()->getLocale() . '/user/' . $id);
 });
 
-Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
-
 // Miscellaneous
 Route::get('/discord', function () {
     return redirect()->to('https://discord.com/invite/PryKE2Xvrh');
@@ -52,6 +50,7 @@ Route::group([
     'middleware' => 'setlocale'
 ], function () {
     Auth::routes();
+    Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
     Route::get('/', function () {
         return redirect(app()->getLocale() . '/home');

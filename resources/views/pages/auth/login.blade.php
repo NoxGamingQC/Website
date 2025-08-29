@@ -3,7 +3,8 @@
 @section('content')
 
     <div class="container">
-        <form class="form-horizontal" method="POST" action="{{ route('login', app()->getLocale()) }}">
+        <form class="form-horizontal">
+        <input type="hidden" id="previousPath" value="{{$previousPath}}">
             <div class="row">
                 <div class="col-12">
                     <br />
@@ -16,6 +17,9 @@
                         </div>
                         <div class="col-9">
                             {{ csrf_field() }}
+                            <div id="invalidCredentials" class="alert alert-danger hidden" role="alert" hidden>
+                                <span style="color:#252525">{{trans('auth.failed')}}</span>
+                            </div>
                             <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                                 <label for="email" class="control-label">{{trans('general.email_address')}}</label>
                                     <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
@@ -54,7 +58,7 @@
                     </a>
                 </div>
                 <div class="col-3 text-right">
-                    <button type="submit" class="btn btn-primary">
+                    <button id="submit" type="button" class="btn btn-primary">
                         {{trans('general.login')}}
                     </button>
                 </div>
@@ -62,4 +66,38 @@
             <br />
         </form>
     </div>
+    <script>
+        $('#submit').on('click', function() {
+            $.ajax({
+                url:  '/' + $('html').attr('lang') + "/login",
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                method: 'POST',
+                data: {
+                    email: $('#email').val(),
+                    password: $('#password').val(),
+                },
+                beforeSend: function() {
+                    $('#submit').html('<i class="fa fa-spinner fa-pulse fa-fw"></i>');
+                    $('#submit').addClass('disabled');
+                    $('#submit').attr('disabled', true);
+                },
+                success: function () {
+                    window.location.href = $('#previousPath').val()
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    if(xhr.responseJSON.message == 'invalid-credentials'); {
+                        $('#invalidCredentials').removeClass('hidden');
+                        $('#invalidCredentials').attr('hidden', false);
+                    }
+                },
+                complete: function() {
+                    $('#submit').html('{{trans('general.login')}}');
+                    $('#submit').removeClass('disabled');
+                    $('#submit').attr('disabled', false);
+                }
+            });
+        });
+    </script>
 @endsection

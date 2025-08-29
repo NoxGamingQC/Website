@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\URL;
 
 class SetLocale
 {
@@ -20,6 +21,7 @@ class SetLocale
         if(!$request->user()) {
             App::setLocale($request->segment(1));
             Session::put('locale', $request->segment(1));
+            URL::defaults(['locale' => $request->segment(1)]);
             return $next($request);
         }
  
@@ -27,6 +29,7 @@ class SetLocale
  
         if (isset($language)) {
             app()->setLocale($language);
+            URL::defaults(['locale' => $language]);
         }
  
         return $next($request);

@@ -7,9 +7,11 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\RedirectResponse;
 use Webklex\PHPIMAP\ClientManager;
 use Webklex\PHPIMAP\Client;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\App;
 
 class LoginController extends Controller
 {
@@ -25,7 +27,6 @@ class LoginController extends Controller
     */
 
     use AuthenticatesUsers;
-
     /**
      * Where to redirect users after login.
      *
@@ -41,7 +42,7 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
-        $this->redirectTo = url()->previous();
+        $this->redirectTo = '/' . app()->getLocale() . '/home';
     }
 
     public function showLoginForm()
@@ -52,7 +53,8 @@ class LoginController extends Controller
         }
         return view("pages.auth.login")->with([
             'header' => false,
-            'currentPage' => 'login'
+            'currentPage' => 'login',
+            'previousPath' => url()->previous()
         ]);
     }  
 
@@ -76,6 +78,22 @@ class LoginController extends Controller
             return redirect(session()->get('url.intended'));
         }
 
-        return redirect("login")->withSuccess('Oppes! You have entered invalid credentials');
+        abort(403, 'invalid-credentials');
+    }
+
+    /**
+    * Log the user out of the application.
+    */
+    public function logout(Request $request): RedirectResponse
+    {
+        $locale = app()->getLocale();
+
+        Auth::logout();
+    
+        $request->session()->invalidate();
+    
+        $request->session()->regenerateToken();
+    
+        return redirect('/' . $locale . '/home');
     }
 }
