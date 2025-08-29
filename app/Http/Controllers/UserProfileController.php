@@ -6,12 +6,11 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Model\DiscordUsers;
-use Carbon\Carbon;
-use App\Model\PageLists;
-use cebe\markdown;
-use App\Model\Points;
 use App\Model\API\ApiKey;
+use App\Model\Points;
 use App\Model\User;
+use Carbon\Carbon;
+use cebe\markdown;
 
 class UserProfileController extends Controller
 {
