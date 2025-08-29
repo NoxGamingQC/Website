@@ -17,4 +17,3 @@
         </div>
     </div>
 </div>
-@include('layouts.components.footer')

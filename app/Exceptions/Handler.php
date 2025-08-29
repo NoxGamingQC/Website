@@ -4,7 +4,10 @@ namespace App\Exceptions;
 
 use Throwable;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 use Illuminate\Support\Facades\Mail;
+
 
 class Handler extends ExceptionHandler
 {
@@ -50,7 +53,7 @@ class Handler extends ExceptionHandler
     public function render($request, Throwable $exception)
     {
         if ($request->is('api/*')) {
-            if($exception) {
+            if($exception instanceof HttpExceptionInterface) {
                 if(method_exists($exception, 'getStatusCode')) {
                     if ($exception->getStatusCode() == 401) {
                         return response()->json([
@@ -87,19 +90,19 @@ class Handler extends ExceptionHandler
             }
         }
         if ($exception instanceof HttpException) {
-            if ($exception->statusCode() == 401) {
+            if ($exception->getStatusCode() == 401) {
                 return response()->view('errors.401', [], 401);
             }
-            if ($exception->statusCode() == 403) {
+            if ($exception->getStatusCode() == 403) {
                 return response()->view('errors.403', [], 403);
             }
-            if ($exception->statusCode() == 404) {
+            if ($exception->getStatusCode() == 404) {
                 return response()->view('errors.404', [], 404);
             }
-            if ($exception->statusCode() == 405) {
+            if ($exception->getStatusCode() == 405) {
                 return response()->view('errors.405', [], 405);
             }
-            if ($exception->statusCode() == 500) {
+            if ($exception->getStatusCode() == 500) {
                 $text = 'Hmm, something went wrong on the website. You should check out the logs.';
                 Mail::send('emails.text_message', ['text' => $text], function($message) {
                     $message->from('noreply@noxgamingqc.ca', 'NoxGamingQC');

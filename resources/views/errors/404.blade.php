@@ -2,7 +2,7 @@
 @section('title', 'ERROR 404')
 @section('content')
 
-<div class="container my-5">
+<div class="container py-5">
     <div class="row text-center">
         <div class="col-12 py-5">
             <img src="/img/logo.png" width="300">
@@ -17,4 +17,3 @@
         </div>
     </div>
 </div>
-@include('layouts.components.footer')
