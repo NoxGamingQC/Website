@@ -2,17 +2,13 @@
   
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
-use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Http\RedirectResponse;
-use Webklex\PHPIMAP\ClientManager;
-use Webklex\PHPIMAP\Client;
 use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\App;
-use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Http\RedirectResponse;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\URL;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -55,7 +51,7 @@ class LoginController extends Controller
         return view("pages.auth.login")->with([
             'header' => false,
             'currentPage' => 'login',
-            'previousPath' => url()->previousPath()
+            'previousPath' => URL::previousPath()
         ]);
     }  
 
