@@ -31,7 +31,7 @@
             @auth
                 @if(Auth::user()->has_premium)
                     <li class="nav-item">
-                        <a class="nav-link" href="/{{app()->getLocale()}}/cookbook"><i class="fa fa-cutlery" aria-hidden="true"></i> {{trans('navigation.cookbook')}}</a>
+                        <a class="nav-link disabled" href="/{{app()->getLocale()}}/cookbook"><i class="fa fa-cutlery" aria-hidden="true" disabled></i> {{trans('navigation.cookbook')}}</a>
                     </li>
                 @endif
                 <li class="nav-item dropdown">
