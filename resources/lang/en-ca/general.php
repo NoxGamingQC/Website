@@ -5,7 +5,8 @@ return [
     'visit_source' => "Sources",
     'github_pages' => "GitHub pages",
     'in_development' => "In development",
-    'website' => "Site web",
+    'website' => "Website",
+    'about' => "About me",
 
     //auth
     'email_address' => "Email",

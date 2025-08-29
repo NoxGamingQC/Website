@@ -55,12 +55,23 @@
                 @endif
             @endauth
             @if($aboutMe)
-                <div class="col-md-12 section markdown" class="text-right">
-                    {!! $aboutMe !!}
+                <div class="col-md-12 section markdown" class="text-right" style="margin-bottom:5%;">
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="display-6">{{trans('general.about_me')}}</span>
+                        </div>
+                        <div class="row g-0">
+                            <div class="col-md-12">
+                                <div class="card-body">
+                                    {!! $aboutMe !!}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             @endif
             <div class="section">
-                <div class="row">
+                <div class="row" style="margin-bottom:5%;">
                     @if($xbox_profile)
                         <div class="col-md-6">
                             <div class="card">
