@@ -1,4 +1,4 @@
-@extends('layouts.pages.app')
+@extends('layouts.app')
 @section('title', trans('tools.mensual_budget'))
 @section('slogan', trans('tools.mensual_budget.description'))
 @section('content')

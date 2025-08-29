@@ -1,4 +1,4 @@
-@extends('layouts.pages.maintenance')
+@extends('layouts.app')
 @section('title', 'ERROR 503')
 @section('content')
 
@@ -24,7 +24,6 @@
 </div>
 <br />
 <br />
-@include('layouts.components.footer')
 @if(app('request')->input('app_type') == 'mobile_app')
 <script>
 $('#reloadPage').on('click', function() {
