@@ -70,4 +70,10 @@ return [
     'display' => "Affichage",
     'color' => "Couleur du profil",
     'go_back' => "Retour au profil",
+    'not_specified' => "Non spécifié",
+    'system' => "Système",
+    'dark' => "Sombre",
+    'light' => "Clair",
+    'fr_ca' => "Français (French)",
+    'en_ca' => "English (Anglais)"
 ];

@@ -70,4 +70,10 @@ return [
     'display' => "Display",
     'color' => "Profil color",
     'go_back' => "Go back to your profile",
+    'not_specified' => "Not specified",
+    'system' => "System",
+    'dark' => "Dark",
+    'light' => "Light",
+    'fr_ca' => "Français (French)",
+    'en_ca' => "English (Anglais)"
 ];

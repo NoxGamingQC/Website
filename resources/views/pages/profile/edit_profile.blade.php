@@ -208,12 +208,24 @@
                                     <div class="col-6">
                                         <div class="input-group">
                                             <span class="input-group-text">{{trans('profile.theme')}}</span>
+                                            <select id="language" class="form-select" aria-label="{{trans('profile.theme')}}">
+                                                <option value="en-ca" {{$user->preferred_language === 'en-ca' ? 'selected' : ''}}>{{trans('profile.en_ca')}}</option>
+                                                <option value="fr-ca" {{$user->preferred_language === 'fr-ca' ? 'selected' : ''}}>{{trans('profile.fr_ca')}}</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="input-group">
+                                            <span class="input-group-text">{{trans('profile.theme')}}</span>
                                             <select id="theme" class="form-select" aria-label="{{trans('profile.theme')}}">
                                                 <option value="" {{$user->theme === null ? 'selected' : ''}}>{{trans('profile.system')}}</option>
                                                 <option value="light" {{$user->theme === 'light' ? 'selected' : ''}}>{{trans('profile.light')}}</option>
                                                 <option value="dark" {{$user->theme === 'dark' ? 'selected' : ''}}>{{trans('profile.dark')}}</option>
                                             </select>
                                         </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <br />
                                     </div>
                                     <div class="col-6">
                                         <div class="input-group">
@@ -261,6 +273,7 @@ $('#submit').on('click', function() {
                 'show_birthdate': $('#showBirthdate').is(':checked'),
                 'show_age': $('#showAge').is(':checked'),
                 'show_gender': $('#showGender').is(':checked'),
+                'language': $('#language').val()
             },
             beforeSend: function() {
                 $('#submit').html('<i class="fa fa-spinner fa-pulse fa-fw"></i>');
