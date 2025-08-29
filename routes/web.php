@@ -63,6 +63,7 @@ Route::group([
     Route::get('projects', 'ProjectsController@index');
     Route::get('/user/{id}', 'UserProfileController@index');
     Route::get('/user/me/edit', 'UserProfileController@edit');
+    Route::post('/user/me/save', 'UserProfileController@save');
 
     // Tools routes
     Route::get('tools/mensual_budget', 'Tools\BudgetController@index');

@@ -88,7 +88,7 @@
                                     <div class="col-6">
                                         <div class="input-group">
                                             <span class="input-group-text">{{trans('profile.email')}}</span>
-                                            <input type="text" class="form-control disabled" id="email" value="{{$user->email}}" disabled>
+                                            <input type="text" class="form-control {{$user->is_verified ? 'text-success' : 'text-danger'}} disabled" id="email" value="{{$user->email}}" disabled>
                                         </div>
                                     </div>
                                     <div class="col-12">
@@ -112,7 +112,7 @@
                                     <div class="col-6">
                                         <div class="input-group">
                                             <span class="input-group-text">{{trans('profile.birthdate')}}</span>
-                                            <input type="text" class="form-control" id="birthdate" value="{{$user->birthdate}}">
+                                            <input type="text" class="form-control" id="birthdate" placeholder="YYYY-MM-DD" value="{{$user->birthdate}}">
                                         </div>
                                     </div>
                                     <div class="col-6">
@@ -127,7 +127,11 @@
                                     <div class="col-6">
                                         <div class="input-group">
                                             <span class="input-group-text">{{trans('profile.gender')}}</span>
-                                            <input type="text" class="form-control" id="gender" value="{{$user->gender}}">
+                                            <select id="gender" class="form-select" aria-label="{{trans('profile.gender')}}">
+                                                <option value="" {{$user->gender === null ? 'selected' : ''}}>{{trans('profile.not_specified')}}</option>
+                                                <option value="1" {{$user->gender === 1 ? 'selected' : ''}}>{{trans('profile.male')}}</option>
+                                                <option value="2" {{$user->gender === 2 ? 'selected' : ''}}>{{trans('profile.female')}}</option>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="col-6">
@@ -150,7 +154,7 @@
                     <div class="row g-0">
                         <div class="col-md-12">
                             <div class="card-body">
-                                <textarea class="form-control" rows="4">{{$user->about_me}}</textarea>
+                                <textarea id="aboutMe" class="form-control" rows="4">{{$user->about_me}}</textarea>
                             </div>
                         </div>
                     </div>
@@ -204,7 +208,11 @@
                                     <div class="col-6">
                                         <div class="input-group">
                                             <span class="input-group-text">{{trans('profile.theme')}}</span>
-                                            <input type="text" class="form-control" id="theme" value="{{$user->theme}}">
+                                            <select id="theme" class="form-select" aria-label="{{trans('profile.theme')}}">
+                                                <option value="" {{$user->theme === null ? 'selected' : ''}}>{{trans('profile.system')}}</option>
+                                                <option value="light" {{$user->theme === 'light' ? 'selected' : ''}}>{{trans('profile.light')}}</option>
+                                                <option value="dark" {{$user->theme === 'dark' ? 'selected' : ''}}>{{trans('profile.dark')}}</option>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="col-6">
@@ -220,10 +228,57 @@
                 </div>
             </div>
             <div class="pull-right">
-                <input type="button" class="btn btn-success" value="{{trans('general.save')}}" />
+                <button id="submit" type="button" class="btn btn-success">{{trans('general.save')}}</button>
             </div>
         </div>
         <div class="col-md-1"></div>
     </div>
 </div>
+<script>
+$('#submit').on('click', function() {
+    $.ajax({
+            url:  '/' + $('html').attr('lang') + "/user/me/save",
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            method: 'POST',
+            data: {
+                'username': $('#username').val(),
+                'firstname': $('#firstname').val(),
+                'lastname': $('#lastname').val(),
+                'birthdate': $('#birthdate').val(),
+                'country': $('#country').val(),
+                'gender': $('#gender').val(),
+                'pronouns': $('#pronouns').val(),
+                'about_me': $('#aboutMe').val(),
+                'xbox_gamertag': $('#xbox').val(),
+                'minecraft_uuid': $('#minecraft').val(),
+                'roblox': $('#roblox').val(),
+                'theme': $('#theme').val(),
+                'color': $('#color').val(),
+                'show_firstname': $('#showFirstname').is(':checked'),
+                'show_lastname': $('#showLastname').is(':checked'),
+                'show_birthdate': $('#showBirthdate').is(':checked'),
+                'show_age': $('#showAge').is(':checked'),
+                'show_gender': $('#showGender').is(':checked'),
+            },
+            beforeSend: function() {
+                $('#submit').html('<i class="fa fa-spinner fa-pulse fa-fw"></i>');
+                $('#submit').addClass('disabled');
+                $('#submit').attr('disabled', true);
+            },
+            success: function () {
+                window.location.href = '/{{app()->getLocale()}}/user/{{$user->id}}';
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                console.log('Save failed. An error occured.');
+            },
+            complete: function() {
+                $('#submit').html('{{trans('general.save')}}');
+                $('#submit').removeClass('disabled');
+                $('#submit').attr('disabled', false);
+            }
+    });
+});
+</script>
 @endsection

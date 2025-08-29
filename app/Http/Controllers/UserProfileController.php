@@ -169,12 +169,14 @@ class UserProfileController extends Controller
             $user->minecraft_uuid = $request->minecraft_uuid;
             $user->roblox = $request->roblox;
             $user->theme = $request->theme;
-            //$user->color = $request->color;
+            $user->color = $request->color;
             $user->show_firstname = $request->show_firstname;
             $user->show_lastname = $request->show_lastname;
             $user->show_birthdate = $request->show_birthdate;
             $user->show_age = $request->show_age;
             $user->show_gender = $request->show_gender;
+            $user->save();
+            return 200;
         }
         abort(403);
     }
