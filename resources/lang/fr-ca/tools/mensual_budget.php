@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'mensual_budget' => "Mensual budget"
+    'mensual_budget' => "Budget mensual"
 ];
