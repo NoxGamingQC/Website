@@ -43,6 +43,13 @@
             @endauth
         </ul>
         <ul class="nav nav-pills ms-auto justify-content-end">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-disabled="true">{{trans('navigation.language')}}</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/language/set/fr-ca"><i class="fa fa-sign-out" aria-hidden="true"></i> {{trans('navigation.french')}}</a></li>
+                    <li><a class="dropdown-item" href="/language/set/en-ca"><i class="fa fa-sign-out" aria-hidden="true"></i> {{trans('navigation.english')}}</a></li>
+                </ul>
+            </li>
             @guest
                 <li class="nav-item">
                     <a class="nav-link {{isset($currentPage) ? ($currentPage == 'login' ? 'active' : '') : ''}}" href="/{{app()->getLocale()}}/login"><i class="fa fa-sign-in" aria-hidden="true"></i> {{trans('navigation.login')}}</a>
