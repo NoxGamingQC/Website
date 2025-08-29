@@ -28,6 +28,7 @@
                             <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                                 <label for="password" class="control-label">{{trans('general.password')}}</label>
                                 <input id="password" type="password" class="form-control" name="password" required>
+                                <span class="text-body-secondary">{{trans('auth.credentials_case_sensitive')}}</span>
                             </div>
                         </div>
                     </div>
@@ -55,38 +56,50 @@
             <br />
         </form>
     </div>
-    <script>
-        $('#submit').on('click', function() {
-            $.ajax({
-                url:  '/' + $('html').attr('lang') + "/login",
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                },
-                method: 'POST',
-                data: {
-                    name: $('#name').val(),
-                    password: $('#password').val(),
-                },
-                beforeSend: function() {
-                    $('#submit').html('<i class="fa fa-spinner fa-pulse fa-fw"></i>');
-                    $('#submit').addClass('disabled');
-                    $('#submit').attr('disabled', true);
-                },
-                success: function () {
-                    window.location.href = $('#previousPath').val()
-                },
-                error: function (xhr, ajaxOptions, thrownError) {
-                    if(xhr.responseJSON.message == 'invalid-credentials'); {
-                        $('#invalidCredentials').removeClass('hidden');
-                        $('#invalidCredentials').attr('hidden', false);
-                    }
-                },
-                complete: function() {
-                    $('#submit').html('{{trans('general.login')}}');
-                    $('#submit').removeClass('disabled');
-                    $('#submit').attr('disabled', false);
+<script>
+    document.onkeydown=function(evt){
+        var keyCode = evt ? (evt.which ? evt.which : evt.keyCode) : event.keyCode;
+        if(keyCode == 13) {
+            submitLogin();
+        }
+    }
+
+    $('#submit').on('click', function() {
+        submitLogin();
+    });
+
+    function submitLogin() {
+        $.ajax({
+            url:  '/' + $('html').attr('lang') + "/login",
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            method: 'POST',
+            data: {
+                name: $('#name').val(),
+                password: $('#password').val(),
+                previousPath: $('#previousPath').val()
+            },
+            beforeSend: function() {
+                $('#submit').html('<i class="fa fa-spinner fa-pulse fa-fw"></i>');
+                $('#submit').addClass('disabled');
+                $('#submit').attr('disabled', true);
+            },
+            success: function (response) {
+                window.location.href = response.redirectTo
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                if(xhr.responseJSON.message == 'invalid-credentials'); {
+                    $('#invalidCredentials').removeClass('hidden');
+                    $('#invalidCredentials').attr('hidden', false);
                 }
-            });
+            },
+            complete: function() {
+                $('#submit').html('{{trans('general.login')}}');
+                $('#submit').removeClass('disabled');
+                $('#submit').attr('disabled', false);
+            }
         });
-    </script>
+    }
+</script>
 @endsection

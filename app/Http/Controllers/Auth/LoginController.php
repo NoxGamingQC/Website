@@ -55,7 +55,7 @@ class LoginController extends Controller
         return view("pages.auth.login")->with([
             'header' => false,
             'currentPage' => 'login',
-            'previousPath' => url()->previous()
+            'previousPath' => url()->previousPath()
         ]);
     }  
 
@@ -70,19 +70,26 @@ class LoginController extends Controller
         
         Session::put('email_client_password', $request->password);
         Session::save();
+        $previousPath = explode('/', $request->previousPath);
+        unset($previousPath[0]);
+        unset($previousPath[1]);
 
         if (Auth::attempt([
             'email' => $request->name,
             'password' => $request->password,
         ])) {
-            return redirect(session()->get('url.intended'));
+            return response()->json([
+                'redirectTo' => '/' . Auth::user()->preferred_language . '/' . implode('/', $previousPath)
+            ]);
         }
 
         if (Auth::attempt([
             'name' => $request->name,
             'password' => $request->password,
         ])) {
-            return redirect(session()->get('url.intended'));
+            return response()->json([
+                'redirectTo' => '/' . Auth::user()->preferred_language . '/' . implode('/', $previousPath)
+            ]);
         }
 
         abort(403, 'invalid-credentials');
