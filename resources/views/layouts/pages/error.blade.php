@@ -26,12 +26,7 @@
     <title>{{env('APP_NAME')}} - @yield('title') @yield('name')</title>
     @endif
     <link rel="icon" href="/img/logo.png" type="image/png">
-    @auth
-        <link href="{{mix('css/system.css')}}" rel="stylesheet" type="text/css">
-    @endauth
-    @guest
-        <link href="{{mix('css/system.css')}}" rel="stylesheet" type="text/css">
-    @endguest
+        <link href="{{mix('css/app.css')}}" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
     <script src="{{mix('js/app.js')}}"></script>
 </head>

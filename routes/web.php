@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,10 +15,80 @@ use Illuminate\Http\Request;
 |
 */
 
+
+// Direct links
+
+Route::get('/', function () {
+    return redirect(app()->getLocale() . '/home');
+});
+
+Route::get('/home', function () {
+    return redirect(app()->getLocale() . '/home');
+});
+
+Route::get('language/set/{language}', 'LanguageController@index');
+
+//Profile routes
+Route::get('/user/{id}', function ($id) {
+    return redirect()->to('/' . app()->getLocale() . '/user/' . $id);
+});
+
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
+// Miscellaneous
+Route::get('/discord', function () {
+    return redirect()->to('https://discord.com/invite/PryKE2Xvrh');
+});
+
 Route::get('/startup', function() {
     return redirect()->to('/' . app()->getLocale() . '/startup');
 });
 
+
+// Route that utilize the language
+Route::group([
+    'prefix' => '{locale}',
+    'where' => ['locale' => '[a-z]{2}-[a-z]{2}'],
+    'middleware' => 'setlocale'
+], function () {
+    Auth::routes();
+
+    Route::get('/', function () {
+        return redirect(app()->getLocale() . '/home');
+    });
+
+    Route::get('/home', function () {
+        return view('view.welcome')->with(['currentPage' => "home"]);
+    });
+
+    Route::get('projects', 'ProjectsController@index');
+    Route::get('/user/{id}', 'UserProfileController@index');
+
+    // Tools routes
+    Route::get('tools/mensual_budget', 'Tools\BudgetController@index');
+    Route::get('tools/demo_unit', 'Tools\TechnologyController@demounit');
+
+    // Miscellaneous
+    Route::get('/startup', function() {
+        return view('startup')->with(['currentPage' => 'startup']);
+    });
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Old routes to check
+/* 
 Route::get('/pos/{slug}', 'POSController@index');
 Route::post('/pos/validate/{pos}/{pin}/{option}', 'POSController@validateCashier');
 Route::get('/pos/{slug}/menu/{cashier_id}', 'POSController@menu');
@@ -62,10 +134,6 @@ Route::middleware(['cors'])->group(function () {
     Route::post('/recipe/add', 'RecipeController@saveRecipe');
     Route::post('/recipe/edit', 'RecipeController@saveEditedRecipe');
 
-    Route::get('/user/{id}', function ($id) {
-        return redirect()->to('/' . app()->getLocale() . '/user/' . $id);
-    });
-
     Route::group([
         'prefix' => '{locale}',
         'where' => ['locale' => '[a-z]{2}-[a-z]{2}'],
@@ -73,27 +141,11 @@ Route::middleware(['cors'])->group(function () {
     ], function () {
         Auth::routes();
 
-
-        Route::get('/startup', function() {
-            return view('startup')->with(['currentPage' => 'startup']);
-        });
-
-        if (env('APP_ENV') !== 'production') {
-            Route::get('/maintenance', function () {
-                if(Auth::check()) {
-                    if(Auth::user()->isAdmin || Auth::user()->isModerator || Auth::user()->isDev) {
-                        return redirect(app()->getLocale() . '/home');
-                    }
-                }
-                return view('maintenance');
-            });
-        }
+        
     });
     
     // No Languages routes
-    Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
-
-    Route::get('language/set/{language}', 'LanguageController@index');
+   
     Route::post('/management/settings', 'SettingsController@post');
     Route::post('/profile/update_state', 'UserProfileController@updateState');
 
@@ -102,9 +154,7 @@ Route::middleware(['cors'])->group(function () {
         return redirect()->to('https://guilded.gg/ngst');
     });
 
-    Route::get('/discord', function () {
-        return redirect()->to('https://discord.com/invite/PryKE2Xvrh');
-    });
+    
 
     Route::get('/pst/discord', function () {
         return redirect()->to('https://discord.com/invite/SAXsDwaR');
@@ -118,10 +168,6 @@ Route::middleware(['cors'])->group(function () {
             'middleware' => 'Development'
     ], function () {
     Route::get('/', function () {
-        return redirect(app()->getLocale() . '/home');
-    });
-
-    Route::get('/home', function () {
         return redirect(app()->getLocale() . '/home');
     });
 
@@ -141,19 +187,13 @@ Route::middleware(['cors'])->group(function () {
         function () {
             //Route that require language
 
-            Route::get('/', function () {
-                return redirect(app()->getLocale() . '/home');
-            });
-
-            Route::get('/home', function () {
-                return view('view.welcome')->with(['currentPage' => "home"]);
-            });
+            
 
             /*
               
                 ABOUT US ROUTES
               
-            */
+            *
             Route::get('about_us/twitch', 'TwitchController@index');
             Route::get('about_us/youtube', 'YouTubeController@index');
 
@@ -169,8 +209,8 @@ Route::middleware(['cors'])->group(function () {
             Route::post('/contact/form', 'ContactController@sendContactUsEmail');
 
             //Projects Routes
-            Route::get('projects', 'ProjectsController@index');
             Route::get('about_us/projects/minecraft', 'Projects\MinecraftController@index');
+            
             //Games Routes
             Route::get('about_us/games', 'GamesListController@index');
             Route::post('/games/add', 'GamesListController@addgame');
@@ -180,17 +220,13 @@ Route::middleware(['cors'])->group(function () {
             Route::post('/console/remove', 'GamesListController@removeconsole');
 
 
-            // Tools routes
-
-
-            Route::get('tools/mensual_budget', 'Tools\BudgetController@index');
-            Route::get('tools/demo_unit', 'Tools\TechnologyController@demounit');
+            
 
             /*
               
                 MISCS ROUTES
               
-            */
+            *
             //Cookbook routes
             Route::get('/cookbook', 'RecipeController@cookbook');
             Route::get('/cookbook/{category}', 'RecipeController@category');
@@ -204,8 +240,7 @@ Route::middleware(['cors'])->group(function () {
               
                 PROFILES ROUTES
               
-            */
-            Route::get('/user/{id}', 'UserProfileController@index');
+            *
             Route::get('/user/me/edit', 'UserProfileController@edit');
 
             Route::get('/noxbot/dashboard', 'NoxBotController@index');
@@ -215,7 +250,7 @@ Route::middleware(['cors'])->group(function () {
               
                 MANAGEMENT ROUTES
               
-            */
+            *
             Route::get('/management/modules', 'ManagementController@getModules');
             Route::get('/management/users', 'ManagementController@getUsers');
             Route::get('/management/activities', 'ManagementController@getBotActivities');
@@ -228,13 +263,13 @@ Route::middleware(['cors'])->group(function () {
               
                 MAILING ROUTES
               
-            */
+            *
             Route::get('/mailbox', 'Mails\MailController@index');
             /*
               
                 OTHER ROUTES
               
-            */
+            *
             Route::get('/stream/commands', 'BotCommandsController@index');
 
             Route::get('/search', 'SearchController@index');
@@ -248,3 +283,4 @@ Route::middleware(['cors'])->group(function () {
         });
     }
 );
+*/
