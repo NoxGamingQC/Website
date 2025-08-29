@@ -6,7 +6,7 @@ return [
     'github_pages' => "GitHub pages",
     'in_development' => "In development",
     'website' => "Website",
-    'about' => "About me",
+    'about_me' => "About me",
 
     //auth
     'email_address' => "Email",
