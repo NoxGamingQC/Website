@@ -17,7 +17,7 @@ return [
     'cookbook' => "Mon livre de recette",
     'tools' => "Outils",
     'mensual_budget' => "Budget mensuel",
-    'my_profile' => "Mon profile",
+    'my_profile' => "Mon profil",
     'preferences' => "Préférences",
     'language' => "Langage",
     'english' => "English (Anglais)",
