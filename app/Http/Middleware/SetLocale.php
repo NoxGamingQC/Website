@@ -3,7 +3,8 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\App;
 
 class SetLocale
 {
@@ -16,10 +17,18 @@ class SetLocale
      */
     public function handle($request, Closure $next)
     {
-        if (!$request->secure() && $request->header('host') != 'localhost:8000') {
-            URL::forceScheme('https');
+        if(!$request->user()) {
+            App::setLocale($request->segment(1));
+            Session::put('locale', $request->segment(1));
+            return $next($request);
         }
-        app()->setLocale($request->segment(1));
+ 
+        $language = $request->user()->preferred_language;
+ 
+        if (isset($language)) {
+            app()->setLocale($language);
+        }
+ 
         return $next($request);
     }
 }

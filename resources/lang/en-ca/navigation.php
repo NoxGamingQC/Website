@@ -18,5 +18,7 @@ return [
     'tools' => "Tools",
     'mensual_budget' => "Mensual budget",
     'my_profile' => "My profile",
-    'preferences' => "Preferences"
+    'preferences' => "Preferences",
+    'language' => "Language",
+    'french' => "Français (French)",
 ];  

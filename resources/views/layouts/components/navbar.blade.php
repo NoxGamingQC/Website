@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top p-0 no-print">
   <div class="container-fluid py-0">
-     <a class="navbar-brand" href="/">
+     <a class="navbar-brand" href="/{{app()->getLocale()}}/home">
         <img src="/img/logo.svg" alt="NoxGamingQC" width="50" height="50">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -9,7 +9,7 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <ul class="nav nav-pills justify-content-start">
             <li class="nav-item">
-                <a class="nav-link {{isset($currentPage) ? ($currentPage == 'home' ? 'active' : '') : ''}}" href="/"><i class="fa fa-home" aria-hidden="true"></i> {{trans('navigation.welcome')}}</a>
+                <a class="nav-link {{isset($currentPage) ? ($currentPage == 'home' ? 'active' : '') : ''}}" href="/{{app()->getLocale()}}/home"><i class="fa fa-home" aria-hidden="true"></i> {{trans('navigation.welcome')}}</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link {{isset($currentPage) ? ($currentPage == 'projects' ? 'active' : '') : ''}}"  href="/{{app()->getLocale()}}/projects"><i class="fa fa-code" aria-hidden="true"></i> {{trans('navigation.projects')}}</a>
@@ -43,13 +43,18 @@
             @endauth
         </ul>
         <ul class="nav nav-pills ms-auto justify-content-end">
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-disabled="true">{{trans('navigation.language')}}</a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="/language/set/fr-ca"><i class="fa fa-sign-out" aria-hidden="true"></i> {{trans('navigation.french')}}</a></li>
-                    <li><a class="dropdown-item" href="/language/set/en-ca"><i class="fa fa-sign-out" aria-hidden="true"></i> {{trans('navigation.english')}}</a></li>
-                </ul>
-            </li>
+            @guest
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-disabled="true">{{trans('navigation.language')}}</a>
+                    <ul class="dropdown-menu">
+                            @if(app()->getLocale() == 'en-ca')
+                                <li><a class="dropdown-item" href="/language/set/fr-ca"><i class="fa fa-sign-out" aria-hidden="true"></i> {{trans('navigation.french')}}</a></li>
+                            @else
+                                <li><a class="dropdown-item" href="/language/set/en-ca"><i class="fa fa-sign-out" aria-hidden="true"></i> {{trans('navigation.english')}}</a></li>
+                            @endif
+                    </ul>
+                </li>
+            @endguest
             @guest
                 <li class="nav-item">
                     <a class="nav-link {{isset($currentPage) ? ($currentPage == 'login' ? 'active' : '') : ''}}" href="/{{app()->getLocale()}}/login"><i class="fa fa-sign-in" aria-hidden="true"></i> {{trans('navigation.login')}}</a>
