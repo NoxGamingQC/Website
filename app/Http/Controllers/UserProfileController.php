@@ -114,7 +114,7 @@ class UserProfileController extends Controller
                 $aboutMeContent = $user->about_me;
             }
         }
-        return view('view.profile.profile', [
+        return view('pages.profile.profile', [
             "id" => $user->id,
             "username" => $user->name,
             "grade" => $grade,
@@ -222,7 +222,7 @@ class UserProfileController extends Controller
                 $aboutMeContent = $user->about_me;
             }
         }
-        return view('view.profile.edit_profile', [
+        return view('pages.profile.edit_profile', [
             "id" => $user->id,
             "username" => $user->name,
             "grade" => $grade,

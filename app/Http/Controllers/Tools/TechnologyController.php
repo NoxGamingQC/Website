@@ -13,7 +13,7 @@ class TechnologyController extends Controller
 {
     public function demounit()
     {
-        return view('view.tools.demo-unit')->with([
+        return view('pages.tools.demo-unit')->with([
             'currentPage' => "demo-unit-budget",
             'currentTab' => 'tools'
         ]);

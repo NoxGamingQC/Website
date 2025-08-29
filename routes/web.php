@@ -58,7 +58,7 @@ Route::group([
     });
 
     Route::get('/home', function () {
-        return view('view.welcome')->with(['currentPage' => "home"]);
+        return view('pages.welcome')->with(['currentPage' => "home"]);
     });
 
     Route::get('projects', 'ProjectsController@index');
@@ -70,7 +70,7 @@ Route::group([
 
     // Miscellaneous
     Route::get('/startup', function() {
-        return view('startup')->with(['currentPage' => 'startup']);
+        return view('pages.startup')->with(['currentPage' => 'startup']);
     });
 
 });

@@ -13,7 +13,7 @@ class BudgetController extends Controller
 {
     public function index()
     {
-        return view('view.tools.mensual_budget')->with([
+        return view('pages.tools.mensual_budget')->with([
             'currentPage' => "mensual-budget",
             'currentTab' => 'tools'
         ]);

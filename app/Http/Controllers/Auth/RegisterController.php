@@ -49,7 +49,7 @@ class RegisterController extends Controller
             session(['url.intended' => url()->previous()]);
         }
 
-        return view('auth.register')->with([
+        return view('pages.auth.register')->with([
             'header' => false,
             'currentPage' => 'register'
         ]);
