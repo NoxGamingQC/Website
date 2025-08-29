@@ -63,4 +63,11 @@ return [
     'gamerscore' => "Gamerscore",
     'xbox_one_rep' => "Xbox reputation",
     'account_tier' => "Account tier",
+    'edit_profile' => "Editing your profile",
+    'personnal_informations' => "Personnal information",
+    'pronouns' => "Pronouns",
+    'gaming_profiles' => "Gaming profiles",
+    'display' => "Display",
+    'color' => "Profil color",
+    'go_back' => "Go back to your profile",
 ];

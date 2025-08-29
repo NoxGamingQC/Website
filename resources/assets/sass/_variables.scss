@@ -28,6 +28,17 @@ $brand-orange: #F28500;
     --bs-hover-bg: #f0f0f0CC;
 }
 
+[data-bs-theme="dracula"] {
+    --bs-body-color: #f8f8f2;
+    --bs-body-bg: #282a36;
+    --bs-hover-bg: #f0f0f0CC;
+    --bs-primary: #bd93f9;
+    --bs-success: #50fa7b;
+    --bs-warning: #f1fa8c;
+    --bs-danger: #ff79c6;
+    --bs-info: #8be9fd;
+}
+
 $text-color: var(--bs-body-color);
 $background-color: var(--bs-body-bg);
 $hover-bg: var(--bs-hover-bg);

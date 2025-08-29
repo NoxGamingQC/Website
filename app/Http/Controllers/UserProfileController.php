@@ -224,10 +224,8 @@ class UserProfileController extends Controller
         return view('pages.profile.edit_profile', [
             "id" => $user->id,
             "username" => $user->name,
-            "grade" => $grade,
-            "isPremium" => $user->has_premium,
+            "email" => $user->email,
             "language" => $user->language,
-            "badges" => $badges,
             "premiumTime" => $premiumTime,
             "avatarURL" => User::getPicture($user),
             "firstname" => $firstname,

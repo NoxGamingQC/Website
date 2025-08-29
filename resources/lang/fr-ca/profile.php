@@ -63,4 +63,11 @@ return [
     'gamerscore' => "Score du joueur",
     'xbox_one_rep' => "Réputation Xbox",
     'account_tier' => "Niveaux du compte",
+    'edit_profile' => "Modification de votre profil",
+    'personnal_informations' => "Information personnel",
+    'pronouns' => "Pronoms",
+    'gaming_profiles' => "Profils de jeux",
+    'display' => "Affichage",
+    'color' => "Couleur du profil",
+    'go_back' => "Retour au profil",
 ];

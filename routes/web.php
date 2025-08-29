@@ -62,6 +62,7 @@ Route::group([
 
     Route::get('projects', 'ProjectsController@index');
     Route::get('/user/{id}', 'UserProfileController@index');
+    Route::get('/user/me/edit', 'UserProfileController@edit');
 
     // Tools routes
     Route::get('tools/mensual_budget', 'Tools\BudgetController@index');
@@ -234,13 +235,6 @@ Route::middleware(['cors'])->group(function () {
             Route::get('/recipe/edit/{id}', 'RecipeController@editRecipe');
             Route::get('/company/kiosk/refresh', 'KioskController@refreshData');
             Route::get('/fun/pokemon/{slug}', 'Website\Fun\PokemonViewController@index');
-
-            /*
-              
-                PROFILES ROUTES
-              
-            *
-            Route::get('/user/me/edit', 'UserProfileController@edit');
 
             Route::get('/noxbot/dashboard', 'NoxBotController@index');
             Route::get('/noxbot/dashboard/{id}', 'NoxBotController@getDashboard');

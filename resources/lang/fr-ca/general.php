@@ -8,6 +8,7 @@ return [
     'website' => "Site web",
     'about_me' => "À propos de moi",
     'edit_profile' => "Modifier le profil",
+    'save' => "Sauvegarder",
 
     //auth
     'email_address' => "Adresse courriel",
