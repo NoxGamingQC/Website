@@ -43,25 +43,7 @@
                         @endif
                     @endif
                 @endif
-                @if($xbox_profile)
-                    @if($xbox_profile->data->tenure_level->img)
-                        <h4><b>{{ trans('profile.xbox_badge') }}</b></h4>
-                        <img src="{{$xbox_profile->data->tenure_level->img}}" alt="{{$xbox_profile->data->tenure_level->level}}" width="50px" />
-                        @if(!$xbox_profile->data->watermarks)
-                            <br />
-                        @endif
-                    @endif
-                    @if($xbox_profile->data->watermarks)
-                        @if(!$xbox_profile->data->tenure_level->img)
-                            <h4><b>{{ trans('profile.xbox_badge') }}</b></h4>
-                            <br />
-                        @endif
-                        @foreach($xbox_profile->data->watermarks as $watermark_name => $watermark_img)
-                                <img src="{{$watermark_img}}" alt="{{$watermark_name}}" width="50px" />
-                        @endforeach
-                        <br />
-                    @endif
-                @endif
+                
         </div>
         <div class="col-md-7">
             @auth
@@ -77,67 +59,61 @@
                     {!! $aboutMe !!}
                 </div>
             @endif
-            @if($xbox_profile)
-                <div class="section">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h3>Xbox</h3>
-                        </div>
+            <div class="section">
+                <div class="row">
+                    @if($xbox_profile)
                         <div class="col-md-6">
-                            <ul>
-                                <li>ID: {{$xbox_profile->data->id}}</li>
-                                <li>{{trans('profile.username')}}: {{$xbox_profile->data->username}}</li>
-                                <li>{{trans('profile.gamerscore')}}: {{$xbox_profile->data->gamerscore}}</li>
-                                <li>{{trans('profile.xbox_one_rep')}}: {{$xbox_profile->data->xbox_one_rep}}</li>
-                                <li>{{trans('profile.account_tier')}}: {{$xbox_profile->data->account_tier}}</li>
-                                @if($xbox_profile->data->tenure_level->img)
-                                    <br />
-                                    <img src="{{$xbox_profile->data->tenure_level->img}}" alt="{{$xbox_profile->data->tenure_level->level}}" width="50px" style="margin:5px" />
-                                    @if(!$xbox_profile->data->watermarks)
-                                        <br />
-                                    @endif
-                                @endif
-                                @if($xbox_profile->data->watermarks)
-                                    @if(!$xbox_profile->data->tenure_level)
-                                        <br />
-                                    @endif
-                                    @foreach($xbox_profile->data->watermarks as $watermark_name => $watermark_img)
-                                            <img src="{{$watermark_img}}" alt="{{$watermark_name}}" width="50px" style="margin:5px" />
-                                    @endforeach
-                                    <br />
-                                @endif
-                            </ul>
+                            <div class="card">
+                                <div class="card-header" style="{{$xbox_profile->data->account_tier === 'Gold' ? 'background-color:#d48d00' : ''}}">
+                                    <span class="display-6">{{$xbox_profile->data->username}}</span> <span class="pull-right display-6">{{$xbox_profile->data->tenure_level->level}}</span>
+                                </div>
+                                <div class="row g-0" style="height:175px;overflow:hidden">
+                                    <div class="col-md-4">
+                                        <img src="{{$xbox_profile->data->avatar}}" class="img-fluid rounded-start" alt="" style="height:100%">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Xbox</h5>
+                                            <p class="card-text">ID: {{$xbox_profile->data->id}}</p>
+                                            <p class="card-text">Réputation: {{$xbox_profile->data->xbox_one_rep}}</p>
+                                            <p class="card-text">Score du joueur: {{$xbox_profile->data->gamerscore}} <span class="badge rounded-circle" style="background-color:#000;">G</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    @endif
+                    @if($minecraft)
+                        <div class="col-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <span class="display-6">{{$minecraft['name']}}</span>
+                                </div>
+                                <div class="row g-0" style="height:175px;overflow:hidden">
+                                    <div class="col-md-4" style="overflow:hidden;">
+                                        @if(!empty($minecraft['avatar']))
+                                            <img class="img-fluid rounded-start" src="{{$minecraft['avatar']}}" height="100%" alt="avatar" title="avatar">
+                                        @endif
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Minecraft</h5>
+                                            <p class="card-text">UUID: {{$minecraft['uuid']}}</p>
+                                            @if(!empty($minecraft['cape']))
+                                                <img src="{{$minecraft['cape']}}" height="50" alt="cape" title="cape" style="margin-right:5px">
+                                            @endif
+                                            @if(!empty($minecraft['full_skin']))
+                                                <img src="{{$minecraft['full_skin']}}" height="50" alt="full skin" title="full skin" style="margin-right:5px">
+                                            @endif
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endif
                 </div>
-            @endif
-            @if($minecraft)
-                <div class="section">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h3>Minecraft</h3>
-                        </div>
-                        <div class="col-md-6">
-                            <ul>
-                                <li>{{trans('general.username')}}: {{$minecraft['name']}}</li>
-                                <li>UUID: {{$minecraft['uuid']}}</li>
-                                <li>{{trans('profile.shorten_uuid')}}: {{$minecraft['shorten_uuid']}}</li>
-                            </ul>
-                        </div>
-                        <div class="col-md-6">
-                            @if(!empty($minecraft['avatar']))
-                                <img src="{{$minecraft['avatar']}}" height="75" alt="avatar" title="avatar" style="margin-right:5px">
-                            @endif
-                            @if(!empty($minecraft['cape']))
-                            <img src="{{$minecraft['cape']}}" height="75" alt="cape" title="cape" style="margin-right:5px">
-                            @endif
-                            @if(!empty($minecraft['full_skin']))
-                            <img src="{{$minecraft['full_skin']}}" height="75" alt="full skin" title="full skin" style="margin-right:5px">
-                            @endif
-                        </div>
-                    </div>
-                </div>
-            @endif
+            </div>
             @if($points)
                 <div class="section">
                     <div class="row">
