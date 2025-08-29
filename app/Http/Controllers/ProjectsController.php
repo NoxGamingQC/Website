@@ -9,7 +9,6 @@ class ProjectsController extends Controller
 {
     public function index()
     {
-        $xbox = new XboxGamercard('NoxGamingQC');
         return view('pages.projects')->with([
             'currentPage' => 'projects'
         ]);
