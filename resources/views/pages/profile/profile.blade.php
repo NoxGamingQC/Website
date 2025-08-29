@@ -49,7 +49,7 @@
             @auth
                 @if(Auth::user()->id == $id)
                 <div class="col-md-3 col-md-offset-9" class="text-right">
-                    <a type="button" href="/{{app()->getLocale()}}/user/me/edit" class="btn btn-warning">{{trans('general.edit_profile');}}</a>
+                    <a type="button" href="/{{app()->getLocale()}}/user/me/edit" class="btn btn-warning disabled" disabled>{{trans('general.edit_profile');}}</a>
                 </div>
                 <br />&nbsp
                 @endif

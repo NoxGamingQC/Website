@@ -7,7 +7,7 @@ return [
     'in_development' => "En dévelopement",
     'website' => "Site web",
     'about_me' => "À propos de moi",
-    'edit_profile' => "Modifier le profile",
+    'edit_profile' => "Modifier le profil",
 
     //auth
     'email_address' => "Adresse courriel",
