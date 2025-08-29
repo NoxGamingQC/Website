@@ -1,16 +1,16 @@
 <?php
 
 return [
-    'not_available' => "Not available",
+    'not_available' => "Non disponible",
     'visit_source' => "Sources",
-    'github_pages' => "GitHub pages",
-    'in_development' => "In development",
+    'github_pages' => "Pages GitHub",
+    'in_development' => "En dévelopement",
     'website' => "Site web",
 
     //auth
-    'email_address' => "Email",
-    'password' => "Password",
-    'remember_me' => "Remember me",
-    'forgot_password' => 'Forgot password',
-    'login' => "Sign in"
+    'email_address' => "Adresse courriel",
+    'password' => "Mot de passe",
+    'remember_me' => "Se souvenir de moi",
+    'forgot_password' => 'Mot de passe oublié',
+    'login' => "Se connecter"
 ];

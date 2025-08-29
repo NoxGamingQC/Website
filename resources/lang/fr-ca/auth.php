@@ -13,14 +13,14 @@ return [
     |
     */
 
-    'failed' => 'These credentials do not match our records.',
-    'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
-    'welcome_back' => "Welcome back",
-    'welcome_back_message' => "It's nice to see you again!",
-    'welcome' => "Welcome",
-    'welcome_info' => "Thanks for creating an account. We love to hear about you.",
-    'logout' => "You are now logged out.",
-    'name' => "Username or email address",
-    'credentials_case_sensitive' => "Warning - Credentials are case sensitive."
+    'failed' => 'Les identifiants que vous avez saisis sont invalide.',
+    'throttle' => 'Trop de tentatives de connexion. Veuillez réessayer dans :seconds seconds.',
+    'welcome_back' => "Bienvenue",
+    'welcome_back_message' => "C'est agréable de vous revoir!",
+    'welcome' => "Bienvenue",
+    'welcome_info' => "Merci d'avoir créé un compte. Nous sommes ravis de vous connaître.",
+    'logout' => "Vous êtes déconnecté.",
+    'name' => "Nom d'utilisateur ou adresse courriel",
+    'credentials_case_sensitive' => "Attention - Les identifiants de connexion sont sensible à la casse."
 
 ];
