@@ -146,4 +146,15 @@
         <div class="col-md-1"></div>
     </div>
 </div>
+<script>
+    $(document).ready(function() {
+        var theme = $('html').attr('data-bs-theme');
+        if (theme === 'light') {
+            var backgroundColor = '#f5f5f588';
+        } else if(theme === 'dark') {
+            var backgroundColor = '#25252588';
+        }
+        $('body').attr('style', 'background-color: ' + backgroundColor + ';background-image: linear-gradient(105deg, ' + backgroundColor + ', {{$user->color}}88, ' + backgroundColor);
+    });
+</script>
 @stop

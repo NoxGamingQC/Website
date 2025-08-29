@@ -114,6 +114,7 @@ class UserProfileController extends Controller
             }
         }
         return view('pages.profile.profile', [
+            "user" => $user,
             "id" => $user->id,
             "username" => $user->name,
             "grade" => $grade,
@@ -146,107 +147,37 @@ class UserProfileController extends Controller
     public function edit($locale)
     {
         $user = Auth::user();
-        $firstname = $user->show_firstname ? $user->firstname : null;
-        $lastname = $user->show_lastname ? $user->lastname : null;
-        $age = $user->show_age ? Carbon::parse($user->birthdate)->age : null;
-        $birthdate = $user->show_birthdate ? $user->birthdate : null;
-        $grade = $user->is_management ? "management_team" : "member";
-        $xboxProfile = null;
-
-        if($user->xbox_gamertag) {
-            try {
-                $xboxProfile = json_decode(file_get_contents((env('APP_PROD_URL') ? env('APP_PROD_URL') : env('APP_URL')) . '/api/xbox/'. $user->xbox_gamertag));
-            } catch (\Exception $exception) {
-                $xboxProfile = null;
-            }
-        }
-
-        if($user->roblox) {
-            try {
-                $client = new \GuzzleHttp\Client();
-                $robloxResponse = $client->request('POST', '/upload.php', [
-                    'usernames' => [
-                        $user->roblox
-                      ],
-                      "excludeBannedUsers" => true
-                ]);
-                $robloxProfile = json_decode('https://users.roblox.com/v1/users/' . json_decode($robloxResponse->id));
-            } catch (\Exception $exception) {
-                $robloxProfile = null;
-            }
-        }
-
-        $badges = $user->badges ? explode(';', $user->badges) : [];
-
-        $points = Points::getPointsLogs($user->id, 10);
-        $pointCount = Points::getTotalPoints($user->id);
-
-        if($user->premium_expiration === 'lifetime') {
-            $premiumTime = 'lifetime';
-        } elseif($user->premium_expiration == null) {
-            $premiumTime = null;
-        } else {
-            $premiumTime = $user->premium_expiration;
-        }
-        
-        if ($user->show_gender && $user->gender !== null) {
-            if($user->gender == 0) {
-                $gender = 'Other';
-            } elseif($user->gender == 1) {
-                $gender = 'Male';
-            } else if($user->gender == 2) {
-                $gender = 'Female';
-            }
-        } else {
-            $gender = null;
-        }
-        if(Auth::check()) {
-            $isCurrentUser = ($user->id == Auth::user()->id);
-        } else {
-            $isCurrentUser = false;
-        }
-
-        if ($user->lock_status === 'online' || $user->status === 'offline') {
-            $state = $user->status;
-        } else {
-            $state = $user->lock_status;
-        }
-        $aboutMeContent = null;
-        if($user->about_me) {
-            try{
-                $markdownParser = new markdown\GithubMarkdown();
-                $rawAboutMe = file_get_contents($user->about_me);
-                $aboutMeContent = $markdownParser->parse($rawAboutMe);
-            } catch (\Exception $exception) {
-                $aboutMeContent = $user->about_me;
-            }
-        }
         return view('pages.profile.edit_profile', [
-            "id" => $user->id,
-            "username" => $user->name,
-            "email" => $user->email,
-            "language" => $user->language,
-            "premiumTime" => $premiumTime,
-            "avatarURL" => User::getPicture($user),
-            "firstname" => $firstname,
-            "lastname" => $lastname,
-            "age" => $age,
-            "gender" => $gender,
-            "birthdate" => $birthdate,
-            "country" => $user->country,
-            'pointCount' => $pointCount,
-            'points' => $points,
-            'state' => $state,
-            'isCurrentUser' => $isCurrentUser,
-            'aboutMe' => $aboutMeContent ? $aboutMeContent : ($xboxProfile ?  ($xboxProfile->data->bio ? ('<h1>About me</h1><hr /><p>' . $xboxProfile->data->bio . '</p>') : null) : null),
-            'minecraft' => User::getMinecraftInfo($user),
-            'discordUser' => User::getDiscordInfo($user),
-            'pronouns' => $user->pronouns,
-            'xbox_profile' => $xboxProfile,
+            'user' => $user,
             'header' => false,
         ]);
     }
 
+    public function save(Request $request) {
+        if(Auth::user()) {
+            $user = User::findOrFail(Auth::user()->id);
+            $user->name = $request->username;
+            //$user->email = $request->email;
+            $user->firstname = $request->firstname;
+            $user->lastname = $request->lastname;
+            $user->birthdate = $request->birthdate;
+            $user->country = $request->country;
+            $user->gender = $request->gender;
+            $user->pronouns = $request->pronouns;
+            $user->about_me = $request->about_me;
+            $user->xbox_gamertag = $request->xbox_gamertag;
+            $user->minecraft_uuid = $request->minecraft_uuid;
+            $user->roblox = $request->roblox;
+            $user->theme = $request->theme;
+            //$user->color = $request->color;
+            $user->show_firstname = $request->show_firstname;
+            $user->show_lastname = $request->show_lastname;
+            $user->show_birthdate = $request->show_birthdate;
+            $user->show_age = $request->show_age;
+            $user->show_gender = $request->show_gender;
+        }
+        abort(403);
+    }
 
 
     public function updateState(Request $request) {
