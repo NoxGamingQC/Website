@@ -12,6 +12,7 @@ use Webklex\PHPIMAP\ClientManager;
 use Webklex\PHPIMAP\Client;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\App;
+use Illuminate\Database\Eloquent\Builder;
 
 class LoginController extends Controller
 {
@@ -61,20 +62,26 @@ class LoginController extends Controller
     public function login(Request $request)
     {
         $request->validate([
-            'email' => 'required',
+            'name' => 'required',
             'password' => 'required',
         ]);
 
-        $credentials = $request->only('email', 'password');
+        $credentials = $request->only('name', 'password');
         
         Session::put('email_client_password', $request->password);
         Session::save();
 
-        if ($this->attemptLogin($request)) {
-            return $this->sendLoginResponse($request);
+        if (Auth::attempt([
+            'email' => $request->name,
+            'password' => $request->password,
+        ])) {
+            return redirect(session()->get('url.intended'));
         }
 
-        if (Auth::attempt($credentials)) {
+        if (Auth::attempt([
+            'name' => $request->name,
+            'password' => $request->password,
+        ])) {
             return redirect(session()->get('url.intended'));
         }
 

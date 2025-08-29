@@ -20,5 +20,6 @@ return [
     'welcome' => "Welcome",
     'welcome_info' => "Thanks for creating an account. We love to hear about you.",
     'logout' => "You are now logged out.",
+    'name' => "Username or email address"
 
 ];

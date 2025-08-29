@@ -20,25 +20,14 @@
                             <div id="invalidCredentials" class="alert alert-danger hidden" role="alert" hidden>
                                 <span style="color:#252525">{{trans('auth.failed')}}</span>
                             </div>
-                            <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                                <label for="email" class="control-label">{{trans('general.email_address')}}</label>
-                                    <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
-                                    @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                    @endif
+                            <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                                <label for="name" class="control-label">{{trans('auth.name')}}</label>
+                                    <input id="name" type="name" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
                             </div>
                             <br />
                             <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                                 <label for="password" class="control-label">{{trans('general.password')}}</label>
                                 <input id="password" type="password" class="form-control" name="password" required>
-
-                                    @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                    @endif
                             </div>
                         </div>
                     </div>
@@ -75,7 +64,7 @@
                 },
                 method: 'POST',
                 data: {
-                    email: $('#email').val(),
+                    name: $('#name').val(),
                     password: $('#password').val(),
                 },
                 beforeSend: function() {
