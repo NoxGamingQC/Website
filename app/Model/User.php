@@ -95,6 +95,29 @@ class User extends Authenticatable
         
     }
 
+    public function scopeAvatar() {
+        if($this->avatar_preference == 'minecraft') {
+            $minecraft = User::getMinecraftInfo($this);
+            if(!empty($minecraft['avatar'])) {
+                return $minecraft['avatar'];
+            }
+        } else if($this->avatar_preference == 'xbox') {
+            if($this->xbox_gamertag) {
+                try {
+                    $xboxProfile = json_decode(file_get_contents((env('APP_PROD_URL') ? env('APP_PROD_URL') : env('APP_URL')) . '/api/xbox/'. $this->xbox_gamertag));
+                } catch (\Exception $exception) {
+                    $xboxProfile = null;
+                }
+                if(!empty($xboxProfile)) {
+                    if($xboxProfile->data->avatar) {
+                        return $xboxProfile->data->avatar;
+                    }
+                }
+            }   
+        }
+         return $this->avatar_url ? $this->avatar_url : '/img/no-avatar.jpg';
+    }
+
     public function scopeHasDiscordServer() {
         $discordUser = DiscordUsers::find($this->discord_id);
         if($discordUser) {

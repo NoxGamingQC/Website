@@ -122,7 +122,7 @@ class UserProfileController extends Controller
             "language" => $user->language,
             "badges" => $badges,
             "premiumTime" => $premiumTime,
-            "avatarURL" => User::getPicture($user),
+            "avatarURL" => User::find($user->id)->avatar(),
             "firstname" => $firstname,
             "lastname" => $lastname,
             "age" => $age,
@@ -177,6 +177,7 @@ class UserProfileController extends Controller
             $user->show_gender = $request->show_gender;
             $user->preferred_language = $request->language;
             $user->avatar_url = $request->avatar_url;
+            $user->avatar_preference = $request->avatar_preference;
             $user->save();
             return 200;
         }

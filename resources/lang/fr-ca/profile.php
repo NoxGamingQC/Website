@@ -76,5 +76,7 @@ return [
     'light' => "Clair",
     'fr_ca' => "Français (French)",
     'en_ca' => "English (Anglais)",
-    'no_points' => "Cet utilisateur n'a pas encore reçu de point."
+    'no_points' => "Cet utilisateur n'a pas encore reçu de point.",
+    'uploaded_image' => "Image télécharger",
+    'minecraft' => "Minecraft"
 ];

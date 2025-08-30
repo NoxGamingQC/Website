@@ -77,4 +77,6 @@ return [
     'fr_ca' => "Français (French)",
     'en_ca' => "English (Anglais)",
     'no_points' => "This user has not receive point yet.",
+    'uploaded_image' => "Uploaded picture",
+    'minecraft' => "Minecraft"
 ];

@@ -9,12 +9,12 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-3 col-md-offset-1">
-            @if($user->avatar_url)
-                <img class="img img-circle status-{{$user->state}}" src="{{$user->avatar_url}}" alt="{{$user->name}}" title="{{$user->name}}" width="100%" />
+            @if($user->avatar())
+                <img class="img img-circle status-{{$user->state}}" src="{{$user->avatar()}}" alt="{{$user->name}}" title="{{$user->name}}" width="100%" />
             @else
                 <img class="img img-circle status-{{$user->state}}" src="/img/no-avatar.jpg" alt="{{$user->name}}" title="{{$user->name}}" width="100%" />
             @endif
-            <div style="margin-bottom:10%">
+            <div class="my-3">
                 <input class="form-control" type="file" id="image" accept=".jpg, .png, image/jpeg, image/png" />
                 <input type="hidden" id="avatarURL" value="{{$user->avatar_url}}">
             </div>
@@ -220,6 +220,19 @@
                                     </div>
                                     <div class="col-6">
                                         <div class="input-group">
+                                            <span class="input-group-text">{{trans('profile.preferred_avatar')}}</span>
+                                            <select id="avatar_preference" class="form-select" aria-label="{{trans('profile.preferred_avatar')}}">
+                                                <option value="" {{$user->avatar_preference == null ? 'selected' : ''}}>{{trans('profile.uploaded_image')}}</option>
+                                                <option value="minecraft" {{$user->avatar_preference === 'minecraft' ? 'selected' : ''}}>{{trans('profile.minecraft')}}</option>
+                                                <option value="xbox" {{$user->avatar_preference === 'xbox' ? 'selected' : ''}}>{{trans('profile.xbox')}}</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <br />
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="input-group">
                                             <span class="input-group-text">{{trans('profile.theme')}}</span>
                                             <select id="theme" class="form-select" aria-label="{{trans('profile.theme')}}">
                                                 <option value="" {{$user->theme === null ? 'selected' : ''}}>{{trans('profile.system')}}</option>
@@ -227,9 +240,6 @@
                                                 <option value="dark" {{$user->theme === 'dark' ? 'selected' : ''}}>{{trans('profile.dark')}}</option>
                                             </select>
                                         </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <br />
                                     </div>
                                     <div class="col-6">
                                         <div class="input-group">
@@ -302,7 +312,8 @@ $('#submit').on('click', function() {
                 'show_age': $('#showAge').is(':checked'),
                 'show_gender': $('#showGender').is(':checked'),
                 'language': $('#language').val(),
-                'avatar_url': $('#avatarURL').val()
+                'avatar_url': $('#avatarURL').val(),
+                'avatar_preference': $('#avatar_preference').val()
             },
             beforeSend: function() {
                 $('#submit').html('<i class="fa fa-spinner fa-pulse fa-fw"></i>');
