@@ -25,7 +25,7 @@
             <hr />
         </div>
     </div>
-    <div class="col-6">
+    <div class="col-12">
         <h4 class="text-success">Revenus total: <span id="totalIncome"></span></h4>
         <h4 class="text-danger">Dépenses total: <span id="totalExpense"></span></h4>
         <h4 class="text-info">Épargne total: <span id="totalSaved"></span></h4>
