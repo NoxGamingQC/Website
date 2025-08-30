@@ -30,6 +30,15 @@
     @page {
         margin-bottom: 0;
     }
+     body {
+        color: black !important;
+    }
+    p, h1, h2, h3, h4, h5, h6,span,div {
+        color: black !important;
+    }
+    .text-primary, .text-success, .text-warning, .text-danger, .text-info {
+        color: black !important;
+    } 
 }
 
 .glass-panel {

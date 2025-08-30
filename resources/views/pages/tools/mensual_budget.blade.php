@@ -4,146 +4,165 @@
 @section('content')
 
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-12">
+    <div class="row my-3">
+        <div class="col-6">
             <h1>{{trans('tools/mensual_budget.mensual_budget')}}</h1>
-            <p class="no-print">For privacy reason, no data is or will be saved on this page. Upon refreshing the page all data will be lost. If you want to keep those data, you can print this page using <kbd>CTRL</kbd> + <kbd>P</kbd> or in your browser settings. All unnecessary text will disapear on the printed document.</p>
+        </div>
+        <div class="col-6 no-print">
+            <div class="input-group">
+                <div class="input-group">
+                    <span class="input-group-text">Pay frequency</span>
+                    <select id="payFrequency" class="form-select" aria-label="Category">
+                        <option value="1">Monthly</option>
+                        <option value="2">Bi-weekly</option>
+                        <option value="4">Weekly</option>
+                    </select>
+                    <button id="count" class="btn btn-primary disabled" disabled>Save</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-12">
+            <hr />
         </div>
     </div>
     <div class="col-6">
-        <h4 class="text-success">Total income: <span id="totalIncome"></span></h4>
-        <h4 class="text-danger">Total expenses: <span id="totalExpense"></span></h4>
-        <h4 class="text-info">Total saved: <span id="totalSaved"></span></h4>
+        <h4 class="text-success">Revenus total: <span id="totalIncome"></span></h4>
+        <h4 class="text-danger">Dépenses total: <span id="totalExpense"></span></h4>
+        <h4 class="text-info">Épargne total: <span id="totalSaved"></span></h4>
     </div>
-    <div class="col-12">
-        <table id="incomes" class="table table-success table-striped">
-            <tr>
-                <th>Incomes</th>
-                <th>Amount</th>
-                <th>Frequency</th>
-                <th class="no-print text-center"><i class="fa fa-trash" aria-hidden="true"></i></th>
-            </tr>
-        </table>
+    <div class="row">
+        <div class="col-6 my-3">
+            <div class="card text-bg-success">
+                <div class="card-header">
+                    <h5>Revenus</h5>
+                </div>
+                <div class="row g-0">
+                    <div class="col-md-12">
+                        <div id="incomes" class="card-body">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 my-3">
+            <div class="card text-bg-danger">
+                <div class="card-header">
+                    <h5>Dépenses</h5>
+                </div>
+                <div class="row g-0">
+                    <div class="col-md-12">
+                        <div id="expenses" class="card-body">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="col-md-12 no-print">
-        <table class="table table-success table-striped">
-            <tr>
-                <th>Name</th>
-                <th>Amount</th>
-                <th>Frequency</th>
-                <th class="no-print text-center"><i class="fa fa-plus" aria-hidden="true"></i></th>
-            </tr>
-            <tr>
-                <td><input id="incomeName" type="text" class="form-control" placeholder="Name or description of the income" /></td>
-                <td class="input-group"><input id="incomeAmount" type="text" class="form-control" placeholder="0.00" /><span class="input-group-text">$</span></td>
-                <td>
-                    <select id="incomeFrequency" class="form-select">
-                        <option selected>Monthly</option>
-                        <option disabled>Bi-monthly</option>
-                        <option disabled>Weekly</option>
-                        <option disabled>Daily</option>
-                    </select>
-                </td>
-                <td class="text-center"><button id="addIncome" class="btn btn-success"><i class="fa fa-plus" aria-hidden="true"></i></button></td>
-            </tr>
-        </table>
+    <div class="col-12 no-print">
+        <div class="card">
+            <div class="card-header">
+                <span>Add data (Monthly)</span>
+            </div>
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="input-group">
+                                    <span class="input-group-text">Name</span>
+                                    <input type="text" class="form-control" id="name" value="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="input-group">
+                                    <span class="input-group-text">Amount</span>
+                                    <input type="text" inputmode="numeric" class="form-control" id="amount" value="">
+                                    <span class="input-group-text">$</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="input-group">
+                                    <div class="input-group">
+                                        <span class="input-group-text">Category</span>
+                                        <select id="category" class="form-select" aria-label="Category">
+                                            <option value="0">Dépense</option>
+                                            <option value="1">Revenus</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-1">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <button id="addData" class="btn btn-success">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="col-12">
-        <table id="expenses" class="table table-danger table-striped">
-            <tr>
-                <th>Expenses</th>
-                <th>Amount</th>
-                <th>Frequency</th>
-                <th>Pay before</th>
-                <th class="no-print text-center"><i class="fa fa-trash" aria-hidden="true"></i></th>
-            </tr>
-        </table>
-    </div>
-    <div class="col-md-12 no-print">
-        <table class="table table-danger table-striped">
-            <tr>
-                <th>Name</th>
-                <th>Amount</th>
-                <th>Frequency</th>
-                <th>Pay before</th>
-                <th class="no-print text-center"><i class="fa fa-plus" aria-hidden="true"></i></th>
-            </tr>
-            <tr>
-                <td><input id="expenseName" type="text" class="form-control" placeholder="Name or description of the expense" /></td>
-                <td class="input-group"><input id="expenseAmount" type="text" class="form-control" placeholder="0.00" /><span class="input-group-text">$</span></td>
-                <td>
-                    <select id="expenseFrequency" class="form-select">
-                        <option selected>Monthly</option>
-                        <option disabled>Bi-monthly</option>
-                        <option disabled>Weekly</option>
-                        <option disabled>Daily</option>
-                    </select>
-                </td>
-                <td><input id="expensePayBefore" type="text" class="form-control" placeholder="0" /></td>
-                <td class="text-center"><button id="addExpense" class="btn btn-success"><i class="fa fa-plus" aria-hidden="true"></i></button></td>
-            </tr>
-        </table>
-    </div>
-
 </div>
-<script type="text/javascript">
-    $( document ).ready(function() {
-        refreshData();
+<script>
+    $('#addData').on('click', function() {
+        if(Number($('#amount').val())) {
+            if ($('#category').val() == 0) {
+                var html = $('#expenses').html();
+                var htmlElement = $('#expenses');
+            } else {
+                var html = $('#incomes').html();
+                var htmlElement = $('#incomes');
+            }
+            html += '<div class="row">'+
+                        '<div class="col-6">'+
+                            $('#name').val() +
+                        '</div>'+
+                        '<div class="col-6 ' + ($('#category').val() == 0 ? 'expenses-item' : 'incomes-item') + '" value="' + Number($('#amount').val()) + '">'+
+                            Number($('#amount').val())+
+                        '</div>'+
+                    '</div>'
+            htmlElement.html(html);
+            $('#name').val('');
+            $('#amount').val('');
+            countTotal();
+        }
     });
 
-    $('#addIncome').on('click', function() {
-        var html = 
-            '<tr>'+
-                '<td>'+ $('#incomeName').val() +'</td>'+
-                '<td class="income-amount" value="'+ ($('#incomeAmount').val()).replace(',', '.') +'">'+ ($('#incomeAmount').val()).replace(',', '.') +' $</td>'+
-                '<td>'+ $('#incomeFrequency').val() +'</td>'+
-                '<td class="no-print text-center"><button class="btn btn-danger remove"><i class="fa fa-trash" aria-hidden="true"></i></button></td>'+
-            '</tr>';
-        var incomeTable = $('#incomes').html();
-        $('#incomes').html(incomeTable + html);
-        refreshData();
-    });
+    $('#payFrequency').on('change', function() {
+        countTotal();
+    })
 
-    $('#addExpense').on('click', function() {
-        var html = 
-            '<tr>'+
-                '<td>'+ $('#expenseName').val() +'</td>'+
-                '<td class="expense-amount" value="'+ ($('#expenseAmount').val()).replace(',', '.') +'">'+ ($('#expenseAmount').val()).replace(',', '.') +' $</td>'+
-                '<td>'+ $('#expenseFrequency').val() +'</td>'+
-                '<td>'+ $('#expensePayBefore').val() +'</td>'+
-                '<td class="no-print text-center"><button class="btn btn-danger remove"><i class="fa fa-trash" aria-hidden="true"></i></button></td>'+
-            '</tr>';
-        var expenseTable = $('#expenses').html();
-        $('#expenses').html(expenseTable + html);
-        refreshData();
-    });
-
-    function refreshData() {
-        var totalIncome = 0;
-        var totalExpense = 0;
-        $('.remove').on('click', function () {
-            var row = $(this).parent().parent();
-            row.remove();
-            refreshData();
+    function countTotal() {
+        var totalIncome = Number(0);
+        var totalExpense = Number(0);
+        $('.incomes-item').each(function(key, item) {
+            totalIncome += Number($(item).attr('value'));
         });
+        $('#totalIncome').html(Number(totalIncome) + '$ (' + (Number(totalIncome) / $('#payFrequency').val()) + '$)');
 
-        $('.income-amount').each(function() {
-            var income = $(this)
-            totalIncome += Number(income.attr('value'));
-        })
-
-        $('.expense-amount').each(function() {
-            var expense = $(this)
-            totalExpense += Number(expense.attr('value'));
-        })
-
-        $('#totalIncome').html(totalIncome.toFixed(2) + ' $')
-        $('#totalExpense').html(totalExpense.toFixed(2) + ' $')
-        $('#totalSaved').html(Number(totalIncome - totalExpense).toFixed(2) + ' $')
-        
+        $('.expenses-item').each(function(key, item) {
+            totalExpense += Number($(item).attr('value'));
+        });
+        $('#totalExpense').html(Number(totalExpense) + '$ (' + (Number(totalExpense) / $('#payFrequency').val()) + '$)');
+        $('#totalSaved').html((Number(totalIncome) - Number(totalExpense)) + '$ (' + ((Number(totalIncome) - Number(totalExpense)) / $('#payFrequency').val()) + '$)');
     }
-
-        
 </script>
-
 @endsection
