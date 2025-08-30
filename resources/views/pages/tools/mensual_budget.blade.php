@@ -156,7 +156,7 @@
         $('.incomes-item').each(function(key, item) {
             totalIncome += Number($(item).attr('value'));
         });
-        $('#totalIncome').html(Number(totalIncome).toFixed(2) + '$ (' + (Number(totalIncome).toFixed(2) / $('#payFrequency').val()) + '$)');
+        $('#totalIncome').html(Number(totalIncome).toFixed(2) + '$ (' + (Number(totalIncome) / $('#payFrequency').val()).toFixed(2) + '$)');
 
         $('.expenses-item').each(function(key, item) {
             totalExpense += Number($(item).attr('value'));
