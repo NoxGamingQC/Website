@@ -130,7 +130,7 @@
                     <div class="row">
                         <h3>{{ trans('profile.points_log') }}</h3>
                         <br />
-                        @if($points)
+                        @if(count($points) > 0)
                             <ul>
                                 @foreach ($points as $key => $point)
                                     <li>{{$point->quantity . ' ' . trans('profile.points')}} - {{$point->comment}}</li>

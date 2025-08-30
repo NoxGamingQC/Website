@@ -75,5 +75,6 @@ return [
     'dark' => "Sombre",
     'light' => "Clair",
     'fr_ca' => "Français (French)",
-    'en_ca' => "English (Anglais)"
+    'en_ca' => "English (Anglais)",
+    'no_points' => "Cet utilisateur n'a pas encore reçu de point."
 ];
