@@ -95,7 +95,7 @@
                         </div>
                     @endif
                     @if($minecraft)
-                        <div class="col-6">
+                        <div class="col-md-6">
                             <div class="card">
                                 <div class="card-header">
                                     <span class="display-6">{{$minecraft['name']}}</span>

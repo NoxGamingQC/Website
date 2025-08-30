@@ -176,6 +176,7 @@ class UserProfileController extends Controller
             $user->show_age = $request->show_age;
             $user->show_gender = $request->show_gender;
             $user->preferred_language = $request->language;
+            $user->avatar_url = $request->avatar_url;
             $user->save();
             return 200;
         }

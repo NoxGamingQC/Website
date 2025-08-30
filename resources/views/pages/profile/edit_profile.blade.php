@@ -14,6 +14,10 @@
             @else
                 <img class="img img-circle status-{{$user->state}}" src="/img/no-avatar.jpg" alt="{{$user->name}}" title="{{$user->name}}" width="100%" />
             @endif
+            <div style="margin-bottom:10%">
+                <input class="form-control" type="file" id="image" accept=".jpg, .png, image/jpeg, image/png" />
+                <input type="hidden" id="avatarURL" value="{{$user->avatar_url}}">
+            </div>
             <h1>{{trans('profile.edit_profile')}} &nbsp&nbsp<a href="/{{app()->getLocale()}}/user/{{$user->name}}" class="btn btn-info">{{trans('profile.go_back')}}</a><h1>
             <div class="col-md-12 section markdown my-5" class="text-right">
                 <div class="card">
@@ -247,6 +251,30 @@
     </div>
 </div>
 <script>
+$(document).ready(function() {
+    document.getElementById('image').addEventListener('change', function() {
+        const fileName = this.value;
+        const allowedExtensions = ['.jpg', '.png', '.jpeg'];
+        const fileExtension = fileName.substring(fileName.lastIndexOf('.')).toLowerCase();
+
+        if (!allowedExtensions.includes(fileExtension)) {
+            alert('Invalid file type. Please select a JPG, JPEG or PNG image.');
+            this.value = ''; 
+        }
+    });
+})
+$('#image').on('change', function() {
+    var input = this;
+    if (input.files && input.files[0]) {
+        if(input.files[0].type === 'image/png' || input.files[0].type === 'image/jpg' || input.files[0].type === 'image/jpeg') {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#avatarURL').val(e.target.result);
+            };
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+})
 $('#submit').on('click', function() {
     $.ajax({
             url:  '/' + $('html').attr('lang') + "/user/me/save",
@@ -273,7 +301,8 @@ $('#submit').on('click', function() {
                 'show_birthdate': $('#showBirthdate').is(':checked'),
                 'show_age': $('#showAge').is(':checked'),
                 'show_gender': $('#showGender').is(':checked'),
-                'language': $('#language').val()
+                'language': $('#language').val(),
+                'avatar_url': $('#avatarURL').val()
             },
             beforeSend: function() {
                 $('#submit').html('<i class="fa fa-spinner fa-pulse fa-fw"></i>');
