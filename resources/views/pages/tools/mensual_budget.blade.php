@@ -32,8 +32,8 @@
     </div>
     <div class="row">
         <div class="col-6 my-3">
-            <div class="card text-bg-success">
-                <div class="card-header">
+            <div class="card text-bg-success" style="border: 1px solid #000">
+                <div class="card-header" style="border-bottom: 1px solid #000">
                     <h5>Revenus</h5>
                 </div>
                 <div class="row g-0">
@@ -46,8 +46,8 @@
             </div>
         </div>
         <div class="col-6 my-3">
-            <div class="card text-bg-danger">
-                <div class="card-header">
+            <div class="card text-bg-danger"  style="border: 1px solid #000">
+                <div class="card-header" style="border-bottom: 1px solid #000">
                     <h5>Dépenses</h5>
                 </div>
                 <div class="row g-0">
@@ -136,8 +136,8 @@
                             $('#name').val() +
                         '</div>'+
                         '<div class="col-6 ' + ($('#category').val() == 0 ? 'expenses-item' : 'incomes-item') + '" value="' + Number($('#amount').val()) + '">'+
-                            Number($('#amount').val())+
-                        '</div>'+
+                            Number($('#amount').val()).toFixed(2)+
+                        '$</div>'+
                     '</div>'
             htmlElement.html(html);
             $('#name').val('');
@@ -156,13 +156,13 @@
         $('.incomes-item').each(function(key, item) {
             totalIncome += Number($(item).attr('value'));
         });
-        $('#totalIncome').html(Number(totalIncome) + '$ (' + (Number(totalIncome) / $('#payFrequency').val()) + '$)');
+        $('#totalIncome').html(Number(totalIncome).toFixed(2) + '$ (' + (Number(totalIncome).toFixed(2) / $('#payFrequency').val()) + '$)');
 
         $('.expenses-item').each(function(key, item) {
             totalExpense += Number($(item).attr('value'));
         });
-        $('#totalExpense').html(Number(totalExpense) + '$ (' + (Number(totalExpense) / $('#payFrequency').val()) + '$)');
-        $('#totalSaved').html((Number(totalIncome) - Number(totalExpense)) + '$ (' + ((Number(totalIncome) - Number(totalExpense)) / $('#payFrequency').val()) + '$)');
+        $('#totalExpense').html(Number(totalExpense).toFixed(2) + '$ (' + (Number(totalExpense) / $('#payFrequency').val()).toFixed(2) + '$)');
+        $('#totalSaved').html((Number(totalIncome) - Number(totalExpense)).toFixed(2) + '$ (' + ((Number(totalIncome) - Number(totalExpense)) / $('#payFrequency').val()).toFixed(2) + '$)');
     }
 </script>
 @endsection
