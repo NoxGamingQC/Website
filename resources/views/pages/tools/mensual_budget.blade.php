@@ -23,6 +23,7 @@
         </div>
         <div class="col-12">
             <hr />
+            <span class="no-print">For it to work, the amount in parenthesis should be your pay income, and expenses. You should have approximately the same amount in your bank account every pay.</span>
         </div>
     </div>
     <div class="col-12">
@@ -164,5 +165,18 @@
         $('#totalExpense').html(Number(totalExpense).toFixed(2) + '$ (' + (Number(totalExpense) / $('#payFrequency').val()).toFixed(2) + '$)');
         $('#totalSaved').html((Number(totalIncome) - Number(totalExpense)).toFixed(2) + '$ (' + ((Number(totalIncome) - Number(totalExpense)) / $('#payFrequency').val()).toFixed(2) + '$)');
     }
+
+    $('#save').on('click', function() {
+        $.ajax({
+            url:  '/' + $('html').attr('lang') + "/tools/mensual_budget/save",
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            method: 'POST',
+            data: {
+                
+            }
+        });
+    });
 </script>
 @endsection
