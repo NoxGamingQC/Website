@@ -3,11 +3,13 @@
      <a class="navbar-brand" href="/{{app()->getLocale()}}/home">
         <img src="/img/logo.svg" alt="NoxGamingQC" width="50" height="50">
     </a>
+    @auth
     <ul class="nav nav-pills navbar-nav my-2 my-lg-0 ms-auto justify-content-end">
         <li class="nav-item">
             <a class="nav-link mobile disabled" href="#" disabled><i class="fa fa-bell" aria-hidden="true"></i></a>
         </li>
     </ul>
+    @endauth
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
