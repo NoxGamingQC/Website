@@ -4,9 +4,14 @@
         <img src="/img/logo.svg" alt="NoxGamingQC" width="50" height="50">
     </a>
     @auth
-    <ul class="nav nav-pills navbar-nav my-2 my-lg-0 ms-auto justify-content-end">
+    <ul class="nav nav-pills navbar-nav my-2 my-lg-0 ms-auto justify-content-end mobile">
         <li class="nav-item">
-            <a class="nav-link mobile disabled" href="#" disabled><i class="fa fa-bell" aria-hidden="true"></i></a>
+            <a class="nav-link position-relative disabled" href="#" disabled>
+                <i class="fa fa-bell" aria-hidden="true"></i>
+                <span class="position-absolute top-5 start-75 translate-middle p-1 bg-danger border border-light rounded-circle" hidden>
+                    <span class="visually-hidden">New alerts</span>
+                </span>
+            </a>
         </li>
     </ul>
     @endauth
@@ -71,8 +76,13 @@
                 </li>
             @endguest
             @auth
-                <li class="nav-item">
-                    <a class="nav-link desktop disabled" href="#" disabled><i class="fa fa-bell" aria-hidden="true"></i></a>
+                <li class="nav-item desktop">
+                    <a class="nav-link position-relative disabled" href="#" disabled>
+                        <i class="fa fa-bell" aria-hidden="true"></i>
+                        <span class="position-absolute top-5 start-75 translate-middle p-1 bg-danger border border-light rounded-circle" hidden>
+                            <span class="visually-hidden">New alerts</span>
+                        </span>
+                    </a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle {{isset($currentTab) ? ($currentTab == 'user' ? 'active' : '') : ''}}" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-disabled="true"><img class="rounded-circle" src="{{Auth::user()->avatar()}}" width="25px" height="25px"> {{Auth::user()->name}}</a>
