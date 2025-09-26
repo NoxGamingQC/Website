@@ -71,9 +71,9 @@ class LoginController extends Controller
         unset($previousPath[0]);
         unset($previousPath[1]);
 
-        if (Auth::attempt($credentials, $remember)) {
+        /*if (Auth::attempt($credentials, $remember)) {
             return redirect('/' . Auth::user()->preferred_language . '/' . implode('/', $previousPath));
-        }
+        }*/
 
         if (Auth::attempt([
             'email' => $request->name,
