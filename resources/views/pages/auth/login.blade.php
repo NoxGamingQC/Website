@@ -37,7 +37,7 @@
                 <div class="col-3 offset-3">
                     <div class="checkbox">
                         <label>
-                            <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> {{trans('general.remember_me')}}
+                            <input type="checkbox" id="remember" name="remember" {{ old('remember') ? 'checked' : '' }}> {{trans('general.remember_me')}}
                         </label>
                     </div>
                 </div>
@@ -78,6 +78,7 @@
             data: {
                 name: $('#name').val(),
                 password: $('#password').val(),
+                remember: $('#remember').is(':checked');
                 previousPath: $('#previousPath').val()
             },
             beforeSend: function() {
