@@ -78,6 +78,7 @@ class LoginController extends Controller
         if (Auth::attempt([
             'email' => $request->name,
             'password' => $request->password,
+            $request->has('remember')
         ])) {
             return response()->json([
                 'redirectTo' => '/' . Auth::user()->preferred_language . '/' . implode('/', $previousPath)
@@ -87,6 +88,7 @@ class LoginController extends Controller
         if (Auth::attempt([
             'name' => $request->name,
             'password' => $request->password,
+            $request->has('remember')
         ])) {
             return response()->json([
                 'redirectTo' => '/' . Auth::user()->preferred_language . '/' . implode('/', $previousPath)
