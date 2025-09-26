@@ -78,7 +78,7 @@
             data: {
                 name: $('#name').val(),
                 password: $('#password').val(),
-                remember: $('#remember').is(':checked');
+                remember: $('#remember').is(':checked'),
                 previousPath: $('#previousPath').val()
             },
             beforeSend: function() {
