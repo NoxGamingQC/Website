@@ -3,11 +3,11 @@
      <a class="navbar-brand" href="/{{app()->getLocale()}}/home">
         <img src="/img/logo.svg" alt="NoxGamingQC" width="50" height="50">
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <ul class="nav nav-pills justify-content-start">
+    <div class="collapse navbar-collapse" id="navbarScroll">
+        <ul class="nav nav-pills navbar-nav me-auto my-2 my-lg-0">
             <li class="nav-item">
                 <a class="nav-link {{isset($currentPage) ? ($currentPage == 'home' ? 'active' : '') : ''}}" href="/{{app()->getLocale()}}/home"><i class="fa fa-home" aria-hidden="true"></i> {{trans('navigation.welcome')}}</a>
             </li>
@@ -42,7 +42,7 @@
                 </li>
             @endauth
         </ul>
-        <ul class="nav nav-pills ms-auto justify-content-end">
+        <ul class="nav nav-pills navbar-nav my-2 my-lg-0 ms-auto justify-content-end">
             @guest
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-disabled="true">{{trans('navigation.language')}}</a>
