@@ -56,3 +56,15 @@
     border-color: $brand-primary;
     box-shadow: 0 0 0 0.25rem transparentize($brand-primary, 0.75);
 }
+
+@media only screen and (max-width: 767px) {
+  .desktop {
+        display: none
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .mobile {
+        display: none
+  }
+}
