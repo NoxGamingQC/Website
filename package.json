@@ -29,7 +29,7 @@
     "@fortawesome/fontawesome-free": "^5.15.2",
     "@popperjs/core": "^2.11.8",
     "Font-Awesome": "github:FortAwesome/Font-Awesome",
-    "ansi-regex": "6.0.1",
+    "ansi-regex": "6.2.2",
     "bootstrap": "^5.3.7",
     "bootstrap-select": "^1.13.11",
     "css-loader": "^5.0.1",
