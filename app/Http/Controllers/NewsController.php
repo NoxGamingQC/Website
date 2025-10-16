@@ -9,16 +9,14 @@ class NewsController extends Controller
 {
     public function index()
     {
-        $sources = [
+        $gamingNewsSources = [
             'https://feeds.feedburner.com/ign/games-all',
             'https://www.gamespot.com/feeds/game-news/',
-            'https://www.pcgamer.com/rss/',
-            'https://kotaku.com/rss',
             'https://www.eurogamer.net/feed/news',
             'https://www.eurogamer.net/feed/deals',
         ];
 
-        $feed = Feeds::make($sources, 10, true); // Get 10 recent items
+        $feed = Feeds::make($gamingNewsSources, 15, true); // Get 15 recent items
 
         return view('pages.news', ['feed' => $feed]);
     }
