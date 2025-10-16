@@ -74,6 +74,7 @@ Route::group([
     Route::get('/startup', function() {
         return view('pages.startup')->with(['currentPage' => 'startup']);
     });
+    Route::get('/news', [App\Http\Controllers\NewsController::class, 'index']);
 
 });
 
