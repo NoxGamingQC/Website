@@ -12,6 +12,9 @@ use App\Model\CustomTheme;
 use App\Model\MainConfig;
 use App\Model\PageLists;
 use App\Model\Theme;
+use App\Model\User;
+use Laravel\Cashier\Cashier;
+
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -22,6 +25,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(Request $request)
     {
+        Cashier::calculateTaxes();
         if (!$request->secure() && $request->header('host') != 'localhost:8000') {
             URL::forceScheme('https');
         }
