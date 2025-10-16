@@ -66,6 +66,7 @@ Route::group([
     Route::post('/user/me/save', 'UserProfileController@save');
 
     // Tools routes
+    Route::get('store', 'StoreController@index');
     Route::get('tools/mensual_budget', 'Tools\BudgetController@index');
     Route::get('tools/demo_unit', 'Tools\TechnologyController@demounit');
 
