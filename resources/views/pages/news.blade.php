@@ -18,7 +18,7 @@
                         @foreach($feed->get_items() as $item)
                             <div class="col-md-3 py-2">
                                 <div class="card">
-                                    <img src="{{ preg_match('/<img.+src=[\'"](?P<src>.+?)[\'"].*>/i', $item->get_description(), $image) ? $image['src'] : ($item->get_source() ? $item->get_source()->get_image_url() : (!is_null($item->get_thumbnail()) ? $item->get_thumbnail() : '/img/no-image.png'))}}" class="card-img-top" alt="..." max-height="200px" style="object-fit: cover; height: 200px;">
+                                    <img src="{{ preg_match('/<img.+src=[\'"](?P<src>.+?)[\'"].*>/i', $item->get_description(), $image) ? $image['src'] : ($item->get_source() ? $item->get_source()->get_image_url() : ($item->get_thumbnail() ? $item->get_thumbnail()->get_url() : '/img/no-image.png'))}}" class="card-img-top" alt="..." max-height="200px" style="object-fit: cover; height: 200px;">
                                     <div class="card-body">
                                         <h5 class="card-title" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ $item->get_title() }}</h5>
                                         <p class="card-text" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ strip_tags($item->get_description()) }}</p>
