@@ -6,9 +6,12 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Model\DiscordServerConfig;
 use App\Model\DiscordUsers;
+use Laravel\Cashier\Billable;
+
 
 class User extends Authenticatable
 {
+    use Billable;
     use Notifiable;
 
     /**
