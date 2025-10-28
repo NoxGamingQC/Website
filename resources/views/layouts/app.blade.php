@@ -10,9 +10,14 @@
         <meta property='og:url' content='{{URL::current()}}' />
         <meta name="og:description" property='og:description' content="@yield('description', 'NoxGamingQC\'s official website. You can learn about us here and much more.')">
         <meta name="theme-color" property='og:color' content='#880000' />
-        <meta property='og:image:width' content='1200' />
-        <meta property='og:image:height' content='630' />
-        <meta property="og:type" content='article' />
+        <meta property='og:image:width' content='500' />
+        <meta property='og:image:height' content='500' />
+        <meta property="og:type" content="website">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="NoxGamingQC - @yield('title')">
+        <meta name="twitter:description" content="@yield('description', 'NoxGamingQC\'s official website. You can learn about us here and much more.')">
+        <meta name="twitter:image" content="@yield('thumbnail', env('APP_URL') . '/img/logo.png')">
+        
         <meta name="author" content="NoxGamingQC">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
