@@ -16,7 +16,7 @@
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:title" content="NoxGamingQC - @yield('title')">
         <meta name="twitter:description" content="@yield('description', 'Jimmy Béland-Bédard (aka NoxGamingQC) –­ Québécois, programmer, streamer, Tech enthusiast. Specializing in C, C++, C#, JavaScript and PHP/Laravel.')">
-        <meta name="twitter:image" content="@yield('thumbnail', env('APP_URL') . '/img/logo.png')">
+        <meta name="twitter:image" content="@yield('thumbnail', env('APP_URL') . '/img/thumbnail.png')">
         
         <meta name="author" content="NoxGamingQC">
         <meta name="viewport" content="width=device-width, initial-scale=1">
