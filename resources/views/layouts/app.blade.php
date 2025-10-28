@@ -8,14 +8,14 @@
         <meta property='og:title' content='NoxGamingQC - @yield('title')' />
         <meta property='og:image' content='@yield('thumbnail', env('APP_URL') . '/img/logo.png')' />
         <meta property='og:url' content='{{URL::current()}}' />
-        <meta name="og:description" property='og:description' content="@yield('description', 'NoxGamingQC\'s official website. You can learn about us here and much more.')">
+        <meta name="og:description" property='og:description' content="@yield('description', 'Jimmy Béland-Bédard (aka NoxGamingQC) –­ Québécois, programmer, streamer, Tech enthusiast. Specializing in C, C++, C#, JavaScript and PHP/Laravel.')">
         <meta name="theme-color" property='og:color' content='#880000' />
         <meta property='og:image:width' content='500' />
         <meta property='og:image:height' content='500' />
         <meta property="og:type" content="website">
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:title" content="NoxGamingQC - @yield('title')">
-        <meta name="twitter:description" content="@yield('description', 'NoxGamingQC\'s official website. You can learn about us here and much more.')">
+        <meta name="twitter:description" content="@yield('description', 'Jimmy Béland-Bédard (aka NoxGamingQC) –­ Québécois, programmer, streamer, Tech enthusiast. Specializing in C, C++, C#, JavaScript and PHP/Laravel.')">
         <meta name="twitter:image" content="@yield('thumbnail', env('APP_URL') . '/img/logo.png')">
         
         <meta name="author" content="NoxGamingQC">
