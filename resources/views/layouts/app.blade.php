@@ -6,11 +6,12 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta property='og:title' content='NoxGamingQC - @yield('title')' />
-        <meta property='og:image' content='@yield('thumbnail', env('APP_URL') . '/img/NoxGamingQC.png')' />
+        <meta property='og:image' content='@yield('thumbnail', env('APP_URL') . '/img/logo.png')' />
         <meta property='og:url' content='{{URL::current()}}' />
-        <meta name="description" property='og:description' content="@yield('description', 'NoxGamingQC\'s official website. You can learn about us here and much more.')">
-        <meta property='og:image:width' content='500' />
-        <meta property='og:image:height' content='500' />
+        <meta name="og:description" property='og:description' content="@yield('description', 'NoxGamingQC\'s official website. You can learn about us here and much more.')">
+        <meta property='og:color' content='8912896' />
+        <meta property='og:image:width' content='1200' />
+        <meta property='og:image:height' content='630' />
         <meta property="og:type" content='website' />
         <meta name="author" content="NoxGamingQC">
         <meta name="viewport" content="width=device-width, initial-scale=1">
