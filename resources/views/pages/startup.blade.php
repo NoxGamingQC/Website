@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Startup')
+@section('title', 'Home')
 @section('content')
 
 <div class="container text-justify my-auto">
