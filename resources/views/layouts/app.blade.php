@@ -5,7 +5,7 @@
         <meta name="facebook-domain-verification" content="uki484ngemqhks0g9endzi9hb1nobp" />
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta property='og:title' content='J.Bédard - @yield('title')' />
+        <meta property='og:title' content='@yield('title')' />
         <meta property='og:image' content='@yield('thumbnail', env('APP_URL') . '/img/thumbnail.png')' />
         <meta property='og:url' content='{{URL::current()}}' />
         <meta name="og:description" property='og:description' content="@yield('description', 'Jimmy Béland-Bédard (aka NoxGamingQC) –­ Québécois, programmer, streamer, Tech enthusiast. Specializing in C, C++, C#, JavaScript and PHP.')">
@@ -14,7 +14,7 @@
         <meta property='og:image:height' content='630' />
         <meta property="og:type" content="website">
         <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:title" content="J.Bédard - @yield('title')">
+        <meta name="twitter:title" content="@yield('title')">
         <meta name="twitter:description" content="@yield('description', 'Jimmy Béland-Bédard (aka NoxGamingQC) –­ Québécois, programmer, streamer, Tech enthusiast. Specializing in C, C++, C#, JavaScript and PHP.')">
         <meta name="twitter:image" content="@yield('thumbnail', env('APP_URL') . '/img/thumbnail.png')">
         
