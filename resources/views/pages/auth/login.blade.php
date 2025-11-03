@@ -22,12 +22,18 @@
                             </div>
                             <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                                 <label for="name" class="control-label">{{trans('auth.name')}}</label>
-                                    <input id="name" type="name" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text"><i class="fa fa-user" aria-hidden="true"></i></span>
+                                        <input id="name" type="name" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
+                                    </div>
                             </div>
                             <br />
                             <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                                 <label for="password" class="control-label">{{trans('general.password')}}</label>
-                                <input id="password" type="password" class="form-control" name="password" required>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text"><i class="fa fa-lock" aria-hidden="true"></i></span>
+                                    <input id="password" type="password" class="form-control" name="password" required>
+                                </div>
                                 <span class="text-body-secondary">{{trans('auth.credentials_case_sensitive')}}</span>
                             </div>
                         </div>
