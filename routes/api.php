@@ -60,3 +60,5 @@ Route::get('/minecraft/points/{uuid}', function (string $uuid) {
 Route::get('/noxbot/twitch/setup/{token}', function (string $token) {
     return new NoxBot\TwitchSetupResource(['token' => $token]);
 });
+
+Route::post('/points/add', 'API\PointsController@addPoints');
