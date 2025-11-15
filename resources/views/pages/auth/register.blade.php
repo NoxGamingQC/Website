@@ -6,7 +6,7 @@
 <div class="row" style="margin-top:17%">
     <div class="container">
         <form class="form-horizontal" method="POST" action="{{ route('register', app()->getLocale()) }}">
-            <div class="row">
+            <div class="row panel">
                 <div class="col-md-12">
                     <br />
                     <br />

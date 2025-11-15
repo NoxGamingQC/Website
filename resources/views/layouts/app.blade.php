@@ -29,10 +29,10 @@
         <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">-->
         <script src="{{mix('js/app.js')}}"></script>
     </head>
-    <body style="overflow-x:hidden">
+    <body class="d-flex flex-column min-vh-100" style="overflow-x:hidden">
         <input id="websiteLocationID" type="hidden">
         @include('layouts.components.navbar')
-        <div id="content" class="my-5 d-flex py-5" style="min-height:60vh;">
+        <div id="content" class="my-5 d-flex py-5 flex-grow-1" style="min-height:60vh;">
             @yield('content')
         </div>
         <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>-->

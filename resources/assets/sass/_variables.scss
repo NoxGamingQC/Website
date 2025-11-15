@@ -5,28 +5,28 @@
 }
 
 $brand-white: #F5F5F5;
-$brand-black: #252525;
+$brand-black: #151515;
 $brand-primary: #880000;
-$brand-success: #32CD32;
-$brand-warning: #FFFC00;
-$brand-danger: #CD1C18;
-$brand-info: #80DAEB;
+$brand-success: #42E66C;
+$brand-warning: #E4F34A;
+$brand-danger: #E64747;
+$brand-info: #75D7EC;
 $brand-orange: #F28500;
 
 [data-bs-theme="dark"] {
     --bs-body-color: #F5F5F5;
-    --bs-body-bg: #252525;
-    --bs-hover-bg: #202020CC;
-    .text-primary {
+    --bs-body-bg: darken(#050505, 2%);
+    --bs-hover-bg: #151515CC;
+    /*.text-primary {
         -webkit-text-stroke: 0.3px #f5f5f5;
-    }
+    }*/
     body {
-        background-color: darken(#252525, 2%);
+        background-color: #151515;
     }
 }
 
 [data-bs-theme="light"] {
-    --bs-body-color: #252525;
+    --bs-body-color: #151515;
     --bs-body-bg: #f5f5f5;
     --bs-hover-bg: #f0f0f0CC;
     body {
@@ -51,10 +51,10 @@ $secondary-bg: var(--bs-secondary-bg);
 $hover-bg: var(--bs-hover-bg);
 
 $brand-primary-text-emphasis: #F5F5F5;
-$brand-success-text-emphasis: #252525;
-$brand-warning-text-emphasis: #252525;
+$brand-success-text-emphasis: #151515;
+$brand-warning-text-emphasis: #151515;
 $brand-danger-text-emphasis: #F5F5F5;
-$brand-info-text-emphasis: #252525;
+$brand-info-text-emphasis: #151515;
 $brand-orange-text-emphasis: #F5F5F5;
 
 .text-white {

@@ -4,7 +4,7 @@
 
 <div class="container text-justify my-auto">
     <div class="row py-5 align-items-center">
-        <div class="col">
+        <div class="col panel">
             <h2>
                 <b class="display-4">{!! trans('welcome.name') !!}</b>
                 <br />
