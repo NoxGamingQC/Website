@@ -1,5 +1,5 @@
-<footer class="footer my-auto no-print py-4" style="max-height:30vh">
-    <div class="container my-auto">
+<footer class="footer no-print py-4">
+    <div class="container">
         <div class="row text-center align-items-center">
             <div class="col-4">
                 <a href="mailto:jbedard@noxgamingqc.ca">jbedard@noxgamingqc.ca</a>

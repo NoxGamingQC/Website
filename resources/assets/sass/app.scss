@@ -52,16 +52,6 @@
     font-weight: 300;
     padding: 5% !important;
 }
-    
-
-.glass-panel {
-    background: rgba(255, 255, 255, 0.22);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5.4px);
-    -webkit-backdrop-filter: blur(5.4px);
-    border: 1px solid rgba(255, 255, 255, 0.54);
-}
 
 .form-control:focus {
     border-color: $brand-primary;
@@ -79,3 +69,17 @@
         display: none
   }
 }
+
+* {
+  box-sizing: border-box;
+}
+
+.panel {
+background: rgb(from $background-color r g b / 0.5);
+  backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  border-radius: $border-radius;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  padding: 2.5rem 3rem;
+  border: 1px solid $background-color;
+}   

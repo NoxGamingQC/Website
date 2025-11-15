@@ -2,6 +2,10 @@ nav {
     border-bottom: 2px solid $background-color;
 }
 
+.navbar {
+    background-color: $background-color !important;
+}
+
 .nav-link {
     color: $text-color;
     height: 78px !important;
