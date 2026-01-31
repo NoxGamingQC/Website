@@ -16,7 +16,6 @@
                             <p class="raleway-font">{{trans('auth.welcome_back_message')}}</p>
                         </div>
                         <div class="col-9">
-                            {{ csrf_field() }}
                             <div id="invalidCredentials" class="alert alert-danger hidden" role="alert" hidden>
                                 <span style="color:#252525">{{trans('auth.failed')}}</span>
                             </div>

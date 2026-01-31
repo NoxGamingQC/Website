@@ -26,10 +26,10 @@ class AppServiceProvider extends ServiceProvider
     public function boot(Request $request)
     {
         Cashier::calculateTaxes();
-        if (!$request->secure() && $request->header('host') != 'localhost:8000') {
+        if (!$request->secure() && $request->header('host') != 'localhost:8000' && $request->header('host') != 'localhost') {
             URL::forceScheme('https');
         }
-        if($request->header('host') == 'localhost:8000') {
+        if($request->header('host') == 'localhost:8000' || $request->header('host') == 'localhost') {
             $appName = 'Dev';
         } else if($request->header('host') == 'noxgamingqc.ca' || $request->header('host') == 'www.noxgamingqc.ca') {
             $appName = 'NoxGamingQC';

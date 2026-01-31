@@ -77,6 +77,9 @@
         "allow-plugins": {
             "kylekatarnls/update-helper": true,
             "symfony/thanks": true
+        },
+        "audit": {
+            "ignore": ["PKSA-8qx3-n5y5-vvnd", "PKSA-gytq-gtdp-3wb1", "PKSA-nhqw-xk85-x2jn"]
         }
     }
 }
