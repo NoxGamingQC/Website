@@ -5,7 +5,7 @@
     <div class="container">
         <form class="form-horizontal">
         <input type="hidden" id="previousPath" value="{{$previousPath}}">
-            <div class="row panel">
+            <div class="row card">
                 <div class="col-12">
                     <br />
                     <br />
