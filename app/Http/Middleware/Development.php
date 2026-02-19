@@ -18,7 +18,7 @@ class Development
     public function handle($request, Closure $next)
     {
         $isDev = false;
-        if (!$request->secure() && $request->header('host') != 'localhost:8000') {
+        if (!$request->secure() && $request->header('host') != 'localhost:8000' && $request->header('host') != 'localhost') {
             \URL::forceScheme('https');
         } else {
             $isDev = true;

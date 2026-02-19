@@ -62,3 +62,5 @@ Route::get('/noxbot/twitch/setup/{token}', function (string $token) {
 });
 
 Route::post('/points/add', 'API\PointsController@addPoints');
+
+Route::get('/discord/user/{username}', [App\Http\Controllers\API\UserController::class, 'getDiscordCurrentStatus']);

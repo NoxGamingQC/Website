@@ -4,11 +4,11 @@
 
 <div class="container text-justify my-auto">
     <div class="row py-5 align-items-center">
-        <div class="col panel">
+        <div class="col card card-body">
             <h2>
                 <b class="display-4">{!! trans('welcome.name') !!}</b>
                 <br />
-                <small class="text-body-secondary">{!! trans('welcome.gamertag') !!}</small>
+                <small>{!! trans('welcome.gamertag') !!}</small>
             </h2>
             <h5>{{trans('welcome.slogan')}}</h5>
             <h6>{!! trans('welcome.having_fun') !!}</h6>
