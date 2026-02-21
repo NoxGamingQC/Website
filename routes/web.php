@@ -42,6 +42,8 @@ Route::get('/startup', function() {
     return redirect()->to('/' . app()->getLocale() . '/startup');
 });
 
+Route::post('/mail/receive', 'Mails\MailController@receive');
+
 
 // Route that utilize the language
 Route::group([
@@ -124,7 +126,6 @@ Route::middleware(['cors'])->group(function () {
     Route::get('/mailbox', function () {
         return redirect()->to('/' . app()->getLocale() . '/mailbox');           
     });
-    Route::post('/mail/receive', 'Mails\MailController@receive');
     Route::post('/mail/send', 'Mails\MailController@sendMail');
     //Route::get('/mail/test', 'Mails\MailController@testMail');
     Route::get('/cookbook', function (Request $request) {
