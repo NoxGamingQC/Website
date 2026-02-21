@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LogsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -78,6 +79,9 @@ Route::group([
     });
     Route::get('/news', [App\Http\Controllers\NewsController::class, 'index']);
 
+    // Management routes
+    Route::get('/management/logs', 'LogsController@index');
+    Route::get('/management/logs/download/{filename}', [LogsController::class, 'download'])->name('management.logs.download');
 });
 
 
