@@ -17,6 +17,12 @@ class LogsController extends Controller
 
     public function index(Request $request)
     {
+        if(!auth()->check()) {
+            abort(403);
+        }
+        if(!auth()->user()->is_management) {
+            abort(403);
+        }
         $logPath = storage_path('logs');
         $files = File::files($logPath);
         $files = array_map(fn($f) => $f->getFilename(), $files);
