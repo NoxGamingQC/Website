@@ -17,7 +17,7 @@
         <a href="{{ route('management.logs.download', $selectedFile) }}" class="btn btn-primary mb-3" style="padding: 0.5rem 1rem !important;">Télécharger le fichier</a>
     @endif
 
-    @foreach($logs as $entry)
+    @foreach(array_reverse($logs) as $entry)
         @php
             $level = $entry['type'];
             $title = $entry['title'];
