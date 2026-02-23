@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Model\MailRecord;
 use App\Model\MailAttachment;
 use App\Model\User;
+use App\Model\Mailboxes;
 use Webklex\PHPIMAP\ClientManager;
 use Webklex\PHPIMAP\Client;
 use Illuminate\Support\Facades\Session;
@@ -23,10 +24,13 @@ class MailController extends Controller
                     ->first();
 
         if ($user) {
-            $mailbox = $user->mailboxes()->where('name', 'INBOX')->first();
+            $mailbox = Mailboxes::where('user_id', $user->id)->where('name', 'INBOX')->first();
 
             if (!$mailbox) {
-                $mailbox = $user->mailboxes()->create(['name' => 'INBOX']);
+                $mailbox = Mailboxes::create([
+                    'user_id' => $user->id,
+                    'name' => 'INBOX'
+                ]);
             }
             $mail = MailRecord::create([
                 'mailbox_id' => $mailbox->id,
