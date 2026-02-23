@@ -24,12 +24,12 @@ class MailController extends Controller
                     ->first();
 
         if ($user) {
-            $mailbox = Mailboxes::where('user_id', $user->id)->where('name', 'INBOX')->first();
+            $mailbox = Mailboxes::where('user_id', $user->id)->where('name', 'inbox')->first();
 
             if (!$mailbox) {
                 $mailbox = Mailboxes::create([
                     'user_id' => $user->id,
-                    'name' => 'INBOX'
+                    'name' => 'inbox'
                 ]);
             }
             $mail = MailRecord::create([
