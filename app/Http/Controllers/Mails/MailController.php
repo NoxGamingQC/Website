@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Mails;
 
 use Illuminate\Http\Request;
 use App\Model\User;
 use Illuminate\Support\Facades\Log;
 
-class MailController extends Controller
+class MailController extends \App\Http\Controllers\Controller
 {
     public function storeIncoming(Request $request)
     {
