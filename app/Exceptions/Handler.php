@@ -52,6 +52,8 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Throwable $exception)
     {
+        date_default_timezone_set('America/Toronto');
+
         if ($request->is('api/*')) {
             if($exception instanceof HttpExceptionInterface) {
                 if(method_exists($exception, 'getStatusCode')) {
