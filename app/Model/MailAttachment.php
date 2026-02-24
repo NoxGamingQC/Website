@@ -14,5 +14,12 @@ class MailAttachment extends Model
 
     protected $fillable = [
         'mail_id',
+        'filename',
+        'original_name',
+        'mime_type',
+        'file_size',
+        'content_id',
+        'disposition',
+        'storage_path'
     ];
 }
