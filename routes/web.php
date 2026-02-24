@@ -43,7 +43,7 @@ Route::get('/startup', function() {
     return redirect()->to('/' . app()->getLocale() . '/startup');
 });
 
-Route::post('/mail/receive', 'Mails\MailController@receive');
+Route::post('/mail/receive', 'Mails\MailController@storeIncoming');
 
 
 // Route that utilize the language
