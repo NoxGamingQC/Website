@@ -12,6 +12,13 @@ class MailRecord extends Model
     const UPDATED_AT = 'updated_at';
 
     protected $fillable = [
-        'mailbox_id'
+        'mailbox_id',
+        'sender',
+        'recipient',
+        'subject',
+        'body_plain',
+        'body_html',
+        'status',
+        'size',
     ];
 }

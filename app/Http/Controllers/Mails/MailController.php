@@ -36,13 +36,16 @@ class MailController extends Controller
             }
             $mail = MailRecord::create([
                 'mailbox_id' => $mailbox->id,
-                'sender' => $request->input('from'),
-                'recipient' => $recipient,
+                'sender' => $request->input('sender'),
+                'sender_name' => $request->input('from'),
+                'recipient' => $request->input('recipient'),
                 'subject' => $request->input('subject'),
-                'body_plain' => $request->input('body-plain'),
-                'body_html' => $request->input('body-html'),
+                'body_plain' => $request->input('stripped-text'),
+                'body_html' => $request->input('stripped-html'),
+                'message_id' => $request->input('Message-Id'),
+                'in_reply_to' => $request->input('In-Reply-To'),
                 'status' => 'received',
-                'size' => strlen($request->input('body-plain'))
+                'size' => strlen($request->input('body-plain') ?? ''),
             ]);
 
             foreach ($request->allFiles() as $file) {
