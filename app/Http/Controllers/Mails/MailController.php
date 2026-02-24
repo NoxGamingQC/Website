@@ -1,64 +1,81 @@
 <?php
 
-namespace App\Http\Controllers\Mails;
+namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Http\Request;
-use App\Model\MailRecord;
-use App\Model\MailAttachment;
 use App\Model\User;
-use App\Model\Mailboxes;
-use Webklex\PHPIMAP\ClientManager;
-use Webklex\PHPIMAP\Client;
-use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Log;
 
 class MailController extends Controller
 {
-    public function receive(Request $request)
+    public function storeIncoming(Request $request)
     {
-        $recipient = $request->input('recipient');
-        $user = User::where('local_mail', $recipient)
-                    ->orWhereRaw("aliases LIKE ?", ["%$recipient%"])
-                    ->first();
+        $recipient = strtolower(trim($request->input('recipient')));
+        $rawEmail  = $request->input('body-mime');
 
-        if ($user) {
-            $mailbox = Mailboxes::where('user_id', $user->id)->where('name', 'inbox')->first();
+        if (!$recipient || !$rawEmail) {
+            Log::warning('Invalid mail payload');
+            return response('Invalid payload', 400);
+        }
 
-            if (!$mailbox) {
-                $mailbox = Mailboxes::create([
-                    'user_id' => $user->id,
-                    'name' => 'inbox'
-                ]);
+        $user = User::where('local_mail', $recipient)->first();
+
+        if (!$user) {
+
+            $users = User::whereNotNull('aliases')->get();
+
+            foreach ($users as $u) {
+
+                $aliasList = array_map(
+                    'trim',
+                    explode(';', strtolower($u->aliases))
+                );
+
+                if (in_array($recipient, $aliasList)) {
+                    $user = $u;
+                    break;
+                }
             }
-            $mail = MailRecord::create([
-                'mailbox_id' => $mailbox->id,
-                'sender' => $request->input('sender'),
-                'sender_name' => $request->input('from'),
-                'recipient' => $request->input('recipient'),
-                'subject' => $request->input('subject'),
-                'body_plain' => $request->input('stripped-text'),
-                'body_html' => $request->input('stripped-html'),
-                'message_id' => $request->input('Message-Id'),
-                'in_reply_to' => $request->input('In-Reply-To'),
-                'status' => 'received',
-                'size' => strlen($request->input('body-plain') ?? ''),
-            ]);
+        }
 
-            foreach ($request->allFiles() as $file) {
-                $path = $file->store("attachments/{$mail->id}");
-                MailAttachment::create([
-                    'mail_id' => $mail->id,
-                    'filename' => $file->getClientOriginalName(),
-                    'original_name' => $file->getClientOriginalName(),
-                    'mime_type' => $file->getMimeType(),
-                    'file_size' => $file->getSize(),
-                    'disposition' => 'attachment',
-                    'storage_path' => $path
-                ]);
+        if (!$user) {
+            Log::warning("Mailbox not found: {$recipient}");
+            return response('550 5.1.1 User unknown', 406);
+        }
+
+        $localPart = explode('@', $user->local_mail)[0];
+
+        $maildirRoot = rtrim(env('MAILDIR_ROOT'), '/');
+        $userPath    = $maildirRoot . '/' . $localPart;
+
+        $tmpPath = $userPath . '/tmp';
+        $newPath = $userPath . '/new';
+        $curPath = $userPath . '/cur';
+
+        foreach ([$userPath, $tmpPath, $newPath, $curPath] as $path) {
+            if (!is_dir($path)) {
+                mkdir($path, 0770, true);
             }
+        }
+
+        $filename = time() . '.' . bin2hex(random_bytes(8)) . '.eml';
+
+        $tmpFile = $tmpPath . '/' . $filename;
+        $newFile = $newPath . '/' . $filename;
+
+        try {
+
+            $rawEmail = "X-Original-To: {$recipient}\r\n" . $rawEmail;
+
+            file_put_contents($tmpFile, $rawEmail);
+            chmod($tmpFile, 0660);
+
+            rename($tmpFile, $newFile);
+
+        } catch (\Exception $e) {
+
+            Log::error('Mail write failed: ' . $e->getMessage());
+            return response('451 Temporary failure', 500);
         }
 
         return response('OK', 200);
