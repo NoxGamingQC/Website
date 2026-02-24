@@ -19,7 +19,6 @@ class MailController extends Controller
 {
     public function receive(Request $request)
     {
-        Log::info('MAILGUN PAYLOAD:', $request->all());
         $recipient = $request->input('recipient');
         $user = User::where('local_mail', $recipient)
                     ->orWhereRaw("aliases LIKE ?", ["%$recipient%"])
