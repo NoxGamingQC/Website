@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Mails;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Http\Request;
 use App\Model\MailRecord;
 use App\Model\MailAttachment;
@@ -18,6 +19,7 @@ class MailController extends Controller
 {
     public function receive(Request $request)
     {
+        Log::info('MAILGUN PAYLOAD:', $request->all());
         $recipient = $request->input('recipient');
         $user = User::where('local_mail', $recipient)
                     ->orWhereRaw("aliases LIKE ?", ["%$recipient%"])
