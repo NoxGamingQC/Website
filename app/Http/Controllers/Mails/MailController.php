@@ -11,7 +11,7 @@ class MailController
 {
     public function receiveMail(Request $request)
     {
-        try {
+       try {
             $toHeader = $request->input('To') ?? $request->input('message.headers.to');
 
             if (!$toHeader) {
@@ -27,7 +27,7 @@ class MailController
                 ->first();
 
             if (!$user) {
-                Log::error('Mailbox not found');
+                Log::error('Mailbox not found', ['recipient' => $recipient]);
                 return response()->json(['error' => 'Mailbox not found'], 200);
             }
 
@@ -38,11 +38,11 @@ class MailController
             $maildirNew = $basePath . "/new";
 
             if (!is_dir($maildirTmp) || !is_dir($maildirNew)) {
-                Log::error('Maildir missing');
+                Log::error('Maildir missing', ['path' => $basePath]);
                 return response()->json(['error' => 'Maildir missing'], 200);
             }
 
-            $storageUrl = $request->input('storage.url.0') ?? $request->input('storage.url');
+            $storageUrl = $request->json('storage.url.0');
 
             if (!$storageUrl) {
                 Log::error('Missing storage URL');
@@ -53,7 +53,7 @@ class MailController
                 ->get($storageUrl);
 
             if (!$response->successful()) {
-                Log::error('MIME fetch failed');
+                Log::error('MIME fetch failed', ['status' => $response->status()]);
                 return response()->json(['error' => 'Fetch failed'], 200);
             }
 
@@ -66,19 +66,19 @@ class MailController
             $newFile = $maildirNew . '/' . $filename;
 
             if (file_put_contents($tmpFile, $mime) === false) {
-                Log::error('Write failed');
+                Log::error('Write failed', ['file' => $tmpFile]);
                 return response()->json(['error' => 'Write failed'], 200);
             }
 
             if (!rename($tmpFile, $newFile)) {
-                Log::error('Move failed');
+                Log::error('Move failed', ['from' => $tmpFile, 'to' => $newFile]);
                 return response()->json(['error' => 'Move failed'], 200);
             }
 
             return response()->json(['status' => 'stored'], 200);
 
         } catch (\Throwable $e) {
-            Log::error($e->getMessage());
+            Log::error('MAIL RECEIVE ERROR', ['reason' => $e->getMessage()]);
             return response()->json(['error' => 'Server error'], 200);
         }
     }
