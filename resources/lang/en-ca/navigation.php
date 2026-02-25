@@ -21,4 +21,6 @@ return [
     'preferences' => "Preferences",
     'language' => "Language",
     'french' => "Français (French)",
+    'management' => "Management",
+    'logs' => "Logs",
 ];  
