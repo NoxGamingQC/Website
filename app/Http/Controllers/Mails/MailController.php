@@ -17,6 +17,7 @@ class MailController
                 Log::error('No recipient received');
                 return response()->json(['error' => 'No recipient'], 200);
             }
+
             $user = User::whereRaw('LOWER(local_mail) = ?', [$recipient])
                 ->orWhereRaw('? = ANY(string_to_array(LOWER(aliases), \';\'))', [$recipient])
                 ->first();
@@ -25,6 +26,7 @@ class MailController
                 Log::error('Mailbox not found', ['recipient' => $recipient]);
                 return response()->json(['error' => 'Mailbox not found'], 200);
             }
+
             $localPart = explode('@', strtolower($user->local_mail))[0];
 
             $basePath = "/var/mailapp/noxgamingqc.ca/" . $localPart;
@@ -35,6 +37,7 @@ class MailController
                 Log::error('Maildir missing', ['path' => $basePath]);
                 return response()->json(['error' => 'Maildir missing'], 200);
             }
+
             $file = $request->file('attachment-1');
 
             if (!$file) {
@@ -42,11 +45,19 @@ class MailController
                 return response()->json(['error' => 'No MIME attachment'], 200);
             }
 
-            $mime = file_get_contents($file->getRealPath());
+            $raw = file_get_contents($file->getRealPath());
 
-            if (!$mime) {
+            if (!$raw) {
                 Log::error('Failed to read MIME content');
                 return response()->json(['error' => 'Read failed'], 200);
+            }
+
+            $mime = @gzdecode($raw);
+
+            if ($mime === false) {
+                $mime = $raw;
+            } else {
+                Log::info('Gzip decoded successfully');
             }
 
             $hostname = gethostname();
@@ -54,6 +65,7 @@ class MailController
 
             $tmpFile = $maildirTmp . '/' . $filename;
             $newFile = $maildirNew . '/' . $filename;
+
 
             if (file_put_contents($tmpFile, $mime) === false) {
                 Log::error('Write failed', ['file' => $tmpFile]);
