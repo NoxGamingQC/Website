@@ -4,75 +4,63 @@ namespace App\Http\Controllers\Mails;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Model\User;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Str;
 
 class MailController extends Controller
 {
-    public function storeIncoming(Request $request)
+    public function receiveMail(Request $request)
     {
-        $recipient = strtolower(trim($request->recipient));
-        if (!$recipient) {
-            Log::warning('Recipient missing', $request->all());
-            return response('Invalid payload', 400);
-        }
+        $recipient = $request->recipient;
+        if (!$recipient) return response('No recipient', 400);
 
-        $user = User::where('local_mail', $recipient)->first();
-        if (!$user && User::whereNotNull('aliases')->exists()) {
-            $usersWithAliases = User::whereNotNull('aliases')->get();
-            foreach ($usersWithAliases as $u) {
-                $aliasList = array_map('trim', explode(';', strtolower($u->aliases)));
-                if (in_array($recipient, $aliasList)) {
-                    $user = $u;
-                    break;
-                }
+        $userDir = explode('@', $recipient)[0];
+        $mailDir = "/var/mailapp/noxgamingqc.ca/{$userDir}/tmp";
+        if (!is_dir($mailDir)) {
+            if (!mkdir($mailDir, 0770, true)) {
+                Log::error("Cannot create maildir: {$mailDir}");
+                return response('Cannot create mailbox folder', 500);
             }
         }
 
-        if (!$user) {
-            Log::warning("Mailbox not found: {$recipient}");
-            return response('550 5.1.1 User unknown', 406);
+        $boundary = "=_".md5(uniqid(time(), true));
+
+        $headers = [];
+        $headers[] = "From: ".$request->input('from');
+        $headers[] = "To: {$recipient}";
+        $headers[] = "Subject: ".$request->input('subject');
+        $headers[] = "MIME-Version: 1.0";
+        $headers[] = "Content-Type: multipart/mixed; charset=UTF-8; boundary=\"{$boundary}\"";
+
+        $body = "--{$boundary}\r\n";
+        $body .= "Content-Type: text/plain; charset=UTF-8\r\n\r\n";
+        $body .= $request->input('body-plain') ?? '';
+        $body .= "\r\n";
+
+        foreach ($request->allFiles() as $file) {
+            $content = chunk_split(base64_encode(file_get_contents($file->getRealPath())));
+            $filename = $file->getClientOriginalName();
+            $mime = $file->getMimeType();
+            $body .= "--{$boundary}\r\n";
+            $body .= "Content-Type: {$mime}; name=\"{$filename}\"\r\n";
+            $body .= "Content-Transfer-Encoding: base64\r\n";
+            $body .= "Content-Disposition: attachment; filename=\"{$filename}\"\r\n\r\n";
+            $body .= $content . "\r\n";
         }
 
-        $localPart   = explode('@', $user->local_mail)[0];
-        $maildirRoot = rtrim(env('MAILDIR_ROOT'), '/');
-        $userPath    = $maildirRoot . '/' . $localPart;
+        $body .= "--{$boundary}--\r\n";
 
-        $tmpPath = $userPath . '/tmp';
-        $newPath = $userPath . '/new';
+        $emlFile = $mailDir."/".time()."_".Str::random(6).".eml";
 
-        foreach ([$userPath, $tmpPath, $newPath] as $path) {
-            if (!is_dir($path)) mkdir($path, 0770, true);
+        if (file_put_contents($emlFile, implode("\r\n", $headers)."\r\n\r\n".$body) === false) {
+            Log::error("Failed to write EML: {$emlFile}");
+            return response('Failed to save mail', 500);
         }
 
-        $filename = time() . '.' . bin2hex(random_bytes(8)) . '.eml';
-        $tmpFile  = $tmpPath . '/' . $filename;
-        $newFile  = $newPath . '/' . $filename;
+        @chown($emlFile, 5000);
+        @chgrp($emlFile, 'mail');
+        @chmod($emlFile, 0660);
 
-        try {
-            $from    = $request->input('from', 'unknown@localhost');
-            $to      = $recipient;
-            $subject = $request->input('subject', '(No subject)');
-            $date    = $request->input('Date') ?? date(DATE_RFC2822);
-            $body    = $request->input('body-plain') ?? $request->input('body-html') ?? json_encode($request->all(), JSON_UNESCAPED_UNICODE);
-
-            $eml = "From: {$from}\r\n";
-            $eml .= "To: {$to}\r\n";
-            $eml .= "Subject: {$subject}\r\n";
-            $eml .= "Date: {$date}\r\n";
-            $eml .= "MIME-Version: 1.0\r\n";
-            $eml .= "Content-Type: text/plain; charset=UTF-8\r\n\r\n";
-            $eml .= $body;
-
-            file_put_contents($tmpFile, $eml);
-            chmod($tmpFile, 0660);
-            rename($tmpFile, $newFile);
-
-        } catch (\Exception $e) {
-            Log::error('Mail write failed: ' . $e->getMessage());
-            return response('451 Temporary failure', 500);
-        }
-
-        return response('OK', 200);
+        return response('Mail saved', 200);
     }
 }
