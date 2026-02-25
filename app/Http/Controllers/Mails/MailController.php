@@ -10,7 +10,7 @@ use App\Model\User;
 
 class MailController extends Controller
 {
-    public function storeIncoming(Request $request)
+    public function receiveMail(Request $request)
     {
         $recipient = $request->recipient;
         if (!$recipient) return response('No recipient', 400);
@@ -25,15 +25,15 @@ class MailController extends Controller
         if (!$user) return response('Recipient not found', 404);
 
         $userDir = explode('@', $user->local_mail)[0];
-        $mailDir = "/var/mailapp/noxgamingqc.ca/{$userDir}/tmp";
-        if (!is_dir($mailDir)) {
-            if (!mkdir($mailDir, 0770, true)) {
-                Log::error("Cannot create maildir: {$mailDir}");
-                return response('Cannot create mailbox folder', 500);
-            }
-        }
 
-        $boundary = "=_".md5(uniqid(time(), true));
+        $basePath = "/var/mailapp/noxgamingqc.ca/{$userDir}";
+        $tmpPath  = "{$basePath}/tmp";
+        $newPath  = "{$basePath}/new";
+
+        if (!is_dir($tmpPath)) mkdir($tmpPath, 0770, true);
+        if (!is_dir($newPath)) mkdir($newPath, 0770, true);
+
+        $boundary = "=_".md5(uniqid('', true));
 
         $headers = [];
         $headers[] = "From: ".$request->input('from');
@@ -51,6 +51,7 @@ class MailController extends Controller
             $content = chunk_split(base64_encode(file_get_contents($file->getRealPath())));
             $filename = $file->getClientOriginalName();
             $mime = $file->getMimeType();
+
             $body .= "--{$boundary}\r\n";
             $body .= "Content-Type: {$mime}; name=\"{$filename}\"\r\n";
             $body .= "Content-Transfer-Encoding: base64\r\n";
@@ -60,16 +61,22 @@ class MailController extends Controller
 
         $body .= "--{$boundary}--\r\n";
 
-        $emlFile = $mailDir."/".time()."_".Str::random(6).".eml";
+        $mailContent = implode("\r\n", $headers) . "\r\n\r\n" . $body;
 
-        if (file_put_contents($emlFile, implode("\r\n", $headers)."\r\n\r\n".$body) === false) {
-            Log::error("Failed to write EML: {$emlFile}");
+        $mailFilename = time() . "." . getmypid() . "." . gethostname();
+        $tmpFile = "{$tmpPath}/{$mailFilename}";
+        $newFile = "{$newPath}/{$mailFilename}";
+
+        if (file_put_contents($tmpFile, $mailContent) === false) {
+            Log::error("Failed to write EML: {$tmpFile}");
             return response('Failed to save mail', 500);
         }
 
-        @chown($emlFile, 5000);
-        @chgrp($emlFile, 'mail');
-        @chmod($emlFile, 0660);
+        rename($tmpFile, $newFile);
+
+        @chown($newFile, 5000);
+        @chgrp($newFile, 'mail');
+        @chmod($newFile, 0660);
 
         return response('Mail saved', 200);
     }
