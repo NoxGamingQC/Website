@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Log;
 
 class MailController extends Controller
 {
-    public function receive(Request $request) {
+    public function receiveMail(Request $request) {
         try {
 
             Log::info('MAILGUN WEBHOOK RECEIVED', $request->all());
