@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Mails;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Str;
 use App\Model\User;
 
 class MailController extends Controller
@@ -33,43 +32,16 @@ class MailController extends Controller
         if (!is_dir($tmpPath)) mkdir($tmpPath, 0770, true);
         if (!is_dir($newPath)) mkdir($newPath, 0770, true);
 
-        $boundary = "=_".md5(uniqid('', true));
+        $rawMime = $request->input('body-mime');
+        if (!$rawMime) return response('No MIME body', 400);
 
-        $headers = [];
-        $headers[] = "From: ".$request->input('from');
-        $headers[] = "To: {$recipient}";
-        $headers[] = "Subject: ".$request->input('subject');
-        $headers[] = "MIME-Version: 1.0";
-        $headers[] = "Content-Type: multipart/mixed; charset=UTF-8; boundary=\"{$boundary}\"";
+        $filename = time() . "." . getmypid() . "." . gethostname();
+        $tmpFile  = "{$tmpPath}/{$filename}";
+        $newFile  = "{$newPath}/{$filename}";
 
-        $body = "--{$boundary}\r\n";
-        $body .= "Content-Type: text/plain; charset=UTF-8\r\n\r\n";
-        $body .= $request->input('body-plain') ?? '';
-        $body .= "\r\n";
-
-        foreach ($request->allFiles() as $file) {
-            $content = chunk_split(base64_encode(file_get_contents($file->getRealPath())));
-            $filename = $file->getClientOriginalName();
-            $mime = $file->getMimeType();
-
-            $body .= "--{$boundary}\r\n";
-            $body .= "Content-Type: {$mime}; name=\"{$filename}\"\r\n";
-            $body .= "Content-Transfer-Encoding: base64\r\n";
-            $body .= "Content-Disposition: attachment; filename=\"{$filename}\"\r\n\r\n";
-            $body .= $content . "\r\n";
-        }
-
-        $body .= "--{$boundary}--\r\n";
-
-        $mailContent = implode("\r\n", $headers) . "\r\n\r\n" . $body;
-
-        $mailFilename = time() . "." . getmypid() . "." . gethostname();
-        $tmpFile = "{$tmpPath}/{$mailFilename}";
-        $newFile = "{$newPath}/{$mailFilename}";
-
-        if (file_put_contents($tmpFile, $mailContent) === false) {
-            Log::error("Failed to write EML: {$tmpFile}");
-            return response('Failed to save mail', 500);
+        if (file_put_contents($tmpFile, $rawMime) === false) {
+            Log::error("Failed to write mail: {$tmpFile}");
+            return response('Write failed', 500);
         }
 
         rename($tmpFile, $newFile);
