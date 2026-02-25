@@ -11,13 +11,10 @@ use Illuminate\Support\Facades\Log;
 
 class MailController extends Controller
 {
-    public function receiveMail(Request $request) {
+    public function receiveMail(Request $request)
+    {
         try {
-
-            Log::info('MAILGUN WEBHOOK RECEIVED', $request->all());
-
-            $toHeader = $request->input('To')
-                ?? $request->input('message.headers.to');
+            $toHeader = $request->input('To') ?? $request->input('message.headers.to');
 
             if (!$toHeader) {
                 Log::error('No recipient header found');
@@ -25,11 +22,7 @@ class MailController extends Controller
             }
 
             preg_match('/<(.+?)>/', $toHeader, $matches);
-            $recipient = $matches[1] ?? trim($toHeader);
-
-            $recipient = strtolower(trim($recipient));
-
-            Log::info('Parsed recipient', ['recipient' => $recipient]);
+            $recipient = strtolower(trim($matches[1] ?? $toHeader));
 
             $user = User::whereRaw('LOWER(email) = ?', [$recipient])
                 ->orWhereRaw('? = ANY(string_to_array(aliases, \';\'))', [$recipient])
@@ -40,28 +33,10 @@ class MailController extends Controller
                 return response()->json(['error' => 'User not found'], 200);
             }
 
-            Log::info('User matched', ['username' => $user->username]);
+            $targetEmail = $user->email;
+            $localPart = explode('@', $targetEmail)[0];
 
-            $storageUrl = $request->input('storage.url.0');
-
-            if (!$storageUrl) {
-                Log::error('No storage URL');
-                return response()->json(['error' => 'No storage URL'], 200);
-            }
-
-            $response = Http::withBasicAuth('api', env('MAILGUN_SECRET'))
-                ->get($storageUrl);
-
-            if (!$response->successful()) {
-                Log::error('Failed fetching MIME from Mailgun', [
-                    'status' => $response->status()
-                ]);
-                return response()->json(['error' => 'Fetch failed'], 200);
-            }
-
-            $mime = $response->body();
-
-            $basePath = "/var/mailapp/noxgamingqc.ca/" . $user->username;
+            $basePath = "/var/mailapp/noxgamingqc.ca/" . $localPart;
             $maildirNew = $basePath . "/new";
             $maildirTmp = $basePath . "/tmp";
 
@@ -70,29 +45,35 @@ class MailController extends Controller
                 return response()->json(['error' => 'Maildir missing'], 200);
             }
 
+            $storageUrl = $request->input('storage.url.0');
+
+            if (!$storageUrl) {
+                Log::error('No storage URL provided');
+                return response()->json(['error' => 'No storage URL'], 200);
+            }
+
+            $response = Http::withBasicAuth('api', env('MAILGUN_SECRET'))
+                ->get($storageUrl);
+
+            if (!$response->successful()) {
+                Log::error('Failed fetching MIME', ['status' => $response->status()]);
+                return response()->json(['error' => 'Fetch failed'], 200);
+            }
+
+            $mime = $response->body();
+
             $hostname = gethostname();
             $filename = time() . '.' . bin2hex(random_bytes(8)) . '.' . $hostname;
-
             $tmpFile = $maildirTmp . '/' . $filename;
             $newFile = $maildirNew . '/' . $filename;
 
             file_put_contents($tmpFile, $mime);
-
             rename($tmpFile, $newFile);
-
-            Log::info('Mail stored successfully', [
-                'path' => $newFile
-            ]);
 
             return response()->json(['status' => 'stored'], 200);
 
         } catch (\Throwable $e) {
-
-            Log::critical('MAIL RECEIVE FATAL ERROR', [
-                'message' => $e->getMessage(),
-                'trace' => $e->getTraceAsString()
-            ]);
-
+            Log::error('MAIL RECEIVE ERROR', ['reason' => $e->getMessage()]);
             return response()->json(['error' => 'Server error'], 200);
         }
     }
