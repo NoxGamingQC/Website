@@ -16,8 +16,11 @@ class MailController extends Controller
         if (!$recipient) return response('No recipient', 400);
 
         $user = User::where('local_mail', $recipient)
-                    ->orWhereRaw("FIND_IN_SET(?, REPLACE(aliases, ';', ','))", [$recipient])
-                    ->first();
+            ->orWhereRaw("EXISTS (
+                SELECT 1 FROM unnest(string_to_array(aliases, ';')) AS alias
+                WHERE alias = ?
+            )", [$recipient])
+            ->first();
 
         if (!$user) return response('Recipient not found', 404);
 
