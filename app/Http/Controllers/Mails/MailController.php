@@ -3,19 +3,16 @@
 namespace App\Http\Controllers\Mails;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Http;
-use App\Model\User;
 use Illuminate\Support\Facades\Log;
+use App\Model\User;
 
-
-class MailController extends Controller
+class MailController
 {
     public function receiveMail(Request $request)
     {
         try {
             $toHeader = $request->input('To') ?? $request->input('message.headers.to');
-
             if (!$toHeader) {
                 Log::error('No recipient header found');
                 return response()->json(['error' => 'No recipient header'], 200);
@@ -23,20 +20,19 @@ class MailController extends Controller
 
             preg_match('/<(.+?)>/', $toHeader, $matches);
             $recipient = strtolower(trim($matches[1] ?? $toHeader));
+            $localPart = explode('@', $recipient)[0];
 
-            $user = User::whereRaw('LOWER(email) = ?', [$recipient])
-                ->orWhereRaw('? = ANY(string_to_array(aliases, \';\'))', [$recipient])
+            $user = User::whereRaw('LOWER(SPLIT_PART(email, \'@\', 1)) = ?', [$localPart])
+                ->orWhereRaw('? = ANY(string_to_array(aliases, \';\'))', [$localPart])
                 ->first();
 
             if (!$user) {
-                Log::error('User not found', ['recipient' => $recipient]);
+                Log::error('User not found', ['recipient' => $localPart]);
                 return response()->json(['error' => 'User not found'], 200);
             }
 
-            $targetEmail = $user->email;
-            $localPart = explode('@', $targetEmail)[0];
-
-            $basePath = "/var/mailapp/noxgamingqc.ca/" . $localPart;
+            $storeLocalPart = explode('@', $user->email)[0];
+            $basePath = "/var/mailapp/noxgamingqc.ca/" . $storeLocalPart;
             $maildirNew = $basePath . "/new";
             $maildirTmp = $basePath . "/tmp";
 
@@ -46,15 +42,12 @@ class MailController extends Controller
             }
 
             $storageUrl = $request->input('storage.url.0');
-
             if (!$storageUrl) {
                 Log::error('No storage URL provided');
                 return response()->json(['error' => 'No storage URL'], 200);
             }
 
-            $response = Http::withBasicAuth('api', env('MAILGUN_SECRET'))
-                ->get($storageUrl);
-
+            $response = Http::withBasicAuth('api', env('MAILGUN_SECRET'))->get($storageUrl);
             if (!$response->successful()) {
                 Log::error('Failed fetching MIME', ['status' => $response->status()]);
                 return response()->json(['error' => 'Fetch failed'], 200);
