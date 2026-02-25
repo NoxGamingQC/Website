@@ -4,52 +4,52 @@ namespace App\Http\Controllers\Mails;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Http;
 use App\Model\User;
 
 class MailController extends Controller
 {
-    public function receiveMail(Request $request)
-    {
-        $recipient = $request->recipient;
-        if (!$recipient) return response('No recipient', 400);
+    public function receive(Request $request) {
+        $recipient = $request->input('recipient');
 
-        $user = User::where('local_mail', $recipient)
-            ->orWhereRaw("EXISTS (
-                SELECT 1 FROM unnest(string_to_array(aliases, ';')) AS alias
-                WHERE alias = ?
-            )", [$recipient])
-            ->first();
-
-        if (!$user) return response('Recipient not found', 404);
-
-        $userDir = explode('@', $user->local_mail)[0];
-
-        $basePath = "/var/mailapp/noxgamingqc.ca/{$userDir}";
-        $tmpPath  = "{$basePath}/tmp";
-        $newPath  = "{$basePath}/new";
-
-        if (!is_dir($tmpPath)) mkdir($tmpPath, 0770, true);
-        if (!is_dir($newPath)) mkdir($newPath, 0770, true);
-
-        $rawMime = $request->input('body-mime');
-        if (!$rawMime) return response('No MIME body', 400);
-
-        $filename = time() . "." . getmypid() . "." . gethostname();
-        $tmpFile  = "{$tmpPath}/{$filename}";
-        $newFile  = "{$newPath}/{$filename}";
-
-        if (file_put_contents($tmpFile, $rawMime) === false) {
-            Log::error("Failed to write mail: {$tmpFile}");
-            return response('Write failed', 500);
+        if (!$recipient) {
+            return response()->json(['error' => 'No recipient'], 400);
         }
 
-        rename($tmpFile, $newFile);
+        $user = User::where('email', $recipient)
+            ->orWhereRaw("? = ANY(string_to_array(aliases, ';'))", [$recipient])
+            ->first();
 
-        @chown($newFile, 5000);
-        @chgrp($newFile, 'mail');
-        @chmod($newFile, 0660);
+        if (!$user) {
+            return response()->json(['error' => 'User not found'], 404);
+        }
 
-        return response('Mail saved', 200);
+        $storageUrl = $request->input('storage.url.0');
+
+        if (!$storageUrl) {
+            return response()->json(['error' => 'No storage URL'], 400);
+        }
+
+        $response = Http::withBasicAuth('api', env('MAILGUN_SECRET'))
+            ->get($storageUrl);
+
+        if (!$response->successful()) {
+            return response()->json(['error' => 'Unable to fetch message'], 400);
+        }
+
+        $mime = $response->body();
+
+        $basePath = "/var/mailapp/noxgamingqc.ca/" . $user->username;
+        $newPath = $basePath . "/new";
+
+        if (!is_dir($newPath)) {
+            return response()->json(['error' => 'Maildir not found'], 500);
+        }
+
+        $filename = time() . '.' . uniqid() . '.mail';
+
+        file_put_contents($newPath . '/' . $filename, $mime);
+
+        return response()->json(['status' => 'stored'], 200);
     }
 }
