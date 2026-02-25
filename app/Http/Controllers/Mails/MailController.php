@@ -42,7 +42,7 @@ class MailController
                 return response()->json(['error' => 'Maildir missing'], 200);
             }
 
-            $storageUrl = $request->input('storage.url.0');
+            $storageUrl = $request->input('storage.url.0') ?? $request->input('storage.url');
 
             if (!$storageUrl) {
                 Log::error('Missing storage URL');
