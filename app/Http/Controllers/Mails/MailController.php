@@ -9,7 +9,7 @@ use Illuminate\Support\Str;
 
 class MailController extends Controller
 {
-    public function receiveMail(Request $request)
+    public function storeIncoming(Request $request)
     {
         $recipient = $request->recipient;
         if (!$recipient) return response('No recipient', 400);
