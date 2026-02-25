@@ -9,7 +9,7 @@ use App\Model\User;
 
 class MailController extends Controller
 {
-    public function receive(Request $request) {
+    public function receiveMail(Request $request) {
         $recipient = $request->input('recipient');
 
         if (!$recipient) {
