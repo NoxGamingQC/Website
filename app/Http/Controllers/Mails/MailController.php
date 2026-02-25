@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
+use App\Model\User;
 
 class MailController extends Controller
 {
@@ -14,7 +15,13 @@ class MailController extends Controller
         $recipient = $request->recipient;
         if (!$recipient) return response('No recipient', 400);
 
-        $userDir = explode('@', $recipient)[0];
+        $user = User::where('local_mail', $recipient)
+                    ->orWhereRaw("FIND_IN_SET(?, REPLACE(aliases, ';', ','))", [$recipient])
+                    ->first();
+
+        if (!$user) return response('Recipient not found', 404);
+
+        $userDir = explode('@', $user->local_mail)[0];
         $mailDir = "/var/mailapp/noxgamingqc.ca/{$userDir}/tmp";
         if (!is_dir($mailDir)) {
             if (!mkdir($mailDir, 0770, true)) {
