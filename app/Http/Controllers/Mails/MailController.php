@@ -43,7 +43,7 @@ class MailController
             }
 
             if (!isset($request->storage) || !isset($request->storage['url'])) {
-                Log::error('Storage missing or malformed');
+                Log::error('Storage missing or malformed', $request);
                 return response()->json(['error' => 'Missing storage URL'], 200);
             }
 
