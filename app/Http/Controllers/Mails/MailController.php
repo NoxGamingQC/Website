@@ -2,83 +2,74 @@
 
 namespace App\Http\Controllers\Mails;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
+use App\Http\Controllers\Controller;
 use App\Model\User;
+use Illuminate\Http\Request;
+use PhpMimeMailParser\Parser;
+use Illuminate\Support\Facades\Log;
 
-class MailController
+class MailController extends Controller
 {
     public function receiveMail(Request $request)
     {
         try {
-
-            $recipient = strtolower(trim($request->input('recipient')));
-
-            if (!$recipient) {
-                Log::error('No recipient received');
-                return response()->json(['error' => 'No recipient'], 200);
+            if (!$request->storage || !isset($request->storage['url'][0])) {
+                Log::error('Mail storage URL missing');
+                return response()->json(['error' => 'Storage URL missing'], 400);
             }
 
-            $user = User::whereRaw('LOWER(local_mail) = ?', [$recipient])
-                ->orWhereRaw('? = ANY(string_to_array(LOWER(aliases), \';\'))', [$recipient])
-                ->first();
+            $storageUrl = $request->storage['url'][0];
+            Log::info('Mail storage URL: ' . $storageUrl);
 
-            if (!$user) {
-                Log::error('Mailbox not found');
-                return response()->json(['error' => 'Mailbox not found'], 200);
+            $rawMail = file_get_contents($storageUrl);
+            if (!$rawMail) {
+                Log::error('Unable to fetch raw mail from storage URL');
+                return response()->json(['error' => 'Cannot fetch mail'], 400);
             }
 
-            $localPart = explode('@', strtolower($user->local_mail))[0];
+            $parser = new Parser();
+            $parser->setText($rawMail);
 
-            $basePath = "/var/mailapp/noxgamingqc.ca/" . $localPart;
-            $maildirTmp = $basePath . "/tmp";
-            $maildirNew = $basePath . "/new";
+            $from = $parser->getHeader('from');
+            $toHeader = $parser->getHeader('to');
+            $subject = $parser->getHeader('subject') ?? 'No Subject';
+            $html = $parser->getMessageBody('html') ?? '';
+            $text = $parser->getMessageBody('text') ?? '';
+            $attachments = $parser->getAttachments();
 
-            if (!is_dir($maildirTmp) || !is_dir($maildirNew)) {
-                Log::error('Maildir missing');
-                return response()->json(['error' => 'Maildir missing'], 200);
+            $recipients = array_map('trim', explode(',', $toHeader));
+            foreach ($recipients as $recipient) {
+                $emailParts = explode('@', $recipient);
+                $localPart = strtolower($emailParts[0]);
+                $domainPart = strtolower($emailParts[1] ?? '');
+
+                $user = User::where('local_mail', $recipient)
+                            ->orWhereRaw("FIND_IN_SET(?, aliases)", [$recipient])
+                            ->first();
+
+                if (!$user) {
+                    Log::warning("No user found for recipient: $recipient");
+                    continue;
+                }
+
+                $userFolder = "/var/mailapp/{$domainPart}/{$localPart}";
+                if (!is_dir($userFolder)) mkdir($userFolder, 0775, true);
+
+                $timestamp = time();
+                $filename = $userFolder . "/{$timestamp}.eml";
+
+                file_put_contents($filename, $rawMail);
+
+                foreach ($attachments as $attachment) {
+                    $attPath = $userFolder . '/' . $attachment->getFilename();
+                    file_put_contents($attPath, $attachment->getContent());
+                }
             }
 
-            $file = $request->file('attachment-1');
-
-            if (!$file) {
-                Log::error('No MIME attachment');
-                return response()->json(['error' => 'No MIME attachment'], 200);
-            }
-
-            $raw = file_get_contents($file->getRealPath());
-
-            if (!$raw) {
-                Log::error('Read failed');
-                return response()->json(['error' => 'Read failed'], 200);
-            }
-
-            $mime = @gzdecode($raw);
-            if ($mime === false) {
-                $mime = $raw;
-            }
-
-            $hostname = gethostname();
-            $filename = time() . '.' . bin2hex(random_bytes(8)) . '.' . $hostname;
-
-            $tmpFile = $maildirTmp . '/' . $filename;
-            $newFile = $maildirNew . '/' . $filename;
-
-            if (file_put_contents($tmpFile, $mime) === false) {
-                Log::error('Write failed');
-                return response()->json(['error' => 'Write failed'], 200);
-            }
-
-            if (!rename($tmpFile, $newFile)) {
-                Log::error('Move failed');
-                return response()->json(['error' => 'Move failed'], 200);
-            }
-
-            return response()->json(['status' => 'stored'], 200);
-
-        } catch (\Throwable $e) {
-            Log::error($e->getMessage());
-            return response()->json(['error' => 'Server error'], 200);
+            return response()->json(['status' => 'ok']);
+        } catch (\Exception $e) {
+            Log::error('Mail receive error: ' . $e->getMessage());
+            return response()->json(['error' => 'Internal server error'], 500);
         }
     }
 }
