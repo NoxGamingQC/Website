@@ -13,43 +13,47 @@ class MailController
     {
         try {
             $toHeader = $request->input('To') ?? $request->input('message.headers.to');
+
             if (!$toHeader) {
-                Log::error('No recipient header found');
-                return response()->json(['error' => 'No recipient header'], 200);
+                Log::error('No recipient header');
+                return response()->json(['error' => 'No recipient'], 200);
             }
 
             preg_match('/<(.+?)>/', $toHeader, $matches);
             $recipient = strtolower(trim($matches[1] ?? $toHeader));
-            $localPart = explode('@', $recipient)[0];
 
-            $user = User::whereRaw('LOWER(SPLIT_PART(email, \'@\', 1)) = ?', [$localPart])
-                ->orWhereRaw('? = ANY(string_to_array(aliases, \';\'))', [$localPart])
+            $user = User::whereRaw('LOWER(local_mail) = ?', [$recipient])
+                ->orWhereRaw('? = ANY(string_to_array(LOWER(aliases), \';\'))', [$recipient])
                 ->first();
 
             if (!$user) {
-                Log::error('User not found', ['recipient' => $localPart]);
-                return response()->json(['error' => 'User not found'], 200);
+                Log::error('Mailbox not found');
+                return response()->json(['error' => 'Mailbox not found'], 200);
             }
 
-            $storeLocalPart = explode('@', $user->local_mail)[0];
-            $basePath = "/var/mailapp/noxgamingqc.ca/" . $storeLocalPart;
-            $maildirNew = $basePath . "/new";
-            $maildirTmp = $basePath . "/tmp";
+            $localPart = explode('@', strtolower($user->local_mail))[0];
 
-            if (!is_dir($maildirNew) || !is_dir($maildirTmp)) {
-                Log::error('Maildir structure missing', ['path' => $basePath]);
+            $basePath = "/var/mailapp/noxgamingqc.ca/" . $localPart;
+            $maildirTmp = $basePath . "/tmp";
+            $maildirNew = $basePath . "/new";
+
+            if (!is_dir($maildirTmp) || !is_dir($maildirNew)) {
+                Log::error('Maildir missing');
                 return response()->json(['error' => 'Maildir missing'], 200);
             }
 
             $storageUrl = $request->input('storage.url.0');
+
             if (!$storageUrl) {
-                Log::error('No storage URL provided');
-                return response()->json(['error' => 'No storage URL'], 200);
+                Log::error('Missing storage URL');
+                return response()->json(['error' => 'Missing storage URL'], 200);
             }
 
-            $response = Http::withBasicAuth('api', env('MAILGUN_SECRET'))->get($storageUrl);
+            $response = Http::withBasicAuth('api', env('MAILGUN_SECRET'))
+                ->get($storageUrl);
+
             if (!$response->successful()) {
-                Log::error('Failed fetching MIME', ['status' => $response->status()]);
+                Log::error('MIME fetch failed');
                 return response()->json(['error' => 'Fetch failed'], 200);
             }
 
@@ -57,16 +61,24 @@ class MailController
 
             $hostname = gethostname();
             $filename = time() . '.' . bin2hex(random_bytes(8)) . '.' . $hostname;
+
             $tmpFile = $maildirTmp . '/' . $filename;
             $newFile = $maildirNew . '/' . $filename;
 
-            file_put_contents($tmpFile, $mime);
-            rename($tmpFile, $newFile);
+            if (file_put_contents($tmpFile, $mime) === false) {
+                Log::error('Write failed');
+                return response()->json(['error' => 'Write failed'], 200);
+            }
+
+            if (!rename($tmpFile, $newFile)) {
+                Log::error('Move failed');
+                return response()->json(['error' => 'Move failed'], 200);
+            }
 
             return response()->json(['status' => 'stored'], 200);
 
         } catch (\Throwable $e) {
-            Log::error('MAIL RECEIVE ERROR', ['reason' => $e->getMessage()]);
+            Log::error($e->getMessage());
             return response()->json(['error' => 'Server error'], 200);
         }
     }
