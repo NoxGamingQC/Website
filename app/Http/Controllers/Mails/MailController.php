@@ -31,7 +31,7 @@ class MailController
                 return response()->json(['error' => 'User not found'], 200);
             }
 
-            $storeLocalPart = explode('@', $user->email)[0];
+            $storeLocalPart = explode('@', $user->local_mail)[0];
             $basePath = "/var/mailapp/noxgamingqc.ca/" . $storeLocalPart;
             $maildirNew = $basePath . "/new";
             $maildirTmp = $basePath . "/tmp";
