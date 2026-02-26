@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Mails;
 use App\Http\Controllers\Controller;
 use App\Model\User;
 use Illuminate\Http\Request;
-use PhpMimeMailParser\Parser;
+use eXorus\PhpMimeMailParser\Parser;
 use Illuminate\Support\Facades\Log;
 
 class MailController extends Controller
