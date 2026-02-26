@@ -13,22 +13,17 @@ class MailController extends Controller
     public function receiveMail(Request $request)
     {
         try {
-            if (!$request->storage || !isset($request->storage['url'][0])) {
-                Log::error('Mail storage URL missing');
-                return response()->json(['error' => 'Storage URL missing'], 400);
+            $mailFile = $request->file('attachment-1');
+            if (!$mailFile) {
+                Log::error('No mail attachment found');
+                return response()->json(['error' => 'No attachment'], 400);
             }
 
-            $storageUrl = $request->storage['url'][0];
-            Log::info('Mail storage URL: ' . $storageUrl);
-
-            $rawMail = file_get_contents($storageUrl);
-            if (!$rawMail) {
-                Log::error('Unable to fetch raw mail from storage URL');
-                return response()->json(['error' => 'Cannot fetch mail'], 400);
-            }
+            $rawContent = file_get_contents($mailFile->getRealPath());
+            $decodedContent = @gzdecode($rawContent) ?: $rawContent;
 
             $parser = new Parser();
-            $parser->setText($rawMail);
+            $parser->setText($decodedContent);
 
             $from = $parser->getHeader('from');
             $toHeader = $parser->getHeader('to');
@@ -58,7 +53,7 @@ class MailController extends Controller
                 $timestamp = time();
                 $filename = $userFolder . "/{$timestamp}.eml";
 
-                file_put_contents($filename, $rawMail);
+                file_put_contents($filename, $decodedContent);
 
                 foreach ($attachments as $attachment) {
                     $attPath = $userFolder . '/' . $attachment->getFilename();

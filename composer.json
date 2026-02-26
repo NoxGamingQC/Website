@@ -20,6 +20,7 @@
         "laravel/tinker": "^2.0",
         "laravel/ui": "^3.0",
         "nunomaduro/collision": "^6.1",
+        "php-mime-mail-parser/php-mime-mail-parser": "^1.0",
         "phpunit/phpunit": "^9.0",
         "spatie/laravel-ignition": "^1.0",
         "square/square": "^39.1",
@@ -28,8 +29,7 @@
         "twbs/bootstrap": "^5.3",
         "webklex/laravel-imap": "^4.1",
         "willvincent/feeds": "^2.7",
-        "wohali/oauth2-discord-new": "^1.0",
-        "zbateson/mail-mime-parser": "^2.2"
+        "wohali/oauth2-discord-new": "^1.0"
     },
     "require-dev": {
         "filp/whoops": "~2.0",
