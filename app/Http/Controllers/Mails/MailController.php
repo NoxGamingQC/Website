@@ -39,8 +39,8 @@ class MailController extends Controller
                 $domainPart = strtolower($emailParts[1] ?? '');
 
                 $user = User::where('local_mail', $recipient)
-                            ->orWhereRaw("FIND_IN_SET(?, aliases)", [$recipient])
-                            ->first();
+                ->orWhereRaw('? = ANY(string_to_array(aliases, \';\'))', [$recipient])
+                ->first();
 
                 if (!$user) {
                     Log::warning("No user found for recipient: $recipient");
