@@ -13,42 +13,11 @@ $brand-danger: #E64747;
 $brand-info: #75D7EC;
 $brand-orange: #F28500;
 
-[data-bs-theme="dark"] {
-    --bs-body-color: #F5F5F5;
-    --bs-body-bg: darken(#050505, 2%);
-    --bs-hover-bg: #151515CC;
-    /*.text-primary {
-        -webkit-text-stroke: 0.3px #f5f5f5;
-    }*/
-    body {
-        background-color: #151515;
-    }
-}
-
-[data-bs-theme="light"] {
-    --bs-body-color: #151515;
-    --bs-body-bg: #f5f5f5;
-    --bs-hover-bg: #f0f0f0CC;
-    body {
-        background-color: darken(#f5f5f5, 5%);
-    }
-}
-
-[data-bs-theme="dracula"] {
-    --bs-body-color: #f8f8f2;
-    --bs-body-bg: #282a36;
-    --bs-hover-bg: #f0f0f0CC;
-    --bs-primary: #bd93f9;
-    --bs-success: #50fa7b;
-    --bs-warning: #f1fa8c;
-    --bs-danger: #ff79c6;
-    --bs-info: #8be9fd;
-}
-
-$text-color: var(--bs-body-color);
-$background-color: var(--bs-body-bg);
-$secondary-bg: var(--bs-secondary-bg);
-$hover-bg: var(--bs-hover-bg);
+$background-color: #151515;
+$card-bg: darken($brand-primary, 20%);
+$border-color: $brand-primary;
+$text-color: #F5F5F5;
+$hover-bg: #88000088;
 
 $brand-primary-text-emphasis: #F5F5F5;
 $brand-success-text-emphasis: #151515;

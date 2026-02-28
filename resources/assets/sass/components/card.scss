@@ -1,7 +1,7 @@
-.card-primary {
+.card {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    background-color: #220000;
-    border: 1px solid #880000;
+    background-color: $card-bg;
+    border: 1px solid $border-color;
     color: #f5f5f5;
 }
