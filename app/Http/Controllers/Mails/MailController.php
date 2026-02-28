@@ -25,13 +25,15 @@ class MailController extends Controller
             $parser = new Parser();
             $parser->setText($decodedContent);
 
-            $toAddresses = $parser->getAddresses('to');
+            $toHeader = $parser->getHeader('to') ?? '';
             $attachments = $parser->getAttachments();
 
-            foreach ($toAddresses as $addressData) {
+            preg_match_all('/[A-Z0-9._%+\-]+@[A-Z0-9.\-]+\.[A-Z]{2,}/i', $toHeader, $matches);
+            $recipients = $matches[0] ?? [];
 
-                $recipient = strtolower(trim($addressData['address'] ?? ''));
+            foreach ($recipients as $recipient) {
 
+                $recipient = strtolower(trim($recipient));
                 if (empty($recipient)) {
                     continue;
                 }
