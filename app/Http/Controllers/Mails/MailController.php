@@ -25,22 +25,28 @@ class MailController extends Controller
             $parser = new Parser();
             $parser->setText($decodedContent);
 
-            $from = $parser->getHeader('from');
-            $toHeader = $parser->getHeader('to');
-            $subject = $parser->getHeader('subject') ?? 'No Subject';
-            $html = $parser->getMessageBody('html') ?? '';
-            $text = $parser->getMessageBody('text') ?? '';
+            $toAddresses = $parser->getAddresses('to');
             $attachments = $parser->getAttachments();
 
-            $recipients = array_map('trim', explode(',', $toHeader));
-            foreach ($recipients as $recipient) {
+            foreach ($toAddresses as $addressData) {
+
+                $recipient = strtolower(trim($addressData['address'] ?? ''));
+
+                if (empty($recipient)) {
+                    continue;
+                }
+
                 $emailParts = explode('@', $recipient);
-                $localPart = strtolower($emailParts[0]);
-                $domainPart = strtolower($emailParts[1] ?? '');
+                if (count($emailParts) !== 2) {
+                    continue;
+                }
+
+                $localPart = $emailParts[0];
+                $domainPart = $emailParts[1];
 
                 $user = User::where('local_mail', $recipient)
-                ->orWhereRaw('? = ANY(string_to_array(aliases, \';\'))', [$recipient])
-                ->first();
+                    ->orWhereRaw('? = ANY(string_to_array(aliases, \';\'))', [$recipient])
+                    ->first();
 
                 if (!$user) {
                     Log::warning("No user found for recipient: $recipient");
@@ -48,7 +54,9 @@ class MailController extends Controller
                 }
 
                 $userFolder = "/var/mailapp/{$domainPart}/{$localPart}";
-                if (!is_dir($userFolder)) mkdir($userFolder, 0775, true);
+                if (!is_dir($userFolder)) {
+                    mkdir($userFolder, 0775, true);
+                }
 
                 $timestamp = time();
                 $filename = $userFolder . "/{$timestamp}.eml";
@@ -62,6 +70,7 @@ class MailController extends Controller
             }
 
             return response()->json(['status' => 'ok']);
+
         } catch (\Exception $e) {
             Log::error('Mail receive error: ' . $e->getMessage());
             return response()->json(['error' => 'Internal server error'], 500);
