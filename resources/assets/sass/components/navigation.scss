@@ -1,37 +1,95 @@
 nav {
-    border-bottom: 2px solid $background-color;
+    border-bottom: 1px solid $text-color;
 }
 
 .navbar {
-    background-color: $background-color !important;
+    background-color: darken($brand-primary, 2%) !important;
 }
+
+/* =========================
+   NAV LINK
+========================= */
 
 .nav-link {
     color: $text-color;
     height: 78px !important;
-    border-radius: 0px !important;
+    border-radius: 0 !important;
     padding: 25px !important;
+
+    
+    border-bottom: 3px solid $text-color !important;
+    margin-right: 3px;
+    margin-bottom: -1.5px;
+
+    
+    text-shadow: 0 0 4px rgba(0, 255, 255, 0.3), 0 0 6px rgba(255, 0, 255, 0.15);
+    transition: all 0.3s ease;
 }
 
-.nav-item .active {
+/* =========================
+   ACTIVE
+========================= */
+
+.nav-link.active {
+    color: $brand-over !important;
+    background-color: darken($brand-primary, 2%) !important;
+    border-bottom: 3px solid $brand-over !important;
+
+    text-shadow: 0 0 6px rgba(0, 255, 255, 0.4), 0 0 8px rgba(255, 0, 255, 0.2);
+}
+
+.nav-link.active:hover {
     color: $brand-primary-text-emphasis !important;
-    background-color: $brand-primary !important;
-}
-.nav-item .active .dropdown {
-    color: $text-color !important;
-    background-color: $background-color !important;
+    background-color: darken($brand-primary, 2%) !important;
+    border-bottom: 3px solid $text-color !important;
 }
 
-.nav-item :hover, .nav-item.active:hover {
-    color: $text-color !important;
+/* =========================
+   HOVER
+========================= */
+
+.nav-item:hover > .nav-link,
+.nav-item.active:hover > .nav-link {
+    color: $brand-over !important;
+    border-bottom: 3px solid $brand-over !important;
+
+    text-shadow: 0 0 6px rgba(0, 255, 255, 0.3), 0 0 8px rgba(255, 0, 255, 0.15);
+}
+
+/* =========================
+   DROPDOWN
+========================= */
+
+.nav-item.dropdown > .nav-link {
+    position: relative;
+    border-bottom: 3px solid $text-color !important;
+    margin-bottom: -1.5px;
+}
+
+.nav-item.dropdown:hover > .nav-link,
+.nav-item.dropdown.active > .nav-link {
+    border-bottom: 3px solid $brand-over !important;
+
+    text-shadow: 0 0 6px rgba(0, 255, 255, 0.2), 0 0 8px rgba(255, 0, 255, 0.1);
+}
+
+.dropdown-menu {
+    padding: 0.25rem 0; 
+}
+
+.dropdown-item {
+    margin: 2px 0;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.dropdown-item:active,
+.dropdown-item.active {
+    background-color: $brand-over !important;
+    color: inherit !important;
+}
+
+.dropdown-item:hover {
     background-color: $hover-bg !important;
-}
-
-.nav-item.dropdown :hover, .nav-item.dropdown.active:hover {
-        background-color: $background-color !important;
-        color: $text-color !important;
-        .dropdown-item:hover {
-            color: $text-color !important;
-            background-color: $hover-bg !important;
-        }
+    color: $text-color !important;
 }

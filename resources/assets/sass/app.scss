@@ -2,7 +2,6 @@
 @import 'font-awesome';
 @import 'variables';
 @import "node_modules/bootstrap/scss/variables";
-@import "node_modules/bootstrap/scss/variables-dark";
 @import "node_modules/bootstrap/scss/bootstrap";
 
 @import "node_modules/bootstrap/scss/maps";
@@ -44,6 +43,16 @@
     } 
 }
 
+html, body {
+  background-color: $background-color !important;
+  background: linear-gradient(
+    0deg,
+    rgba($background-color, 1),
+    rgba($brand-primary, 1)
+  );
+  color: $text-color;
+}
+
 .input-group-text {
     background-color: $background-color;
 }
@@ -83,4 +92,4 @@ background: rgb(from $background-color r g b / 0.5);
   box-shadow: 0 8px 24px rgba(0,0,0,0.08);
   padding: 2.5rem 3rem;
   border: 1px solid $background-color;
-}   
+}

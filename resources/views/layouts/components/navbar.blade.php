@@ -52,6 +52,14 @@
                         <li><a class="dropdown-item {{isset($currentPage) ? ($currentPage == 'mensual-budget' ? 'active' : '') : ''}}" href="/{{app()->getLocale()}}/tools/mensual_budget"><i class="fa fa-line-chart" aria-hidden="true"></i> {{trans('navigation.mensual_budget')}}</a></li>
                     </ul>
                 </li>
+                @if(Auth::user()->is_management)
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle {{isset($currentTab) ? ($currentTab == 'management' ? 'active' : '') : ''}}" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-disabled="true"><i class="fa fa-cogs" aria-hidden="true"></i> {{trans('navigation.management')}}</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/{{app()->getLocale()}}/management/logs"><i class="fa fa-file-text" aria-hidden="true"></i> {{trans('navigation.logs')}}</a></li>
+                        </ul>
+                    </li>
+                @endif
             @endauth
         </ul>
         <ul class="nav nav-pills navbar-nav my-2 my-lg-0 ms-auto justify-content-end">
