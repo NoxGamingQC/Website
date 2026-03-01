@@ -1,9 +1,9 @@
 nav {
-    border-bottom: 1px solid $text-color;
+    border-bottom: 1px solid $nav-inactive;
 }
 
 .navbar {
-    background-color: darken($brand-primary, 2%) !important;
+    background-color: $nav-background !important;
 }
 
 /* =========================
@@ -11,17 +11,15 @@ nav {
 ========================= */
 
 .nav-link {
-    color: $text-color;
-    height: 78px !important;
+    color: $nav-inactive;
+    height: 78px;
     border-radius: 0 !important;
-    padding: 25px !important;
+    padding: 25px;
 
-    
-    border-bottom: 3px solid $text-color !important;
+    border-bottom: 3px solid $nav-inactive;
     margin-right: 3px;
     margin-bottom: -1.5px;
 
-    
     text-shadow: 0 0 4px rgba(0, 255, 255, 0.3), 0 0 6px rgba(255, 0, 255, 0.15);
     transition: all 0.3s ease;
 }
@@ -31,17 +29,17 @@ nav {
 ========================= */
 
 .nav-link.active {
-    color: $brand-over !important;
-    background-color: darken($brand-primary, 2%) !important;
-    border-bottom: 3px solid $brand-over !important;
+    color: $text-color !important;
+    background-color: $nav-background !important;
+    border-bottom: 3px solid $text-color;
 
     text-shadow: 0 0 6px rgba(0, 255, 255, 0.4), 0 0 8px rgba(255, 0, 255, 0.2);
 }
 
 .nav-link.active:hover {
-    color: $brand-primary-text-emphasis !important;
-    background-color: darken($brand-primary, 2%) !important;
-    border-bottom: 3px solid $text-color !important;
+    color: $nav-inactive;
+    background-color: $nav-background;
+    border-bottom: 3px solid $nav-inactive;
 }
 
 /* =========================
@@ -50,8 +48,8 @@ nav {
 
 .nav-item:hover > .nav-link,
 .nav-item.active:hover > .nav-link {
-    color: $brand-over !important;
-    border-bottom: 3px solid $brand-over !important;
+    color: $text-color;
+    border-bottom: 3px solid $text-color;
 
     text-shadow: 0 0 6px rgba(0, 255, 255, 0.3), 0 0 8px rgba(255, 0, 255, 0.15);
 }
@@ -62,34 +60,62 @@ nav {
 
 .nav-item.dropdown > .nav-link {
     position: relative;
-    border-bottom: 3px solid $text-color !important;
+    border-bottom: 3px solid $nav-inactive;
     margin-bottom: -1.5px;
 }
 
 .nav-item.dropdown:hover > .nav-link,
 .nav-item.dropdown.active > .nav-link {
-    border-bottom: 3px solid $brand-over !important;
+    border-bottom: 3px solid $text-color;
 
     text-shadow: 0 0 6px rgba(0, 255, 255, 0.2), 0 0 8px rgba(255, 0, 255, 0.1);
 }
 
 .dropdown-menu {
     padding: 0.25rem 0; 
+    background-color: $nav-background;
 }
 
 .dropdown-item {
     margin: 2px 0;
     border-radius: 4px;
     transition: background-color 0.2s ease;
+    color: $nav-inactive;
+    background-color: $nav-background;
+    border: 1px solid transparent;
 }
 
 .dropdown-item:active,
 .dropdown-item.active {
-    background-color: $brand-over !important;
-    color: inherit !important;
+    background-color: $text-color;
+    color: $text-color;
+    border: 1px solid transparent;
 }
 
 .dropdown-item:hover {
-    background-color: $hover-bg !important;
-    color: $text-color !important;
+    color: $text-color;
+    background-color: $nav-background;
+    border: 1px solid $text-color;
+}
+
+/* =========================
+   DISABLED ITEMS
+========================= */
+
+.nav-link.disabled,
+.nav-link.disabled:hover,
+.nav-link.disabled:focus,
+.nav-link.disabled:active,
+.nav-item.disabled > .nav-link,
+.nav-item.disabled:hover > .nav-link,
+.dropdown-item.disabled,
+.dropdown-item.disabled:hover,
+.dropdown-item.disabled:focus,
+.dropdown-item.disabled:active,
+.dropdown-menu.disabled {
+    color: $brand-muted !important;
+    background-color: $nav-background !important;
+    border-bottom: 3px solid $brand-muted !important;
+    text-shadow: none !important;
+    cursor: not-allowed !important;
 }
