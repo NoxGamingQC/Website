@@ -7,12 +7,15 @@
 $brand-white: #F5F5F5;
 $brand-black: #151515;
 $brand-primary: #880000;
-$brand-success: #42E66C;
-$brand-warning: #E4F34A;
-$brand-danger: #E64747;
-$brand-info: #75D7EC;
-$brand-orange: #F28500;
-$brand-over: #39ffef;
+$brand-success: #4EFF7C;
+$brand-warning: #FFFA5C;
+$brand-danger: #ff5c5c;
+$brand-info: #33FFFF;
+$brand-muted: #AAAAAA
+;
+
+$nav-inactive: lighten($brand-primary, 55%);
+$nav-background: darken($brand-primary, 5%);
 
 $background-color: #151515;
 $card-bg: darken($brand-primary, 20%);
