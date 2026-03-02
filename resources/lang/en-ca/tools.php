@@ -1,0 +1,26 @@
+<?php
+
+return [
+    'mensual_budget' => 'Monthly Budget',
+    'monthly_overview' => 'Monthly Overview',
+    'total_income' => 'Total Income',
+    'total_expense' => 'Total Expense',
+    'balance' => 'Balance',
+    'budget_entries' => 'Budget Entries',
+    'date' => 'Date',
+    'description' => 'Description',
+    'type' => 'Type',
+    'amount' => 'Amount',
+    'income' => 'Income',
+    'expense' => 'Expense',
+    'add_entry' => 'Add Entry',
+    'add' => 'Add',
+    'delete' => 'Delete',
+    'actions' => 'Actions',
+    'frequency' => 'Frequency',
+    'once' => 'Once',
+    'weekly' => 'Weekly',
+    'biweekly' => 'Bi-Weekly',
+    'monthly' => 'Monthly',
+    'amount_per_pay' => 'Amount per Pay',
+];

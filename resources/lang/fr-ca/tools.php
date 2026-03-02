@@ -1,0 +1,26 @@
+<?php
+
+return [
+    'mensual_budget' => 'Budget Mensuel',
+    'monthly_overview' => 'Aperçu Mensuel',
+    'total_income' => 'Revenus Totals',
+    'total_expense' => 'Dépenses Totales',
+    'balance' => 'Solde',
+    'budget_entries' => 'Entrées du Budget',
+    'date' => 'Date',
+    'description' => 'Description',
+    'type' => 'Type',
+    'amount' => 'Montant',
+    'income' => 'Revenu',
+    'expense' => 'Dépense',
+    'add_entry' => 'Ajouter une entrée',
+    'add' => 'Ajouter',
+    'delete' => 'Supprimer',
+    'actions' => 'Actions',
+    'frequency' => 'Périodicité',
+    'once' => 'Une fois',
+    'weekly' => 'Hebdomadaire',
+    'biweekly' => 'Bi-Hebdomadaire',
+    'monthly' => 'Mensuel',
+    'amount_per_pay' => 'Montant par paie',
+];
