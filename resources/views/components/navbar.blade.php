@@ -84,12 +84,21 @@
                 </li>
             @endguest
             @auth
-                <li class="nav-item desktop">
-                    <a class="nav-link position-relative disabled" href="#" disabled>
+               <li class="nav-item desktop">
+                    <a class="nav-link position-relative" href="{{ route('notifications.index') }}">
                         <i class="fa fa-bell" aria-hidden="true"></i>
-                        <span class="position-absolute top-5 start-75 translate-middle p-1 bg-danger border border-light rounded-circle" hidden>
-                            <span class="visually-hidden">New alerts</span>
-                        </span>
+
+                        @php
+                            $unreadCount = auth()->check()
+                                ? auth()->user()->unreadNotifications()->count()
+                                : 0;
+                        @endphp
+
+                        @if($unreadCount > 0)
+                            <span class="position-absolute top-50 start-100 translate-middle badge rounded-pill bg-danger" style="margin-top:-10px;margin-left:-5px;">
+                                {{ $unreadCount }}
+                            </span>
+                        @endif
                     </a>
                 </li>
                 <li class="nav-item dropdown">

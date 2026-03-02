@@ -3,8 +3,8 @@
 @section('title', 'Mensual Budget')
 @section('content')
 
-<div class="container my-5">
-    <h2 class="mb-4">{{ trans('tools.mensual_budget') }}</h2>
+<div class="container-fluid">
+    <h1 class="mb-4">{{ trans('tools.mensual_budget') }}</h1>
 
     {{-- Select Pay Frequency --}}
     <div class="row mb-3">
