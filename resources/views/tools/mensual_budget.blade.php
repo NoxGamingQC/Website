@@ -69,7 +69,7 @@
                         <th>{{ trans('tools.type') }}</th>
                         <th>{{ trans('tools.frequency') }}</th>
                         <th>{{ trans('tools.amount') }}</th>
-                        <th>{{ trans('tools.actions') }}</th>
+                        <th class="no-print">{{ trans('tools.actions') }}</th>
                     </tr>
                 </thead>
                 <tbody></tbody>
@@ -78,7 +78,7 @@
     </div>
 
     {{-- Formulaire ajout / édition --}}
-    <div class="card">
+    <div class="card no-print">
         <div class="card-header">{{ trans('tools.add_entry') }}</div>
         <div class="card-body">
             <form id="budgetForm">
@@ -155,7 +155,7 @@ $(document).ready(function() {
                     <td>${translations.type[entry.type]}</td>
                     <td>${translations.frequency[entry.frequency]}</td>
                     <td>$${amount.toFixed(2)}</td>
-                    <td><button class="btn btn-sm btn-danger" onclick="deleteEntry(${index})">${translations.delete}</button></td>
+                    <td class="no-print"><button class="btn btn-sm btn-danger" onclick="deleteEntry(${index})">${translations.delete}</button></td>
                 </tr>
             `);
         });
