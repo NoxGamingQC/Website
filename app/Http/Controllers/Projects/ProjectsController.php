@@ -3,14 +3,19 @@
 namespace App\Http\Controllers\Projects;
 
 use App\Http\Controllers\Controller;
-use App\Models\XboxGamercard;
+use Illuminate\View\View;
 
 class ProjectsController extends Controller
 {
-    public function index()
+    /**
+     * Display the projects page.
+     *
+     * @return View
+     */
+    public function index(): View
     {
         return view('projects.index')->with([
-            'currentPage' => 'projects'
+            'currentPage' => 'projects',
         ]);
     }
 }

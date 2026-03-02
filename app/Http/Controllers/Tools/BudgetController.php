@@ -3,19 +3,20 @@
 namespace App\Http\Controllers\Tools;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Facades\App;
-use Illuminate\Http\Request;
-use App\Models\PageLists;
+use Illuminate\View\View;
 
 class BudgetController extends Controller
 {
-    public function index()
+    /**
+     * Display the mensual budget page.
+     *
+     * @return View
+     */
+    public function index(): View
     {
         return view('tools.mensual_budget')->with([
-            'currentPage' => "mensual-budget",
-            'currentTab' => 'tools'
+            'currentPage' => 'mensual-budget',
+            'currentTab' => 'tools',
         ]);
     }
 }
