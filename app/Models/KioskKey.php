@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Model\API;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ApiKey extends Model
+class KioskKey extends Model
 {
-    protected $table = 'api_key';
+    protected $table = 'kiosk_key';
 
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';

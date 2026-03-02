@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Model;
+namespace App\Models\Recipe;
 
 use Illuminate\Database\Eloquent\Model;
 
-class KioskKey extends Model
+class Categories extends Model
 {
-    protected $table = 'kiosk_key';
+    protected $table = 'recipe_categories';
 
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';

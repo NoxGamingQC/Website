@@ -1,14 +1,13 @@
 <?php
 
-namespace App\Model;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class DiscordServerConfig extends Model
+class GamesList extends Model
 {
-    protected $table = 'discord_server_config';
+    protected $table = 'web_games_list';
 
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
-
 }

@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Model;
+namespace App\Models\API;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Theme extends Model
+class ApiKey extends Model
 {
-    protected $table = 'theme';
+    protected $table = 'api_key';
 
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';

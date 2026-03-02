@@ -5,10 +5,10 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
-use App\Model\DiscordUsers;
-use App\Model\API\ApiKey;
-use App\Model\Points;
-use App\Model\User;
+use App\Models\DiscordUsers;
+use App\Models\API\ApiKey;
+use App\Models\Points;
+use App\Models\User;
 use Carbon\Carbon;
 use cebe\markdown;
 

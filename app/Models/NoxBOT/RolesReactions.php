@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Model\NoxBOT;
+namespace App\Models\NoxBOT;
 
 use Illuminate\Database\Eloquent\Model;
 

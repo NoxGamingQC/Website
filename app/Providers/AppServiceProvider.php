@@ -8,11 +8,11 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Http\Request;
-use App\Model\CustomTheme;
-use App\Model\MainConfig;
-use App\Model\PageLists;
-use App\Model\Theme;
-use App\Model\User;
+use App\Models\CustomTheme;
+use App\Models\MainConfig;
+use App\Models\PageLists;
+use App\Models\Theme;
+use App\Models\User;
 use Laravel\Cashier\Cashier;
 
 

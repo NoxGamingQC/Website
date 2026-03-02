@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Model;
+namespace App\Models\API;
 
 use Illuminate\Database\Eloquent\Model;
 
-class GamesList extends Model
+class Pokemon extends Model
 {
-    protected $table = 'web_games_list';
+    protected $table = 'pokemon';
 
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';

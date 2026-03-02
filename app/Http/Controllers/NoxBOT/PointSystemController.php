@@ -6,9 +6,9 @@ use Auth;
 use DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Model\User;
-use App\Model\Points;
-use App\Model\NoxBOT\BotLists;
+use App\Models\User;
+use App\Models\Points;
+use App\Models\NoxBOT\BotLists;
 
 class PointSystemController extends Controller
 {
