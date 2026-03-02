@@ -4,11 +4,11 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Model\DiscordUsers;
+use App\Models\DiscordUsers;
 use Carbon\Carbon;
-use App\Model\API\ApiKey;
-use App\Model\Points;
-use App\Model\User;
+use App\Models\API\ApiKey;
+use App\Models\Points;
+use App\Models\User;
 
 class PointsController extends Controller
 {

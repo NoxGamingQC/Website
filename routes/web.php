@@ -3,7 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\LogsController;
+use App\Http\Controllers\Management\LogsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -60,13 +60,13 @@ Route::group([
     });
 
     Route::get('/home', function () {
-        return view('pages.welcome')->with(['currentPage' => "home"]);
+        return view('welcome')->with(['currentPage' => "home"]);
     });
 
-    Route::get('projects', 'ProjectsController@index');
-    Route::get('/user/{id}', 'UserProfileController@index');
-    Route::get('/user/me/edit', 'UserProfileController@edit');
-    Route::post('/user/me/save', 'UserProfileController@save');
+    Route::get('projects', 'Projects\ProjectsController@index');
+    Route::get('/user/{id}', 'User\UserProfileController@index');
+    Route::get('/user/me/edit', 'User\UserProfileController@edit');
+    Route::post('/user/me/save', 'User\UserProfileController@save');
 
     // Tools routes
     Route::get('store', 'StoreController@index');
@@ -80,7 +80,7 @@ Route::group([
     Route::get('/news', [App\Http\Controllers\NewsController::class, 'index']);
 
     // Management routes
-    Route::get('/management/logs', 'LogsController@index');
+    Route::get('/management/logs', 'Management\LogsController@index');
     Route::get('/management/logs/download/{filename}', [LogsController::class, 'download'])->name('management.logs.download');
 });
 

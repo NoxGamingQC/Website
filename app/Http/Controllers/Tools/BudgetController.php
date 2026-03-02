@@ -7,13 +7,13 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\App;
 use Illuminate\Http\Request;
-use App\Model\PageLists;
+use App\Models\PageLists;
 
 class BudgetController extends Controller
 {
     public function index()
     {
-        return view('pages.tools.mensual_budget')->with([
+        return view('tools.mensual_budget')->with([
             'currentPage' => "mensual-budget",
             'currentTab' => 'tools'
         ]);

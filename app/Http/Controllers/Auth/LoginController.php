@@ -48,7 +48,7 @@ class LoginController extends Controller
         {
             session(['url.intended' => url()->previous()]);
         }
-        return view("pages.auth.login")->with([
+        return view("auth.login")->with([
             'header' => false,
             'currentPage' => 'login',
             'previousPath' => URL::previousPath()

@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use App\Model\DiscordUsers;
+use App\Models\DiscordUsers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
-use App\Model\User;
+use App\Models\User;
 
 class UserController extends Controller
 {

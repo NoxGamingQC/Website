@@ -31,7 +31,7 @@
     </head>
     <body class="d-flex flex-column min-vh-100" style="overflow-x:hidden">
         <input id="websiteLocationID" type="hidden">
-        @include('layouts.components.navbar')
+        @include('components.navbar')
         <div id="content" class="my-5 d-flex py-5 flex-grow-1" style="min-height:60vh;">
             @yield('content')
         </div>
@@ -49,5 +49,5 @@
             console.log('%c{{trans('general.console_close_window')}}', 'color:#FFF; font-size:18px;');
         </script>
     </body>
-    @include('layouts.components.footer')
+    @include('components.footer')
 </html>
