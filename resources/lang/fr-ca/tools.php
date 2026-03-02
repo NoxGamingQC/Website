@@ -3,8 +3,8 @@
 return [
     'mensual_budget' => 'Budget Mensuel',
     'monthly_overview' => 'Aperçu Mensuel',
-    'total_income' => 'Revenus Totals',
-    'total_expense' => 'Dépenses Totales',
+    'total_income' => 'Revenus',
+    'total_expense' => 'Dépenses',
     'balance' => 'Solde',
     'budget_entries' => 'Entrées du Budget',
     'date' => 'Date',

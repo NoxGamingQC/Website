@@ -9,6 +9,7 @@
     {{-- Select Pay Frequency --}}
     <div class="row mb-3">
         <div class="col-md-3">
+            <label for="payFrequency" class="form-label">{{ trans('tools.frequency') }}</label>
             <select class="form-select" id="payFrequency">
                 <option value="1" selected>Mensuel</option>
                 <option value="2">Bi-Hebdo</option>
@@ -31,7 +32,7 @@
 
     {{-- Résumé du mois --}}
     <div class="row mb-4">
-        <div class="col-md-4">
+        <div class="col-4">
             <div class="card text-center">
                 <div class="card-header">{{ trans('tools.total_income') }}</div>
                 <div class="card-body">
@@ -39,7 +40,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-4">
             <div class="card text-center">
                 <div class="card-header">{{ trans('tools.total_expense') }}</div>
                 <div class="card-body">
@@ -47,7 +48,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-4">
             <div class="card text-center">
                 <div class="card-header">{{ trans('tools.balance') }}</div>
                 <div class="card-body">
@@ -64,7 +65,6 @@
             <table class="table table-striped" id="budgetTable">
                 <thead>
                     <tr>
-                        <th>{{ trans('tools.date') }}</th>
                         <th>{{ trans('tools.description') }}</th>
                         <th>{{ trans('tools.type') }}</th>
                         <th>{{ trans('tools.frequency') }}</th>
@@ -83,7 +83,6 @@
         <div class="card-body">
             <form id="budgetForm">
                 <div class="row g-3">
-                    <div class="col-md-2"><input type="date" class="form-control" id="entryDate" required></div>
                     <div class="col-md-3"><input type="text" class="form-control" id="entryDescription" placeholder="{{ trans('tools.description') }}" required></div>
                     <div class="col-md-2">
                         <select class="form-select" id="entryType" required>
@@ -150,7 +149,6 @@ $(document).ready(function() {
 
             tbody.append(`
                 <tr>
-                    <td>${entry.date}</td>
                     <td>${entry.description}</td>
                     <td>${translations.type[entry.type]}</td>
                     <td>${translations.frequency[entry.frequency]}</td>
@@ -172,7 +170,6 @@ $(document).ready(function() {
     $('#budgetForm').on('submit', function(e) {
         e.preventDefault();
         const entry = {
-            date: $('#entryDate').val(),
             description: $('#entryDescription').val(),
             type: $('#entryType').val(),
             frequency: $('#entryFrequency').val(),
