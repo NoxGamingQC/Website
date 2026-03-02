@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Models;
+namespace App\Modelss;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use App\Model\DiscordServerConfig;
-use App\Model\DiscordUsers;
+use App\Models\DiscordServerConfig;
+use App\Models\DiscordUsers;
 use Laravel\Cashier\Billable;
 
 
