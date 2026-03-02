@@ -57,12 +57,6 @@ html, body {
     background-color: $background-color;
 }
 
-.btn.btn-primary, .btn.btn-warning, .btn.btn-success, .btn.btn-danger, .btn.btn-info {
-    font-size: 1.5rem;
-    font-weight: 300;
-    padding: 5% !important;
-}
-
 .form-control:focus {
     border-color: $brand-primary;
     box-shadow: 0 0 0 0.25rem transparentize($brand-primary, 0.75);

@@ -2,18 +2,26 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+use Illuminate\Http\RedirectResponse;
 
 class LanguageController extends Controller
 {
-    public function index($language)
+    /**
+     * Set the application locale.
+     *
+     * @param string $language
+     * @return RedirectResponse
+     */
+    public function index(string $language): RedirectResponse
     {
-        if($language == 'fr-ca' || $language == 'en-ca') {
-            app()->setLocale($language);
-        } else {
-            abort(403);
+        $allowedLocales = ['fr-ca', 'en-ca'];
+
+        if (!in_array($language, $allowedLocales)) {
+            abort(403, 'Unsupported language.');
         }
 
-        return redirect(app()->getLocale() . '/');
+        app()->setLocale($language);
+
+        return redirect($language . '/');
     }
 }
