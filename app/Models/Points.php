@@ -3,44 +3,47 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\User;
 
 class Points extends Model
 {
     protected $table = 'users_points';
 
-    static public function getPoints($userID) {
-        $points = User::join('users_points', 'users.id', '=', 'users_points.user_id')
-        ->where('users_points.user_id', '=', $userID)
-        ->orderBy('users_points.id', 'desc')
-        ->get(['users_points.user_id', 'users.name', 'users_points.quantity', 'users_points.comment']);
-        return $points;
+    protected $fillable = [
+        'user_id',
+        'quantity',
+        'comment',
+    ];
+
+    /**
+     * Get all points for a user with user name
+     */
+    public static function getPoints(int $userID)
+    {
+        return self::join('users', 'users.id', '=', 'users_points.user_id')
+            ->where('users_points.user_id', $userID)
+            ->orderByDesc('users_points.id')
+            ->get(['users_points.user_id', 'users.name', 'users_points.quantity', 'users_points.comment']);
     }
 
-    static public function getPointsLogs($userID, $quantity = null) {
-        if($quantity) {
-            $points = User::join('users_points', 'users.id', '=', 'users_points.user_id')
-                ->where('users_points.user_id', '=', $userID)
-                ->orderBy('users_points.id', 'desc')
-                ->take($quantity)
-                ->get(['users_points.user_id', 'users.name', 'users_points.quantity', 'users_points.comment']);
-            return $points;
-        }
-        $points = User::join('users_points', 'users.id', '=', 'users_points.user_id')
-                ->where('users_points.user_id', '=', $userID)
-                ->orderBy('users_points.id', 'desc')
-                ->get(['users_points.user_id', 'users.name', 'users_points.quantity', 'users_points.comment']);
-            return $points;
-        
+    /**
+     * Get the last $quantity points logs for a user
+     */
+    public static function getPointsLogs(int $userID, ?int $quantity = null)
+    {
+        $query = self::join('users', 'users.id', '=', 'users_points.user_id')
+            ->where('users_points.user_id', $userID)
+            ->orderByDesc('users_points.id')
+            ->select('users_points.user_id', 'users.name', 'users_points.quantity', 'users_points.comment');
+
+        return $quantity ? $query->take($quantity)->get() : $query->get();
     }
 
-    static public function getTotalPoints($userID) {
-        $pointTotal = 0;
-        $pointsArray = Points::getPoints($userID);
-
-        foreach ($pointsArray as $key => $points) {
-            $pointTotal += $points->Quantity;
-        }
-
-        return $pointTotal;
+    /**
+     * Calculate the total points for a user
+     */
+    public static function getTotalPoints(int $userID): int
+    {
+        return self::where('user_id', $userID)->sum('quantity');
     }
 }
