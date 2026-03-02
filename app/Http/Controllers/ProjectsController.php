@@ -9,7 +9,7 @@ class ProjectsController extends Controller
 {
     public function index()
     {
-        return view('pages.projects')->with([
+        return view('projects.index')->with([
             'currentPage' => 'projects'
         ]);
     }

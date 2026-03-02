@@ -113,7 +113,7 @@ class UserProfileController extends Controller
                 $aboutMeContent = $user->about_me;
             }
         }
-        return view('pages.profile.profile', [
+        return view('user.profile', [
             "user" => $user,
             "id" => $user->id,
             "username" => $user->name,
@@ -147,7 +147,7 @@ class UserProfileController extends Controller
     public function edit($locale)
     {
         $user = Auth::user();
-        return view('pages.profile.edit_profile', [
+        return view('user.edit-profile', [
             'user' => $user,
             'header' => false,
         ]);

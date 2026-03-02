@@ -60,7 +60,7 @@ Route::group([
     });
 
     Route::get('/home', function () {
-        return view('pages.welcome')->with(['currentPage' => "home"]);
+        return view('welcome')->with(['currentPage' => "home"]);
     });
 
     Route::get('projects', 'ProjectsController@index');

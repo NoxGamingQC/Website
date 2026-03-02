@@ -61,7 +61,7 @@ class LogsController extends Controller
             }
         }
 
-        return view('pages.management.logs', compact('files', 'selectedFile', 'logs'));
+        return view('management.logs', compact('files', 'selectedFile', 'logs'));
     }
 
     public function download($filename)
