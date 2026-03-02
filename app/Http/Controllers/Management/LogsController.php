@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Management;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+use App\Http\Controllers\Controller;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 
 class LogsController extends Controller
