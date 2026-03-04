@@ -67,4 +67,9 @@ Route::group([
     // --- Miscellaneous ---
     Route::get('/startup', fn() => view('pages.startup')->with(['currentPage' => 'startup']));
     Route::get('/news', [App\Http\Controllers\NewsController::class, 'index']);
+
+    Route::get('/notifications', function () {
+        auth()->user()->unreadNotifications->markAsRead();
+        return view('notifications.index');
+    })->name('notifications.index')->middleware('auth');
 });
