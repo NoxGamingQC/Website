@@ -7,7 +7,7 @@ on:
     branches: [ master, staging ]
 
 jobs:
-  tests:
+  laravel-tests:
     runs-on: ubuntu-latest
 
     steps:
@@ -21,13 +21,16 @@ jobs:
           coverage: none
 
       - name: Install dependencies
-        run: composer install --prefer-dist --no-progress --no-interaction
+        run: composer install --prefer-dist --no-interaction --no-progress
 
       - name: Prepare environment
         run: |
           cp .env.example .env
           php artisan key:generate
+          mkdir -p database
           touch database/database.sqlite
+          echo "DB_CONNECTION=sqlite" >> .env
+          echo "DB_DATABASE=${GITHUB_WORKSPACE}/database/database.sqlite" >> .env
 
       - name: Run migrations
         run: php artisan migrate --force
