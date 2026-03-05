@@ -2,9 +2,10 @@ name: Laravel CI
 
 on:
   push:
-    branches: [ master, staging ]
+    branches:
+      - master
+      - staging
   pull_request:
-    branches: [ master, staging ]
 
 jobs:
   laravel-tests:
