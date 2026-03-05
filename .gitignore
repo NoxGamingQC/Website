@@ -9,10 +9,12 @@ public/shared/Minecraft/Worlds/Singleplayer/
 public/shared/Minecraft/Worlds/Multiplayer/
 public/css
 public/js
+/storage/
+composer.lock
 
 # Laravel 4 specific
 bootstrap/compiled.php
-app/storage/
+app/storage
 
 # Laravel 5 & Lumen specific
 public/storage
