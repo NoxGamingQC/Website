@@ -43,8 +43,5 @@ jobs:
       - name: Run migrations
         run: php artisan migrate --force
 
-      - name: Run PHPUnit explicitly
+      - name: Run PHPUnit
         run: ./vendor/bin/phpunit --colors=never
-        
-      - name: Run Laravel tests
-        run: php artisan test
