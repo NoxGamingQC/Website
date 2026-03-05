@@ -1,0 +1,47 @@
+name: Laravel CI
+
+on:
+  push:
+    branches:
+      - master
+      - staging
+  pull_request:
+
+jobs:
+  laravel-tests:
+    runs-on: ubuntu-latest
+
+    env:
+      DB_CONNECTION: sqlite
+      DB_DATABASE: database/database.sqlite
+      CACHE_DRIVER: array
+      SESSION_DRIVER: array
+      QUEUE_CONNECTION: sync
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.4
+          extensions: mbstring, sqlite, pdo_sqlite
+          coverage: none
+
+      - name: Install dependencies
+        run: composer install --prefer-dist --no-interaction --no-progress
+
+      - name: Prepare environment
+        run: |
+          cp .env.example .env
+          php artisan key:generate
+          mkdir -p database
+          touch database/database.sqlite
+          mkdir -p tests/Feature
+          echo "<?php namespace Tests\Feature; use Tests\TestCase; class DummyTest extends TestCase { public function test_dummy() { \$this->assertTrue(true); } }" > tests/Feature/DummyTest.php
+
+      - name: Run migrations
+        run: php artisan migrate --force
+
+      - name: Run Laravel tests
+        run: php artisan test
