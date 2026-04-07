@@ -37,23 +37,24 @@
                     </div>
                 </div>
                 <br />
-                <div class="col-3 offset-3">
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox" id="remember" name="remember" {{ old('remember') ? 'checked' : '' }}> <span class="form-check-label">{{trans('general.remember_me')}}</span>
-                        </label>
+                <div class="row">
+                    <div class="col-3 offset-3">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" id="remember" name="remember" {{ old('remember') ? 'checked' : '' }}> <span class="form-check-label">{{trans('general.remember_me')}}</span>
+                            </label>
+                        </div>
                     </div>
-                </div>
-
-                <div class="col-3">
-                    <a class="btn btn-link" href="{{ route('password.request', app()->getLocale()) }}">
-                        {{trans('general.forgot_password')}}
-                    </a>
-                </div>
-                <div class="col-3 text-right">
-                    <button id="submit" type="button" class="btn btn-primary">
-                        {{trans('general.login')}}
-                    </button>
+                    <div class="col-3">
+                        <a class="btn btn-link" href="{{ route('password.request', app()->getLocale()) }}">
+                            {{trans('general.forgot_password')}}
+                        </a>
+                    </div>
+                    <div class="col-3 text-end">
+                        <button id="submit" type="button" class="btn btn-primary">
+                            {{trans('general.login')}}
+                        </button>
+                    </div>
                 </div>
             </div>
             <br />
