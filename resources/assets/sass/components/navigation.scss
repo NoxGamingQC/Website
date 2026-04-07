@@ -67,7 +67,13 @@ nav {
     background-color: $nav-background;
 }
 
-.dropdown-toggle,
+
+.dropdown-toggle {
+    color: $text-color !important;
+    transition: all 0.3s ease;
+}
+
+.dropdown-toggle:hover,
 .dropdown-toggle:focus,
 .dropdown-toggle:active,
 .dropdown.show > .dropdown-toggle {
