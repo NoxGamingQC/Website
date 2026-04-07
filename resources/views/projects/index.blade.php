@@ -24,8 +24,8 @@
         <div class="col">
             <div class="card card-link">
                 <a class="card-body text-white text-center" href="https://rcl.jimmybedard.ca/">
-                    <h5 class="card-title">{{trans('projects.rcl06101')}} <span class="badge text-bg-warning" style="text-shadow: none;">{{trans('general.in_development')}}</span></h5>
-                    <p class="card-text">{{trans('projects.rcl06101_description')}}</p>
+                    <h5 class="card-title">{{trans('projects.rcl')}} <span class="badge text-bg-warning" style="text-shadow: none;">{{trans('general.in_development')}}</span></h5>
+                    <p class="card-text">{{trans('projects.rcl_description')}}</p>
                 </a>
             </div>
         </div>
