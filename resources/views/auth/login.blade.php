@@ -41,7 +41,7 @@
                     <div class="col-3 offset-3">
                         <div class="checkbox">
                             <label>
-                                <input type="checkbox" id="remember" name="remember" {{ old('remember') ? 'checked' : '' }}> <span class="form-check-label">{{trans('general.remember_me')}}</span>
+                                <input type="checkbox" class="form-check-input" id="remember" name="remember" {{ old('remember') ? 'checked' : '' }}> <span class="form-check-label">{{trans('general.remember_me')}}</span>
                             </label>
                         </div>
                     </div>

@@ -61,6 +61,11 @@ p, span, div, label, .control-label, .input-group-text {
     color: $text-color;
 }
 
+a:hover {
+    color: $brand-primary;
+    transition: all 0.3s ease;
+}
+
 .input-group-text {
     background-color: $background-color;
 }
@@ -130,6 +135,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
+    transition: all 0.3s ease;
 }
 
 .custom-input-group .input-group-text {
@@ -163,6 +169,33 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 }
 
 input[type="text"]::placeholder, input[type="email"]::placeholder, input[type="password"]::placeholder, input[type="name"]::placeholder, textarea::placeholder {
-  color: rgba($text-color, 0.4);
-  opacity: 1;
+    color: rgba($text-color, 0.4);
+    opacity: 1;
+}
+
+.form-check-input, .form-check-input:focus, .form-check-input:active {
+    background-color: transparent;
+    border-color: $text-color;
+    box-shadow: none;
+    transition: all 0.3s ease;
+}
+
+.form-check-input:checked, .form-check-input:hover {
+    background-color: $brand-primary;
+    border-color: transparent;
+    color: $text-color;
+    box-shadow: none;
+}
+
+.btn-primary {
+    background-color: transparent;
+    border-color: $brand-primary;
+    color: $sub-title-color;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+    background-color: $brand-primary;
+    border-color: $brand-primary;
+    color: $brand-primary-text-emphasis;
 }
