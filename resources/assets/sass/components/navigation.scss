@@ -1,9 +1,10 @@
 nav {
-    border-bottom: 1px solid $nav-inactive;
+    border-bottom: 1px solid $text-secondary-color;
 }
 
 .navbar {
-    background-color: $nav-background !important;
+    background-color: $background-color !important;
+    background: $gradient-background !important;
 }
 
 /* =========================
@@ -11,16 +12,13 @@ nav {
 ========================= */
 
 .nav-link {
-    color: $nav-inactive;
+    color: $text-color;
     height: 78px;
     border-radius: 0 !important;
     padding: 25px;
 
-    border-bottom: 3px solid $nav-inactive;
+    border-bottom: 3px solid transparent;
     margin-right: 3px;
-    margin-bottom: -1.5px;
-
-    //text-shadow: 0 0 4px rgba(0, 255, 255, 0.3), 0 0 6px rgba(255, 0, 255, 0.15);
     transition: all 0.3s ease;
 }
 
@@ -29,17 +27,15 @@ nav {
 ========================= */
 
 .nav-link.active {
-    color: $title-color !important;
+    color: $text-highlight-color !important;
     background-color: $nav-background !important;
-    border-bottom: 3px solid $title-color;
-
-    //text-shadow: 0 0 6px rgba(0, 255, 255, 0.4), 0 0 8px rgba(255, 0, 255, 0.2);
+    border-bottom: 5px solid $text-highlight-color;
 }
 
 .nav-link.active:hover {
-    color: $nav-inactive;
+    color: $text-color;
     background-color: $nav-background;
-    border-bottom: 3px solid $nav-inactive;
+    border-bottom: 5px solid $text-color;
 }
 
 /* =========================
@@ -48,10 +44,8 @@ nav {
 
 .nav-item:hover > .nav-link,
 .nav-item.active:hover > .nav-link {
-    color: $title-color;
-    border-bottom: 3px solid $title-color;
-
-    //text-shadow: 0 0 6px rgba(0, 255, 255, 0.3), 0 0 8px rgba(255, 0, 255, 0.15);
+    color: $text-highlight-color;
+    border-bottom: 3px solid $text-highlight-color;
 }
 
 /* =========================
@@ -60,15 +54,12 @@ nav {
 
 .nav-item.dropdown > .nav-link {
     position: relative;
-    border-bottom: 3px solid $nav-inactive;
-    margin-bottom: -1.5px;
+    border-bottom: 3px solid transparent;
 }
 
 .nav-item.dropdown:hover > .nav-link,
 .nav-item.dropdown.active > .nav-link {
-    border-bottom: 3px solid $title-color;
-
-    //text-shadow: 0 0 6px rgba(0, 255, 255, 0.2), 0 0 8px rgba(255, 0, 255, 0.1);
+    border-bottom: 3px solid $text-highlight-color;
 }
 
 .dropdown-menu {
@@ -80,22 +71,22 @@ nav {
     margin: 2px 0;
     border-radius: 4px;
     transition: background-color 0.2s ease;
-    color: $nav-inactive;
+    color: $text-color;
     background-color: $nav-background;
     border: 1px solid transparent;
 }
 
 .dropdown-item:active,
 .dropdown-item.active {
-    background-color: $title-color;
-    color: $title-color;
+    background-color: $text-highlight-color;
+    color: $text-highlight-color;
     border: 1px solid transparent;
 }
 
 .dropdown-item:hover {
-    color: $title-color;
+    color: $text-highlight-color;
     background-color: $nav-background;
-    border: 1px solid $title-color;
+    border: 1px solid $text-highlight-color;
 }
 
 /* =========================

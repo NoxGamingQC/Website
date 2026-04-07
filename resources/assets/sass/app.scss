@@ -50,11 +50,11 @@ html, body {
 }
 
 h1, h2 {
-    color: $title-color;
+    color: $text-highlight-color;
 }
 
 h3, h4, h5, h6 {
-    color: $sub-title-color;
+    color: $text-secondary-color;
 }
 
 p, span, div, label, .control-label, .input-group-text {
@@ -126,7 +126,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
     background-color: transparent !important;
     border: 0px solid transparent;
     border-bottom: 1px solid $border-color;
-    color: $title-color;
+    color: $text-highlight-color;
     border-radius: 0;
     box-shadow: none;
 }
@@ -190,7 +190,7 @@ input[type="text"]::placeholder, input[type="email"]::placeholder, input[type="p
 .btn-primary {
     background-color: transparent;
     border-color: $brand-primary;
-    color: $sub-title-color;
+    color: $text-secondary-color;
     transition: all 0.3s ease;
 }
 
