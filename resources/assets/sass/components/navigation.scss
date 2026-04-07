@@ -20,7 +20,7 @@ nav {
     margin-right: 3px;
     margin-bottom: -1.5px;
 
-    text-shadow: 0 0 4px rgba(0, 255, 255, 0.3), 0 0 6px rgba(255, 0, 255, 0.15);
+    //text-shadow: 0 0 4px rgba(0, 255, 255, 0.3), 0 0 6px rgba(255, 0, 255, 0.15);
     transition: all 0.3s ease;
 }
 
@@ -29,11 +29,11 @@ nav {
 ========================= */
 
 .nav-link.active {
-    color: $text-color !important;
+    color: $title-color !important;
     background-color: $nav-background !important;
-    border-bottom: 3px solid $text-color;
+    border-bottom: 3px solid $title-color;
 
-    text-shadow: 0 0 6px rgba(0, 255, 255, 0.4), 0 0 8px rgba(255, 0, 255, 0.2);
+    //text-shadow: 0 0 6px rgba(0, 255, 255, 0.4), 0 0 8px rgba(255, 0, 255, 0.2);
 }
 
 .nav-link.active:hover {
@@ -48,10 +48,10 @@ nav {
 
 .nav-item:hover > .nav-link,
 .nav-item.active:hover > .nav-link {
-    color: $text-color;
-    border-bottom: 3px solid $text-color;
+    color: $title-color;
+    border-bottom: 3px solid $title-color;
 
-    text-shadow: 0 0 6px rgba(0, 255, 255, 0.3), 0 0 8px rgba(255, 0, 255, 0.15);
+    //text-shadow: 0 0 6px rgba(0, 255, 255, 0.3), 0 0 8px rgba(255, 0, 255, 0.15);
 }
 
 /* =========================
@@ -66,9 +66,9 @@ nav {
 
 .nav-item.dropdown:hover > .nav-link,
 .nav-item.dropdown.active > .nav-link {
-    border-bottom: 3px solid $text-color;
+    border-bottom: 3px solid $title-color;
 
-    text-shadow: 0 0 6px rgba(0, 255, 255, 0.2), 0 0 8px rgba(255, 0, 255, 0.1);
+    //text-shadow: 0 0 6px rgba(0, 255, 255, 0.2), 0 0 8px rgba(255, 0, 255, 0.1);
 }
 
 .dropdown-menu {
@@ -87,15 +87,15 @@ nav {
 
 .dropdown-item:active,
 .dropdown-item.active {
-    background-color: $text-color;
-    color: $text-color;
+    background-color: $title-color;
+    color: $title-color;
     border: 1px solid transparent;
 }
 
 .dropdown-item:hover {
-    color: $text-color;
+    color: $title-color;
     background-color: $nav-background;
-    border: 1px solid $text-color;
+    border: 1px solid $title-color;
 }
 
 /* =========================
@@ -116,6 +116,6 @@ nav {
     color: $brand-muted !important;
     background-color: $nav-background !important;
     border-bottom: 3px solid $brand-muted !important;
-    text-shadow: none !important;
+    //text-shadow: none !important;
     cursor: not-allowed !important;
 }
