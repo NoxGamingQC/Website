@@ -46,22 +46,36 @@
 html, body {
   background-color: $background-color !important;
   background: $gradient-background !important;
+  color: $text-color;
 }
 
 h1, h2 {
-    color: $title-color;
+    color: $text-highlight-color;
 }
 
 h3, h4, h5, h6 {
-    color: $sub-title-color;
+    color: $text-secondary-color;
 }
 
-p, a, span {
+p, span, div, label, .control-label, .input-group-text {
     color: $text-color;
+}
+
+a:hover {
+    color: $brand-primary;
+    transition: all 0.3s ease;
 }
 
 .input-group-text {
     background-color: $background-color;
+}
+
+.btn-link {
+    color: $text-color;
+}
+
+.btn-link:hover {
+    color: $brand-primary;
 }
 
 .form-control:focus {
@@ -97,4 +111,91 @@ background: rgb(from $background-color r g b / 0.5);
 
 .text-muted {
     color: $brand-muted !important;
+}
+
+input[type="text"], input[type="email"], input[type="password"], input[type="name"], textarea {
+    background-color: transparent;
+    border: 0px solid transparent;
+    border-bottom: 1px solid $text-color;
+    color: $text-color;
+    border-radius: 0;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, input[type="name"]:focus, textarea:focus {
+    background-color: transparent !important;
+    border: 0px solid transparent;
+    border-bottom: 1px solid $border-color;
+    color: $text-highlight-color;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.custom-input-group {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.custom-input-group .input-group-text {
+    border: none;
+    align-items: center;
+}
+
+.custom-input-group .form-control {
+    flex: 1;
+    min-width: 0;
+}
+
+.icon-addon {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $text-color;
+    color: $brand-black;
+    margin-right: 5px;
+    flex-shrink: 0;
+}
+
+.input-group-text {
+    background-color: $text-color;
+    border: 0px solid transparent;
+    color: $text-color;
+    border-radius: 5px;
+}
+
+input[type="text"]::placeholder, input[type="email"]::placeholder, input[type="password"]::placeholder, input[type="name"]::placeholder, textarea::placeholder {
+    color: rgba($text-color, 0.4);
+    opacity: 1;
+}
+
+.form-check-input, .form-check-input:focus, .form-check-input:active {
+    background-color: transparent;
+    border-color: $text-color;
+    box-shadow: none;
+    transition: all 0.3s ease;
+}
+
+.form-check-input:checked, .form-check-input:hover {
+    background-color: $brand-primary;
+    border-color: transparent;
+    color: $text-color;
+    box-shadow: none;
+}
+
+.btn-primary {
+    background-color: transparent;
+    border-color: $brand-primary;
+    color: $text-secondary-color;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+    background-color: $brand-primary;
+    border-color: $brand-primary;
+    color: $brand-primary-text-emphasis;
 }

@@ -10,16 +10,12 @@
 }
 
 .card-link {
-    a {
-        text-decoration: none;
-    }
+    text-decoration: none !important;
 }
 
 .card-link:hover {
     border-color: $brand-primary;
     transform: translateY(-4px);
     box-shadow: 0 8px 25px rgba(246, 59, 59, 0.15);
-    a {
-        text-decoration: none;
-    }
+    text-decoration: none !important;
 }

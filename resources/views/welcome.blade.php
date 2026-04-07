@@ -9,7 +9,7 @@
             </h2>
 
             <h6>{{ trans('welcome.slogan') }}</h6>
-            <h6>{!! trans('welcome.has_knowledge') !!}</h6>
+            <p>{!! trans('welcome.has_knowledge') !!}</p>
         </div>
 </div>
 
