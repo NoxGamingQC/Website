@@ -67,6 +67,13 @@ nav {
     background-color: $nav-background;
 }
 
+.dropdown-toggle,
+.dropdown-toggle:focus,
+.dropdown-toggle:active,
+.dropdown.show > .dropdown-toggle {
+    color: $text-highlight-color !important;
+}
+
 .dropdown-item {
     margin: 2px 0;
     border-radius: 4px;
