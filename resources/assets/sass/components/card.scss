@@ -1,6 +1,7 @@
 .card {
+    padding: 25px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    border-radius: 16px;
     background-color: $card-bg;
     border: 1px solid rgba(255, 255, 255, 0.08);
     transition: all 0.25s ease;
@@ -8,8 +9,17 @@
     -webkit-backdrop-filter: blur(8px);
 }
 
+.card-link {
+    a {
+        text-decoration: none;
+    }
+}
+
 .card-link:hover {
     border-color: $brand-primary;
     transform: translateY(-4px);
     box-shadow: 0 8px 25px rgba(246, 59, 59, 0.15);
+    a {
+        text-decoration: none;
+    }
 }
