@@ -9,6 +9,7 @@ return [
     'about_me' => "About me",
     'edit_profile' => "Edit profile",
     'save' => "Save",
+    'access_page' => "Access →",
 
     //auth
     'email_address' => "Email",
