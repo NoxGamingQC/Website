@@ -12,6 +12,6 @@ return [
     'pokemon_description' => "We are currently working on a Pokémon fan game. If you want some update about the game, make sure to join our Discord server and let me know.", 
     'website_description' => "Our website",
     'mrliquidations_website' => "M.R. liquidations's website:",
-    'rcl06101' => "Royal Canadian Legion Branch 101 - Grand-Mère Veteran's Club",
-    'rcl06101_description' => "Rework and dashboard for branch 06-101 of the Royal Canadian Legion.",
+    'rcl' => "Royal Canadian Legion",
+    'rcl_description' => "Creation of a dashboard for the Royal Canadian Legion - Branch 044+101 Lcol Robert-Grondin C.D.",
 ];
