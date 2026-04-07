@@ -72,4 +72,9 @@ Route::group([
         auth()->user()->unreadNotifications->markAsRead();
         return view('notifications.index');
     })->name('notifications.index')->middleware('auth');
+
+    // --- Games ---
+    Route::prefix('games')->group(function () {
+        Route::get('bingo', fn() => view('games.bingo')->with(['currentPage' => 'bingo']));
+    });
 });
