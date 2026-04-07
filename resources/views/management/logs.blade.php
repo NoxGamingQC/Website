@@ -5,17 +5,19 @@
     <h1>Logs</h1>
 
     <form method="GET" class="mb-3">
-        <label for="file" class="form-label">Fichier log :</label>
-        <select name="file" id="file" class="form-select" onchange="this.form.submit()">
-            @foreach($files as $file)
-                <option value="{{ $file }}" @if($file == $selectedFile) selected @endif>{{ $file }}</option>
-            @endforeach
-        </select>
+        <div class="custom-input-group">
+            <span class="text-black icon-addon"><i class="fa fa-newspaper-o" aria-hidden="true"></i></span>
+            <select name="file" id="file" class="form-select" onchange="this.form.submit()">
+                @foreach($files as $file)
+                    <option value="{{ $file }}" @if($file == $selectedFile) selected @endif>{{ $file }}</option>
+                @endforeach
+            </select>
+            @if($selectedFile)
+                <a href="{{ route('management.logs.download', $selectedFile) }}" class="btn-icon-addon"><i class="fa fa-download" aria-hidden="true"></i></a>
+            @endif
+        </div>
     </form>
 
-    @if($selectedFile)
-        <a href="{{ route('management.logs.download', $selectedFile) }}" class="btn btn-primary mb-3" style="padding: 0.5rem 1rem !important;">Télécharger le fichier</a>
-    @endif
 
     @foreach(array_reverse($logs) as $entry)
         @php
