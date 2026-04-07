@@ -45,7 +45,7 @@
             <div class="card-header  {{ $colorClass }}"><h5 class="{{ $textColorClass }}"><strong>{{ strtoupper($level) }}:</strong> {{ $title }}</h5></div>
             <div class="card-body p-2" style="max-height:300px; overflow:auto; white-space:pre-wrap;">
                 @foreach($body as $line)
-                    {{ $line }}<br>
+                    <span class="mb-1">{{ $line }}</span>
                 @endforeach
             </div>
             <div class="card-footer {{ $colorClass }} text-muted" style="font-size: 0.8rem;">
