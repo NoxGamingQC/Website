@@ -5,17 +5,19 @@
     <h1>Logs</h1>
 
     <form method="GET" class="mb-3">
-        <label for="file" class="form-label">Fichier log :</label>
-        <select name="file" id="file" class="form-select" onchange="this.form.submit()">
-            @foreach($files as $file)
-                <option value="{{ $file }}" @if($file == $selectedFile) selected @endif>{{ $file }}</option>
-            @endforeach
-        </select>
+        <div class="custom-input-group">
+            <span class="text-black icon-addon"><i class="fa fa-newspaper-o" aria-hidden="true"></i></span>
+            <select name="file" id="file" class="form-select" onchange="this.form.submit()">
+                @foreach($files as $file)
+                    <option value="{{ $file }}" @if($file == $selectedFile) selected @endif>{{ $file }}</option>
+                @endforeach
+            </select>
+            @if($selectedFile)
+                <a href="{{ route('management.logs.download', $selectedFile) }}" class="btn-icon-addon"><i class="fa fa-download" aria-hidden="true"></i></a>
+            @endif
+        </div>
     </form>
 
-    @if($selectedFile)
-        <a href="{{ route('management.logs.download', $selectedFile) }}" class="btn btn-primary mb-3" style="padding: 0.5rem 1rem !important;">Télécharger le fichier</a>
-    @endif
 
     @foreach(array_reverse($logs) as $entry)
         @php
@@ -45,7 +47,7 @@
             <div class="card-header  {{ $colorClass }}"><h5 class="{{ $textColorClass }}"><strong>{{ strtoupper($level) }}:</strong> {{ $title }}</h5></div>
             <div class="card-body p-2" style="max-height:300px; overflow:auto; white-space:pre-wrap;">
                 @foreach($body as $line)
-                    {{ $line }}<br>
+                    <span class="mb-1">{{ $line }}</span>
                 @endforeach
             </div>
             <div class="card-footer {{ $colorClass }} text-muted" style="font-size: 0.8rem;">
