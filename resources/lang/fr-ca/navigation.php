@@ -4,7 +4,7 @@ return [
     'welcome' => "Accueil",
     'content' => "Contenu",
     'contact_us' => "Nous joindre",
-    'game_list' => "Liste de jeux",
+    'games_list' => "Liste de jeux",
     'partners' => "Partenaire",
     'projects' => "Projets",
     'teams' => "Équipes",

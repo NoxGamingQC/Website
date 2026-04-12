@@ -5,9 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
-use App\Model\ConsolesList;
-use App\Model\GamesList;
-use App\Model\PageLists;
+use App\Models\ConsolesList;
+use App\Models\GamesList;
 
 class GamesListController extends Controller
 {
@@ -31,7 +30,7 @@ class GamesListController extends Controller
             }    
         }
         $totalGameCount = count($gamesDB);
-        return view('view.about_us.games', [
+        return view('games_list', [
             'consoles' => $consoles,
             'games' => $games,
             'gamesList' => $gamesList,
