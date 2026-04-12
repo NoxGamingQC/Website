@@ -53,7 +53,7 @@
                     @endphp
 
                     <div class="col-6 col-md-4 col-lg-3 mb-4">
-                        <div class="card h-100 border-0 shadow-sm">
+                        <div class="card p-0 h-100 border-0 shadow-sm">
                             <div class="card-body p-0 position-relative"
                                  style="background-image: url('{{ $cover }}');
                                         background-size: cover;
