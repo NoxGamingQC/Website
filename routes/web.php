@@ -41,6 +41,7 @@ Route::group([
 
     // --- Projects ---
     Route::get('projects', [App\Http\Controllers\Projects\ProjectsController::class, 'index']);
+    Route::get('my_games', [App\Http\Controllers\GamesListController::class, 'index']);
 
     // --- User Profile ---
     Route::prefix('user')->group(function () {

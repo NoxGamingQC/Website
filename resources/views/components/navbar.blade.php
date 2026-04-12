@@ -26,6 +26,9 @@
             <li class="nav-item">
                 <a class="nav-link {{isset($currentPage) ? ($currentPage == 'projects' ? 'active' : '') : ''}}"  href="/{{app()->getLocale()}}/projects"><i class="fa fa-code" aria-hidden="true"></i> {{trans('navigation.projects')}}</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link {{isset($currentPage) ? ($currentPage == 'my_games' ? 'active' : '') : ''}}"  href="/{{app()->getLocale()}}/my_games"><i class="fa fa-gamepad" aria-hidden="true"></i> {{trans('navigation.games_list')}}</a>
+            </li>
             <li class="nav-item dropdown" hidden>
                 <a class="nav-link dropdown-toggle disabled" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-disabled="true"><i class="fa fa-video-camera" aria-hidden="true"></i> {{trans('navigation.content')}}</a>
                 <ul class="dropdown-menu">
