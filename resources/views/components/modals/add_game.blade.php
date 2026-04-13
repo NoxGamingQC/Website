@@ -1,86 +1,80 @@
-<div class="modal fade" id="addGameModal" tabindex="-1" aria-labelledby="addGameModal" aria-hidden="true" data-backdrop="false">
-    <div class="modal-dialog">
+<div class="modal fade" id="addGameModal" tabindex="-1" aria-labelledby="addGameModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="AddGameLabel">{{trans('game.add_game')}}</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span class="error-text" aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <form class="form-horizontal" action="/games/add" method="post">
+
+            <form method="POST" action="/games/add">
+                @csrf
+
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addGameModalLabel">
+                        {{ trans('game.add_game') }}
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
                 <div class="modal-body">
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">{{trans('game.game')}}: </label>
-                        <div class="col-sm-10">
-                            <input id="gameName" type="text" class="form-control">
+                    <div class="row">
+
+                        {{-- Game Name --}}
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">{{ trans('game.name') }}</label>
+                            <input type="text" name="name" class="form-control" required>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">{{trans('game.console')}}: </label>
-                        <div class="col-sm-10">
-                            <select class="selectpicker" id="gameConsole" title="{{trans('general.select_placeholder')}}" multiple>
-                            @foreach($consoles as $key => $console)
-                                <option value="{{$console->id}}">{{$console->Console}}</option>
-                            @endforeach
+
+                        {{-- Console --}}
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">{{ trans('game.console') }}</label>
+                            <select name="console_id" class="form-control selectpicker" data-live-search="true" required>
+                                @foreach($consoles as $console)
+                                    <option value="{{ $console->id }}">
+                                        {{ $console->name }}
+                                    </option>
+                                @endforeach
                             </select>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">{{trans('game.date')}}: </label>
-                        <div class="col-sm-10">
-                            <input id="gameDate" type="text" class="form-control">
+
+                        {{-- Release Date --}}
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">{{ trans('game.date') }}</label>
+                            <input type="date" name="date" class="form-control">
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">{{trans('game.cover_url')}}: </label>
-                        <div class="col-sm-10">
-                            <input id="gameCoverURL" type="text" class="form-control">
+
+                        {{-- Cover URL --}}
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">{{ trans('game.cover') }}</label>
+                            <input type="url" name="cover_url" class="form-control" placeholder="https://...">
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">{{trans('game.playlist')}}: </label>
-                        <div class="col-sm-10">
-                            <input id="gamePlaylist" type="text" class="form-control">
+
+                        {{-- Playlist --}}
+                        <div class="col-12 mb-3">
+                            <label class="form-label">{{ trans('game.playlist') }}</label>
+                            <input type="text" name="playlist" class="form-control">
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">{{trans('game.format')}}: </label>
-                        <div class="col-sm-10">
-                            <select class="selectpicker" id="gameFormat" title="{{trans('general.select_placeholder')}}" multiple>
-                                <option value="0">{{trans('game.physical_copy')}}</option>
-                                <option value="1">{{trans('game.digital_copy')}}</option>
+
+                        {{-- Format --}}
+                        <div class="col-12 mb-3">
+                            <label class="form-label">{{ trans('game.format') }}</label>
+                            <select name="format" class="form-control selectpicker">
+                                <option value="both">{{ trans('game.both') }}</option>
+                                <option value="physical">{{ trans('game.physical') }}</option>
+                                <option value="digital">{{ trans('game.digital') }}</option>
                             </select>
                         </div>
+
                     </div>
                 </div>
+
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">{{trans('general.close')}}</button>
-                    <button type="button" id="submitAddGame" class="btn btn-success">{{trans('general.save')}}</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        {{ trans('general.cancel') }}
+                    </button>
+                    <button type="submit" class="btn btn-success">
+                        {{ trans('general.submit') }}
+                    </button>
                 </div>
+
             </form>
+
         </div>
     </div>
 </div>
-<script type="text/javascript">
-$('#submitAddGame').on('click', function() {
-    $.ajax({
-        url: "/" + $('html').attr('lang') + "/games/add",
-        method: "post",
-        data: {
-            'game': $('#gameName').val(),
-            'console': $('#gameConsole').val(),
-            'date': $('#gameDate').val(),
-            'coverURL': $('#gameCoverURL').val(),
-            'playlist': $('#gamePlaylist').val(),
-            'format': $('#gameFormat').val(),
-            _token: $('meta[name="csrf-token"]').attr('content')
-        },
-        success: function() {
-            toastr.success('The game have been added successfully. Make sure to reload the page to see your updates.', 'Game added');
-        },
-        error: function(error) {
-            toastr.error('An error occured while adding a new game. Does it already exists?', 'Error');
-        }
-    });
-});
-</script>

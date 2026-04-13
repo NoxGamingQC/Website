@@ -12,5 +12,6 @@ return [
     'physical_copy' => "Copie physique",
     'digital_copy' => "Copie digital",
     'edit_game' => "Modifier un jeu",
-    'playlist' => "Liste de lecture"
+    'playlist' => "Liste de lecture",
+    'no_games' => "Aucun jeu trouvé",
 ];

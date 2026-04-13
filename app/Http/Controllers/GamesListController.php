@@ -12,28 +12,12 @@ class GamesListController extends Controller
 {
     public function index()
     {
-        $gamesDB = GamesList::all();
-        $consoles = ConsolesList::all();
-        $gamesList = [];
-        foreach($gamesDB as $key => $game) {
-            $games[$game->id] = $game;
-
-            $gameConsole = explode(',', $game->Console);
-            if(count($gameConsole) > 1) {
-                foreach($gameConsole as $key => $value) {
-                    $gamesList[$value] = $game;
-                }
-            } else {
-                foreach($consoles as $key => $console) {
-                    $gamesList[$console->id] = GamesList::where('console', $console->id)->get();
-                }
-            }    
-        }
-        $totalGameCount = count($gamesDB);
+        $consoles = ConsolesList::all()->sortBy('console');
+        $games = GamesList::all()->sortBy('name');
+        $totalGameCount = count($games);
         return view('games_list', [
             'consoles' => $consoles,
             'games' => $games,
-            'gamesList' => $gamesList,
             'totalGameCount' => $totalGameCount
         ]);
     }

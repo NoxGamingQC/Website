@@ -16,5 +16,10 @@ return [
     'password' => "Mot de passe",
     'remember_me' => "Se souvenir de moi",
     'forgot_password' => 'Mot de passe oublié',
-    'login' => "Se connecter"
+    'login' => "Se connecter",
+
+    'submit' => "Soumettre",
+    'cancel' => "Annuler",
+    'yes' => "Oui",
+    'no' => "Non",
 ];
