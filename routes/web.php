@@ -15,7 +15,6 @@ use App\Http\Controllers\Management\LogsController;
 |
 */
 
-
 // --- Direct redirects ---
 Route::get('/', fn() => redirect(app()->getLocale() . '/home'));
 Route::get('/home', fn() => redirect(app()->getLocale() . '/home'));
