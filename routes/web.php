@@ -15,6 +15,8 @@ use App\Http\Controllers\Management\LogsController;
 |
 */
 
+Route::get('tools/generate-barcode', fn() => view('tools.generate-barcode')->with(['currentPage' => 'tools']));
+
 // --- Direct redirects ---
 Route::get('/', fn() => redirect(app()->getLocale() . '/home'));
 Route::get('/home', fn() => redirect(app()->getLocale() . '/home'));
