@@ -16,5 +16,10 @@ return [
     'password' => "Password",
     'remember_me' => "Remember me",
     'forgot_password' => 'Forgot password',
-    'login' => "Sign in"
+    'login' => "Sign in",
+
+    'submit' => "Submit",
+    'cancel' => "Cancel",
+    'yes' => "Yes",
+    'no' => "No",
 ];

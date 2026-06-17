@@ -54,6 +54,9 @@ Route::group([
     Route::prefix('tools')->group(function () {
         Route::get('mensual_budget', [App\Http\Controllers\Tools\BudgetController::class, 'index']);
         Route::get('demo_unit', [App\Http\Controllers\Tools\TechnologyController::class, 'demounit']);
+        Route::get('generate-barcode', [App\Http\Controllers\Tools\BarcodeController::class, 'index']);
+        Route::post('generate-barcode', [App\Http\Controllers\Tools\BarcodeController::class, 'generate']);
+
     });
 
     // --- Store ---

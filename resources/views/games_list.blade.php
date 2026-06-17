@@ -6,56 +6,41 @@
 @section('content')
 
 @php
-    $isStaff = auth()->check() && (auth()->user()->isDev || auth()->user()->isAdmin || auth()->user()->isModerator);
+    $isStaff = auth()->check() && (auth()->user()->is_management);
 @endphp
 
 @if($isStaff)
-    @include('modal.add_game')
-    @include('modal.edit_game')
-    @include('modal.add_console')
-    @include('modal.edit_console')
+    @include('components.modals.add_game')
+    @include('components.modals.edit_game')
+    @include('components.modals.add_console')
+    @include('components.modals.edit_console')
 
     <div class="container text-center my-4">
-        <button class="btn btn-success mx-2" data-toggle="modal" data-target="#addConsoleModal">
+        <button class="btn btn-success mx-2 disabled" data-toggle="modal" data-target="#addConsoleModal">
             {{ trans('game.add_console') }}
         </button>
-        <button class="btn btn-success mx-2" data-toggle="modal" data-target="#addGameModal">
+        <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addGameModal">
             {{ trans('game.add_game') }}
         </button>
     </div>
 @endif
 
 <div class="container">
-
-@foreach($consoles as $index => $console)
-    @php
-        $gamesForConsole = $gamesList[$console->id] ?? [];
-    @endphp
-
-    @if(count($gamesForConsole))
-        <div class="mb-5 p-4 rounded {{ $index % 2 === 0 ? 'bg-dark text-white' : '' }}">
-
-            {{-- Console Header --}}
-            <div class="mb-4">
-                <h2 class="mb-1">
-                    {{ $console->console }} ({{ count($gamesForConsole) }})
-                </h2>
-                <p class="mb-0">{{ $console->description }}</p>
-            </div>
-
+        <div class="mb-5 p-4 rounded">
             {{-- Games Grid --}}
             <div class="row">
-                @foreach($gamesForConsole as $game)
-                    @php
-                        $gameObj = is_int($game) ? $games[$game] : $game;
-                        $id = is_int($game) ? $game : $game->id;
-                        $cover = "https://static-cdn.jtvnw.net/ttv-boxart/{$gameObj->game}-285x380.jpg";
-                    @endphp
-
+                <div class="col-12 mb-4">
+                    <h3 class="text-center>">
+                        @if($games->isEmpty())
+                            {{ trans('game.no_games') }}</p>
+                        @endif
+                    </h3>
+                </div>
+                @foreach($games as $game)
                     <div class="col-6 col-md-4 col-lg-3 mb-4">
-                        <div class="card h-100 border-0 shadow-sm">
+                        <div class="card p-0 h-100 border-0 shadow-sm">
                             <div class="card-body p-0 position-relative"
-                                 style="background-image: url('{{ $cover }}');
+                                 style="background-image: url('{{ $game->cover_url }}');
                                         background-size: cover;
                                         background-position: center;
                                         height: 200px;
@@ -65,19 +50,18 @@
                                 <div class="position-absolute bottom-0 w-100 text-center"
                                      style="background: rgba(0,0,0,0.6); border-radius: 0 0 10px 10px;">
                                     <h6 class="text-white m-2">
-                                        {{ preg_replace('/\\\\/', '', $gameObj->game) }}
+                                        {{ preg_replace('/\\\\/', '', $game->name) }}
                                     </h6>
                                 </div>
 
                                 {{-- Hidden inputs --}}
-                                <input type="hidden" id="gameName-{{ $id }}" value="{{ $gameObj->game }}">
-                                <input type="hidden" id="gameConsole-{{ $id }}" value="{{ $gameObj->console }}">
-                                <input type="hidden" id="gameDate-{{ $id }}" value="{{ $gameObj->date }}">
-                                <input type="hidden" id="gameCoverURL-{{ $id }}" value="{{ $gameObj->cover_url }}">
-                                <input type="hidden" id="gamePlaylist-{{ $id }}" value="{{ $gameObj->playlist }}">
-                                <input type="hidden" id="gameFormat-{{ $id }}" value="{{ $gameObj->format }}">
+                                <input type="hidden" id="gameName-{{ $game->id }}" value="{{ $game->game }}">
+                                <input type="hidden" id="gameDate-{{ $game->id }}" value="{{ $game->date }}">
+                                <input type="hidden" id="gameCoverURL-{{ $game->id }}" value="{{ $game->cover_url }}">
+                                <input type="hidden" id="gamePlaylist-{{ $game->id }}" value="{{ $game->playlist }}">
+                                <input type="hidden" id="gameFormat-{{ $game->id }}" value="{{ $game->format }}">
 
-                                <button id="{{ $id }}"
+                                <button id="{{ $game->id }}"
                                         class="edit-game-button btn btn-info d-none position-absolute top-50 start-50 translate-middle"
                                         type="button"
                                         data-bs-toggle="modal"
@@ -92,8 +76,6 @@
             </div>
 
         </div>
-    @endif
-@endforeach
 
 </div>
 
