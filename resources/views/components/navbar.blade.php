@@ -53,6 +53,7 @@
                     <a class="nav-link dropdown-toggle {{isset($currentTab) ? ($currentTab == 'tools' ? 'active' : '') : ''}}" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-disabled="true"><i class="fa fa-user" aria-hidden="true"></i> {{trans('navigation.tools')}}</a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item {{isset($currentPage) ? ($currentPage == 'mensual-budget' ? 'active' : '') : ''}}" href="/{{app()->getLocale()}}/tools/mensual_budget"><i class="fa fa-line-chart" aria-hidden="true"></i> {{trans('navigation.mensual_budget')}}</a></li>
+                        <li><a class="dropdown-item {{isset($currentPage) ? ($currentPage == 'generate-barcode' ? 'active' : '') : ''}}" href="/{{app()->getLocale()}}/tools/generate-barcode"><i class="fa fa-barcode" aria-hidden="true"></i> {{trans('navigation.generate_barcode')}}</a></li>
                     </ul>
                 </li>
                 @if(Auth::user()->is_management)

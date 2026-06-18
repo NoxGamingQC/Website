@@ -23,4 +23,9 @@ return [
     'biweekly' => 'Bi-Weekly',
     'monthly' => 'Monthly',
     'amount_per_pay' => 'Amount per Pay',
+    
+    'generate_barcode' => "Generate Barcode",
+    'generated_barcode' => "Generated Barcode",
+    'barcode_enter_values' => "Enter one value per line to generate corresponding barcodes.",
+    'barcode_generator' => "Barcode Generator",
 ];
