@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Tools;
 use App\Http\Controllers\Controller;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
+use App\Models\Company;
 
 class BarcodeController extends Controller
 {
@@ -13,16 +14,24 @@ class BarcodeController extends Controller
      *
      * @return View
      */
-    public function index(): View
+    public function index(Request $request): View
     {
+        if ($request->filled('company')) {
+            $company = Company::where('alias', $request->company)->first();
+        }
+
         return view('tools.generate-barcode')->with([
             'currentPage' => 'generate-barcode',
             'currentTab' => 'tools',
+            'company' => $company ?? null
         ]);
     }
 
     public function generate(Request $request)
 {
+    if ($request->filled('company')) {
+        $company = Company::where('alias', $request->company)->first();
+    }
     $request->validate([
         'list' => 'required|string'
     ]);
@@ -51,6 +60,6 @@ class BarcodeController extends Controller
         ];
     }
 
-    return view('tools.generate-barcode', compact('barcodes'));
+    return view('tools.generate-barcode', compact('barcodes'))->with('company', $company);
 }
 }

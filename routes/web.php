@@ -15,6 +15,28 @@ use App\Http\Controllers\Management\LogsController;
 |
 */
 
+// --- Error Pages ---
+Route::get('/error-401', function () {
+    return response()->view('errors.401', [], 401);
+});
+Route::get('/error-403', function () {
+    return response()->view('errors.403', [], 403);
+});
+Route::get('/error-404', function () {
+    return response()->view('errors.404', [], 404);
+});
+Route::get('/error-405', function () {
+    return response()->view('errors.405', [], 405);
+});
+Route::get('/error-419', function () {
+    return response()->view('errors.419', [], 419);
+});
+Route::get('/error-500', function () {
+    return response()->view('errors.500', [], 500);
+});
+Route::get('/error-503', function () {
+    return response()->view('errors.503', [], 503);
+});
 
 // --- Direct redirects ---
 Route::get('/', fn() => redirect(app()->getLocale() . '/home'));

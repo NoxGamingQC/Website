@@ -23,4 +23,5 @@ return [
     'english' => "English (Anglais)",
     'management' => "Gestion",
     'logs' => "Journaux",
+    'generate_barcode' => "Générateur de code barre",
 ];  

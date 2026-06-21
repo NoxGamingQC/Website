@@ -23,4 +23,9 @@ return [
     'biweekly' => 'Bi-Hebdomadaire',
     'monthly' => 'Mensuel',
     'amount_per_pay' => 'Montant par paie',
+
+    'generate_barcode' => "Générer les codes à barres",
+    'generated_barcode' => "Code barre généré",
+    'barcode_enter_values' => "Entrez une valeur par ligne pour générer les codes à barres correspondants.",
+    'barcode_generator' => "Générateur de code barre",
 ];

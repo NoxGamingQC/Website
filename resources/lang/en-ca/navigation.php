@@ -23,4 +23,5 @@ return [
     'french' => "Français (French)",
     'management' => "Management",
     'logs' => "Logs",
+    'generate_barcode' => "Barcode Generator",
 ];  
