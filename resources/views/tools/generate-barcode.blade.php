@@ -6,7 +6,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-12 no-print py-4">
-            <h1>{{ trans('tools.barcode_generator') }}</h1>
+            <h1>{{ trans('tools.barcode_generator') }} <span>(Pour impression: Ctrl+P )</span></h1>
         </div>
         <form  class="no-print" method="POST" action="/{{app()->getLocale()}}/tools/generate-barcode{{ request('company') ? '?company='.request('company') : '' }}">
             @csrf
