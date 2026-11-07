@@ -54,8 +54,15 @@ Route::group([
 ], function () {
 
     // --- Auth ---
-    Auth::routes();
-    Route::get('logout', [\App\Http\Controllers\Auth\LoginController::class, 'logout']);
+    Route::get('login', [App\Http\Controllers\Auth\LoginController::class, 'showLoginForm'])
+        ->name('login');
+
+    Route::post('login', [App\Http\Controllers\Auth\LoginController::class, 'login']);
+
+    Route::post('logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])
+        ->name('logout');
+
+    Route::get('logout', [App\Http\Controllers\Auth\LoginController::class, 'logout']);
 
     // --- Home ---
     Route::get('/', fn() => redirect(app()->getLocale() . '/home'));
@@ -92,7 +99,6 @@ Route::group([
 
     // --- Miscellaneous ---
     Route::get('/startup', fn() => view('pages.startup')->with(['currentPage' => 'startup']));
-    Route::get('/news', [App\Http\Controllers\NewsController::class, 'index']);
 
     Route::get('/notifications', function () {
         auth()->user()->unreadNotifications->markAsRead();

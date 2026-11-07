@@ -22,7 +22,8 @@
     "resolve-url-loader": "^5.0.0",
     "sass": "^1.53.0",
     "sass-loader": "8.*",
-    "webpack": "^5.19.0"
+    "webpack": "5.106.2",
+    "webpack-cli": "4.10.0"
   },
   "dependencies": {
     "@fortawesome/fontawesome": "^1.1.8",
@@ -52,6 +53,9 @@
     "querystring": "^0.2.0",
     "toastr": "^2.1.2",
     "unset-value": "^2.0.1"
+  },
+  "resolutions": {
+    "webpack": "5.99.9"
   },
   "name": "website",
   "description": "[![Build Status](https://travis-ci.com/nox-studios/Website.svg?token=8xPnyZAhxFTwCpTJsxsG&branch=master)](https://travis-ci.com/nox-studios/Website) [![Online Discord Members](https://discordapp.com/api/guilds/605028700182020101/widget.png?style=shield)](https://discord,gg/reKASKN)",
